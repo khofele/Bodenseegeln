@@ -4,10 +4,10 @@ using UnityEngine.InputSystem;
 public class BoatController : MonoBehaviour
 {
     private float m_maxKnotSpeed = 7.9f;
-    private float m_currentKnotSpeed = 0.0f;
-    private float m_kmhPerKnot = 1.852f; // TODO m/s ?
-    private float m_acceleration = 100.0f; // TODO based on Schub + balance value
-    private float m_turnSpeed = 15.0f; // TODO balance and fix turn speed value with proper boat controls
+    private float m_msPerKnot = 0.514444f; // 0.51444m/s = 1 Knot
+    private float m_maximumSpeed = 0.0f;
+    private float m_acceleration = 100.0f; // TODO based on Schub --> motormode!
+    private float m_turnSpeed = 15.0f; // TODO fix turn speed value with proper boat controls
     private Rigidbody m_rigidbody = null;
 
     private Vector2 m_wasdInput = Vector2.zero;
@@ -26,13 +26,17 @@ public class BoatController : MonoBehaviour
     {
         m_rigidbody = GetComponent<Rigidbody>();
 
+        // rigidbody setup
         if (m_rigidbody == null)
         {
             m_rigidbody = gameObject.AddComponent<Rigidbody>();
             m_rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-            m_rigidbody.angularDamping = 2.0f;
+            m_rigidbody.angularDamping = 2.0f; // TODO balance damping values
             m_rigidbody.linearDamping = 2.0f;
         }
+
+        // 7.9 knots in m/s --> 4.06m/s
+        m_maximumSpeed = m_maxKnotSpeed * m_msPerKnot;
     }
 
     public void Update()
@@ -41,17 +45,32 @@ public class BoatController : MonoBehaviour
         if (m_simpleWASDAction != null)
         {
             m_wasdInput = m_simpleWASDAction.action.ReadValue<Vector2>();
-            Debug.Log(m_wasdInput);
         }
-
-        m_currentKnotSpeed = m_maxKnotSpeed * m_kmhPerKnot; // TODO depends on Schub --> calculate current knot speed based on Schub 
     }
 
     public void FixedUpdate()
     {
-        m_rigidbody.AddForce(transform.forward * m_wasdInput.y * m_acceleration);
+        // Calculate forward force
+        // m_wasdInput.y = 1 --> forward
+        // m_wasdInput.y = -1 --> backwards
+        m_rigidbody.AddForce(transform.forward * m_wasdInput.y * m_acceleration); // TODO use wind force instead of input and acceleration (in sailing mode!)
 
-        float turn = m_wasdInput.x * m_turnSpeed * Time.fixedDeltaTime;
-        m_rigidbody.MoveRotation(m_rigidbody.rotation * Quaternion.Euler(0.0f, turn, 0.0f));
+        // Limit speed to max speed
+        // linearVelocity.magnitude = length of velocity vector = current speed of rigidbody
+        if (m_rigidbody.linearVelocity.magnitude > m_maximumSpeed)
+        {
+            m_rigidbody.linearVelocity = m_rigidbody.linearVelocity.normalized * m_maximumSpeed;
+        }
+
+        // Calculate rotation
+        // m_wasdInput.x = -1 --> left
+        // m_wasdInput.x = 1 --> right
+        float rotationValue = m_wasdInput.x * m_turnSpeed * Time.fixedDeltaTime;
+        m_rigidbody.MoveRotation(m_rigidbody.rotation * Quaternion.Euler(0.0f, rotationValue, 0.0f));
+
+        // DEBUG //////////////////////////////////////////////////////////////////////////////
+        float speedKnot = m_rigidbody.linearVelocity.magnitude / m_msPerKnot;
+        Debug.Log(speedKnot + " knots");
+        // DEBUG //////////////////////////////////////////////////////////////////////////////
     }
 }

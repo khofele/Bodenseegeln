@@ -30,7 +30,7 @@ public class BoatController : MonoBehaviour
         if (m_rigidbody == null)
         {
             m_rigidbody = gameObject.AddComponent<Rigidbody>();
-            m_rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            m_rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
             m_rigidbody.angularDamping = 2.0f; // TODO balance damping values
             m_rigidbody.linearDamping = 2.0f;
         }

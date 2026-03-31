@@ -10,12 +10,71 @@ public class BoatController : MonoBehaviour
     private float m_turnSpeed = 15.0f; // TODO fix turn speed value with proper boat controls
     private Rigidbody m_rigidbody = null;
 
+    private float m_airDensity = 1.2f; // kg/m^3
+    private float m_waterDensity = 1000.0f; // kg/m^3
+    private Vector3 m_apparentWind = Vector3.zero;
+    private float m_mainSailSize = 52.5f; // m^2
+    private float m_sideSailSize = 41.0f; // m^2
+    private float m_boatSideSize = 0.0f; // TODO
+    private float m_keelSize = 0.0f; // TODO
+    private float m_rudderSize = 0.0f; // TODO
+    private float m_boatWeight = 0.0f; // TODO
+    private float m_maxSailAngle = 0.0f; // TODO
+    private float m_motorBoost = 0.0f; // TODO
+    private float m_fuel = 0.0f; // TODO
+
+    // TODO Windvektor und Strömungsvektor einlesen
+    // TODO Bootgesundheit + Damage nehmen
+
     private Vector2 m_wasdInput = Vector2.zero;
 
     [SerializeField] private InputActionReference m_simpleWASDAction = null;
 
+    private Vector3 CalculateApprentWind()
+    {
+        Vector3 airStream = -transform.forward;
+        // TODO get wind vector from wind script
+        //m_apparentWind = wahrerWind + airStream;
+        return m_apparentWind;
+    }
+
+    private Vector3 CalculateSailForce()
+    {
+        // TODO implement
+        return Vector3.zero;
+    }
+
+    private Vector3 CalculateKeelForce()
+    {
+        // TODO implement
+        return Vector3.zero;
+    }
+
+    private Vector3 CalculateRudderForce()
+    {
+        // TODO implement
+        return Vector3.zero;
+    }
+
+    private Vector3 CalculateWindOnHull()
+    {
+        // TODO implement
+        return Vector3.zero;
+    }
+
+    private Vector3 CalculateMotorForce()
+    {
+        // TODO implement
+        Vector3 motorForce = transform.forward * m_motorBoost;
+        return motorForce;
+    }
+
+    // TODO Waterforces
+    // TODO Massenträgheit
+
     public void OnEnable()
     {
+        // TODO Controls for sailing and motor mode
         if (m_simpleWASDAction != null)
         {
             m_simpleWASDAction.action.Enable();
@@ -41,6 +100,7 @@ public class BoatController : MonoBehaviour
 
     public void Update()
     {
+        // TODO motor mode and sailmode
         // TODO set/enable controls based on game state
         if (m_simpleWASDAction != null)
         {
@@ -50,6 +110,8 @@ public class BoatController : MonoBehaviour
 
     public void FixedUpdate()
     {
+        // TODO motormode and sailmode
+
         // Calculate forward force
         // m_wasdInput.y = 1 --> forward
         // m_wasdInput.y = -1 --> backwards

@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 7eb56ff5091e5354e9cbd52ef5d079c4
+guid: caf587180fb5d9940a4af80e8bf7c530
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "BL\xE4tteroben3"
+    second: {fileID: 2100000, guid: 8da1df40e14aa40409dbf0a77a56f67a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blaetter.002
+    second: {fileID: 2100000, guid: 29268bb9c863cc24781feaf1f33aa598, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: cc24cc9c7fde1744e9130c94a5dd5845, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

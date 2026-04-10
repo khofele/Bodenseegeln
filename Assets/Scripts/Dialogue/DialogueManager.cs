@@ -13,11 +13,12 @@ namespace Dialogue
         internal void StartDialogue(NPCData _npc)
         {
             m_currentNPC = _npc;
+            GameManager.Instance.SetState(GameStates.DIALOGMODE);
+
+            m_UI.Show(true);
+
             int _startNode = DialogueStateManager.Instance.GetStartNode(_npc);
             SetNode(_startNode);
-
-            GameManager.Instance.SetState(GameStates.DIALOGMODE);
-            m_UI.Show(true);
         }
 
         private void SetNode(int _nodeID)
@@ -35,15 +36,27 @@ namespace Dialogue
 
         internal void ChooseResponse(DialogueResponse _response)
         {
-            DialogueStateManager.Instance.SetNode(m_currentNPC.NPCID, _response.NextNode);
-
-            if (_response.NextNode < 0)
+            //only save valid nodes -> -1 is only for closing the dialoge, but should not be saved for future dialogues
+            if (_response.NextNode >= 0)
+            {
+                DialogueStateManager.Instance.SetNode(m_currentNPC.NPCID, _response.NextNode);
+                SetNode(_response.NextNode);
+            }
+            else
             {
                 EndDialogue();
                 return;
             }
 
-            SetNode(_response.NextNode);
+            //DialogueStateManager.Instance.SetNode(m_currentNPC.NPCID, _response.NextNode);
+
+            //if (_response.NextNode < 0)
+            //{
+            //    EndDialogue();
+            //    return;
+            //}
+
+            //SetNode(_response.NextNode);
         }
 
         internal void EndDialogue()

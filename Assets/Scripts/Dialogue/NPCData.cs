@@ -5,8 +5,11 @@ using UnityEngine;
 public enum NPC_ID //TODO: add correct value for ID
 {
     None = 0,
-    Bob = 1,//just placeholder names
-    Gerda = 2
+    Testian = 1,//just placeholder names
+    NPC1 = 2,
+    NPC2 = 3,
+    NPC3 = 4,
+    NPC4 = 5
 }
 
 namespace Dialogue

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 namespace Dialogue
 {
@@ -20,9 +21,18 @@ namespace Dialogue
 
         [Header("Typing")]
         [SerializeField] private float m_typingSpeed = 0.02f;
+        [SerializeField] private InputActionReference m_scipAction = null;
 
         private Coroutine m_typingRoutine;
         private bool m_skipTyping;
+
+        private void OnEnable()
+        {
+            if (m_scipAction != null)
+            {
+                m_scipAction.action.Enable();
+            }
+        }
 
         internal void Show(bool _show)
         {
@@ -92,7 +102,7 @@ namespace Dialogue
         private void Update()
         {
             //just for now the simple input -> MUST be replaced with correct imput system later
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (m_scipAction.action.triggered)
             {
                 SkipTyping();
             }

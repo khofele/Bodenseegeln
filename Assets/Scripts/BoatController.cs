@@ -121,8 +121,26 @@ public class BoatController : MonoBehaviour
 
     private Vector3 CalculateKeelForce()
     {
-        // TODO Bootcontroller implement
-        return Vector3.zero;
+        // side drift left/right --> project boat velocity on right vector
+        // > 0 = drift right
+        // < 0 = drift left
+        float speedToSide = Vector3.Dot(m_rigidbody.linearVelocity, transform.right);
+
+        // 0.5 * water density (speed to side)^2 * keel size * coefficient
+        float keelForceValue = 0.5f * m_waterDensity * speedToSide * speedToSide * m_keelSize; // TODO Bootcontroller * Koeffizient zur Skalierung
+
+        // similar to apparent wind: water flows against boat --> negative velocity
+        // relative waterflow 
+        Vector3 waterVelocity = -m_rigidbody.linearVelocity; // TODO Strömung --> anpassen, wenn Strömungssimulation vorhanden
+        waterVelocity.y = 0.0f;
+
+        // lift vertical to waterflow --> right hand rule
+        Vector3 keelLiftDirection = Vector3.Cross(waterVelocity.normalized, Vector3.up).normalized;
+
+        // resulting keel force
+        Vector3 keelLift = keelLiftDirection * keelForceValue;
+
+        return keelLift;
     }
 
     private Vector3 CalculateRudderForce()
@@ -304,7 +322,7 @@ public class BoatController : MonoBehaviour
         {
             Vector3 totalForce = Vector3.zero;
             totalForce += CalculateSailForce();
-            totalForce += CalculateKeelForce();
+            totalForce += CalculateKeelForce(); // TODO Bootcontroller: ggf. auf Kiel anwenden --> AddForceAtPosition();
             totalForce += CalculateWindOnHull();
             totalForce += CalculateRudderForce(); // TODO Bootcontroller: ggf. nur auf Ruder anwenden --> AddForceAtPosition() oder AddTorque
 

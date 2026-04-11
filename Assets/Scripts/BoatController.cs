@@ -8,66 +8,132 @@ public class BoatController : MonoBehaviour
     private float m_maximumSpeed = 0.0f;
     private Rigidbody m_rigidbody = null;
 
+    // Force calculation
     private float m_airDensity = 1.2f; // kg/m^3
     private float m_waterDensity = 1000.0f; // kg/m^3
     private Vector3 m_apparentWind = Vector3.zero;
-    private float m_mainSailSize = 52.5f; // m^2
-    private float m_sideSailSize = 41.0f; // m^2
-    private float m_boatSideSize = 0.0f; // TODO
-    private float m_keelSize = 0.0f; // TODO
-    private float m_rudderSize = 0.0f; // TODO
-    private float m_boatWeight = 0.0f; // TODO
-    private float m_maxSailAngle = 0.0f; // TODO
+    private float m_boatSideSize = 0.0f; // TODO Bootcontroller 
+    private float m_keelSize = 0.0f; // TODO Bootcontroller 
+    private float m_rudderSize = 0.0f; // TODO Bootcontroller 
+    private float m_boatWeight = 0.0f; // TODO Bootcontroller 
+
+    // Sail
+    private float m_totalSailSize = 93.0f; // m^2
+    //private float m_mainSailSize = 52.5f; // m^2
+    //private float m_sideSailSize = 41.0f; // m^2
+    private float[] m_liftTable = new float[181];
+    private float[] m_dragTable = new float[181];
+    private float m_maxSailAngle = 0.0f; // TODO Segel trimmen
 
     // Motormode
     private int m_thrustStep = 0;
-    private int m_maxThrustForwardSteps = 3; // TODO Motormode-Werte balancen, wenn mehr Kräfte enthalten
+    private int m_maxThrustForwardSteps = 3; // TODO Bootcontroller Motormode-Werte balancen, wenn mehr Kräfte enthalten
     private int m_maxThrustBackwardSteps = -3;
     private float m_forwardForcePerStep = 25000f;
     private float m_backwardForcePerStep = 10000f;
     private float m_motorSteeringInput = 0.0f;
     private float m_motorBrakeModifier = 1.5f;
-    private float m_fuel = 0.0f; // TODO
+    private float m_fuel = 0.0f; // TODO Bootcontroller 
+    private float m_health = 100.0f;
+
+    public float Health { 
+        get { return m_health; }
+        set { m_health = value; }
+    }
 
     // TODO Windvektor und Strömungsvektor einlesen
-    // TODO Bootgesundheit + Damage nehmen
 
     // INPUT-ACTIONS
     [SerializeField] private GameManager m_gameManager = null;
+    [SerializeField] private GameObject m_sail = null;
     [SerializeField] private InputActionReference m_motorThrustForwardAction = null;
     [SerializeField] private InputActionReference m_motorThrustBackwardAction = null;
     [SerializeField] private InputActionReference m_motorThrustNeutralAction = null;
     [SerializeField] private InputActionReference m_motorSteeringAction = null;
 
+    private void CalculateLiftAndDragTables()
+    {
+        for (int angle = 0; angle <= 180; angle++)
+        {
+            float rad = angle * Mathf.Deg2Rad;
+
+            // max at 30°-45°
+            // > 45° less
+            float lift = Mathf.Sin(2f * rad);
+            lift = Mathf.Clamp01(lift);
+
+            // max at 90°-180°
+            // increases with every angle
+            float drag = Mathf.Sin(rad);
+            drag = drag * drag;
+
+            m_liftTable[angle] = lift;
+            m_dragTable[angle] = drag;
+        }
+    }
+
+    private float GetLiftCoefficient(float angle)
+    {
+        int lookUpAngle = Mathf.Clamp((int)angle, 0, 180);
+        return m_liftTable[lookUpAngle];
+    }
+
+    private float GetDragCoefficient(float angle)
+    {
+        int lookUpAngle = Mathf.Clamp((int)angle, 0, 180);
+        return m_dragTable[lookUpAngle];
+    }
+
     private Vector3 CalculateApprentWind()
     {
         Vector3 airStream = -transform.forward;
-        // TODO get wind vector from wind script
-        //m_apparentWind = wahrerWind + airStream;
+        // TODO get wind vector from wind script --> (1, 0, 0) as placeholder
+        m_apparentWind = new Vector3(1.0f, 0.0f, 0.0f) + airStream;
         return m_apparentWind;
     }
 
     private Vector3 CalculateSailForce()
     {
-        // TODO implement
-        return Vector3.zero;
+        Vector3 apparentWind = CalculateApprentWind();
+
+        // 0.5 * airdensity * (magnitude apparent wind)^2 * sail size * coefficient (drag or lift)
+        float sailForceValue = 0.5f * m_airDensity * apparentWind.magnitude * apparentWind.magnitude * m_totalSailSize;
+
+        // -apparentWind = where wind comes from
+        // apparentWind = where wind goes
+        float angleSailWind = Vector3.Angle(-apparentWind, m_sail.transform.forward);
+
+        // wind from left or right side
+        // sign = -1 if projection of rightvector and apparent wind is negative
+        // sign = 1 if projection of right vector and apparent wind is positive
+        float sign = Mathf.Sign(Vector3.Dot(m_sail.transform.right, apparentWind));
+
+        // cross product --> vertical vector on sail (90°) --> right hand rule!!
+        // sign moves lift to left or right side depending on wind direction
+        Vector3 liftDirection = Vector3.Cross(apparentWind.normalized, Vector3.up).normalized * sign;
+
+        // resulting sail force = lift + drag
+        Vector3 lift = liftDirection * sailForceValue * GetLiftCoefficient(angleSailWind);
+        Vector3 drag = apparentWind.normalized * sailForceValue * GetDragCoefficient(angleSailWind); // TODO drag ggf. skalieren
+
+        return lift + drag;
     }
 
     private Vector3 CalculateKeelForce()
     {
-        // TODO implement
+        // TODO Bootcontroller implement
         return Vector3.zero;
     }
 
     private Vector3 CalculateRudderForce()
     {
-        // TODO implement
+        // TODO Bootcontroller implement
         return Vector3.zero;
     }
 
     private Vector3 CalculateWindOnHull()
     {
-        // TODO implement
+        // TODO Bootcontroller implement
         return Vector3.zero;
     }
 
@@ -120,8 +186,8 @@ public class BoatController : MonoBehaviour
         m_rigidbody.MoveRotation(m_rigidbody.rotation * Quaternion.Euler(0.0f, rotation, 0.0f));
     }
 
-    // TODO Waterforces
-    // TODO Massenträgheit
+    // TODO Bootcontroller Waterforces
+    // TODO Bootcontroller Massenträgheit
 
     public void OnEnable()
     {
@@ -185,14 +251,16 @@ public class BoatController : MonoBehaviour
 
         // 7.9 knots in m/s --> 4.06m/s
         m_maximumSpeed = m_maxKnotSpeed * m_msPerKnot;
+
+        CalculateLiftAndDragTables();
     }
 
     public void Update()
     {
-        // TODO motor mode and sailmode
-        // TODO set/enable controls based on game state
+        // TODO Bootcontroller motor mode and sailmode
+        // TODO Bootcontroller set/enable controls based on game state
 
-        if(m_gameManager.CurrentGameState == GameStates.MOTORMODE) // TODO ggf. Modi aufteilen in Segel und 
+        if(m_gameManager.CurrentGameState == GameStates.MOTORMODE)
         {
             // read input and increase or decrease thrust or set thrust to neutral position
             if (m_motorThrustForwardAction != null && m_motorThrustForwardAction.action.triggered == true)
@@ -220,7 +288,6 @@ public class BoatController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        // TODO motormode and sailmode
         //// DEBUG //////////////////////////////////////////////////////////////////////////////
         float speedKnot = m_rigidbody.linearVelocity.magnitude / m_msPerKnot;
         Debug.Log(speedKnot + " knots");
@@ -228,13 +295,21 @@ public class BoatController : MonoBehaviour
 
         if(m_gameManager.CurrentGameState == GameStates.MOTORMODE)
         {
+            // TODO Bootcontroller: Motormodus: Kielkraft, Ruderkraft, Wind auf Hülle, Wasserkräfte, Massenträgheit zu Kraft hinzufügen
             m_rigidbody.AddForce(CalculateMotorForce());
             CalculateMotorSteering();
         }
 
         if(m_gameManager.CurrentGameState == GameStates.SAILMODE)
         {
-            // TODO Segelmodus
+            Vector3 totalForce = Vector3.zero;
+            totalForce += CalculateSailForce();
+            totalForce += CalculateKeelForce();
+            totalForce += CalculateWindOnHull();
+            totalForce += CalculateRudderForce(); // TODO Bootcontroller: ggf. nur auf Ruder anwenden --> AddForceAtPosition() oder AddTorque
+
+            m_rigidbody.AddForce(totalForce);
+            // TODO Damage durch zu hohe Wellen
         }
     }
 }

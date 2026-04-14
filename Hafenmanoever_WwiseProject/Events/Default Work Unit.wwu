@@ -1,6 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{04361E94-DBA0-444F-99F3-725EACB31E40}" SchemaVersion="133">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{04361E94-DBA0-444F-99F3-725EACB31E40}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{04361E94-DBA0-444F-99F3-725EACB31E40}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Menu" ID="{69E1BFBC-1844-4D15-AB53-3333CCCEFB6B}" ShortID="322166936">
+					<ChildrenList>
+						<Folder Name="Navigate" ID="{488B0130-1BE7-4003-9415-D3D9103B1377}" ShortID="597145422">
+							<ChildrenList>
+								<Event Name="menu_navigateForward" ID="{14BDCE51-8C80-4186-9335-5207883AA064}">
+									<ChildrenList>
+										<Action Name="" ID="{6D0591FB-D52F-48AA-8C51-1562DF6DBEBC}" ShortID="925307102">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="menu_forward" ID="{EFD97E77-3D6C-4F56-AE34-E906211D4DF8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="menu_navigateBackward" ID="{1E6D41A8-D059-4D14-A0BC-2661D597F97F}">
+									<ChildrenList>
+										<Action Name="" ID="{9E6A6055-DA8F-4A48-8BE8-C1213857605D}" ShortID="562946998">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="menu_back" ID="{1CC75D76-4BCF-46EA-970E-C3706B54FA4F}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="menu_navigateFromPauseToMain" ID="{7D8EFFD5-7E84-4712-A269-361383A54E10}">
+									<ChildrenList>
+										<Action Name="" ID="{AC6DAE29-C2E7-4C1B-9A31-299B92565B8C}" ShortID="152671476">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="menu_openMain" ID="{49EE8B96-A0D6-4283-B8D8-663B00691A92}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="menu_navigateFromGameToPause" ID="{400CD25C-4671-4889-A747-69247FB64100}">
+									<ChildrenList>
+										<Action Name="" ID="{0FFCB6E6-B6DE-4B6A-BE8D-47837AD1E19D}" ShortID="614174910">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="menu_openPause" ID="{FE644F0E-729E-4685-A6C2-23E57A728B03}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="menu_navigateModifiedSetting" ID="{9C915503-AE15-4A4A-ADF2-14CDF893440A}"/>
+								<Event Name="menu_navigateStartGame" ID="{C9B737B4-BD9A-4C2F-890A-0434F0E97BCC}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Ambience" ID="{A1EE0AD0-30FD-405C-8C3F-6B4D53143266}" ShortID="695002014">
+							<ChildrenList>
+								<Event Name="menu_ambientStart" ID="{C662138A-2799-4291-82C1-F4D7B5289D7E}"/>
+								<Event Name="menu_ambientStop" ID="{6073BA72-DF1C-46B2-9F48-7ED65B5F158B}"/>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="MissionsFeedback" ID="{7986BD02-D9FE-4384-8765-35AF1F0AD33A}" ShortID="613122230">
+					<ChildrenList>
+						<Folder Name="Event_MissionsFeedback" ID="{9320E3BA-45A8-4797-8D4E-19C4A9DBB44C}" ShortID="563999408">
+							<ChildrenList>
+								<Folder Name="MissionState" ID="{BAD22D00-6A3C-43DE-9566-3A1DD6751058}" ShortID="848008640">
+									<ChildrenList>
+										<Event Name="mission_fail" ID="{DD1F692B-55A5-4049-A12F-CD3734CA4E3D}">
+											<ChildrenList>
+												<Action Name="" ID="{54CCE642-63A5-4D9F-ABFA-98A83A0A1DFA}" ShortID="542550814">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_fail" ID="{420496ED-5413-4FF9-B59A-976C3A66191A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="mission_accept" ID="{7B36055F-D733-4A0D-ADC7-70F97FD7475B}">
+											<ChildrenList>
+												<Action Name="" ID="{809013E7-CB26-41C5-A3BD-786E790F4FCF}" ShortID="909304753">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_accept" ID="{3A4F5B54-7BCB-4A07-B5AC-EEC6AD7B1F56}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="mission_abort" ID="{3D75BE5C-C9DC-4099-A752-A7DAC242749F}">
+											<ChildrenList>
+												<Action Name="" ID="{58C3E325-15A1-410A-A09A-5930D3B61772}" ShortID="70169633">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_abort" ID="{60B38B9E-FEDE-4E70-A1EF-15D140D96AB4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="mission_complete" ID="{E8EFA51D-5A9D-4570-A1A0-2B507E079D24}">
+											<ChildrenList>
+												<Action Name="" ID="{EC7D6895-305F-4161-A449-2565EB5E363B}" ShortID="642957325">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_complete" ID="{A77329D0-7FF0-437A-A86B-989F0A8E0B67}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="MissionMoney" ID="{D862A98D-625B-47CE-8AA8-5D7FBCE84F05}" ShortID="726171433">
+									<ChildrenList>
+										<Event Name="mission_moneyGain" ID="{A7A23103-4585-49EA-9B9F-2DDDE29D6AC0}"/>
+										<Event Name="mission_moneySpend" ID="{DDC02CF0-71A4-44A4-99EC-FF6928203F7D}"/>
+										<Event Name="mission_moneyZero" ID="{3D1975C6-FF2C-43B5-BC19-130D92085506}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="MissionVarious" ID="{DE6557A4-87D8-4C6B-9776-56AA7BC0BAA0}" ShortID="354108046">
+									<ChildrenList>
+										<Event Name="mission_boatDamage" ID="{93473457-F890-45C2-A8C5-6E19B46E5677}"/>
+										<Event Name="mission_fastMovement" ID="{0460CA55-7A18-439A-BD71-00FE62D05EBB}"/>
+										<Event Name="mission_start_voiceLinesNpc" ID="{DE8CF4E1-CCC2-43DC-A2F5-5C2A6102154E}"/>
+										<Event Name="mission_stop_voiceLinesNpc" ID="{AD1B3553-62FC-4E81-881A-94839900A9A0}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="MissionGoal" ID="{E5C41BA6-6765-4CB0-80B4-2631F4E23AD6}" ShortID="628520607">
+									<ChildrenList>
+										<Event Name="mission_goalReached" ID="{E6D3909D-ED2E-4719-BE6C-69AF986CD6D1}"/>
+										<Event Name="mission_goalFail" ID="{CA812B7C-7356-4CD4-A2BF-D821072A37D5}"/>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

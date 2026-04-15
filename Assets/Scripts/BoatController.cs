@@ -362,7 +362,7 @@ public class BoatController : MonoBehaviour
     {
         // TODO Bootcontroller set/enable controls based on game state --> change via button press
 
-        if(m_gameManager.CurrentGameState == GameStates.MOTORMODE || m_gameManager.CurrentGameState == GameStates.SAILMODE)
+        if(m_gameManager.CurrentState == GameStates.MOTORMODE || m_gameManager.CurrentState == GameStates.SAILMODE)
         {
             // steering via 1d axis, possible in both modes
             if (m_steeringAction != null)
@@ -371,7 +371,7 @@ public class BoatController : MonoBehaviour
             }
         }
 
-        if (m_gameManager.CurrentGameState == GameStates.MOTORMODE)
+        if (m_gameManager.CurrentState == GameStates.MOTORMODE)
         {
             // read input and increase or decrease thrust or set thrust to neutral position
             if (m_motorThrustForwardAction != null && m_motorThrustForwardAction.action.triggered == true)
@@ -398,7 +398,7 @@ public class BoatController : MonoBehaviour
         Debug.Log(speedKnot + " knots");
         //// DEBUG //////////////////////////////////////////////////////////////////////////////
 
-        if(m_gameManager.CurrentGameState == GameStates.MOTORMODE)
+        if(m_gameManager.CurrentState == GameStates.MOTORMODE)
         {
             m_totalForce = Vector3.zero;
             m_totalForce += CalculateMotorForce();
@@ -412,7 +412,7 @@ public class BoatController : MonoBehaviour
             CalculateSteering();
         }
 
-        if(m_gameManager.CurrentGameState == GameStates.SAILMODE)
+        if(m_gameManager.CurrentState == GameStates.SAILMODE)
         {
             m_totalForce = Vector3.zero;
             m_totalForce += CalculateSailForce(m_mainSail, m_mainSailSize);

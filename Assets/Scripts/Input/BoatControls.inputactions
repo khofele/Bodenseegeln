@@ -73,6 +73,54 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "f5815e48-8953-4f63-b922-55537910a3ce",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "9547c150-9214-4a6a-9feb-ee00141cbe6c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Scip",
+                    "type": "Button",
+                    "id": "3de5cb4c-ff55-4dde-a797-010f9a32ccaf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "aa4b7454-9daa-4705-9db0-6a725434e19b",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1387be3-3fc0-487d-8e5f-f38ee2aee17d",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

@@ -63,7 +63,7 @@ namespace Dialogue
         {
             m_UI.Show(false);
 
-            GameManager.Instance.SetState(GameStates.BOATMODE);
+            GameManager.Instance.SetState(GameStates.MOTORMODE);
             m_currentNPC = null;
             m_currentNode = null;
         }

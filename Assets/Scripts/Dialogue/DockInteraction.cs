@@ -144,6 +144,6 @@ public class DockInteraction : MonoBehaviour
     public void CloseDockUI()
     {
         m_dockUIPanel.SetActive(false);
-        GameManager.Instance.SetState(GameStates.BOATMODE);
+        GameManager.Instance.SetState(GameStates.MOTORMODE);
     }
 }

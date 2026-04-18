@@ -543,7 +543,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-15</Value>
+														<Value>-20</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -577,7 +577,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-15</Value>
+														<Value>-20</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -611,7 +611,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-15</Value>
+														<Value>-20</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -692,6 +692,44 @@
 												<ActiveSource Name="boat_engineStartKey" ID="{99262FFA-A339-4BD7-AAA6-132CC389C17D}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<Sound Name="boat_engineBubbles_loop" ID="{30C5718F-0C54-4A3A-9F62-3122353C875F}" ShortID="517861166">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-600</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="boat_engineBubbles_loop" ID="{994BA591-F3BF-4583-B2DD-ACABBF79B463}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="671.259"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.83597"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.1"/>
+														<Property Name="LoopBegin" Type="Real64" Value="0.43831"/>
+														<Property Name="LoopEnd" Type="Real64" Value="12.29526"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>boat_engineBubbles_loop.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="606033276"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="boat_engineBubbles_loop" ID="{994BA591-F3BF-4583-B2DD-ACABBF79B463}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</Folder>
 								<RandomSequenceContainer Name="BoatCreaking" ID="{9C5C3F37-D63F-437A-AC13-996F0782E055}" ShortID="39125749">
@@ -699,15 +737,14 @@
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
-												<Value>-1800</Value>
+												<Value>-1200</Value>
 											</ValueList>
 										</Property>
 										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-15</Value>
+												<Value>-5</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>

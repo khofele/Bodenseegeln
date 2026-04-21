@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}" SchemaVersion="133">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="BoatCreakingLoop_EQ" ID="{B63CD69D-1B0A-4660-BFF8-E76BEFE86BC2}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FrequencyBand1" Type="Real32" Value="120"/>
+						<Property Name="FrequencyBand2" Type="Real32" Value="500"/>
+						<Property Name="FrequencyBand3" Type="Real32" Value="3200"/>
+						<Property Name="FrequencyBand4" Type="Real32" Value="20000"/>
+						<Property Name="GainBand1" Type="Real32" Value="4"/>
+						<Property Name="GainBand2" Type="Real32" Value="4"/>
+						<Property Name="GainBand3" Type="Real32" Value="4.1"/>
+						<Property Name="GainBand4" Type="Real32" Value="-24"/>
+						<Property Name="NumBands" Type="int32" Value="4"/>
+						<Property Name="OnOffBand3" Type="bool" Value="True"/>
+						<Property Name="OnOffBand4" Type="bool" Value="True"/>
+						<Property Name="QFactorBand2" Type="Real32" Value="1.2"/>
+						<Property Name="QFactorBand3" Type="Real32" Value="0.825"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>

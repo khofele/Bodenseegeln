@@ -670,7 +670,7 @@
 												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
-														<Value>-1800</Value>
+														<Value>-1000</Value>
 													</ValueList>
 												</Property>
 												<Property Name="Volume" Type="Real64">
@@ -764,6 +764,9 @@
 											<PropertyList>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-600</Value>
+													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{31B3A61C-96A2-4FB2-896E-329BB5368394}">
@@ -892,6 +895,9 @@
 										<RandomSequenceContainer Name="boat_thottleMove" ID="{40859645-428F-4467-AE54-91655003A37F}" ShortID="990038745">
 											<PropertyList>
 												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-600</Value>
+													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{AE28A804-F0FB-4698-AD1A-9FDB232A5117}">
@@ -1419,7 +1425,7 @@
 									<PropertyList>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
-												<Value>-300</Value>
+												<Value>-600</Value>
 											</ValueList>
 											<ModifierList>
 												<ModifierInfo>

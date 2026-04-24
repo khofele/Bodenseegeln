@@ -62,6 +62,27 @@
 						<Property Name="OnOffBand4" Type="bool" Value="True"/>
 					</PropertyList>
 				</Effect>
+				<Effect Name="AmbSeagulls_PitchShifter" ID="{75C6A920-E37A-46FE-BF32-F4FD030E7499}" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+					<PropertyList>
+						<Property Name="FilterFrequency" Type="Real32" Value="7108"/>
+						<Property Name="FilterGain" Type="Real32" Value="4"/>
+						<Property Name="FilterQFactor" Type="Real32" Value="5"/>
+						<Property Name="Pitch" Type="Real32" Value="900"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="AmbSeagulls_EQ" ID="{6DD48BF9-0C2D-4160-8B30-B3326DE0EA5A}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+						<Property Name="FrequencyBand1" Type="Real32" Value="1000"/>
+						<Property Name="FrequencyBand2" Type="Real32" Value="6000"/>
+						<Property Name="FrequencyBand3" Type="Real32" Value="9962.424"/>
+						<Property Name="GainBand2" Type="Real32" Value="7"/>
+						<Property Name="GainBand3" Type="Real32" Value="3.1"/>
+						<Property Name="OnOffBand3" Type="bool" Value="True"/>
+						<Property Name="QFactorBand2" Type="Real32" Value="0.7"/>
+						<Property Name="QFactorBand3" Type="Real32" Value="5.4"/>
+					</PropertyList>
+				</Effect>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

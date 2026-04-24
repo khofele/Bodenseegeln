@@ -1557,7 +1557,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="amb_seagulls" ID="{DA3CC991-7DBE-4522-A1E9-EACDC627CD7D}" ShortID="760805207">
+										<RandomSequenceContainer Name="amb_seagulls" ID="{95C36547-831C-4351-A67B-876D3F02B540}" ShortID="660625472">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -1567,19 +1567,75 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="amb_seagulls" ID="{FE452CC1-6DC4-47E1-9913-8814A23E4288}">
-													<Language>SFX</Language>
-													<AudioFile>amb_seagulls.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="804515780"/>
-													</MediaIDList>
-												</AudioFileSource>
+												<Sound Name="amb_seagulls2" ID="{03764603-5A70-458C-A81A-4751EACFD68C}" ShortID="66645585">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_seagulls2" ID="{3A3E71B3-1007-4144-8B57-B402C6A9F6C9}">
+															<Language>SFX</Language>
+															<AudioFile>amb_seagulls2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="881660594"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_seagulls2" ID="{3A3E71B3-1007-4144-8B57-B402C6A9F6C9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_seagulls3" ID="{C5ACF293-D9C2-486E-84D1-902DD2B630D1}" ShortID="374353853">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_seagulls3" ID="{BEE223E4-353B-4861-AC64-AD69512CB0FF}">
+															<Language>SFX</Language>
+															<AudioFile>amb_seagulls3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="400294797"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_seagulls3" ID="{BEE223E4-353B-4861-AC64-AD69512CB0FF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_seagulls" ID="{D3A9BD56-7F6A-45DD-99B3-7F4A9211B3DE}" ShortID="146583891">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_seagulls" ID="{D2858D3F-9719-4E61-A7C7-3436A5D06678}">
+															<Language>SFX</Language>
+															<AudioFile>amb_seagulls.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="804515780"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_seagulls" ID="{D2858D3F-9719-4E61-A7C7-3436A5D06678}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
 											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_seagulls" ID="{FE452CC1-6DC4-47E1-9913-8814A23E4288}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="amb_seagulls1" ID="{43C3FB23-61F8-47DB-92D5-027D54882BD3}" ShortID="310728083">
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="amb_seagullSingle" ID="{C6D0AEB5-B5A5-4F30-83F7-3DEE0C2C4533}" ShortID="909662004">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -1589,62 +1645,96 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="amb_seagulls1" ID="{3204B612-EEB1-49F9-8613-3CCD1FF99B1D}">
-													<Language>SFX</Language>
-													<AudioFile>amb_seagulls1.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="838769781"/>
-													</MediaIDList>
-												</AudioFileSource>
+												<Sound Name="amb_seagullSingle1" ID="{63B1692A-C9BA-45A8-B4A3-83102F46F356}" ShortID="593239875">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_seagullSingle1" ID="{1976333C-6323-492A-9790-0836A12BC083}">
+															<Language>SFX</Language>
+															<AudioFile>amb_seagullSingle1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="376226955"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_seagullSingle1" ID="{1976333C-6323-492A-9790-0836A12BC083}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_seagullSingle2" ID="{75282699-E525-4621-8F4F-2985C176B933}" ShortID="749432539">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_seagullSingle2" ID="{9159A0DE-417D-4A03-BACB-6378648705D7}">
+															<Language>SFX</Language>
+															<AudioFile>amb_seagullSingle2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="80196592"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_seagullSingle2" ID="{9159A0DE-417D-4A03-BACB-6378648705D7}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_seagullSingle3" ID="{D8AE5918-5817-4D46-B1E8-BF8841633228}" ShortID="663079015">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_seagullSingle3" ID="{23109FF8-30AD-45EC-B418-C1A818EEED39}">
+															<Language>SFX</Language>
+															<AudioFile>amb_seagullSingle3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="516368251"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_seagullSingle3" ID="{23109FF8-30AD-45EC-B418-C1A818EEED39}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_seagullSingle" ID="{51C6EDF0-2F19-42EB-A9B8-ECC983DB0DEA}" ShortID="918426519">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_seagullSingle" ID="{F73D4590-3AFE-4421-9941-DCBC4D37393E}">
+															<Language>SFX</Language>
+															<AudioFile>amb_seagullSingle.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="690653624"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_seagullSingle" ID="{F73D4590-3AFE-4421-9941-DCBC4D37393E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
 											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_seagulls1" ID="{3204B612-EEB1-49F9-8613-3CCD1FF99B1D}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="amb_seagulls2" ID="{DC771CBD-9B02-4FB9-B272-6C8C91939971}" ShortID="870157458">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="amb_seagulls2" ID="{779356E1-8DD6-4ABE-BB71-E76D3807EC71}">
-													<Language>SFX</Language>
-													<AudioFile>amb_seagulls2.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="881660594"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_seagulls2" ID="{779356E1-8DD6-4ABE-BB71-E76D3807EC71}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="amb_seagulls3" ID="{A7369970-2F9C-4C57-BE1C-51D7550DB6B7}" ShortID="991009883">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="amb_seagulls3" ID="{1ACE4392-87EB-4248-94DF-3C5115EB16F2}">
-													<Language>SFX</Language>
-													<AudioFile>amb_seagulls3.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="400294797"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_seagulls3" ID="{1ACE4392-87EB-4248-94DF-3C5115EB16F2}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
+										</RandomSequenceContainer>
 									</ChildrenList>
 									<ObjectLists>
 										<ObjectList Name="Effects">

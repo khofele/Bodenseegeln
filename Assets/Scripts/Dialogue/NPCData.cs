@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Quest;
 
 public enum NPC_ID //TODO: add correct value for ID
 {
@@ -10,6 +11,13 @@ public enum NPC_ID //TODO: add correct value for ID
     NPC2 = 3,
     NPC3 = 4,
     NPC4 = 5
+}
+
+public enum DialogueActionType
+{
+    None = 0,
+    StartQuest = 1,
+    CompleteQuest = 2
 }
 
 namespace Dialogue
@@ -78,10 +86,12 @@ namespace Dialogue
         private string m_responseText;
         [SerializeField, Tooltip("-1 = end dialogue")]
         private int m_nextNodeID; //-1 = end
+        [SerializeField] private DialogueActionType m_actionType = DialogueActionType.None;
+        [SerializeField] private QuestData m_quest = null;
 
         internal int NextNode => m_nextNodeID;
         internal string Text => m_responseText;
-
-        //TODO: future DialogueAction
+        internal DialogueActionType ActionType => m_actionType;
+        internal QuestData Quest => m_quest;
     }
 }

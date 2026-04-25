@@ -26,6 +26,7 @@ public class DockInteraction : MonoBehaviour
 
     private bool m_isPlayerInRange = false;
     private bool m_isDocked = false;
+    private bool m_lastInteractableState = false;
 
     private void OnEnable()
     {
@@ -104,8 +105,13 @@ public class DockInteraction : MonoBehaviour
             return;
         }
 
-        m_interactionIcon.SetActive(m_isDocked);
-
+        //check that toggle is only set when state really changed
+        if (m_lastInteractableState != m_isDocked)
+        {
+            m_lastInteractableState = m_isDocked;
+            m_interactionIcon.SetActive(m_isDocked);
+        }
+        
         if (!m_isDocked)
         {
             return;

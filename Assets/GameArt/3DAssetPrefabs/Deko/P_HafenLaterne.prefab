@@ -54,7 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 515219b6ce6ed8c489b500097db6228f, type: 2}
     - target: {fileID: 919132149155446097, guid: 70ee8c3c804fd2a47a84a264fc09c9d6, type: 3}
       propertyPath: m_Name
-      value: SM_HafenLaterne
+      value: P_HafenLaterne
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 70ee8c3c804fd2a47a84a264fc09c9d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

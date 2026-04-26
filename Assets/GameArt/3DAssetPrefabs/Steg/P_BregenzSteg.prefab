@@ -54,7 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7d7c2be083e5a7a4d8c15b2983f22fb1, type: 2}
     - target: {fileID: 919132149155446097, guid: 5337e993e3fd1794a8fe6d2ab1563788, type: 3}
       propertyPath: m_Name
-      value: SM_BregenzSteg
+      value: P_BregenzSteg
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5337e993e3fd1794a8fe6d2ab1563788, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

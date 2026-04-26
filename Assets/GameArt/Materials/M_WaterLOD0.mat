@@ -27,7 +27,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -64,18 +64,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _Depth: -8.56
-    - _Displacement: 0.56
+    - _Displacement: 0.19
     - _Edge_Foam_Depth: 0.1
     - _Edge_Foam_Strength: 1.02
     - _Foam_Scale: -1.43
     - _Foam_Speed: 0.04
-    - _Normal_Strength: 3.2
+    - _Normal_Strength: 4
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Refraction_Scale: 0.09
     - _Refraction_Speed: 0.01
     - _Refraction_Strength: 1.31
-    - _Smoothness: 0.936
+    - _Smoothness: 0.5
     - _Strength: 0.06
     - _Tiling: 0.02
     - _Wavesize: 54.99

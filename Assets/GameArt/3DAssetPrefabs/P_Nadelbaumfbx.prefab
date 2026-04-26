@@ -64,9 +64,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -991903954203567651, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
       propertyPath: m_Name
-      value: SM_Nadelbaumfbx
+      value: P_Nadelbaumfbx
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951874991681506007, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
       propertyPath: m_FadeMode
@@ -99,6 +111,14 @@ PrefabInstance:
     - target: {fileID: 4742473837712756890, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
       propertyPath: m_LODs.Array.data[2].screenRelativeHeight
       value: 0.1549918
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409965366081969569, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836186457997015776, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

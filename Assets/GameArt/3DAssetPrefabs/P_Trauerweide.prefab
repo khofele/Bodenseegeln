@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9123046702234000797, guid: 8d6781bf61e0df840ae6e8971330eec1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8d6781bf61e0df840ae6e8971330eec1, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.35734
@@ -64,9 +68,25 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8121083154957824744, guid: 8d6781bf61e0df840ae6e8971330eec1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -1413063741330477857, guid: 8d6781bf61e0df840ae6e8971330eec1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8d6781bf61e0df840ae6e8971330eec1, type: 3}
       propertyPath: m_Name
-      value: SM_Trauerweide
+      value: P_Trauerweide
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d6781bf61e0df840ae6e8971330eec1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3154582755309823673, guid: 8d6781bf61e0df840ae6e8971330eec1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: 8d6781bf61e0df840ae6e8971330eec1, type: 3}
       propertyPath: m_FadeMode

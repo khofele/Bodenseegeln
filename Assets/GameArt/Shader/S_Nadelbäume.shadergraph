@@ -398,20 +398,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "bc6e5e8be26c4abca80a3a16ce170bee"
-                },
-                "m_SlotId": 3
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "1d85fc89c5d94ce087b633237a9a014c"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "c5fd4aa7715c4dc8925b934df5db84ed"
                 },
                 "m_SlotId": 4
@@ -990,21 +976,15 @@
     "m_Value": 0.0,
     "m_SerializableColorKeys": [
         {
-            "x": 0.9825009107589722,
+            "x": 1.0,
             "y": 1.0,
-            "z": 0.7971698045730591,
+            "z": 1.0,
             "w": 0.0
         },
         {
-            "x": 0.7253240942955017,
-            "y": 1.0,
-            "z": 0.47641509771347048,
-            "w": 0.5088273286819458
-        },
-        {
             "x": 1.0,
-            "y": 0.7028301954269409,
-            "z": 0.7028301954269409,
+            "y": 1.0,
+            "z": 1.0,
             "w": 1.0
         }
     ],
@@ -1163,7 +1143,7 @@
     "m_Sort3DAs2DCompatible": false,
     "m_AdditionalMotionVectorMode": 0,
     "m_AlembicMotionVectors": false,
-    "m_SupportsLODCrossFade": false,
+    "m_SupportsLODCrossFade": true,
     "m_CustomEditorGUI": "",
     "m_SupportVFX": false
 }
@@ -1904,7 +1884,7 @@
     "m_ObjectId": "55167dcac7234f40904147ff1d4bacd9",
     "m_Title": "Random Scale",
     "m_Position": {
-        "x": -2967.000244140625,
+        "x": -2967.0,
         "y": -1719.0001220703125
     }
 }
@@ -2644,8 +2624,8 @@
     "m_ObjectId": "87186eb8fbb24323b1109f871605c4d8",
     "m_Title": "Random Farbe abh'ngig von Position",
     "m_Position": {
-        "x": -2618.000244140625,
-        "y": -170.00001525878907
+        "x": -2618.0,
+        "y": -170.0000457763672
     }
 }
 
@@ -2936,10 +2916,10 @@
     "m_ShaderOutputName": "A",
     "m_StageCapability": 3,
     "m_Value": {
-        "e00": 0.0,
-        "e01": 0.0,
-        "e02": 0.0,
-        "e03": 0.0,
+        "e00": 1.0,
+        "e01": 1.0,
+        "e02": 1.0,
+        "e03": 1.0,
         "e10": 0.0,
         "e11": 0.0,
         "e12": 0.0,
@@ -3146,7 +3126,7 @@
     "m_ObjectId": "b33867923386412d9502cda69e5ac244",
     "m_Title": "Random Rotation",
     "m_Position": {
-        "x": -1998.0001220703125,
+        "x": -1997.999755859375,
         "y": -1052.0001220703125
     }
 }

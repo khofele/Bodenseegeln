@@ -23,7 +23,12 @@
 												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
-														<Value>600</Value>
+														<Value>-300</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -51,8 +56,8 @@
 																<Property Name="FadeInDuration" Type="Real64" Value="0.01049"/>
 																<Property Name="FadeOutDuration" Type="Real64" Value="0.19762"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.18467"/>
-																<Property Name="TrimEnd" Type="Real64" Value="0.50636"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.19484"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.40068"/>
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>menu_forward.wav</AudioFile>
@@ -74,6 +79,16 @@
 														<Value>50</Value>
 													</ValueList>
 												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-300</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -88,7 +103,12 @@
 													<PropertyList>
 														<Property Name="Lowpass" Type="int16">
 															<ValueList>
-																<Value>10</Value>
+																<Value>30</Value>
+															</ValueList>
+														</Property>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -104,10 +124,10 @@
 														<AudioFileSource Name="menu_openMain" ID="{8A3083DB-DECD-4292-A33B-182393F3BF1A}">
 															<PropertyList>
 																<Property Name="FadeInDuration" Type="Real64" Value="0.01797"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.18895"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.12794"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 																<Property Name="TrimBegin" Type="Real64" Value="0.37214"/>
-																<Property Name="TrimEnd" Type="Real64" Value="0.90104"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.73548"/>
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>menu_openMain.wav</AudioFile>
@@ -134,6 +154,16 @@
 														<Value>2</Value>
 													</ValueList>
 												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-300</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -157,10 +187,10 @@
 														<AudioFileSource Name="menu_back" ID="{6E68FD00-4ED5-431D-8ED7-3B479830420B}">
 															<PropertyList>
 																<Property Name="FadeInDuration" Type="Real64" Value="0.01974"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.17985"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.09749"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.15297"/>
-																<Property Name="TrimEnd" Type="Real64" Value="0.50008"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.17232"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.40046"/>
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>menu_back.wav</AudioFile>
@@ -189,7 +219,12 @@
 												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
-														<Value>600</Value>
+														<Value>-300</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -209,11 +244,6 @@
 																<Value>10</Value>
 															</ValueList>
 														</Property>
-														<Property Name="Pitch" Type="int32">
-															<ValueList>
-																<Value>-600</Value>
-															</ValueList>
-														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -226,11 +256,11 @@
 													<ChildrenList>
 														<AudioFileSource Name="menu_openPause" ID="{C66D8468-9E06-46F9-89C9-4BCD4CD2A462}">
 															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.03243"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.37816"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.02647"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.1073"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.35226"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.00923"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.38115"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.80692"/>
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>menu_openPause.wav</AudioFile>
@@ -245,6 +275,61 @@
 												</Sound>
 											</ChildrenList>
 										</PropertyContainer>
+										<Sound Name="menu_gameStart" ID="{53E5E5D4-20C5-461F-BF70-D50EEDADDFD8}" ShortID="974362873">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-1200</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="menu_gameStart" ID="{2CBF5DBE-1B9A-403C-8AE7-3173B294C9B2}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0803"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.04955"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>menu_gameStart.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="844626901"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{2F008473-FA7E-4401-9F1E-A43E01C14EB7}" ShortID="1070423704">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="Static_Sibilance_Remover_Male" ID="{3FF84C1E-F84E-432E-86BC-96B3C9219F10}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+											<ActiveSourceList>
+												<ActiveSource Name="menu_gameStart" ID="{2CBF5DBE-1B9A-403C-8AE7-3173B294C9B2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="MenuAmbience" ID="{A00EA853-4D7E-43E0-B331-F9E6E581E4AE}" ShortID="183328874"/>
@@ -539,123 +624,6 @@
 							<ChildrenList>
 								<Folder Name="BoatEngine" ID="{06936863-B2EB-4E40-A231-0712D7C2FFCB}" ShortID="512108646">
 									<ChildrenList>
-										<Sound Name="boat_engineBeforeStartSignal" ID="{DA4ECE75-8FFE-46A0-8D84-215222FF5859}" ShortID="382885151">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-600</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="boat_engineBeforeStartSignal" ID="{54589CFF-817D-4A40-853B-D1A1106849AF}">
-													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.10762"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.50082"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>boat_engineBeforeStartSignal.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="399651056"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="boat_engineBeforeStartSignal" ID="{54589CFF-817D-4A40-853B-D1A1106849AF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="boat_engineStartSignal" ID="{1CE034E2-980B-4F84-9BF9-132CCC6B9C83}" ShortID="643796214">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-600</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="boat_engineStartSignal" ID="{0927337C-E346-4311-B508-801B44AB3499}">
-													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.04677"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.47288"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>boat_engineStartSignal.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="531375747"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="boat_engineStartSignal" ID="{0927337C-E346-4311-B508-801B44AB3499}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="boat_engineStopSignal" ID="{F6FF98EE-8E17-416C-ADED-B53913690314}" ShortID="987142583">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-600</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="boat_engineStopSignal" ID="{D4510551-D04D-49E5-81C6-8D411811C1C0}">
-													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.08257"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.9693"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>boat_engineStopSignal.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="746954357"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="boat_engineStopSignal" ID="{D4510551-D04D-49E5-81C6-8D411811C1C0}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
 										<Sound Name="boat_engineStartKey" ID="{09AE105C-B404-4E69-A310-E12846E043D6}" ShortID="73656947">
 											<PropertyList>
 												<Property Name="Lowpass" Type="int16">
@@ -756,6 +724,127 @@
 												<ActiveSource Name="boat_engineBubbles_loop" ID="{994BA591-F3BF-4583-B2DD-ACABBF79B463}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<Folder Name="Signals" ID="{45C65347-E1AD-420B-AA44-29BBA9E87EB4}" ShortID="971705712">
+											<ChildrenList>
+												<Sound Name="boat_engineBeforeStartSignal" ID="{DA4ECE75-8FFE-46A0-8D84-215222FF5859}" ShortID="382885151">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-600</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_engineBeforeStartSignal" ID="{54589CFF-817D-4A40-853B-D1A1106849AF}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.10762"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.50082"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_engineBeforeStartSignal.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="399651056"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_engineBeforeStartSignal" ID="{54589CFF-817D-4A40-853B-D1A1106849AF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_engineStartSignal" ID="{1CE034E2-980B-4F84-9BF9-132CCC6B9C83}" ShortID="643796214">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-600</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_engineStartSignal" ID="{0927337C-E346-4311-B508-801B44AB3499}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.04677"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.47288"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_engineStartSignal.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="531375747"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_engineStartSignal" ID="{0927337C-E346-4311-B508-801B44AB3499}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_engineStopSignal" ID="{F6FF98EE-8E17-416C-ADED-B53913690314}" ShortID="987142583">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-600</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-20</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_engineStopSignal" ID="{D4510551-D04D-49E5-81C6-8D411811C1C0}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.08257"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.9693"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_engineStopSignal.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="746954357"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_engineStopSignal" ID="{D4510551-D04D-49E5-81C6-8D411811C1C0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</Folder>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="BoatThrottleMove" ID="{34729BA9-B108-409B-80AE-520819CFA752}" ShortID="588612488">
@@ -1543,6 +1632,273 @@
 										</ObjectList>
 									</ObjectLists>
 								</RandomSequenceContainer>
+								<Folder Name="BoatWheelTurn" ID="{2F157F1F-B31E-4872-9480-8E684D5EFCFC}" ShortID="583454359">
+									<ChildrenList>
+										<RandomSequenceContainer Name="boat_wheelTurnBearing" ID="{48AAB9A2-09D3-4925-9C4B-1532316364FA}" ShortID="975089390">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>40</Value>
+													</ValueList>
+												</Property>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-2400</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-15</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="boat_wheelTurnBearing1" ID="{B5A8EAF0-634E-4D53-8D22-B0B399135486}" ShortID="450891872">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_wheelTurnBearing1" ID="{8682E7F8-9FFB-47AA-9421-EA990154E840}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.10275"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.20469"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.29918"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_wheelTurnBearing1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="54458518"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_wheelTurnBearing1" ID="{8682E7F8-9FFB-47AA-9421-EA990154E840}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_wheelTurnBearing2" ID="{7C73C830-989F-499D-8006-81E09F60EA62}" ShortID="149307637">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_wheelTurnBearing2" ID="{9EE7B665-F321-465C-AE23-D3B2ADC6F783}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.09675"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.19695"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.30139"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_wheelTurnBearing2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="652644797"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_wheelTurnBearing2" ID="{9EE7B665-F321-465C-AE23-D3B2ADC6F783}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_wheelTurnBearing3" ID="{91217C24-CA17-4D75-89CA-5B75BE2CFC34}" ShortID="838482830">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_wheelTurnBearing3" ID="{293E852A-104F-463B-9907-D489C3B192AB}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.0968"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.19039"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.2995"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_wheelTurnBearing3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="35522817"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_wheelTurnBearing3" ID="{293E852A-104F-463B-9907-D489C3B192AB}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_wheelTurnBearing" ID="{918A7F9A-467A-46C6-B2F8-89A959017441}" ShortID="701485760">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_wheelTurnBearing" ID="{60261FF4-2E12-4203-A49F-E94670838259}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.10273"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.20181"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.30239"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_wheelTurnBearing.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="676106981"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_wheelTurnBearing" ID="{60261FF4-2E12-4203-A49F-E94670838259}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="boat_wheelTurnRope" ID="{964C6DD8-D6CA-4895-860E-1268B3973A69}" ShortID="97176187">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>40</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-1200</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{D08C928D-8E87-47C2-81D6-092719D1CF80}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="boat_wheelTurnRope" ID="{BE739AA2-550B-4A78-87D5-2D617A89E7BB}" ShortID="956198181">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_ropeCreak1" ID="{4B363B06-1EC2-4B53-B476-638EE717BD16}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.01999"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.10699"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_ropeCreak1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="795434133"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_ropeCreak1" ID="{4B363B06-1EC2-4B53-B476-638EE717BD16}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_wheelTurnRope1" ID="{5E1E4988-DDB1-435B-AE67-904F3A5A9C80}" ShortID="86079496">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_ropeCreak2" ID="{083462E3-399B-4AF7-AB2D-5158ABA3BFEF}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.02399"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.07024"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_ropeCreak2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="508055500"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_ropeCreak2" ID="{083462E3-399B-4AF7-AB2D-5158ABA3BFEF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_wheelTurnRope2" ID="{47FF52D2-648B-46B4-B01B-81ABC4D4A569}" ShortID="364061018">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_ropeCreak3" ID="{89F4BD06-1FFA-4458-99C5-DDBD9A90949E}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.01902"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.12033"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_ropeCreak3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="432980852"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_ropeCreak3" ID="{89F4BD06-1FFA-4458-99C5-DDBD9A90949E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{CF4337B0-36B8-4F0F-95BD-5C2B34E58C76}" ShortID="343942540">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="BoatRopeCreak_EQ" ID="{0DA262DE-0ECA-4215-89E6-1E7ABAC2A753}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Atmosphere" ID="{2F6F4F58-34FA-4C7B-B17B-AE80B5CE1521}" ShortID="1063500667">

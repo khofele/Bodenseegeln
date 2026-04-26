@@ -14,7 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   m_questName: In Bregenz mit Sibille reden
   m_questType: 0
-  _questGiverNPC: {fileID: 11400000, guid: a5e7003bdcaa9b84cb02229864e04791, type: 2}
+  m_questGiverNPC: {fileID: 0}
   m_targetNPC: {fileID: 11400000, guid: 66b5f2970a4f9204d81fb2ed69f79ae6, type: 2}
   m_questSteps: 2
-  moneyPerStar: 50
+  m_timeThresholds:
+    threeStars: 600
+    twoStars: 1200
+    oneStar: 1800
+    zeroStars: 2400
+  m_damageThresholds:
+    threeStars: 0
+    twoStars: 20
+    oneStar: 50
+    zeroStars: 100
+  m_fuelThresholds:
+    threeStars: 2
+    twoStars: 5
+    oneStar: 10
+    zeroStars: 15
+  m_moneyRewards:
+    threeStars: 200
+    twoStars: 100
+    oneStar: 50
+    zeroStars: 5

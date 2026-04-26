@@ -16,11 +16,16 @@ namespace Quest
     {
         public QuestData Quest;
 
-        public float TimeScore; //0-3
-        public float DamageScore; //0-3
-        public float FuelScore; //0-3
+        public int TimeStars;
+        public int DamageStars;
+        public int FuelStars;
 
-        public int moneyReward;
+        public float TimeValue;
+        public float DamageValue;
+        public float FuelValue;
+
+        public int AverageStars;
+        public int MoneyReward;
     }
 
     public class QuestManager : Manager<QuestManager>
@@ -33,7 +38,14 @@ namespace Quest
         private int m_currentQuestStep = 0;
         private QuestState m_state = QuestState.None;
         
-        private float m_questStartTime;
+        //private float m_questStartTime;
+
+        //---Tracking---
+        private float m_timeElapsed;
+        private float m_totalDamage;
+        private float m_totalFuelUsed;
+        private float m_lastBoatHealth; //for delta tracking
+        private float m_lastFuel; //for delta tracking
 
         public bool HasActiveQuest => m_activeQuest != null;
         public QuestData ActiveQuest => m_activeQuest;
@@ -41,6 +53,49 @@ namespace Quest
         public QuestState State => m_state;
         public int CurrentQuestStep => m_currentQuestStep;
 
+
+        private void Update()
+        {
+            if (!m_isQuestRunning)
+            {
+                return;
+            }
+
+            TrackTime();
+        }
+
+        private void TrackTime()
+        {
+            //maybe change later if bad for performance
+            m_timeElapsed += Time.deltaTime;
+        }
+
+
+        //call this as "QuestManager.Instance.RegisterDamage(damage);" where the damage is handled
+        internal void RegisterDamage(float _damageAmount)
+        {
+            if (!m_isQuestRunning)
+            {
+                return;
+            }
+
+            m_totalDamage += _damageAmount;
+
+            Debug.Log($"[QuestManager] Damage registered: {_damageAmount} | Total: {m_totalDamage}");
+        }
+
+        //call this as "QuestManager.Instance.RegisterFuelUsed(amount);" where the fuel usage is handled
+        internal void RegisterFuelUsed(float _fuelAmount)
+        {
+            if (!m_isQuestRunning)
+            {
+                return;
+            }
+
+            m_totalFuelUsed += _fuelAmount;
+
+            Debug.Log($"[QuestManager] Damage registered: {_fuelAmount} | Total: {m_totalFuelUsed}");
+        }
 
         internal bool CanStartQuest(QuestData _quest) //later also use for DialogueSystem
         {
@@ -96,25 +151,33 @@ namespace Quest
             m_state = QuestState.Active;
             m_currentQuestStep = 0;
 
-            m_questStartTime = Time.time;
+            //m_questStartTime = Time.time;
+
+            //reset tracking
+            m_timeElapsed = 0f;
+            m_totalDamage = 0f;
+            m_totalFuelUsed = 0f;
+            //TEMP: replace once real system exist
+            m_lastBoatHealth = 100f;
+            m_lastFuel = 100f;
 
             Debug.Log($"[QuestManager] Quest started: {_quest.QuestName}");
         }
 
-        internal void CompleteQuest()
-        {
-            if (m_activeQuest == null || !m_isQuestRunning)
-            {
-                Debug.LogWarning("[QuestManager] No active quest to complete");
-                return;
-            }
+        //internal void CompleteQuest()
+        //{
+        //    if (m_activeQuest == null || !m_isQuestRunning)
+        //    {
+        //        Debug.LogWarning("[QuestManager] No active quest to complete");
+        //        return;
+        //    }
 
-            Debug.Log($"[QuestManager] Quest completed: {m_activeQuest.QuestName}");
+        //    Debug.Log($"[QuestManager] Quest completed: {m_activeQuest.QuestName}");
 
-            m_activeQuest = null;
-            m_isQuestRunning = false;
-            m_state = QuestState.Completed;
-        }
+        //    m_activeQuest = null;
+        //    m_isQuestRunning = false;
+        //    m_state = QuestState.Completed;
+        //}
 
         internal void HandleQuestInteraction(QuestData _quest)
         {
@@ -221,23 +284,86 @@ namespace Quest
                 return default;
             }
 
-            float _timeTaken = Time.time - m_questStartTime;
+            float _timeValue = m_timeElapsed;
+            float _damageValue = m_totalDamage + 40f; //TEMP: added value for testing stars
+            float _fuelValue = m_totalFuelUsed + 3f; //TEMP: added value for testing stars
+
+            int _timeStars = CalculateStars(_timeValue, m_activeQuest.m_timeThresholds, true);
+            int _damageStars = CalculateStars(_damageValue, m_activeQuest.m_damageThresholds, true);
+            int _fuelStars = CalculateStars(_fuelValue, m_activeQuest.m_fuelThresholds, true);
+
+            int _averageStars = Mathf.RoundToInt((_timeStars + _damageStars + _fuelStars) / 3f);
+            int _money = _averageStars switch
+            {
+                3 => m_activeQuest.m_moneyRewards.threeStars,
+                2 => m_activeQuest.m_moneyRewards.twoStars,
+                1 => m_activeQuest.m_moneyRewards.oneStar,
+                _ => m_activeQuest.m_moneyRewards.zeroStars
+            };
 
             QuestResult _result = new QuestResult
             {
                 Quest = m_activeQuest,
-                TimeScore = Mathf.Clamp(3 - (_timeTaken / 30f), 0, 3),
-                DamageScore = 3,
-                FuelScore = 3
-            };
+                
+                TimeStars = _timeStars,
+                DamageStars = _damageStars,
+                FuelStars = _fuelStars,
 
-            _result.moneyReward = Mathf.RoundToInt((_result.TimeScore + _result.DamageScore + _result.FuelScore) / 3 * m_activeQuest.moneyPerStar * 3);
+                TimeValue = _timeValue,
+                DamageValue = _damageValue,
+                FuelValue = _fuelValue,
+
+                AverageStars = _averageStars,
+                MoneyReward = _money
+            };
 
             Debug.Log($"[QuestManager] Quest finished: {m_activeQuest.QuestName}");
             m_activeQuest = null;
             m_isQuestRunning = false;
 
             return _result;
+        }
+
+        private int CalculateStars(float _value, StarThresholds _thresholds, bool _isLowerBetter = true)
+        {
+            if (_isLowerBetter)
+            {
+                if (_value <= _thresholds.threeStars)
+                {
+                    return 3;
+                }
+
+                if (_value <= _thresholds.twoStars)
+                {
+                    return 2;
+                }
+
+                if (_value <= _thresholds.oneStar)
+                {
+                    return 1;
+                }
+
+                return 0;
+            }
+            else
+            {
+                if (_value >= _thresholds.threeStars)
+                {
+                    return 3;
+                }
+
+                if (_value >= _thresholds.twoStars)
+                {
+                    return 2;
+                }
+
+                if (_value >= _thresholds.oneStar)
+                {
+                    return 1;
+                }
+
+                return 0;
+            }
         }
 
         private void ShowResultUI(QuestResult _result)

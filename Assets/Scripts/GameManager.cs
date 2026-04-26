@@ -8,6 +8,8 @@ public class GameManager : Manager<GameManager>
     
     [SerializeField] private UIManager m_uiManager = null;
 
+    [SerializeField] private int m_money = 0;
+
     public GameStates CurrentState => m_currentGameState;
 
     public void SetState(GameStates _newState)
@@ -15,6 +17,12 @@ public class GameManager : Manager<GameManager>
         m_currentGameState = _newState;
 
         Debug.Log($"Game State changed to: {_newState}");
+    }
+
+    public void AddMoney(int _amount)
+    {
+        m_money += _amount;
+        Debug.Log($"[GameManager] Money added: {_amount} | Total: {m_money}");
     }
 
     public void Start()

@@ -15,6 +15,13 @@ namespace Quest
         [SerializeField] private TextMeshProUGUI m_fuelText;
         [SerializeField] private TextMeshProUGUI m_moneyText;
 
+        [Header("Stars")]
+        [SerializeField] private Image[] m_timeStars;
+        [SerializeField] private Image[] m_damageStars;
+        [SerializeField] private Image[] m_fuelStars;
+        [SerializeField] private Sprite m_filledStar;
+        [SerializeField] private Sprite m_emptyStar;
+
         [Header("Button")]
         [SerializeField] private Button m_closeButton;
 
@@ -29,21 +36,59 @@ namespace Quest
         {
             m_currentReult = _result;
 
-            m_timeText.text = $"Time: {_result.TimeScore:0}/3";
-            m_damageText.text = $"Damage: {_result.DamageScore:0}/3";
-            m_fuelText.text = $"Fuel: {_result.FuelScore:0}/3";
-            m_moneyText.text = $"Reward: {_result.moneyReward}";
+            m_timeText.text = FormatTime(_result.TimeValue);
+            m_damageText.text = _result.DamageValue.ToString();
+            m_fuelText.text = _result.FuelValue.ToString();
+            m_moneyText.text = _result.MoneyReward.ToString();
+
+            SetStars(m_timeStars, _result.TimeStars);
+            SetStars(m_damageStars, _result.DamageStars);
+            SetStars(m_fuelStars, _result.FuelStars);
+
+            if (_result.Quest.QuestType == QuestType.Type3_DirectCompletion)
+            {
+                GameManager.Instance.SetState(GameStates.DIALOGMODE);
+            }
 
             m_root.SetActive(true);
         }
 
+        private void SetStars(Image[] _stars, int _amount)
+        {
+            for (int i = 0; i < _stars.Length; i++)
+            {
+                if (i < _amount)
+                {
+                    _stars[i].sprite = m_filledStar;
+                }
+                else
+                {
+                    _stars[i].sprite = m_emptyStar;
+                }
+            }
+        }
+
+        private string FormatTime(float _seconds)
+        {
+            int _h = Mathf.FloorToInt(_seconds / 3600);
+            int _m = Mathf.FloorToInt((_seconds % 60) / 60);
+            int _s = Mathf.FloorToInt(_seconds % 60);
+
+            return $"{_h:00}:{_m:00}:{_s:00}";
+        }
+
         private void OnClose()
         {
+            GameManager.Instance.AddMoney(m_currentReult.MoneyReward);
+
+            if (m_currentReult.Quest.QuestType == QuestType.Type3_DirectCompletion)
+            {
+                GameManager.Instance.SetState(GameStates.MOTORMODE);
+            }
+
             m_root.SetActive(false);
 
             Debug.Log("[QuestResultUI] Closed result screen");
-
-            //TODO: add reward money to players money
         }
     }
 }

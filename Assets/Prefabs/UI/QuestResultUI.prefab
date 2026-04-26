@@ -1281,6 +1281,20 @@ MonoBehaviour:
   m_damageText: {fileID: 2726718333691470374}
   m_fuelText: {fileID: 635198681655205802}
   m_moneyText: {fileID: 3495246053037295315}
+  m_timeStars:
+  - {fileID: 98299726199823979}
+  - {fileID: 9179574937374330452}
+  - {fileID: 3049305595670636242}
+  m_damageStars:
+  - {fileID: 6684867931520483973}
+  - {fileID: 154794428454284947}
+  - {fileID: 2609013710624298591}
+  m_fuelStars:
+  - {fileID: 5277684243399158606}
+  - {fileID: 4316995873947866101}
+  - {fileID: 4922774335261907002}
+  m_filledStar: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  m_emptyStar: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_closeButton: {fileID: 4269225106899917355}
 --- !u!1 &3776996602058164609
 GameObject:

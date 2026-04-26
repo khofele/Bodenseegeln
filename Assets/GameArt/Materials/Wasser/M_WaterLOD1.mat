@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_WaterLOD2
+  m_Name: M_WaterLOD1
   m_Shader: {fileID: -6465566751694194690, guid: a1dd7d45e58b1bd4bad73b1e8d357701, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -64,17 +64,17 @@ Material:
     m_Ints: []
     m_Floats:
     - _Depth: -8.56
-    - _Displacement: 0
-    - _Edge_Foam_Depth: 0.1
-    - _Edge_Foam_Strength: 1.012
+    - _Displacement: 0.14
+    - _Edge_Foam_Depth: 15
+    - _Edge_Foam_Strength: 2
     - _Foam_Scale: 0.98
     - _Foam_Speed: 0.04
-    - _Normal_Strength: 4
+    - _Normal_Strength: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Refraction_Scale: 0.09
-    - _Refraction_Speed: 0.02
-    - _Refraction_Strength: 1.3
+    - _Refraction_Scale: 0
+    - _Refraction_Speed: 0.16
+    - _Refraction_Strength: 0
     - _Smoothness: 0.5
     - _Strength: 0.06
     - _Tiling: 0.02
@@ -82,8 +82,8 @@ Material:
     - _Wavespeed: 1.1
     m_Colors:
     - _Deep_Water_Color: {r: 0.039215688, g: 0.20784314, b: 0.24705882, a: 1}
-    - _Foam_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Surface_Water_Color: {r: 0.37254903, g: 0.59607846, b: 0.49019608, a: 0.74509805}
+    - _Foam_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Surface_Water_Color: {r: 0.42976928, g: 0.66666657, b: 0.47714874, a: 0.74509805}
     - _WaterOrigin: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

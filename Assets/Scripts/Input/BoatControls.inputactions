@@ -50,6 +50,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Change_Motor_Sail_Mode",
+                    "type": "Button",
+                    "id": "4ed301ba-3a95-4718-9495-d350b3a85b07",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -173,6 +182,17 @@
                     "action": "Steering",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "ef778219-0403-4142-ae79-ab936d98c4fa",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Change_Motor_Sail_Mode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

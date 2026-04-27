@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : Manager<GameManager>
 {
-    private GameStates m_currentGameState = GameStates.MOTORMODE; // TODO Block inputs on start -> handle this in InputManager
+    private GameStates m_currentGameState = GameStates.SAILMODE; // TODO Block inputs on start -> handle this in InputManager
     // TODO Robin: HIER GAME STATE ÄNDERN GameStates.SAILMODE bzw. GameStates.MOTORMODE
     // TODO maybe method for setting current game state outside of game manager
     

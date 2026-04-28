@@ -22,7 +22,9 @@ public class BoatController : MonoBehaviour
     private float m_frontSailSize = 41.0f; // m^2
     private float[] m_liftTable = new float[181];
     private float[] m_dragTable = new float[181];
-    private float m_maxSailAngle = 0.0f; // TODO Segel trimmen
+    private float m_maxSailAngle = 90.0f;
+    private float m_currentMainSailAngle = 0.0f;
+    private float m_currentFrontSailAngle = 0.0f;
 
     // Motormode
     private int m_thrustStep = 0;
@@ -51,6 +53,10 @@ public class BoatController : MonoBehaviour
     [SerializeField] private GameObject m_rudder = null;
     [SerializeField] private InputActionReference m_steeringAction = null;
     [SerializeField] private InputActionReference m_changeMotorSailModeAction = null;
+    [SerializeField] private InputActionReference m_chooseMainSail = null;
+    [SerializeField] private InputActionReference m_chooseFrontSail = null;
+    [SerializeField] private InputActionReference m_chooseBothSails = null;
+    [SerializeField] private InputActionReference m_trimAction = null;
     [SerializeField] private InputActionReference m_motorThrustForwardAction = null;
     [SerializeField] private InputActionReference m_motorThrustBackwardAction = null;
     [SerializeField] private InputActionReference m_motorThrustNeutralAction = null;
@@ -451,6 +457,14 @@ public class BoatController : MonoBehaviour
         }
 
         m_rigidbody.AddTorque(m_parentReference.up * yawTorque, ForceMode.Force);
+    }
+
+    private void SailTrimming()
+    {
+        if(m_gameManager.CurrentState == GameStates.SAILMODE)
+        {
+
+        }
     }
 
     private void ApplyStability()

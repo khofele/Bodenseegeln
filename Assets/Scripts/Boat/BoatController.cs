@@ -28,8 +28,8 @@ public class BoatController : MonoBehaviour
     private int m_thrustStep = 0;
     private int m_maxThrustForwardSteps = 3;
     private int m_maxThrustBackwardSteps = -3;
-    private float m_forwardForcePerStep = 700f;
-    private float m_backwardForcePerStep = 300f;
+    private float m_forwardForcePerStep = 700.0f;
+    private float m_backwardForcePerStep = 300.0f;
     private float m_steeringInput = 0.0f;
     private float m_smoothedSteeringInput = 0.0f;
     private float m_motorBrakeModifier = 1.5f;
@@ -170,17 +170,17 @@ public class BoatController : MonoBehaviour
         Vector3 dragForce = apparentWind.normalized * sailForceValue * dragCoefficient;
 
         float rollAngle = transform.localEulerAngles.z;
-        if (rollAngle > 180f)
+        if (rollAngle > 180.0f)
         {
-            rollAngle -= 360f;
+            rollAngle -= 360.0f;
         }
 
         float absRoll = Mathf.Abs(rollAngle);
         float heelFactor = 1.0f;
 
-        if (absRoll > 10f)
+        if (absRoll > 10.0f)
         {
-            heelFactor = Mathf.Clamp01(1.0f - ((absRoll - 10f) / 10f));
+            heelFactor = Mathf.Clamp01(1.0f - ((absRoll - 10.0f) / 10.0f));
         }
 
         return (liftForce + dragForce) * 1.8f * heelFactor;
@@ -458,14 +458,14 @@ public class BoatController : MonoBehaviour
         float rollAngle = transform.localEulerAngles.z;
         if (rollAngle > 180) rollAngle -= 360;
 
-        float rollStabilityStrength = 80000f;
-        float rollDamping = 30000f;
+        float rollStabilityStrength = 80000.0f;
+        float rollDamping = 30000.0f;
 
         float absRoll = Mathf.Abs(rollAngle);
         float progressiveFactor = 1.0f;
-        if (absRoll > 15f)
+        if (absRoll > 15.0f)
         {
-            progressiveFactor += Mathf.Pow((absRoll - 15f), 2) * 5.0f;
+            progressiveFactor += Mathf.Pow((absRoll - 15.0f), 2.0f) * 5.0f;
         }
 
         float rightingTorque = -Mathf.Sin(rollAngle * Mathf.Deg2Rad) * rollStabilityStrength * progressiveFactor;

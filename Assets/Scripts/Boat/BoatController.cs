@@ -402,37 +402,55 @@ public class BoatController : MonoBehaviour
 
     private void CalculateSteering()
     {
-        m_smoothedSteeringInput = Mathf.MoveTowards(
-            m_smoothedSteeringInput,
-            m_steeringInput,
-            Time.fixedDeltaTime * 2.0f
-        );
+        // smooth player input --> avoid jumps from -1 to 1 etc.
+        // MoveTowards smooths value towards another value with fixedDeltaTime * 2 steps
+        m_smoothedSteeringInput = Mathf.MoveTowards(m_smoothedSteeringInput, m_steeringInput, Time.fixedDeltaTime * 2.0f);
 
-        float speedFactor = Mathf.Clamp01(m_rigidbody.linearVelocity.magnitude / 5.0f);
-
-        float yawTorqueStrength = 25000f;
-
-        Vector3 uprightUp = Vector3.zero;
-
-        if (m_parentReference != null)
-        {
-            uprightUp = m_parentReference.up;
-        }
-        else
-        {
-            uprightUp = Vector3.up;
-        }
-
-        Vector3 torque = uprightUp * m_smoothedSteeringInput * yawTorqueStrength * speedFactor;
-
-        m_rigidbody.AddTorque(torque, ForceMode.Force);
+        // total rotational force
+        float yawTorque = 0f;
 
         if (m_gameManager.CurrentState == GameStates.MOTORMODE)
         {
-            float rollTorque = -m_smoothedSteeringInput * m_rigidbody.linearVelocity.magnitude * 5000.0f;
+            // slow speed = assist boat rotation --> no speed = 1 --> full assist; speed = 0 --> no assist
+            // "normalize" boat speed to 0.8
+            // clamp between 0 and 1
+            // rotational force while "standing"/slow speed --> multiplier 900
+            float lowSpeedTorque = 900.0f * Mathf.Clamp01(1.0f - (m_rigidbody.linearVelocity.magnitude / 0.8f));
 
+            // speed based rudder "force" --> acts as weight for rotational force --> wieghs the effectivness of motor and rudder
+            // higher with speed --> the faster the boat, the higher the rudder impact
+            float rudderSteeringImpact = Mathf.Clamp01(m_rigidbody.linearVelocity.magnitude / 0.8f) * 9000.0f;
+
+            // motor power --> multiplies current thrust step --> the higher the thrust, the more the power
+            // motor flow --> less rotational impact with higher speed 
+            // multiplier 1000
+            // 1.0f + ... avoids dividing by zero
+            float thrustFlow = Mathf.Abs(m_thrustStep) * 1000.0f * (1.0f / (1.0f + m_rigidbody.linearVelocity.magnitude * 0.5f));
+
+            // quadratic speed damping factor --> avoid wild movements at high speed
+            // 1.0f + ... avoids dividing by zero
+            float speedDamping = 1.0f / (1.0f + m_rigidbody.linearVelocity.magnitude * m_rigidbody.linearVelocity.magnitude * 0.3f);
+
+            // total rotational force
+            // steering input * motor/water/etc influences * stability factor
+            yawTorque = m_smoothedSteeringInput * (lowSpeedTorque + rudderSteeringImpact + thrustFlow) * speedDamping;
+
+            // Krängung depending on input and speed
+            float rollTorque = -m_smoothedSteeringInput * m_rigidbody.linearVelocity.magnitude * 2000.0f;
             m_rigidbody.AddRelativeTorque(new Vector3(0, 0, rollTorque), ForceMode.Force);
         }
+        else
+        {
+            // rotational force depends on input and boat speed
+            // "normalize" speed with 5.0 and clamp between 0 and 1
+            // needs to be "normalized" and clamped bc otherwise boat would rotate too much at high speed
+            float speedFactor = Mathf.Clamp01(m_rigidbody.linearVelocity.magnitude / 5.0f);
+
+            // multiplier 10000
+            yawTorque = m_smoothedSteeringInput * 10000.0f * speedFactor;
+        }
+
+        m_rigidbody.AddTorque(m_parentReference.up * yawTorque, ForceMode.Force);
     }
 
     private void ApplyStability()

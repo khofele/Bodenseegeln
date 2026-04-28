@@ -1,4 +1,5 @@
 using UnityEngine;
+using Quest;
 
 namespace Dialogue
 {
@@ -36,6 +37,9 @@ namespace Dialogue
 
         internal void ChooseResponse(DialogueResponse _response)
         {
+            //execute action first
+            HandleAction(_response);
+
             //only save valid nodes -> -1 is only for closing the dialoge, but should not be saved for future dialogues
             if (_response.NextNode >= 0)
             {
@@ -47,22 +51,34 @@ namespace Dialogue
                 EndDialogue();
                 return;
             }
+        }
 
-            //DialogueStateManager.Instance.SetNode(m_currentNPC.NPCID, _response.NextNode);
-
-            //if (_response.NextNode < 0)
-            //{
-            //    EndDialogue();
-            //    return;
-            //}
-
-            //SetNode(_response.NextNode);
+        private void HandleAction(DialogueResponse _response)
+        {
+            switch (_response.ActionType)
+            {
+                case DialogueActionType.StartQuest:
+                    if (_response.Quest != null)
+                    {
+                        //Debug.Log($"[DialogueManager] Start Quest: {_response.Quest.QuestName}");
+                        QuestManager.Instance.SetPendingQuest(_response.Quest);
+                    }
+                    else
+                    {
+                        Debug.Log($"[DialogueManager] Start Quest action but no quest assigned");
+                    }
+                    break;
+                case DialogueActionType.CompleteQuest:
+                    QuestManager.Instance.CompleteQuestFromDialogue();
+                    break;
+            }
         }
 
         internal void EndDialogue()
         {
             m_UI.Show(false);
 
+            QuestManager.Instance.ConfirmPendingQuest();
             GameManager.Instance.SetState(GameStates.MOTORMODE);
             m_currentNPC = null;
             m_currentNode = null;

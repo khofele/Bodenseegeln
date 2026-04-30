@@ -15,7 +15,6 @@ public class BoatController : MonoBehaviour
     private float m_keelSize = 3.0f; // m^2
     private float m_rudderSize = 2.0f; // m^2
     private float m_maxRudderAngle = 30.0f; // max 30°
-    private Vector3 m_totalForce = Vector3.zero;
 
     // Sail
     private float m_mainSailSize = 52.5f; // m^2
@@ -43,7 +42,7 @@ public class BoatController : MonoBehaviour
     private float m_steeringInput = 0.0f;
     private float m_smoothedSteeringInput = 0.0f;
     private float m_motorBrakeModifier = 1.5f;
-    private float m_fuel = 1000.0f;
+    [SerializeField] private float m_fuel = 250.0f; // TODO SerializedField raus
     private float m_health = 100.0f;
 
     public float Health { 

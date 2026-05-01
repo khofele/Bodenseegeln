@@ -83,6 +83,38 @@
 						<Property Name="QFactorBand3" Type="Real32" Value="5.4"/>
 					</PropertyList>
 				</Effect>
+				<Effect Name="BoatEngine_EQ" ID="{64B09E03-5340-4B9F-9C69-9C77E88A2608}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+						<Property Name="FilterTypeBand2" Type="int32" Value="4"/>
+						<Property Name="FilterTypeBand8" Type="int32" Value="5"/>
+						<Property Name="FrequencyBand1" Type="Real32" Value="38.42903"/>
+						<Property Name="FrequencyBand3" Type="Real32" Value="150"/>
+						<Property Name="FrequencyBand4" Type="Real32" Value="300"/>
+						<Property Name="FrequencyBand5" Type="Real32" Value="750"/>
+						<Property Name="FrequencyBand6" Type="Real32" Value="1800"/>
+						<Property Name="FrequencyBand7" Type="Real32" Value="3500"/>
+						<Property Name="FrequencyBand8" Type="Real32" Value="7000"/>
+						<Property Name="GainBand2" Type="Real32" Value="3"/>
+						<Property Name="GainBand3" Type="Real32" Value="4"/>
+						<Property Name="GainBand4" Type="Real32" Value="-3"/>
+						<Property Name="GainBand5" Type="Real32" Value="-3"/>
+						<Property Name="GainBand6" Type="Real32" Value="2"/>
+						<Property Name="GainBand7" Type="Real32" Value="-2"/>
+						<Property Name="GainBand8" Type="Real32" Value="-4"/>
+						<Property Name="NumBands" Type="int32" Value="8"/>
+						<Property Name="OnOffBand3" Type="bool" Value="True"/>
+						<Property Name="OnOffBand4" Type="bool" Value="True"/>
+						<Property Name="OnOffBand5" Type="bool" Value="True"/>
+						<Property Name="OnOffBand6" Type="bool" Value="True"/>
+						<Property Name="OnOffBand7" Type="bool" Value="True"/>
+						<Property Name="OnOffBand8" Type="bool" Value="True"/>
+						<Property Name="QFactorBand4" Type="Real32" Value="1.2"/>
+						<Property Name="QFactorBand6" Type="Real32" Value="1.4"/>
+						<Property Name="QFactorBand7" Type="Real32" Value="1.2"/>
+						<Property Name="RolloffRateBand1" Type="int32" Value="48"/>
+					</PropertyList>
+				</Effect>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

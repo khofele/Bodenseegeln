@@ -675,56 +675,7 @@
 												<ActiveSource Name="boat_engineStartKey" ID="{99262FFA-A339-4BD7-AAA6-132CC389C17D}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="boat_engineBubbles_loop" ID="{30C5718F-0C54-4A3A-9F62-3122353C875F}" ShortID="517861166">
-											<PropertyList>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-1200</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="boat_engineBubbles_loop" ID="{994BA591-F3BF-4583-B2DD-ACABBF79B463}">
-													<PropertyList>
-														<Property Name="CrossfadeDuration" Type="Real64" Value="439.91084"/>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.83597"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.1"/>
-														<Property Name="LoopBegin" Type="Real64" Value="0.43831"/>
-														<Property Name="LoopEnd" Type="Real64" Value="11.94334"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>boat_engineBubbles_loop.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="606033276"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ObjectLists>
-												<ObjectList Name="Effects">
-													<EffectSlot Name="" ID="{2C42D939-DD3F-445A-B1BF-AB3937A2B23F}" ShortID="183273715">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																<ObjectRef Name="BoatEngineBubblesLoop_EQ" ID="{4A730BE5-B17D-4B88-A194-AB743A74B972}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</ObjectList>
-											</ObjectLists>
-											<ActiveSourceList>
-												<ActiveSource Name="boat_engineBubbles_loop" ID="{994BA591-F3BF-4583-B2DD-ACABBF79B463}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Folder Name="Signals" ID="{45C65347-E1AD-420B-AA44-29BBA9E87EB4}" ShortID="971705712">
+										<Folder Name="BoatEngineSignals" ID="{45C65347-E1AD-420B-AA44-29BBA9E87EB4}" ShortID="971705712">
 											<ChildrenList>
 												<Sound Name="boat_engineBeforeStartSignal" ID="{DA4ECE75-8FFE-46A0-8D84-215222FF5859}" ShortID="382885151">
 													<PropertyList>
@@ -845,6 +796,159 @@
 												</Sound>
 											</ChildrenList>
 										</Folder>
+										<Folder Name="BoatEngineLoops" ID="{256CD21A-4E11-44DD-B7E2-378052346105}" ShortID="309009072">
+											<ChildrenList>
+												<Sound Name="boat_engineBubbles_loop" ID="{30C5718F-0C54-4A3A-9F62-3122353C875F}" ShortID="517861166">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-1200</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_engineBubbles_loop" ID="{994BA591-F3BF-4583-B2DD-ACABBF79B463}">
+															<PropertyList>
+																<Property Name="CrossfadeDuration" Type="Real64" Value="439.91084"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.83597"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.1"/>
+																<Property Name="LoopBegin" Type="Real64" Value="0.43831"/>
+																<Property Name="LoopEnd" Type="Real64" Value="11.94334"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_engineBubbles_loop.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="606033276"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{2C42D939-DD3F-445A-B1BF-AB3937A2B23F}" ShortID="183273715">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="BoatEngineBubblesLoop_EQ" ID="{4A730BE5-B17D-4B88-A194-AB743A74B972}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_engineBubbles_loop" ID="{994BA591-F3BF-4583-B2DD-ACABBF79B463}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</Folder>
+										<Sound Name="boat_engineStart" ID="{8C384F8F-B5E1-48B8-A7BE-8DCCE5A54554}" ShortID="630189158">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-400</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="boat_engineStart" ID="{28B0E593-6903-4ECF-AF7B-191D680CC818}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.02109"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.48951"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>boat_engineStart.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="85550369"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{A73DDF17-9D30-47E6-974A-8AB00BEB0137}" ShortID="938931083">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="BoatEngine_EQ" ID="{64B09E03-5340-4B9F-9C69-9C77E88A2608}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+											<ActiveSourceList>
+												<ActiveSource Name="boat_engineStart" ID="{28B0E593-6903-4ECF-AF7B-191D680CC818}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="boat_engineStop" ID="{D328F649-C0B6-4B37-89CE-BFCE5DCE4E95}" ShortID="791788780">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-400</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="boat_engineStop" ID="{0D3551D3-FB63-4299-A5E9-521D0C0C7BF8}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.03135"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.00815"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>boat_engineStop.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="183966653"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{A92144B1-943F-4FB6-8238-926264D5AF9D}" ShortID="932599159">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="BoatEngine_EQ" ID="{64B09E03-5340-4B9F-9C69-9C77E88A2608}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+											<ActiveSourceList>
+												<ActiveSource Name="boat_engineStop" ID="{0D3551D3-FB63-4299-A5E9-521D0C0C7BF8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="BoatThrottleMove" ID="{34729BA9-B108-409B-80AE-520819CFA752}" ShortID="588612488">

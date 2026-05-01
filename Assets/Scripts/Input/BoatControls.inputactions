@@ -14,6 +14,51 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Motor_Thrust_Forward",
+                    "type": "Button",
+                    "id": "adba9738-5469-4cd9-b063-b24956b269c2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Motor_Thrust_Backward",
+                    "type": "Button",
+                    "id": "83c4a899-38aa-41ca-9b28-da0bcf73fae9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Motor_Thrust_Neutral",
+                    "type": "Button",
+                    "id": "1af7cc53-5a85-451c-8c59-5559377e1f1e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Steering",
+                    "type": "Value",
+                    "id": "70e530ee-fcfc-494e-a98c-a1cd070f6725",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Change_Motor_Sail_Mode",
+                    "type": "Button",
+                    "id": "4ed301ba-3a95-4718-9495-d350b3a85b07",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -29,7 +74,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "Up",
                     "id": "37dae181-c8ea-4a24-bb70-a054c03bcdda",
                     "path": "<Keyboard>/w",
                     "interactions": "",
@@ -40,7 +85,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
+                    "name": "Down",
                     "id": "816f36d9-961c-428a-9ca2-443a512f38b6",
                     "path": "<Keyboard>/s",
                     "interactions": "",
@@ -51,7 +96,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
+                    "name": "Left",
                     "id": "77b683e8-f771-41ae-a225-a84b4eacab27",
                     "path": "<Keyboard>/a",
                     "interactions": "",
@@ -62,15 +107,140 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
-                    "id": "54593ecd-c0b1-47d8-a9bc-b3265e5b8975",
-                    "path": "<Keyboard>/d",
+                    "name": "Right",
+                    "id": "cc2c8ea4-d529-46ff-88ac-21aa915921a6",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "SimpleWASD",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "a0e051a6-ae5f-4530-99ed-585a32c934c6",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Motor_Thrust_Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb4b8a66-3510-4181-beb3-79d8b5713f0e",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Motor_Thrust_Backward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9dfdda2d-1170-455f-b10b-98d7adfae29a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Motor_Thrust_Neutral",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "4b9d8aa8-fe87-4cc9-b1b6-c8cc2ff98943",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "8f3ce9bf-2801-42a6-b0ce-846898714122",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "9e12e732-6c33-4d79-9567-d4729d3ba962",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "ef778219-0403-4142-ae79-ab936d98c4fa",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Change_Motor_Sail_Mode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "f5815e48-8953-4f63-b922-55537910a3ce",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "9547c150-9214-4a6a-9feb-ee00141cbe6c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Scip",
+                    "type": "Button",
+                    "id": "3de5cb4c-ff55-4dde-a797-010f9a32ccaf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "aa4b7454-9daa-4705-9db0-6a725434e19b",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1387be3-3fc0-487d-8e5f-f38ee2aee17d",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

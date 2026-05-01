@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Manager : MonoBehaviour
+public class Manager<T> : MonoBehaviour where T : MonoBehaviour
 {
-    public static Manager Instance { get; private set; }
+    public static T Instance { get; private set; }
 
-    public void Awake()
+    protected virtual void Awake()
     {
         if (Instance != null && Instance != this)
         {
@@ -12,7 +12,7 @@ public class Manager : MonoBehaviour
             return;
         }
 
-        Instance = this;
+        Instance = this as T;
         DontDestroyOnLoad(gameObject);
     }
 }

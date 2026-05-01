@@ -1,0 +1,627 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class BoatController : MonoBehaviour
+{
+    private float m_msPerKnot = 0.514444f; // 0.51444m/s = 1 Knot
+    private Rigidbody m_rigidbody = null;
+
+    // Force calculation
+    private float m_airDensity = 1.2f; // kg/m^3
+    private float m_waterDensity = 1000.0f; // kg/m^3
+    private Vector3 m_apparentWind = Vector3.zero;
+    private float m_boatSideSize = 17.0f; // m^2
+    private float m_boatFrontSize = 4.0f; // m^2
+    private float m_keelSize = 3.0f; // m^2
+    private float m_rudderSize = 2.0f; // m^2
+    private float m_maxRudderAngle = 30.0f; // max 30°
+    private Vector3 m_totalForce = Vector3.zero;
+
+    // Sail
+    private float m_mainSailSize = 52.5f; // m^2
+    private float m_frontSailSize = 41.0f; // m^2
+    private float[] m_liftTable = new float[181];
+    private float[] m_dragTable = new float[181];
+    private float m_maxSailAngle = 0.0f; // TODO Segel trimmen
+
+    // Motormode
+    private int m_thrustStep = 0;
+    private int m_maxThrustForwardSteps = 3;
+    private int m_maxThrustBackwardSteps = -3;
+    private float m_forwardForcePerStep = 700f;
+    private float m_backwardForcePerStep = 300f;
+    private float m_steeringInput = 0.0f;
+    private float m_smoothedSteeringInput = 0.0f;
+    private float m_motorBrakeModifier = 1.5f;
+    private float m_fuel = 1000.0f;
+    private float m_health = 100.0f;
+
+    public float Health { 
+        get { return m_health; }
+        set { m_health = value; }
+    }
+
+    // TODO Windvektor und Strömungsvektor einlesen
+
+    // INPUT-ACTIONS
+    [SerializeField] private GameManager m_gameManager = null;
+    [SerializeField] private Transform m_parentReference = null;
+    [SerializeField] private GameObject m_mainSail = null;
+    [SerializeField] private GameObject m_frontSail = null;
+    [SerializeField] private GameObject m_rudder = null;
+    [SerializeField] private InputActionReference m_steeringAction = null;
+    [SerializeField] private InputActionReference m_changeMotorSailModeAction = null;
+    [SerializeField] private InputActionReference m_motorThrustForwardAction = null;
+    [SerializeField] private InputActionReference m_motorThrustBackwardAction = null;
+    [SerializeField] private InputActionReference m_motorThrustNeutralAction = null;
+
+    private void CalculateLiftAndDragTables()
+    {
+        m_liftTable = new float[] { -0.05f, 0.020883078f, 0.092470145f, 0.164057211f, 0.235644278f, 0.307231345f, 0.378818412f, 0.450405478f, 0.504490273f, 0.565930411f, 0.627370548f, 0.688810686f, 0.750250824f, 0.805642556f, 0.853819935f, 0.901997314f, 0.950174693f, 0.998352072f, 1.046529451f, 1.088761889f, 1.130677276f, 1.165245295f, 1.197876052f, 1.228547608f, 1.256131425f, 1.283715242f, 1.294746187f, 1.302365856f, 1.302408885f, 1.300696517f, 1.295771298f, 1.290846079f, 1.2818945f, 1.272631861f, 1.258578528f, 1.242851952f, 1.223503499f, 1.209775299f, 1.196047099f, 1.188616161f, 1.182037515f, 1.175458869f, 1.168480788f, 1.160250041f, 1.15218895f, 1.146909313f, 1.141629676f, 1.13635004f, 1.126385357f, 1.114030145f, 1.101674933f, 1.08931972f, 1.076964508f, 1.064609296f, 1.052254083f, 1.038540735f, 1.02255314f, 1.006565545f, 0.99057795f, 0.974241725f, 0.956802971f, 0.939364217f, 0.921925463f, 0.904322536f, 0.885322141f, 0.866321745f, 0.84732135f, 0.824191214f, 0.800805787f, 0.777420361f, 0.754034935f, 0.730243921f, 0.705564708f, 0.680885495f, 0.656206282f, 0.631527069f, 0.606847856f, 0.582168643f, 0.555080611f, 0.525492436f, 0.495904261f, 0.466316086f, 0.436100994f, 0.405758636f, 0.375416278f, 0.344186659f, 0.312498236f, 0.280809813f, 0.249333033f, 0.218519452f, 0.187705871f, 0.15526957f, 0.119279676f, 0.083289781f, 0.046613879f, 0.005617003f, -0.024460955f, -0.049140168f, -0.069869439f, -0.09044886f, -0.110993543f, -0.130752022f, -0.150510501f, -0.166515903f, -0.180106845f, -0.193697787f, -0.207288729f, -0.220879672f, -0.234162472f, -0.247341586f, -0.260520701f, -0.273534762f, -0.285117266f, -0.29669977f, -0.308282274f, -0.319864779f, -0.331447283f, -0.343029787f, -0.354612291f, -0.365995976f, -0.376977284f, -0.387958593f, -0.398939901f, -0.40992121f, -0.420902518f, -0.431883826f, -0.44278009f, -0.453651446f, -0.464522803f, -0.475394159f, -0.486265516f, -0.497136872f, -0.506878711f, -0.516141349f, -0.525403987f, -0.534666625f, -0.543929263f, -0.553191902f, -0.56245454f, -0.571717178f, -0.580979816f, -0.590242454f, -0.598481708f, -0.606712456f, -0.614943203f, -0.623344553f, -0.63206096f, -0.640777368f, -0.649493775f, -0.658210182f, -0.66692659f, -0.675642997f, -0.684359404f, -0.693075812f, -0.701792219f, -0.710508626f, -0.719225034f, -0.727941441f, -0.745650528f, -0.763616722f, -0.784783239f, -0.813554069f, -0.873442789f, -0.946688773f, -0.994284252f, -1.004872848f, -1.004280002f, -0.988633743f, -0.959963118f, -0.917563513f, -0.867171527f, -0.806180985f, -0.737089336f, -0.661059537f, -0.581294014f, -0.492326981f, -0.396603617f, -0.308954542f, -0.225154278f, -0.123170151f, -0.021186024f };
+        
+        m_dragTable = new float[] { 0.38686385f, 0.38686385f, 0.38686385f, 0.38686385f, 0.389313944f, 0.392970084f, 0.39627427f, 0.400844893f, 0.406525589f, 0.413448441f, 0.423087326f, 0.43436206f, 0.446969015f, 0.461843124f, 0.477379126f, 0.494470073f, 0.511844278f, 0.530824867f, 0.551880783f, 0.573473466f, 0.595613179f, 0.618209053f, 0.640621824f, 0.662929695f, 0.689879447f, 0.717907852f, 0.742850651f, 0.768920302f, 0.795362681f, 0.823316744f, 0.850209803f, 0.875819503f, 0.902869248f, 0.929952637f, 0.956062275f, 0.982152684f, 1.00783812f, 1.032219846f, 1.056128497f, 1.079807038f, 1.103792918f, 1.126769184f, 1.148463259f, 1.170392417f, 1.191483401f, 1.211927291f, 1.232460607f, 1.251496506f, 1.26986412f, 1.287926532f, 1.305267082f, 1.321581271f, 1.336975061f, 1.352433199f, 1.367474706f, 1.381879313f, 1.395370904f, 1.408437175f, 1.42077202f, 1.432323005f, 1.442932234f, 1.453247113f, 1.463107136f, 1.472244833f, 1.481002418f, 1.48898399f, 1.496326908f, 1.503874636f, 1.510469672f, 1.516160814f, 1.520762198f, 1.524862379f, 1.528414588f, 1.531505316f, 1.534396653f, 1.536929303f, 1.539348753f, 1.541768202f, 1.543557613f, 1.54546413f, 1.547581813f, 1.549468654f, 1.548920021f, 1.54801459f, 1.546543847f, 1.544999096f, 1.543531685f, 1.54202705f, 1.540196571f, 1.538897543f, 1.537466191f, 1.535683999f, 1.53355819f, 1.531394771f, 1.529080687f, 1.52636414f, 1.523296284f, 1.519923682f, 1.516217375f, 1.511846219f, 1.506802417f, 1.501377281f, 1.495823772f, 1.489852422f, 1.483303796f, 1.476166382f, 1.468601931f, 1.46103748f, 1.453121688f, 1.444432961f, 1.435363018f, 1.426135009f, 1.416626582f, 1.4060435f, 1.394535499f, 1.382541884f, 1.370241135f, 1.35748521f, 1.344036318f, 1.329988939f, 1.315536648f, 1.299903026f, 1.283327307f, 1.266037303f, 1.248179244f, 1.229432006f, 1.20930074f, 1.189087279f, 1.166532089f, 1.143668855f, 1.120641873f, 1.095927105f, 1.068977914f, 1.041870702f, 1.012157234f, 0.981880102f, 0.952218843f, 0.92072355f, 0.886264821f, 0.851341686f, 0.81609477f, 0.780375363f, 0.743510309f, 0.705298108f, 0.667971289f, 0.632315819f, 0.598288727f, 0.56281104f, 0.530969521f, 0.499784719f, 0.472547329f, 0.448385954f, 0.425068473f, 0.405095466f, 0.389551534f, 0.377744637f, 0.368761857f, 0.362676155f, 0.358217857f, 0.353394115f, 0.351457994f, 0.353654607f, 0.355851219f, 0.358047832f, 0.360244444f, 0.362441057f, 0.364637669f, 0.366834282f, 0.369030894f, 0.371227506f, 0.373424119f, 0.375620731f, 0.377817344f, 0.380013956f, 0.382210569f, 0.384407181f, 0.386603794f, 0.388800406f, 0.390997019f, 0.393193631f, 0.395390244f };
+    }
+
+    private float GetCoefficient(float[] coefficientTable, float signedAngle)
+    {
+        // Angle stays between 0 and 360
+        float angleNormalized = Mathf.Repeat(signedAngle, 360f);
+
+        // Fold angle to 0-180 --> index for table
+        float angleFoldedToHalf = 0.0f;
+
+        if (angleNormalized > 180.0f)
+        {
+            // angle > 180 --> example 200° --> 360-200 = 160 --> index for table
+            angleFoldedToHalf = 360.0f - angleNormalized;
+        }
+        else
+        {
+            angleFoldedToHalf = angleNormalized;
+        }
+
+        // Round float angle to int --> index for table
+        int roundedAngle = Mathf.FloorToInt(angleFoldedToHalf);
+
+        // Next index after angle = index --> max 180
+        int nextIndexInTable = Mathf.Clamp(roundedAngle + 1, 0, 180);
+
+        // decimals after comma --> distance of decimals between actual angle and rounded angle
+        float decimals = angleFoldedToHalf - roundedAngle;
+
+        // Interpolate table result from rounded angle and next index --> avoid jumps
+        // decimals decides the portion of the table results of both indexes
+        float lerpedIndex = Mathf.Lerp(coefficientTable[roundedAngle], coefficientTable[nextIndexInTable], decimals);
+
+        return lerpedIndex;
+    }
+
+    private Vector3 CalculateApprentWind()
+    {
+        // TODO get wind vector from wind script --> placeholder vector
+        m_apparentWind = new Vector3(0.0f, 0.0f, 10.0f) - m_rigidbody.linearVelocity;
+        return m_apparentWind;
+    }
+
+    private Vector3 CalculateSailForce(GameObject sail, float sailSize)
+    {
+        Vector3 apparentWind = CalculateApprentWind();
+        float apparentWindSpeed = apparentWind.magnitude * apparentWind.magnitude;
+
+        // No sail force if there is barely any wind
+        if (apparentWindSpeed < 0.01f)
+        {
+            return Vector3.zero;
+        }
+
+        // apparentWind.normalized = where wind goes
+        // -apparentWind.normalized = where wind comes from
+
+        float angleWindSail = Vector3.Angle(sail.transform.forward, -apparentWind.normalized);
+        Debug.Log("Angle Wind Sail" + Mathf.RoundToInt(angleWindSail));
+
+        // Dead zone depends on angle of wind and boat
+        float angleWindBoat = Vector3.Angle(transform.forward, -apparentWind.normalized);
+        Debug.Log("Angle Wind Boat" + Mathf.RoundToInt(angleWindBoat));
+
+        // Angle between wind origin and sail too low --> sail can't catch wind properly, sail flutters --> no lift, drag stays
+
+        if (angleWindSail < 5.0f || angleWindSail > 175.0f)
+        {
+            return Vector3.zero;
+        }
+
+        bool isFluttering = false;
+
+        // dead zone 
+        if (angleWindBoat < 35.0f)
+        {
+            isFluttering = true;
+        }
+        else
+        {
+            isFluttering = false;
+        }
+
+        // 0.5 * airdensity * (magnitude apparent wind)^2 * sail size * coefficient (drag or lift)
+        float sailForceValue = 0.5f * m_airDensity * apparentWindSpeed * sailSize;
+
+        // lift acts in 90° to wind direction
+        Vector3 liftDirection = Vector3.Cross(Vector3.up, apparentWind.normalized).normalized;
+
+        // Check which side the wind is hitting the sail
+        float sideSign = Mathf.Sign(Vector3.Dot(-apparentWind.normalized, sail.transform.right));
+
+        float liftCoefficient = 0.0f;
+        float dragCoefficient = 0.0f;
+
+        if (isFluttering == true)
+        {
+            Debug.Log("Fluttering");
+            return Vector3.zero;
+        }
+        else
+        {
+            liftCoefficient = GetCoefficient(m_liftTable, angleWindSail);
+            dragCoefficient = GetCoefficient(m_dragTable, angleWindSail);
+        }
+
+        Vector3 liftForce = liftDirection * sideSign * sailForceValue * liftCoefficient;
+        Vector3 dragForce = apparentWind.normalized * sailForceValue * dragCoefficient;
+
+        float rollAngle = transform.localEulerAngles.z;
+        if (rollAngle > 180f)
+        {
+            rollAngle -= 360f;
+        }
+
+        float absRoll = Mathf.Abs(rollAngle);
+        float heelFactor = 1.0f;
+
+        if (absRoll > 10f)
+        {
+            heelFactor = Mathf.Clamp01(1.0f - ((absRoll - 10f) / 10f));
+        }
+
+        return (liftForce + dragForce) * 1.8f * heelFactor;
+    }
+
+    private void CalculateTotalSailForce()
+    {
+        Vector3 mainSailForce = CalculateSailForce(m_mainSail, m_mainSailSize);
+        Vector3 frontSailForce = CalculateSailForce(m_frontSail, m_frontSailSize);
+        Vector3 totalSailForce = mainSailForce + frontSailForce;
+        totalSailForce.y = 0.0f;
+
+        m_rigidbody.AddForce(transform.forward * Vector3.Dot(totalSailForce, transform.forward), ForceMode.Force);
+
+        float angleToWind = Vector3.Angle(transform.forward, -CalculateApprentWind().normalized);
+
+        float heelIntensity = 0.0f;
+        if (angleToWind >= 80f && angleToWind <= 100f)
+        {
+            // Halbwind
+            heelIntensity = 1.4f;
+        }
+        else if (angleToWind < 80f)
+        {
+            // Am Wind
+            heelIntensity = 1.0f;
+        }
+        else if (angleToWind > 100f && angleToWind < 150f)
+        {
+            // Raumschot
+            heelIntensity = 0.6f;
+        }
+        else
+        {
+            // Vor dem Wind
+            heelIntensity = 0.2f;
+        }
+
+        Vector3 lateralSailForce = transform.right * Vector3.Dot(totalSailForce, transform.right) * heelIntensity;
+        Vector3 sailLeverPoint = transform.position + (transform.up * 2.0f);
+        m_rigidbody.AddForceAtPosition(lateralSailForce, sailLeverPoint, ForceMode.Force);
+    }
+
+    private void CalculateKeelForce()
+    {
+        // keel force doesn't need y-speed of boat
+        Vector3 boatVelocity = m_rigidbody.linearVelocity;  // TODO Strömung --> anpassen, wenn Strömungssimulation vorhanden
+        boatVelocity.y = 0f;
+
+        // drift on x-axis of boat
+        float driftToSide = Vector3.Dot(boatVelocity, transform.right);
+
+        // project boal velocity on forward axis --> forward speed of boat
+        float forwardSpeed = Vector3.Dot(boatVelocity, transform.forward);
+
+        // keel lift needs to be increased for proper impact
+        //float keelLiftValue = 0.5f * m_waterDensity * (driftToSide * driftToSide) * m_keelSize * 100.0f;
+        float keelLiftValue = 0.5f * m_waterDensity * Mathf.Abs(driftToSide) * m_keelSize * 20.0f;
+
+        // impact in opposite direction of drift
+        Vector3 keelLift = -transform.right * keelLiftValue * Mathf.Sign(driftToSide);
+
+        // drag needs to be separated from lift!
+
+        // decrease drag by 0.01f --> drag is very small and impacts the forward speed a little --> small drag to the front
+        // keel cuts the water while driving forward
+        float keelDragValue = 0.5f * m_waterDensity * (forwardSpeed * forwardSpeed) * m_keelSize * 0.005f;
+        Vector3 keelDrag = -transform.forward * keelDragValue * Mathf.Sign(forwardSpeed);
+
+        m_rigidbody.AddForce(keelLift + keelDrag, ForceMode.Force);
+    }
+
+    private void CalculateRudderForce()
+    {
+        // similar to apparent wind: water flows against boat --> negative velocity
+        // relative waterflow on rudder
+        Vector3 waterVelocity = m_rigidbody.linearVelocity; // TODO Strömung --> anpassen, wenn Strömungssimulation vorhanden
+        waterVelocity.y = 0.0f;
+
+        float rudderAngle = m_steeringInput * m_maxRudderAngle;
+
+        //float rudderForceValue = 0.5f * m_waterDensity * waterVelocity.magnitude * waterVelocity.magnitude * m_rudderSize * 0.05f;
+        float rudderForceValue = 0.5f * m_waterDensity * waterVelocity.magnitude * m_rudderSize * 0.05f;
+
+        // check force to the side
+        float rudderEfficiency = Mathf.Sin(rudderAngle * Mathf.Deg2Rad);
+
+        // vector to left/right --> cross product results in vector vertical on given vectors
+        Vector3 rudderDirection = Vector3.Cross(waterVelocity, Vector3.up).normalized;
+
+        Vector3 rudderForce = rudderDirection * rudderForceValue * rudderEfficiency;
+        rudderForce.y = 0.0f;
+
+        m_rigidbody.AddForceAtPosition(rudderForce, m_rudder.transform.position, ForceMode.Force);
+    }
+
+    private void CalculateWindOnHull()
+    {
+        Vector3 apparentWind = CalculateApprentWind();
+        apparentWind.y = 0.0f;
+
+        if(apparentWind.sqrMagnitude < 0.01f)
+        {
+            return;
+        }
+
+        float windDotRight = Vector3.Dot(apparentWind.normalized, transform.right);
+        float windDotForward = Vector3.Dot(apparentWind.normalized, transform.forward);
+
+        float effectiveSideArea = m_boatSideSize * Mathf.Abs(windDotRight);
+        float effectiveFrontArea = m_boatFrontSize * Mathf.Abs(windDotForward);
+
+        float hullDragCoefficient = 0.4f;
+
+        float windForceValue = 0.5f * m_airDensity * apparentWind.magnitude * apparentWind.magnitude * hullDragCoefficient;
+
+        Vector3 lateralForce = transform.right * Mathf.Sign(windDotRight) * effectiveSideArea * windForceValue;
+
+        Vector3 longitudinalForce = transform.forward * Mathf.Sign(windDotForward) * effectiveFrontArea * windForceValue;
+
+        Vector3 totalHullForce = lateralForce + longitudinalForce;
+
+        totalHullForce.y = 0.0f;
+
+        m_rigidbody.AddForceAtPosition(totalHullForce, transform.position + (transform.up * 1.0f), ForceMode.Force);
+    }
+
+    private void CalculateWaterResistance() // force agains boat forward direction
+    {
+        float boatSpeed = m_rigidbody.linearVelocity.magnitude;
+
+        // avoid jittering
+        if (boatSpeed < 0.01f)
+        {
+            return;
+        }
+
+        // linear drag = drag proportional to boat speed --> smooth movements, smooth braking
+        // quadratic drag = drag proportional to quadartic boat speed --> dominant at high speed
+        float linearDrag = 150.0f;
+        float quadraticDrag = 70.0f;
+
+        // simplified physics formula --> no real water and realistic boat physics
+        // result: boat brakes smooth with lower speed, brakes drasticly with higher speed
+        Vector3 dragForce = Vector3.zero;
+        if (m_gameManager.CurrentState == GameStates.SAILMODE)
+        {
+            dragForce = -m_rigidbody.linearVelocity.normalized * (boatSpeed * linearDrag + boatSpeed * boatSpeed * quadraticDrag);
+
+        }
+        else if(m_gameManager.CurrentState == GameStates.MOTORMODE)
+        {
+            dragForce = -m_rigidbody.linearVelocity.normalized * (boatSpeed * linearDrag + boatSpeed * boatSpeed * quadraticDrag + 500);
+        }
+
+        m_rigidbody.AddForce(dragForce, ForceMode.Force);
+    }
+
+    private void CalculateMotorForce() // max speed 7.9 knots in m/s --> 4.06m/s
+    {
+        if(m_fuel <= 0.0f)
+        {
+            return;
+        }
+
+        Vector3 motorForce = Vector3.zero;
+
+        float speed = Vector3.Dot(m_rigidbody.linearVelocity, transform.forward); // project velocity on forward vector
+
+        if (m_thrustStep > 0) // boat driving forward
+        {
+            motorForce = transform.forward * m_thrustStep * m_forwardForcePerStep;
+        }
+        else if (m_thrustStep < 0) // boat driving backward
+        {
+            if (speed > 0.1f) // braking needed
+            {
+                // braking needs force in the opposite direction to the travel direction
+                motorForce = transform.forward * m_thrustStep * m_forwardForcePerStep * m_motorBrakeModifier;
+            }
+            else
+            {
+                // driving backwards
+                motorForce = transform.forward * m_thrustStep * m_backwardForcePerStep;
+            }
+        }
+        Debug.Log(m_thrustStep); // TODO Debug Logs raus
+
+        motorForce.y = 0.0f;
+        if (m_thrustStep == 0 && m_rigidbody.linearVelocity.magnitude > 0.5f)
+        {
+            float neutralBrakeForce = 1500f;
+            motorForce += -m_rigidbody.linearVelocity.normalized * neutralBrakeForce;
+        }
+
+        m_rigidbody.AddForce(motorForce, ForceMode.Force);
+    }
+
+    private void ReduceFuel()
+    {
+        if(m_fuel < 0.0f)
+        {
+            m_fuel = 0.0f;
+            m_thrustStep = 0;
+            Debug.LogError("TANK LEER");
+            // TODO Game Over einbauen
+            return;
+        }
+
+        float baseFuelConsumption = 0.05f;
+        float fuelConsumptionPerThrust = 0.25f;
+        float totalFuelConsumption = baseFuelConsumption + Mathf.Abs(m_thrustStep) * fuelConsumptionPerThrust;
+
+        Debug.Log("Fuel Consumption " + totalFuelConsumption);
+
+        m_fuel -= totalFuelConsumption * Time.fixedDeltaTime;
+        Debug.Log("Fuel " + m_fuel);
+    }
+
+    private void CalculateSteering()
+    {
+        m_smoothedSteeringInput = Mathf.MoveTowards(
+            m_smoothedSteeringInput,
+            m_steeringInput,
+            Time.fixedDeltaTime * 2.0f
+        );
+
+        float speedFactor = Mathf.Clamp01(m_rigidbody.linearVelocity.magnitude / 5.0f);
+
+        float yawTorqueStrength = 25000f;
+
+        Vector3 uprightUp = Vector3.zero;
+
+        if (m_parentReference != null)
+        {
+            uprightUp = m_parentReference.up;
+        }
+        else
+        {
+            uprightUp = Vector3.up;
+        }
+
+        Vector3 torque = uprightUp * m_smoothedSteeringInput * yawTorqueStrength * speedFactor;
+
+        m_rigidbody.AddTorque(torque, ForceMode.Force);
+
+        if (m_gameManager.CurrentState == GameStates.MOTORMODE)
+        {
+            float rollTorque = -m_smoothedSteeringInput * m_rigidbody.linearVelocity.magnitude * 5000.0f;
+
+            m_rigidbody.AddRelativeTorque(new Vector3(0, 0, rollTorque), ForceMode.Force);
+        }
+    }
+
+    private void ApplyStability()
+    {
+        float rollAngle = transform.localEulerAngles.z;
+        if (rollAngle > 180) rollAngle -= 360;
+
+        float rollStabilityStrength = 80000f;
+        float rollDamping = 30000f;
+
+        float absRoll = Mathf.Abs(rollAngle);
+        float progressiveFactor = 1.0f;
+        if (absRoll > 15f)
+        {
+            progressiveFactor += Mathf.Pow((absRoll - 15f), 2) * 5.0f;
+        }
+
+        float rightingTorque = -Mathf.Sin(rollAngle * Mathf.Deg2Rad) * rollStabilityStrength * progressiveFactor;
+
+        Vector3 localAngularVel = transform.InverseTransformDirection(m_rigidbody.angularVelocity);
+        float rollDampingTorque = -localAngularVel.z * rollDamping;
+
+        m_rigidbody.AddRelativeTorque(new Vector3(0, 0, rightingTorque + rollDampingTorque));
+    }
+
+    private void BlockXRotation()
+    {
+        Vector3 currentEulerAngles = transform.localEulerAngles;
+        currentEulerAngles.x = 0;
+        transform.localEulerAngles = currentEulerAngles;
+    }
+
+    public void OnEnable()
+    {
+        if (m_motorThrustForwardAction != null)
+        {
+            m_motorThrustForwardAction.action.Enable();
+        }
+
+        if(m_motorThrustBackwardAction != null)
+        {
+            m_motorThrustBackwardAction.action.Enable();
+        }
+
+        if(m_motorThrustNeutralAction != null) 
+        { 
+            m_motorThrustNeutralAction.action.Enable();
+        }
+
+        if (m_steeringAction != null)
+        {
+            m_steeringAction.action.Enable();
+        }
+
+        if (m_changeMotorSailModeAction != null)
+        {
+            m_changeMotorSailModeAction.action.Enable();
+        }
+    }
+
+    public void OnDisable()
+    {
+        if (m_motorThrustForwardAction != null)
+        {
+            m_motorThrustForwardAction.action.Disable();
+        }
+
+        if (m_motorThrustBackwardAction != null)
+        {
+            m_motorThrustBackwardAction.action.Disable();
+        }
+
+        if (m_motorThrustNeutralAction != null)
+        {
+            m_motorThrustNeutralAction.action.Disable();
+        }
+
+        if (m_steeringAction != null)
+        {
+            m_steeringAction.action.Disable();
+        }
+
+        if (m_changeMotorSailModeAction != null)
+        {
+            m_changeMotorSailModeAction.action.Disable();
+        }
+    }
+
+    public void Start()
+    {
+        m_rigidbody = GetComponent<Rigidbody>();
+
+        // rigidbody setup
+        if (m_rigidbody == null)
+        {
+            m_rigidbody = gameObject.AddComponent<Rigidbody>();
+            m_rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX; // | RigidbodyConstraints.FreezeRotationZ |
+            m_rigidbody.angularDamping = 2.0f;
+            m_rigidbody.linearDamping = 0.0f;
+            m_rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
+            m_rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+            m_rigidbody.mass = 9000.0f;
+
+            m_rigidbody.centerOfMass = new Vector3(0.0f, -4.0f, 0.0f);
+        }
+
+        CalculateLiftAndDragTables();
+    }
+
+    public void Update()
+    {
+        if (m_gameManager.CurrentState == GameStates.MOTORMODE || m_gameManager.CurrentState == GameStates.SAILMODE)
+        {
+            // steering via 1d axis, possible in both modes
+            if (m_steeringAction != null)
+            {
+                m_steeringInput = m_steeringAction.action.ReadValue<float>();
+            }
+        }
+
+        if (m_changeMotorSailModeAction.action.triggered == true)
+        {
+            if(m_gameManager.CurrentState == GameStates.SAILMODE)
+            {
+                m_gameManager.SetState(GameStates.MOTORMODE);
+                Debug.Log("Motormode enabled!");
+            }
+            else if(m_gameManager.CurrentState == GameStates.MOTORMODE)
+            {
+                m_gameManager.SetState(GameStates.SAILMODE);
+                Debug.Log("Sailmode enabled!");
+            }
+        }
+
+        if (m_gameManager.CurrentState == GameStates.MOTORMODE)
+        {
+            // read input and increase or decrease thrust or set thrust to neutral position
+            if (m_motorThrustForwardAction != null && m_motorThrustForwardAction.action.triggered == true)
+            {
+                m_thrustStep = Mathf.Min(m_thrustStep + 1, m_maxThrustForwardSteps);
+            }
+
+            if (m_motorThrustBackwardAction != null && m_motorThrustBackwardAction.action.triggered == true)
+            {
+                m_thrustStep = Mathf.Max(m_thrustStep - 1, m_maxThrustBackwardSteps);
+            }
+
+            if (m_motorThrustNeutralAction != null && m_motorThrustNeutralAction.action.triggered == true)
+            {
+                m_thrustStep = 0;
+            }
+        }
+    }
+
+    public void FixedUpdate()
+    {
+        //// DEBUG //////////////////////////////////////////////////////////////////////////////
+        float speedKnot = m_rigidbody.linearVelocity.magnitude / m_msPerKnot;
+        Debug.Log(speedKnot + " knots");
+        //// DEBUG //////////////////////////////////////////////////////////////////////////////
+
+        if(m_gameManager.CurrentState == GameStates.MOTORMODE)
+        {
+            ReduceFuel();
+            CalculateMotorForce();
+            CalculateKeelForce();
+            CalculateWaterResistance();
+            CalculateWindOnHull();
+            CalculateRudderForce();
+            CalculateSteering();
+            ApplyStability();
+            BlockXRotation();
+
+            Debug.DrawRay(transform.position, m_rigidbody.linearVelocity * 10, Color.blue);
+        }
+
+        if (m_gameManager.CurrentState == GameStates.SAILMODE)
+        {
+            // TODO Kollisionssystem Damage durch zu hohe Wellen
+            CalculateKeelForce();
+            CalculateWaterResistance();
+            CalculateTotalSailForce();
+            CalculateWindOnHull();
+            CalculateRudderForce();
+            CalculateSteering();
+            ApplyStability();
+            BlockXRotation();
+
+            Debug.DrawRay(transform.position, m_rigidbody.linearVelocity * 10, Color.yellow);
+        }
+    }
+}

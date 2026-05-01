@@ -1,4 +1,5 @@
 using Dialogue;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Quest
@@ -46,6 +47,8 @@ namespace Quest
         private float m_totalFuelUsed;
         private float m_lastBoatHealth; //for delta tracking
         private float m_lastFuel; //for delta tracking
+
+        private HashSet<QuestData> m_completedQuests = new();
 
         public bool HasActiveQuest => m_activeQuest != null;
         public QuestData ActiveQuest => m_activeQuest;
@@ -95,6 +98,18 @@ namespace Quest
             m_totalFuelUsed += _fuelAmount;
 
             Debug.Log($"[QuestManager] Damage registered: {_fuelAmount} | Total: {m_totalFuelUsed}");
+        }
+
+        internal bool IsQuestCompleted(QuestData _quest)
+        {
+            return m_completedQuests.Contains(_quest);
+        }
+
+        internal IEnumerable<QuestData> GetCompletedQuests() //was List<QuestData> but IEnumerable with foreach is better for performance
+        {
+            return m_completedQuests;
+            //list is worse for performance
+            //return new List<QuestData>(m_completedQuests);
         }
 
         internal bool CanStartQuest(QuestData _quest) //later also use for DialogueSystem
@@ -318,6 +333,8 @@ namespace Quest
             };
 
             Debug.Log($"[QuestManager] Quest finished: {m_activeQuest.QuestName}");
+
+            m_completedQuests.Add(m_activeQuest);
             m_activeQuest = null;
             m_isQuestRunning = false;
 

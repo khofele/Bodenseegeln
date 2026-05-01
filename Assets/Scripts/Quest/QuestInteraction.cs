@@ -5,6 +5,8 @@ namespace Quest
 {
     public class QuestInteraction : MonoBehaviour
     {
+        [SerializeField] private bool m_showGizmos = true;
+
         [Header("Quest")]
         [SerializeField] private QuestData m_quest = null;
 
@@ -62,7 +64,7 @@ namespace Quest
 
         private void Update()
         {
-            CheckDockConditions();
+            CheckConditions();
             UpdateUI();
             UpdateActiveQuestIcon();
 
@@ -73,7 +75,7 @@ namespace Quest
             }
         }
 
-        private void CheckDockConditions()
+        private void CheckConditions()
         {
             if (m_boatRigidbody == null)
             {
@@ -88,7 +90,7 @@ namespace Quest
 
             if (m_isInteractable)
             {
-                Debug.LogWarning("[QuestInteraction.CheckDockConditions] is interactable");
+                //Debug.LogWarning("[QuestInteraction.CheckDockConditions] is interactable");
             }
 
             //TODO FUTURE: && IsBoatCorrectlyParked
@@ -146,8 +148,6 @@ namespace Quest
 
             float _dist = Vector3.Distance(m_boatTransform.position, transform.position);
             m_activeQuestIcon.SetActive(_dist <= m_visibilityDistance);
-
-            //TODO: place icon directly above the transform or use billboard (place in QuestInteraction prefab so that it is floating above the object but always facing the camera)
         }
 
         private void TryCompleteQuest()
@@ -168,6 +168,28 @@ namespace Quest
 
             QuestManager.Instance.HandleQuestInteraction(m_quest);
             //QuestResult _result = QuestManager.Instance.FinishQuestAndGetResult();
+        }
+
+        //---------------
+        //--- GIZMOS ---
+        //---------------
+        private void OnDrawGizmos()
+        {
+            if (!m_showGizmos)
+            {
+                return;
+            }
+
+            Gizmos.color = m_isInteractable ? Color.darkGreen : Color.darkOrange;
+
+            BoxCollider _col = GetComponent<BoxCollider>();
+            if (_col == null)
+            {
+                return;
+            }
+
+            Gizmos.matrix = transform.localToWorldMatrix;
+            Gizmos.DrawWireCube(_col.center, _col.size);
         }
     }
 }

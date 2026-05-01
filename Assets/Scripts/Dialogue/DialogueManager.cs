@@ -18,7 +18,7 @@ namespace Dialogue
 
             m_UI.Show(true);
 
-            int _startNode = DialogueStateManager.Instance.GetStartNode(_npc);
+            int _startNode = DialogueStateManager.Instance.GetStartNodeConsideringState(_npc); //DialogueStateManager.Instance.GetStartNode(_npc);
             SetNode(_startNode);
         }
 

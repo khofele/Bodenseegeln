@@ -36,11 +36,23 @@ namespace Dialogue
         [Header("Dialogue")]
         [SerializeField]
         private int m_startNodeID = 0;
+        //[SerializeField] 
+        //private int m_startNodeIDWhenQuestActive = -1;
+        [SerializeField]
+        private int m_startNodeIDOwnQuestActive = -1;
+        [SerializeField]
+        private int m_startNodeIDOtherQuestActive = -1;
+        [SerializeField]
+        private int m_startNodeIDOwnQuestCompleted = -1;
         [SerializeField]
         private List<DialogueNode> m_nodes = new List<DialogueNode>();
 
         internal NPC_ID NPCID => m_NPCID;
         internal int StartNodeID => m_startNodeID;
+        //internal int StartNodeIDWhenQuestActive => m_startNodeIDWhenQuestActive;
+        internal int StartNodeIDOwnQuestActive => m_startNodeIDOwnQuestActive;
+        internal int StartNodeIDOtherQuestActive => m_startNodeIDOtherQuestActive;
+        internal int StartNodeIDOwnQuestCompleted => m_startNodeIDOwnQuestCompleted;
         internal string Name => m_NPCName;
         internal Sprite Portrait => m_NPCPortrait;
 

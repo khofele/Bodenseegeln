@@ -115,6 +115,14 @@
 						<Property Name="RolloffRateBand1" Type="int32" Value="48"/>
 					</PropertyList>
 				</Effect>
+				<Effect Name="BoatEngine_Compressor" ID="{39FAAC5C-772D-41CA-8721-3630B3865BD4}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+					<PropertyList>
+						<Property Name="AttackTime" Type="Real32" Value="0.25"/>
+						<Property Name="Ratio" Type="Real32" Value="2.5"/>
+						<Property Name="ReleaseTime" Type="Real32" Value="1.2"/>
+						<Property Name="Threshold" Type="Real32" Value="-18"/>
+					</PropertyList>
+				</Effect>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

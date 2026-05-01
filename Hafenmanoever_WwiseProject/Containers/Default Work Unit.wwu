@@ -850,6 +850,11 @@
 												<Sound Name="boat_engineBackward_loop" ID="{A5E78819-373C-48EC-80F4-89ED5E532C2D}" ShortID="740227793">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>50</Value>
+															</ValueList>
+														</Property>
 														<Property Name="Pitch" Type="int32">
 															<ValueList>
 																<Value>-450</Value>
@@ -906,6 +911,11 @@
 												<Sound Name="boat_engineIdle_loop" ID="{776394D0-C9F4-46F3-9244-BCE93C81862B}" ShortID="681780144">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>50</Value>
+															</ValueList>
+														</Property>
 														<Property Name="Pitch" Type="int32">
 															<ValueList>
 																<Value>-600</Value>
@@ -962,6 +972,11 @@
 												<Sound Name="boat_engineForward_loop" ID="{728BD5CA-EED1-450B-9718-0D244AD898BF}" ShortID="899163723">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>50</Value>
+															</ValueList>
+														</Property>
 														<Property Name="MakeUpGain" Type="Real64">
 															<ValueList>
 																<Value>3</Value>
@@ -1024,6 +1039,11 @@
 										</Folder>
 										<Sound Name="boat_engineStart" ID="{8C384F8F-B5E1-48B8-A7BE-8DCCE5A54554}" ShortID="630189158">
 											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>50</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>-500</Value>
@@ -1076,6 +1096,11 @@
 										</Sound>
 										<Sound Name="boat_engineStop" ID="{D328F649-C0B6-4B37-89CE-BFCE5DCE4E95}" ShortID="791788780">
 											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>50</Value>
+													</ValueList>
+												</Property>
 												<Property Name="MakeUpGain" Type="Real64">
 													<ValueList>
 														<Value>5</Value>
@@ -2183,6 +2208,161 @@
 												</ObjectList>
 											</ObjectLists>
 										</RandomSequenceContainer>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="BoatWood" ID="{5E4213D2-65AB-45FF-A96B-9ACCFF8CE624}" ShortID="67118758">
+									<ChildrenList>
+										<Sound Name="boat_woodVibrateHeavy_loop" ID="{EFE09674-A684-490D-B01B-11F5C0D48D87}" ShortID="1014352166">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>30</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-650</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="boat_woodVibrateHeavy_loop" ID="{2B1074FD-C9FB-41E9-8E37-AEB0C9EF769F}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="50"/>
+														<Property Name="CrossfadeShape" Type="int16" Value="2"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.41389"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.42982"/>
+														<Property Name="LoopBegin" Type="Real64" Value="3.03979"/>
+														<Property Name="LoopEnd" Type="Real64" Value="16.15385"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>boat_woodVibrateHeavy_loop.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="425142125"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{8BC5D64E-2109-4BB9-8D0B-515290454AE5}" ShortID="953939167">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="BoatWoodVibrateHeavy_EQ" ID="{82F75F68-3BCD-4F04-AF34-6C6DCB40F8C1}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+													<EffectSlot Name="" ID="{34801422-B224-47C4-A5A3-CA45E9DE12C4}" ShortID="309124320">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																<ObjectRef Name="BoatWoodVibrationHeavy_Compressor" ID="{F085144D-282F-40F0-9520-574FD9A0A49E}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+											<ActiveSourceList>
+												<ActiveSource Name="boat_woodVibrateHeavy_loop" ID="{2B1074FD-C9FB-41E9-8E37-AEB0C9EF769F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="boat_woodVibrateLight_loop" ID="{B7508581-1A57-45EF-B321-F27597162C7F}" ShortID="925951531">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>40</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-900</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{45376DC6-14E2-4077-ACB6-719CB63C79D0}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="50"/>
+																	<Property Name="Min" Type="Real64" Value="-50"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-15</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="boat_woodVibrateLight_loop" ID="{D7657214-1802-4677-9A99-C11951D0D320}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="50"/>
+														<Property Name="CrossfadeShape" Type="int16" Value="2"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.42981"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.44575"/>
+														<Property Name="LoopBegin" Type="Real64" Value="1.32096"/>
+														<Property Name="LoopEnd" Type="Real64" Value="15.97878"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="17.77713"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>boat_woodVibrateLight_loop.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="627688009"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{44E04518-BD15-4F17-AC16-91519972B9CE}" ShortID="438530548">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="BoatWoodVibrateLight_EQ" ID="{CE79EF22-10DA-4564-9F82-B6559EDB41C8}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+													<EffectSlot Name="" ID="{7BFE94F7-08C8-4915-9608-54F8FBFA746C}" ShortID="108343820">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																<ObjectRef Name="BoatWoodVibrationLight_Compressor" ID="{106810AF-EAD4-4E6F-AE27-3458368743CD}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+											<ActiveSourceList>
+												<ActiveSource Name="boat_woodVibrateLight_loop" ID="{D7657214-1802-4677-9A99-C11951D0D320}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

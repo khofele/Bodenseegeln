@@ -867,7 +867,7 @@
 													<ChildrenList>
 														<AudioFileSource Name="boat_engineBackward_loop" ID="{79EA028D-84D2-4566-A2D3-6701859EDBCF}">
 															<PropertyList>
-																<Property Name="CrossfadeDuration" Type="Real64" Value="1682.292"/>
+																<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
 																<Property Name="FadeInDuration" Type="Real64" Value="0.3528"/>
 																<Property Name="FadeOutDuration" Type="Real64" Value="0.4536"/>
 																<Property Name="LoopBegin" Type="Real64" Value="2.95668"/>
@@ -923,10 +923,10 @@
 													<ChildrenList>
 														<AudioFileSource Name="boat_engineIdle_loop" ID="{B16796B6-E4DF-44E8-BF4F-C65797FF9065}">
 															<PropertyList>
-																<Property Name="CrossfadeDuration" Type="Real64" Value="1579.14"/>
+																<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
 																<Property Name="FadeInDuration" Type="Real64" Value="0.4872"/>
 																<Property Name="FadeOutDuration" Type="Real64" Value="0.4704"/>
-																<Property Name="LoopBegin" Type="Real64" Value="0.89036"/>
+																<Property Name="LoopBegin" Type="Real64" Value="3.02387"/>
 																<Property Name="LoopEnd" Type="Real64" Value="18.21043"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 															</PropertyList>
@@ -984,10 +984,10 @@
 													<ChildrenList>
 														<AudioFileSource Name="boat_engineForward_loop" ID="{5529B7B2-58AE-487C-A7F8-9AB1E5365604}">
 															<PropertyList>
-																<Property Name="CrossfadeDuration" Type="Real64" Value="1854.818"/>
+																<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
 																<Property Name="FadeInDuration" Type="Real64" Value="0.4255"/>
 																<Property Name="FadeOutDuration" Type="Real64" Value="0.4255"/>
-																<Property Name="LoopBegin" Type="Real64" Value="1.03824"/>
+																<Property Name="LoopBegin" Type="Real64" Value="3.0126"/>
 																<Property Name="LoopEnd" Type="Real64" Value="18.16071"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 															</PropertyList>

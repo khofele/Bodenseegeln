@@ -68,10 +68,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _Depth: -8
-    - _Displacement: 1.44
-    - _Edge_Foam_Depth: 0.13
-    - _Edge_Foam_Strength: 1
-    - _Foam_Scale: 1.8
+    - _Displacement: 1.22
+    - _Edge_Foam_Depth: 0.43
+    - _Edge_Foam_Strength: 1.09
+    - _Foam_Scale: 0.17
     - _Foam_Speed: 0.04
     - _Metallic: 0
     - _Normal_Strength: 2.4
@@ -93,5 +93,6 @@ Material:
     - _Foam_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Surface_Water_Color: {r: 0.22315687, g: 0.37254903, b: 0.23422295, a: 1}
     - _WaterOrigin: {r: 0, g: 0, b: 0, a: 0}
+    - _Wind: {r: 0, g: 0, b: 10, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -71,6 +71,12 @@
         },
         {
             "m_Id": "1898d98e70c0442d82b9f48b117cd9b1"
+        },
+        {
+            "m_Id": "e5cbae91d43c4386873d31f5aabaa7a6"
+        },
+        {
+            "m_Id": "23c5d7a0ea394a9fa033f786e97c99f4"
         }
     ],
     "m_Keywords": [],
@@ -3722,6 +3728,50 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "23c5d7a0ea394a9fa033f786e97c99f4",
+    "m_Guid": {
+        "m_GuidSerialized": "d3a30677-096c-4019-8707-9dce1b68e2dd"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "OutlineRadius",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "OutlineRadius",
+    "m_DefaultReferenceName": "_OutlineRadius",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": 0.0,
+    "m_FloatType": 0,
+    "m_LiteralFloatMode": false,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "23f09bc0add34f7ca9875da8e9cb8b4b",
@@ -7061,8 +7111,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 1364.9998779296875,
-            "y": 450.99993896484377,
+            "x": 1524.0,
+            "y": 388.0,
             "width": 208.0,
             "height": 326.0
         }
@@ -10698,7 +10748,7 @@
     "m_ObjectId": "b17daa3ac51f474eade911832b8a7cd0",
     "m_Title": "Depth Color",
     "m_Position": {
-        "x": -3236.0,
+        "x": -3235.999755859375,
         "y": 583.0
     }
 }
@@ -11154,6 +11204,12 @@
         },
         {
             "m_Id": "1898d98e70c0442d82b9f48b117cd9b1"
+        },
+        {
+            "m_Id": "e5cbae91d43c4386873d31f5aabaa7a6"
+        },
+        {
+            "m_Id": "23c5d7a0ea394a9fa033f786e97c99f4"
         }
     ]
 }
@@ -11895,8 +11951,8 @@
     "m_ObjectId": "cf65f8eda37f454f8fcebbe594b146c3",
     "m_Title": "3D Waves",
     "m_Position": {
-        "x": -599.0,
-        "y": -2382.0
+        "x": -598.9999389648438,
+        "y": -2381.999755859375
     }
 }
 
@@ -12880,6 +12936,39 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector4ShaderProperty",
+    "m_ObjectId": "e5cbae91d43c4386873d31f5aabaa7a6",
+    "m_Guid": {
+        "m_GuidSerialized": "31378911-5b9a-46d3-9d7a-11c8c9183e5f"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "BoatOutlinePosition",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "BoatOutlinePosition",
+    "m_DefaultReferenceName": "_BoatOutlinePosition",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": false,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 1,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "e62e643568054259ba37999bc886e686",
@@ -13409,8 +13498,8 @@
     "m_ObjectId": "f415407bd09549468a60dffafe80955f",
     "m_Title": "Refraction",
     "m_Position": {
-        "x": -3523.999755859375,
-        "y": -954.0
+        "x": -3523.99951171875,
+        "y": -953.9999389648438
     }
 }
 
@@ -13916,7 +14005,7 @@
     "m_ObjectId": "fcd7941dd1a04095a0d341e88972524a",
     "m_Title": "Edge Foam",
     "m_Position": {
-        "x": -1814.0,
+        "x": -1813.9998779296875,
         "y": 1544.0
     }
 }

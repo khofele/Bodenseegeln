@@ -2922,6 +2922,17 @@
 																	<ValueList>
 																		<Value>3</Value>
 																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{0B07AFE2-7F8F-4E67-89DE-2C8B69C559B3}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="1"/>
+																					<Property Name="Min" Type="Real64" Value="-1"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
 																</Property>
 															</PropertyList>
 															<ReferenceList>
@@ -3318,6 +3329,19 @@
 																		</ModifierInfo>
 																	</ModifierList>
 																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{A1C748BF-01C5-47FA-B0F9-C27920DFCAB2}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="2"/>
+																					<Property Name="Min" Type="Real64" Value="-2"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
 															</PropertyList>
 															<ReferenceList>
 																<Reference Name="Conversion">
@@ -3354,6 +3378,76 @@
 															</ObjectLists>
 															<ActiveSourceList>
 																<ActiveSource Name="env_collisionHeavyWater" ID="{39CA0318-D5C1-4D83-BC5C-7E4AFDAE7E76}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="env_collisionHeavyWood" ID="{1D62A093-6267-48D1-86A4-9134CFB04392}" ShortID="556606249">
+															<PropertyList>
+																<Property Name="OverrideEffect" Type="bool" Value="True"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-600</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{E6C485AA-C014-4D81-B53A-20C6CAC7644C}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="100"/>
+																					<Property Name="Min" Type="Real64" Value="-100"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-9</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="env_collisionHeavyWood" ID="{CCB80F20-E653-4642-B253-6DB25F788F93}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.04708"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.14188"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.2965"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>env_collisionHeavyWood.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1066911892"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{3A2A1B85-5518-426D-8DF3-CF1752827229}" ShortID="234842766">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="EnvBoatCollisionHeavyWood_EQ" ID="{C6ABA38D-989D-4646-869E-7C988542996A}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																	<EffectSlot Name="" ID="{2EFD5A18-6A81-4DCC-AFB7-95D9CFCA13F8}" ShortID="914272296">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																				<ObjectRef Name="EnvBoatCollisionWood_Compressor" ID="{91C5474B-B479-46C6-91EF-257E503F942C}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="env_collisionHeavyWood" ID="{CCB80F20-E653-4642-B253-6DB25F788F93}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>

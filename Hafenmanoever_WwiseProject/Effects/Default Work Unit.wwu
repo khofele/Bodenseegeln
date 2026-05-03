@@ -217,6 +217,51 @@
 								<Property Name="OnOffBand8" Type="bool" Value="True"/>
 							</PropertyList>
 						</Effect>
+						<Effect Name="EnvCollisionLightWater_EQ" ID="{C001CFFE-08C9-4936-9929-50F153468323}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+							<PropertyList>
+								<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+								<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
+								<Property Name="FrequencyBand1" Type="Real32" Value="120"/>
+								<Property Name="FrequencyBand2" Type="Real32" Value="250"/>
+								<Property Name="FrequencyBand3" Type="Real32" Value="800"/>
+								<Property Name="FrequencyBand4" Type="Real32" Value="2500"/>
+								<Property Name="FrequencyBand5" Type="Real32" Value="6000"/>
+								<Property Name="GainBand2" Type="Real32" Value="-2"/>
+								<Property Name="GainBand3" Type="Real32" Value="2"/>
+								<Property Name="GainBand4" Type="Real32" Value="3"/>
+								<Property Name="GainBand5" Type="Real32" Value="-2"/>
+								<Property Name="NumBands" Type="int32" Value="5"/>
+								<Property Name="OnOffBand3" Type="bool" Value="True"/>
+								<Property Name="OnOffBand4" Type="bool" Value="True"/>
+								<Property Name="OnOffBand5" Type="bool" Value="True"/>
+								<Property Name="QFactorBand3" Type="Real32" Value="1.2"/>
+							</PropertyList>
+						</Effect>
+						<Effect Name="EnvCollisionHeavyWater_EQ" ID="{6035E3D1-22AB-4134-B4AB-8CB64CDDF331}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+							<PropertyList>
+								<Property Name="FilterTypeBand1" Type="int32" Value="8"/>
+								<Property Name="FilterTypeBand2" Type="int32" Value="4"/>
+								<Property Name="FilterTypeBand7" Type="int32" Value="5"/>
+								<Property Name="FrequencyBand2" Type="Real32" Value="120"/>
+								<Property Name="FrequencyBand3" Type="Real32" Value="250"/>
+								<Property Name="FrequencyBand4" Type="Real32" Value="500"/>
+								<Property Name="FrequencyBand5" Type="Real32" Value="1200"/>
+								<Property Name="GainBand2" Type="Real32" Value="3"/>
+								<Property Name="GainBand3" Type="Real32" Value="3"/>
+								<Property Name="GainBand4" Type="Real32" Value="-2"/>
+								<Property Name="GainBand5" Type="Real32" Value="2"/>
+								<Property Name="GainBand6" Type="Real32" Value="3"/>
+								<Property Name="GainBand7" Type="Real32" Value="-4"/>
+								<Property Name="NumBands" Type="int32" Value="7"/>
+								<Property Name="OnOffBand3" Type="bool" Value="True"/>
+								<Property Name="OnOffBand4" Type="bool" Value="True"/>
+								<Property Name="OnOffBand5" Type="bool" Value="True"/>
+								<Property Name="OnOffBand6" Type="bool" Value="True"/>
+								<Property Name="OnOffBand7" Type="bool" Value="True"/>
+								<Property Name="QFactorBand1" Type="Real32" Value="0.7"/>
+								<Property Name="QFactorBand4" Type="Real32" Value="1.1"/>
+							</PropertyList>
+						</Effect>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Pitch Shifter" ID="{EB855AB1-E915-466B-8080-3E925C5B460D}" ShortID="412523829">

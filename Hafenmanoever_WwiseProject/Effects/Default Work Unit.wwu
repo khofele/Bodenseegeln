@@ -165,6 +165,58 @@
 								<Property Name="QFactorBand3" Type="Real32" Value="5.4"/>
 							</PropertyList>
 						</Effect>
+						<Effect Name="EnvBoatCollisionLightImpact_EQ" ID="{489FD03E-9AA4-4BA7-A8CB-CD2FF5431D69}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+							<PropertyList>
+								<Property Name="FilterTypeBand1" Type="int32" Value="8"/>
+								<Property Name="FilterTypeBand2" Type="int32" Value="4"/>
+								<Property Name="FilterTypeBand6" Type="int32" Value="5"/>
+								<Property Name="FrequencyBand1" Type="Real32" Value="50"/>
+								<Property Name="FrequencyBand2" Type="Real32" Value="91.89548"/>
+								<Property Name="FrequencyBand3" Type="Real32" Value="191.497"/>
+								<Property Name="FrequencyBand4" Type="Real32" Value="708.087"/>
+								<Property Name="FrequencyBand5" Type="Real32" Value="1717.878"/>
+								<Property Name="FrequencyBand6" Type="Real32" Value="3035.024"/>
+								<Property Name="GainBand2" Type="Real32" Value="2"/>
+								<Property Name="GainBand3" Type="Real32" Value="7.044369"/>
+								<Property Name="GainBand4" Type="Real32" Value="-4.996587"/>
+								<Property Name="GainBand5" Type="Real32" Value="-4"/>
+								<Property Name="GainBand6" Type="Real32" Value="-15.15358"/>
+								<Property Name="NumBands" Type="int32" Value="6"/>
+								<Property Name="OnOffBand3" Type="bool" Value="True"/>
+								<Property Name="OnOffBand4" Type="bool" Value="True"/>
+								<Property Name="OnOffBand5" Type="bool" Value="True"/>
+								<Property Name="OnOffBand6" Type="bool" Value="True"/>
+							</PropertyList>
+						</Effect>
+						<Effect Name="EnvBoatCollisionHeavy_EQ" ID="{AA642C35-73D5-450E-BE89-2491AE764813}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+							<PropertyList>
+								<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+								<Property Name="FilterTypeBand2" Type="int32" Value="4"/>
+								<Property Name="FilterTypeBand8" Type="int32" Value="5"/>
+								<Property Name="FrequencyBand1" Type="Real32" Value="35"/>
+								<Property Name="FrequencyBand2" Type="Real32" Value="80"/>
+								<Property Name="FrequencyBand3" Type="Real32" Value="136"/>
+								<Property Name="FrequencyBand4" Type="Real32" Value="240"/>
+								<Property Name="FrequencyBand5" Type="Real32" Value="500"/>
+								<Property Name="FrequencyBand6" Type="Real32" Value="850"/>
+								<Property Name="FrequencyBand7" Type="Real32" Value="1800"/>
+								<Property Name="FrequencyBand8" Type="Real32" Value="3500"/>
+								<Property Name="GainBand2" Type="Real32" Value="4"/>
+								<Property Name="GainBand3" Type="Real32" Value="6"/>
+								<Property Name="GainBand4" Type="Real32" Value="3"/>
+								<Property Name="GainBand5" Type="Real32" Value="-3"/>
+								<Property Name="GainBand6" Type="Real32" Value="-7"/>
+								<Property Name="GainBand7" Type="Real32" Value="-3"/>
+								<Property Name="GainBand8" Type="Real32" Value="-9"/>
+								<Property Name="NumBands" Type="int32" Value="8"/>
+								<Property Name="OnOffBand3" Type="bool" Value="True"/>
+								<Property Name="OnOffBand4" Type="bool" Value="True"/>
+								<Property Name="OnOffBand5" Type="bool" Value="True"/>
+								<Property Name="OnOffBand6" Type="bool" Value="True"/>
+								<Property Name="OnOffBand7" Type="bool" Value="True"/>
+								<Property Name="OnOffBand8" Type="bool" Value="True"/>
+							</PropertyList>
+						</Effect>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Pitch Shifter" ID="{EB855AB1-E915-466B-8080-3E925C5B460D}" ShortID="412523829">
@@ -203,6 +255,14 @@
 								<Property Name="Ratio" Type="Real32" Value="3"/>
 								<Property Name="ReleaseTime" Type="Real32" Value="0.25"/>
 								<Property Name="Threshold" Type="Real32" Value="-28"/>
+							</PropertyList>
+						</Effect>
+						<Effect Name="EnvBoatCollisionHeavyImpact_Compressor" ID="{4CE8D3E1-8437-4E4C-859B-DCA48CAFE0F9}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+							<PropertyList>
+								<Property Name="AttackTime" Type="Real32" Value="1.5"/>
+								<Property Name="Ratio" Type="Real32" Value="3"/>
+								<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
+								<Property Name="Threshold" Type="Real32" Value="-14"/>
 							</PropertyList>
 						</Effect>
 					</ChildrenList>

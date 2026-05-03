@@ -2579,6 +2579,492 @@
 								</PropertyContainer>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="Environment" ID="{241010D0-377A-42FB-AAA0-5146EC36C994}" ShortID="365702159">
+							<ChildrenList>
+								<Folder Name="EnvBoatCollision" ID="{ECC6E9DB-7388-4D0F-8240-667E6A895136}" ShortID="316018016">
+									<ChildrenList>
+										<Folder Name="EnvBoatCollisionLight" ID="{16CBD214-C546-42C6-B2CC-9CFAEEBDD662}" ShortID="531577531">
+											<ChildrenList>
+												<RandomSequenceContainer Name="env_collisionLightImpact" ID="{12C79AD8-2D1E-438C-AA25-6D12A46B3C6D}" ShortID="656583743">
+													<PropertyList>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>40</Value>
+															</ValueList>
+														</Property>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>10</Value>
+															</ValueList>
+														</Property>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-700</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{35D1DEC4-1173-44B3-8D63-58AA88F094A2}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="100"/>
+																			<Property Name="Min" Type="Real64" Value="-100"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="env_collisionLightImpact" ID="{4484A361-567C-4AB3-8B7B-1DBA198E28DB}" ShortID="853704785">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="env_collisionLightImpact" ID="{58150B94-DBB9-438D-AD71-490EF3003539}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0144"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.32059"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.08286"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>env_collisionLightImpact.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="137598962"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="env_collisionLightImpact" ID="{58150B94-DBB9-438D-AD71-490EF3003539}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="env_collisionLightImpact1" ID="{4B26821E-A4C4-4F79-904A-603D56E3B93F}" ShortID="1024366192">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="env_collisionLightImpact1" ID="{DF77FBC4-2044-450E-BB36-2642F4B03249}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.01657"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.22391"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="0.06632"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.05751"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>env_collisionLightImpact1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="922437653"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="env_collisionLightImpact1" ID="{DF77FBC4-2044-450E-BB36-2642F4B03249}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="env_collisionLightImpact2" ID="{2EC9EA75-0E0D-4EA1-AB0D-D2C134741A36}" ShortID="848922868">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="env_collisionLightImpact2" ID="{E387F3E3-55AB-4146-A29B-21BA4CEBF76E}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.01327"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.22279"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.03702"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>env_collisionLightImpact2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="527075343"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="env_collisionLightImpact2" ID="{E387F3E3-55AB-4146-A29B-21BA4CEBF76E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{47DA6BE8-908D-47B6-9F23-7EBC0E26036C}" ShortID="627323215">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="EnvBoatCollisionLightImpact_EQ" ID="{489FD03E-9AA4-4BA7-A8CB-CD2FF5431D69}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+												</RandomSequenceContainer>
+											</ChildrenList>
+										</Folder>
+										<Folder Name="EnvBoatCollisionHeavy" ID="{511FD873-B19D-4A2E-A205-4964A175CFC3}" ShortID="672191611">
+											<ChildrenList>
+												<BlendContainer Name="env_collisionHeavyImpact" ID="{5E5396D0-8E5B-4A13-8223-A185F73CC7FE}" ShortID="390227526">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<RandomSequenceContainer Name="env_collisionHeavyImpact1" ID="{C0587AF7-842B-459F-B5E5-9AB212BCE3C1}" ShortID="608939766">
+															<PropertyList>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>50</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>10</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-1200</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{344399BE-25C2-4810-B3C3-A95559E40F35}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="100"/>
+																					<Property Name="Min" Type="Real64" Value="-100"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-5</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="env_collisionHeavyImpact" ID="{4AC641CB-5E0E-4F68-B1C3-0CD939D03EDC}" ShortID="473347419">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>0.001</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_collisionHeavyImpact" ID="{6D82620B-57DF-40B1-8291-C2BFE3906835}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.00474"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.08105"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																				<Property Name="TrimBegin" Type="Real64" Value="0.01249"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_collisionHeavyImpact.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="928429837"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_collisionHeavyImpact" ID="{6D82620B-57DF-40B1-8291-C2BFE3906835}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="env_collisionHeavyImpact1" ID="{0AB4FD03-4240-4A76-BEF6-46D1BDF5C09E}" ShortID="752379652">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>0.001</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_collisionHeavyImpact1" ID="{01CA3928-9376-43C9-B3C4-086ED6C2890E}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.00496"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.05063"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																				<Property Name="TrimBegin" Type="Real64" Value="0.00901"/>
+																				<Property Name="TrimEnd" Type="Real64" Value="0.21875"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_collisionHeavyImpact1.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="21747592"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_collisionHeavyImpact1" ID="{01CA3928-9376-43C9-B3C4-086ED6C2890E}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="env_collisionHeavyImpact2" ID="{1006B512-7547-4519-8AC3-FA23BDC6E07B}" ShortID="182285069">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>0.001</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_collisionHeavyImpact2" ID="{87DD2A4D-ECFB-4D49-BDF9-26BABA86528A}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.00813"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.13429"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																				<Property Name="TrimBegin" Type="Real64" Value="0.05999"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_collisionHeavyImpact2.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="108181189"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_collisionHeavyImpact2" ID="{87DD2A4D-ECFB-4D49-BDF9-26BABA86528A}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{6FB1FB46-E027-4FB3-A32E-CA836F3DEA60}" ShortID="604551466">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="EnvBoatCollisionHeavy_EQ" ID="{AA642C35-73D5-450E-BE89-2491AE764813}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																	<EffectSlot Name="" ID="{A0CEE795-B745-4806-80E4-8A67F5E5B41F}" ShortID="72338424">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																				<ObjectRef Name="EnvBoatCollisionHeavyImpact_Compressor" ID="{4CE8D3E1-8437-4E4C-859B-DCA48CAFE0F9}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+														</RandomSequenceContainer>
+														<RandomSequenceContainer Name="env_collisionHeavyImpact2" ID="{485F8775-D0CB-493A-90DB-6C691E682D7A}" ShortID="25545747">
+															<PropertyList>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>50</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>10</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-1200</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{29F9FF95-F358-4B31-B4A5-239D15715CF2}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="100"/>
+																					<Property Name="Min" Type="Real64" Value="-100"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="env_collisionHeavyImpact3" ID="{A6CF1208-3705-478F-9757-8619AFE1F8FE}" ShortID="922306008">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_collisionHeavyImpact3" ID="{02D9A2C5-4F7F-4AE6-ACA9-5AC0F88AF154}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.0155"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.38602"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																				<Property Name="TrimBegin" Type="Real64" Value="0.02859"/>
+																				<Property Name="TrimEnd" Type="Real64" Value="0.59883"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_collisionHeavyImpact3.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="857592912"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_collisionHeavyImpact3" ID="{02D9A2C5-4F7F-4AE6-ACA9-5AC0F88AF154}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="env_collisionHeavyImpact4" ID="{4627D93B-A0DE-491E-89CA-57CADDE603D9}" ShortID="419750699">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_collisionHeavyImpact4" ID="{56C69490-7726-4765-B621-059E681FDB7A}">
+																			<PropertyList>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.16092"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																				<Property Name="TrimBegin" Type="Real64" Value="0.03902"/>
+																				<Property Name="TrimEnd" Type="Real64" Value="0.26879"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_collisionHeavyImpact4.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="875602288"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_collisionHeavyImpact4" ID="{56C69490-7726-4765-B621-059E681FDB7A}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="env_collisionHeavyImpact5" ID="{27EDE77D-9416-4A73-9C89-78AE0045A1A7}" ShortID="6804253">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_collisionHeavyImpact5" ID="{9E1268F3-5AE9-42EC-B634-39F3C374F137}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.00771"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.09833"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																				<Property Name="TrimBegin" Type="Real64" Value="0.04662"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_collisionHeavyImpact5.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="744868092"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_collisionHeavyImpact5" ID="{9E1268F3-5AE9-42EC-B634-39F3C374F137}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{52EFCE54-3F62-420A-945A-4241E9482F1B}" ShortID="178514587">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="EnvBoatCollisionHeavy_EQ" ID="{AA642C35-73D5-450E-BE89-2491AE764813}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																	<EffectSlot Name="" ID="{FE6101DB-FF76-479D-BEB0-D81DC84E2E9A}" ShortID="341272203">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																				<ObjectRef Name="EnvBoatCollisionHeavyImpact_Compressor" ID="{4CE8D3E1-8437-4E4C-859B-DCA48CAFE0F9}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+														</RandomSequenceContainer>
+													</ChildrenList>
+												</BlendContainer>
+											</ChildrenList>
+										</Folder>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

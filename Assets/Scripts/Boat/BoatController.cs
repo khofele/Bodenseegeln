@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,7 @@ public class BoatController : MonoBehaviour
 {
     private float m_msPerKnot = 0.514444f; // 0.51444m/s = 1 Knot
     private Rigidbody m_rigidbody = null;
+    private bool m_isBoatDrivingForward = true;
 
     // Force calculation
     private float m_airDensity = 1.2f; // kg/m^3
@@ -48,6 +50,10 @@ public class BoatController : MonoBehaviour
     public float Health { 
         get { return m_health; }
         set { m_health = value; }
+    }
+
+    public bool IsBoatDrivingForward {
+        get { return m_isBoatDrivingForward; }
     }
 
     // TODO Windvektor und Strömungsvektor einlesen
@@ -521,6 +527,12 @@ public class BoatController : MonoBehaviour
 
         m_fuel -= totalFuelConsumption * Time.fixedDeltaTime;
         Debug.Log("Fuel " + m_fuel);
+    }
+
+    // method for Water-Trail-Shader to check whether the boat is moving backwards or not
+    private void CheckThrustLevel() {
+        // if(m_thrustStep <)
+        // TODO: Implement, Rename Method
     }
 
     private void CalculateSteering()

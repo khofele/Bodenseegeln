@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,7 @@ public class BoatController : MonoBehaviour
 {
     private float m_msPerKnot = 0.514444f; // 0.51444m/s = 1 Knot
     private Rigidbody m_rigidbody = null;
+    private bool m_isBoatDrivingForward = true;
 
     // Force calculation
     private float m_airDensity = 1.2f; // kg/m^3
@@ -32,6 +34,8 @@ public class BoatController : MonoBehaviour
     private float m_mainSailVelocity = 0.0f; // rotation speed of changing sail angle --> needed for smooth damp; shows how much the sail rotation/sail angle is currently changing
     private float m_frontSailVelocity = 0.0f;
     private float m_smoothedWindAngle = 0.0f;
+    private bool m_isInButterfly = false;
+    private float m_lastMainWindSideSign = 1.0f; // save last side sign of main sail --> avoid jitters, stabilize butterfly mode
 
     // Motormode
     private int m_thrustStep = 0;
@@ -48,6 +52,11 @@ public class BoatController : MonoBehaviour
     public float Health { 
         get { return m_health; }
         set { m_health = value; }
+    }
+
+    public bool IsBoatDrivingForward
+    {
+        get { return m_isBoatDrivingForward; }
     }
 
     // TODO Windvektor und Strömungsvektor einlesen
@@ -276,6 +285,19 @@ public class BoatController : MonoBehaviour
 
             float absoluteWindAngle = Mathf.Abs(m_smoothedWindAngle);
 
+            // angle for vorwind-kurs --> angle between forward vector and apparentwind
+            float forwardWindAngle = Vector3.Angle(transform.forward, -apparentWind.normalized);
+
+            // butterfly mode within 160-165° + avoid jitters
+            if(forwardWindAngle > 165.0f && m_isInButterfly == false)
+            {
+                m_isInButterfly = true;
+            }
+            else if (m_isInButterfly == true && forwardWindAngle < 160.0f)
+            {
+                m_isInButterfly = false;
+            }
+
             float stabilityFactor = 1.0f;
 
             // determine if sail is somewhere + -90° --> 90° = dangerous-- > sails jump around
@@ -294,9 +316,43 @@ public class BoatController : MonoBehaviour
             // determine if wind comes from left or right side
             float windSide = Vector3.Dot(apparentWind.normalized, transform.right);
 
-            // avoid flickering and sail jumps
-            float mainWindSideSign = GetWindSideSign(windSide, m_currentMainSailAngle); // 1 = wind on right side, -1 = wind on left side
-            float frontWindSideSign = GetWindSideSign(windSide, m_currentFrontSailAngle);
+            float mainWindSideSign = 0.0f;
+
+            // avoid jitters, stabilize butterfly mode --> avoid swapping sides too fast
+            if (m_isInButterfly == true)
+            {
+                // 0.3f and -0.3f as threshold for sign swap --> boat needs to turn more than 0.3 to swap side signs from plus to minus
+                if (windSide > 0.3f)
+                {
+                    // windside > 0.3f --> wind pushing from right side
+                    // save last main wind side sign
+                    m_lastMainWindSideSign = 1.0f;
+                }
+                else if (windSide < -0.3f)
+                {
+                    // windside < -0.3f --> wind pushing from left side
+                    m_lastMainWindSideSign = -1.0f;
+                }
+
+                mainWindSideSign = m_lastMainWindSideSign;
+            }
+            else
+            {
+                mainWindSideSign = GetWindSideSign(windSide, m_currentMainSailAngle);
+                m_lastMainWindSideSign = mainWindSideSign;
+            }
+
+            float frontWindSideSign = 0.0f;
+            
+            if(m_isInButterfly == true)
+            {
+                // use opposite side sign of main sail if boat is in vorwind-kurs --> butterfly mode allowed
+                frontWindSideSign = -mainWindSideSign;
+            }
+            else
+            {
+                frontWindSideSign = GetWindSideSign(windSide, m_currentFrontSailAngle);
+            }
 
             // clamp sail angle to max current trimmed angle
             float mainSailTargetAngle = Mathf.Clamp(absoluteWindAngle, 0.0f, m_currentMainSailAngle);
@@ -521,6 +577,26 @@ public class BoatController : MonoBehaviour
 
         m_fuel -= totalFuelConsumption * Time.fixedDeltaTime;
         Debug.Log("Fuel " + m_fuel);
+    }
+
+    // method for water-trail-shader to check whether the boat is moving backwards or not
+    private void CheckBoatDrivingForward()
+    {
+        if(m_gameManager.CurrentState == GameStates.SAILMODE || m_gameManager.CurrentState == GameStates.MOTORMODE)
+        {
+            float dotProduct = Vector3.Dot(transform.forward, m_rigidbody.linearVelocity);
+
+            if(dotProduct > 0.0f)
+            {
+                m_isBoatDrivingForward = true;
+            }
+            else if (dotProduct < 0.0f)
+            {
+                m_isBoatDrivingForward = false;
+            }
+
+            Debug.Log("Driving forward " + m_isBoatDrivingForward);
+        }
     }
 
     private void CalculateSteering()
@@ -817,6 +893,8 @@ public class BoatController : MonoBehaviour
         GetMotorInput();
         GetSelectedSail();
         GetSailTrimInput();
+
+        CheckBoatDrivingForward();
     }
 
     public void FixedUpdate()
@@ -827,6 +905,20 @@ public class BoatController : MonoBehaviour
         float speedKnot = m_rigidbody.linearVelocity.magnitude / m_msPerKnot;
         Debug.Log(speedKnot + " knots");
         //// DEBUG //////////////////////////////////////////////////////////////////////////////
+
+        if(m_gameManager.CurrentState == GameStates.DIALOGMODE)
+        {
+            m_rigidbody.linearVelocity = Vector3.zero;
+            m_rigidbody.angularVelocity = Vector3.zero;
+            m_rigidbody.isKinematic = true;
+            BlockXRotation();
+
+            Debug.Log("DIALOG-MODE");
+        }
+        else
+        {
+            m_rigidbody.isKinematic = false;
+        }
 
         if(m_gameManager.CurrentState == GameStates.MOTORMODE)
         {

@@ -59,6 +59,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Sail_Choose_Main_Sail",
+                    "type": "Button",
+                    "id": "7919f5c5-1051-4884-80a7-1b58548b1c15",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sail_Choose_Front_Sail",
+                    "type": "Button",
+                    "id": "029c2f1e-f55d-49f5-88f4-630e125017a2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sail_Choose_Both_Sails",
+                    "type": "Button",
+                    "id": "ab713012-1573-4eb2-ae0d-3bd9f46acc09",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sail_Trim",
+                    "type": "Value",
+                    "id": "3c791902-05c5-4638-a778-e6cdff9a6a2e",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -193,6 +229,72 @@
                     "action": "Change_Motor_Sail_Mode",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "67dbd83c-5762-4f30-8b14-260f5315c4e3",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sail_Choose_Main_Sail",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "892f522f-39dc-40d7-bfa8-2be4b459ccb8",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sail_Choose_Front_Sail",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5547a905-462a-4665-a099-aef259c63b97",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sail_Choose_Both_Sails",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "6d1bb859-4328-4072-a255-5a2efe941abb",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sail_Trim",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "f989958c-6543-4961-bba1-6250e44da65e",
+                    "path": "<Keyboard>/comma",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sail_Trim",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "7e6988c1-5a10-4663-9a7a-c89da6819ab1",
+                    "path": "<Keyboard>/period",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sail_Trim",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

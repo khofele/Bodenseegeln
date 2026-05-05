@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_BoatOutline 1
-  m_Shader: {fileID: -6465566751694194690, guid: 9cc2b5ea08d80104786ecdf2999b0979, type: 3}
+  m_Name: M_BoatTrail 3
+  m_Shader: {fileID: -6465566751694194690, guid: 5661d5392cff3af4a822f0536c9e5a6a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -38,20 +38,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FadeLength: 2
-    - _FoamScale: 1.89
+    - _Alpha_Clipping: 0.18
+    - _PI_Mulitplier: 2.69
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed_debug: 0
-    - _StartTime: 0
-    - _WaveScale: 5.22
-    - _WaveSpeed: 0.33
-    - _WaveSpeed_1: 0.55
-    - _Wave_Ammount: 5
-    m_Colors: []
+    - _Rand: 3.63
+    - _Speed: 0.16
+    m_Colors:
+    - _Vector2: {r: 0.81, g: 0.09, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &5868232326855511282
+--- !u!114 &7437779021879553512
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

@@ -14,7 +14,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -38,11 +38,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _FadeLength: 2
     - _FoamScale: 2.16
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Speed_debug: 0
+    - _StartTime: 0
     - _WaveScale: 5.39
-    - _WaveSpeed: 7.49
+    - _WaveSpeed: 0.2
     - _WaveSpeed_1: 0.51
     - _Wave_Ammount: 7.8
     m_Colors: []

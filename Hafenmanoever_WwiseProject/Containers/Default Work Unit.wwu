@@ -3456,6 +3456,162 @@
 										</Folder>
 									</ChildrenList>
 								</Folder>
+								<Folder Name="EnvMap" ID="{9FEC81C3-AF1A-4806-9440-3D6354EC1FE4}" ShortID="311928717">
+									<ChildrenList>
+										<Sound Name="env_closeMap" ID="{0FF61C50-9109-4173-96D4-4EA6BAB6A20C}" ShortID="326530550">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>8</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-150</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="env_closeMap" ID="{ED83A6A0-19CD-43B4-B35A-6A89DD8EA7DB}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.069"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.46688"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.10482"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.10074"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>env_closeMap.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="541681675"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{18B7A6D3-E824-4286-A2FB-665D9319BEC7}" ShortID="721540900">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="EnvMapClose_EQ" ID="{6953A9DA-B51B-4297-91C7-782E99DBA7E7}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+													<EffectSlot Name="" ID="{7723F319-ECD1-407D-9EF1-750B7E9E4E70}" ShortID="954034131">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																<ObjectRef Name="EnvMapClose_Compressor" ID="{631AD044-B0ED-4A66-BA45-1CEF172ADFFE}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+											<ActiveSourceList>
+												<ActiveSource Name="env_closeMap" ID="{ED83A6A0-19CD-43B4-B35A-6A89DD8EA7DB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="env_openMap" ID="{9957198F-BF30-49DA-98CE-0E460E32BA92}" ShortID="1066162838">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>20</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>100</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{A00CCCAF-D095-4A27-A980-2795D3DF7D90}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="50"/>
+																	<Property Name="Min" Type="Real64" Value="-50"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{35BBD79B-844C-451A-A664-7E0E82BD1602}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="1"/>
+																	<Property Name="Min" Type="Real64" Value="-1"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="env_openMap" ID="{C942770A-BF6C-4944-9687-9837FD6F3AB3}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.09521"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.20773"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.17605"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.1959"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>env_openMap.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="168246796"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{5D51E1F5-553E-4859-A818-F44A55E0BBE0}" ShortID="779437660">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="EnvMapOpen_EQ" ID="{85D4E121-2412-4CD3-8D3A-7C03FEC275D1}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+													<EffectSlot Name="" ID="{444C5AB9-A4A3-4FAA-8F5B-EDBBCEFADF8E}" ShortID="732561090">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																<ObjectRef Name="EnvOpenMap_Compressor" ID="{CF391A9F-2023-48B8-BAF9-A42DF64B2D96}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+											<ActiveSourceList>
+												<ActiveSource Name="env_openMap" ID="{C942770A-BF6C-4944-9687-9837FD6F3AB3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

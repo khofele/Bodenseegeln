@@ -38,9 +38,9 @@ public class BoatController : MonoBehaviour
     private float m_lastMainWindSideSign = 1.0f; // save last side sign of main sail --> avoid jitters, stabilize butterfly mode
 
     // Motormode
-    private int m_thrustStep = 0;
-    private int m_maxThrustForwardSteps = 3;
-    private int m_maxThrustBackwardSteps = -3;
+    private float m_thrustStep = 0.0f;
+    private float m_maxThrustForwardSteps = 3.0f;
+    private float m_maxThrustBackwardSteps = -3.0f;
     private float m_forwardForcePerStep = 700.0f;
     private float m_backwardForcePerStep = 300.0f;
     private float m_steeringInput = 0.0f;
@@ -529,11 +529,11 @@ public class BoatController : MonoBehaviour
 
         float speed = Vector3.Dot(m_rigidbody.linearVelocity, transform.forward); // project velocity on forward vector
 
-        if (m_thrustStep > 0) // boat driving forward
+        if (m_thrustStep > 0.0f) // boat driving forward
         {
             motorForce = transform.forward * m_thrustStep * m_forwardForcePerStep;
         }
-        else if (m_thrustStep < 0) // boat driving backward
+        else if (m_thrustStep < 0.0f) // boat driving backward
         {
             if (speed > 0.1f) // braking needed
             {
@@ -546,10 +546,10 @@ public class BoatController : MonoBehaviour
                 motorForce = transform.forward * m_thrustStep * m_backwardForcePerStep;
             }
         }
-        Debug.Log(m_thrustStep); // TODO Debug Logs raus
+        Debug.Log("thrust step " + m_thrustStep); // TODO Debug Logs raus
 
         motorForce.y = 0.0f;
-        if (m_thrustStep == 0 && m_rigidbody.linearVelocity.magnitude > 0.5f)
+        if (m_thrustStep == 0.0f && m_rigidbody.linearVelocity.magnitude > 0.5f)
         {
             float neutralBrakeForce = 1500f;
             motorForce += -m_rigidbody.linearVelocity.normalized * neutralBrakeForce;
@@ -563,7 +563,7 @@ public class BoatController : MonoBehaviour
         if(m_fuel < 0.0f)
         {
             m_fuel = 0.0f;
-            m_thrustStep = 0;
+            m_thrustStep = 0.0f;
             Debug.LogError("TANK LEER");
             // TODO Game Over einbauen
             return;
@@ -748,19 +748,19 @@ public class BoatController : MonoBehaviour
         if (m_gameManager.CurrentState == GameStates.MOTORMODE)
         {
             // read input and increase or decrease thrust or set thrust to neutral position
-            if (m_motorThrustForwardAction != null && m_motorThrustForwardAction.action.triggered == true)
+            if (m_motorThrustForwardAction != null && m_motorThrustForwardAction.action.IsPressed() == true)
             {
-                m_thrustStep = Mathf.Min(m_thrustStep + 1, m_maxThrustForwardSteps);
+                m_thrustStep = Mathf.Min(m_thrustStep + 0.005f, m_maxThrustForwardSteps);
             }
 
-            if (m_motorThrustBackwardAction != null && m_motorThrustBackwardAction.action.triggered == true)
+            if (m_motorThrustBackwardAction != null && m_motorThrustBackwardAction.action.IsPressed() == true)
             {
-                m_thrustStep = Mathf.Max(m_thrustStep - 1, m_maxThrustBackwardSteps);
+                m_thrustStep = Mathf.Max(m_thrustStep - 0.005f, m_maxThrustBackwardSteps);
             }
 
             if (m_motorThrustNeutralAction != null && m_motorThrustNeutralAction.action.triggered == true)
             {
-                m_thrustStep = 0;
+                m_thrustStep = 0.0f;
             }
         }
     }

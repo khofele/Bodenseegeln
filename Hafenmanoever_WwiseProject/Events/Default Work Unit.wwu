@@ -120,6 +120,9 @@
 										<Event Name="mission_moneyGain" ID="{A7A23103-4585-49EA-9B9F-2DDDE29D6AC0}">
 											<ChildrenList>
 												<Action Name="" ID="{0AB0C8DE-D4F3-4404-A7D2-2513400A5B25}" ShortID="547593643">
+													<PropertyList>
+														<Property Name="Delay" Type="Real64" Value="0.2"/>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="mission_moneyGain" ID="{47F9E818-89F3-45A5-BD39-6ABB0B2A9764}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
@@ -138,6 +141,9 @@
 										<Event Name="mission_moneySpend" ID="{DDC02CF0-71A4-44A4-99EC-FF6928203F7D}">
 											<ChildrenList>
 												<Action Name="" ID="{588F7AE3-2E13-402D-AC73-467F80011072}" ShortID="704953978">
+													<PropertyList>
+														<Property Name="Delay" Type="Real64" Value="0.3"/>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="mission_moneySpend" ID="{951B8DB0-8E39-4DD5-B4F9-BA9D16111582}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>

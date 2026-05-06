@@ -6,9 +6,9 @@ public class BoatController : MonoBehaviour
 {
     private float m_msPerKnot = 0.514444f; // 0.51444m/s = 1 Knot
     private Rigidbody m_rigidbody = null;
-    private bool m_isBoatDrivingForward = true;
+    private bool m_isBoatDrivingForward = true; // shader input
 
-    // Force calculation
+    // FORCE CALCULATION FIELDS
     private float m_airDensity = 1.2f; // kg/m^3
     private float m_waterDensity = 1000.0f; // kg/m^3
     private Vector3 m_apparentWind = Vector3.zero;
@@ -18,7 +18,7 @@ public class BoatController : MonoBehaviour
     private float m_rudderSize = 2.0f; // m^2
     private float m_maxRudderAngle = 30.0f; // max 30°
 
-    // Sail
+    // SAILMODE FIELDS
     private float m_mainSailSize = 52.5f; // m^2
     private float m_frontSailSize = 41.0f; // m^2
     private float[] m_liftTable = new float[181];
@@ -37,7 +37,7 @@ public class BoatController : MonoBehaviour
     private bool m_isInButterfly = false;
     private float m_lastMainWindSideSign = 1.0f; // save last side sign of main sail --> avoid jitters, stabilize butterfly mode
 
-    // Motormode
+    // MOTORMODE FIELDS
     private float m_thrustStep = 0.0f;
     private float m_maxThrustForwardSteps = 3.0f;
     private float m_maxThrustBackwardSteps = -3.0f;
@@ -49,6 +49,7 @@ public class BoatController : MonoBehaviour
     [SerializeField] private float m_fuel = 250.0f; // TODO SerializedField raus
     private float m_health = 100.0f;
 
+    // PROPERTIES
     public float Health { 
         get { return m_health; }
         set { m_health = value; }
@@ -59,14 +60,16 @@ public class BoatController : MonoBehaviour
         get { return m_isBoatDrivingForward; }
     }
 
-    // TODO Windvektor und Strömungsvektor einlesen
+    // TODO Windvektor und ggf. Strömungsvektor einlesen
 
-    // INPUT-ACTIONS
+    // REFERENCES
     [SerializeField] private GameManager m_gameManager = null;
     [SerializeField] private Transform m_parentReference = null;
     [SerializeField] private GameObject m_mainSail = null;
     [SerializeField] private GameObject m_frontSail = null;
     [SerializeField] private GameObject m_rudder = null;
+
+    // INPUT ACTION REFERENCES
     [SerializeField] private InputActionReference m_steeringAction = null;
     [SerializeField] private InputActionReference m_rudderNeutralAction = null;
     [SerializeField] private InputActionReference m_changeMotorSailModeAction = null;
@@ -189,21 +192,28 @@ public class BoatController : MonoBehaviour
             dragCoefficient = GetCoefficient(m_dragTable, angleWindSail);
         }
 
+        // liftforce direction orthogonal to wind
         Vector3 liftForce = liftDirection * sideSign * sailForceValue * liftCoefficient;
+
+        // dragforce in wind direction
         Vector3 dragForce = apparentWind.normalized * sailForceValue * dragCoefficient;
 
+        // Heeling = Krängung
         float rollAngle = transform.localEulerAngles.z;
+
+        // clamp roll angle to -180° - 180°
         if (rollAngle > 180.0f)
         {
             rollAngle -= 360.0f;
         }
 
-        float absRoll = Mathf.Abs(rollAngle);
-        float heelFactor = 1.0f;
+        float absoluteRollAngle = Mathf.Abs(rollAngle);
+        float heelFactor = 1.0f; // modifier if needed
 
-        if (absRoll > 10.0f)
+        // if boot rolls more than 15° sail start to become inefficient --> linear downgrade
+        if (absoluteRollAngle > 15.0f)
         {
-            heelFactor = Mathf.Clamp01(1.0f - ((absRoll - 10.0f) / 10.0f));
+            heelFactor = Mathf.Clamp01(1.0f - ((absoluteRollAngle - 15.0f) / 6.0f));
         }
 
         return (liftForce + dragForce) * 1.8f * heelFactor;
@@ -216,10 +226,12 @@ public class BoatController : MonoBehaviour
         Vector3 totalSailForce = mainSailForce + frontSailForce;
         totalSailForce.y = 0.0f;
 
+        // apply lift force
         m_rigidbody.AddForce(transform.forward * Vector3.Dot(totalSailForce, transform.forward), ForceMode.Force);
 
         float angleToWind = Vector3.Angle(transform.forward, -CalculateApprentWind().normalized);
 
+        // Heel Factor = Krängung
         float heelIntensity = 0.0f;
         if (angleToWind >= 80f && angleToWind <= 100f)
         {
@@ -242,9 +254,9 @@ public class BoatController : MonoBehaviour
             heelIntensity = 0.2f;
         }
 
-        Vector3 lateralSailForce = transform.right * Vector3.Dot(totalSailForce, transform.right) * heelIntensity;
-        Vector3 sailLeverPoint = transform.position + (transform.up * 2.0f);
-        m_rigidbody.AddForceAtPosition(lateralSailForce, sailLeverPoint, ForceMode.Force);
+        Vector3 lateralSailForce = transform.right * Vector3.Dot(totalSailForce, transform.right) * heelIntensity; // side force
+        Vector3 sailLeverPoint = transform.position + (transform.up * 2.0f); // apply force 2m above boat
+        m_rigidbody.AddForceAtPosition(lateralSailForce, sailLeverPoint, ForceMode.Force); // apply heeling
     }
 
     private void SailTrimming()
@@ -253,6 +265,7 @@ public class BoatController : MonoBehaviour
         {
             float ropeInput = m_trimInput * m_trimSpeed * Time.fixedDeltaTime;
 
+            // trim chosen sail
             if (m_currentSail == Sails.MAINSAIL || m_currentSail == Sails.BOTHSAILS)
             {
                 m_currentMainSailAngle = Mathf.Clamp(m_currentMainSailAngle + ropeInput, 0.0f, m_maxSailAngle);
@@ -398,6 +411,7 @@ public class BoatController : MonoBehaviour
 
     private void ResetSails()
     {
+        // resets sails for switching to motor mode
         m_mainSail.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         m_frontSail.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         Debug.Log("Segel werden eingeholt!");
@@ -466,24 +480,35 @@ public class BoatController : MonoBehaviour
             return;
         }
 
+        // wind direction relative to boat vectors (forward and right)
+        // 1 = wind from right side
+        // -1 = wind from left side
         float windDotRight = Vector3.Dot(apparentWind.normalized, transform.right);
+        // 1 = wind from behind
+        // -1 = wind from front 
         float windDotForward = Vector3.Dot(apparentWind.normalized, transform.forward);
 
+        // calculate wind effect
         float effectiveSideArea = m_boatSideSize * Mathf.Abs(windDotRight);
         float effectiveFrontArea = m_boatFrontSize * Mathf.Abs(windDotForward);
 
+        // modifier
         float hullDragCoefficient = 0.4f;
 
+        // calculate wind force value
         float windForceValue = 0.5f * m_airDensity * apparentWind.magnitude * apparentWind.magnitude * hullDragCoefficient;
 
+        // side force
         Vector3 lateralForce = transform.right * Mathf.Sign(windDotRight) * effectiveSideArea * windForceValue;
 
+        // front/back force
         Vector3 longitudinalForce = transform.forward * Mathf.Sign(windDotForward) * effectiveFrontArea * windForceValue;
 
         Vector3 totalHullForce = lateralForce + longitudinalForce;
 
         totalHullForce.y = 0.0f;
 
+        // apply force 1m above boat --> lever effect --> heeling
         m_rigidbody.AddForceAtPosition(totalHullForce, transform.position + (transform.up * 1.0f), ForceMode.Force);
     }
 
@@ -503,7 +528,7 @@ public class BoatController : MonoBehaviour
         float quadraticDrag = 70.0f;
 
         // simplified physics formula --> no real water and realistic boat physics
-        // result: boat brakes smooth with lower speed, brakes drasticly with higher speed
+        // result: boat brakes smooth with lower speed, brakes drasticly with higher speed especially in motor mode --> just for the feeling, no proper physics formula
         Vector3 dragForce = Vector3.zero;
         if (m_gameManager.CurrentState == GameStates.SAILMODE)
         {
@@ -548,11 +573,11 @@ public class BoatController : MonoBehaviour
         }
         Debug.Log("thrust step " + m_thrustStep); // TODO Debug Logs raus
 
+        // braking over time without thrust
         motorForce.y = 0.0f;
         if (m_thrustStep == 0.0f && m_rigidbody.linearVelocity.magnitude > 0.5f)
         {
-            float neutralBrakeForce = 1500f;
-            motorForce += -m_rigidbody.linearVelocity.normalized * neutralBrakeForce;
+            motorForce += -m_rigidbody.linearVelocity.normalized * 1500.0f; // 1500.0 = brake force modifier
         }
 
         m_rigidbody.AddForce(motorForce, ForceMode.Force);
@@ -569,6 +594,7 @@ public class BoatController : MonoBehaviour
             return;
         }
 
+        // calculate fuel consumption based on thrust level
         float baseFuelConsumption = 0.05f;
         float fuelConsumptionPerThrust = 0.25f;
         float totalFuelConsumption = baseFuelConsumption + Mathf.Abs(m_thrustStep) * fuelConsumptionPerThrust;
@@ -652,30 +678,42 @@ public class BoatController : MonoBehaviour
         m_rigidbody.AddTorque(m_parentReference.up * yawTorque, ForceMode.Force);
     }
 
-    private void ApplyStability()
+    private void ApplyStability() // applies stability --> boat won't heel or rotate too much
     {
         float rollAngle = transform.localEulerAngles.z;
-        if (rollAngle > 180) rollAngle -= 360;
 
+        // clamp roll angle to -180° - 180°
+        if (rollAngle > 180.0f)
+        {
+            rollAngle -= 360.0f;
+        }
+
+        // modifiers
         float rollStabilityStrength = 80000.0f;
         float rollDamping = 30000.0f;
 
-        float absRoll = Mathf.Abs(rollAngle);
+        // absolute heeling
+        float absoluteRollAngle = Mathf.Abs(rollAngle);
         float progressiveFactor = 1.0f;
-        if (absRoll > 15.0f)
+
+        // stability rises above 15° --> boat won't heel too much, exponential rise of stability
+        if (absoluteRollAngle > 15.0f)
         {
-            progressiveFactor += Mathf.Pow((absRoll - 15.0f), 2.0f) * 5.0f;
+            progressiveFactor += Mathf.Pow((absoluteRollAngle - 15.0f), 2.0f) * 5.0f;
         }
 
+        // "lifting" boat upwards
         float rightingTorque = -Mathf.Sin(rollAngle * Mathf.Deg2Rad) * rollStabilityStrength * progressiveFactor;
 
-        Vector3 localAngularVel = transform.InverseTransformDirection(m_rigidbody.angularVelocity);
-        float rollDampingTorque = -localAngularVel.z * rollDamping;
+        // rotational angle velocity in local coordinates
+        Vector3 localAngularVelocity = transform.InverseTransformDirection(m_rigidbody.angularVelocity);
+        // brake movement --> avoid jitters and oscillations
+        float rollDampingTorque = -localAngularVelocity.z * rollDamping;
 
         m_rigidbody.AddRelativeTorque(new Vector3(0, 0, rightingTorque + rollDampingTorque));
     }
 
-    private void BlockXRotation()
+    private void BlockXRotation() // block x rotation --> boat won't dive
     {
         Vector3 currentEulerAngles = transform.localEulerAngles;
         currentEulerAngles.x = 0;
@@ -713,6 +751,7 @@ public class BoatController : MonoBehaviour
 
                 if (Mathf.Abs(rawSteeringInput) > 0.01f)
                 {
+                    // accumulate steering input
                     m_steeringInput += rawSteeringInput * Time.deltaTime;
                     Debug.Log("steering input " + m_steeringInput);
                 }
@@ -909,11 +948,10 @@ public class BoatController : MonoBehaviour
             m_rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
             m_rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             m_rigidbody.mass = 9000.0f;
-
             m_rigidbody.centerOfMass = new Vector3(0.0f, -4.0f, 0.0f);
         }
 
-        CalculateLiftAndDragTables();
+        CalculateLiftAndDragTables(); // for lift and drag coefficients for sail force
     }
 
     public void Update()

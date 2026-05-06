@@ -326,6 +326,62 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Environment" ID="{F7A400A8-0F91-4630-953E-8D8200BDD709}" ShortID="5191634">
+					<ChildrenList>
+						<Folder Name="EnvMap" ID="{EE5323EA-D0DA-492D-9269-9E272B2ADA97}" ShortID="907910300">
+							<ChildrenList>
+								<Event Name="env_openMap" ID="{CDDD7ED7-D15E-4FF0-A4A0-6DE3C8A5E91E}">
+									<ChildrenList>
+										<Action Name="" ID="{4B763EB8-6123-4031-8A9E-59F126FDD1A7}" ShortID="557881683">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="env_openMap" ID="{9957198F-BF30-49DA-98CE-0E460E32BA92}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="env_closeMap" ID="{B85F7502-CB9A-4776-AD7F-36FF227A376C}">
+									<ChildrenList>
+										<Action Name="" ID="{3E94AB90-638C-4F35-A094-5EC131172F5D}" ShortID="312381647">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="env_closeMap" ID="{0FF61C50-9109-4173-96D4-4EA6BAB6A20C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="EnvCollision" ID="{B3C04D73-FBE5-4756-9BA7-01845FF3E233}" ShortID="764248952">
+							<ChildrenList>
+								<Event Name="env_boatCollisionLight" ID="{EF01BE52-22F9-439B-96A7-FAFAB1AA401D}">
+									<ChildrenList>
+										<Action Name="" ID="{14F12EA1-6068-4851-9C44-8565A06178EC}" ShortID="72648359">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="env_collisionLightImpact" ID="{D03735BA-B263-4849-AE79-9B4E2B355A50}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="env_boatCollisionHeavy" ID="{72E160B7-8821-4508-9C36-326835089396}">
+									<ChildrenList>
+										<Action Name="" ID="{DBF7CD07-41D0-44F0-AE7E-E30E273DD2DC}" ShortID="263502893">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="env_collisionHeavyImpact" ID="{5E5396D0-8E5B-4A13-8223-A185F73CC7FE}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

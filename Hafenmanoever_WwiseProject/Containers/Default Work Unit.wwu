@@ -1107,7 +1107,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>0</XPos>
-																								<YPos>-0</YPos>
+																								<YPos>0</YPos>
 																								<Flags>0</Flags>
 																								<SegmentShape>Log1</SegmentShape>
 																							</Point>
@@ -1328,7 +1328,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>-2.5</XPos>
-																								<YPos>-0</YPos>
+																								<YPos>0</YPos>
 																								<Flags>0</Flags>
 																							</Point>
 																							<Point>
@@ -1338,7 +1338,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>3.0581</XPos>
-																								<YPos>-0</YPos>
+																								<YPos>0</YPos>
 																								<Flags>0</Flags>
 																							</Point>
 																							<Point>
@@ -2566,7 +2566,7 @@
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
-														<Value>30</Value>
+														<Value>60</Value>
 													</ValueList>
 												</Property>
 												<Property Name="MakeUpGain" Type="Real64">
@@ -2638,7 +2638,7 @@
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
-														<Value>40</Value>
+														<Value>60</Value>
 													</ValueList>
 												</Property>
 												<Property Name="Pitch" Type="int32">

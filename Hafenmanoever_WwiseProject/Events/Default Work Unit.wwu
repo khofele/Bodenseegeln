@@ -200,6 +200,130 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Folder Name="BoatEngine" ID="{D65C6E18-A253-484B-83FA-C763741526CF}" ShortID="382950503">
+							<ChildrenList>
+								<Event Name="boat_engineStart" ID="{1A2CA9C5-3748-46B6-BB5A-FCD0908DFA5C}">
+									<ChildrenList>
+										<Action Name="" ID="{B71F2711-C1FD-4248-A3F0-DD7C7C1DAB69}" ShortID="772324432">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Boat_ThrottleSigned" ID="{8093AAD1-9114-422F-B5B9-F6F317EB813B}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{BE304A02-C0E0-499F-BF19-78FBF930DCE5}" ShortID="331766632">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_engineStartKey" ID="{09AE105C-B404-4E69-A310-E12846E043D6}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{37E087C6-0069-4040-91EF-114EAFD822DA}" ShortID="224480579">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.25"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_engineStart" ID="{8C384F8F-B5E1-48B8-A7BE-8DCCE5A54554}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{22C0BCA1-9F95-40E1-84BE-86AE76A1E322}" ShortID="17348046">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.75"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatEngine_ThrottleBlend" ID="{0F371717-3086-41AA-A040-D1937A7AFEDC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{3F65C5D2-4F73-4266-9900-782ACE21DF8A}" ShortID="135911456">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.75"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_engineStop" ID="{52B91DB6-8479-4D17-B443-D244BAB80195}">
+									<ChildrenList>
+										<Action Name="" ID="{463FA1F9-41EC-43C0-8B5C-AE1AFFB715FE}" ShortID="925267693">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatEngine_ThrottleBlend" ID="{0F371717-3086-41AA-A040-D1937A7AFEDC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{78DA689F-DDCD-48C4-A1C7-53BFF0854965}" ShortID="178720719">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{FFEBCB4D-F09A-4054-8A4E-FAED79EF2A9F}" ShortID="624624989">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_engineStop" ID="{D328F649-C0B6-4B37-89CE-BFCE5DCE4E95}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{328AD9A7-A492-4936-AD78-B3943A0EBB71}" ShortID="559019739">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Boat_ThrottleSigned" ID="{8093AAD1-9114-422F-B5B9-F6F317EB813B}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="BoatThrottle" ID="{D0BA884F-B895-41BB-8E6D-BA56AF9BD0E7}" ShortID="532632632">
+							<ChildrenList>
+								<Event Name="boat_throttleMove" ID="{87714DC3-0A38-4459-A8C2-201C69EA3F54}">
+									<ChildrenList>
+										<Action Name="" ID="{A60D10F4-4879-4486-A12B-ABD6FB4F2E99}" ShortID="166430742">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_thottleMove" ID="{40859645-428F-4467-AE54-91655003A37F}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_throttleMoveIdle" ID="{28BA8B54-A2B0-4CEC-B7A4-E66977AB6251}">
+									<ChildrenList>
+										<Action Name="" ID="{3C518C21-8D51-48A3-A3B9-02B564B0F8E5}" ShortID="653833646">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_throttleMoveIdle" ID="{AF8D7C32-FE43-415D-A03D-AB865ED8F8B5}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

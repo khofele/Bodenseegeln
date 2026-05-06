@@ -223,7 +223,19 @@
 										</Action>
 										<Action Name="" ID="{37E087C6-0069-4040-91EF-114EAFD822DA}" ShortID="224480579">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.25"/>
+												<Property Name="Delay" Type="Real64" Value="0.25">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{13254F8A-32CC-4398-8F15-3A86630FEE93}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.05"/>
+																	<Property Name="Min" Type="Real64" Value="-0.05"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -233,7 +245,19 @@
 										</Action>
 										<Action Name="" ID="{22C0BCA1-9F95-40E1-84BE-86AE76A1E322}" ShortID="17348046">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.75"/>
+												<Property Name="Delay" Type="Real64" Value="0.75">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{F26DBCDB-7C02-46FD-B520-13B7B67A1175}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.1"/>
+																	<Property Name="Min" Type="Real64" Value="-0.1"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -243,11 +267,45 @@
 										</Action>
 										<Action Name="" ID="{3F65C5D2-4F73-4266-9900-782ACE21DF8A}" ShortID="135911456">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.75"/>
+												<Property Name="Delay" Type="Real64" Value="0.75">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{F4CE00FE-77D0-4DE2-B385-A81FC7FB2412}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.1"/>
+																	<Property Name="Min" Type="Real64" Value="-0.1"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{D8F79AB8-1EF7-4846-8601-1422C5178590}" ShortID="710912491">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.75">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{4C22ECD9-0660-4C67-90EC-0C10A2D7A441}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.1"/>
+																	<Property Name="Min" Type="Real64" Value="-0.1"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatWoodVibration" ID="{236E2706-B931-446D-8F13-65AB34D1A874}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -258,6 +316,7 @@
 										<Action Name="" ID="{463FA1F9-41EC-43C0-8B5C-AE1AFFB715FE}" ShortID="925267693">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.25"/>
 												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 											</PropertyList>
 											<ReferenceList>
@@ -269,11 +328,23 @@
 										<Action Name="" ID="{78DA689F-DDCD-48C4-A1C7-53BFF0854965}" ShortID="178720719">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.25"/>
 												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{52DA7B22-70FA-4C5B-A704-98E35D2E0BD0}" ShortID="381409055">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.25"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatWoodVibration" ID="{236E2706-B931-446D-8F13-65AB34D1A874}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

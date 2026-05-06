@@ -52,22 +52,24 @@ Material:
     m_Floats:
     - _AlphaClip: 1
     - _AlphaToMask: 1
-    - _Alpha_Clipping: 0.3
+    - _Alpha_Clipping: 0.57
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _CastShadows: 0
     - _Cull: 2
     - _Cutoff: 0
+    - _Dichte: -0.1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _INvelocity: 1.17
-    - _PI_Mulitplier: 1.7
+    - _PI_Mulitplier: 1.12
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Rand: 2.46
-    - _Rand_Clipping: 0.67
+    - _Rand_Clipping: 1.29
     - _ReceiveShadows: 1
-    - _Speed: 0.1
+    - _Speed: 0.15
+    - _SpeedFadeOff: 0.16
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
@@ -79,7 +81,7 @@ Material:
     m_Colors:
     - _INvelocity: {r: 0, g: 0, b: 0, a: 0}
     - _Maske: {r: 0, g: 0, b: 0, a: 0}
-    - _Vector2: {r: 2.78, g: -0.14, b: 0, a: 0}
+    - _Vector2: {r: 0.67, g: -0.14, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7437779021879553512

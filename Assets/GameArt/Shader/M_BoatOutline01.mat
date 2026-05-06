@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_BoatOutline 1
+  m_Name: M_BoatOutline01
   m_Shader: {fileID: -6465566751694194690, guid: 9cc2b5ea08d80104786ecdf2999b0979, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,16 +38,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClipping: 0.5
     - _FadeLength: 2
-    - _FoamScale: 1.89
+    - _FoamScale: 2.66
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Speed_debug: 0
     - _StartTime: 0
-    - _WaveScale: 6.46
-    - _WaveSpeed: 0.22
-    - _WaveSpeed_1: 0.55
-    - _Wave_Ammount: 5.7
+    - _WaveScale: 1.42
+    - _WaveSpeed: 0.9
+    - _WaveSpeed_1: 0.33
+    - _Wave_Ammount: 15.3
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -68,6 +68,7 @@ public class BoatController : MonoBehaviour
     [SerializeField] private GameObject m_frontSail = null;
     [SerializeField] private GameObject m_rudder = null;
     [SerializeField] private InputActionReference m_steeringAction = null;
+    [SerializeField] private InputActionReference m_rudderNeutralAction = null;
     [SerializeField] private InputActionReference m_changeMotorSailModeAction = null;
     [SerializeField] private InputActionReference m_chooseMainSailAction = null;
     [SerializeField] private InputActionReference m_chooseFrontSailAction = null;
@@ -148,7 +149,6 @@ public class BoatController : MonoBehaviour
         Debug.Log("Angle Wind Boat" + Mathf.RoundToInt(angleWindBoat));
 
         // Angle between wind origin and sail too low --> sail can't catch wind properly, sail flutters --> no lift, drag stays
-
         if (angleWindSail < 5.0f || angleWindSail > 175.0f)
         {
             return Vector3.zero;
@@ -603,7 +603,7 @@ public class BoatController : MonoBehaviour
     {
         // smooth player input --> avoid jumps from -1 to 1 etc.
         // MoveTowards smooths value towards another value with fixedDeltaTime * 2 steps
-        m_smoothedSteeringInput = Mathf.MoveTowards(m_smoothedSteeringInput, m_steeringInput, Time.fixedDeltaTime * 2.0f);
+        m_smoothedSteeringInput = Mathf.MoveTowards(m_smoothedSteeringInput, m_steeringInput, Time.fixedDeltaTime * 5.0f);
 
         // total rotational force
         float yawTorque = 0f;
@@ -685,15 +685,6 @@ public class BoatController : MonoBehaviour
     // INPUT METHODS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void ChangeBoatMode()
     {
-        if (m_gameManager.CurrentState == GameStates.MOTORMODE || m_gameManager.CurrentState == GameStates.SAILMODE)
-        {
-            // steering via 1d axis, possible in both modes
-            if (m_steeringAction != null)
-            {
-                m_steeringInput = m_steeringAction.action.ReadValue<float>();
-            }
-        }
-
         if (m_changeMotorSailModeAction.action.triggered == true)
         {
             if (m_gameManager.CurrentState == GameStates.SAILMODE)
@@ -708,6 +699,35 @@ public class BoatController : MonoBehaviour
                 Debug.Log("Sailmode enabled!");
                 Debug.Log("Segel werden aufgespannt!"); // TODO Jasi: Segel aufspannen Animation
             }
+        }
+    }
+    
+    private void GetSteeringInput()
+    {
+        if (m_gameManager.CurrentState == GameStates.MOTORMODE || m_gameManager.CurrentState == GameStates.SAILMODE)
+        {
+            // steering via 1d axis, possible in both modes
+            if (m_steeringAction != null)
+            {
+                float rawSteeringInput = m_steeringAction.action.ReadValue<float>();
+
+                if (Mathf.Abs(rawSteeringInput) > 0.01f)
+                {
+                    m_steeringInput += rawSteeringInput * Time.deltaTime;
+                    Debug.Log("steering input " + m_steeringInput);
+                }
+
+                m_steeringInput = Mathf.Clamp(m_steeringInput, -1.0f, 1.0f);
+            }
+
+            if (m_rudderNeutralAction != null && m_rudderNeutralAction.action.triggered == true)
+            {
+                m_steeringInput = 0.0f;
+            }
+
+            float rudderAngle = m_steeringInput * m_maxRudderAngle;
+
+            Debug.Log("rudder angle " + rudderAngle);
         }
     }
 
@@ -789,6 +809,11 @@ public class BoatController : MonoBehaviour
             m_steeringAction.action.Enable();
         }
 
+        if(m_rudderNeutralAction != null)
+        {
+            m_rudderNeutralAction.action.Enable();
+        }
+
         if (m_changeMotorSailModeAction != null)
         {
             m_changeMotorSailModeAction.action.Enable();
@@ -835,6 +860,11 @@ public class BoatController : MonoBehaviour
         if (m_steeringAction != null)
         {
             m_steeringAction.action.Disable();
+        }
+
+        if (m_rudderNeutralAction != null)
+        {
+            m_rudderNeutralAction.action.Disable();
         }
 
         if (m_changeMotorSailModeAction != null)
@@ -890,6 +920,7 @@ public class BoatController : MonoBehaviour
     {
         ChangeBoatMode();
 
+        GetSteeringInput();
         GetMotorInput();
         GetSelectedSail();
         GetSailTrimInput();

@@ -95,6 +95,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Rudder_Neutral",
+                    "type": "Button",
+                    "id": "12fb1be5-6c97-4169-9a19-4ae296c3f33d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -295,6 +304,17 @@
                     "action": "Sail_Trim",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "377753d7-cdeb-4a67-8787-d140551ddff6",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rudder_Neutral",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

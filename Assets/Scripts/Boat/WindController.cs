@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class WindController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Vector3 m_trueWind = Vector3.zero;
+
+    public Vector3 TrueWind
     {
-        
+        get { return m_trueWind; }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ChangeTrueWind()
     {
-        
+        // TODO implement
+        // TODO Intervalle
+    }
+
+    public void Update()
+    {
+        ChangeTrueWind();
     }
 }

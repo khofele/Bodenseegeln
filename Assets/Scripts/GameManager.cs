@@ -23,6 +23,7 @@ public class GameManager : Manager<GameManager>
     {
         m_money += _amount;
         Debug.Log($"[GameManager] Money added: {_amount} | Total: {m_money}");
+        //TODO: trigger/set sound variable for getting money here
     }
 
     public void Start()

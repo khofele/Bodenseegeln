@@ -52,13 +52,36 @@ public class BoatController : MonoBehaviour
     private float m_currentHealth = 0.0f;
     private float m_maxHealth = 100.0f;
 
+    // TODO Windvektor und ggf. Strömungsvektor einlesen
+
+    // REFERENCES
+    [SerializeField] private GameManager m_gameManager = null;
+    [SerializeField] private WindController windController = null;
+    [SerializeField] private Transform m_parentReference = null;
+    [SerializeField] private GameObject m_mainSail = null;
+    [SerializeField] private GameObject m_frontSail = null;
+    [SerializeField] private GameObject m_rudder = null;
+
+    // INPUT ACTION REFERENCES
+    [SerializeField] private InputActionReference m_steeringAction = null;
+    [SerializeField] private InputActionReference m_rudderNeutralAction = null;
+    [SerializeField] private InputActionReference m_changeMotorSailModeAction = null;
+    [SerializeField] private InputActionReference m_chooseMainSailAction = null;
+    [SerializeField] private InputActionReference m_chooseFrontSailAction = null;
+    [SerializeField] private InputActionReference m_chooseBothSailsAction = null;
+    [SerializeField] private InputActionReference m_trimAction = null;
+    [SerializeField] private InputActionReference m_motorThrustForwardAction = null;
+    [SerializeField] private InputActionReference m_motorThrustBackwardAction = null;
+    [SerializeField] private InputActionReference m_motorThrustNeutralAction = null;
+
     // PROPERTIES
     public float BoatSpeedInKnots
     {
         get { return m_rigidbody.linearVelocity.magnitude / m_msPerKnot; }
     }
 
-    public float CurrentHealth { 
+    public float CurrentHealth
+    {
         get { return m_currentHealth; }
         set { m_currentHealth = value; } // TODO setter ggf. raus?
     }
@@ -92,27 +115,6 @@ public class BoatController : MonoBehaviour
     {
         get { return m_isInSailMode; }
     }
-
-    // TODO Windvektor und ggf. Strömungsvektor einlesen
-
-    // REFERENCES
-    [SerializeField] private GameManager m_gameManager = null;
-    [SerializeField] private Transform m_parentReference = null;
-    [SerializeField] private GameObject m_mainSail = null;
-    [SerializeField] private GameObject m_frontSail = null;
-    [SerializeField] private GameObject m_rudder = null;
-
-    // INPUT ACTION REFERENCES
-    [SerializeField] private InputActionReference m_steeringAction = null;
-    [SerializeField] private InputActionReference m_rudderNeutralAction = null;
-    [SerializeField] private InputActionReference m_changeMotorSailModeAction = null;
-    [SerializeField] private InputActionReference m_chooseMainSailAction = null;
-    [SerializeField] private InputActionReference m_chooseFrontSailAction = null;
-    [SerializeField] private InputActionReference m_chooseBothSailsAction = null;
-    [SerializeField] private InputActionReference m_trimAction = null;
-    [SerializeField] private InputActionReference m_motorThrustForwardAction = null;
-    [SerializeField] private InputActionReference m_motorThrustBackwardAction = null;
-    [SerializeField] private InputActionReference m_motorThrustNeutralAction = null;
 
     // PRIVATE METHODS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void CalculateLiftAndDragTables()

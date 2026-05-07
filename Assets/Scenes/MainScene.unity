@@ -9692,10 +9692,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8990281666286800870, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
+      propertyPath: m_moneyGainSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 90b723eea6f3ee1469b5b9903fe764ba, type: 2}
+    - target: {fileID: 8990281666286800870, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
+      propertyPath: m_moneySpendSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 27a46953e528011469d156645b2f86a0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7296229824905616552, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1551949612}
   m_SourcePrefab: {fileID: 100100000, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
 --- !u!1001 &359904484
 PrefabInstance:
@@ -19602,6 +19613,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4506705871353826242, guid: 3eaea632ba23d1242b1d7fa35d807b88, type: 3}
   m_PrefabInstance: {fileID: 677658704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &679295699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7296229824905616552, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
+  m_PrefabInstance: {fileID: 357658010}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &682263790
 PrefabInstance:
@@ -39845,12 +39861,36 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8990281666286800870, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
   m_PrefabInstance: {fileID: 357658010}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 679295699}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aad4bf70acf63a94bb3099f730e124d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!114 &1551949612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679295699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015360e53a801af4099f465ad5e18366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkGameObj
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 1
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &1554116017
 GameObject:
   m_ObjectHideFlags: 0
@@ -43576,6 +43616,14 @@ PrefabInstance:
     - target: {fileID: 6664827522280504391, guid: a85f513491cf62c478193b74986fb54f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952499113934129299, guid: a85f513491cf62c478193b74986fb54f, type: 3}
+      propertyPath: isEnvironmentAware
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952499113934129299, guid: a85f513491cf62c478193b74986fb54f, type: 3}
+      propertyPath: m_positionOffsetData.KeepMe
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

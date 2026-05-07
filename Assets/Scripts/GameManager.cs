@@ -1,4 +1,5 @@
 using UnityEngine;
+using WwiseEvent = AK.Wwise.Event;
 
 public class GameManager : Manager<GameManager>
 {
@@ -9,6 +10,10 @@ public class GameManager : Manager<GameManager>
     [SerializeField] private UIManager m_uiManager = null;
 
     [SerializeField] private int m_money = 0;
+
+    [Header("Wwise Money Sounds")]
+    [SerializeField] private WwiseEvent m_moneyGainSound;
+    [SerializeField] private WwiseEvent m_moneySpendSound;
 
     public GameStates CurrentState => m_currentGameState;
 
@@ -23,7 +28,9 @@ public class GameManager : Manager<GameManager>
     {
         m_money += _amount;
         Debug.Log($"[GameManager] Money added: {_amount} | Total: {m_money}");
-        //TODO: trigger/set sound variable for getting money here
+        
+        // Play the Wwise money gain even
+        m_moneyGainSound.Post(gameObject);
     }
 
     public void Start()

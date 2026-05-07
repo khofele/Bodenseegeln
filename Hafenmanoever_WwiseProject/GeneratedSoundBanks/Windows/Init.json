@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{CDE9AC3D-2B42-1217-02C1-D64576EB9AF6}",
+    "Hash": "{241C90DD-2673-568F-A3F6-D65DAFD11B92}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -41,9 +41,17 @@
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      }
+    ],
+    "GameParameters": [
+     {
+      "Id": "572552402",
+      "Name": "Boat_ThrottleSigned",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Boat_GameParameters\\Boat_ThrottleSigned",
+      "GUID": "{8093AAD1-9114-422F-B5B9-F6F317EB813B}"
+     }
     ]
    }
   ],
-  "FileHash": "{E8CD990B-1277-93FB-409C-19C45D07D281}"
+  "FileHash": "{E189FF8B-C0A7-EC34-5025-389F92E6979A}"
  }
 }

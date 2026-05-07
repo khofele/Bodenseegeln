@@ -1,0 +1,102 @@
+Event	ID	Name			Wwise Object Path	Notes
+	295066189	mission_complete			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionState\mission_complete	
+	420487461	mission_fastMovement			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionVarious\mission_fastMovement	
+	533609960	mission_accept			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionState\mission_accept	
+	637864694	env_boatCollisionHeavy			\Default Work Unit\Environment\EnvCollision\env_boatCollisionHeavy	
+	982625243	menu_navigateFromGameToPause			\Default Work Unit\Menu\Navigate\menu_navigateFromGameToPause	
+	1027056524	menu_navigateStartGame			\Default Work Unit\Menu\Navigate\menu_navigateStartGame	
+	1027735037	mission_moneyGain			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionMoney\mission_moneyGain	
+	1287245143	boat_throttleMoveIdle			\Default Work Unit\Boat\BoatThrottle\boat_throttleMoveIdle	
+	1385959304	boat_engineStart			\Default Work Unit\Boat\BoatEngine\boat_engineStart	
+	1386440470	mission_abort			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionState\mission_abort	
+	1816964564	boat_engineStop			\Default Work Unit\Boat\BoatEngine\boat_engineStop	
+	1943462500	mission_moneySpend			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionMoney\mission_moneySpend	
+	2067240745	mission_boatDamage			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionVarious\mission_boatDamage	
+	2376076561	mission_goalReached			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionGoal\mission_goalReached	
+	2498328905	menu_navigateBackward			\Default Work Unit\Menu\Navigate\menu_navigateBackward	
+	2562124403	env_closeMap			\Default Work Unit\Environment\EnvMap\env_closeMap	
+	2579598473	menu_navigateModifiedSetting			\Default Work Unit\Menu\Navigate\menu_navigateModifiedSetting	
+	2630645085	mission_stop_voiceLinesNpc			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionVarious\mission_stop_voiceLinesNpc	
+	3061105653	mission_goalFail			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionGoal\mission_goalFail	
+	3178454985	menu_ambientStop			\Default Work Unit\Menu\Ambience\menu_ambientStop	
+	3488054365	boat_throttleMove			\Default Work Unit\Boat\BoatThrottle\boat_throttleMove	
+	3522430105	mission_start_voiceLinesNpc			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionVarious\mission_start_voiceLinesNpc	
+	3523311185	menu_navigateForward			\Default Work Unit\Menu\Navigate\menu_navigateForward	
+	3578072492	mission_fail			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionState\mission_fail	
+	3653799758	boat_wheelTurn			\Default Work Unit\Boat\boat_wheelTurn	
+	3701861410	mission_moneyZero			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionMoney\mission_moneyZero	
+	3809229720	menu_navigateFromPauseToMain			\Default Work Unit\Menu\Navigate\menu_navigateFromPauseToMain	
+	4045900857	env_openMap			\Default Work Unit\Environment\EnvMap\env_openMap	
+	4135813027	env_boatCollisionLight			\Default Work Unit\Environment\EnvCollision\env_boatCollisionLight	
+	4290233515	menu_ambientStart			\Default Work Unit\Menu\Ambience\menu_ambientStart	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	572552402	Boat_ThrottleSigned			\Default Work Unit\Boat_GameParameters\Boat_ThrottleSigned	
+
+Effect plug-ins	ID	Name	Type				Notes
+	466641577	MissionMoneyPurse_EQ	Wwise Parametric EQ			
+	643163731	EnvBoatCollisionLightImpact_EQ	Wwise Parametric EQ			
+	729156053	BoatThottleMove_EQ	Wwise Parametric EQ			
+	761635205	EnvCollisionHeavyWater_EQ	Wwise Parametric EQ			
+	1255226786	BoatRopeCreak_EQ	Wwise Parametric EQ			
+	1413546197	EnvMapOpen_EQ	Wwise Parametric EQ			
+	1562427635	MissionMoneyGain_EQ	Wwise Parametric EQ			
+	1741208498	BoatEngine_EQ	Wwise Parametric EQ			
+	2108454903	BoatEngine_Compressor	Wwise Compressor			
+	2308774273	EnvBoatCollisionHeavyImpact_Compressor	Wwise Compressor			
+	2460955720	EnvBoatCollisionHeavyImpact_EQ	Wwise Parametric EQ			
+	2950059500	EnvMapClose_Compressor	Wwise Compressor			
+	3103710769	EnvBoatCollisionWood_Compressor	Wwise Compressor			
+	3261685081	EnvMapClose_EQ	Wwise Parametric EQ			
+	3395609570	MissionMoneySpend_EQ	Wwise Parametric EQ			
+	3680949560	EnvOpenMap_Compressor	Wwise Compressor			
+	3969320204	EnvCollisionLightWater_EQ	Wwise Parametric EQ			
+	4057161051	EnvBoatCollisionHeavyWood_EQ	Wwise Parametric EQ			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	21747592	env_collisionLightImpact1	.cache\7B\{7BE84817-8A64-BEFE-C9FA-C1FB125A1085}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\env_collisionLightImpact\env_collisionLightImpact1\env_collisionLightImpact1		37096
+	35522817	boat_wheelTurnBearing3	.cache\8C\{8C8ADCA3-9DDD-FDB5-1BE7-10CEDD135D74}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnBearing\boat_wheelTurnBearing3		52928
+	54458518	boat_wheelTurnBearing1	.cache\8B\{8B041980-1EBA-1B2E-09C0-12B55CA24197}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnBearing\boat_wheelTurnBearing1		52872
+	85550369	boat_engineStart	.cache\43\{43AA2255-607A-6FDE-72E4-7891F3B7C6BA}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\boat_engineStart		193036
+	108181189	env_collisionLightImpact2	.cache\AA\{AA6186BD-9D48-3437-4DC1-4DACFD777241}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\env_collisionLightImpact\env_collisionLightImpact1\env_collisionLightImpact2		66688
+	137598962	env_collisionLightImpact	.cache\27\{27C0E7D4-038F-9BFF-78AD-8FA404EBD112}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\env_collisionLightImpact\env_collisionLightImpact2\env_collisionLightImpact		95728
+	168246796	env_openMap	.cache\59\{59F2FAAC-B075-EF04-3C24-274F7A989DEB}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvMap\env_openMap		179996
+	183966653	boat_engineStop	.cache\8A\{8AB58030-8821-0A36-1F40-C668EB4C4690}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\boat_engineStop		286748
+	346112390	menu_forward	.cache\56\{5658EE18-4FB4-940C-5A86-0C1B8E46F2AB}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_forward\menu_forward		36408
+	362176238	mission_complete	.cache\83\{835E30A6-4B4D-3A41-C230-AA4D5974FC54}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_complete		529296
+	369021067	boat_throttleMoveIdle2	.cache\00\{003BA776-9087-E7FC-E40E-069FA9A9C80B}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatThrottleMove\boat_throttleMoveIdle\boat_throttleMoveIdle2		52032
+	421288215	boat_throttleMove2	.cache\23\{23A57845-52DA-6FD2-3AAD-B1D3F71B9488}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatThrottleMove\boat_thottleMove\boat_throttleMove2		57400
+	425142125	boat_woodVibrateHeavyForward_loop	.cache\E9\{E9831BC4-64AD-1C1A-0610-C74CEB5750CD}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWood\BC_boatWoodVibration\boat_woodVibrateHeavyForward_loop		3175344
+	432980852	boat_wheelTurnRope2	.cache\09\{09B62AFF-4F68-F46C-1C4F-9806FB1B4BBD}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnRope\boat_wheelTurnRope2		66244
+	481909320	boat_throttleMoveIdle1	.cache\3E\{3EFD8C24-EE0F-D796-D6A8-AC432F4F108D}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatThrottleMove\boat_throttleMoveIdle\boat_throttleMoveIdle1		51816
+	499194111	mission_moneyGain	.cache\4B\{4B050007-2A61-AB22-D8D9-1F202B34272D}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionMoney\mission_moneyGain		177368
+	503844325	boat_engineStartKey	.cache\EC\{ECDF0774-8B6B-8697-412D-65292B4060C0}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\boat_engineStartKey		111788
+	508055500	boat_wheelTurnRope1	.cache\08\{08FB9BF9-738D-2BD2-BD10-AA5AAA579D58}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnRope\boat_wheelTurnRope1		66244
+	527075343	env_collisionLightImpact2	.cache\6F\{6F201366-A95C-6B5C-A1DD-B594448AA5F5}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\env_collisionLightImpact\env_collisionLightImpact2\env_collisionLightImpact2		103816
+	532928830	env_collisionLightWater	.cache\85\{85B5C406-27CC-8803-3B50-03825986A17E}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\env_collisionLightImpact\env_collisionLightWater		283228
+	541681675	env_closeMap	.cache\7B\{7BAB2F42-CEB8-F97A-025D-EA89570E7A93}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvMap\env_closeMap		175776
+	606033276	boat_engineBubbles_loop	.cache\C8\{C873855A-4CC1-BC25-8FCE-69CE5841941B}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\BoatEngineLoops\BC_boatEngineWater\boat_engineBubbles_loop		2207828
+	627688009	boat_woodVibrateLight_loop	.cache\2D\{2D95BD9B-DD8A-54DE-9575-77EF69EDFCCC}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWood\BC_boatWoodVibration\boat_woodVibrateLight_loop		3136028
+	645098651	boat_engineBackward_loop	.cache\C2\{C2C7972D-E4E2-DA3E-4F85-6F9C8A1BF0FF}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\BoatEngineLoops\BC_boatEngine_ThrottleBlend\boat_engineBackward_loop		3351744
+	652644797	boat_wheelTurnBearing2	.cache\C0\{C0C5F2C4-4573-1462-97C4-8E4785F04A3B}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnBearing\boat_wheelTurnBearing2		53260
+	675332698	env_collisionHeavyWater	.cache\22\{22A05F03-2DD9-FD06-47FC-913547DB7F1B}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\env_collisionHeavyImpact\env_collisionHeavyWater		661596
+	676106981	boat_wheelTurnBearing	.cache\3E\{3EB991D7-ED11-F298-EC5B-7DD4D7FAC761}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnBearing\boat_wheelTurnBearing		53436
+	687413561	boat_engineIdle_loop	.cache\93\{93FB7478-4CF7-2A62-9C6E-E50A9C332B1C}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\BoatEngineLoops\BC_boatEngine_ThrottleBlend\boat_engineIdle_loop		3351744
+	734439282	mission_fail	.cache\C5\{C58F8B59-E953-D522-D39A-55EEC67B3913}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_fail		529296
+	742888240	boat_throttleMove1	.cache\6E\{6E508662-E69B-90B7-FAA7-024365742174}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatThrottleMove\boat_thottleMove\boat_throttleMove1		53508
+	744868092	env_collisionHeavyImpact5	.cache\E2\{E27C83AC-38C8-504C-35D8-CB0A26626B8C}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\env_collisionHeavyImpact\env_collisionHeavyImpact2\env_collisionHeavyImpact5		35972
+	782049489	mission_moneyPurse	.cache\D8\{D8109498-4D86-7153-BB30-C1784C10DE40}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionMoney\mission_moneyPurse		286536
+	795434133	boat_wheelTurnRope	.cache\37\{3772842F-1BD3-EA1B-9BA3-D9D686449BC0}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnRope\boat_wheelTurnRope		55220
+	835332323	menu_back	.cache\8B\{8BF282F8-541D-81F0-BD77-DA03AE738F27}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_back\menu_back		40340
+	839318311	mission_moneySpend	.cache\CA\{CAF7591D-9073-1F0C-0B73-2B7D9180B236}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionMoney\mission_moneySpend		180160
+	857358029	mission_accept	.cache\27\{2771B4C2-1DA4-73EE-46D9-32A781293887}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_accept		349620
+	857592912	env_collisionHeavyImpact3	.cache\7D\{7D8253B4-DF33-97BE-CD1D-E6868BB18F3E}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\env_collisionHeavyImpact\env_collisionHeavyImpact2\env_collisionHeavyImpact3		100684
+	875602288	env_collisionHeavyImpact4	.cache\80\{8028B093-E891-CA30-7B3E-1E1F6E4DAF31}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\env_collisionHeavyImpact\env_collisionHeavyImpact2\env_collisionHeavyImpact4		40628
+	887624249	menu_openPause	.cache\D4\{D455A0D2-7B64-9D0F-C967-90BE92D37B07}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_openPause\menu_openPause		75200
+	922437653	env_collisionLightImpact1	.cache\25\{25CC44E5-76DD-C230-243E-A1C5A1BC6183}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\env_collisionLightImpact\env_collisionLightImpact2\env_collisionLightImpact1		100248
+	928429837	env_collisionHeavyImpact	.cache\5B\{5B8AB804-3565-2ED1-1DE1-73DA12C4DCA6}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\env_collisionHeavyImpact\env_collisionHeavyImpact1\env_collisionHeavyImpact		47508
+	984283490	boat_engineForward_loop	.cache\1C\{1C3CC3F6-6ACE-4540-C98F-20263B23EB1A}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\BoatEngineLoops\BC_boatEngine_ThrottleBlend\boat_engineForward_loop		3395844
+	1005202156	menu_openMain	.cache\C3\{C3693EEA-3C7A-BAF2-DCD4-EBDF552BBF6F}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_openMain\menu_openMain		64192
+	1014404164	mission_abort	.cache\51\{51C52651-576F-48BD-E6C3-269DBD126DD3}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_abort		266100
+	1066911892	env_collisionHeavyWood	.cache\93\{9358448A-630D-9B7C-CCA6-98586AC9D8F8}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\env_collisionHeavyImpact\env_collisionHeavyWood		80092
+

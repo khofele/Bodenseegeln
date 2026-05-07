@@ -7,6 +7,7 @@ public class BoatController : MonoBehaviour
     private float m_msPerKnot = 0.514444f; // 0.51444m/s = 1 Knot
     private Rigidbody m_rigidbody = null;
     private bool m_isBoatDrivingForward = true; // shader input
+    private bool m_isInSailMode = true;
 
     // FORCE CALCULATION FIELDS
     private float m_airDensity = 1.2f; // kg/m^3
@@ -46,18 +47,50 @@ public class BoatController : MonoBehaviour
     private float m_steeringInput = 0.0f;
     private float m_smoothedSteeringInput = 0.0f;
     private float m_motorBrakeModifier = 1.5f;
-    [SerializeField] private float m_fuel = 250.0f; // TODO SerializedField raus
-    private float m_health = 100.0f;
+    private float m_currentFuel = 0.0f; 
+    [SerializeField] private float m_maxFuel = 250.0f; // TODO SerializedField raus
+    private float m_currentHealth = 0.0f;
+    private float m_maxHealth = 100.0f;
 
     // PROPERTIES
-    public float Health { 
-        get { return m_health; }
-        set { m_health = value; }
+    public float BoatSpeedInKnots
+    {
+        get { return m_rigidbody.linearVelocity.magnitude / m_msPerKnot; }
+    }
+
+    public float CurrentHealth { 
+        get { return m_currentHealth; }
+        set { m_currentHealth = value; } // TODO setter ggf. raus?
+    }
+
+    public float MaxHealth
+    {
+        get { return m_maxHealth; }
+    }
+
+    public float CurrentFuel
+    {
+        get { return m_currentFuel; }
+    }
+
+    public float MaxFuel
+    {
+        get { return m_maxFuel; }
     }
 
     public bool IsBoatDrivingForward
     {
         get { return m_isBoatDrivingForward; }
+    }
+
+    public bool IsInButterfly
+    {
+        get { return m_isInButterfly; }
+    }
+
+    public bool IsInSailMode
+    {
+        get { return m_isInSailMode; }
     }
 
     // TODO Windvektor und ggf. Strömungsvektor einlesen
@@ -545,7 +578,7 @@ public class BoatController : MonoBehaviour
 
     private void CalculateMotorForce() // max speed 7.9 knots in m/s --> 4.06m/s
     {
-        if(m_fuel <= 0.0f)
+        if(m_currentFuel <= 0.0f)
         {
             return;
         }
@@ -585,9 +618,9 @@ public class BoatController : MonoBehaviour
 
     private void ReduceFuel()
     {
-        if(m_fuel < 0.0f)
+        if(m_currentFuel < 0.0f)
         {
-            m_fuel = 0.0f;
+            m_currentFuel = 0.0f;
             m_thrustStep = 0.0f;
             Debug.LogError("TANK LEER");
             // TODO Game Over einbauen
@@ -601,8 +634,8 @@ public class BoatController : MonoBehaviour
 
         Debug.Log("Fuel Consumption " + totalFuelConsumption);
 
-        m_fuel -= totalFuelConsumption * Time.fixedDeltaTime;
-        Debug.Log("Fuel " + m_fuel);
+        m_currentFuel -= totalFuelConsumption * Time.fixedDeltaTime;
+        Debug.Log("Fuel " + m_currentFuel);
     }
 
     // method for water-trail-shader to check whether the boat is moving backwards or not
@@ -728,12 +761,14 @@ public class BoatController : MonoBehaviour
             if (m_gameManager.CurrentState == GameStates.SAILMODE)
             {
                 m_gameManager.SetState(GameStates.MOTORMODE);
+                m_isInSailMode = false;
                 ResetSails(); // TODO Jasi: Segel einholen Animation
                 Debug.Log("Motormode enabled!");
             }
             else if (m_gameManager.CurrentState == GameStates.MOTORMODE)
             {
                 m_gameManager.SetState(GameStates.SAILMODE);
+                m_isInSailMode = true;
                 Debug.Log("Sailmode enabled!");
                 Debug.Log("Segel werden aufgespannt!"); // TODO Jasi: Segel aufspannen Animation
             }
@@ -952,6 +987,9 @@ public class BoatController : MonoBehaviour
         }
 
         CalculateLiftAndDragTables(); // for lift and drag coefficients for sail force
+
+        m_currentFuel = m_maxFuel;
+        m_currentHealth = m_maxHealth;
     }
 
     public void Update()

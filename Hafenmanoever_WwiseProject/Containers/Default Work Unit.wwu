@@ -2905,6 +2905,131 @@
 										</BlendContainer>
 									</ChildrenList>
 								</Folder>
+								<Folder Name="BoatSail" ID="{E00B325D-A4F3-4AEC-B8FA-20F267C83150}" ShortID="597466790">
+									<ChildrenList>
+										<RandomSequenceContainer Name="boat_sailDeploy" ID="{88934502-D5FE-48CC-B789-E65E3BC739C5}" ShortID="462491127">
+											<PropertyList>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-600</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{AA85BA1D-D117-4E4D-88A2-E7F53C43548C}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="100"/>
+																	<Property Name="Min" Type="Real64" Value="-100"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>2</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{86EAD3DA-F54D-4434-A17B-A7ACE199BB29}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="2"/>
+																	<Property Name="Min" Type="Real64" Value="-2"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="boat_sailDeploy" ID="{5D258DA4-CB20-4AA7-A32A-46669CDDE862}" ShortID="230358164">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_sailDeploy" ID="{7CD4EA57-9692-48C4-B772-4CE82641DE3B}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.04593"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.41683"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.13122"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_sailDeploy.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="851669271"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_sailDeploy" ID="{7CD4EA57-9692-48C4-B772-4CE82641DE3B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_sailDeploy1" ID="{05D1CB69-7A6B-43BA-8EEE-03BB10B826A3}" ShortID="300021132">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_sailDeploy1" ID="{2691D879-004F-4AB7-9CB7-C871CA30B024}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.0767"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.67062"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.22462"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_sailDeploy1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="381048997"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_sailDeploy1" ID="{2691D879-004F-4AB7-9CB7-C871CA30B024}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{F7BF6FB3-7FAD-4544-8E30-11D8CA27E633}" ShortID="562882442">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="BoatSailDeploy_EQ" ID="{588D7105-810D-4C74-AF47-3B381CB04A49}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+													<EffectSlot Name="" ID="{1CA648D3-CF19-43C6-B7E5-3F50DCF93E1D}" ShortID="154971329">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																<ObjectRef Name="BoatSailDeploy_Compressor" ID="{13437C42-4D37-4512-A65F-3DC195D09931}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Atmosphere" ID="{2F6F4F58-34FA-4C7B-B17B-AE80B5CE1521}" ShortID="1063500667">

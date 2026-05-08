@@ -154,6 +154,35 @@
 										<Property Name="QFactorBand6" Type="Real32" Value="1.2"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="BoatSailDeploy_EQ" ID="{588D7105-810D-4C74-AF47-3B381CB04A49}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="8"/>
+										<Property Name="FilterTypeBand2" Type="int32" Value="4"/>
+										<Property Name="FilterTypeBand7" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="80"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="180"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="500"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="1800"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="3500"/>
+										<Property Name="FrequencyBand6" Type="Real32" Value="6000"/>
+										<Property Name="FrequencyBand7" Type="Real32" Value="10000"/>
+										<Property Name="GainBand2" Type="Real32" Value="2"/>
+										<Property Name="GainBand3" Type="Real32" Value="-4"/>
+										<Property Name="GainBand4" Type="Real32" Value="-2"/>
+										<Property Name="GainBand5" Type="Real32" Value="4"/>
+										<Property Name="GainBand6" Type="Real32" Value="3"/>
+										<Property Name="GainBand7" Type="Real32" Value="1"/>
+										<Property Name="NumBands" Type="int32" Value="7"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="OnOffBand6" Type="bool" Value="True"/>
+										<Property Name="OnOffBand7" Type="bool" Value="True"/>
+										<Property Name="QFactorBand1" Type="Real32" Value="0.7"/>
+										<Property Name="QFactorBand3" Type="Real32" Value="0.5"/>
+										<Property Name="QFactorBand5" Type="Real32" Value="1.1"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Ambient" ID="{E453CDA4-0E26-414A-AB93-16296D9C07B4}" ShortID="115757871">
@@ -480,6 +509,14 @@
 								<Property Name="Ratio" Type="Real32" Value="1.8"/>
 								<Property Name="ReleaseTime" Type="Real32" Value="0.9"/>
 								<Property Name="Threshold" Type="Real32" Value="-18"/>
+							</PropertyList>
+						</Effect>
+						<Effect Name="BoatSailDeploy_Compressor" ID="{13437C42-4D37-4512-A65F-3DC195D09931}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+							<PropertyList>
+								<Property Name="AttackTime" Type="Real32" Value="0.2"/>
+								<Property Name="Ratio" Type="Real32" Value="2"/>
+								<Property Name="ReleaseTime" Type="Real32" Value="1.2"/>
+								<Property Name="Threshold" Type="Real32" Value="-20"/>
 							</PropertyList>
 						</Effect>
 					</ChildrenList>

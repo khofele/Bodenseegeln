@@ -1,6 +1,459 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{04361E94-DBA0-444F-99F3-725EACB31E40}" SchemaVersion="133">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{04361E94-DBA0-444F-99F3-725EACB31E40}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{04361E94-DBA0-444F-99F3-725EACB31E40}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Menu" ID="{69E1BFBC-1844-4D15-AB53-3333CCCEFB6B}" ShortID="322166936">
+					<ChildrenList>
+						<Folder Name="Navigate" ID="{488B0130-1BE7-4003-9415-D3D9103B1377}" ShortID="597145422">
+							<ChildrenList>
+								<Event Name="menu_navigateForward" ID="{14BDCE51-8C80-4186-9335-5207883AA064}">
+									<ChildrenList>
+										<Action Name="" ID="{6D0591FB-D52F-48AA-8C51-1562DF6DBEBC}" ShortID="925307102">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="menu_forward" ID="{EFD97E77-3D6C-4F56-AE34-E906211D4DF8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="menu_navigateBackward" ID="{1E6D41A8-D059-4D14-A0BC-2661D597F97F}">
+									<ChildrenList>
+										<Action Name="" ID="{9E6A6055-DA8F-4A48-8BE8-C1213857605D}" ShortID="562946998">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="menu_back" ID="{1CC75D76-4BCF-46EA-970E-C3706B54FA4F}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="menu_navigateFromPauseToMain" ID="{7D8EFFD5-7E84-4712-A269-361383A54E10}">
+									<ChildrenList>
+										<Action Name="" ID="{AC6DAE29-C2E7-4C1B-9A31-299B92565B8C}" ShortID="152671476">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="menu_openMain" ID="{49EE8B96-A0D6-4283-B8D8-663B00691A92}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="menu_navigateFromGameToPause" ID="{400CD25C-4671-4889-A747-69247FB64100}">
+									<ChildrenList>
+										<Action Name="" ID="{0FFCB6E6-B6DE-4B6A-BE8D-47837AD1E19D}" ShortID="614174910">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="menu_openPause" ID="{FE644F0E-729E-4685-A6C2-23E57A728B03}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="menu_navigateModifiedSetting" ID="{9C915503-AE15-4A4A-ADF2-14CDF893440A}"/>
+								<Event Name="menu_navigateStartGame" ID="{C9B737B4-BD9A-4C2F-890A-0434F0E97BCC}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Ambience" ID="{A1EE0AD0-30FD-405C-8C3F-6B4D53143266}" ShortID="695002014">
+							<ChildrenList>
+								<Event Name="menu_ambientStart" ID="{C662138A-2799-4291-82C1-F4D7B5289D7E}"/>
+								<Event Name="menu_ambientStop" ID="{6073BA72-DF1C-46B2-9F48-7ED65B5F158B}"/>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="MissionsFeedback" ID="{7986BD02-D9FE-4384-8765-35AF1F0AD33A}" ShortID="613122230">
+					<ChildrenList>
+						<Folder Name="Event_MissionsFeedback" ID="{9320E3BA-45A8-4797-8D4E-19C4A9DBB44C}" ShortID="563999408">
+							<ChildrenList>
+								<Folder Name="MissionState" ID="{BAD22D00-6A3C-43DE-9566-3A1DD6751058}" ShortID="848008640">
+									<ChildrenList>
+										<Event Name="mission_fail" ID="{DD1F692B-55A5-4049-A12F-CD3734CA4E3D}">
+											<ChildrenList>
+												<Action Name="" ID="{54CCE642-63A5-4D9F-ABFA-98A83A0A1DFA}" ShortID="542550814">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_fail" ID="{420496ED-5413-4FF9-B59A-976C3A66191A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="mission_accept" ID="{7B36055F-D733-4A0D-ADC7-70F97FD7475B}">
+											<ChildrenList>
+												<Action Name="" ID="{809013E7-CB26-41C5-A3BD-786E790F4FCF}" ShortID="909304753">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_accept" ID="{3A4F5B54-7BCB-4A07-B5AC-EEC6AD7B1F56}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="mission_abort" ID="{3D75BE5C-C9DC-4099-A752-A7DAC242749F}">
+											<ChildrenList>
+												<Action Name="" ID="{58C3E325-15A1-410A-A09A-5930D3B61772}" ShortID="70169633">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_abort" ID="{60B38B9E-FEDE-4E70-A1EF-15D140D96AB4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="mission_complete" ID="{E8EFA51D-5A9D-4570-A1A0-2B507E079D24}">
+											<ChildrenList>
+												<Action Name="" ID="{EC7D6895-305F-4161-A449-2565EB5E363B}" ShortID="642957325">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_complete" ID="{A77329D0-7FF0-437A-A86B-989F0A8E0B67}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="MissionMoney" ID="{D862A98D-625B-47CE-8AA8-5D7FBCE84F05}" ShortID="726171433">
+									<ChildrenList>
+										<Event Name="mission_moneyGain" ID="{A7A23103-4585-49EA-9B9F-2DDDE29D6AC0}">
+											<ChildrenList>
+												<Action Name="" ID="{0AB0C8DE-D4F3-4404-A7D2-2513400A5B25}" ShortID="547593643">
+													<PropertyList>
+														<Property Name="Delay" Type="Real64" Value="0.2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_moneyGain" ID="{47F9E818-89F3-45A5-BD39-6ABB0B2A9764}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{536E1CC2-1C84-45BC-865F-9885798E77BB}" ShortID="267022157">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_moneyPurse" ID="{9F5A230D-4892-42A1-9972-1987C762B891}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="mission_moneySpend" ID="{DDC02CF0-71A4-44A4-99EC-FF6928203F7D}">
+											<ChildrenList>
+												<Action Name="" ID="{588F7AE3-2E13-402D-AC73-467F80011072}" ShortID="704953978">
+													<PropertyList>
+														<Property Name="Delay" Type="Real64" Value="0.3"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_moneySpend" ID="{951B8DB0-8E39-4DD5-B4F9-BA9D16111582}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{9AE316CE-FC27-411E-A655-7CE95BF39AF7}" ShortID="453049410">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="mission_moneyPurse" ID="{9F5A230D-4892-42A1-9972-1987C762B891}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="mission_moneyZero" ID="{3D1975C6-FF2C-43B5-BC19-130D92085506}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="MissionVarious" ID="{DE6557A4-87D8-4C6B-9776-56AA7BC0BAA0}" ShortID="354108046">
+									<ChildrenList>
+										<Event Name="mission_boatDamage" ID="{93473457-F890-45C2-A8C5-6E19B46E5677}"/>
+										<Event Name="mission_fastMovement" ID="{0460CA55-7A18-439A-BD71-00FE62D05EBB}"/>
+										<Event Name="mission_start_voiceLinesNpc" ID="{DE8CF4E1-CCC2-43DC-A2F5-5C2A6102154E}"/>
+										<Event Name="mission_stop_voiceLinesNpc" ID="{AD1B3553-62FC-4E81-881A-94839900A9A0}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="MissionGoal" ID="{E5C41BA6-6765-4CB0-80B4-2631F4E23AD6}" ShortID="628520607">
+									<ChildrenList>
+										<Event Name="mission_goalReached" ID="{E6D3909D-ED2E-4719-BE6C-69AF986CD6D1}"/>
+										<Event Name="mission_goalFail" ID="{CA812B7C-7356-4CD4-A2BF-D821072A37D5}"/>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Boat" ID="{505A36E7-3CB1-48A3-9FD2-101921518506}" ShortID="297515175">
+					<ChildrenList>
+						<Event Name="boat_wheelTurn" ID="{35E372D0-999D-49CE-AF27-B5615BF20818}">
+							<ChildrenList>
+								<Action Name="" ID="{1337B21A-D36D-4D64-8AE2-9C6E429AF15B}" ShortID="42829069">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="boat_wheelTurnBearing" ID="{48AAB9A2-09D3-4925-9C4B-1532316364FA}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{ED8C6D09-9188-420B-94C5-93B3E1B2ECE0}" ShortID="517825767">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="boat_wheelTurnRope" ID="{964C6DD8-D6CA-4895-860E-1268B3973A69}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Folder Name="BoatEngine" ID="{D65C6E18-A253-484B-83FA-C763741526CF}" ShortID="382950503">
+							<ChildrenList>
+								<Event Name="boat_engineStart" ID="{1A2CA9C5-3748-46B6-BB5A-FCD0908DFA5C}">
+									<ChildrenList>
+										<Action Name="" ID="{B71F2711-C1FD-4248-A3F0-DD7C7C1DAB69}" ShortID="772324432">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Boat_ThrottleSigned" ID="{8093AAD1-9114-422F-B5B9-F6F317EB813B}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{BE304A02-C0E0-499F-BF19-78FBF930DCE5}" ShortID="331766632">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_engineStartKey" ID="{09AE105C-B404-4E69-A310-E12846E043D6}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{37E087C6-0069-4040-91EF-114EAFD822DA}" ShortID="224480579">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.25">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{13254F8A-32CC-4398-8F15-3A86630FEE93}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.05"/>
+																	<Property Name="Min" Type="Real64" Value="-0.05"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_engineStart" ID="{8C384F8F-B5E1-48B8-A7BE-8DCCE5A54554}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{22C0BCA1-9F95-40E1-84BE-86AE76A1E322}" ShortID="17348046">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.75">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{F26DBCDB-7C02-46FD-B520-13B7B67A1175}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.1"/>
+																	<Property Name="Min" Type="Real64" Value="-0.1"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatEngine_ThrottleBlend" ID="{0F371717-3086-41AA-A040-D1937A7AFEDC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{3F65C5D2-4F73-4266-9900-782ACE21DF8A}" ShortID="135911456">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.75">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{F4CE00FE-77D0-4DE2-B385-A81FC7FB2412}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.1"/>
+																	<Property Name="Min" Type="Real64" Value="-0.1"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{D8F79AB8-1EF7-4846-8601-1422C5178590}" ShortID="710912491">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.75">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{4C22ECD9-0660-4C67-90EC-0C10A2D7A441}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.1"/>
+																	<Property Name="Min" Type="Real64" Value="-0.1"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatWoodVibration" ID="{236E2706-B931-446D-8F13-65AB34D1A874}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_engineStop" ID="{52B91DB6-8479-4D17-B443-D244BAB80195}">
+									<ChildrenList>
+										<Action Name="" ID="{463FA1F9-41EC-43C0-8B5C-AE1AFFB715FE}" ShortID="925267693">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.25"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatEngine_ThrottleBlend" ID="{0F371717-3086-41AA-A040-D1937A7AFEDC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{78DA689F-DDCD-48C4-A1C7-53BFF0854965}" ShortID="178720719">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.25"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{52DA7B22-70FA-4C5B-A704-98E35D2E0BD0}" ShortID="381409055">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.25"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatWoodVibration" ID="{236E2706-B931-446D-8F13-65AB34D1A874}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{FFEBCB4D-F09A-4054-8A4E-FAED79EF2A9F}" ShortID="624624989">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_engineStop" ID="{D328F649-C0B6-4B37-89CE-BFCE5DCE4E95}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{328AD9A7-A492-4936-AD78-B3943A0EBB71}" ShortID="559019739">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Boat_ThrottleSigned" ID="{8093AAD1-9114-422F-B5B9-F6F317EB813B}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="BoatThrottle" ID="{D0BA884F-B895-41BB-8E6D-BA56AF9BD0E7}" ShortID="532632632">
+							<ChildrenList>
+								<Event Name="boat_throttleMove" ID="{87714DC3-0A38-4459-A8C2-201C69EA3F54}">
+									<ChildrenList>
+										<Action Name="" ID="{A60D10F4-4879-4486-A12B-ABD6FB4F2E99}" ShortID="166430742">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_thottleMove" ID="{40859645-428F-4467-AE54-91655003A37F}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_throttleMoveIdle" ID="{28BA8B54-A2B0-4CEC-B7A4-E66977AB6251}">
+									<ChildrenList>
+										<Action Name="" ID="{3C518C21-8D51-48A3-A3B9-02B564B0F8E5}" ShortID="653833646">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_throttleMoveIdle" ID="{AF8D7C32-FE43-415D-A03D-AB865ED8F8B5}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Environment" ID="{F7A400A8-0F91-4630-953E-8D8200BDD709}" ShortID="5191634">
+					<ChildrenList>
+						<Folder Name="EnvMap" ID="{EE5323EA-D0DA-492D-9269-9E272B2ADA97}" ShortID="907910300">
+							<ChildrenList>
+								<Event Name="env_openMap" ID="{CDDD7ED7-D15E-4FF0-A4A0-6DE3C8A5E91E}">
+									<ChildrenList>
+										<Action Name="" ID="{4B763EB8-6123-4031-8A9E-59F126FDD1A7}" ShortID="557881683">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="env_openMap" ID="{9957198F-BF30-49DA-98CE-0E460E32BA92}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="env_closeMap" ID="{B85F7502-CB9A-4776-AD7F-36FF227A376C}">
+									<ChildrenList>
+										<Action Name="" ID="{3E94AB90-638C-4F35-A094-5EC131172F5D}" ShortID="312381647">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="env_closeMap" ID="{0FF61C50-9109-4173-96D4-4EA6BAB6A20C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="EnvCollision" ID="{B3C04D73-FBE5-4756-9BA7-01845FF3E233}" ShortID="764248952">
+							<ChildrenList>
+								<Event Name="env_boatCollisionLight" ID="{EF01BE52-22F9-439B-96A7-FAFAB1AA401D}">
+									<ChildrenList>
+										<Action Name="" ID="{14F12EA1-6068-4851-9C44-8565A06178EC}" ShortID="72648359">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="env_collisionLightImpact" ID="{D03735BA-B263-4849-AE79-9B4E2B355A50}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="env_boatCollisionHeavy" ID="{72E160B7-8821-4508-9C36-326835089396}">
+									<ChildrenList>
+										<Action Name="" ID="{DBF7CD07-41D0-44F0-AE7E-E30E273DD2DC}" ShortID="263502893">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="env_collisionHeavyImpact" ID="{5E5396D0-8E5B-4A13-8223-A185F73CC7FE}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

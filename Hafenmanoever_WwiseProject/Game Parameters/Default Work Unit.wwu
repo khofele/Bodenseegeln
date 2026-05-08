@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}" SchemaVersion="133">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Boat_GameParameters" ID="{34A65C98-DF47-4B07-B474-E9411A6A7174}" ShortID="895081779">
+					<ChildrenList>
+						<GameParameter Name="Boat_ThrottleSigned" ID="{8093AAD1-9114-422F-B5B9-F6F317EB813B}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="Max" Type="Real64" Value="50"/>
+								<Property Name="Min" Type="Real64" Value="-50"/>
+								<Property Name="RTPCRamping" Type="int16" Value="1"/>
+								<Property Name="SlewRateDown" Type="Real64" Value="75"/>
+								<Property Name="SlewRateUp" Type="Real64" Value="150"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

@@ -8,11 +8,11 @@
 						<GameParameter Name="Boat_ThrottleSigned" ID="{8093AAD1-9114-422F-B5B9-F6F317EB813B}">
 							<PropertyList>
 								<Property Name="InitialValue" Type="Real64" Value="0"/>
-								<Property Name="Max" Type="Real64" Value="50"/>
-								<Property Name="Min" Type="Real64" Value="-50"/>
+								<Property Name="Max" Type="Real64" Value="3"/>
+								<Property Name="Min" Type="Real64" Value="-3"/>
 								<Property Name="RTPCRamping" Type="int16" Value="1"/>
-								<Property Name="SlewRateDown" Type="Real64" Value="75"/>
-								<Property Name="SlewRateUp" Type="Real64" Value="150"/>
+								<Property Name="SlewRateDown" Type="Real64" Value="8"/>
+								<Property Name="SlewRateUp" Type="Real64" Value="8"/>
 							</PropertyList>
 						</GameParameter>
 					</ChildrenList>

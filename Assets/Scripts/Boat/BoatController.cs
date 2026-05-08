@@ -1,6 +1,7 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using WwiseEvent = AK.Wwise.Event;
+using WwiseRTPC = AK.Wwise.RTPC;
 
 public class BoatController : MonoBehaviour
 {
@@ -73,6 +74,14 @@ public class BoatController : MonoBehaviour
     [SerializeField] private InputActionReference m_motorThrustForwardAction = null;
     [SerializeField] private InputActionReference m_motorThrustBackwardAction = null;
     [SerializeField] private InputActionReference m_motorThrustNeutralAction = null;
+
+    // AUDIO REFERENCES
+    [SerializeField] private GameObject m_boatAudioEmitter;
+    [SerializeField] private WwiseEvent m_engineStartEvent = null;
+    [SerializeField] private WwiseEvent m_engineStopEvent = null;
+    [SerializeField] private WwiseEvent m_throttleMoveEvent = null;
+    [SerializeField] private WwiseEvent m_throttleMoveIdleEvent = null;
+    [SerializeField] private WwiseRTPC m_boatThrottleSignedRTPC = null;
 
     // PROPERTIES
     public float BoatSpeedInKnots
@@ -765,12 +774,14 @@ public class BoatController : MonoBehaviour
                 m_gameManager.SetState(GameStates.MOTORMODE);
                 m_isInSailMode = false;
                 ResetSails(); // TODO Jasi: Segel einholen Animation
+                m_engineStartEvent.Post(gameObject); // Audio Event
                 Debug.Log("Motormode enabled!");
             }
             else if (m_gameManager.CurrentState == GameStates.MOTORMODE)
             {
                 m_gameManager.SetState(GameStates.SAILMODE);
                 m_isInSailMode = true;
+                m_engineStopEvent.Post(gameObject);  // Audio Event
                 Debug.Log("Sailmode enabled!");
                 Debug.Log("Segel werden aufgespannt!"); // TODO Jasi: Segel aufspannen Animation
             }
@@ -847,17 +858,23 @@ public class BoatController : MonoBehaviour
             if (m_motorThrustForwardAction != null && m_motorThrustForwardAction.action.IsPressed() == true)
             {
                 m_thrustStep = Mathf.Min(m_thrustStep + 0.005f, m_maxThrustForwardSteps);
+                //m_throttleMoveEvent.Post(gameObject);  // Audio Event
             }
 
             if (m_motorThrustBackwardAction != null && m_motorThrustBackwardAction.action.IsPressed() == true)
             {
                 m_thrustStep = Mathf.Max(m_thrustStep - 0.005f, m_maxThrustBackwardSteps);
+                //m_throttleMoveEvent.Post(gameObject);  // Audio Event
             }
 
             if (m_motorThrustNeutralAction != null && m_motorThrustNeutralAction.action.triggered == true)
             {
                 m_thrustStep = 0.0f;
+                m_throttleMoveIdleEvent.Post(gameObject);  // Audio Event
             }
+
+            // Send current throttle lever value to Wwise RTPC.
+            AkUnitySoundEngine.SetRTPCValue("Boat_ThrottleSigned", m_thrustStep, gameObject);
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

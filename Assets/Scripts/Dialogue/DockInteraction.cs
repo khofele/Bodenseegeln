@@ -5,6 +5,8 @@ using Dialogue;
 
 public class DockInteraction : MonoBehaviour
 {
+    [SerializeField] private bool m_showGizmos = true;
+
     [Header("Dock Setup")]
     [SerializeField]
     private NPCData m_npc;
@@ -92,7 +94,7 @@ public class DockInteraction : MonoBehaviour
 
         if (m_isDocked)
         {
-            Debug.LogWarning("[DockInteraction.CheckDockConditions] IsDocked is true");
+            //Debug.LogWarning("[DockInteraction.CheckDockConditions] IsDocked is true");
         }
 
         //TODO FUTURE: && IsBoatCorrectlyParkedAtDock
@@ -151,5 +153,28 @@ public class DockInteraction : MonoBehaviour
     {
         m_dockUIPanel.SetActive(false);
         GameManager.Instance.SetState(GameStates.MOTORMODE);
+    }
+
+
+    //---------------
+    //--- GIZMOS ---
+    //---------------
+    private void OnDrawGizmos()
+    {
+        if (!m_showGizmos)
+        {
+            return;
+        }
+
+        Gizmos.color = m_isDocked ? Color.darkGreen : Color.darkOrange;
+
+        BoxCollider _col = GetComponent<BoxCollider>();
+        if (_col == null)
+        {
+            return;
+        }
+
+        Gizmos.matrix = transform.localToWorldMatrix;
+        Gizmos.DrawWireCube(_col.center, _col.size);
     }
 }

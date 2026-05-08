@@ -1094,32 +1094,32 @@
 																						</PropertyList>
 																						<PointList>
 																							<Point>
-																								<XPos>-50</XPos>
-																								<YPos>5</YPos>
+																								<XPos>-3</XPos>
+																								<YPos>3</YPos>
 																								<Flags>5</Flags>
 																								<SegmentShape>Log1</SegmentShape>
 																							</Point>
 																							<Point>
-																								<XPos>-2.5</XPos>
-																								<YPos>-2.5</YPos>
+																								<XPos>-0.15</XPos>
+																								<YPos>-1</YPos>
 																								<Flags>0</Flags>
 																								<SegmentShape>Exp1</SegmentShape>
 																							</Point>
 																							<Point>
 																								<XPos>0</XPos>
-																								<YPos>0</YPos>
+																								<YPos>0.5</YPos>
 																								<Flags>0</Flags>
 																								<SegmentShape>Log1</SegmentShape>
 																							</Point>
 																							<Point>
-																								<XPos>2.5</XPos>
-																								<YPos>-2.5</YPos>
+																								<XPos>0.15</XPos>
+																								<YPos>-1</YPos>
 																								<Flags>0</Flags>
 																								<SegmentShape>Exp1</SegmentShape>
 																							</Point>
 																							<Point>
-																								<XPos>50</XPos>
-																								<YPos>5</YPos>
+																								<XPos>3</XPos>
+																								<YPos>3</YPos>
 																								<Flags>37</Flags>
 																							</Point>
 																						</PointList>
@@ -1144,13 +1144,13 @@
 																						</PropertyList>
 																						<PointList>
 																							<Point>
-																								<XPos>-50</XPos>
+																								<XPos>-3</XPos>
 																								<YPos>1</YPos>
 																								<Flags>5</Flags>
 																								<SegmentShape>Log1</SegmentShape>
 																							</Point>
 																							<Point>
-																								<XPos>-2.5</XPos>
+																								<XPos>-0.15</XPos>
 																								<YPos>0</YPos>
 																								<Flags>0</Flags>
 																								<SegmentShape>SCurve</SegmentShape>
@@ -1162,13 +1162,13 @@
 																								<SegmentShape>SCurve</SegmentShape>
 																							</Point>
 																							<Point>
-																								<XPos>2.5</XPos>
+																								<XPos>0.15</XPos>
 																								<YPos>0</YPos>
 																								<Flags>0</Flags>
 																								<SegmentShape>Exp1</SegmentShape>
 																							</Point>
 																							<Point>
-																								<XPos>50</XPos>
+																								<XPos>3</XPos>
 																								<YPos>1</YPos>
 																								<Flags>37</Flags>
 																							</Point>
@@ -1184,7 +1184,7 @@
 																<BlendTrackAssoc>
 																	<ItemRef Name="boat_engineBackward_loop" ID="{A5E78819-373C-48EC-80F4-89ED5E532C2D}"/>
 																	<CrossfadingInfo>
-																		<LeftEdgePos>-50</LeftEdgePos>
+																		<LeftEdgePos>-3</LeftEdgePos>
 																		<LeftFadingMode>Automatic</LeftFadingMode>
 																		<RightEdgePos>0</RightEdgePos>
 																		<RightFadingMode>Automatic</RightFadingMode>
@@ -1193,9 +1193,9 @@
 																<BlendTrackAssoc>
 																	<ItemRef Name="boat_engineIdle_loop" ID="{776394D0-C9F4-46F3-9244-BCE93C81862B}"/>
 																	<CrossfadingInfo>
-																		<LeftEdgePos>-2.5</LeftEdgePos>
+																		<LeftEdgePos>-0.15</LeftEdgePos>
 																		<LeftFadingMode>Automatic</LeftFadingMode>
-																		<RightEdgePos>2.5</RightEdgePos>
+																		<RightEdgePos>0.15</RightEdgePos>
 																		<RightFadingMode>Automatic</RightFadingMode>
 																	</CrossfadingInfo>
 																</BlendTrackAssoc>
@@ -1204,7 +1204,7 @@
 																	<CrossfadingInfo>
 																		<LeftEdgePos>0</LeftEdgePos>
 																		<LeftFadingMode>Automatic</LeftFadingMode>
-																		<RightEdgePos>50</RightEdgePos>
+																		<RightEdgePos>3</RightEdgePos>
 																		<RightFadingMode>Automatic</RightFadingMode>
 																	</CrossfadingInfo>
 																</BlendTrackAssoc>
@@ -1322,12 +1322,12 @@
 																						</PropertyList>
 																						<PointList>
 																							<Point>
-																								<XPos>-50</XPos>
-																								<YPos>5</YPos>
+																								<XPos>-3</XPos>
+																								<YPos>3</YPos>
 																								<Flags>5</Flags>
 																							</Point>
 																							<Point>
-																								<XPos>-2.5</XPos>
+																								<XPos>-0.15</XPos>
 																								<YPos>0</YPos>
 																								<Flags>0</Flags>
 																							</Point>
@@ -1337,13 +1337,13 @@
 																								<Flags>0</Flags>
 																							</Point>
 																							<Point>
-																								<XPos>3.0581</XPos>
+																								<XPos>0.15</XPos>
 																								<YPos>0</YPos>
 																								<Flags>0</Flags>
 																							</Point>
 																							<Point>
-																								<XPos>50</XPos>
-																								<YPos>5</YPos>
+																								<XPos>3</XPos>
+																								<YPos>3</YPos>
 																								<Flags>37</Flags>
 																							</Point>
 																						</PointList>
@@ -1358,9 +1358,9 @@
 																<BlendTrackAssoc>
 																	<ItemRef Name="boat_engineBubbles_loop" ID="{30C5718F-0C54-4A3A-9F62-3122353C875F}"/>
 																	<CrossfadingInfo>
-																		<LeftEdgePos>-3</LeftEdgePos>
+																		<LeftEdgePos>-0.15</LeftEdgePos>
 																		<LeftFadingMode>Automatic</LeftFadingMode>
-																		<RightEdgePos>3</RightEdgePos>
+																		<RightEdgePos>0.16</RightEdgePos>
 																		<RightFadingMode>Automatic</RightFadingMode>
 																	</CrossfadingInfo>
 																</BlendTrackAssoc>
@@ -2835,13 +2835,13 @@
 																				</PropertyList>
 																				<PointList>
 																					<Point>
-																						<XPos>-50</XPos>
-																						<YPos>-0</YPos>
+																						<XPos>-3</XPos>
+																						<YPos>0</YPos>
 																						<Flags>5</Flags>
 																						<SegmentShape>Log1</SegmentShape>
 																					</Point>
 																					<Point>
-																						<XPos>-2.5</XPos>
+																						<XPos>-0.15</XPos>
 																						<YPos>-2.5</YPos>
 																						<Flags>0</Flags>
 																						<SegmentShape>SCurve</SegmentShape>
@@ -2853,13 +2853,13 @@
 																						<SegmentShape>SCurve</SegmentShape>
 																					</Point>
 																					<Point>
-																						<XPos>2.5</XPos>
+																						<XPos>0.15</XPos>
 																						<YPos>-2.5</YPos>
 																						<Flags>0</Flags>
 																						<SegmentShape>Exp1</SegmentShape>
 																					</Point>
 																					<Point>
-																						<XPos>50</XPos>
+																						<XPos>3</XPos>
 																						<YPos>0</YPos>
 																						<Flags>37</Flags>
 																					</Point>
@@ -2875,7 +2875,7 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="boat_woodVibrateHeavyBackward_loop" ID="{EA33B63C-7428-4FB1-9F99-5008EA35D9EC}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>-50</LeftEdgePos>
+																<LeftEdgePos>-3</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
 																<RightEdgePos>0</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
@@ -2884,9 +2884,9 @@
 														<BlendTrackAssoc>
 															<ItemRef Name="boat_woodVibrateLight_loop" ID="{B7508581-1A57-45EF-B321-F27597162C7F}"/>
 															<CrossfadingInfo>
-																<LeftEdgePos>-2.5</LeftEdgePos>
+																<LeftEdgePos>-0.15</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>2.5</RightEdgePos>
+																<RightEdgePos>0.15</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>
@@ -2895,7 +2895,7 @@
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>50</RightEdgePos>
+																<RightEdgePos>3</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>

@@ -70,9 +70,9 @@ namespace Quest
 
         private string FormatTime(float _seconds)
         {
-            int _h = Mathf.FloorToInt(_seconds / 3600);
-            int _m = Mathf.FloorToInt((_seconds % 60) / 60);
-            int _s = Mathf.FloorToInt(_seconds % 60);
+            int _h = Mathf.FloorToInt(_seconds / 3600f);
+            int _m = Mathf.FloorToInt((_seconds % 3600f) / 60f);
+            int _s = Mathf.FloorToInt(_seconds % 60f);
 
             return $"{_h:00}:{_m:00}:{_s:00}";
         }

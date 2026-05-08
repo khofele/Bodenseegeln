@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Quest
+namespace Dialogue
 {
-    public class QuestInteraction : MonoBehaviour
+    public class NPCInteraction : MonoBehaviour
     {
         [SerializeField] private bool m_showGizmos = true;
 
-        [Header("Quest")]
-        [SerializeField] private QuestData m_quest = null;
+        [Header("NPC")]
+        [SerializeField] private NPCData m_npc = null;
 
         [Header("Detection")]
         [SerializeField] private float m_maxBoatSpeed = 0.5f;
@@ -20,9 +20,7 @@ namespace Quest
 
         [Header("UI")]
         [SerializeField] private GameObject m_interactionIcon = null;
-        [SerializeField] private GameObject m_activeQuestIcon = null;
-        //[SerializeField] private GameObject m_dockUIPanel = null;
-        //[SerializeField] private DockUIController m_dockUIController = null;
+        [SerializeField] private GameObject m_possibleQuestIcon = null;
 
         [Header("Input")]
         [SerializeField] private InputActionReference m_interactAction = null;
@@ -66,12 +64,12 @@ namespace Quest
         {
             CheckConditions();
             UpdateUI();
-            UpdateActiveQuestIcon();
+            //UpdatePossibleQuestIcon();
 
             if (m_isInteractable && m_interactAction.action.WasPressedThisFrame())
             {
                 Debug.Log("[QuestInteraction.Update] Try to complete Quest");
-                TryCompleteQuest();
+                StartDialogue();
             }
         }
 
@@ -86,7 +84,7 @@ namespace Quest
             float _speed = m_boatRigidbody.linearVelocity.magnitude;
             bool _isSlowEnough = _speed <= m_maxBoatSpeed;
 
-            m_isInteractable = m_isPlayerInRange && _isSlowEnough && QuestManager.Instance.IsQuestRunning && QuestManager.Instance.ActiveQuest == m_quest;
+            m_isInteractable = m_isPlayerInRange && _isSlowEnough;
 
             if (m_isInteractable)
             {
@@ -109,7 +107,7 @@ namespace Quest
                 m_lastInteractableState = m_isInteractable;
                 m_interactionIcon.SetActive(m_isInteractable);
             }
-            
+
             if (!m_isInteractable)
             {
                 return;
@@ -132,42 +130,36 @@ namespace Quest
             }
         }
 
-        private void UpdateActiveQuestIcon() //= the icon that is above the active quest destination to mark the quest target
+        private void StartDialogue()
         {
-            if (m_activeQuestIcon == null)
+            if (m_npc == null)
             {
+                Debug.LogWarning($"[NPCInteraction] No NPC assigned");
                 return;
             }
 
-            bool _questActive = QuestManager.Instance.ActiveQuest == m_quest;
-            if (!_questActive)
-            {
-                m_activeQuestIcon.SetActive(false);
-                return;
-            }
+            Debug.Log($"[NPCInteraction] Start dialogue with {m_npc.Name}");
 
-            float _dist = Vector3.Distance(m_boatTransform.position, transform.position);
-            m_activeQuestIcon.SetActive(_dist <= m_visibilityDistance);
+            DialogueManager.Instance.StartDialogue(m_npc);
         }
 
-        private void TryCompleteQuest()
+        private void UpdatePossibleQuestIcon() //= the icon that is above the NPC to mark that he can give a quest
         {
-            if (!QuestManager.Instance.IsQuestRunning)
-            {
-                Debug.Log("[QuestInteraction] No active quest");
-                return;
-            }
+            //if (m_activeQuestIcon == null)
+            //{
+            //    return;
+            //}
 
-            if (QuestManager.Instance.ActiveQuest != m_quest)
-            {
-                Debug.Log("[QuestInteraction] Wrong quest");
-                return;
-            }
+            //bool _questActive = QuestManager.Instance.ActiveQuest == m_quest;
+            //if (!_questActive)
+            //{
+            //    m_activeQuestIcon.SetActive(false);
+            //    return;
+            //}
 
-            Debug.Log("[QuestInteraction] Quest interaction notified QuestManager about interaction");
+            //float _dist = Vector3.Distance(m_boatTransform.position, transform.position);
+            //m_activeQuestIcon.SetActive(_dist <= m_visibilityDistance);
 
-            QuestManager.Instance.HandleQuestInteraction(m_quest);
-            //QuestResult _result = QuestManager.Instance.FinishQuestAndGetResult();
         }
 
         //---------------

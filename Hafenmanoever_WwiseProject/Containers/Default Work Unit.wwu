@@ -2909,10 +2909,15 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="boat_sailDeploy" ID="{88934502-D5FE-48CC-B789-E65E3BC739C5}" ShortID="462491127">
 											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>40</Value>
+													</ValueList>
+												</Property>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
-														<Value>-600</Value>
+														<Value>-400</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
@@ -2928,7 +2933,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>2</Value>
+														<Value>3</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
@@ -3022,6 +3027,128 @@
 														<ReferenceList>
 															<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
 																<ObjectRef Name="BoatSailDeploy_Compressor" ID="{13437C42-4D37-4512-A65F-3DC195D09931}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="boat_sailRetract" ID="{3ACD2E4D-54D7-44D1-80A6-5D0EB4775282}" ShortID="380262432">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>30</Value>
+													</ValueList>
+												</Property>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-400</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{1FB893C0-C49C-40D2-A21E-B9AC1563F277}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="80"/>
+																	<Property Name="Min" Type="Real64" Value="-80"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="boat_sailRetract" ID="{DEA9641F-77BE-443C-9BBF-A1D43DE8F056}" ShortID="498928410">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_sailRetract" ID="{6264DD89-BB5E-4166-B4FE-26AB3F6AC098}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.05361"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.2811"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.07743"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_sailRetract.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="853488806"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_sailRetract" ID="{6264DD89-BB5E-4166-B4FE-26AB3F6AC098}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_sailRetract1" ID="{D5FDB6F0-696D-4542-9B7E-C358015BC935}" ShortID="7076034">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_sailRetract1" ID="{A774816C-EBE5-44BC-B24E-CD3F10053069}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.09402"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.58662"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.06754"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_sailRetract1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="264595052"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_sailRetract1" ID="{A774816C-EBE5-44BC-B24E-CD3F10053069}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{995A9BBF-4064-4F58-A3BC-9C03BA03D30C}" ShortID="20722448">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="BoatSailRetract_EQ" ID="{FD15F075-122A-4EBE-A416-321D706BF435}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+													<EffectSlot Name="" ID="{B976DC49-98FD-4EB6-A47C-BCA1C5F23C15}" ShortID="750481354">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																<ObjectRef Name="BoatSailRetract_Compressor" ID="{BBEF0C47-0FC7-484B-B1ED-0034B4FAFD59}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
 															</Reference>
 														</ReferenceList>
 													</EffectSlot>

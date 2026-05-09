@@ -438,6 +438,49 @@
 										<Property Name="RolloffRateBand1" Type="int32" Value="48"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="EnvBoatCollisionUnderWater_EQ" ID="{AB816659-14D0-4607-93FE-4D0AFDB8B6F0}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="8"/>
+										<Property Name="FilterTypeBand4" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="80"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="200"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="700"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="2500"/>
+										<Property Name="GainBand2" Type="Real32" Value="4"/>
+										<Property Name="GainBand3" Type="Real32" Value="-4"/>
+										<Property Name="GainBand4" Type="Real32" Value="-8"/>
+										<Property Name="NumBands" Type="int32" Value="4"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="QFactorBand1" Type="Real32" Value="0.7"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="EnvBoatCollisionUnderWaterWater_EQ" ID="{3B9F78E6-1616-4C26-AAA7-93270582847C}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="8"/>
+										<Property Name="FilterTypeBand7" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="45"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="180"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="350"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="700"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="1200"/>
+										<Property Name="FrequencyBand6" Type="Real32" Value="2500"/>
+										<Property Name="GainBand2" Type="Real32" Value="4"/>
+										<Property Name="GainBand3" Type="Real32" Value="3"/>
+										<Property Name="GainBand4" Type="Real32" Value="-2"/>
+										<Property Name="GainBand5" Type="Real32" Value="-4"/>
+										<Property Name="GainBand6" Type="Real32" Value="-6"/>
+										<Property Name="GainBand7" Type="Real32" Value="-10"/>
+										<Property Name="NumBands" Type="int32" Value="7"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="OnOffBand6" Type="bool" Value="True"/>
+										<Property Name="OnOffBand7" Type="bool" Value="True"/>
+										<Property Name="QFactorBand1" Type="Real32" Value="0.7"/>
+										<Property Name="QFactorBand3" Type="Real32" Value="1.1"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="MissionsFeedback" ID="{06CF0C80-C11D-4627-8897-F962B6B7DC13}" ShortID="23660352">

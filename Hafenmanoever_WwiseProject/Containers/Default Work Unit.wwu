@@ -3606,11 +3606,6 @@
 																		</ModifierInfo>
 																	</ModifierList>
 																</Property>
-																<Property Name="Volume" Type="Real64">
-																	<ValueList>
-																		<Value>1</Value>
-																	</ValueList>
-																</Property>
 															</PropertyList>
 															<ReferenceList>
 																<Reference Name="Conversion">
@@ -3746,7 +3741,7 @@
 																</Property>
 																<Property Name="Volume" Type="Real64">
 																	<ValueList>
-																		<Value>-5</Value>
+																		<Value>-3</Value>
 																	</ValueList>
 																</Property>
 															</PropertyList>
@@ -3895,7 +3890,7 @@
 																<Property Name="OverrideEffect" Type="bool" Value="True"/>
 																<Property Name="Pitch" Type="int32">
 																	<ValueList>
-																		<Value>-200</Value>
+																		<Value>-900</Value>
 																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
@@ -3911,7 +3906,7 @@
 																</Property>
 																<Property Name="Volume" Type="Real64">
 																	<ValueList>
-																		<Value>-5</Value>
+																		<Value>-10</Value>
 																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
@@ -3973,6 +3968,11 @@
 												<BlendContainer Name="BC_envcollisionHeavyImpact" ID="{5E5396D0-8E5B-4A13-8223-A185F73CC7FE}" ShortID="390227526">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-4</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Attenuation">
@@ -4462,6 +4462,13 @@
 										<Folder Name="EnvBoatCollisionUnderWater" ID="{2A65768D-EF05-49F9-AF5E-8635A7696E3C}" ShortID="1052690743">
 											<ChildrenList>
 												<BlendContainer Name="BC_envCollisionUnderWater" ID="{6C66ED07-8A83-4726-A43A-F614410689D3}" ShortID="587067810">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -4497,6 +4504,9 @@
 																	</ModifierList>
 																</Property>
 																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>3</Value>
+																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{02FECA44-A4F1-49F1-95E0-1493270AADAA}">
@@ -4617,6 +4627,223 @@
 																		<ReferenceList>
 																			<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
 																				<ObjectRef Name="EnvBoatCollisionUnderWaterImpact_Compressor" ID="{DD9825FD-BF72-4D1E-A025-208BF616501D}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+														</RandomSequenceContainer>
+														<RandomSequenceContainer Name="env_collisionUnderWater" ID="{A5783559-46FC-4A0E-BA25-6552676DF663}" ShortID="866443762">
+															<PropertyList>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>60</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>10</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideEffect" Type="bool" Value="True"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-200</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{DD235290-3D0B-4ABC-8F0D-393B5A710FF4}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="100"/>
+																					<Property Name="Min" Type="Real64" Value="-100"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>1</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="env_collisionUnderWater1" ID="{66F37A5D-EAAE-4DB2-9184-DD6A295D68AA}" ShortID="741133011">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_collisionUnderWater1" ID="{08EA7817-A81C-46F5-A8C8-90A397639504}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.04041"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.23725"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_collisionUnderWater1.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="838364676"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_collisionUnderWater1" ID="{08EA7817-A81C-46F5-A8C8-90A397639504}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="env_collisionUnderWater" ID="{D83892D0-A0D1-4EB8-BDA3-6DCFCC6299BB}" ShortID="556158379">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_collisionUnderWater" ID="{C8C9C251-B58F-47C8-8E8E-BC2370BF74BD}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.04807"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.18357"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_collisionUnderWater.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="710477965"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_collisionUnderWater" ID="{C8C9C251-B58F-47C8-8E8E-BC2370BF74BD}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{7B6C5D3D-53CA-49A7-A977-704ADBE70696}" ShortID="121688364">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="EnvBoatCollisionUnderWater_EQ" ID="{AB816659-14D0-4607-93FE-4D0AFDB8B6F0}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+														</RandomSequenceContainer>
+														<RandomSequenceContainer Name="env_collisionUnderWaterWater" ID="{93B52CDE-A814-4E2F-A043-779C823F6D57}" ShortID="560241415">
+															<PropertyList>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>60</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideEffect" Type="bool" Value="True"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-300</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{25D4F8DD-1073-4256-9604-4BD4C4675833}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="100"/>
+																					<Property Name="Min" Type="Real64" Value="-100"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-4</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="env_collisionUnderWaterWater" ID="{7E8A1DC8-4AFE-43BE-AC7E-9F2C3790DF3A}" ShortID="593895303">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_collisionUnderWaterWater" ID="{ED7A6EDD-94D1-4C31-9158-6F79990B79AC}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.0783"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.44665"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_collisionUnderWaterWater.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="606834315"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_collisionUnderWaterWater" ID="{ED7A6EDD-94D1-4C31-9158-6F79990B79AC}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="env_collisionUnderWaterWater1" ID="{4BEBA8C0-5DED-4433-B794-02469CA4C483}" ShortID="188407755">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_collisionUnderWaterWater1" ID="{5BAF3F3B-8C41-49DD-8D22-83FD4379708E}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.03982"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.37412"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_collisionUnderWaterWater1.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="95471646"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_collisionUnderWaterWater1" ID="{5BAF3F3B-8C41-49DD-8D22-83FD4379708E}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{D2820720-277D-4F7E-BE9A-7F6203BCC6D4}" ShortID="1063952719">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="EnvBoatCollisionUnderWaterWater_EQ" ID="{3B9F78E6-1616-4C26-AAA7-93270582847C}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
 																			</Reference>
 																		</ReferenceList>
 																	</EffectSlot>

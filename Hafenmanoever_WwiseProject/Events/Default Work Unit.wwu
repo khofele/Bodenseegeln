@@ -320,15 +320,14 @@
 								</Event>
 								<Event Name="boat_engineWaterStop" ID="{9164CB25-85BF-4EF0-B292-EF7FE5C4DFEE}">
 									<ChildrenList>
-										<Action Name="" ID="{5560DA05-D805-49F2-B300-A79B4A882F64}" ShortID="117134884">
+										<Action Name="" ID="{25C22BB5-068A-4669-8312-6605B5350A75}" ShortID="124862309">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="2"/>
-												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
-												<Property Name="FadeTime" Type="Real64" Value="1"/>
+												<Property Name="Delay" Type="Real64" Value="0.5"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="BC_boatEngine_ThrottleBlend" ID="{0F371717-3086-41AA-A040-D1937A7AFEDC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+													<ObjectRef Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

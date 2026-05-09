@@ -209,6 +209,33 @@
 										<Property Name="QFactorBand2" Type="Real32" Value="1.1"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="BoatSailFlapLoop_EQ" ID="{CC0A4202-7504-4CCC-8ADE-799665A52E51}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="8"/>
+										<Property Name="FilterTypeBand7" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="100"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="350"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="750"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="1800"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="3200"/>
+										<Property Name="FrequencyBand6" Type="Real32" Value="5500"/>
+										<Property Name="FrequencyBand7" Type="Real32" Value="9000"/>
+										<Property Name="GainBand2" Type="Real32" Value="-2"/>
+										<Property Name="GainBand3" Type="Real32" Value="-4"/>
+										<Property Name="GainBand4" Type="Real32" Value="-3"/>
+										<Property Name="GainBand5" Type="Real32" Value="3"/>
+										<Property Name="GainBand6" Type="Real32" Value="3"/>
+										<Property Name="GainBand7" Type="Real32" Value="1"/>
+										<Property Name="NumBands" Type="int32" Value="7"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="OnOffBand6" Type="bool" Value="True"/>
+										<Property Name="OnOffBand7" Type="bool" Value="True"/>
+										<Property Name="QFactorBand4" Type="Real32" Value="1.3"/>
+										<Property Name="QFactorBand5" Type="Real32" Value="1.1"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Ambient" ID="{E453CDA4-0E26-414A-AB93-16296D9C07B4}" ShortID="115757871">
@@ -631,6 +658,35 @@
 								<Property Name="Ratio" Type="Real32" Value="3"/>
 								<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
 								<Property Name="Threshold" Type="Real32" Value="-30"/>
+							</PropertyList>
+						</Effect>
+						<Effect Name="BoatSailFlapLoop_Compressor" ID="{A57E4233-B003-4935-953C-128034DAB12C}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+							<PropertyList>
+								<Property Name="AttackTime" Type="Real32" Value="0.8"/>
+								<Property Name="Ratio" Type="Real32" Value="2"/>
+								<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
+								<Property Name="Threshold" Type="Real32" Value="-22"/>
+							</PropertyList>
+						</Effect>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="RoomVerb" ID="{633CDEC3-A160-4DF7-B965-051FDDD3218A}" ShortID="531765072">
+					<ChildrenList>
+						<Effect Name="BoatSailFlapLoop_RoomVerb" ID="{CB5DC2C9-CE3D-4C2E-BE52-71CA707B7F42}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<PropertyList>
+								<Property Name="DecayTime" Type="Real32" Value="0.5"/>
+								<Property Name="Density" Type="Real32" Value="50"/>
+								<Property Name="Diffusion" Type="Real32" Value="70"/>
+								<Property Name="DryLevel" Type="Real32" Value="0"/>
+								<Property Name="ERLevel" Type="Real32" Value="-23"/>
+								<Property Name="ERPattern" Type="int32" Value="22"/>
+								<Property Name="HFDamping" Type="Real32" Value="6.5"/>
+								<Property Name="PreDelay" Type="Real32" Value="5"/>
+								<Property Name="Quality" Type="int32" Value="6"/>
+								<Property Name="ReverbLevel" Type="Real32" Value="-27"/>
+								<Property Name="RoomShape" Type="Real32" Value="35"/>
+								<Property Name="RoomSize" Type="Real32" Value="20"/>
+								<Property Name="StereoWidth" Type="Real32" Value="80"/>
 							</PropertyList>
 						</Effect>
 					</ChildrenList>

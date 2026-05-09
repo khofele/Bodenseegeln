@@ -14,10 +14,15 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID BOAT_ENGINESTART = 1385959304U;
+        static const AkUniqueID BOAT_ENGINESTARTKEY = 480691325U;
         static const AkUniqueID BOAT_ENGINESTOP = 1816964564U;
+        static const AkUniqueID BOAT_ENGINEWATERSTART = 765304779U;
+        static const AkUniqueID BOAT_ENGINEWATERSTOP = 1447191913U;
         static const AkUniqueID BOAT_THROTTLEMOVE = 3488054365U;
         static const AkUniqueID BOAT_THROTTLEMOVEIDLE = 1287245143U;
         static const AkUniqueID BOAT_WHEELTURN = 3653799758U;
+        static const AkUniqueID BOAT_WOODVIBRATIONSTART = 291365827U;
+        static const AkUniqueID BOAT_WOODVIBRATIONSTOP = 551126337U;
         static const AkUniqueID ENV_BOATCOLLISIONHEAVY = 637864694U;
         static const AkUniqueID ENV_BOATCOLLISIONLIGHT = 4135813027U;
         static const AkUniqueID ENV_CLOSEMAP = 2562124403U;

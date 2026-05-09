@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{56AD153E-2423-ACF1-D45B-D8410A66B111}",
+    "Hash": "{F0743758-9166-1122-689B-4CFE7C534124}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -537,18 +537,6 @@
         "Id": "85550369"
        },
        {
-        "Id": "425142125"
-       },
-       {
-        "Id": "503844325"
-       },
-       {
-        "Id": "606033276"
-       },
-       {
-        "Id": "627688009"
-       },
-       {
         "Id": "645098651"
        },
        {
@@ -568,6 +556,21 @@
         }
        ]
       }
+     },
+     {
+      "Id": "480691325",
+      "Name": "boat_engineStartKey",
+      "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatEngine\\boat_engineStartKey",
+      "GUID": "{B4F126E6-6493-4C95-ADEB-A5893F8CEDF2}",
+      "MaxAttenuation": "30",
+      "DurationType": "OneShot",
+      "DurationMin": "1.1281806",
+      "DurationMax": "1.1281806",
+      "MediaRefs": [
+       {
+        "Id": "503844325"
+       }
+      ]
      },
      {
       "Id": "1816964564",
@@ -593,6 +596,29 @@
         }
        ]
       }
+     },
+     {
+      "Id": "765304779",
+      "Name": "boat_engineWaterStart",
+      "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatEngine\\boat_engineWaterStart",
+      "GUID": "{72799A52-33A2-42BE-AB31-DA0DC86925EC}",
+      "MaxAttenuation": "15",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "606033276"
+       }
+      ]
+     },
+     {
+      "Id": "1447191913",
+      "Name": "boat_engineWaterStop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatEngine\\boat_engineWaterStop",
+      "GUID": "{9164CB25-85BF-4EF0-B292-EF7FE5C4DFEE}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      },
      {
       "Id": "3488054365",
@@ -675,6 +701,32 @@
         }
        ]
       }
+     },
+     {
+      "Id": "291365827",
+      "Name": "boat_woodVibrationStart",
+      "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatWood\\boat_woodVibrationStart",
+      "GUID": "{00D2F70E-7C7E-4BF6-8FAF-2BD5E295D7D6}",
+      "MaxAttenuation": "20",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "425142125"
+       },
+       {
+        "Id": "627688009"
+       }
+      ]
+     },
+     {
+      "Id": "551126337",
+      "Name": "boat_woodVibrationStop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatWood\\boat_woodVibrationStop",
+      "GUID": "{4851289B-49D0-4D8D-B8AC-6EF32518C5D0}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      },
      {
       "Id": "637864694",
@@ -1115,6 +1167,6 @@
     ]
    }
   ],
-  "FileHash": "{70DAD207-E6EA-D16D-0982-F4FD94B9137F}"
+  "FileHash": "{C47CFF40-6A6F-C3AE-087C-37EEBC28384C}"
  }
 }

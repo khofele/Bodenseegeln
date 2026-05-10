@@ -781,6 +781,7 @@ public class BoatController : MonoBehaviour
             {
                 m_gameManager.SetState(GameStates.SAILMODE);
                 m_isInSailMode = true;
+                m_thrustStep = 0.0f;
                 m_engineStopEvent.Post(gameObject);  // Audio Event
                 Debug.Log("Sailmode enabled!");
                 Debug.Log("Segel werden aufgespannt!"); // TODO Jasi: Segel aufspannen Animation

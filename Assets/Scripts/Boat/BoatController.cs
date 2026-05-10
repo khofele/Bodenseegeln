@@ -57,7 +57,7 @@ public class BoatController : MonoBehaviour
 
     // REFERENCES
     [SerializeField] private GameManager m_gameManager = null;
-    [SerializeField] private WindController windController = null;
+    [SerializeField] private WindController m_windController = null;
     [SerializeField] private Transform m_parentReference = null;
     [SerializeField] private GameObject m_mainSail = null;
     [SerializeField] private GameObject m_frontSail = null;
@@ -170,7 +170,7 @@ public class BoatController : MonoBehaviour
     private Vector3 CalculateApprentWind()
     {
         // TODO get wind vector from wind script --> placeholder vector
-        m_apparentWind = new Vector3(0.0f, 0.0f, 10.0f) - m_rigidbody.linearVelocity;
+        m_apparentWind = m_windController.TrueWind - m_rigidbody.linearVelocity;
         return m_apparentWind;
     }
 

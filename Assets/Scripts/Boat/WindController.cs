@@ -41,6 +41,8 @@ public class WindController : MonoBehaviour
 
         m_targetWindStrength = m_baseWindStrength + Mathf.Lerp(0.5f, 11.0f, windStrengthNoise);
 
+        m_stabilityDuration = Random.Range(3.0f, 10.0f);
+
         m_transitionTimer = 0.0f;
         m_isTransitioning = true;
     }

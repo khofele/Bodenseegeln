@@ -81,6 +81,11 @@ public class BoatAudioController : MonoBehaviour
         m_throttleMoveIdleEvent.Post(m_boatCockpitEmitter);
     }
 
+    public void PlayThrottleAudio()
+    {
+        m_throttleMoveEvent.Post(m_boatCockpitEmitter);
+    }
+
     public void SetThrottleValues(float thrustStep)
     {
         // Send current throttle lever value to Wwise RTPC.

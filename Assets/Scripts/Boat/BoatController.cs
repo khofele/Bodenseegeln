@@ -852,6 +852,8 @@ public class BoatController : MonoBehaviour
     {
         if (m_gameManager.CurrentState == GameStates.MOTORMODE)
         {
+            float previousThrustStep = m_thrustStep;
+
             // read input and increase or decrease thrust or set thrust to neutral position
             if (m_motorThrustForwardAction != null && m_motorThrustForwardAction.action.IsPressed() == true)
             {
@@ -872,6 +874,12 @@ public class BoatController : MonoBehaviour
             }
 
             m_boatAudioController.SetThrottleValues(m_thrustStep);
+
+            // check if the thrust lever has been moved forward or backward out of the idle state
+            if (Mathf.Approximately(previousThrustStep, 0.0f) == true && Mathf.Approximately(m_thrustStep, 0.0f) == false)
+            {
+                m_boatAudioController.PlayThrottleAudio();
+            }
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

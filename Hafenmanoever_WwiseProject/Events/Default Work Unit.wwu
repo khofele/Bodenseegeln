@@ -390,6 +390,59 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="BoatSail" ID="{AFC60F6A-464A-497A-B92D-E8483504F133}" ShortID="217737011">
+							<ChildrenList>
+								<Event Name="boat_sailRetract" ID="{53D6DCA1-F83A-4B7A-B36C-E5AA642AFF51}">
+									<ChildrenList>
+										<Action Name="" ID="{E3EF636D-9952-4DB7-8960-0BDFDDD5AEB7}" ShortID="242495373">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatSailRetract" ID="{C5604AC0-550D-4226-9A13-1A8A0BB93FA9}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_sailDeploy" ID="{BB2F9EAF-8DDB-43BF-BFC0-1BC0172ED2A5}">
+									<ChildrenList>
+										<Action Name="" ID="{84744FE1-0852-4470-AA98-B8570700EDBC}" ShortID="834981950">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatSailDeploy" ID="{4BF484A1-5022-435D-8614-1C6542EA25DD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_start_sailFlap" ID="{A8CBAD99-4BF5-4A81-919A-166039F3ED99}">
+									<ChildrenList>
+										<Action Name="" ID="{72DB53F9-A63C-4ABC-9D0E-AECAF887A0BA}" ShortID="751591065">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatSailFlap_loop" ID="{783C6CC0-0CCE-4E23-92DC-C7609865D9E9}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_stop_sailFlap" ID="{FF95DB65-C89E-4B8B-9412-111EB3643BED}">
+									<ChildrenList>
+										<Action Name="" ID="{5425D0D5-230A-4EED-8B29-940D796F3217}" ShortID="437662174">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.7"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatSailFlap_loop" ID="{783C6CC0-0CCE-4E23-92DC-C7609865D9E9}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Environment" ID="{F7A400A8-0F91-4630-953E-8D8200BDD709}" ShortID="5191634">

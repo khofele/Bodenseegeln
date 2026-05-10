@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{E4BB28AB-BD15-C370-F33A-8F96A4845412}",
+    "Hash": "{8F2F5606-D187-0348-4BBA-C3671E7F9C98}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -80,6 +80,14 @@
       "CachePath": "8A/{8AB58030-8821-0A36-1F40-C668EB4C4690}.wem"
      },
      {
+      "Id": "264595052",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailRetract1.wav",
+      "CachePath": "47/{47C1338E-6657-3813-616B-331D4168CCFB}.wem"
+     },
+     {
       "Id": "346112390",
       "Language": "SFX",
       "Streaming": "false",
@@ -104,6 +112,14 @@
       "CachePath": "00/{003BA776-9087-E7FC-E40E-069FA9A9C80B}.wem"
      },
      {
+      "Id": "381048997",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailDeploy1.wav",
+      "CachePath": "1C/{1C461535-323E-9895-CB04-72516E5C9303}.wem"
+     },
+     {
       "Id": "421288215",
       "Language": "SFX",
       "Streaming": "false",
@@ -126,6 +142,14 @@
       "Location": "Memory",
       "ShortName": "boat_ropeCreak3.wav",
       "CachePath": "09/{09B62AFF-4F68-F46C-1C4F-9806FB1B4BBD}.wem"
+     },
+     {
+      "Id": "448957523",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailDeployImpact.wav",
+      "CachePath": "66/{665FAFA6-FDE6-246B-EBED-0D6F1EEE519F}.wem"
      },
      {
       "Id": "481909320",
@@ -173,7 +197,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "env_collisionLightWater.wav",
-      "CachePath": "85/{85B5C406-27CC-8803-3B50-03825986A17E}.wem"
+      "CachePath": "E4/{E48B2B48-572A-EBB6-F45F-1B58E77FBE4C}.wem"
      },
      {
       "Id": "541681675",
@@ -296,6 +320,22 @@
       "CachePath": "CA/{CAF7591D-9073-1F0C-0B73-2B7D9180B236}.wem"
      },
      {
+      "Id": "851669271",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailDeploy.wav",
+      "CachePath": "B7/{B7EEE1E1-682E-457C-EEB5-D5D3C77B993F}.wem"
+     },
+     {
+      "Id": "853488806",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailRetract.wav",
+      "CachePath": "B1/{B14A25B7-6DAA-1E03-4873-CC4440975016}.wem"
+     },
+     {
       "Id": "857358029",
       "Language": "SFX",
       "Streaming": "false",
@@ -328,6 +368,14 @@
       "CachePath": "D4/{D455A0D2-7B64-9D0F-C967-90BE92D37B07}.wem"
      },
      {
+      "Id": "900952466",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlapWind_loop2.wav",
+      "CachePath": "54/{5444B20B-53CB-B2CD-B10F-A704C7CC22F7}.wem"
+     },
+     {
       "Id": "922437653",
       "Language": "SFX",
       "Streaming": "false",
@@ -342,6 +390,22 @@
       "Location": "Memory",
       "ShortName": "env_collisionHeavyImpact.wav",
       "CachePath": "5B/{5B8AB804-3565-2ED1-1DE1-73DA12C4DCA6}.wem"
+     },
+     {
+      "Id": "944740748",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlap_loop.wav",
+      "CachePath": "D6/{D6265093-7B03-80D6-9BC0-E4EA28216BBA}.wem"
+     },
+     {
+      "Id": "983138526",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailRetractImpact.wav",
+      "CachePath": "D0/{D0F1EEE4-F8E3-3100-0151-682D018246CA}.wem"
      },
      {
       "Id": "984283490",
@@ -374,6 +438,14 @@
       "Location": "Memory",
       "ShortName": "env_collisionHeavyWood.wav",
       "CachePath": "93/{9358448A-630D-9B7C-CCA6-98586AC9D8F8}.wem"
+     },
+     {
+      "Id": "1071268642",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlapWind_loop.wav",
+      "CachePath": "44/{4437E972-0102-BC7B-AB2F-D2310A9134DD}.wem"
      }
     ],
     "Plugins": {
@@ -419,10 +491,26 @@
        "LibId": "6881283"
       },
       {
+       "Id": "1389289044",
+       "Name": "BoatSailFlapWind_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Boat\\BoatSailFlapWind_EQ",
+       "GUID": "{F61FF588-1A2F-4AAB-95B9-782A5B7F542E}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
        "Id": "1413546197",
        "Name": "EnvMapOpen_EQ",
        "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvMapOpen_EQ",
        "GUID": "{85D4E121-2412-4CD3-8D3A-7C03FEC275D1}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "1559769808",
+       "Name": "BoatSailFlapLoop_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Boat\\BoatSailFlapLoop_EQ",
+       "GUID": "{CC0A4202-7504-4CCC-8ADE-799665A52E51}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
       },
@@ -433,6 +521,22 @@
        "GUID": "{2A4F3F3B-9893-49C0-AE0A-77A2D3258E55}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
+      },
+      {
+       "Id": "1628925396",
+       "Name": "BoatSailRetract_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Boat\\BoatSailRetract_EQ",
+       "GUID": "{FD15F075-122A-4EBE-A416-321D706BF435}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "1646172985",
+       "Name": "BoatSailFlapLoop_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\BoatSailFlapLoop_Compressor",
+       "GUID": "{A57E4233-B003-4935-953C-128034DAB12C}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
       },
       {
        "Id": "1741208498",
@@ -467,6 +571,22 @@
        "LibId": "6881283"
       },
       {
+       "Id": "2515283109",
+       "Name": "BoatSailRetract_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\BoatSailRetract_Compressor",
+       "GUID": "{BBEF0C47-0FC7-484B-B1ED-0034B4FAFD59}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      },
+      {
+       "Id": "2878233723",
+       "Name": "BoatSailDeploy_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\BoatSailDeploy_Compressor",
+       "GUID": "{13437C42-4D37-4512-A65F-3DC195D09931}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      },
+      {
        "Id": "2950059500",
        "Name": "EnvMapClose_Compressor",
        "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\EnvMapClose_Compressor",
@@ -497,6 +617,22 @@
        "GUID": "{16BFB809-01B9-4F85-86F8-D5EB294ACA7E}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
+      },
+      {
+       "Id": "3558546510",
+       "Name": "BoatSailDeploy_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Boat\\BoatSailDeploy_EQ",
+       "GUID": "{588D7105-810D-4C74-AF47-3B381CB04A49}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "3585041712",
+       "Name": "BoatSailFlapLoop_RoomVerb",
+       "ObjectPath": "\\Effects\\Default Work Unit\\RoomVerb\\BoatSailFlapLoop_RoomVerb",
+       "GUID": "{CB5DC2C9-CE3D-4C2E-BE52-71CA707B7F42}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
       },
       {
        "Id": "3680949560",
@@ -615,6 +751,113 @@
       "Name": "boat_engineWaterStop",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatEngine\\boat_engineWaterStop",
       "GUID": "{9164CB25-85BF-4EF0-B292-EF7FE5C4DFEE}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "52134156",
+      "Name": "boat_sailDeploy",
+      "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatSail\\boat_sailDeploy",
+      "GUID": "{BB2F9EAF-8DDB-43BF-BFC0-1BC0172ED2A5}",
+      "MaxAttenuation": "30",
+      "DurationType": "OneShot",
+      "DurationMin": "1.1818237",
+      "DurationMax": "2.2030082",
+      "MediaRefs": [
+       {
+        "Id": "381048997"
+       },
+       {
+        "Id": "448957523"
+       },
+       {
+        "Id": "851669271"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "2878233723"
+        },
+        {
+         "Id": "3558546510"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "509806472",
+      "Name": "boat_sailRetract",
+      "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatSail\\boat_sailRetract",
+      "GUID": "{53D6DCA1-F83A-4B7A-B36C-E5AA642AFF51}",
+      "MaxAttenuation": "30",
+      "DurationType": "OneShot",
+      "DurationMin": "1.1098747",
+      "DurationMax": "2.0550659",
+      "MediaRefs": [
+       {
+        "Id": "264595052"
+       },
+       {
+        "Id": "853488806"
+       },
+       {
+        "Id": "983138526"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1628925396"
+        },
+        {
+         "Id": "2515283109"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3762695479",
+      "Name": "boat_start_sailFlap",
+      "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatSail\\boat_start_sailFlap",
+      "GUID": "{A8CBAD99-4BF5-4A81-919A-166039F3ED99}",
+      "MaxAttenuation": "30",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "900952466"
+       },
+       {
+        "Id": "944740748"
+       },
+       {
+        "Id": "1071268642"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1389289044"
+        },
+        {
+         "Id": "1559769808"
+        },
+        {
+         "Id": "1646172985"
+        },
+        {
+         "Id": "3585041712"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "2177072159",
+      "Name": "boat_stop_sailFlap",
+      "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatSail\\boat_stop_sailFlap",
+      "GUID": "{FF95DB65-C89E-4B8B-9412-111EB3643BED}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -790,8 +1033,8 @@
       "GUID": "{EF01BE52-22F9-439B-96A7-FAFAB1AA401D}",
       "MaxAttenuation": "30",
       "DurationType": "OneShot",
-      "DurationMin": "1.7004988",
-      "DurationMax": "1.9087453",
+      "DurationMin": "2.0823321",
+      "DurationMax": "2.337339",
       "MediaRefs": [
        {
         "Id": "21747592"
@@ -1167,6 +1410,6 @@
     ]
    }
   ],
-  "FileHash": "{B3F27DF9-1C46-5D9B-8BFB-EE215D168EAE}"
+  "FileHash": "{6B365B4C-2B16-460E-EB5D-F44AD5751F8D}"
  }
 }

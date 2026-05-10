@@ -18,6 +18,10 @@ namespace AK
         static const AkUniqueID BOAT_ENGINESTOP = 1816964564U;
         static const AkUniqueID BOAT_ENGINEWATERSTART = 765304779U;
         static const AkUniqueID BOAT_ENGINEWATERSTOP = 1447191913U;
+        static const AkUniqueID BOAT_SAILDEPLOY = 52134156U;
+        static const AkUniqueID BOAT_SAILRETRACT = 509806472U;
+        static const AkUniqueID BOAT_START_SAILFLAP = 3762695479U;
+        static const AkUniqueID BOAT_STOP_SAILFLAP = 2177072159U;
         static const AkUniqueID BOAT_THROTTLEMOVE = 3488054365U;
         static const AkUniqueID BOAT_THROTTLEMOVEIDLE = 1287245143U;
         static const AkUniqueID BOAT_WHEELTURN = 3653799758U;

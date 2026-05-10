@@ -236,6 +236,25 @@
 										<Property Name="QFactorBand5" Type="Real32" Value="1.1"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="BoatSailFlapWind_EQ" ID="{F61FF588-1A2F-4AAB-95B9-782A5B7F542E}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FilterTypeBand3" Type="int32" Value="3"/>
+										<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="80"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="500"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="1300"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="2800"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="7000"/>
+										<Property Name="GainBand2" Type="Real32" Value="-2"/>
+										<Property Name="GainBand4" Type="Real32" Value="-7"/>
+										<Property Name="GainBand5" Type="Real32" Value="3"/>
+										<Property Name="NumBands" Type="int32" Value="5"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Ambient" ID="{E453CDA4-0E26-414A-AB93-16296D9C07B4}" ShortID="115757871">

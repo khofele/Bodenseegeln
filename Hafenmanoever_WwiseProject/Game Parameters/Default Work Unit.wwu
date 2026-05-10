@@ -15,6 +15,14 @@
 								<Property Name="SlewRateUp" Type="Real64" Value="8"/>
 							</PropertyList>
 						</GameParameter>
+						<GameParameter Name="Boat_SailTension" ID="{7F5CA7A6-156F-4E8E-9CE5-228FB55B8D24}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="RTPCRamping" Type="int16" Value="1"/>
+								<Property Name="SlewRateDown" Type="Real64" Value="30"/>
+								<Property Name="SlewRateUp" Type="Real64" Value="30"/>
+							</PropertyList>
+						</GameParameter>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

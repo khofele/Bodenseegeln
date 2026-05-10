@@ -56,6 +56,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID BOAT_SAILTENSION = 3815819945U;
         static const AkUniqueID BOAT_THROTTLESIGNED = 572552402U;
     } // namespace GAME_PARAMETERS
 

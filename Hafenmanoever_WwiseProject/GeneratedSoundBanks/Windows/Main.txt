@@ -41,6 +41,7 @@ Event	ID	Name			Wwise Object Path	Notes
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	572552402	Boat_ThrottleSigned			\Default Work Unit\Boat_GameParameters\Boat_ThrottleSigned	
+	3815819945	Boat_SailTension			\Default Work Unit\Boat_GameParameters\Boat_SailTension	
 
 Effect plug-ins	ID	Name	Type				Notes
 	466641577	MissionMoneyPurse_EQ	Wwise Parametric EQ			
@@ -115,14 +116,14 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	857592912	env_collisionHeavyImpact3	.cache\7D\{7D8253B4-DF33-97BE-CD1D-E6868BB18F3E}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\BC_envcollisionHeavyImpact\env_collisionHeavyImpact2\env_collisionHeavyImpact3		100684
 	875602288	env_collisionHeavyImpact4	.cache\80\{8028B093-E891-CA30-7B3E-1E1F6E4DAF31}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\BC_envcollisionHeavyImpact\env_collisionHeavyImpact2\env_collisionHeavyImpact4		40628
 	887624249	menu_openPause	.cache\D4\{D455A0D2-7B64-9D0F-C967-90BE92D37B07}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_openPause\menu_openPause		75200
-	900952466	boat_sailFlapWind_loop2	.cache\54\{5444B20B-53CB-B2CD-B10F-A704C7CC22F7}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailFlap_loop\boat_sailFlapWind_loop\boat_sailFlapWind_loop2		2361580
+	900952466	boat_sailFlapWind_loop2	.cache\54\{5444B20B-53CB-B2CD-B10F-A704C7CC22F7}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState\BC_boatSailFlap_loop\boat_sailFlapWind_loop\boat_sailFlapWind_loop2		2361580
 	922437653	env_collisionLightImpact1	.cache\25\{25CC44E5-76DD-C230-243E-A1C5A1BC6183}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\BC_envcollisionLightImpact\env_collisionLightImpact2\env_collisionLightImpact1		100248
 	928429837	env_collisionHeavyImpact	.cache\5B\{5B8AB804-3565-2ED1-1DE1-73DA12C4DCA6}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\BC_envcollisionHeavyImpact\env_collisionHeavyImpact1\env_collisionHeavyImpact		47508
-	944740748	boat_sailFlap_loop	.cache\D6\{D6265093-7B03-80D6-9BC0-E4EA28216BBA}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailFlap_loop\boat_sailFlap_loop		6174144
+	944740748	boat_sailFlap_loop	.cache\D6\{D6265093-7B03-80D6-9BC0-E4EA28216BBA}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState\BC_boatSailFlap_loop\boat_sailFlap_loop		6174144
 	983138526	boat_sailRetractImpact	.cache\D0\{D0F1EEE4-F8E3-3100-0151-682D018246CA}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailRetract\boat_sailRetractImpact		144572
 	984283490	boat_engineForward_loop	.cache\1C\{1C3CC3F6-6ACE-4540-C98F-20263B23EB1A}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\BoatEngineLoops\BC_boatEngine_ThrottleBlend\boat_engineForward_loop		3395844
 	1005202156	menu_openMain	.cache\C3\{C3693EEA-3C7A-BAF2-DCD4-EBDF552BBF6F}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_openMain\menu_openMain		64192
 	1014404164	mission_abort	.cache\51\{51C52651-576F-48BD-E6C3-269DBD126DD3}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_abort		266100
 	1066911892	env_collisionHeavyWood	.cache\93\{9358448A-630D-9B7C-CCA6-98586AC9D8F8}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\BC_envcollisionHeavyImpact\env_collisionHeavyWood		80092
-	1071268642	boat_sailFlapWind_loop	.cache\44\{4437E972-0102-BC7B-AB2F-D2310A9134DD}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailFlap_loop\boat_sailFlapWind_loop\boat_sailFlapWind_loop		2131104
+	1071268642	boat_sailFlapWind_loop	.cache\44\{4437E972-0102-BC7B-AB2F-D2310A9134DD}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState\BC_boatSailFlap_loop\boat_sailFlapWind_loop\boat_sailFlapWind_loop		2131104
 

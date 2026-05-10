@@ -5,12 +5,14 @@ using WwiseRTPC = AK.Wwise.RTPC;
 public class BoatAudioController : MonoBehaviour
 {
     // AUDIO REFERENCES
-    [Header("Audio Fields")]
+    [Header("Audio Emitters")]
     [SerializeField] private GameObject m_boatEngineEmitter = null;
     [SerializeField] private GameObject m_boatSternWaterEmitter = null;
     [SerializeField] private GameObject m_boatCockpitEmitter = null;
     [SerializeField] private GameObject m_boatHullEmitter = null;
     [SerializeField] private GameObject m_boatSailEmitter = null;
+
+    [Header("Audio Events")]
     [SerializeField] private WwiseEvent m_engineStartEvent = null;
     [SerializeField] private WwiseEvent m_engineStopEvent = null;
     [SerializeField] private WwiseEvent m_engineStartKeyEvent = null;
@@ -24,6 +26,8 @@ public class BoatAudioController : MonoBehaviour
     [SerializeField] private WwiseEvent m_sailRetractEvent = null;
     [SerializeField] private WwiseEvent m_sailLoopStartEvent = null;
     [SerializeField] private WwiseEvent m_sailLoopStopEvent = null;
+
+    [Header("Audio Game Parameters")]
     [SerializeField] private WwiseRTPC m_boatThrottleSignedRTPC = null;
     [SerializeField] private WwiseRTPC m_sailTensionRTPC = null;
     

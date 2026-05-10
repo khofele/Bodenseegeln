@@ -80,16 +80,22 @@ public class BoatController : MonoBehaviour
     [SerializeField] private GameObject m_boatSternWaterEmitter = null;
     [SerializeField] private GameObject m_boatCockpitEmitter = null;
     [SerializeField] private GameObject m_boatHullEmitter = null;
+    [SerializeField] private GameObject m_boatSailEmitter = null;
     [SerializeField] private WwiseEvent m_engineStartEvent = null;
     [SerializeField] private WwiseEvent m_engineStopEvent = null;
     [SerializeField] private WwiseEvent m_engineStartKeyEvent = null;
     [SerializeField] private WwiseEvent m_throttleMoveEvent = null;
     [SerializeField] private WwiseEvent m_throttleMoveIdleEvent = null;
-    [SerializeField] private WwiseEvent m_engineWaterStartEvent;
-    [SerializeField] private WwiseEvent m_engineWaterStopEvent;
-    [SerializeField] private WwiseEvent m_woodVibrationStartEvent;
-    [SerializeField] private WwiseEvent m_woodVibrationStopEvent;
+    [SerializeField] private WwiseEvent m_engineWaterStartEvent = null;
+    [SerializeField] private WwiseEvent m_engineWaterStopEvent = null;
+    [SerializeField] private WwiseEvent m_woodVibrationStartEvent = null;
+    [SerializeField] private WwiseEvent m_woodVibrationStopEvent = null;
+    [SerializeField] private WwiseEvent m_sailDeployEvent = null;
+    [SerializeField] private WwiseEvent m_sailRetractEvent = null;
+    [SerializeField] private WwiseEvent m_sailLoopStartEvent = null;
+    [SerializeField] private WwiseEvent m_sailLoopStopEvent = null;
     [SerializeField] private WwiseRTPC m_boatThrottleSignedRTPC = null;
+    [SerializeField] private WwiseRTPC m_sailTensionRTPC = null;
 
     // PROPERTIES
     public float BoatSpeedInKnots
@@ -782,6 +788,7 @@ public class BoatController : MonoBehaviour
                 m_gameManager.SetState(GameStates.MOTORMODE);
                 m_isInSailMode = false;
                 ResetSails(); // TODO Jasi: Segel einholen Animation
+                m_sailRetractEvent.Post(m_boatSailEmitter);  // Audio Event: Open Sail
                 m_boatThrottleSignedRTPC.SetValue(m_boatEngineEmitter, 0.0f);  // Audio RTPC: Set to 0 for Wwise 
                 m_boatThrottleSignedRTPC.SetValue(m_boatHullEmitter, 0.0f);  // Audio RTPC: Set to 0 for Wwise
                 m_boatThrottleSignedRTPC.SetValue(m_boatSternWaterEmitter, 0.0f);  // Audio RTPC: Set to 0 for Wwise
@@ -795,6 +802,7 @@ public class BoatController : MonoBehaviour
             {
                 m_gameManager.SetState(GameStates.SAILMODE);
                 m_isInSailMode = true;
+                m_sailDeployEvent.Post(m_boatSailEmitter);  // Audio Event: Open Sail
                 m_engineStopEvent.Post(m_boatEngineEmitter);  // Audio Event: Stop Engine
                 m_engineWaterStopEvent.Post(m_boatSternWaterEmitter);  // Audio Event: Stop Water Engine Sounds
                 m_woodVibrationStopEvent.Post(m_boatHullEmitter);  // Audio Event: Stop Wood Vibration

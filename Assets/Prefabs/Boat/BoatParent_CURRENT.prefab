@@ -2787,6 +2787,7 @@ MonoBehaviour:
   m_boatSternWaterEmitter: {fileID: 6904717599318220823}
   m_boatCockpitEmitter: {fileID: 3503548985083378050}
   m_boatHullEmitter: {fileID: 8129593166126822620}
+  m_boatSailEmitter: {fileID: 8510752811600602223}
   m_engineStartEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -2823,10 +2824,30 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cde8ed2ef89364b488e55933f733155d, type: 2}
+  m_sailDeployEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2cbd0faeb512a89499b0544f91d220f6, type: 2}
+  m_sailRetractEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f4024747c3ca25c4f8c1ab147e9e8917, type: 2}
+  m_sailLoopStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 373e57ce034cd784b9e301e1978058bd, type: 2}
+  m_sailLoopStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 74c0ae56c1542a54fa57c3353a8ee747, type: 2}
   m_boatThrottleSignedRTPC:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 8c61b04840d6aaa43a9b4b3293ce9b22, type: 2}
+  m_sailTensionRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e65d6ee830851cf4eb3ecd6f6e600bbf, type: 2}
 --- !u!1 &7908880148221028677
 GameObject:
   m_ObjectHideFlags: 0

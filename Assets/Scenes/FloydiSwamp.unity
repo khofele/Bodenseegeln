@@ -2223,7 +2223,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8857988710446732314, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1298777153}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 930552712869052491, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1888846432}
   m_SourcePrefab: {fileID: 100100000, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
 --- !u!4 &1668474816 stripped
 Transform:
@@ -2686,6 +2689,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c040f7e5a01a6634c838595da8c984fd, type: 3}
+--- !u!1 &1888846428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 930552712869052491, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+  m_PrefabInstance: {fileID: 1668474815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1888846432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888846428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68794b0a611ddfc4c86725020258680f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShaderWindParameterTransfer
 --- !u!1 &1940896829
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,7 +3035,7 @@ Terrain:
   m_GameObject: {fileID: 2042814606}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 5eddef7bd88e12346ac823ff77241890, type: 2}
+  m_TerrainData: {fileID: 0}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5

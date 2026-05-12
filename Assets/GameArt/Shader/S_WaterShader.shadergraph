@@ -3188,13 +3188,13 @@
     "m_RefNameGeneratedByDisplayName": "Wind",
     "m_DefaultReferenceName": "_Wind",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
+    "m_GeneratePropertyBlock": false,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 1,
     "m_Hidden": false,
     "m_PerRendererData": false,
     "m_customAttributes": [],
@@ -10748,7 +10748,7 @@
     "m_ObjectId": "b17daa3ac51f474eade911832b8a7cd0",
     "m_Title": "Depth Color",
     "m_Position": {
-        "x": -2854.000244140625,
+        "x": -2854.0,
         "y": 451.0
     }
 }
@@ -13498,8 +13498,8 @@
     "m_ObjectId": "f415407bd09549468a60dffafe80955f",
     "m_Title": "Refraction",
     "m_Position": {
-        "x": -3487.0,
-        "y": -1018.0
+        "x": -3486.99951171875,
+        "y": -1017.9999389648438
     }
 }
 

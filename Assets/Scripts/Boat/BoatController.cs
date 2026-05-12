@@ -9,6 +9,7 @@ public class BoatController : MonoBehaviour
     private Rigidbody m_rigidbody = null;
     private bool m_isBoatDrivingForward = true; // shader input
     private bool m_isInSailMode = true;
+    private bool m_isFenderEnabled = false;
 
     // FORCE CALCULATION FIELDS
     private float m_airDensity = 1.2f; // kg/m^3
@@ -19,6 +20,7 @@ public class BoatController : MonoBehaviour
     private float m_keelSize = 3.0f; // m^2
     private float m_rudderSize = 2.0f; // m^2
     private float m_maxRudderAngle = 30.0f; // max 30°
+    private float m_currentRudderAngle = 0.0f;
 
     // SAILMODE FIELDS
     private float m_mainSailSize = 52.5f; // m^2
@@ -62,6 +64,7 @@ public class BoatController : MonoBehaviour
     [SerializeField] private GameObject m_mainSail = null;
     [SerializeField] private GameObject m_frontSail = null;
     [SerializeField] private GameObject m_rudder = null;
+    [SerializeField] private GameObject m_fender = null;
 
     // INPUT ACTION REFERENCES
     [SerializeField] private InputActionReference m_steeringAction = null;
@@ -110,6 +113,26 @@ public class BoatController : MonoBehaviour
         get { return m_maxFuel; }
     }
 
+    public float CurrentRudderAngle
+    {
+        get { return m_currentRudderAngle; }
+    }
+
+    public float MainSailTrim
+    {
+        get { return m_currentMainSailAngle; }
+    }
+
+    public float FrontSailTrim
+    {
+        get { return m_currentFrontSailAngle; }
+    }
+
+    public float ThrustStep
+    {
+        get { return m_thrustStep; }
+    }
+
     public bool IsBoatDrivingForward
     {
         get { return m_isBoatDrivingForward; }
@@ -123,6 +146,11 @@ public class BoatController : MonoBehaviour
     public bool IsInSailMode
     {
         get { return m_isInSailMode; }
+    }
+
+    public bool IsFenderEnabled
+    {
+        get { return m_isFenderEnabled; }
     }
 
     // PRIVATE METHODS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -497,13 +525,13 @@ public class BoatController : MonoBehaviour
         Vector3 waterVelocity = m_rigidbody.linearVelocity; // TODO Strömung --> anpassen, wenn Strömungssimulation vorhanden
         waterVelocity.y = 0.0f;
 
-        float rudderAngle = m_steeringInput * m_maxRudderAngle;
+        m_currentRudderAngle = m_steeringInput * m_maxRudderAngle;
 
         //float rudderForceValue = 0.5f * m_waterDensity * waterVelocity.magnitude * waterVelocity.magnitude * m_rudderSize * 0.05f;
         float rudderForceValue = 0.5f * m_waterDensity * waterVelocity.magnitude * m_rudderSize * 0.05f;
 
         // check force to the side
-        float rudderEfficiency = Mathf.Sin(rudderAngle * Mathf.Deg2Rad);
+        float rudderEfficiency = Mathf.Sin(m_currentRudderAngle * Mathf.Deg2Rad);
 
         // vector to left/right --> cross product results in vector vertical on given vectors
         Vector3 rudderDirection = Vector3.Cross(waterVelocity, Vector3.up).normalized;

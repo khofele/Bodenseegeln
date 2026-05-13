@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{CB31A5D9-C7CC-55F7-905A-F07425CAF5D4}",
+    "Hash": "{56AD153E-2423-ACF1-D45B-D8410A66B111}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -530,7 +530,7 @@
       "Name": "boat_engineStart",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatEngine\\boat_engineStart",
       "GUID": "{1A2CA9C5-3748-46B6-BB5A-FCD0908DFA5C}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "35",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -574,7 +574,7 @@
       "Name": "boat_engineStop",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatEngine\\boat_engineStop",
       "GUID": "{52B91DB6-8479-4D17-B443-D244BAB80195}",
-      "MaxAttenuation": "70",
+      "MaxAttenuation": "35",
       "DurationType": "OneShot",
       "DurationMin": "2.047386",
       "DurationMax": "2.047386",
@@ -599,7 +599,7 @@
       "Name": "boat_throttleMove",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatThrottle\\boat_throttleMove",
       "GUID": "{87714DC3-0A38-4459-A8C2-201C69EA3F54}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "30",
       "DurationType": "OneShot",
       "DurationMin": "0.50923",
       "DurationMax": "0.54634947",
@@ -624,7 +624,7 @@
       "Name": "boat_throttleMoveIdle",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatThrottle\\boat_throttleMoveIdle",
       "GUID": "{28BA8B54-A2B0-4CEC-B7A4-E66977AB6251}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "30",
       "DurationType": "OneShot",
       "DurationMin": "0.49308258",
       "DurationMax": "0.4951871",
@@ -681,7 +681,7 @@
       "Name": "env_boatCollisionHeavy",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\EnvCollision\\env_boatCollisionHeavy",
       "GUID": "{72E160B7-8821-4508-9C36-326835089396}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "30",
       "DurationType": "OneShot",
       "DurationMin": "3.75",
       "DurationMax": "4.209233",
@@ -736,7 +736,7 @@
       "Name": "env_boatCollisionLight",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\EnvCollision\\env_boatCollisionLight",
       "GUID": "{EF01BE52-22F9-439B-96A7-FAFAB1AA401D}",
-      "MaxAttenuation": "100",
+      "MaxAttenuation": "30",
       "DurationType": "OneShot",
       "DurationMin": "1.7004988",
       "DurationMax": "1.9087453",
@@ -1115,6 +1115,6 @@
     ]
    }
   ],
-  "FileHash": "{7B121439-EF8F-3F28-5BA9-6E9058058A28}"
+  "FileHash": "{70DAD207-E6EA-D16D-0982-F4FD94B9137F}"
  }
 }

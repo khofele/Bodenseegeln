@@ -214,13 +214,6 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
-										<Action Name="" ID="{BE304A02-C0E0-499F-BF19-78FBF930DCE5}" ShortID="331766632">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="boat_engineStartKey" ID="{09AE105C-B404-4E69-A310-E12846E043D6}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 										<Action Name="" ID="{37E087C6-0069-4040-91EF-114EAFD822DA}" ShortID="224480579">
 											<PropertyList>
 												<Property Name="Delay" Type="Real64" Value="0.25">
@@ -265,50 +258,6 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
-										<Action Name="" ID="{3F65C5D2-4F73-4266-9900-782ACE21DF8A}" ShortID="135911456">
-											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.75">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{F4CE00FE-77D0-4DE2-B385-A81FC7FB2412}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="0.1"/>
-																	<Property Name="Min" Type="Real64" Value="-0.1"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{D8F79AB8-1EF7-4846-8601-1422C5178590}" ShortID="710912491">
-											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.75">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{4C22ECD9-0660-4C67-90EC-0C10A2D7A441}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="0.1"/>
-																	<Property Name="Min" Type="Real64" Value="-0.1"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="BC_boatWoodVibration" ID="{236E2706-B931-446D-8F13-65AB34D1A874}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="boat_engineStop" ID="{52B91DB6-8479-4D17-B443-D244BAB80195}">
@@ -322,29 +271,6 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="BC_boatEngine_ThrottleBlend" ID="{0F371717-3086-41AA-A040-D1937A7AFEDC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{78DA689F-DDCD-48C4-A1C7-53BFF0854965}" ShortID="178720719">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="2"/>
-												<Property Name="Delay" Type="Real64" Value="0.25"/>
-												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{52DA7B22-70FA-4C5B-A704-98E35D2E0BD0}" ShortID="381409055">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="2"/>
-												<Property Name="Delay" Type="Real64" Value="0.25"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="BC_boatWoodVibration" ID="{236E2706-B931-446D-8F13-65AB34D1A874}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -362,6 +288,46 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Boat_ThrottleSigned" ID="{8093AAD1-9114-422F-B5B9-F6F317EB813B}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_engineStartKey" ID="{B4F126E6-6493-4C95-ADEB-A5893F8CEDF2}">
+									<ChildrenList>
+										<Action Name="" ID="{994827E7-31C2-4835-81D5-D0D0BEFC3889}" ShortID="630087852">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_engineStartKey" ID="{09AE105C-B404-4E69-A310-E12846E043D6}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_engineWaterStart" ID="{72799A52-33A2-42BE-AB31-DA0DC86925EC}">
+									<ChildrenList>
+										<Action Name="" ID="{E6712523-A549-4865-BE61-D41A3C0C8D7E}" ShortID="724166044">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_engineWaterStop" ID="{9164CB25-85BF-4EF0-B292-EF7FE5C4DFEE}">
+									<ChildrenList>
+										<Action Name="" ID="{25C22BB5-068A-4669-8312-6605B5350A75}" ShortID="124862309">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -388,6 +354,108 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="boat_throttleMoveIdle" ID="{AF8D7C32-FE43-415D-A03D-AB865ED8F8B5}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="BoatWood" ID="{39B0BAD7-2C48-4BE6-9678-6E6EFFEB4B91}" ShortID="20289871">
+							<ChildrenList>
+								<Event Name="boat_woodVibrationStart" ID="{00D2F70E-7C7E-4BF6-8FAF-2BD5E295D7D6}">
+									<ChildrenList>
+										<Action Name="" ID="{352E496C-5969-48F3-A9EF-E4D1D7B2FAE0}" ShortID="426933901">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatWoodVibration" ID="{236E2706-B931-446D-8F13-65AB34D1A874}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_woodVibrationStop" ID="{4851289B-49D0-4D8D-B8AC-6EF32518C5D0}">
+									<ChildrenList>
+										<Action Name="" ID="{BD553C74-F0E7-48C1-AD18-9F5B7D8ACB58}" ShortID="208616786">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatWoodVibration" ID="{236E2706-B931-446D-8F13-65AB34D1A874}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="BoatSail" ID="{AFC60F6A-464A-497A-B92D-E8483504F133}" ShortID="217737011">
+							<ChildrenList>
+								<Event Name="boat_sailRetract" ID="{53D6DCA1-F83A-4B7A-B36C-E5AA642AFF51}">
+									<ChildrenList>
+										<Action Name="" ID="{E3EF636D-9952-4DB7-8960-0BDFDDD5AEB7}" ShortID="242495373">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatSailRetract" ID="{C5604AC0-550D-4226-9A13-1A8A0BB93FA9}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_sailDeploy" ID="{BB2F9EAF-8DDB-43BF-BFC0-1BC0172ED2A5}">
+									<ChildrenList>
+										<Action Name="" ID="{84744FE1-0852-4470-AA98-B8570700EDBC}" ShortID="834981950">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_boatSailDeploy" ID="{4BF484A1-5022-435D-8614-1C6542EA25DD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_start_sailFlap" ID="{A8CBAD99-4BF5-4A81-919A-166039F3ED99}">
+									<ChildrenList>
+										<Action Name="" ID="{6EA69FD2-8B4D-4A68-9A07-24A43DF767D9}" ShortID="655776576">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Boat_SailTension" ID="{7F5CA7A6-156F-4E8E-9CE5-228FB55B8D24}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{72DB53F9-A63C-4ABC-9D0E-AECAF887A0BA}" ShortID="751591065">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_sailState" ID="{AB133543-D9FA-4E21-A5F0-21E2BC7B4E4F}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_stop_sailFlap" ID="{FF95DB65-C89E-4B8B-9412-111EB3643BED}">
+									<ChildrenList>
+										<Action Name="" ID="{5425D0D5-230A-4EED-8B29-940D796F3217}" ShortID="437662174">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.7"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_sailState" ID="{AB133543-D9FA-4E21-A5F0-21E2BC7B4E4F}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{109611C4-6CAB-4D3F-A12C-FB957533A0F2}" ShortID="543526104">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Boat_SailTension" ID="{7F5CA7A6-156F-4E8E-9CE5-228FB55B8D24}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -432,7 +500,7 @@
 										<Action Name="" ID="{14F12EA1-6068-4851-9C44-8565A06178EC}" ShortID="72648359">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="env_collisionLightImpact" ID="{D03735BA-B263-4849-AE79-9B4E2B355A50}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+													<ObjectRef Name="BC_envcollisionLightImpact" ID="{D03735BA-B263-4849-AE79-9B4E2B355A50}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -443,7 +511,7 @@
 										<Action Name="" ID="{DBF7CD07-41D0-44F0-AE7E-E30E273DD2DC}" ShortID="263502893">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="env_collisionHeavyImpact" ID="{5E5396D0-8E5B-4A13-8223-A185F73CC7FE}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+													<ObjectRef Name="BC_envcollisionHeavyImpact" ID="{5E5396D0-8E5B-4A13-8223-A185F73CC7FE}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

@@ -2703,6 +2703,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_engineStopEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ae06f8013fa29c448d4d70e98b1bf7c, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_sailDeployEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cbd0faeb512a89499b0544f91d220f6, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_sailTensionRTPC.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: e65d6ee830851cf4eb3ecd6f6e600bbf, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_engineStartEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 314c38fa3b73ac94abc99d9aba85f0ca, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_sailRetractEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: f4024747c3ca25c4f8c1ab147e9e8917, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_sailLoopStopEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 74c0ae56c1542a54fa57c3353a8ee747, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_throttleMoveEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 129a5fc76500d9a43b3cd947913fda7a, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_sailLoopStartEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 373e57ce034cd784b9e301e1978058bd, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_engineStartKeyEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fd6b9548a1b0f0449cea27fa86e516a, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_engineWaterStopEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 42ae2cee7c898c44095a8bdfb72be8a8, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_engineWaterStartEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: abdeece14d75e4648882d9c8ea58bcca, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_throttleMoveIdleEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: f532c95182abc284aa94e5c0585c4e44, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_boatThrottleSignedRTPC.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 8c61b04840d6aaa43a9b4b3293ce9b22, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_woodVibrationStopEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: cde8ed2ef89364b488e55933f733155d, type: 2}
+    - target: {fileID: 7495309292745277906, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+      propertyPath: m_woodVibrationStartEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 06ff5ef21fff0374f95cb65136f2ef09, type: 2}
     - target: {fileID: 8857988710446732314, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.8

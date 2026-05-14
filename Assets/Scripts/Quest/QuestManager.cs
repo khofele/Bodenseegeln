@@ -17,15 +17,21 @@ namespace Quest
     {
         public QuestData Quest;
 
-        public int TimeStars;
-        public int DamageStars;
-        public int FuelStars;
+        //public int TimeStars;
+        //public int DamageStars;
+        //public int FuelStars;
+
+        public float TimeCircles;
+        public float DamageCircles;
+        public float FuelCircles;
+
+        public float AverageCircles;
 
         public float TimeValue;
         public float DamageValue;
         public float FuelValue;
 
-        public int AverageStars;
+        //public int AverageStars;
         public int MoneyReward;
     }
 
@@ -303,85 +309,106 @@ namespace Quest
             float _damageValue = m_totalDamage + 40f; //TEMP: added value for testing stars
             float _fuelValue = m_totalFuelUsed + 3f; //TEMP: added value for testing stars
 
-            int _timeStars = CalculateStars(_timeValue, m_activeQuest.m_timeThresholds, true);
-            int _damageStars = CalculateStars(_damageValue, m_activeQuest.m_damageThresholds, true);
-            int _fuelStars = CalculateStars(_fuelValue, m_activeQuest.m_fuelThresholds, true);
+            //int _timeStars = CalculateStars(_timeValue, m_activeQuest.m_timeThresholds, true);
+            //int _damageStars = CalculateStars(_damageValue, m_activeQuest.m_damageThresholds, true);
+            //int _fuelStars = CalculateStars(_fuelValue, m_activeQuest.m_fuelThresholds, true);
 
-            int _averageStars = Mathf.RoundToInt((_timeStars + _damageStars + _fuelStars) / 3f);
-            int _money = _averageStars switch
-            {
-                3 => m_activeQuest.m_moneyRewards.threeStars,
-                2 => m_activeQuest.m_moneyRewards.twoStars,
-                1 => m_activeQuest.m_moneyRewards.oneStar,
-                _ => m_activeQuest.m_moneyRewards.zeroStars
-            };
+            float _timeCircles = CalculateCircles(_timeValue, m_activeQuest.m_timeRange);
+            float _damageCircles = CalculateCircles(_damageValue, m_activeQuest.m_damageRange);
+            float _fuelCircles = CalculateCircles(_fuelValue, m_activeQuest.m_fuelRange);
+
+            //int _averageStars = Mathf.RoundToInt((_timeStars + _damageStars + _fuelStars) / 3f);
+            float _averageCircles = (_timeCircles + _damageCircles + _fuelCircles) / 3f;
+            //int _money = _averageStars switch
+            //{
+            //    3 => m_activeQuest.m_moneyRewards.threeStars,
+            //    2 => m_activeQuest.m_moneyRewards.twoStars,
+            //    1 => m_activeQuest.m_moneyRewards.oneStar,
+            //    _ => m_activeQuest.m_moneyRewards.zeroStars
+            //};
+            float _moneyNormalized = _averageCircles / 5f;
+            int _money = Mathf.RoundToInt(Mathf.Lerp(m_activeQuest.m_moneyRange.zeroCircleValue, m_activeQuest.m_moneyRange.fiveCircleValue, _moneyNormalized));
 
             QuestResult _result = new QuestResult
             {
                 Quest = m_activeQuest,
                 
-                TimeStars = _timeStars,
-                DamageStars = _damageStars,
-                FuelStars = _fuelStars,
+                TimeCircles = _timeCircles,
+                DamageCircles = _damageCircles,
+                FuelCircles = _fuelCircles,
+
+                AverageCircles = _averageCircles,
+
+                //TimeStars = _timeStars,
+                //DamageStars = _damageStars,
+                //FuelStars = _fuelStars,
 
                 TimeValue = _timeValue,
                 DamageValue = _damageValue,
                 FuelValue = _fuelValue,
 
-                AverageStars = _averageStars,
+                //AverageStars = _averageStars,
                 MoneyReward = _money
             };
 
             Debug.Log($"[QuestManager] Quest finished: {m_activeQuest.QuestName}");
 
             m_completedQuests.Add(m_activeQuest);
+            GameManager.Instance.RegisterQuestResult(m_activeQuest, _averageCircles);
             m_activeQuest = null;
             m_isQuestRunning = false;
 
             return _result;
         }
 
-        private int CalculateStars(float _value, StarThresholds _thresholds, bool _isLowerBetter = true)
+        private float CalculateCircles(float _value, RewardRange _range)
         {
-            if (_isLowerBetter)
-            {
-                if (_value <= _thresholds.threeStars)
-                {
-                    return 3;
-                }
+            float _normalized = Mathf.InverseLerp(_range.zeroCircleValue, _range.fiveCircleValue, _value);
 
-                if (_value <= _thresholds.twoStars)
-                {
-                    return 2;
-                }
-
-                if (_value <= _thresholds.oneStar)
-                {
-                    return 1;
-                }
-
-                return 0;
-            }
-            else
-            {
-                if (_value >= _thresholds.threeStars)
-                {
-                    return 3;
-                }
-
-                if (_value >= _thresholds.twoStars)
-                {
-                    return 2;
-                }
-
-                if (_value >= _thresholds.oneStar)
-                {
-                    return 1;
-                }
-
-                return 0;
-            }
+            return Mathf.Clamp01(_normalized) * 5f;
         }
+
+        //private int CalculateStars(float _value, StarThresholds _thresholds, bool _isLowerBetter = true)
+        //{
+        //    if (_isLowerBetter)
+        //    {
+        //        if (_value <= _thresholds.threeStars)
+        //        {
+        //            return 3;
+        //        }
+
+        //        if (_value <= _thresholds.twoStars)
+        //        {
+        //            return 2;
+        //        }
+
+        //        if (_value <= _thresholds.oneStar)
+        //        {
+        //            return 1;
+        //        }
+
+        //        return 0;
+        //    }
+        //    else
+        //    {
+        //        if (_value >= _thresholds.threeStars)
+        //        {
+        //            return 3;
+        //        }
+
+        //        if (_value >= _thresholds.twoStars)
+        //        {
+        //            return 2;
+        //        }
+
+        //        if (_value >= _thresholds.oneStar)
+        //        {
+        //            return 1;
+        //        }
+
+        //        return 0;
+        //    }
+        //}
 
         private void ShowResultUI(QuestResult _result)
         {

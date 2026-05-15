@@ -40226,6 +40226,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7001938870121315486, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
   m_PrefabInstance: {fileID: 1611223171}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1611223173 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2263225878067884718, guid: 6a96e4282d76bd8489d6c01d222db0f8, type: 3}
+  m_PrefabInstance: {fileID: 1611223171}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e1be783c36fa14aa4dcb32ae200222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatController
 --- !u!1001 &1616648549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40298,6 +40309,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1804377119838548020, guid: 347e67088eba4ab4c9fa1cfaa91f8f4b, type: 3}
+      propertyPath: m_boatTransform
+      value: 
+      objectReference: {fileID: 1611223172}
     - target: {fileID: 2152410001097596724, guid: 347e67088eba4ab4c9fa1cfaa91f8f4b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -40518,6 +40533,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6645535760423121755, guid: 347e67088eba4ab4c9fa1cfaa91f8f4b, type: 3}
+      propertyPath: one
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645535760423121755, guid: 347e67088eba4ab4c9fa1cfaa91f8f4b, type: 3}
+      propertyPath: m_boatTransform
+      value: 
+      objectReference: {fileID: 1795998038}
     - target: {fileID: 7436325091785053138, guid: 347e67088eba4ab4c9fa1cfaa91f8f4b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -43425,6 +43448,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3584914111726427961, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
+      propertyPath: m_boatController
+      value: 
+      objectReference: {fileID: 1611223173}
+    - target: {fileID: 3584914111726427961, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
+      propertyPath: m_windController
+      value: 
+      objectReference: {fileID: 850303655}
     - target: {fileID: 5008345127819145367, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
       propertyPath: m_UI
       value: 
@@ -44769,6 +44800,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4506705871353826242, guid: 3eaea632ba23d1242b1d7fa35d807b88, type: 3}
   m_PrefabInstance: {fileID: 1795518337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1795998038 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6664827522280504391, guid: a85f513491cf62c478193b74986fb54f, type: 3}
+  m_PrefabInstance: {fileID: 1627049903}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1798209675
 PrefabInstance:

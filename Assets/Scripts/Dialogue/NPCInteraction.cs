@@ -34,6 +34,8 @@ namespace Dialogue
         [Header("Input")]
         [SerializeField] private InputActionReference m_interactAction = null;
 
+        internal NPCData NPC => m_npc;
+
         private bool m_isPlayerInRange = false;
         private bool m_isInteractable = false;
         private bool m_lastInteractableState = false;

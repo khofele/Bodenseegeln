@@ -1,6 +1,7 @@
 using Dialogue;
 using System.Collections.Generic;
 using UnityEngine;
+using Dialogue;
 
 namespace Quest
 {
@@ -41,6 +42,7 @@ namespace Quest
         private bool m_isQuestRunning = false;
         private int m_currentQuestStep = 0;
         private bool m_type2ReadyToComplete = false;
+        private Transform m_currentQuestTarget = null;
         private QuestState m_state = QuestState.None;
         
         //private float m_questStartTime;
@@ -77,6 +79,131 @@ namespace Quest
             m_timeElapsed += Time.deltaTime;
         }
 
+        internal float GetMissionTime()
+        {
+            return m_timeElapsed;
+        }
+
+        internal Transform GetCurrentQuestTarget()
+        {
+            return m_currentQuestTarget;
+            //if (!m_isQuestRunning || m_activeQuest == null)
+            //{
+            //    return null;
+            //}
+
+            //switch (m_activeQuest.QuestType)
+            //{
+            //    case QuestType.Type1_DialogueOtherNPC:
+            //    case QuestType.Type2_DialogueSameNPC:
+            //    case QuestType.Type3_DirectCompletion:
+            //        return GetQuestInteractionTarget();
+            //    case QuestType.Type4_MultiStep:
+            //        if (CanCompleteQuest(m_activeQuest))
+            //        {
+            //            return GetQuestGiverTarget();
+            //        }
+            //        return GetQuestInteractionTarget();
+            //    default:
+            //        return null;
+            //}
+        }
+
+        private void RefreshQuestTarget()
+        {
+            m_currentQuestTarget = null;
+
+            if (!m_isQuestRunning || m_activeQuest == null)
+            {
+                return;
+            }
+
+            switch (m_activeQuest.QuestType)
+            {
+                case QuestType.Type1_DialogueOtherNPC:
+                case QuestType.Type2_DialogueSameNPC:
+                case QuestType.Type3_DirectCompletion:
+                    m_currentQuestTarget = GetQuestInteractionTarget();
+                    break;
+                case QuestType.Type4_MultiStep:
+                    if (CanCompleteQuest(m_activeQuest))
+                    {
+                        m_currentQuestTarget = GetQuestGiverTarget();
+                    }
+                    else
+                    {
+                        m_currentQuestTarget = GetNextIncompleteQuestInteractionTarget();
+                    }
+                    break;
+            }
+        }
+
+        private Transform GetQuestInteractionTarget()
+        {
+            QuestInteraction[] _interactions = FindObjectsByType<QuestInteraction>(FindObjectsSortMode.None);
+
+            for (int i = 0; i < _interactions.Length; i++)
+            {
+                if (_interactions[i] == null)
+                {
+                    continue;
+                }
+
+                if (_interactions[i].Quest == m_activeQuest)
+                {
+                    return _interactions[i].transform;
+                }
+            }
+
+            return null;
+        }
+
+        private Transform GetNextIncompleteQuestInteractionTarget()
+        {
+            QuestInteraction[] _interactions = FindObjectsByType<QuestInteraction>(FindObjectsSortMode.None);
+
+            for (int i = 0; i < _interactions.Length; i++)
+            {
+                if (_interactions[i] == null)
+                {
+                    continue;
+                }
+
+                if (_interactions[i].Quest != m_activeQuest)
+                {
+                    continue;
+                }
+
+                if (_interactions[i].HasBeenUsed)
+                {
+                    continue;
+                }
+
+                return _interactions[i].transform;
+            }
+
+            return null;
+        }
+
+        private Transform GetQuestGiverTarget()
+        {
+            NPCInteraction[] _interactions = FindObjectsByType<NPCInteraction>(FindObjectsSortMode.None);
+
+            for (int i = 0; i < _interactions.Length; i++)
+            {
+                if (_interactions[i] == null)
+                {
+                    continue;
+                }
+
+                if (_interactions[i].NPC == m_activeQuest.QuestGiverNPC)
+                {
+                    return _interactions[i].transform;
+                }
+            }
+
+            return null;
+        }
 
         //call this as "QuestManager.Instance.RegisterDamage(damage);" where the damage is handled
         internal void RegisterDamage(float _damageAmount)
@@ -171,6 +298,8 @@ namespace Quest
             m_currentQuestStep = 0;
             m_type2ReadyToComplete = false;
 
+            RefreshQuestTarget();
+
             //reset tracking
             m_timeElapsed = 0f;
             m_totalDamage = 0f;
@@ -236,6 +365,7 @@ namespace Quest
             }
 
             m_type2ReadyToComplete = true;
+            RefreshQuestTarget();
             Debug.Log("[QuestManager] Type 2 set to QuestReadyToComplete");
 
             DialogueManager.Instance.StartDialogue(m_activeQuest.QuestGiverNPC);
@@ -261,12 +391,14 @@ namespace Quest
             _interaction.MarkAsCompleted();
 
             m_currentQuestStep++;
+            RefreshQuestTarget();
             ShowStepNotification();
 
             Debug.Log($"[QuestManager] Quest step progressed: {m_currentQuestStep}/{m_activeQuest.QuestSteps}");
 
             if (m_currentQuestStep >= m_activeQuest.QuestSteps)
             {
+                RefreshQuestTarget();
                 Debug.Log("[QuestManager] TYPE 4: Final step reached -> go to quest giver NPC");
             }
         }
@@ -346,6 +478,7 @@ namespace Quest
             GameManager.Instance.RegisterQuestResult(m_activeQuest, _averageCircles);
             m_activeQuest = null;
             m_isQuestRunning = false;
+            m_currentQuestTarget = null;
 
             return _result;
         }

@@ -21,6 +21,7 @@ public class GameManager : Manager<GameManager>
     private float m_averageQuestResult = 0f;
 
     public GameStates CurrentState => m_currentGameState;
+    public int Money => m_money;
 
     public void SetState(GameStates _newState)
     {

@@ -25,6 +25,9 @@ namespace Quest
         [Header("Input")]
         [SerializeField] private InputActionReference m_interactAction = null;
 
+        internal QuestData Quest => m_quest;
+        internal bool HasBeenUsed => m_hasBeenUsed;
+
         private bool m_isPlayerInRange = false;
         private bool m_isInteractable = false;
         private bool m_lastInteractableState = false;

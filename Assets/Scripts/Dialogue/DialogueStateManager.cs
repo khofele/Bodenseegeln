@@ -12,7 +12,8 @@ namespace Dialogue
         QuestAvailable = 2,
         OwnQuestActive = 3,
         OtherQuestActive = 4,
-        QuestCompleted = 5
+        QuestReadyToComplete = 5,
+        QuestCompleted = 6
     }
 
     public struct NPCDialogueProgressKey
@@ -29,23 +30,7 @@ namespace Dialogue
 
     public class DialogueStateManager : Manager<DialogueStateManager>
     {
-        //private Dictionary<NPC_ID, int> m_npcStates = new();
         private Dictionary<NPCDialogueProgressKey, int> m_repeatNodes = new();
-
-        //internal int GetStartNode(NPCData _npc)
-        //{
-        //    if (m_npcStates.TryGetValue(_npc.NPCID, out int _node))
-        //    {
-        //        return _node;
-        //    }
-
-        //    return _npc.StartNodeID;
-        //}
-
-        //internal void SetNode(NPC_ID _id, int _nodeID)
-        //{
-        //    m_npcStates[_id] = _nodeID;
-        //}
 
         internal int GetStoredRepeatNode(NPCData _npc, NPCDialogueBranch _branch)
         {
@@ -126,76 +111,13 @@ namespace Dialogue
                     return _questManager.ActiveQuest == _branch.RelatedQuest;
                 case NPCDialogueState.OtherQuestActive:
                     return _questManager.HasActiveQuest && _questManager.ActiveQuest != _branch.RelatedQuest;
+                case NPCDialogueState.QuestReadyToComplete:
+                    return _questManager.CanCompleteQuest(_branch.RelatedQuest);
                 case NPCDialogueState.QuestCompleted:
                     return _questManager.IsQuestCompleted(_branch.RelatedQuest);
                 default:
                     return false;
             }
         }
-
-        //internal int GetStartNodeConsideringState(NPCData _npc)
-        //{
-        //    Quest.QuestManager _questManager = Quest.QuestManager.Instance;
-
-        //    //check quest state
-        //    //completed quests
-        //    if (_questManager.ActiveQuest == null)
-        //    {
-        //        foreach (var _quest in _questManager.GetCompletedQuests())
-        //        {
-        //            if (_quest.QuestGiverNPC == _npc)
-        //            {
-        //                if (_npc.StartNodeIDOwnQuestCompleted >= 0)
-        //                {
-        //                    return _npc.StartNodeIDOwnQuestCompleted;
-        //                }
-        //            }
-        //        }
-
-        //        //the for loop version is worse for performance (i just keep for record)
-        //        //for (int i = 0; i < _questManager.GetCompletedQuests().Count; i++)
-        //        //{
-        //        //    if (_questManager.GetCompletedQuests()[i].QuestGiverNPC == _npc)
-        //        //    {
-        //        //        if (_npc.StartNodeIDOwnQuestCompleted >= 0)
-        //        //        {
-        //        //            return _npc.StartNodeIDOwnQuestCompleted;
-        //        //        }
-        //        //    }
-        //        //}
-        //    }
-        //    //running quest
-        //    if (_questManager.IsQuestRunning)
-        //    {
-        //        if (_questManager.ActiveQuest != null && _questManager.ActiveQuest.QuestGiverNPC == _npc)
-        //        {
-        //            if (_npc.StartNodeIDOwnQuestActive >= 0)
-        //            {
-        //                return _npc.StartNodeIDOwnQuestActive;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (_npc.StartNodeIDOtherQuestActive >= 0)
-        //            {
-        //                return _npc.StartNodeIDOtherQuestActive;
-        //            }
-        //        }
-
-        //        //if (_npc.StartNodeIDWhenQuestActive >= 0)
-        //        //{
-        //        //    return _npc.StartNodeIDWhenQuestActive;
-        //        //}
-        //    }
-
-        //    //check if already have a saved node
-        //    if (m_npcStates.TryGetValue(_npc.NPCID, out int _savedNode))
-        //    {
-        //        return _savedNode;
-        //    }
-
-        //    //default
-        //    return _npc.StartNodeID;
-        //}
     }
 }

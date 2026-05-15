@@ -17,10 +17,6 @@ namespace Quest
     {
         public QuestData Quest;
 
-        //public int TimeStars;
-        //public int DamageStars;
-        //public int FuelStars;
-
         public float TimeCircles;
         public float DamageCircles;
         public float FuelCircles;
@@ -31,7 +27,6 @@ namespace Quest
         public float DamageValue;
         public float FuelValue;
 
-        //public int AverageStars;
         public int MoneyReward;
     }
 
@@ -39,10 +34,13 @@ namespace Quest
     {
         [Header("References")]
         [SerializeField] private QuestResultUI m_questResultUI = null;
+        [SerializeField] private NotificationTextUI m_notificationTextUI = null;
+
         private QuestData m_activeQuest = null;
         private QuestData m_pendingQuest = null;
         private bool m_isQuestRunning = false;
         private int m_currentQuestStep = 0;
+        private bool m_type2ReadyToComplete = false;
         private QuestState m_state = QuestState.None;
         
         //private float m_questStartTime;
@@ -51,8 +49,8 @@ namespace Quest
         private float m_timeElapsed;
         private float m_totalDamage;
         private float m_totalFuelUsed;
-        private float m_lastBoatHealth; //for delta tracking
-        private float m_lastFuel; //for delta tracking
+        //private float m_lastBoatHealth; //for delta tracking
+        //private float m_lastFuel; //for delta tracking
 
         private HashSet<QuestData> m_completedQuests = new();
 
@@ -171,36 +169,20 @@ namespace Quest
             m_isQuestRunning = true;
             m_state = QuestState.Active;
             m_currentQuestStep = 0;
-
-            //m_questStartTime = Time.time;
+            m_type2ReadyToComplete = false;
 
             //reset tracking
             m_timeElapsed = 0f;
             m_totalDamage = 0f;
             m_totalFuelUsed = 0f;
-            //TEMP: replace once real system exist
-            m_lastBoatHealth = 100f;
-            m_lastFuel = 100f;
+            ////TEMP: replace once real system exist
+            //m_lastBoatHealth = 100f;
+            //m_lastFuel = 100f;
 
             Debug.Log($"[QuestManager] Quest started: {_quest.QuestName}");
         }
 
-        //internal void CompleteQuest()
-        //{
-        //    if (m_activeQuest == null || !m_isQuestRunning)
-        //    {
-        //        Debug.LogWarning("[QuestManager] No active quest to complete");
-        //        return;
-        //    }
-
-        //    Debug.Log($"[QuestManager] Quest completed: {m_activeQuest.QuestName}");
-
-        //    m_activeQuest = null;
-        //    m_isQuestRunning = false;
-        //    m_state = QuestState.Completed;
-        //}
-
-        internal void HandleQuestInteraction(QuestData _quest)
+        internal void HandleQuestInteraction(QuestData _quest, QuestInteraction _interaction)
         {
             if (m_activeQuest != _quest)
             {
@@ -222,7 +204,7 @@ namespace Quest
                     HandleType3_DirectCompletion();
                     break;
                 case QuestType.Type4_MultiStep:
-                    HandleType4_MultiStep();
+                    HandleType4_MultiStep(_interaction);
                     break;
                 default:
                     Debug.LogWarning("[QuestManager] Quest type not implemented yet");
@@ -253,6 +235,9 @@ namespace Quest
                 return;
             }
 
+            m_type2ReadyToComplete = true;
+            Debug.Log("[QuestManager] Type 2 set to QuestReadyToComplete");
+
             DialogueManager.Instance.StartDialogue(m_activeQuest.QuestGiverNPC);
         }
 
@@ -263,13 +248,22 @@ namespace Quest
             ShowResultUI(_result);
         }
 
-        private void HandleType4_MultiStep()
+        private void HandleType4_MultiStep(QuestInteraction _interaction)
         {
             Debug.Log("[QuestManager] TYPE 4: Step interaction");
 
-            m_currentQuestStep++;
+            if (_interaction == null)
+            {
+                Debug.LogWarning("[QuestManager] NULL interaction");
+                return;
+            }
 
-            Debug.Log($"[QuestManager] Quest step progressed: {m_currentQuestStep}");
+            _interaction.MarkAsCompleted();
+
+            m_currentQuestStep++;
+            ShowStepNotification();
+
+            Debug.Log($"[QuestManager] Quest step progressed: {m_currentQuestStep}/{m_activeQuest.QuestSteps}");
 
             if (m_currentQuestStep >= m_activeQuest.QuestSteps)
             {
@@ -277,10 +271,22 @@ namespace Quest
             }
         }
 
-        //only temporarly -> will be changed once type 4 gets handled correctly
-        internal bool CanCompleteType4()
+        internal bool CanCompleteQuest(QuestData _quest)
         {
-            return m_currentQuestStep >= m_activeQuest.QuestSteps;
+            if (m_activeQuest != _quest)
+            {
+                return false;
+            }
+
+            switch (_quest.QuestType)
+            {
+                case QuestType.Type4_MultiStep:
+                    return m_currentQuestStep >= m_activeQuest.QuestSteps;
+                case QuestType.Type2_DialogueSameNPC:
+                    return m_type2ReadyToComplete;
+                default:
+                    return false;
+            }
         }
 
         internal void CompleteQuestFromDialogue()
@@ -309,23 +315,11 @@ namespace Quest
             float _damageValue = m_totalDamage + 40f; //TEMP: added value for testing stars
             float _fuelValue = m_totalFuelUsed + 3f; //TEMP: added value for testing stars
 
-            //int _timeStars = CalculateStars(_timeValue, m_activeQuest.m_timeThresholds, true);
-            //int _damageStars = CalculateStars(_damageValue, m_activeQuest.m_damageThresholds, true);
-            //int _fuelStars = CalculateStars(_fuelValue, m_activeQuest.m_fuelThresholds, true);
-
             float _timeCircles = CalculateCircles(_timeValue, m_activeQuest.m_timeRange);
             float _damageCircles = CalculateCircles(_damageValue, m_activeQuest.m_damageRange);
             float _fuelCircles = CalculateCircles(_fuelValue, m_activeQuest.m_fuelRange);
 
-            //int _averageStars = Mathf.RoundToInt((_timeStars + _damageStars + _fuelStars) / 3f);
             float _averageCircles = (_timeCircles + _damageCircles + _fuelCircles) / 3f;
-            //int _money = _averageStars switch
-            //{
-            //    3 => m_activeQuest.m_moneyRewards.threeStars,
-            //    2 => m_activeQuest.m_moneyRewards.twoStars,
-            //    1 => m_activeQuest.m_moneyRewards.oneStar,
-            //    _ => m_activeQuest.m_moneyRewards.zeroStars
-            //};
             float _moneyNormalized = _averageCircles / 5f;
             int _money = Mathf.RoundToInt(Mathf.Lerp(m_activeQuest.m_moneyRange.zeroCircleValue, m_activeQuest.m_moneyRange.fiveCircleValue, _moneyNormalized));
 
@@ -339,15 +333,10 @@ namespace Quest
 
                 AverageCircles = _averageCircles,
 
-                //TimeStars = _timeStars,
-                //DamageStars = _damageStars,
-                //FuelStars = _fuelStars,
-
                 TimeValue = _timeValue,
                 DamageValue = _damageValue,
                 FuelValue = _fuelValue,
 
-                //AverageStars = _averageStars,
                 MoneyReward = _money
             };
 
@@ -368,47 +357,31 @@ namespace Quest
             return Mathf.Clamp01(_normalized) * 5f;
         }
 
-        //private int CalculateStars(float _value, StarThresholds _thresholds, bool _isLowerBetter = true)
-        //{
-        //    if (_isLowerBetter)
-        //    {
-        //        if (_value <= _thresholds.threeStars)
-        //        {
-        //            return 3;
-        //        }
+        private void ShowStepNotification()
+        {
+            if (m_notificationTextUI == null)
+            {
+                return;
+            }
 
-        //        if (_value <= _thresholds.twoStars)
-        //        {
-        //            return 2;
-        //        }
+            if (m_activeQuest == null)
+            {
+                return;
+            }
 
-        //        if (_value <= _thresholds.oneStar)
-        //        {
-        //            return 1;
-        //        }
+            int _stepIndex = m_currentQuestStep - 1;
 
-        //        return 0;
-        //    }
-        //    else
-        //    {
-        //        if (_value >= _thresholds.threeStars)
-        //        {
-        //            return 3;
-        //        }
+            if (_stepIndex < 0 || _stepIndex >= m_activeQuest.StepTexts.Count)
+            {
+                Debug.LogWarning("[QuestManager] missing step text");
+                return;
+            }
 
-        //        if (_value >= _thresholds.twoStars)
-        //        {
-        //            return 2;
-        //        }
-
-        //        if (_value >= _thresholds.oneStar)
-        //        {
-        //            return 1;
-        //        }
-
-        //        return 0;
-        //    }
-        //}
+            string _text = m_activeQuest.StepTexts[_stepIndex].m_text;
+            Debug.Log($"!!![QuestManager] text = {_text}");
+            Debug.Log($"!!![QuestManager] jetzt call notificationTextUI.Show");
+            m_notificationTextUI.Show(_text);
+        }
 
         private void ShowResultUI(QuestResult _result)
         {

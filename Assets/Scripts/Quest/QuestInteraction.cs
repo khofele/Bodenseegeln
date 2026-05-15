@@ -15,14 +15,12 @@ namespace Quest
         [SerializeField] private float m_visibilityDistance = 20f;
 
         [Header("References")]
-        [SerializeField] private Rigidbody m_boatRigidbody = null;
+        /*[SerializeField]*/ private Rigidbody m_boatRigidbody = null;
         [SerializeField] private Transform m_boatTransform = null;
 
         [Header("UI")]
         [SerializeField] private GameObject m_interactionIcon = null;
         [SerializeField] private GameObject m_activeQuestIcon = null;
-        //[SerializeField] private GameObject m_dockUIPanel = null;
-        //[SerializeField] private DockUIController m_dockUIController = null;
 
         [Header("Input")]
         [SerializeField] private InputActionReference m_interactAction = null;
@@ -30,6 +28,7 @@ namespace Quest
         private bool m_isPlayerInRange = false;
         private bool m_isInteractable = false;
         private bool m_lastInteractableState = false;
+        private bool m_hasBeenUsed = false;
 
         private void OnEnable()
         {
@@ -86,7 +85,8 @@ namespace Quest
             float _speed = m_boatRigidbody.linearVelocity.magnitude;
             bool _isSlowEnough = _speed <= m_maxBoatSpeed;
 
-            m_isInteractable = m_isPlayerInRange && _isSlowEnough && QuestManager.Instance.IsQuestRunning && QuestManager.Instance.ActiveQuest == m_quest;
+            m_isInteractable = !m_hasBeenUsed && m_isPlayerInRange && _isSlowEnough 
+                && QuestManager.Instance.IsQuestRunning && QuestManager.Instance.ActiveQuest == m_quest;
 
             if (m_isInteractable)
             {
@@ -139,7 +139,7 @@ namespace Quest
                 return;
             }
 
-            bool _questActive = QuestManager.Instance.ActiveQuest == m_quest;
+            bool _questActive = !m_hasBeenUsed && QuestManager.Instance.ActiveQuest == m_quest;
             if (!_questActive)
             {
                 m_activeQuestIcon.SetActive(false);
@@ -166,8 +166,24 @@ namespace Quest
 
             Debug.Log("[QuestInteraction] Quest interaction notified QuestManager about interaction");
 
-            QuestManager.Instance.HandleQuestInteraction(m_quest);
-            //QuestResult _result = QuestManager.Instance.FinishQuestAndGetResult();
+            QuestManager.Instance.HandleQuestInteraction(m_quest, this);
+        }
+
+        internal void MarkAsCompleted()
+        {
+            m_hasBeenUsed = true;
+
+            if (m_interactionIcon != null)
+            {
+                m_interactionIcon.SetActive(false);
+            }
+
+            if (m_activeQuestIcon != null)
+            {
+                m_activeQuestIcon.SetActive(false);
+            }
+
+            Debug.Log("[QuestInteraction] interaction completed and disabled");
         }
 
         //---------------

@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Dialogue;
 
 namespace Quest
 {
@@ -16,15 +17,10 @@ namespace Quest
         [SerializeField] private TextMeshProUGUI m_moneyText;
 
         [Header("Stars")]
-        //[SerializeField] private Image[] m_timeStars;
-        //[SerializeField] private Image[] m_damageStars;
-        //[SerializeField] private Image[] m_fuelStars;
         [SerializeField] private Image m_timeFillBar;
         [SerializeField] private Image m_damageFillBar;
         [SerializeField] private Image m_fuelFillBar;
         [SerializeField] private Image m_averageFillBar;
-        //[SerializeField] private Sprite m_filledStar;
-        //[SerializeField] private Sprite m_emptyStar;
 
         [Header("Button")]
         [SerializeField] private Button m_closeButton;
@@ -44,10 +40,6 @@ namespace Quest
             m_damageText.text = _result.DamageValue.ToString();
             m_fuelText.text = _result.FuelValue.ToString();
             m_moneyText.text = _result.MoneyReward.ToString();
-
-            //SetStars(m_timeStars, _result.TimeStars);
-            //SetStars(m_damageStars, _result.DamageStars);
-            //SetStars(m_fuelStars, _result.FuelStars);
 
             SetFillAmount(m_timeFillBar, _result.TimeCircles);
             SetFillAmount(m_damageFillBar, _result.DamageCircles);
@@ -72,21 +64,6 @@ namespace Quest
             _bar.fillAmount = _circles / 5f;
         }
 
-        //private void SetStars(Image[] _stars, int _amount)
-        //{
-        //    for (int i = 0; i < _stars.Length; i++)
-        //    {
-        //        if (i < _amount)
-        //        {
-        //            _stars[i].sprite = m_filledStar;
-        //        }
-        //        else
-        //        {
-        //            _stars[i].sprite = m_emptyStar;
-        //        }
-        //    }
-        //}
-
         private string FormatTime(float _seconds)
         {
             int _h = Mathf.FloorToInt(_seconds / 3600f);
@@ -104,6 +81,8 @@ namespace Quest
             {
                 GameManager.Instance.SetState(GameStates.MOTORMODE);
             }
+
+            DialogueManager.Instance.ContinueDialogueAfterQuestReward();
 
             m_root.SetActive(false);
 

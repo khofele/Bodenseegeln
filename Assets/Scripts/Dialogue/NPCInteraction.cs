@@ -23,7 +23,7 @@ namespace Dialogue
         [SerializeField] private float m_visibilityDistance = 20f;
 
         [Header("References")]
-        [SerializeField] private Rigidbody m_boatRigidbody = null;
+        /*[SerializeField]*/ private Rigidbody m_boatRigidbody = null;
         [SerializeField] private Transform m_boatTransform = null;
 
         [Header("UI")]
@@ -76,7 +76,6 @@ namespace Dialogue
             NPCIconState _state = GetIconState();
             UpdateIconState(_state); //switching between talkIcon <-> questIcon <-> noIcon
             UpdateInteractionIcon(); //only the interaction icon
-            //UpdatePossibleQuestIcon();
 
             if (m_isInteractable && m_interactAction.action.WasPressedThisFrame())
             {
@@ -96,7 +95,10 @@ namespace Dialogue
             float _speed = m_boatRigidbody.linearVelocity.magnitude;
             bool _isSlowEnough = _speed <= m_maxBoatSpeed;
 
-            m_isInteractable = m_isPlayerInRange && _isSlowEnough;
+            NPCDialogueBranch _currentBranch = DialogueStateManager.Instance.GetBestDialogueBranch(m_npc);
+            bool _hasDialogue = _currentBranch != null;
+
+            m_isInteractable = m_isPlayerInRange && _isSlowEnough && _hasDialogue;
 
             if (m_isInteractable)
             {
@@ -159,29 +161,49 @@ namespace Dialogue
         {
             //1) must be in range
             float _dist = Vector3.Distance(m_boatTransform.position, transform.position);
-            if (_dist <= m_visibilityDistance)
+            if (_dist > m_visibilityDistance)
             {
                 return NPCIconState.None;
             }
 
             NPCDialogueBranch _bestBranch = DialogueStateManager.Instance.GetBestDialogueBranch(m_npc);
 
-            if (_bestBranch == null)
+            if (_bestBranch != null)
             {
-                return NPCIconState.None;
+                //1) quest icon
+                if (_bestBranch.State == NPCDialogueState.QuestReadyToComplete)
+                {
+                    return NPCIconState.Quest;
+                }
+
+                if (_bestBranch.State == NPCDialogueState.QuestAvailable && !QuestManager.Instance.IsQuestRunning)
+                {
+                    return NPCIconState.Quest;
+                }
+
+                //2) talk icon
+                if (_bestBranch.State == NPCDialogueState.ReadyToTalk)
+                {
+                    return NPCIconState.Talk;
+                }
             }
 
-            //2) talk icon
-            if (_bestBranch.State == NPCDialogueState.ReadyToTalk)
-            {
-                return NPCIconState.Talk;
-            }
+            //if (_bestBranch == null)
+            //{
+            //    return NPCIconState.None;
+            //}
 
-            //3) quest icon
-            if (_bestBranch.State == NPCDialogueState.QuestAvailable && !QuestManager.Instance.IsQuestRunning)
-            {
-                return NPCIconState.Quest;
-            }
+            ////2) talk icon
+            //if (_bestBranch.State == NPCDialogueState.ReadyToTalk)
+            //{
+            //    return NPCIconState.Talk;
+            //}
+
+            ////3) quest icon
+            //if (_bestBranch.State == NPCDialogueState.QuestAvailable && !QuestManager.Instance.IsQuestRunning)
+            //{
+            //    return NPCIconState.Quest;
+            //}
 
             //4) all other cases = no icon
             return NPCIconState.None;
@@ -220,38 +242,6 @@ namespace Dialogue
                 default:
                     break;
             }
-        }
-
-        private GameObject GetActiveIconObject()
-        {
-            switch (GetIconState())
-            {
-                case NPCIconState.Talk:
-                    return m_talkIcon;
-                case NPCIconState.Quest:
-                    return m_questIcon;
-                default:
-                    return null;
-            }
-        }
-
-        private void UpdatePossibleQuestIcon() //= the icon that is above the NPC to mark that he can give a quest
-        {
-            //if (m_activeQuestIcon == null)
-            //{
-            //    return;
-            //}
-
-            //bool _questActive = QuestManager.Instance.ActiveQuest == m_quest;
-            //if (!_questActive)
-            //{
-            //    m_activeQuestIcon.SetActive(false);
-            //    return;
-            //}
-
-            //float _dist = Vector3.Distance(m_boatTransform.position, transform.position);
-            //m_activeQuestIcon.SetActive(_dist <= m_visibilityDistance);
-
         }
 
         //---------------

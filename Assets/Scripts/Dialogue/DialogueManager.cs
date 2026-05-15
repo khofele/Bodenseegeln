@@ -9,6 +9,7 @@ namespace Dialogue
         private NPCData m_currentNPC;
         private DialogueNode m_currentNode;
         private NPCDialogueBranch m_currentBranch;
+        private DialogueResponse m_pendingResponse;
 
         [SerializeField]
         private DialogueUI m_UI;
@@ -19,8 +20,6 @@ namespace Dialogue
             GameManager.Instance.SetState(GameStates.DIALOGMODE);
 
             m_UI.Show(true);
-
-            //int _startNode = DialogueStateManager.Instance.GetStartNodeConsideringState(_npc); //DialogueStateManager.Instance.GetStartNode(_npc);
 
             m_currentBranch = DialogueStateManager.Instance.GetBestDialogueBranch(_npc);
             if (m_currentBranch == null)
@@ -53,12 +52,6 @@ namespace Dialogue
                 return;
             }
 
-            //if (m_currentNode == null)
-            //{
-            //    EndDialogue();
-            //    return;
-            //}
-
             m_currentNode = _node;
             m_UI.DisplayNode(m_currentNPC, m_currentNode);
         }
@@ -66,7 +59,13 @@ namespace Dialogue
         internal void ChooseResponse(DialogueResponse _response)
         {
             //execute action first
-            HandleAction(_response);
+            bool _pauseDialogue = HandleAction(_response);
+
+            if (_pauseDialogue)
+            {
+                m_pendingResponse = _response;
+                return;
+            }
 
             //only save valid nodes -> -1 is only for closing the dialoge, but should not be saved for future dialogues
             if (_response.NextNode >= 0)
@@ -81,7 +80,7 @@ namespace Dialogue
             }
         }
 
-        private void HandleAction(DialogueResponse _response)
+        private bool HandleAction(DialogueResponse _response)
         {
             switch (_response.ActionType)
             {
@@ -95,10 +94,32 @@ namespace Dialogue
                     {
                         Debug.Log($"[DialogueManager] Start Quest action but no quest assigned");
                     }
-                    break;
+                    return false; //do not pause dialogue progression
                 case DialogueActionType.CompleteQuest:
                     QuestManager.Instance.CompleteQuestFromDialogue();
-                    break;
+                    return true; //pause dialogue progression
+            }
+
+            return false;
+        }
+
+        internal void ContinueDialogueAfterQuestReward()
+        {
+            if (m_pendingResponse == null)
+            {
+                return;
+            }
+
+            DialogueResponse _response = m_pendingResponse;
+            m_pendingResponse = null;
+
+            if (_response.NextNode >= 0)
+            {
+                SetNode(_response.NextNode);
+            }
+            else
+            {
+                EndDialogue();
             }
         }
 

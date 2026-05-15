@@ -7,15 +7,15 @@ public class DockInteraction : MonoBehaviour
 {
     [SerializeField] private bool m_showGizmos = true;
 
-    [Header("Dock Setup")]
-    [SerializeField]
-    private NPCData m_npc;
+    //[Header("Dock Setup")]
+    //[SerializeField]
+    //private NPCData m_npc;
 
     [Header("Detection")]
     [SerializeField] private float m_maxBoatSpeed = 0.5f;
 
     [Header("References")]
-    [SerializeField] private Rigidbody m_boatRigidbody = null;
+    /*[SerializeField]*/ private Rigidbody m_boatRigidbody = null;
     [SerializeField] private Transform m_boatTransform = null;
 
     [Header("UI")]
@@ -143,11 +143,11 @@ public class DockInteraction : MonoBehaviour
         m_dockUIController.Init(this);
     }
 
-    public void StartDialogue()
-    {
-        m_dockUIPanel.SetActive(false);
-        DialogueManager.Instance.StartDialogue(m_npc);
-    }
+    //public void StartDialogue()
+    //{
+    //    m_dockUIPanel.SetActive(false);
+    //    DialogueManager.Instance.StartDialogue(m_npc);
+    //}
 
     public void CloseDockUI()
     {

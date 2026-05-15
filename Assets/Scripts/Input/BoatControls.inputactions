@@ -339,6 +339,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "NextUIScreen",
+                    "type": "Button",
+                    "id": "05351bc8-938d-49ac-8f86-d9c2f3427ca0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PreviousUIScreen",
+                    "type": "Button",
+                    "id": "73f7d823-5d05-4c5d-b5da-fb4b08fa450d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -361,6 +379,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Scip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af311bc0-0a0d-4b70-aa8b-4b66cfe5f728",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextUIScreen",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "63738c41-2eb2-4217-a524-adb3510e8ff0",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PreviousUIScreen",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

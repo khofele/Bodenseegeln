@@ -940,6 +940,11 @@ public class BoatController : MonoBehaviour
 
         float damageValue = 2.0f + 15.0f * angleImpact * speedImpact;
 
+        if (CheckDamageReducedWithFenders() == true)
+        {
+            damageValue *= 0.5f;
+        }
+
         return damageValue;
     }
 
@@ -977,8 +982,26 @@ public class BoatController : MonoBehaviour
 
         QuestManager.Instance.RegisterDamage(damage);
         m_currentHealth -= damage;
+    }
 
-        Debug.Log("WE STAY");
+    private void CalculateFenderDamage()
+    {
+        if(m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 8.0f)
+        {
+            m_currentHealth -= 2.0f + 5.0f * Time.fixedDeltaTime;
+        }
+    }
+
+    private bool CheckDamageReducedWithFenders()
+    {
+        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) < 8.0f)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private bool CheckZeroHealth()
@@ -1145,6 +1168,8 @@ public class BoatController : MonoBehaviour
         GetSelectedSail();
         GetSailTrimInput();
         GetFenderInput();
+
+        CalculateFenderDamage();
 
         CheckBoatDrivingForward();
 

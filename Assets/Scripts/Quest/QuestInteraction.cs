@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Quest
 {
-    public class QuestInteraction : MonoBehaviour
+    public class QuestInteraction : CompassTargetBase
     {
         [SerializeField] private bool m_showGizmos = true;
 
@@ -33,6 +33,17 @@ namespace Quest
         private bool m_lastInteractableState = false;
         private bool m_hasBeenUsed = false;
 
+        public override Vector2 GetPosition()
+        {
+            Vector3 p = transform.position;
+            return new Vector2(p.x, p.z);
+        }
+
+        public override bool ShouldShowIcon()
+        {
+            return ShouldShowCompassIcon();
+        }
+
         private void OnEnable()
         {
             if (m_interactAction != null)
@@ -43,6 +54,11 @@ namespace Quest
             if (m_boatRigidbody == null)
             {
                 m_boatRigidbody = m_boatTransform.GetComponent<Rigidbody>();
+            }
+
+            if (Compass.Instance != null)
+            {
+                Compass.Instance.Register(this);
             }
         }
 
@@ -82,7 +98,6 @@ namespace Quest
             if (m_boatRigidbody == null)
             {
                 m_boatRigidbody = m_boatTransform.GetComponent<Rigidbody>();
-                //return;
             }
 
             float _speed = m_boatRigidbody.linearVelocity.magnitude;
@@ -151,6 +166,11 @@ namespace Quest
 
             float _dist = Vector3.Distance(m_boatTransform.position, transform.position);
             m_activeQuestIcon.SetActive(_dist <= m_visibilityDistance);
+        }
+
+        internal bool ShouldShowCompassIcon()
+        {
+            return !m_hasBeenUsed && QuestManager.Instance.ActiveQuest == m_quest;
         }
 
         private void TryCompleteQuest()

@@ -11,7 +11,7 @@ namespace Dialogue
         Quest = 2
     }
 
-    public class NPCInteraction : MonoBehaviour
+    public class NPCInteraction : CompassTargetBase
     {
         [SerializeField] private bool m_showGizmos = true;
 
@@ -41,6 +41,18 @@ namespace Dialogue
         private bool m_lastInteractableState = false;
         private NPCIconState m_lastIconState = NPCIconState.None;
 
+
+        public override Vector2 GetPosition()
+        {
+            Vector3 p = transform.position;
+            return new Vector2(p.x, p.z);
+        }
+
+        public override bool ShouldShowIcon()
+        {
+            return GetCompassIconState() != NPCIconState.None;
+        }
+
         private void OnEnable()
         {
             if (m_interactAction != null)
@@ -51,6 +63,11 @@ namespace Dialogue
             if (m_boatRigidbody == null)
             {
                 m_boatRigidbody = m_boatTransform.GetComponent<Rigidbody>();
+            }
+
+            if (Compass.Instance != null)
+            {
+                Compass.Instance.Register(this);
             }
         }
 
@@ -146,6 +163,33 @@ namespace Dialogue
             }
         }
 
+        internal NPCIconState GetCompassIconState()
+        {
+            NPCDialogueBranch _bestBranch = DialogueStateManager.Instance.GetBestDialogueBranch(m_npc);
+
+            if (_bestBranch != null)
+            {
+                //1) quest icon
+                if (_bestBranch.State == NPCDialogueState.QuestReadyToComplete)
+                {
+                    return NPCIconState.Quest;
+                }
+
+                if (_bestBranch.State == NPCDialogueState.QuestAvailable && !QuestManager.Instance.IsQuestRunning)
+                {
+                    return NPCIconState.Quest;
+                }
+
+                //2) talk icon
+                if (_bestBranch.State == NPCDialogueState.ReadyToTalk)
+                {
+                    return NPCIconState.Talk;
+                }
+            }
+
+            return NPCIconState.None;
+        }
+
         private void StartDialogue()
         {
             if (m_npc == null)
@@ -190,24 +234,7 @@ namespace Dialogue
                 }
             }
 
-            //if (_bestBranch == null)
-            //{
-            //    return NPCIconState.None;
-            //}
-
-            ////2) talk icon
-            //if (_bestBranch.State == NPCDialogueState.ReadyToTalk)
-            //{
-            //    return NPCIconState.Talk;
-            //}
-
-            ////3) quest icon
-            //if (_bestBranch.State == NPCDialogueState.QuestAvailable && !QuestManager.Instance.IsQuestRunning)
-            //{
-            //    return NPCIconState.Quest;
-            //}
-
-            //4) all other cases = no icon
+            //3) all other cases = no icon
             return NPCIconState.None;
         }
 

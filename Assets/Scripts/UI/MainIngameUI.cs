@@ -24,8 +24,10 @@ public class MainIngameUI : MonoBehaviour
     [SerializeField] private GameObject m_sailingScreen = null;
 
     [Header("MotorScreen")]
-    [SerializeField] private Image m_thrustBarFill = null;
-    [SerializeField] private RectTransform m_thrustHandle = null;
+    [SerializeField] private Image m_leftThrustBarFill = null;
+    [SerializeField] private Image m_rightThrustBarFill = null;
+    [SerializeField] private GameObject m_leftThrustArrow = null;
+    [SerializeField] private GameObject m_rightThrustArrow = null;
     [SerializeField] private TMP_Text m_motorSpeedText = null;
     [SerializeField] private TMP_Text m_motorDistanceText = null;
     [SerializeField] private TMP_Text m_motorAngleText = null;
@@ -44,16 +46,18 @@ public class MainIngameUI : MonoBehaviour
     [SerializeField] private RectTransform m_boatCenter = null;
     [SerializeField] private RectTransform m_trueWindArrow = null;
     [SerializeField] private RectTransform m_apparentWindArrow = null;
-    [SerializeField] private float m_windRadius = 120f; //THE HELL should this be??????
+    [SerializeField] private float m_windRadius = 120f;
 
     [Header("StatusIndicators")]
     [SerializeField] private Image m_fuelBar = null;
     [SerializeField] private Image m_healthBar = null;
+    [SerializeField] private Image m_healthDamageBar = null;
     [SerializeField] private GameObject m_fuelNormalIcon = null;
     [SerializeField] private GameObject m_fuelLowIcon = null;
     [SerializeField] private GameObject m_healthNormalIcon = null;
     [SerializeField] private GameObject m_healthLowIcon = null;
-    [SerializeField] private Image m_healthDamageOverlay = null;
+    [SerializeField] private float m_healthDamageDelay = 0.5f;
+    [SerializeField] private float m_healthDamageSpeed = 2.5f;
 
     [Header("SailingPositions")]
     [SerializeField] private Image m_mainSailBar = null;
@@ -77,8 +81,12 @@ public class MainIngameUI : MonoBehaviour
 
     private UIScreen m_currentScreen = UIScreen.Motor;
     private float m_lastHealth;
-    private bool m_damageFlashActive;
-    private float m_damageFlashTimer; 
+    private bool m_isWaitingForDamageBar;
+    private float m_damageTimer;
+
+    //DEBUG: ONLY for testing damage
+    private float m_takeDamageDelay = 10f;
+    private float m_getHealthDelay = 20f;
 
     private void OnEnable()
     {
@@ -105,6 +113,22 @@ public class MainIngameUI : MonoBehaviour
         UpdateCharInfo();
         UpdateStatusIndicators();
         UpdateSailingPositions();
+
+        /////////////////////////////////
+        //DEBUG: ONLY for testing Damage!
+        //m_takeDamageDelay -= Time.deltaTime;
+        //m_getHealthDelay -= Time.deltaTime;
+        //if (m_takeDamageDelay <= 0f)
+        //{
+        //    m_boatTransform.GetComponent<BoatController>().CurrentHealth -= 20f;
+        //    m_takeDamageDelay = 20f;
+        //}
+        //if (m_getHealthDelay <= 0f)
+        //{
+        //    m_boatTransform.GetComponent<BoatController>().CurrentHealth = m_boatTransform.GetComponent<BoatController>().MaxHealth;
+        //    m_getHealthDelay = 50f;
+        //}
+        /////////////////////////////////
     }
 
     private void HandleScreenSwitching()
@@ -303,18 +327,20 @@ public class MainIngameUI : MonoBehaviour
     private void UpdateStatusIndicators()
     {
         float _fuel = UIManager.Instance.GetFuelLevel();
+        float _normalizedFuel = Mathf.Clamp01(_fuel / m_boatTransform.GetComponent<BoatController>().MaxFuel);
         float _health = UIManager.Instance.GetBoatHealth();
+        float _normalizedHealth = Mathf.Clamp01(_health / m_boatTransform.GetComponent<BoatController>().MaxHealth);
         bool _fuelLow = UIManager.Instance.CheckFuelLevel();
         bool _healthLow = UIManager.Instance.CheckBoathHealth();
 
         if (m_fuelBar != null)
         {
-            m_fuelBar.fillAmount = _fuel;
+            m_fuelBar.fillAmount = _normalizedFuel;
         }
 
         if (m_healthBar != null)
         {
-            m_healthBar.fillAmount = _health;
+            m_healthBar.fillAmount = _normalizedHealth;
         }
 
         if (m_fuelLowIcon != null)
@@ -339,38 +365,50 @@ public class MainIngameUI : MonoBehaviour
 
         if (_health < m_lastHealth)
         {
-            m_damageFlashActive = true;
-            m_damageFlashTimer = 0.25f;
+            m_isWaitingForDamageBar = true;
+            m_damageTimer = m_healthDamageDelay;
+        }
+
+        if (m_isWaitingForDamageBar)
+        {
+            m_damageTimer -= Time.deltaTime;
+
+            if (m_damageTimer <= 0f)
+            {
+                m_isWaitingForDamageBar = false;
+            }
+        }
+
+        if (!m_isWaitingForDamageBar && m_healthDamageBar != null)
+        {
+            m_healthDamageBar.fillAmount = Mathf.MoveTowards(m_healthDamageBar.fillAmount, _normalizedHealth, m_healthDamageSpeed * Time.deltaTime);
+        }
+
+        if (_health > m_lastHealth && m_healthDamageBar != null)
+        {
+            m_healthDamageBar.fillAmount = _normalizedHealth;
         }
 
         m_lastHealth = _health;
-
-        if (m_damageFlashActive && m_healthDamageOverlay != null)
-        {
-            m_healthDamageOverlay.fillAmount = (_health / 1f);
-            m_healthDamageOverlay.enabled = true;
-
-            m_damageFlashTimer -= Time.deltaTime;
-            if (m_damageFlashTimer <= 0f)
-            {
-                m_damageFlashActive = false;
-                m_healthDamageOverlay.enabled = false;
-            }
-        }
     }
 
     private void UpdateSailingPositions()
     {
         float _main = UIManager.Instance.GetMainSailTrim();
         float _front = UIManager.Instance.GetFrontSailTrim();
+
+        //normalize sail angles (0° -> 90° => 0 -> 1) => COULD make better by making MaxSailAngle property instead of hardcoding 90°
+        float _normalizedMain = Mathf.Clamp01(_main / 90f);
+        float _normalizedFront = Mathf.Clamp01(_front / 90f);
+
         if (m_mainSailBar != null)
         {
-            m_mainSailBar.fillAmount = _main;
+            m_mainSailBar.fillAmount = _normalizedMain;
         }
 
         if (m_frontSailBar != null)
         {
-            m_frontSailBar.fillAmount = _front;
+            m_frontSailBar.fillAmount = _normalizedFront;
         }
 
         bool _butterfly = UIManager.Instance.CheckButterflyModeEnabled();
@@ -423,36 +461,51 @@ public class MainIngameUI : MonoBehaviour
     {
         float _thrust = UIManager.Instance.GetThrustLeverStep();
 
-        float _normalized = Mathf.InverseLerp(-3f, 3f, _thrust);
+        //normalize absolute thrust (0 -> 3)
+        float _fill = Mathf.Clamp01(Mathf.Abs(_thrust)/3f);
 
         bool _isPositive = _thrust > 0.05f;
         bool _isNegative = _thrust < -0.05f;
         bool _isZero = !_isPositive && !_isNegative;
 
         //fill bar logic
-        if (m_thrustBarFill != null)
+        if (m_leftThrustBarFill != null)
         {
-            if (_isPositive)
-            {
-                m_thrustBarFill.fillAmount = (int)Image.OriginHorizontal.Left;
-            }
-            else
-            {
-                m_thrustBarFill.fillAmount = (int)Image.OriginHorizontal.Right;
-            }
+            m_leftThrustBarFill.fillAmount = _isNegative ? _fill : 0f;
         }
 
-        //handle position
-        if (m_thrustHandle != null)
+        if (m_rightThrustBarFill != null)
         {
-            RectTransform _parent = (RectTransform)m_thrustHandle.parent;
-            float _width = _parent.rect.width;
-            float _x = (_normalized - 0.5f) * _width;
-
-            m_thrustHandle.anchoredPosition = new Vector2(_x, m_thrustHandle.anchoredPosition.y);
+            m_rightThrustBarFill.fillAmount = _isPositive ? _fill : 0f;
         }
 
-        //TODO: arrow visual state
+        if (m_leftThrustArrow != null)
+        {
+            m_leftThrustArrow.SetActive(_isNegative || _isZero);
+
+            RectTransform _leftArrowRect = m_leftThrustArrow.GetComponent<RectTransform>();
+            RectTransform _leftBarRect = m_leftThrustBarFill.rectTransform;
+
+            float _leftWidth = _leftBarRect.rect.width;
+
+            //0 fill = center (x = 0), 1 fill = full left (x = -width)
+            float _x = -(_leftWidth * m_leftThrustBarFill.fillAmount);
+            _leftArrowRect.anchoredPosition = new Vector2(_x, _leftArrowRect.anchoredPosition.y);
+        }
+
+        if (m_rightThrustArrow != null)
+        {
+            m_rightThrustArrow.SetActive(_isPositive || _isZero);
+
+            RectTransform _rightArrowRect = m_rightThrustArrow.GetComponent<RectTransform>();
+            RectTransform _rightBarRect = m_rightThrustBarFill.rectTransform;
+
+            float _rightWidth = _rightBarRect.rect.width;
+
+            //0 fill = center (x = 0), 1 fill = full left (x = +width)
+            float _x = (_rightWidth * m_rightThrustBarFill.fillAmount);
+            _rightArrowRect.anchoredPosition = new Vector2(_x, _rightArrowRect.anchoredPosition.y);
+        }
     }
 
     private void UpdateWindArrows()
@@ -476,13 +529,15 @@ public class MainIngameUI : MonoBehaviour
             return;
         }
 
-        float _rad = _angle * Mathf.Deg2Rad;
+        float _correctedAngle = (_angle + 180f) % 360f; //angles must be flipped left<->right, front<->back
 
-        Vector2 _offset = new Vector2(Mathf.Sin(_rad), Mathf.Cos(_rad) * m_windRadius);
+        float _rad = _correctedAngle * Mathf.Deg2Rad;
+
+        Vector2 _offset = new Vector2(Mathf.Sin(_rad), Mathf.Cos(_rad)) * m_windRadius;
 
         _arrow.anchoredPosition = _offset;
 
-        _arrow.localEulerAngles = new Vector3(0, 0, -_angle);
+        _arrow.localEulerAngles = new Vector3(0, 0, -_correctedAngle); //currently arrows point down on Image -> when pointig up/left/right = +180f/+90f/-90f
     }
 
     private float GetQuestTargetDistance()

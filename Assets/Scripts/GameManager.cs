@@ -33,6 +33,15 @@ public class GameManager : Manager<GameManager>
         m_moneyGainSound.Post(gameObject);
     }
 
+    public void DecreaseMoney(int _amount)
+    {
+        m_money -= _amount;
+        Debug.Log($"[GameManager] Money decreased: {_amount} | Total: {m_money}");
+
+        // Play the Wwise money gain even
+        //TODO Money decrease Sound m_moneyGainSound.Post(gameObject);
+    }
+
     public void Start()
     {
         

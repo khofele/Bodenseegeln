@@ -1,0 +1,561 @@
+fileFormatVersion: 2
+guid: 23807b219f5338f4e92c8f11f8937f7e
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: b10b55a1aa6a1aa32521bc0cab59632e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: c0c05b0c0063f154db0442840778be88
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  multiSpriteImportData: []
+  layeredSpriteImportData:
+  - name: Treibstoff
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2098
+      y: 4
+      width: 1048
+      height: 983
+    spriteID: 91c97181eaecc3340bbcaac218c3aa45
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2098, y: 4}
+    spritePosition: {x: 8, y: 1171}
+  - name: Segelmodus
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1055
+      height: 1044
+    spriteID: 8b4d909b0bdf35541a4dee4fbf515ae9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 2213, y: 1110}
+  - name: Navrad
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1056
+      width: 1049
+      height: 1049
+    spriteID: 794960a25fffd204c96eb9affe3b2178
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1056}
+    spritePosition: {x: 2213, y: 0}
+  - name: "M\xFCnze"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2113
+      width: 1047
+      height: 1047
+    spriteID: d4fc64bdb994c8249a74404f029976dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2113}
+    spritePosition: {x: 1123, y: 0}
+  - name: Motormodus
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3168
+      width: 1047
+      height: 1047
+    spriteID: 53cee32f1690d374aa38e5760e3139b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3168}
+    spritePosition: {x: 8, y: 0}
+  - name: Geld
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 7371
+      width: 1049
+      height: 621
+    spriteID: a048b2ac4f5046b4cb806c2d6b0a8c66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 7371}
+    spritePosition: {x: 0, y: 2209}
+  - name: FWind
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1067
+      y: 4
+      width: 1023
+      height: 1021
+    spriteID: 4c627e3685189d04ab887399f9c0209f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1067, y: 4}
+    spritePosition: {x: 2917, y: 1110}
+  - name: Werkzeug
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 6325
+      width: 1042
+      height: 1038
+    spriteID: 285d930499b02f44189b688b14f5f3f0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 6325}
+    spritePosition: {x: 1055, y: 1171}
+  - name: WarnleuchteAN
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1067
+      y: 1033
+      width: 844
+      height: 1045
+    spriteID: 57a095473bac9f34bbd1765a81b0129a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1067, y: 1033}
+    spritePosition: {x: 2213, y: 2914}
+  - name: KnopfleuchteAUS
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4223
+      width: 1043
+      height: 1043
+    spriteID: 4934a2cba421c7743b16811160a5cedc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4223}
+    spritePosition: {x: 1123, y: 2914}
+  - name: KnopfleuchteAN
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5274
+      width: 1043
+      height: 1043
+    spriteID: 318a3ebd67d38144897af8bcaeac3ff3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 5274}
+    spritePosition: {x: 80, y: 2914}
+  - name: WarnleuchteAUS
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1067
+      y: 2086
+      width: 844
+      height: 1045
+    spriteID: cdbd09e3e9771484b92d065ff6881ce3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1067, y: 2086}
+    spritePosition: {x: 3095, y: 2914}
+  - name: TWind
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1067
+      y: 3139
+      width: 668
+      height: 667
+    spriteID: 03087667244d6fe4bbdd67d56a2253c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1067, y: 3139}
+    spritePosition: {x: 3095, y: 1464}
+  spriteImportData: []
+  rigSpriteImportData: []
+  sharedRigSpriteImportData: []
+  mosaicSpriteImportData: []
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  generateTileAssets: 0
+  tilePaletteCellLayout: 0
+  tilePaletteHexagonLayout: 0
+  tilePaletteCellSize: {x: 1, y: 1, z: 0}
+  tilePaletteCellSizing: 0
+  transparencySortMode: 0
+  transparencySortAxis: {x: 0, y: 0, z: 1}
+  tileTemplate: {instanceID: 0}
+  padding: 4
+  spriteSizeExpand: 0
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  spritePackingTag: 
+  resliceFromLayer: 0
+  pSDLayerImportSetting: []
+  psdLayers:
+  - name: Treibstoff
+    spriteName: Treibstoff
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 91c97181eaecc3340bbcaac218c3aa45
+    layerID: 35
+    mosaicPosition: {x: 2098, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Segelmodus
+    spriteName: Segelmodus
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8b4d909b0bdf35541a4dee4fbf515ae9
+    layerID: 34
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Navrad
+    spriteName: Navrad
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 794960a25fffd204c96eb9affe3b2178
+    layerID: 33
+    mosaicPosition: {x: 4, y: 1056}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "M\xFCnze"
+    spriteName: "M\xFCnze"
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d4fc64bdb994c8249a74404f029976dc
+    layerID: 32
+    mosaicPosition: {x: 4, y: 2113}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Motormodus
+    spriteName: Motormodus
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 53cee32f1690d374aa38e5760e3139b2
+    layerID: 31
+    mosaicPosition: {x: 4, y: 3168}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Geld
+    spriteName: Geld
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a048b2ac4f5046b4cb806c2d6b0a8c66
+    layerID: 30
+    mosaicPosition: {x: 4, y: 7371}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: FWind
+    spriteName: FWind
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4c627e3685189d04ab887399f9c0209f
+    layerID: 29
+    mosaicPosition: {x: 1067, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Werkzeug
+    spriteName: Werkzeug
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 285d930499b02f44189b688b14f5f3f0
+    layerID: 28
+    mosaicPosition: {x: 4, y: 6325}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: WarnleuchteAN
+    spriteName: WarnleuchteAN
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 57a095473bac9f34bbd1765a81b0129a
+    layerID: 48
+    mosaicPosition: {x: 1067, y: 1033}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: KnopfleuchteAUS
+    spriteName: KnopfleuchteAUS
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4934a2cba421c7743b16811160a5cedc
+    layerID: 47
+    mosaicPosition: {x: 4, y: 4223}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: KnopfleuchteAN
+    spriteName: KnopfleuchteAN
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 318a3ebd67d38144897af8bcaeac3ff3
+    layerID: 46
+    mosaicPosition: {x: 4, y: 5274}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: WarnleuchteAUS
+    spriteName: WarnleuchteAUS
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cdbd09e3e9771484b92d065ff6881ce3
+    layerID: 45
+    mosaicPosition: {x: 1067, y: 2086}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: TWind
+    spriteName: TWind
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 03087667244d6fe4bbdd67d56a2253c8
+    layerID: 27
+    mosaicPosition: {x: 1067, y: 3139}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  mosaicPSDLayers: []
+  rigPSDLayers: []
+  sharedRigPSDLayers: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

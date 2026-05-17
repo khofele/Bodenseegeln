@@ -46,12 +46,12 @@ public class UIManager : Manager<UIManager>
 
     public bool CheckFuelLevel()
     {
-        return m_boatController.CurrentFuel < (m_boatController.MaxFuel * 0.2f);
+        return m_boatController.CurrentFuel < (m_boatController.MaxFuel * 0.2f); // TODO balance Threshold
     }
 
     public bool CheckBoathHealth()
     {
-        return m_boatController.CurrentHealth < (m_boatController.MaxHealth * 0.2f);
+        return m_boatController.CurrentHealth < (m_boatController.MaxHealth * 0.2f); // TODO balance Threshold
     }
 
     public float GetMainSailTrim()

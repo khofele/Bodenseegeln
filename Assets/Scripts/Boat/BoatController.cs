@@ -59,6 +59,7 @@ public class BoatController : MonoBehaviour
     // REFERENCES
     [SerializeField] private GameManager m_gameManager = null;
     [SerializeField] private WindController m_windController = null;
+    [SerializeField] private BoatAudioController m_boatAudioController = null; // TODO Fixen!!
     [SerializeField] private Transform m_parentReference = null;
     [SerializeField] private GameObject m_mainSail = null;
     [SerializeField] private GameObject m_frontSail = null;
@@ -1016,7 +1017,7 @@ public class BoatController : MonoBehaviour
     private void CalculateWaveDamage()
     {
         // take damage if boat is too fast --> waves are too high
-        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 8.0f) // TODO threshold
+        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 18.0f) // TODO threshold
         {
             float damage = 0.5f + 5.0f * Time.fixedDeltaTime; // TODO balance damage value: base value + scaled value
             m_currentHealth -= damage;

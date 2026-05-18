@@ -255,6 +255,33 @@
 										<Property Name="OnOffBand5" Type="bool" Value="True"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="BoatMastCreak_EQ" ID="{34A97080-8313-4F31-AE6C-D939496CC481}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FilterTypeBand7" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="70"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="280"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="500"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="900"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="2047.304"/>
+										<Property Name="FrequencyBand6" Type="Real32" Value="3200"/>
+										<Property Name="GainBand2" Type="Real32" Value="3"/>
+										<Property Name="GainBand3" Type="Real32" Value="-3"/>
+										<Property Name="GainBand4" Type="Real32" Value="3"/>
+										<Property Name="GainBand5" Type="Real32" Value="-10"/>
+										<Property Name="GainBand6" Type="Real32" Value="-2"/>
+										<Property Name="GainBand7" Type="Real32" Value="-7"/>
+										<Property Name="NumBands" Type="int32" Value="7"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="OnOffBand7" Type="bool" Value="True"/>
+										<Property Name="QFactorBand3" Type="Real32" Value="1.2"/>
+										<Property Name="QFactorBand4" Type="Real32" Value="1.3"/>
+										<Property Name="QFactorBand5" Type="Real32" Value="0.8"/>
+										<Property Name="QFactorBand6" Type="Real32" Value="1.2"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Ambient" ID="{E453CDA4-0E26-414A-AB93-16296D9C07B4}" ShortID="115757871">

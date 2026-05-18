@@ -96,6 +96,7 @@ public class BoatController : MonoBehaviour
     public float CurrentHealth
     {
         get { return m_currentHealth; }
+        set { m_currentHealth = value; }
     }
 
     public float MaxHealth
@@ -106,6 +107,7 @@ public class BoatController : MonoBehaviour
     public float CurrentFuel
     {
         get { return m_currentFuel; }
+        set { m_currentFuel = value; }
     }
 
     public float MaxFuel

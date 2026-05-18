@@ -57,6 +57,7 @@ public class BoatController : MonoBehaviour
     private float m_maxHealth = 100.0f;
 
     // REFERENCES
+    [Header("General Fields")]
     [SerializeField] private GameManager m_gameManager = null;
     [SerializeField] private WindController m_windController = null;
     [SerializeField] private BoatAudioController m_boatAudioController = null; // TODO Fixen!!
@@ -67,6 +68,7 @@ public class BoatController : MonoBehaviour
     [SerializeField] private GameObject m_fender = null;
 
     // INPUT ACTION REFERENCES
+    [Header("Input Actions")]
     [SerializeField] private InputActionReference m_steeringAction = null;
     [SerializeField] private InputActionReference m_rudderNeutralAction = null;
     [SerializeField] private InputActionReference m_fenderEnableAction = null;
@@ -79,14 +81,6 @@ public class BoatController : MonoBehaviour
     [SerializeField] private InputActionReference m_motorThrustForwardAction = null;
     [SerializeField] private InputActionReference m_motorThrustBackwardAction = null;
     [SerializeField] private InputActionReference m_motorThrustNeutralAction = null;
-
-    // AUDIO REFERENCES
-    [SerializeField] private GameObject m_boatAudioEmitter;
-    [SerializeField] private WwiseEvent m_engineStartEvent = null;
-    [SerializeField] private WwiseEvent m_engineStopEvent = null;
-    [SerializeField] private WwiseEvent m_throttleMoveEvent = null;
-    [SerializeField] private WwiseEvent m_throttleMoveIdleEvent = null;
-    [SerializeField] private WwiseRTPC m_boatThrottleSignedRTPC = null;
 
     // PROPERTIES
     public float BoatSpeedInKnots
@@ -810,7 +804,9 @@ public class BoatController : MonoBehaviour
                 m_gameManager.SetState(GameStates.MOTORMODE);
                 m_isInSailMode = false;
                 ResetSails(); // TODO Jasi: Segel einholen Animation
-                m_engineStartEvent.Post(gameObject); // Audio Event
+
+                m_boatAudioController.PlayMotormodeAudio();
+
                 Debug.Log("Motormode enabled!");
             }
             else if (m_gameManager.CurrentState == GameStates.MOTORMODE)
@@ -818,7 +814,9 @@ public class BoatController : MonoBehaviour
                 m_gameManager.SetState(GameStates.SAILMODE);
                 m_isInSailMode = true;
                 m_thrustStep = 0.0f;
-                m_engineStopEvent.Post(gameObject);  // Audio Event
+
+                m_boatAudioController.PlaySailmodeAudio();
+
                 Debug.Log("Sailmode enabled!");
                 Debug.Log("Segel werden aufgespannt!"); // TODO Jasi: Segel aufspannen Animation
             }
@@ -891,6 +889,8 @@ public class BoatController : MonoBehaviour
     {
         if (m_gameManager.CurrentState == GameStates.MOTORMODE)
         {
+            float previousThrustStep = m_thrustStep;
+
             // read input and increase or decrease thrust or set thrust to neutral position
             if (m_motorThrustForwardAction != null && m_motorThrustForwardAction.action.IsPressed() == true)
             {
@@ -907,11 +907,16 @@ public class BoatController : MonoBehaviour
             if (m_motorThrustNeutralAction != null && m_motorThrustNeutralAction.action.triggered == true)
             {
                 m_thrustStep = 0.0f;
-                m_throttleMoveIdleEvent.Post(gameObject);  // Audio Event
+                m_boatAudioController.PlayThrottleIdleAudio();
             }
 
-            // Send current throttle lever value to Wwise RTPC.
-            AkUnitySoundEngine.SetRTPCValue("Boat_ThrottleSigned", m_thrustStep, gameObject);
+            m_boatAudioController.SetThrottleValues(m_thrustStep);
+
+            // check if the thrust lever has been moved forward or backward out of the idle state
+            if (Mathf.Approximately(previousThrustStep, 0.0f) == true && Mathf.Approximately(m_thrustStep, 0.0f) == false)
+            {
+                m_boatAudioController.PlayThrottleAudio();
+            }
         }
     }
 

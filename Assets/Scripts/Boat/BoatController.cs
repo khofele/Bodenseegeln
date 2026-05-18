@@ -70,6 +70,7 @@ public class BoatController : MonoBehaviour
     [SerializeField] private InputActionReference m_rudderNeutralAction = null;
     [SerializeField] private InputActionReference m_fenderEnableAction = null;
     [SerializeField] private InputActionReference m_changeMotorSailModeAction = null;
+    [SerializeField] private InputActionReference m_resetBoatAction = null;
     [SerializeField] private InputActionReference m_chooseMainSailAction = null;
     [SerializeField] private InputActionReference m_chooseFrontSailAction = null;
     [SerializeField] private InputActionReference m_chooseBothSailsAction = null;
@@ -95,6 +96,7 @@ public class BoatController : MonoBehaviour
     public float CurrentHealth
     {
         get { return m_currentHealth; }
+        set { m_currentHealth = value; }
     }
 
     public float MaxHealth
@@ -105,6 +107,7 @@ public class BoatController : MonoBehaviour
     public float CurrentFuel
     {
         get { return m_currentFuel; }
+        set { m_currentFuel = value; }
     }
 
     public float MaxFuel
@@ -927,6 +930,20 @@ public class BoatController : MonoBehaviour
             }
         }
     }
+
+    private void GetResetInput()
+    {
+        if(m_resetBoatAction != null && m_resetBoatAction.action.triggered == true)
+        {
+            m_gameManager.DecreaseMoney(100);
+            gameObject.transform.position = new Vector3(2800.0f, 9.8f, 2700.0f); // TODO Reset-Position festlegen
+
+            //if(m_gameManager.Money < 0) {
+            // TODO Game over einbauen
+            // TODO Game Over bei keine Gesundheit und kein Geld
+            //}
+        }
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // COLLISION/DAMAGE METHODS //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -934,14 +951,17 @@ public class BoatController : MonoBehaviour
     {
         ContactPoint firstContactPoint = collision.contacts[0];
 
+        // calculate angle between collision point and velocity vector and clamp it between 0 and 1
         float angleImpact = Mathf.Clamp01(Vector3.Dot(-m_rigidbody.linearVelocity.normalized, firstContactPoint.normal));
 
         float speedImpact = Mathf.Clamp01(m_rigidbody.linearVelocity.magnitude);
 
-        float damageValue = 2.0f + 15.0f * angleImpact * speedImpact;
+        // damage value based on collision angle and speed
+        float damageValue = 2.0f + 15.0f * angleImpact * speedImpact; // TODO balance damage value: base value + scaled value
 
         if (CheckDamageReducedWithFenders() == true)
         {
+            // reduce damage
             damageValue *= 0.5f;
         }
 
@@ -961,7 +981,6 @@ public class BoatController : MonoBehaviour
         }
 
         float damage = CalculateDamageValue(collision);
-
         QuestManager.Instance.RegisterDamage(damage);
         m_currentHealth -= damage;
     }
@@ -979,22 +998,35 @@ public class BoatController : MonoBehaviour
         }
 
         float damage = CalculateDamageValue(collision) * Time.fixedDeltaTime;
-
         QuestManager.Instance.RegisterDamage(damage);
         m_currentHealth -= damage;
     }
 
     private void CalculateFenderDamage()
     {
-        if(m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 8.0f)
+        // take damage if boat is too fast and fenders are enabled
+        if(m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 8.0f) // TODO threshold
         {
-            m_currentHealth -= 2.0f + 5.0f * Time.fixedDeltaTime;
+            float damage = 2.0f + 5.0f * Time.fixedDeltaTime; // TODO balance damage value: base value + scaled value
+            m_currentHealth -= damage;
+            QuestManager.Instance.RegisterDamage(damage);
+        }
+    }
+
+    private void CalculateWaveDamage()
+    {
+        // take damage if boat is too fast --> waves are too high
+        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 8.0f) // TODO threshold
+        {
+            float damage = 0.5f + 5.0f * Time.fixedDeltaTime; // TODO balance damage value: base value + scaled value
+            m_currentHealth -= damage;
+            QuestManager.Instance.RegisterDamage(damage);
         }
     }
 
     private bool CheckDamageReducedWithFenders()
     {
-        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) < 8.0f)
+        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) < 8.0f) // TODO Threshold (auch im UI-Manager balancen)
         {
             return true;
         }
@@ -1055,6 +1087,11 @@ public class BoatController : MonoBehaviour
             m_changeMotorSailModeAction.action.Enable();
         }
 
+        if(m_resetBoatAction != null)
+        {
+            m_resetBoatAction.action.Enable();
+        }
+
         if (m_chooseMainSailAction != null)
         {
             m_chooseMainSailAction.action.Enable();
@@ -1113,6 +1150,11 @@ public class BoatController : MonoBehaviour
             m_changeMotorSailModeAction.action.Disable();
         }
 
+        if (m_resetBoatAction != null)
+        {
+            m_resetBoatAction.action.Disable();
+        }
+
         if (m_chooseMainSailAction != null)
         {
             m_chooseMainSailAction.action.Disable();
@@ -1161,21 +1203,26 @@ public class BoatController : MonoBehaviour
 
     public void Update()
     {
+        // Inputs
         ChangeBoatMode();
-
         GetSteeringInput();
         GetMotorInput();
         GetSelectedSail();
         GetSailTrimInput();
         GetFenderInput();
+        GetResetInput();
 
+        // Damage
         CalculateFenderDamage();
+        CalculateWaveDamage();
 
+        // Shader-Check
         CheckBoatDrivingForward();
 
-        if(CheckZeroHealth() == true)
+        if(CheckZeroHealth() == true) // TODO Win-Lose-Condition
         {
             // TODO Game Over einbauen
+            // TODO maybe Check Game Over Methode?
         }
     }
 

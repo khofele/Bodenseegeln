@@ -60,7 +60,7 @@ public class BoatController : MonoBehaviour
     [Header("General Fields")]
     [SerializeField] private GameManager m_gameManager = null;
     [SerializeField] private WindController m_windController = null;
-    [SerializeField] private BoatAudioController m_boatAudioController = null; // TODO Fixen!!
+    [SerializeField] private BoatAudioController m_boatAudioController = null;
     [SerializeField] private Transform m_parentReference = null;
     [SerializeField] private GameObject m_mainSail = null;
     [SerializeField] private GameObject m_frontSail = null;
@@ -1234,8 +1234,6 @@ public class BoatController : MonoBehaviour
 
     public void FixedUpdate()
     {           
-        // TODO Kollisionssystem Damage durch zu hohe Wellen
-
         //// DEBUG //////////////////////////////////////////////////////////////////////////////
         float speedKnot = m_rigidbody.linearVelocity.magnitude / m_msPerKnot;
         Debug.Log(speedKnot + " knots");

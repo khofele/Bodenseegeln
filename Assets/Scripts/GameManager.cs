@@ -1,5 +1,7 @@
 using UnityEngine;
 using WwiseEvent = AK.Wwise.Event;
+using System.Collections.Generic;
+using Quest;
 
 public class GameManager : Manager<GameManager>
 {
@@ -15,7 +17,11 @@ public class GameManager : Manager<GameManager>
     [SerializeField] private WwiseEvent m_moneyGainSound;
     [SerializeField] private WwiseEvent m_moneySpendSound;
 
+    private Dictionary<QuestData, float> m_questResults = new();
+    private float m_averageQuestResult = 0f;
+
     public GameStates CurrentState => m_currentGameState;
+    public int Money => m_money;
 
     public void SetState(GameStates _newState)
     {
@@ -31,6 +37,47 @@ public class GameManager : Manager<GameManager>
         
         // Play the Wwise money gain even
         m_moneyGainSound.Post(gameObject);
+    }
+
+    public float GetAverageQuestResult()
+    {
+        return m_averageQuestResult;
+    }
+
+    public void RegisterQuestResult(QuestData _quest, float _averageCircles)
+    {
+        if (_quest == null)
+        {
+            Debug.LogWarning("[GameManager] tried to register NULL quest result");
+            return;
+        }
+
+        //only update if quest not already saved
+        m_questResults[_quest] = _averageCircles;
+
+        RecalculateAverageQuestResult();
+
+        Debug.Log($"[GameManager] saved result for {_quest.QuestName}: {_averageCircles}");
+    }
+
+    private void RecalculateAverageQuestResult()
+    {
+        if (m_questResults.Count == 0)
+        {
+            m_averageQuestResult = 0f;
+            return;
+        }
+
+        float _sum = 0f;
+
+        foreach (float _value in m_questResults.Values)
+        {
+            _sum += _value;
+        }
+
+        m_averageQuestResult = _sum / m_questResults.Count;
+
+        Debug.Log($"[GameManager] new average quest result: {m_averageQuestResult}");
     }
 
     public void Start()

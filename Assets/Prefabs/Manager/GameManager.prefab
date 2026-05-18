@@ -50,6 +50,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   m_uiManager: {fileID: 3584914111726427961}
+  m_money: 0
+  m_moneyGainSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 90b723eea6f3ee1469b5b9903fe764ba, type: 2}
+  m_moneySpendSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 27a46953e528011469d156645b2f86a0, type: 2}
 --- !u!1001 &4292689177703429772
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -96,6 +96,7 @@ public class GameManager : Manager<GameManager>
     public void Update()
     {
         // TODO if statement später ändern je nach game over oder game won
+        // TODO trigger Game Won im Questsystem
         if(m_currentGameState == GameStates.GAMEOVER || m_currentGameState == GameStates.GAMEWON)
         {
             // stop game

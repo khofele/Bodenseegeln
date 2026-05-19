@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{09E70A9D-B99D-BCDB-38E3-F124B477D266}",
+    "Hash": "{8531F5DB-0B89-1881-260E-EFE69131791F}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -666,7 +666,7 @@
       "Name": "boat_engineStart",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatEngine\\boat_engineStart",
       "GUID": "{1A2CA9C5-3748-46B6-BB5A-FCD0908DFA5C}",
-      "MaxAttenuation": "35",
+      "MaxAttenuation": "45",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -698,10 +698,10 @@
       "Name": "boat_engineStartKey",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatEngine\\boat_engineStartKey",
       "GUID": "{B4F126E6-6493-4C95-ADEB-A5893F8CEDF2}",
-      "MaxAttenuation": "30",
+      "MaxAttenuation": "40",
       "DurationType": "OneShot",
-      "DurationMin": "1.1281806",
-      "DurationMax": "1.1281806",
+      "DurationMin": "1.6281806",
+      "DurationMax": "1.6281806",
       "MediaRefs": [
        {
         "Id": "503844325"
@@ -713,7 +713,7 @@
       "Name": "boat_engineStop",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatEngine\\boat_engineStop",
       "GUID": "{52B91DB6-8479-4D17-B443-D244BAB80195}",
-      "MaxAttenuation": "35",
+      "MaxAttenuation": "45",
       "DurationType": "OneShot",
       "DurationMin": "2.047386",
       "DurationMax": "2.047386",
@@ -738,7 +738,7 @@
       "Name": "boat_engineWaterStart",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatEngine\\boat_engineWaterStart",
       "GUID": "{72799A52-33A2-42BE-AB31-DA0DC86925EC}",
-      "MaxAttenuation": "15",
+      "MaxAttenuation": "30",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -761,10 +761,10 @@
       "Name": "boat_sailDeploy",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatSail\\boat_sailDeploy",
       "GUID": "{BB2F9EAF-8DDB-43BF-BFC0-1BC0172ED2A5}",
-      "MaxAttenuation": "30",
+      "MaxAttenuation": "50",
       "DurationType": "OneShot",
-      "DurationMin": "1.1818237",
-      "DurationMax": "2.2030082",
+      "DurationMin": "1.6818237",
+      "DurationMax": "2.7030082",
       "MediaRefs": [
        {
         "Id": "381048997"
@@ -792,7 +792,7 @@
       "Name": "boat_sailRetract",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatSail\\boat_sailRetract",
       "GUID": "{53D6DCA1-F83A-4B7A-B36C-E5AA642AFF51}",
-      "MaxAttenuation": "30",
+      "MaxAttenuation": "50",
       "DurationType": "OneShot",
       "DurationMin": "1.1098747",
       "DurationMax": "2.0550659",
@@ -823,7 +823,7 @@
       "Name": "boat_start_sailFlap",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatSail\\boat_start_sailFlap",
       "GUID": "{A8CBAD99-4BF5-4A81-919A-166039F3ED99}",
-      "MaxAttenuation": "30",
+      "MaxAttenuation": "50",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -868,7 +868,7 @@
       "Name": "boat_throttleMove",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatThrottle\\boat_throttleMove",
       "GUID": "{87714DC3-0A38-4459-A8C2-201C69EA3F54}",
-      "MaxAttenuation": "30",
+      "MaxAttenuation": "40",
       "DurationType": "OneShot",
       "DurationMin": "0.50923",
       "DurationMax": "0.54634947",
@@ -893,7 +893,7 @@
       "Name": "boat_throttleMoveIdle",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatThrottle\\boat_throttleMoveIdle",
       "GUID": "{28BA8B54-A2B0-4CEC-B7A4-E66977AB6251}",
-      "MaxAttenuation": "30",
+      "MaxAttenuation": "40",
       "DurationType": "OneShot",
       "DurationMin": "0.49308258",
       "DurationMax": "0.4951871",
@@ -950,7 +950,7 @@
       "Name": "boat_woodVibrationStart",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatWood\\boat_woodVibrationStart",
       "GUID": "{00D2F70E-7C7E-4BF6-8FAF-2BD5E295D7D6}",
-      "MaxAttenuation": "20",
+      "MaxAttenuation": "30",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -976,7 +976,7 @@
       "Name": "env_boatCollisionHeavy",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\EnvCollision\\env_boatCollisionHeavy",
       "GUID": "{72E160B7-8821-4508-9C36-326835089396}",
-      "MaxAttenuation": "30",
+      "MaxAttenuation": "45",
       "DurationType": "OneShot",
       "DurationMin": "3.75",
       "DurationMax": "4.209233",
@@ -1031,7 +1031,7 @@
       "Name": "env_boatCollisionLight",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\EnvCollision\\env_boatCollisionLight",
       "GUID": "{EF01BE52-22F9-439B-96A7-FAFAB1AA401D}",
-      "MaxAttenuation": "30",
+      "MaxAttenuation": "45",
       "DurationType": "OneShot",
       "DurationMin": "2.0823321",
       "DurationMax": "2.337339",
@@ -1416,6 +1416,6 @@
     ]
    }
   ],
-  "FileHash": "{FF8353F9-A42B-EB30-D803-D806BB9D9A14}"
+  "FileHash": "{541C165D-598A-6807-568F-1590DDDCD5D6}"
  }
 }

@@ -1,9 +1,17 @@
+using Quest;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Dialogue
 {
-    public class NPCInteraction : MonoBehaviour
+    public enum NPCIconState
+    {
+        None = 0,
+        Talk = 1,
+        Quest = 2
+    }
+
+    public class NPCInteraction : CompassTargetBase
     {
         [SerializeField] private bool m_showGizmos = true;
 
@@ -15,19 +23,35 @@ namespace Dialogue
         [SerializeField] private float m_visibilityDistance = 20f;
 
         [Header("References")]
-        [SerializeField] private Rigidbody m_boatRigidbody = null;
+        /*[SerializeField]*/ private Rigidbody m_boatRigidbody = null;
         [SerializeField] private Transform m_boatTransform = null;
 
         [Header("UI")]
         [SerializeField] private GameObject m_interactionIcon = null;
-        [SerializeField] private GameObject m_possibleQuestIcon = null;
+        [SerializeField] private GameObject m_talkIcon = null;
+        [SerializeField] private GameObject m_questIcon = null;
 
         [Header("Input")]
         [SerializeField] private InputActionReference m_interactAction = null;
 
+        internal NPCData NPC => m_npc;
+
         private bool m_isPlayerInRange = false;
         private bool m_isInteractable = false;
         private bool m_lastInteractableState = false;
+        private NPCIconState m_lastIconState = NPCIconState.None;
+
+
+        public override Vector2 GetPosition()
+        {
+            Vector3 p = transform.position;
+            return new Vector2(p.x, p.z);
+        }
+
+        public override bool ShouldShowIcon()
+        {
+            return GetCompassIconState() != NPCIconState.None;
+        }
 
         private void OnEnable()
         {
@@ -39,6 +63,11 @@ namespace Dialogue
             if (m_boatRigidbody == null)
             {
                 m_boatRigidbody = m_boatTransform.GetComponent<Rigidbody>();
+            }
+
+            if (Compass.Instance != null)
+            {
+                Compass.Instance.Register(this);
             }
         }
 
@@ -63,8 +92,9 @@ namespace Dialogue
         private void Update()
         {
             CheckConditions();
-            UpdateUI();
-            //UpdatePossibleQuestIcon();
+            NPCIconState _state = GetIconState();
+            UpdateIconState(_state); //switching between talkIcon <-> questIcon <-> noIcon
+            UpdateInteractionIcon(); //only the interaction icon
 
             if (m_isInteractable && m_interactAction.action.WasPressedThisFrame())
             {
@@ -84,7 +114,10 @@ namespace Dialogue
             float _speed = m_boatRigidbody.linearVelocity.magnitude;
             bool _isSlowEnough = _speed <= m_maxBoatSpeed;
 
-            m_isInteractable = m_isPlayerInRange && _isSlowEnough;
+            NPCDialogueBranch _currentBranch = DialogueStateManager.Instance.GetBestDialogueBranch(m_npc);
+            bool _hasDialogue = _currentBranch != null;
+
+            m_isInteractable = m_isPlayerInRange && _isSlowEnough && _hasDialogue;
 
             if (m_isInteractable)
             {
@@ -94,7 +127,7 @@ namespace Dialogue
             //TODO FUTURE: && IsBoatCorrectlyParked
         }
 
-        private void UpdateUI()
+        private void UpdateInteractionIcon()
         {
             if (m_interactionIcon == null)
             {
@@ -130,6 +163,33 @@ namespace Dialogue
             }
         }
 
+        internal NPCIconState GetCompassIconState()
+        {
+            NPCDialogueBranch _bestBranch = DialogueStateManager.Instance.GetBestDialogueBranch(m_npc);
+
+            if (_bestBranch != null)
+            {
+                //1) quest icon
+                if (_bestBranch.State == NPCDialogueState.QuestReadyToComplete)
+                {
+                    return NPCIconState.Quest;
+                }
+
+                if (_bestBranch.State == NPCDialogueState.QuestAvailable && !QuestManager.Instance.IsQuestRunning)
+                {
+                    return NPCIconState.Quest;
+                }
+
+                //2) talk icon
+                if (_bestBranch.State == NPCDialogueState.ReadyToTalk)
+                {
+                    return NPCIconState.Talk;
+                }
+            }
+
+            return NPCIconState.None;
+        }
+
         private void StartDialogue()
         {
             if (m_npc == null)
@@ -143,23 +203,74 @@ namespace Dialogue
             DialogueManager.Instance.StartDialogue(m_npc);
         }
 
-        private void UpdatePossibleQuestIcon() //= the icon that is above the NPC to mark that he can give a quest
+        private NPCIconState GetIconState()
         {
-            //if (m_activeQuestIcon == null)
-            //{
-            //    return;
-            //}
+            //1) must be in range
+            float _dist = Vector3.Distance(m_boatTransform.position, transform.position);
+            if (_dist > m_visibilityDistance)
+            {
+                return NPCIconState.None;
+            }
 
-            //bool _questActive = QuestManager.Instance.ActiveQuest == m_quest;
-            //if (!_questActive)
-            //{
-            //    m_activeQuestIcon.SetActive(false);
-            //    return;
-            //}
+            NPCDialogueBranch _bestBranch = DialogueStateManager.Instance.GetBestDialogueBranch(m_npc);
 
-            //float _dist = Vector3.Distance(m_boatTransform.position, transform.position);
-            //m_activeQuestIcon.SetActive(_dist <= m_visibilityDistance);
+            if (_bestBranch != null)
+            {
+                //1) quest icon
+                if (_bestBranch.State == NPCDialogueState.QuestReadyToComplete)
+                {
+                    return NPCIconState.Quest;
+                }
 
+                if (_bestBranch.State == NPCDialogueState.QuestAvailable && !QuestManager.Instance.IsQuestRunning)
+                {
+                    return NPCIconState.Quest;
+                }
+
+                //2) talk icon
+                if (_bestBranch.State == NPCDialogueState.ReadyToTalk)
+                {
+                    return NPCIconState.Talk;
+                }
+            }
+
+            //3) all other cases = no icon
+            return NPCIconState.None;
+        }
+
+        private void UpdateIconState (NPCIconState _state)
+        {
+            //only react if state actually changed
+            if (m_lastIconState == _state)
+            {
+                return;
+            }
+            m_lastIconState = _state;
+
+            //reset all
+            if (m_talkIcon != null)
+            {
+                m_talkIcon.SetActive(false);
+            }
+
+            if (m_questIcon != null)
+            {
+                m_questIcon.SetActive(false);
+            }
+
+            //enable only current
+            switch (_state)
+            {
+                case NPCIconState.Talk:
+                    m_talkIcon?.SetActive(true);
+                    break;
+                case NPCIconState.Quest:
+                    m_questIcon?.SetActive(true);
+                    break;
+                case NPCIconState.None:
+                default:
+                    break;
+            }
         }
 
         //---------------

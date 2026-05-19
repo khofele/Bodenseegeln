@@ -697,7 +697,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>10</Value>
+														<Value>7</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -861,7 +861,7 @@
 														<Property Name="BlendBehavior" Type="int16" Value="1"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-5</Value>
+																<Value>-6</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -893,6 +893,11 @@
 																<Property Name="Pitch" Type="int32">
 																	<ValueList>
 																		<Value>-400</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-3</Value>
 																	</ValueList>
 																</Property>
 															</PropertyList>
@@ -1216,6 +1221,22 @@
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
 														<Property Name="BlendBehavior" Type="int16" Value="1"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-100</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{E79A231C-1243-4215-97A4-3152A0E0B4F8}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="50"/>
+																			<Property Name="Min" Type="Real64" Value="-50"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
 																<Value>-5</Value>
@@ -1521,6 +1542,11 @@
 													</ModifierList>
 												</Property>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -1656,6 +1682,11 @@
 													</ModifierList>
 												</Property>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -2565,9 +2596,25 @@
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="BlendBehavior" Type="int16" Value="1"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-300</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{E2FF7EDE-9CE7-4001-BE5C-662219B27AE6}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="50"/>
+																	<Property Name="Min" Type="Real64" Value="-50"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>3</Value>
+														<Value>4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -2912,7 +2959,7 @@
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>8</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -3142,7 +3189,7 @@
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>7</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -3395,128 +3442,37 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<Sound Name="boat_sailFlap_loop" ID="{08B5CF5E-E12B-4886-9C50-F72F79D129DE}" ShortID="975008380">
-																	<PropertyList>
-																		<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-																		<Property Name="Lowpass" Type="int16">
-																			<ValueList>
-																				<Value>40</Value>
-																			</ValueList>
-																		</Property>
-																		<Property Name="MakeUpGain" Type="Real64">
-																			<ValueList>
-																				<Value>5</Value>
-																			</ValueList>
-																		</Property>
-																		<Property Name="OverrideEffect" Type="bool" Value="True"/>
-																		<Property Name="Pitch" Type="int32">
-																			<ValueList>
-																				<Value>400</Value>
-																			</ValueList>
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{B8429D5C-16B2-4070-8E21-E5DB644A86F9}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="50"/>
-																							<Property Name="Min" Type="Real64" Value="-50"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
-																		</Property>
-																		<Property Name="Volume" Type="Real64">
-																			<ValueList>
-																				<Value>6</Value>
-																			</ValueList>
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{68E3F5F2-95B8-40AB-B67D-D7218544738B}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="1"/>
-																							<Property Name="Min" Type="Real64" Value="-1"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
-																		</Property>
-																	</PropertyList>
-																	<ReferenceList>
-																		<Reference Name="Conversion">
-																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-																		</Reference>
-																		<Reference Name="OutputBus">
-																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-																		</Reference>
-																	</ReferenceList>
-																	<ChildrenList>
-																		<AudioFileSource Name="boat_sailFlap_loop" ID="{6E408DE6-4F3C-4D8E-A037-0FA2B1215FC8}">
-																			<PropertyList>
-																				<Property Name="CrossfadeDuration" Type="Real64" Value="2643.229"/>
-																				<Property Name="CrossfadeShape" Type="int16" Value="6"/>
-																				<Property Name="FadeInDuration" Type="Real64" Value="1.02183"/>
-																				<Property Name="FadeOutDuration" Type="Real64" Value="0.71527"/>
-																				<Property Name="LoopBegin" Type="Real64" Value="6.43879"/>
-																				<Property Name="LoopEnd" Type="Real64" Value="29.1515"/>
-																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																			</PropertyList>
-																			<Language>SFX</Language>
-																			<AudioFile>boat_sailFlap_loop.wav</AudioFile>
-																			<MediaIDList>
-																				<MediaID ID="944740748"/>
-																			</MediaIDList>
-																		</AudioFileSource>
-																	</ChildrenList>
-																	<ObjectLists>
-																		<ObjectList Name="Effects">
-																			<EffectSlot Name="" ID="{02018ABA-7E81-442E-B575-1E658B34390D}" ShortID="372593169">
-																				<ReferenceList>
-																					<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																						<ObjectRef Name="BoatSailFlapLoop_EQ" ID="{CC0A4202-7504-4CCC-8ADE-799665A52E51}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																					</Reference>
-																				</ReferenceList>
-																			</EffectSlot>
-																			<EffectSlot Name="" ID="{FBB729B0-1ED8-4528-8839-7B505337FCE0}" ShortID="660119123">
-																				<ReferenceList>
-																					<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-																						<ObjectRef Name="BoatSailFlapLoop_Compressor" ID="{A57E4233-B003-4935-953C-128034DAB12C}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																					</Reference>
-																				</ReferenceList>
-																			</EffectSlot>
-																			<EffectSlot Name="" ID="{108AF698-9DC4-48D4-A7E7-5CE14F344DF4}" ShortID="249428464">
-																				<ReferenceList>
-																					<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
-																						<ObjectRef Name="BoatSailFlapLoop_RoomVerb" ID="{CB5DC2C9-CE3D-4C2E-BE52-71CA707B7F42}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																					</Reference>
-																				</ReferenceList>
-																			</EffectSlot>
-																		</ObjectList>
-																	</ObjectLists>
-																	<ActiveSourceList>
-																		<ActiveSource Name="boat_sailFlap_loop" ID="{6E408DE6-4F3C-4D8E-A037-0FA2B1215FC8}" Platform="Linked"/>
-																	</ActiveSourceList>
-																</Sound>
 																<RandomSequenceContainer Name="boat_sailFlapWind_loop" ID="{8A5533C9-C52F-4202-92EE-D9B3A0A0D17B}" ShortID="20265703">
 																	<PropertyList>
 																		<Property Name="Lowpass" Type="int16">
 																			<ValueList>
-																				<Value>10</Value>
+																				<Value>20</Value>
 																			</ValueList>
+																			<ModifierList>
+																				<ModifierInfo>
+																					<Modifier Name="" ID="{47E9597D-9C37-4C2C-833A-2B0914C794B1}">
+																						<PropertyList>
+																							<Property Name="Enabled" Type="bool" Value="True"/>
+																							<Property Name="Max" Type="Real64" Value="5"/>
+																							<Property Name="Min" Type="Real64" Value="-5"/>
+																						</PropertyList>
+																					</Modifier>
+																				</ModifierInfo>
+																			</ModifierList>
 																		</Property>
 																		<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 																		<Property Name="OverrideEffect" Type="bool" Value="True"/>
 																		<Property Name="Pitch" Type="int32">
 																			<ValueList>
-																				<Value>200</Value>
+																				<Value>-200</Value>
 																			</ValueList>
 																			<ModifierList>
 																				<ModifierInfo>
 																					<Modifier Name="" ID="{8AA396BB-12B7-4247-ACBD-FB7F2D3DE7D5}">
 																						<PropertyList>
 																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="50"/>
-																							<Property Name="Min" Type="Real64" Value="-50"/>
+																							<Property Name="Max" Type="Real64" Value="100"/>
+																							<Property Name="Min" Type="Real64" Value="-100"/>
 																						</PropertyList>
 																					</Modifier>
 																				</ModifierInfo>
@@ -3526,10 +3482,9 @@
 																		<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 																		<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="1.2"/>
 																		<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-																		<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 																		<Property Name="Volume" Type="Real64">
 																			<ValueList>
-																				<Value>-15</Value>
+																				<Value>-12</Value>
 																			</ValueList>
 																			<ModifierList>
 																				<ModifierInfo>
@@ -3553,7 +3508,7 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<Sound Name="boat_sailFlapWind_loop" ID="{9BD388AA-4326-4472-A972-CECB8B2ADD99}" ShortID="499704688">
+																		<Sound Name="boat_sailFlapWind_loop1" ID="{0CB80B38-90F5-4EDF-8095-108D5C9CD2E7}" ShortID="481748307">
 																			<ReferenceList>
 																				<Reference Name="Conversion">
 																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -3563,29 +3518,24 @@
 																				</Reference>
 																			</ReferenceList>
 																			<ChildrenList>
-																				<AudioFileSource Name="boat_sailFlapWind_loop" ID="{A81A1408-B863-492F-ACB1-A34EF7427806}">
+																				<AudioFileSource Name="boat_sailFlapWind_loop1" ID="{D3B6189F-7602-43CA-ADBF-46E226F6760D}">
 																					<PropertyList>
-																						<Property Name="CrossfadeDuration" Type="Real64" Value="618.49"/>
-																						<Property Name="FadeInDuration" Type="Real64" Value="0.146"/>
-																						<Property Name="FadeOutDuration" Type="Real64" Value="0.146"/>
-																						<Property Name="LoopBegin" Type="Real64" Value="0.89416"/>
-																						<Property Name="LoopEnd" Type="Real64" Value="11.42336"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="0.06536"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="0.07723"/>
 																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																						<Property Name="TrimBegin" Type="Real64" Value="0.18249"/>
-																						<Property Name="TrimEnd" Type="Real64" Value="12.26276"/>
 																					</PropertyList>
 																					<Language>SFX</Language>
-																					<AudioFile>boat_sailFlapWind_loop.wav</AudioFile>
+																					<AudioFile>boat_sailFlapWind_loop1.wav</AudioFile>
 																					<MediaIDList>
-																						<MediaID ID="1071268642"/>
+																						<MediaID ID="133819701"/>
 																					</MediaIDList>
 																				</AudioFileSource>
 																			</ChildrenList>
 																			<ActiveSourceList>
-																				<ActiveSource Name="boat_sailFlapWind_loop" ID="{A81A1408-B863-492F-ACB1-A34EF7427806}" Platform="Linked"/>
+																				<ActiveSource Name="boat_sailFlapWind_loop1" ID="{D3B6189F-7602-43CA-ADBF-46E226F6760D}" Platform="Linked"/>
 																			</ActiveSourceList>
 																		</Sound>
-																		<Sound Name="boat_sailFlapWind_loop2" ID="{27ADEC91-BCF4-473B-8250-2DCE704AA491}" ShortID="898537333">
+																		<Sound Name="boat_sailFlapWind_loop2" ID="{6DC8EBA8-CB78-40F6-9F52-EDF357E45FE8}" ShortID="496826172">
 																			<ReferenceList>
 																				<Reference Name="Conversion">
 																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -3595,16 +3545,11 @@
 																				</Reference>
 																			</ReferenceList>
 																			<ChildrenList>
-																				<AudioFileSource Name="boat_sailFlapWind_loop2" ID="{77407042-94E5-4E16-961D-8F6F7CDE7682}">
+																				<AudioFileSource Name="boat_sailFlapWind_loop2" ID="{F9805BB1-DFEF-435A-9D29-9759E5F5AC73}">
 																					<PropertyList>
-																						<Property Name="CrossfadeDuration" Type="Real64" Value="1093.75"/>
-																						<Property Name="FadeInDuration" Type="Real64" Value="0.14308"/>
-																						<Property Name="FadeOutDuration" Type="Real64" Value="0.2044"/>
-																						<Property Name="LoopBegin" Type="Real64" Value="0.94015"/>
-																						<Property Name="LoopEnd" Type="Real64" Value="12.83504"/>
+																						<Property Name="FadeInDuration" Type="Real64" Value="0.04754"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="0.05347"/>
 																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																						<Property Name="TrimBegin" Type="Real64" Value="0.34747"/>
-																						<Property Name="TrimEnd" Type="Real64" Value="13.73429"/>
 																					</PropertyList>
 																					<Language>SFX</Language>
 																					<AudioFile>boat_sailFlapWind_loop2.wav</AudioFile>
@@ -3614,7 +3559,142 @@
 																				</AudioFileSource>
 																			</ChildrenList>
 																			<ActiveSourceList>
-																				<ActiveSource Name="boat_sailFlapWind_loop2" ID="{77407042-94E5-4E16-961D-8F6F7CDE7682}" Platform="Linked"/>
+																				<ActiveSource Name="boat_sailFlapWind_loop2" ID="{F9805BB1-DFEF-435A-9D29-9759E5F5AC73}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="boat_sailFlapWind_loop3" ID="{B5808DA0-C4E4-479C-A365-DA61F7A834B4}" ShortID="759938349">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="boat_sailFlapWind_loop3" ID="{0E6870A6-FF67-4B28-878F-D0C66FC80B3F}">
+																					<PropertyList>
+																						<Property Name="FadeInDuration" Type="Real64" Value="0.03566"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="0.04159"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																					</PropertyList>
+																					<Language>SFX</Language>
+																					<AudioFile>boat_sailFlapWind_loop3.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="358085136"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="boat_sailFlapWind_loop3" ID="{0E6870A6-FF67-4B28-878F-D0C66FC80B3F}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="boat_sailFlapWind_loop4" ID="{234BADCC-7BCB-435F-963D-28FFFEAD9C22}" ShortID="398274549">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="boat_sailFlapWind_loop4" ID="{C5AFACB0-6D16-4306-AF3B-DB743A5BDB03}">
+																					<PropertyList>
+																						<Property Name="FadeInDuration" Type="Real64" Value="0.05348"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="0.04753"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																					</PropertyList>
+																					<Language>SFX</Language>
+																					<AudioFile>boat_sailFlapWind_loop4.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="948111776"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="boat_sailFlapWind_loop4" ID="{C5AFACB0-6D16-4306-AF3B-DB743A5BDB03}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="boat_sailFlapWind_loop5" ID="{7F4A81CA-5360-474C-8155-B84D09A0494F}" ShortID="882070867">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="boat_sailFlapWind_loop5" ID="{65C19375-0A7E-4F0A-8D16-F808F78A6506}">
+																					<PropertyList>
+																						<Property Name="FadeInDuration" Type="Real64" Value="0.05944"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="0.05201"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																					</PropertyList>
+																					<Language>SFX</Language>
+																					<AudioFile>boat_sailFlapWind_loop5.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="295169873"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="boat_sailFlapWind_loop5" ID="{65C19375-0A7E-4F0A-8D16-F808F78A6506}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="boat_sailFlapWind_loop6" ID="{88F15EBA-2C75-4428-AA77-009A4F8F05F0}" ShortID="370931800">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="boat_sailFlapWind_loop6" ID="{B4738F65-BA08-46A3-BE88-F975BC3A6967}">
+																					<PropertyList>
+																						<Property Name="FadeInDuration" Type="Real64" Value="0.05944"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="0.04458"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																					</PropertyList>
+																					<Language>SFX</Language>
+																					<AudioFile>boat_sailFlapWind_loop6.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="95413247"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="boat_sailFlapWind_loop6" ID="{B4738F65-BA08-46A3-BE88-F975BC3A6967}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="boat_sailFlapWind_loop" ID="{724FB31B-6516-4331-9C65-179AC86E3AA9}" ShortID="91304669">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="boat_sailFlapWind_loop" ID="{755794AC-1AF3-4ADB-8195-921F1F96EDBD}">
+																					<PropertyList>
+																						<Property Name="FadeInDuration" Type="Real64" Value="0.05942"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="0.08317"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																					</PropertyList>
+																					<Language>SFX</Language>
+																					<AudioFile>boat_sailFlapWind_loop.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="1071268642"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="boat_sailFlapWind_loop" ID="{755794AC-1AF3-4ADB-8195-921F1F96EDBD}" Platform="Linked"/>
 																			</ActiveSourceList>
 																		</Sound>
 																	</ChildrenList>
@@ -3624,6 +3704,199 @@
 																				<ReferenceList>
 																					<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
 																						<ObjectRef Name="BoatSailFlapWind_EQ" ID="{F61FF588-1A2F-4AAB-95B9-782A5B7F542E}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																					</Reference>
+																				</ReferenceList>
+																			</EffectSlot>
+																		</ObjectList>
+																	</ObjectLists>
+																</RandomSequenceContainer>
+																<RandomSequenceContainer Name="boat_sailFlap_loop" ID="{BA03C653-9781-4CCE-A7CB-979BD6121EB2}" ShortID="962721762">
+																	<PropertyList>
+																		<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																		<Property Name="Lowpass" Type="int16">
+																			<ValueList>
+																				<Value>40</Value>
+																			</ValueList>
+																		</Property>
+																		<Property Name="OverrideEffect" Type="bool" Value="True"/>
+																		<Property Name="Pitch" Type="int32">
+																			<ValueList>
+																				<Value>600</Value>
+																			</ValueList>
+																			<ModifierList>
+																				<ModifierInfo>
+																					<Modifier Name="" ID="{DE4F593D-20E1-4C02-8660-A7F88BE6B710}">
+																						<PropertyList>
+																							<Property Name="Enabled" Type="bool" Value="True"/>
+																							<Property Name="Max" Type="Real64" Value="50"/>
+																							<Property Name="Min" Type="Real64" Value="-50"/>
+																						</PropertyList>
+																					</Modifier>
+																				</ModifierInfo>
+																			</ModifierList>
+																		</Property>
+																		<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+																		<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																		<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
+																		<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+																		<Property Name="Volume" Type="Real64">
+																			<ValueList>
+																				<Value>6</Value>
+																			</ValueList>
+																			<ModifierList>
+																				<ModifierInfo>
+																					<Modifier Name="" ID="{4858C49F-DA12-41C2-934C-E13A2F4F774E}">
+																						<PropertyList>
+																							<Property Name="Enabled" Type="bool" Value="True"/>
+																							<Property Name="Max" Type="Real64" Value="1"/>
+																							<Property Name="Min" Type="Real64" Value="-1"/>
+																						</PropertyList>
+																					</Modifier>
+																				</ModifierInfo>
+																			</ModifierList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Attenuation">
+																			<ObjectRef Name="ATT_BoatSail" ID="{A81A7C27-C0AF-49A6-A501-658E1F0DA789}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+																		</Reference>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<Sound Name="boat_sailFlap_loop1" ID="{FB57F020-48E2-45A8-B958-64EE8F325424}" ShortID="37795048">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="boat_sailFlap_loop1" ID="{883F8224-1F25-4ECD-994C-3925FC849B59}">
+																					<PropertyList>
+																						<Property Name="FadeInDuration" Type="Real64" Value="0.14266"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="0.107"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																					</PropertyList>
+																					<Language>SFX</Language>
+																					<AudioFile>boat_sailFlap_loop1.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="624642319"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="boat_sailFlap_loop1" ID="{883F8224-1F25-4ECD-994C-3925FC849B59}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="boat_sailFlap_loop2" ID="{195E9826-17D9-41D3-872B-98AA5B5DFA82}" ShortID="327646295">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="boat_sailFlap_loop2" ID="{2114C897-F7B4-4F8A-B4BC-EE71EDB1036F}">
+																					<PropertyList>
+																						<Property Name="FadeInDuration" Type="Real64" Value="0.14267"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="0.107"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																					</PropertyList>
+																					<Language>SFX</Language>
+																					<AudioFile>boat_sailFlap_loop2.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="471676319"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="boat_sailFlap_loop2" ID="{2114C897-F7B4-4F8A-B4BC-EE71EDB1036F}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="boat_sailFlap_loop3" ID="{DC9A93D7-33C0-45B7-A8CE-A7248B532629}" ShortID="408772531">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="boat_sailFlap_loop3" ID="{864CD270-49FA-4434-A790-233F8691DC2A}">
+																					<PropertyList>
+																						<Property Name="FadeInDuration" Type="Real64" Value="0.11887"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="0.11888"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																					</PropertyList>
+																					<Language>SFX</Language>
+																					<AudioFile>boat_sailFlap_loop3.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="862772895"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="boat_sailFlap_loop3" ID="{864CD270-49FA-4434-A790-233F8691DC2A}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="boat_sailFlap_loop" ID="{FAE7C81F-419A-455C-8489-9D6BE23E61A6}" ShortID="897536808">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="boat_sailFlap_loop" ID="{C81D07A9-09B3-4356-87D6-69360B44B343}">
+																					<PropertyList>
+																						<Property Name="FadeInDuration" Type="Real64" Value="0.11889"/>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="0.16645"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																					</PropertyList>
+																					<Language>SFX</Language>
+																					<AudioFile>boat_sailFlap_loop.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="944740748"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="boat_sailFlap_loop" ID="{C81D07A9-09B3-4356-87D6-69360B44B343}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																	</ChildrenList>
+																	<ObjectLists>
+																		<ObjectList Name="Effects">
+																			<EffectSlot Name="" ID="{CEAF8C52-29BB-4DE4-B602-B1B8CF9A2F3F}" ShortID="636784444">
+																				<ReferenceList>
+																					<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																						<ObjectRef Name="BoatSailFlapLoop_EQ" ID="{CC0A4202-7504-4CCC-8ADE-799665A52E51}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																					</Reference>
+																				</ReferenceList>
+																			</EffectSlot>
+																			<EffectSlot Name="" ID="{80674E4B-3289-4271-8A4B-8D7E5E3016B6}" ShortID="150357916">
+																				<ReferenceList>
+																					<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																						<ObjectRef Name="BoatSailFlapLoop_Compressor" ID="{A57E4233-B003-4935-953C-128034DAB12C}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																					</Reference>
+																				</ReferenceList>
+																			</EffectSlot>
+																			<EffectSlot Name="" ID="{33CE119E-6E06-421A-ABE6-70E80552AAF7}" ShortID="987165353">
+																				<ReferenceList>
+																					<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+																						<ObjectRef Name="BoatSailFlapLoop_RoomVerb" ID="{CB5DC2C9-CE3D-4C2E-BE52-71CA707B7F42}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
 																					</Reference>
 																				</ReferenceList>
 																			</EffectSlot>
@@ -3719,6 +3992,260 @@
 												</BlendContainer>
 											</ChildrenList>
 										</Folder>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="BoatMast" ID="{6669D98A-0E28-44F7-AC37-BC2596393686}" ShortID="506463850">
+									<ChildrenList>
+										<RandomSequenceContainer Name="boat_mastCreak" ID="{558334D1-E8DD-4157-8DC2-8590042619AC}" ShortID="127058686">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>30</Value>
+													</ValueList>
+												</Property>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-600</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{6EC8670E-F260-4F0F-98D8-C3DD15BC22AC}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="100"/>
+																	<Property Name="Min" Type="Real64" Value="-100"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+												<Property Name="Volume" Type="Real64">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{8DD2955C-7A97-4130-84E7-F33461CD0297}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="2"/>
+																	<Property Name="Min" Type="Real64" Value="-2"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="boat_mastCreakWood1" ID="{C5DC8010-356D-4D34-9387-03ED9AE1C237}" ShortID="165711200">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_mastCreakWood1" ID="{88DAB060-3C23-4AFE-AC81-4E70416A379A}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.07724"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.05941"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_mastCreakWood1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="157623087"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_mastCreakWood1" ID="{88DAB060-3C23-4AFE-AC81-4E70416A379A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_mastCreakWood2" ID="{93DBAAB9-DA27-4BFC-90EB-93CFC9ECF1E2}" ShortID="3644541">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_mastCreakWood2" ID="{CBA3B27C-46A3-4C30-82C8-A118A07491BF}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.06536"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.07723"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_mastCreakWood2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="110923947"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_mastCreakWood2" ID="{CBA3B27C-46A3-4C30-82C8-A118A07491BF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_mastCreakWood3" ID="{AA91DFB5-5C45-45B8-84DC-62877C8BD803}" ShortID="979966821">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_mastCreakWood3" ID="{3F615728-527C-47C2-A827-19FEDB5BD38C}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.07723"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.06535"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_mastCreakWood3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="443326073"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_mastCreakWood3" ID="{3F615728-527C-47C2-A827-19FEDB5BD38C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_mastCreakWood4" ID="{B13A8A65-4BAA-4BC9-A9D5-3FC4F803C6C1}" ShortID="991472516">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_mastCreakWood4" ID="{F43E80AB-969A-4C18-BFD4-8291B95D5540}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.078"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.0728"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_mastCreakWood4.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="990009711"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_mastCreakWood4" ID="{F43E80AB-969A-4C18-BFD4-8291B95D5540}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_mastCreakWood5" ID="{8220B4AC-D306-4AE7-B514-5E1B95759999}" ShortID="163838066">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_mastCreakWood5" ID="{35B02DF4-DAF3-44D6-8567-DE99F32C6D5B}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.15156"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.16419"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_mastCreakWood5.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="112540957"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_mastCreakWood5" ID="{35B02DF4-DAF3-44D6-8567-DE99F32C6D5B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_mastCreakWood6" ID="{BD266BF1-9EC8-44EA-92DE-C6657422E2A6}" ShortID="611758112">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_mastCreakWood6" ID="{1F00E894-FBE9-4C8F-9B75-74EE2E569ED9}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.14267"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.17834"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_mastCreakWood6.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="308039115"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_mastCreakWood6" ID="{1F00E894-FBE9-4C8F-9B75-74EE2E569ED9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="boat_mastCreakWood" ID="{0BAF0FE8-9915-4EF7-8884-FBF9EE0A9E86}" ShortID="396434098">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="boat_mastCreakWood" ID="{64F048F0-79B5-4D9F-AF49-FFCCEBF6C6FB}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.08317"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.08317"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>boat_mastCreakWood.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="445529503"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="boat_mastCreakWood" ID="{64F048F0-79B5-4D9F-AF49-FFCCEBF6C6FB}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{9C39B336-8419-4F7F-AE10-BADFCA073CBC}" ShortID="877757383">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="BoatMastCreak_EQ" ID="{34A97080-8313-4F31-AE6C-D939496CC481}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

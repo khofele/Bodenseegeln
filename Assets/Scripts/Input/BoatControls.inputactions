@@ -104,6 +104,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Fender_Enable",
+                    "type": "Button",
+                    "id": "aadf1a0a-a10e-4419-bf20-48df5aa72583",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Reset_Boat",
+                    "type": "Button",
+                    "id": "3c47f8e2-c54a-4c70-91bb-fb81cf7ab5e6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -315,6 +333,28 @@
                     "action": "Rudder_Neutral",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "61ae41ca-ca9f-4e7f-899d-aa1fb97e43c4",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fender_Enable",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f42ede8-02e2-4a33-9902-848fe3ddeb81",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset_Boat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -335,6 +375,24 @@
                     "name": "Scip",
                     "type": "Button",
                     "id": "3de5cb4c-ff55-4dde-a797-010f9a32ccaf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NextUIScreen",
+                    "type": "Button",
+                    "id": "05351bc8-938d-49ac-8f86-d9c2f3427ca0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PreviousUIScreen",
+                    "type": "Button",
+                    "id": "73f7d823-5d05-4c5d-b5da-fb4b08fa450d",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -361,6 +419,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Scip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af311bc0-0a0d-4b70-aa8b-4b66cfe5f728",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextUIScreen",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "63738c41-2eb2-4217-a524-adb3510e8ff0",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PreviousUIScreen",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

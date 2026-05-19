@@ -276,7 +276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8300811136070682010
 RectTransform:
   m_ObjectHideFlags: 0
@@ -888,7 +888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 45}
+  m_AnchoredPosition: {x: -250, y: 45}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8952399563140895680
@@ -1200,7 +1200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f003f429362dd046a03f33f06bbfcbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DockUIController
-  m_talkButton: {fileID: 2996116521410170026}
   m_repairButton: {fileID: 7183557031725887146}
   m_fuelButton: {fileID: 2482094700388534014}
   m_closeButton: {fileID: 5682129057982812863}

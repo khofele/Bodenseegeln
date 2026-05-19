@@ -30956,6 +30956,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2742372105361221939, guid: 0b699b3b84134464881bf4d3fc206279, type: 3}
   m_PrefabInstance: {fileID: 1175152691}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1177813978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5875828341700891380, guid: a85f513491cf62c478193b74986fb54f, type: 3}
+  m_PrefabInstance: {fileID: 1696326728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1177813984 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4313201974055024111, guid: a85f513491cf62c478193b74986fb54f, type: 3}
+  m_PrefabInstance: {fileID: 1696326728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177813978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5d7c088409d9a40b7b09aa707777f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineOrbitalFollow
+--- !u!114 &1177813987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177813978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee6ed678f9c0ba4c849c68ba52ed768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  m_orbitalFollow: {fileID: 1177813984}
+  m_resetCameraAction: {fileID: -5003173962245052134, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_lookAction: {fileID: 6486654606775981686, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
 --- !u!1001 &1182680789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43872,7 +43903,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5875828341700891380, guid: a85f513491cf62c478193b74986fb54f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1177813987}
   m_SourcePrefab: {fileID: 100100000, guid: a85f513491cf62c478193b74986fb54f, type: 3}
 --- !u!1001 &1697115061
 PrefabInstance:

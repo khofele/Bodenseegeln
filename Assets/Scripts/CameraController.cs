@@ -2,7 +2,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ResetCamera : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     [SerializeField] private CinemachineOrbitalFollow m_orbitalFollow = null;
     [SerializeField] private InputActionReference m_resetCameraAction = null;

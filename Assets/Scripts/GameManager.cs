@@ -6,7 +6,6 @@ using WwiseEvent = AK.Wwise.Event;
 public class GameManager : Manager<GameManager>
 {
     private GameStates m_currentGameState = GameStates.SAILMODE; // TODO Block inputs on start -> handle this in InputManager
-    // TODO Robin: HIER GAME STATE ÄNDERN GameStates.SAILMODE bzw. GameStates.MOTORMODE
     // TODO maybe method for setting current game state outside of game manager
     
     [SerializeField] private UIManager m_uiManager = null;
@@ -96,6 +95,17 @@ public class GameManager : Manager<GameManager>
 
     public void Update()
     {
-        
+        // TODO if statement später ändern je nach game over oder game won
+        if(m_currentGameState == GameStates.GAMEOVER || m_currentGameState == GameStates.GAMEWON)
+        {
+            // stop game
+            Time.timeScale = 0.0f;
+
+            // TODO show game over screen
+            // TODO show game won screen
+        }
+        //else if(m_currentGameState == GameStates.GAMEWON)
+        //{
+        //}
     }
 }

@@ -34,27 +34,14 @@ namespace Dialogue
         private Sprite m_NPCPortrait = null;
 
         [Header("Dialogue")]
-        [SerializeField]
-        private int m_startNodeID = 0;
-        //[SerializeField] 
-        //private int m_startNodeIDWhenQuestActive = -1;
-        [SerializeField]
-        private int m_startNodeIDOwnQuestActive = -1;
-        [SerializeField]
-        private int m_startNodeIDOtherQuestActive = -1;
-        [SerializeField]
-        private int m_startNodeIDOwnQuestCompleted = -1;
+        [SerializeField] private List<NPCDialogueBranch> m_dialogueBranches = new();
         [SerializeField]
         private List<DialogueNode> m_nodes = new List<DialogueNode>();
 
         internal NPC_ID NPCID => m_NPCID;
-        internal int StartNodeID => m_startNodeID;
-        //internal int StartNodeIDWhenQuestActive => m_startNodeIDWhenQuestActive;
-        internal int StartNodeIDOwnQuestActive => m_startNodeIDOwnQuestActive;
-        internal int StartNodeIDOtherQuestActive => m_startNodeIDOtherQuestActive;
-        internal int StartNodeIDOwnQuestCompleted => m_startNodeIDOwnQuestCompleted;
         internal string Name => m_NPCName;
         internal Sprite Portrait => m_NPCPortrait;
+        internal List<NPCDialogueBranch> DialogueBranches => m_dialogueBranches;
 
         public DialogueNode GetNodeByID(int _id)
         {
@@ -67,12 +54,14 @@ namespace Dialogue
     {
         [SerializeField]
         private int m_NodeID;
+        /*[SerializeField]*/ private QuestConditionSet m_unlockConditions = new();
         [SerializeField, TextArea(1, 6)]
         private string m_text;
         [SerializeField]
         private List<DialogueResponse> m_responses;
 
         internal int NodeID => m_NodeID;
+        internal QuestConditionSet UnlockConditions => m_unlockConditions;
         internal string Text => m_text;
 
         internal List<DialogueResponse> GetResponses()
@@ -88,6 +77,16 @@ namespace Dialogue
             }
 
             return m_responses.GetRange(0, Mathf.Min(4, m_responses.Count));
+        }
+
+        internal bool IsUnlocked()
+        {
+            if (m_unlockConditions == null)
+            {
+                return true;
+            }
+
+            return m_unlockConditions.Evaluate();
         }
     }
 
@@ -105,5 +104,42 @@ namespace Dialogue
         internal string Text => m_responseText;
         internal DialogueActionType ActionType => m_actionType;
         internal QuestData Quest => m_quest;
+    }
+
+    [Serializable]
+    public class NPCDialogueBranch
+    {
+        [Header("Branch")]
+        [SerializeField] private string m_branchName;
+        [SerializeField] private NPCDialogueState m_state;
+        [SerializeField] private int m_priority = 0;
+
+        [Header("Conditions")]
+        [SerializeField] private QuestConditionSet m_activationConditions = new();
+
+        [Header("Dialogue")]
+        [SerializeField] private int m_startNodeID = 0;
+        [SerializeField] private int m_repeatNodeID = -1;
+
+        [Header("Quest")]
+        [SerializeField, Tooltip("the quest of this NPC that matters for this branch")] private QuestData m_relatedQuest = null;
+
+        internal string BranchName => m_branchName;
+        internal NPCDialogueState State => m_state;
+        internal int Priority => m_priority;
+        internal QuestConditionSet ActivationConditions => m_activationConditions;
+        internal int StartNodeID => m_startNodeID;
+        internal int RepeatNodeID => m_repeatNodeID;
+        internal QuestData RelatedQuest => m_relatedQuest;
+
+        internal bool IsValid()
+        {
+            if (m_activationConditions == null)
+            {
+                return true;
+            }
+
+            return m_activationConditions.Evaluate();
+        }
     }
 }

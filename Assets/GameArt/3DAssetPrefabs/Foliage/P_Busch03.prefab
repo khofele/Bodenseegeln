@@ -88,6 +88,26 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 12427dfed7e0c7e4ba9cc3fd48ddbf75, type: 3}
+      propertyPath: m_FadeMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 12427dfed7e0c7e4ba9cc3fd48ddbf75, type: 3}
+      propertyPath: m_LODs.Array.data[0].fadeTransitionWidth
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 12427dfed7e0c7e4ba9cc3fd48ddbf75, type: 3}
+      propertyPath: m_LODs.Array.data[1].fadeTransitionWidth
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 12427dfed7e0c7e4ba9cc3fd48ddbf75, type: 3}
+      propertyPath: m_LODs.Array.data[2].fadeTransitionWidth
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 12427dfed7e0c7e4ba9cc3fd48ddbf75, type: 3}
+      propertyPath: m_LODs.Array.data[3].fadeTransitionWidth
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 6172705713141213210, guid: 12427dfed7e0c7e4ba9cc3fd48ddbf75, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647

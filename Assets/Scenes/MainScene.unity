@@ -2317,6 +2317,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoatParent_CURRENT_FENDER
       objectReference: {fileID: 0}
+    - target: {fileID: 1594464046446569502, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+      propertyPath: m_boatHullEmitter
+      value: 
+      objectReference: {fileID: 601292920}
+    - target: {fileID: 1594464046446569502, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+      propertyPath: m_boatSailEmitter
+      value: 
+      objectReference: {fileID: 490486124}
+    - target: {fileID: 1594464046446569502, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+      propertyPath: m_boatEngineEmitter
+      value: 
+      objectReference: {fileID: 92643325}
+    - target: {fileID: 1594464046446569502, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+      propertyPath: m_boatCockpitEmitter
+      value: 
+      objectReference: {fileID: 1481552969}
+    - target: {fileID: 1594464046446569502, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+      propertyPath: m_boatSternWaterEmitter
+      value: 
+      objectReference: {fileID: 608506229}
     - target: {fileID: 2326419638518578166, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2826.0461
@@ -2365,6 +2385,10 @@ PrefabInstance:
       propertyPath: m_windController
       value: 
       objectReference: {fileID: 1197683729}
+    - target: {fileID: 7963390452778905364, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+      propertyPath: m_boatAudioController
+      value: 
+      objectReference: {fileID: 1468014429}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2447,6 +2471,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7044961018166585326, guid: 2fbdcb89351077a4384e3946df34846a, type: 3}
   m_PrefabInstance: {fileID: 91481973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &92643325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 200690696190322663, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+  m_PrefabInstance: {fileID: 87883541}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &94973288
 PrefabInstance:
@@ -9628,6 +9657,10 @@ PrefabInstance:
       propertyPath: m_questResultUI
       value: 
       objectReference: {fileID: 1388601315}
+    - target: {fileID: 5438266628577935584, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
+      propertyPath: m_notificationTextUI
+      value: 
+      objectReference: {fileID: 1564379057}
     - target: {fileID: 7296229824905616552, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -14373,6 +14406,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1321752670842608129, guid: d2899c12c64135e459735f2470a51203, type: 3}
   m_PrefabInstance: {fileID: 489270720}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &490486124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6191416899469493273, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+  m_PrefabInstance: {fileID: 87883541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &499156818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17038,6 +17076,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4506705871353826242, guid: 3eaea632ba23d1242b1d7fa35d807b88, type: 3}
   m_PrefabInstance: {fileID: 598082657}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &601292920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2021690150953818968, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+  m_PrefabInstance: {fileID: 87883541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &601691518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17198,6 +17241,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1321752670842608129, guid: d2899c12c64135e459735f2470a51203, type: 3}
   m_PrefabInstance: {fileID: 607098278}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &608506229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7922919286946181868, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+  m_PrefabInstance: {fileID: 87883541}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &608556225
 PrefabInstance:
@@ -37571,6 +37619,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2742372105361221939, guid: 0b699b3b84134464881bf4d3fc206279, type: 3}
   m_PrefabInstance: {fileID: 1462936274}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1468014429 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1594464046446569502, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+  m_PrefabInstance: {fileID: 87883541}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b28b899070733499066a03d1e7df2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatAudioController
 --- !u!1001 &1468143606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37942,6 +38001,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7044961018166585326, guid: 2fbdcb89351077a4384e3946df34846a, type: 3}
   m_PrefabInstance: {fileID: 1479546588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1481552969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8740017053238539951, guid: 60bc2c8c148adc54c8cb96aa0e5d711c, type: 3}
+  m_PrefabInstance: {fileID: 87883541}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1487731063
 PrefabInstance:
@@ -40293,6 +40357,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2742372105361221939, guid: 0b699b3b84134464881bf4d3fc206279, type: 3}
   m_PrefabInstance: {fileID: 1560648894}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564379057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6031954361633172878, guid: 347e67088eba4ab4c9fa1cfaa91f8f4b, type: 3}
+  m_PrefabInstance: {fileID: 1388601310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a88b06364b01047ba55b5cf41237e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotificationTextUI
 --- !u!1001 &1566938864
 PrefabInstance:
   m_ObjectHideFlags: 0

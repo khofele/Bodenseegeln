@@ -8,8 +8,9 @@ public class BoatController : MonoBehaviour
     private Rigidbody m_rigidbody = null;
     private bool m_isBoatDrivingForward = true; // shader input
     private bool m_isInSailMode = true;
-    private bool m_isFenderEnabled = false;
+    private bool m_isFenderEnabled = true;
     private GameStates m_prevGameState = GameStates.SAILMODE;
+    private bool m_isForcedTow = false;
 
     // FORCE CALCULATION FIELDS
     private float m_airDensity = 1.2f; // kg/m^3
@@ -50,9 +51,9 @@ public class BoatController : MonoBehaviour
     private float m_steeringInput = 0.0f;
     private float m_smoothedSteeringInput = 0.0f;
     private float m_motorBrakeModifier = 1.5f;
-    [SerializeField] private float m_currentFuel = 0.0f; 
+    private float m_currentFuel = 0.0f; 
     [SerializeField] private float m_maxFuel = 250.0f; // TODO SerializedField raus
-    [SerializeField] private float m_currentHealth = 0.0f;
+    private float m_currentHealth = 0.0f;
     private float m_maxHealth = 100.0f;
 
     // REFERENCES
@@ -852,8 +853,10 @@ public class BoatController : MonoBehaviour
             else
             {
                 Debug.Log("Towing possible! Please press R!");
+                m_isForcedTow = true;
                 m_prevGameState = m_gameManager.CurrentState;
                 m_gameManager.SetState(GameStates.PAUSED);
+                m_boatAudioController.StopMotorAudio();
             }
         }
     }
@@ -872,6 +875,7 @@ public class BoatController : MonoBehaviour
             else
             {
                 Debug.Log("Towing possible! Please press R!");
+                m_isForcedTow = true;
                 m_prevGameState = m_gameManager.CurrentState;
                 m_gameManager.SetState(GameStates.PAUSED);
             }
@@ -884,6 +888,7 @@ public class BoatController : MonoBehaviour
         {
             TowBoat();
             SetGameStateAfterTowing();
+            m_isForcedTow = false;
         }
         else
         {
@@ -920,6 +925,7 @@ public class BoatController : MonoBehaviour
         else if(m_prevGameState == GameStates.MOTORMODE)
         {
             m_gameManager.SetState(GameStates.MOTORMODE);
+            m_boatAudioController.PlayMotorAudio();
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1071,6 +1077,11 @@ public class BoatController : MonoBehaviour
     {
         if(m_resetBoatAction != null && m_resetBoatAction.action.triggered == true)
         {
+            if(m_isForcedTow == false)
+            {
+                m_prevGameState = m_gameManager.CurrentState;
+            }
+
             HandleReset();
         }
     }
@@ -1135,9 +1146,9 @@ public class BoatController : MonoBehaviour
     private void CalculateFenderDamage()
     {
         // take damage if boat is too fast and fenders are enabled
-        if(m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 18.0f) // TODO threshold
+        if(m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 8.0f) // TODO threshold
         {
-            float damage = 2.0f + 5.0f * Time.fixedDeltaTime; // TODO balance damage value: base value + scaled value
+            float damage = 2.0f * Time.fixedDeltaTime;
             m_currentHealth -= damage;
             QuestManager.Instance.RegisterDamage(damage);
         }
@@ -1317,6 +1328,8 @@ public class BoatController : MonoBehaviour
 
         m_currentFuel = m_maxFuel;
         m_currentHealth = m_maxHealth;
+        m_fender.SetActive(true);
+        m_isFenderEnabled = true;
     }
 
     public void Update()

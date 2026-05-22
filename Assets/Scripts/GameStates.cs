@@ -6,5 +6,7 @@ public enum GameStates
     SAILMODE = 1, // Sailing
     MOTORMODE = 2, // Driving the boat with motor
     HUMANMODE = 3, // Walking around
-    DIALOGMODE = 4 // Dialog
+    DIALOGMODE = 4, // Dialog
+    GAMEWON = 5, // Game won
+    GAMEOVER = 6 // Game over
 }

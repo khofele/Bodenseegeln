@@ -1330,6 +1330,7 @@ public class BoatController : MonoBehaviour
         m_currentHealth = m_maxHealth;
         m_fender.SetActive(true);
         m_isFenderEnabled = true;
+        m_isInSailMode = true; // TODO beim Spielstart in Sailmode gehen
     }
 
     public void Update()

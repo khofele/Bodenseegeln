@@ -1080,6 +1080,11 @@ public class BoatController : MonoBehaviour
             if(m_isForcedTow == false)
             {
                 m_prevGameState = m_gameManager.CurrentState;
+
+                if (m_prevGameState == GameStates.MOTORMODE)
+                {
+                    m_boatAudioController.StopMotorAudio();
+                }
             }
 
             HandleReset();

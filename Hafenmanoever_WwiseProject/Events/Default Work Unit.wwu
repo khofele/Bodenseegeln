@@ -182,24 +182,6 @@
 				</Folder>
 				<Folder Name="Boat" ID="{505A36E7-3CB1-48A3-9FD2-101921518506}" ShortID="297515175">
 					<ChildrenList>
-						<Event Name="boat_wheelTurn" ID="{35E372D0-999D-49CE-AF27-B5615BF20818}">
-							<ChildrenList>
-								<Action Name="" ID="{1337B21A-D36D-4D64-8AE2-9C6E429AF15B}" ShortID="42829069">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="boat_wheelTurnBearing" ID="{48AAB9A2-09D3-4925-9C4B-1532316364FA}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{ED8C6D09-9188-420B-94C5-93B3E1B2ECE0}" ShortID="517825767">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="boat_wheelTurnRope" ID="{964C6DD8-D6CA-4895-860E-1268B3973A69}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Folder Name="BoatEngine" ID="{D65C6E18-A253-484B-83FA-C763741526CF}" ShortID="382950503">
 							<ChildrenList>
 								<Event Name="boat_engineStart" ID="{1A2CA9C5-3748-46B6-BB5A-FCD0908DFA5C}">
@@ -393,6 +375,8 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="boat_start_creaking" ID="{2C0253C0-B87D-4847-BDA2-CF0F4C1180F0}"/>
+								<Event Name="boat_stop_creaking" ID="{4BD7BC65-4DA2-42F1-A7DC-A90AA5A73311}"/>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="BoatSail" ID="{AFC60F6A-464A-497A-B92D-E8483504F133}" ShortID="217737011">
@@ -471,6 +455,35 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="BoatWheel" ID="{9DEA29E0-E1D5-4374-B493-69A519072218}" ShortID="880481647">
+							<ChildrenList>
+								<Event Name="boat_wheelTurn" ID="{35E372D0-999D-49CE-AF27-B5615BF20818}">
+									<ChildrenList>
+										<Action Name="" ID="{1337B21A-D36D-4D64-8AE2-9C6E429AF15B}" ShortID="42829069">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_wheelTurnBearing" ID="{48AAB9A2-09D3-4925-9C4B-1532316364FA}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{ED8C6D09-9188-420B-94C5-93B3E1B2ECE0}" ShortID="517825767">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_wheelTurnRope" ID="{964C6DD8-D6CA-4895-860E-1268B3973A69}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="BoatRope" ID="{CBDC17A5-FC83-4FA1-8AAD-4C0CAC445175}" ShortID="47973690">
+							<ChildrenList>
+								<Event Name="boat_ropeCreak" ID="{EB3AB163-DDA8-45D5-9B0D-FDAE7CD01C4D}"/>
+								<Event Name="boat_riggingTension" ID="{D12AAA36-CB63-40F7-9E34-C99B53F5D41F}"/>
+								<Event Name="boat_riggingMove" ID="{49B3BB0B-530F-4CDE-A8CF-B8ECA0A7348F}"/>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Environment" ID="{F7A400A8-0F91-4630-953E-8D8200BDD709}" ShortID="5191634">
@@ -525,6 +538,114 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="env_boatCollisionUnderWater" ID="{8ABBCC4F-1B23-416C-9C28-ADA848BEAC77}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="EnvBoat" ID="{D2363946-B1C1-4B74-8F9F-9D235B2A67F9}" ShortID="137881148">
+							<ChildrenList>
+								<Event Name="env_boatDockImpact" ID="{F434DD3B-46FE-47C0-AE3E-77F89EEFEEC0}"/>
+								<Folder Name="EnvBoatLoops" ID="{8174036D-E5F3-4C8E-99B0-E02EEFA3765E}" ShortID="1006029561">
+									<ChildrenList>
+										<Event Name="env_start_boat_RubDock" ID="{D1FBAABA-28DA-4090-A5DE-0051B9A6BE4F}"/>
+										<Event Name="env_stop_boat_RubDock" ID="{056B7BBB-8674-4C88-9677-4B51045B7C0B}"/>
+									</ChildrenList>
+								</Folder>
+								<Event Name="env_boatRefuel" ID="{C19E6852-8537-4962-BDBD-576B98088A7D}"/>
+								<Event Name="env_boatRepair" ID="{6EC565DA-542B-4899-AE6E-FD624481A3FD}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="EnvWater" ID="{F1852ED3-D646-4CDF-8071-248F3FECB1D9}" ShortID="215992007">
+							<ChildrenList>
+								<Event Name="env_start_waterDock" ID="{3BAF4640-A939-4B33-9F49-8B85364350DF}"/>
+								<Event Name="env_stop_waterDock" ID="{68F2DC36-9E07-452C-97B4-61E5A94B1616}"/>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Atmosphere" ID="{EFEE1996-3ABB-4101-93BF-A3EFBF26D813}" ShortID="181074371">
+					<ChildrenList>
+						<Folder Name="HarborStart" ID="{BDEF49B6-0ECA-4C15-8137-91D6D5B91920}" ShortID="33759498">
+							<ChildrenList>
+								<Event Name="amb_start_harborLindau" ID="{D10E0296-7A40-47FE-AB02-C2B4A9CFADC0}"/>
+								<Event Name="amb_start_harborLochau" ID="{7CD204C2-5427-4C40-B6E7-8773A60FCFB0}"/>
+								<Event Name="amb_start_harborBregenz" ID="{C6A1CDAE-05FD-4E88-AFE3-038506B49486}"/>
+								<Event Name="amb_start_harborHard" ID="{3302318C-C2D8-419C-9FF9-F94DDBEA0673}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="HarborStop" ID="{15B2EA28-77A8-4B07-9F77-A0C44CEAB0E6}" ShortID="650584553">
+							<ChildrenList>
+								<Event Name="amb_stop_harborLindau" ID="{BEA57EA0-DF31-4FAC-AF80-CB28B53D2700}"/>
+								<Event Name="amb_stop_harborLochau" ID="{024384BB-C79C-4225-BBBF-6CA36AB2877A}"/>
+								<Event Name="amb_stop_harborBregenz" ID="{2FADA676-700C-4B96-B492-D23BD00100BA}"/>
+								<Event Name="amb_stop_harborHard" ID="{930C35F6-7BD3-4B24-B7F9-66FA53D5B364}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Coast" ID="{622ACCD2-35A6-4E5E-BAC7-17648DB18B63}" ShortID="768282068">
+							<ChildrenList>
+								<Event Name="amb_stop_coast" ID="{8ABEE41B-DB81-4CFD-AEFE-385A1B8208BB}"/>
+								<Event Name="amb_start_coast" ID="{08F3E4FA-BDCC-4117-B058-2C66B7C88F2C}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="WaterMovement" ID="{6AEB1FE6-FFEB-4055-9E32-04646D3198CB}" ShortID="459518605">
+							<ChildrenList>
+								<Event Name="amb_start_waterMovement" ID="{2CB945DF-02CF-4FAB-A103-601851248117}"/>
+								<Event Name="amb_stop_waterMovement" ID="{96CBF1BE-AE44-47B7-B623-0B07961EAC62}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Seagulls" ID="{51062049-A0DF-48C5-B2C2-C39E6469EDB4}" ShortID="900481939">
+							<ChildrenList>
+								<Event Name="amb_start_seagulls" ID="{45D325F7-7F89-4B67-A495-CC8185025AF8}"/>
+								<Event Name="amb_stop_seagulls" ID="{CEEAEEB3-A651-498A-BB80-8B3F1773DCEC}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Garage" ID="{98D9C164-0B20-4C2E-A6BF-A30F91A37767}" ShortID="802668460">
+							<ChildrenList>
+								<Event Name="amb_start_garage" ID="{2FC1D36A-790A-482A-A372-7E4301C2F5BA}"/>
+								<Event Name="amb_stop_garage" ID="{8826A553-5502-49DA-8659-408B691BDB38}"/>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Physics" ID="{1EA06E58-F302-4C6B-A158-4F533B4A6B4B}" ShortID="15306162">
+					<ChildrenList>
+						<Folder Name="PhyWave" ID="{308EE4B5-ACAB-4C20-A685-A57E8824006D}" ShortID="699005447">
+							<ChildrenList>
+								<Event Name="phy_start_waveHull" ID="{AB95686D-EB81-4ABD-8DED-902D09BFE045}"/>
+								<Event Name="phy_stop_waveHull" ID="{5E7BBF84-469E-43C7-B277-5880A23C386D}"/>
+								<Event Name="phy_start_waveMotion" ID="{E0CFA58D-3D67-4074-ACD6-249CD12BAACA}"/>
+								<Event Name="phy_stop_waveMotion" ID="{66B41CA3-E03E-412A-8D6B-0D024DA869CF}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="PhyBow" ID="{C1517D5B-553F-4F89-BC81-106A06D3E4BB}" ShortID="262647774">
+							<ChildrenList>
+								<Event Name="phy_start_bowWater" ID="{0A5E8B81-A365-48CA-A4D6-E6F434A3A401}"/>
+								<Event Name="phy_stop_bowWater" ID="{BB21DE50-FB40-4357-AD5C-D3C9B7A738DD}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="PhyWake" ID="{FB60F1CE-3B35-4105-A3D3-FD1885FE5706}" ShortID="575828980">
+							<ChildrenList>
+								<Event Name="phy_start_wakeWater" ID="{3E4A3600-16B9-4790-ADF9-04628CA48085}"/>
+								<Event Name="phy_stop_wakeWater" ID="{FB1A576A-7F3C-49DA-A237-6C7BD304054D}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="PhyWind" ID="{A6201007-D5C2-4BB5-87EF-0013E117BA7C}" ShortID="327206754">
+							<ChildrenList>
+								<Event Name="phy_start_windForceBoat" ID="{843162FA-97F9-408D-B7A5-FB28C15B5A72}"/>
+								<Event Name="phy_stop_windForceBoat" ID="{C03C5E1B-64FC-4811-A255-DDF7395C5679}"/>
+								<Event Name="phy_start_windForceSail" ID="{CF87A018-2474-4339-BC0D-6C479AA2C326}"/>
+								<Event Name="phy_stop_windForceSail" ID="{414ED4EB-C7A0-4D06-AAFF-D4BA6D2C4B6B}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="PhyWater" ID="{4B330CCC-7E7B-492B-A128-6B1B2905FEB8}" ShortID="888419951">
+							<ChildrenList>
+								<Event Name="phy_start_waterDisplacement" ID="{31B997D4-F878-4E1C-A256-7BF592BD04F2}"/>
+								<Event Name="phy_stop_waterDisplacement" ID="{EA615C67-02DA-49E3-ACDF-EE3B4A7D87C6}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="PhySailMast" ID="{2CA60F44-7C39-40C9-9D98-41AA097636BE}" ShortID="111232107">
+							<ChildrenList>
+								<Event Name="phy_start_sailMastWhistle" ID="{978825C1-DE41-4C16-9306-10244602C536}"/>
+								<Event Name="phy_stop_sailMastWhistle" ID="{053AAEA8-B0B6-470D-889E-31814C68DD7C}"/>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

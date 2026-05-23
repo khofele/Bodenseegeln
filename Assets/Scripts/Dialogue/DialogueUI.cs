@@ -101,7 +101,7 @@ namespace Dialogue
 
         private void Update()
         {
-            //just for now the simple input -> MUST be replaced with correct imput system later
+            //if changes at input system needed, then change here
             if (m_scipAction.action.triggered)
             {
                 SkipTyping();

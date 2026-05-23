@@ -1,24 +1,21 @@
 using Dialogue;
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace Quest
 {
-    [System.Serializable] 
-    public struct StarThresholds
+    [System.Serializable]
+    public class QuestStepText
     {
-        public float threeStars;
-        public float twoStars;
-        public float oneStar;
-        public float zeroStars;
+        [TextArea(2, 4)] public string m_text;
     }
 
     [System.Serializable]
-    public struct MoneyRewards
+    public struct RewardRange
     {
-        public int threeStars;
-        public int twoStars;
-        public int oneStar;
-        public int zeroStars;
+        public float fiveCircleValue;
+        public float zeroCircleValue;
     }
 
     public enum QuestType
@@ -35,28 +32,29 @@ namespace Quest
     {
         [Header("General")]
         [SerializeField] private string m_questName;
+        [SerializeField] private string m_questTargetPlace;
         [SerializeField] private QuestType m_questType = QuestType.None;
         [SerializeField] private NPCData m_questGiverNPC = null;
         [SerializeField] private NPCData m_targetNPC = null;
+        
+        [Header("Type 4 Multistep")]
         [SerializeField] private int m_questSteps = 2;
+        [SerializeField] private List<QuestStepText> m_stepTexts = new();
 
-        [Header("Time (seconds)")]
-        [SerializeField] internal StarThresholds m_timeThresholds;
+        [Header("Reward Ranges")]
+        [SerializeField] internal RewardRange m_timeRange;
+        [SerializeField] internal RewardRange m_damageRange;
+        [SerializeField] internal RewardRange m_fuelRange;
+        [SerializeField] internal RewardRange m_moneyRange;
 
-        [Header("Damage")]
-        [SerializeField] internal StarThresholds m_damageThresholds;
-
-        [Header("Fuel")]
-        [SerializeField] internal StarThresholds m_fuelThresholds;
-
-        [Header("Money Rewards")]
-        [SerializeField] internal MoneyRewards m_moneyRewards;
 
 
         public string QuestName => m_questName;
+        internal string QuestTargetPlace => m_questTargetPlace;
         internal QuestType QuestType => m_questType;
         internal NPCData QuestGiverNPC => m_questGiverNPC;
         internal NPCData TargetNPC => m_targetNPC;
         internal int QuestSteps => m_questSteps;
+        internal List<QuestStepText> StepTexts => m_stepTexts;
     }
 }

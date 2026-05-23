@@ -1,5 +1,8 @@
+using Quest;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using WwiseEvent = AK.Wwise.Event;
+using WwiseRTPC = AK.Wwise.RTPC;
 
 public class BoatController : MonoBehaviour
 {
@@ -7,6 +10,7 @@ public class BoatController : MonoBehaviour
     private Rigidbody m_rigidbody = null;
     private bool m_isBoatDrivingForward = true; // shader input
     private bool m_isInSailMode = true;
+    private bool m_isFenderEnabled = false;
 
     // FORCE CALCULATION FIELDS
     private float m_airDensity = 1.2f; // kg/m^3
@@ -17,6 +21,7 @@ public class BoatController : MonoBehaviour
     private float m_keelSize = 3.0f; // m^2
     private float m_rudderSize = 2.0f; // m^2
     private float m_maxRudderAngle = 30.0f; // max 30°
+    private float m_currentRudderAngle = 0.0f;
 
     // SAILMODE FIELDS
     private float m_mainSailSize = 52.5f; // m^2
@@ -46,29 +51,29 @@ public class BoatController : MonoBehaviour
     private float m_steeringInput = 0.0f;
     private float m_smoothedSteeringInput = 0.0f;
     private float m_motorBrakeModifier = 1.5f;
-    private float m_currentFuel = 0.0f;
-    [Header ("DEBUG")] // TODO SerializedField raus
-    [SerializeField] private float m_maxFuel = 250.0f;
+    private float m_currentFuel = 0.0f; 
+    [SerializeField] private float m_maxFuel = 250.0f; // TODO SerializedField raus
     private float m_currentHealth = 0.0f;
     private float m_maxHealth = 100.0f;
 
-    // TODO Windvektor und ggf. Strömungsvektor einlesen
-
     // REFERENCES
-    [Header ("General Fields")]
+    [Header("General Fields")]
     [SerializeField] private GameManager m_gameManager = null;
-    [SerializeField] private BoatAudioController m_boatAudioController = null;
     [SerializeField] private WindController m_windController = null;
+    [SerializeField] private BoatAudioController m_boatAudioController = null;
     [SerializeField] private Transform m_parentReference = null;
     [SerializeField] private GameObject m_mainSail = null;
     [SerializeField] private GameObject m_frontSail = null;
     [SerializeField] private GameObject m_rudder = null;
+    [SerializeField] private GameObject m_fender = null;
 
     // INPUT ACTION REFERENCES
     [Header("Input Actions")]
     [SerializeField] private InputActionReference m_steeringAction = null;
     [SerializeField] private InputActionReference m_rudderNeutralAction = null;
+    [SerializeField] private InputActionReference m_fenderEnableAction = null;
     [SerializeField] private InputActionReference m_changeMotorSailModeAction = null;
+    [SerializeField] private InputActionReference m_resetBoatAction = null;
     [SerializeField] private InputActionReference m_chooseMainSailAction = null;
     [SerializeField] private InputActionReference m_chooseFrontSailAction = null;
     [SerializeField] private InputActionReference m_chooseBothSailsAction = null;
@@ -86,7 +91,7 @@ public class BoatController : MonoBehaviour
     public float CurrentHealth
     {
         get { return m_currentHealth; }
-        set { m_currentHealth = value; } // TODO setter ggf. raus?
+        set { m_currentHealth = value; }
     }
 
     public float MaxHealth
@@ -97,11 +102,32 @@ public class BoatController : MonoBehaviour
     public float CurrentFuel
     {
         get { return m_currentFuel; }
+        set { m_currentFuel = value; }
     }
 
     public float MaxFuel
     {
         get { return m_maxFuel; }
+    }
+
+    public float CurrentRudderAngle
+    {
+        get { return m_currentRudderAngle; }
+    }
+
+    public float MainSailTrim
+    {
+        get { return m_currentMainSailAngle; }
+    }
+
+    public float FrontSailTrim
+    {
+        get { return m_currentFrontSailAngle; }
+    }
+
+    public float ThrustStep
+    {
+        get { return m_thrustStep; }
     }
 
     public bool IsBoatDrivingForward
@@ -118,6 +144,12 @@ public class BoatController : MonoBehaviour
     {
         get { return m_isInSailMode; }
     }
+
+    public bool IsFenderEnabled
+    {
+        get { return m_isFenderEnabled; }
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // PRIVATE METHODS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void CalculateLiftAndDragTables()
@@ -163,8 +195,7 @@ public class BoatController : MonoBehaviour
 
     private Vector3 CalculateApprentWind()
     {
-        // TODO get wind vector from wind script --> placeholder vector
-        m_apparentWind = new Vector3(0.0f, 0.0f, 10.0f) - m_rigidbody.linearVelocity;
+        m_apparentWind = m_windController.TrueWind - m_rigidbody.linearVelocity;
         return m_apparentWind;
     }
 
@@ -458,7 +489,7 @@ public class BoatController : MonoBehaviour
     private void CalculateKeelForce()
     {
         // keel force doesn't need y-speed of boat
-        Vector3 boatVelocity = m_rigidbody.linearVelocity;  // TODO Strömung --> anpassen, wenn Strömungssimulation vorhanden
+        Vector3 boatVelocity = m_rigidbody.linearVelocity;
         boatVelocity.y = 0f;
 
         // drift on x-axis of boat
@@ -488,16 +519,16 @@ public class BoatController : MonoBehaviour
     {
         // similar to apparent wind: water flows against boat --> negative velocity
         // relative waterflow on rudder
-        Vector3 waterVelocity = m_rigidbody.linearVelocity; // TODO Strömung --> anpassen, wenn Strömungssimulation vorhanden
+        Vector3 waterVelocity = m_rigidbody.linearVelocity;
         waterVelocity.y = 0.0f;
 
-        float rudderAngle = m_steeringInput * m_maxRudderAngle;
+        m_currentRudderAngle = m_steeringInput * m_maxRudderAngle;
 
         //float rudderForceValue = 0.5f * m_waterDensity * waterVelocity.magnitude * waterVelocity.magnitude * m_rudderSize * 0.05f;
         float rudderForceValue = 0.5f * m_waterDensity * waterVelocity.magnitude * m_rudderSize * 0.05f;
 
         // check force to the side
-        float rudderEfficiency = Mathf.Sin(rudderAngle * Mathf.Deg2Rad);
+        float rudderEfficiency = Mathf.Sin(m_currentRudderAngle * Mathf.Deg2Rad);
 
         // vector to left/right --> cross product results in vector vertical on given vectors
         Vector3 rudderDirection = Vector3.Cross(waterVelocity, Vector3.up).normalized;
@@ -639,7 +670,11 @@ public class BoatController : MonoBehaviour
 
         Debug.Log("Fuel Consumption " + totalFuelConsumption);
 
-        m_currentFuel -= totalFuelConsumption * Time.fixedDeltaTime;
+        float fuelAmount = totalFuelConsumption * Time.fixedDeltaTime;
+
+        m_currentFuel -= fuelAmount;
+        QuestManager.Instance.RegisterFuelUsed(fuelAmount);
+
         Debug.Log("Fuel " + m_currentFuel);
     }
 
@@ -757,6 +792,7 @@ public class BoatController : MonoBehaviour
         currentEulerAngles.x = 0;
         transform.localEulerAngles = currentEulerAngles;
     }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // INPUT METHODS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void ChangeBoatMode()
@@ -768,7 +804,7 @@ public class BoatController : MonoBehaviour
                 m_gameManager.SetState(GameStates.MOTORMODE);
                 m_isInSailMode = false;
                 ResetSails(); // TODO Jasi: Segel einholen Animation
-                
+
                 m_boatAudioController.PlayMotormodeAudio();
 
                 Debug.Log("Motormode enabled!");
@@ -777,6 +813,7 @@ public class BoatController : MonoBehaviour
             {
                 m_gameManager.SetState(GameStates.SAILMODE);
                 m_isInSailMode = true;
+                m_thrustStep = 0.0f;
 
                 m_boatAudioController.PlaySailmodeAudio();
 
@@ -858,13 +895,13 @@ public class BoatController : MonoBehaviour
             if (m_motorThrustForwardAction != null && m_motorThrustForwardAction.action.IsPressed() == true)
             {
                 m_thrustStep = Mathf.Min(m_thrustStep + 0.005f, m_maxThrustForwardSteps);
-                //m_throttleMoveEvent.Post(m_boatCockpitEmitter);  // Audio Event
+                //m_throttleMoveEvent.Post(gameObject);  // Audio Event
             }
 
             if (m_motorThrustBackwardAction != null && m_motorThrustBackwardAction.action.IsPressed() == true)
             {
                 m_thrustStep = Mathf.Max(m_thrustStep - 0.005f, m_maxThrustBackwardSteps);
-                //m_throttleMoveEvent.Post(m_boatCockpitEmitter);  // Audio Event
+                //m_throttleMoveEvent.Post(gameObject);  // Audio Event
             }
 
             if (m_motorThrustNeutralAction != null && m_motorThrustNeutralAction.action.triggered == true)
@@ -882,8 +919,142 @@ public class BoatController : MonoBehaviour
             }
         }
     }
+
+    private void GetFenderInput()
+    {
+        if(m_fenderEnableAction != null && m_fenderEnableAction.action.triggered == true)
+        {
+            if (m_isFenderEnabled == true)
+            {
+                m_isFenderEnabled = false;
+                m_fender.SetActive(false);
+            }
+            else
+            {
+                m_isFenderEnabled = true;
+                m_fender.SetActive(true);
+            }
+        }
+    }
+
+    private void GetResetInput()
+    {
+        if(m_resetBoatAction != null && m_resetBoatAction.action.triggered == true)
+        {
+            m_gameManager.DecreaseMoney(100);
+            gameObject.transform.position = new Vector3(2800.0f, 9.8f, 2700.0f); // TODO Reset-Position festlegen
+
+            //if(m_gameManager.Money < 0) {
+            // TODO Game over einbauen
+            // TODO Game Over bei keine Gesundheit und kein Geld
+            //}
+        }
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
+
+    // COLLISION/DAMAGE METHODS //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private float CalculateDamageValue(Collision collision)
+    {
+        ContactPoint firstContactPoint = collision.contacts[0];
+
+        // calculate angle between collision point and velocity vector and clamp it between 0 and 1
+        float angleImpact = Mathf.Clamp01(Vector3.Dot(-m_rigidbody.linearVelocity.normalized, firstContactPoint.normal));
+
+        float speedImpact = Mathf.Clamp01(m_rigidbody.linearVelocity.magnitude);
+
+        // damage value based on collision angle and speed
+        float damageValue = 2.0f + 15.0f * angleImpact * speedImpact; // TODO balance damage value: base value + scaled value
+
+        if (CheckDamageReducedWithFenders() == true)
+        {
+            // reduce damage
+            damageValue *= 0.5f;
+        }
+
+        return damageValue;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (m_rigidbody.linearVelocity.magnitude < 0.01f)
+        {
+            return;
+        }
+
+        if (collision.contactCount <= 0)
+        {
+            return;
+        }
+
+        float damage = CalculateDamageValue(collision);
+        QuestManager.Instance.RegisterDamage(damage);
+        m_currentHealth -= damage;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(m_rigidbody.linearVelocity.magnitude < 0.01f)
+        {
+            return;
+        }
+
+        if(collision.contactCount <= 0)
+        {
+            return;
+        }
+
+        float damage = CalculateDamageValue(collision) * Time.fixedDeltaTime;
+        QuestManager.Instance.RegisterDamage(damage);
+        m_currentHealth -= damage;
+    }
+
+    private void CalculateFenderDamage()
+    {
+        // take damage if boat is too fast and fenders are enabled
+        if(m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 8.0f) // TODO threshold
+        {
+            float damage = 2.0f + 5.0f * Time.fixedDeltaTime; // TODO balance damage value: base value + scaled value
+            m_currentHealth -= damage;
+            QuestManager.Instance.RegisterDamage(damage);
+        }
+    }
+
+    private void CalculateWaveDamage()
+    {
+        // take damage if boat is too fast --> waves are too high
+        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 18.0f) // TODO threshold
+        {
+            float damage = 0.5f + 5.0f * Time.fixedDeltaTime; // TODO balance damage value: base value + scaled value
+            m_currentHealth -= damage;
+            QuestManager.Instance.RegisterDamage(damage);
+        }
+    }
+
+    private bool CheckDamageReducedWithFenders()
+    {
+        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) < 8.0f) // TODO Threshold (auch im UI-Manager balancen)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private bool CheckZeroHealth()
+    {
+        if(m_currentHealth <= 0.0f)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     // PUBLIC METHODS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void OnEnable()
     {
@@ -912,9 +1083,19 @@ public class BoatController : MonoBehaviour
             m_rudderNeutralAction.action.Enable();
         }
 
+        if(m_fenderEnableAction != null)
+        {
+            m_fenderEnableAction.action.Enable();
+        }
+
         if (m_changeMotorSailModeAction != null)
         {
             m_changeMotorSailModeAction.action.Enable();
+        }
+
+        if(m_resetBoatAction != null)
+        {
+            m_resetBoatAction.action.Enable();
         }
 
         if (m_chooseMainSailAction != null)
@@ -965,9 +1146,19 @@ public class BoatController : MonoBehaviour
             m_rudderNeutralAction.action.Disable();
         }
 
+        if (m_fenderEnableAction != null)
+        {
+            m_fenderEnableAction.action.Disable();
+        }
+
         if (m_changeMotorSailModeAction != null)
         {
             m_changeMotorSailModeAction.action.Disable();
+        }
+
+        if (m_resetBoatAction != null)
+        {
+            m_resetBoatAction.action.Disable();
         }
 
         if (m_chooseMainSailAction != null)
@@ -1018,23 +1209,36 @@ public class BoatController : MonoBehaviour
 
     public void Update()
     {
+        // Inputs
         ChangeBoatMode();
-
         GetSteeringInput();
         GetMotorInput();
         GetSelectedSail();
         GetSailTrimInput();
+        GetFenderInput();
+        GetResetInput();
 
+        // Damage
+        CalculateFenderDamage();
+        CalculateWaveDamage();
+
+        // Shader-Check
         CheckBoatDrivingForward();
+
+        if(CheckZeroHealth() == true) // TODO Win-Lose-Condition
+        {
+            // TODO Game Over einbauen
+            // TODO maybe Check Game Over Methode?
+        }
     }
 
     public void FixedUpdate()
     {           
-        // TODO Kollisionssystem Damage durch zu hohe Wellen
-
         //// DEBUG //////////////////////////////////////////////////////////////////////////////
         float speedKnot = m_rigidbody.linearVelocity.magnitude / m_msPerKnot;
         Debug.Log(speedKnot + " knots");
+
+        Debug.Log("Current Health " + m_currentHealth);
         //// DEBUG //////////////////////////////////////////////////////////////////////////////
 
         if(m_gameManager.CurrentState == GameStates.DIALOGMODE)

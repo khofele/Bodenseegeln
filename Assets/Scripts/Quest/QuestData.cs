@@ -36,6 +36,9 @@ namespace Quest
         [SerializeField] private QuestType m_questType = QuestType.None;
         [SerializeField] private NPCData m_questGiverNPC = null;
         [SerializeField] private NPCData m_targetNPC = null;
+
+        [Header("Game End")]
+        [SerializeField] private bool m_isFinalQuest = false;
         
         [Header("Type 4 Multistep")]
         [SerializeField] private int m_questSteps = 2;
@@ -54,6 +57,7 @@ namespace Quest
         internal QuestType QuestType => m_questType;
         internal NPCData QuestGiverNPC => m_questGiverNPC;
         internal NPCData TargetNPC => m_targetNPC;
+        internal bool IsFinalQuest => m_isFinalQuest;
         internal int QuestSteps => m_questSteps;
         internal List<QuestStepText> StepTexts => m_stepTexts;
     }

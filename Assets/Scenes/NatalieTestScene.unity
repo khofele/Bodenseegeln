@@ -13591,6 +13591,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 8990281666286800870, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
+      propertyPath: m_money
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990281666286800870, guid: 47a2e5e57e3e170479916a039ee647b0, type: 3}
       propertyPath: m_moneyGainSound.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: 90b723eea6f3ee1469b5b9903fe764ba, type: 2}
@@ -24729,6 +24733,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5934309769581289141, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
+      propertyPath: m_Size.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934309769581289141, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
+      propertyPath: m_Size.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934309769581289141, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934309769581289141, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
+      propertyPath: m_Center.z
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5978502512738944711, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -24774,6 +24794,10 @@ PrefabInstance:
       value: NPCObjects
       objectReference: {fileID: 0}
     - target: {fileID: 7712036096560658661, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
+      propertyPath: m_showGizmos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712036096560658661, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
       propertyPath: m_boatTransform
       value: 
       objectReference: {fileID: 373357998}
@@ -24781,6 +24805,10 @@ PrefabInstance:
       propertyPath: m_interactionIcon
       value: 
       objectReference: {fileID: 1768959797}
+    - target: {fileID: 7712036096560658661, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
+      propertyPath: m_requireCorrectParking
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8492297730353062460, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
       propertyPath: m_boatTransform
       value: 
@@ -24813,6 +24841,26 @@ PrefabInstance:
       propertyPath: m_interactionIcon
       value: 
       objectReference: {fileID: 1768959797}
+    - target: {fileID: 9211351076900706639, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3798.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211351076900706639, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2758.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211351076900706639, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211351076900706639, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211351076900706639, guid: 09d84f5ff333d294e8e3d12474c6cd6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

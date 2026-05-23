@@ -37,8 +37,8 @@ namespace Quest
             m_currentReult = _result;
 
             m_timeText.text = FormatTime(_result.TimeValue);
-            m_damageText.text = _result.DamageValue.ToString();
-            m_fuelText.text = _result.FuelValue.ToString();
+            m_damageText.text = _result.DamageValue.ToString("F2");
+            m_fuelText.text = _result.FuelValue.ToString("F2");
             m_moneyText.text = _result.MoneyReward.ToString();
 
             SetFillAmount(m_timeFillBar, _result.TimeCircles);

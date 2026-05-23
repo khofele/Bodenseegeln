@@ -30,6 +30,8 @@ public class DockInteraction : MonoBehaviour
     private bool m_isDocked = false;
     private bool m_lastInteractableState = false;
 
+    internal Transform CurrentBoat => m_boatTransform;
+
     private void OnEnable()
     {
         if (m_interactAction != null)

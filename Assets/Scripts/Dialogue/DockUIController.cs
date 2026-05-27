@@ -88,6 +88,15 @@ public class DockUIController : MonoBehaviour
         m_fuelCostText.gameObject.SetActive(false);
     }
 
+    private void RefreshFuelCostUI()
+    {
+        if (m_fuelCostText.gameObject.activeSelf)
+        {
+            HideFuelCost();
+            ShowFuelCost();
+        }
+    }
+
     public void ShowRepairCost()
     {
         int _cost = CalculateRepairCost();
@@ -115,6 +124,15 @@ public class DockUIController : MonoBehaviour
     public void HideRepairCost()
     {
         m_repairCostText.gameObject.SetActive(false);
+    }
+
+    private void RefreshRepairCostUI()
+    {
+        if (m_repairCostText.gameObject.activeSelf)
+        {
+            HideRepairCost();
+            ShowRepairCost();
+        }
     }
 
     //private void OnTalkClicked()
@@ -145,6 +163,9 @@ public class DockUIController : MonoBehaviour
             m_currentBoat.CurrentHealth = m_currentBoat.MaxHealth;
             GameManager.Instance.DecreaseMoney(_cost);
 
+            //update repair cost
+            RefreshRepairCostUI();
+
             Debug.Log($"[DockUIController.OnRepairClicked] fully repaired for {_cost}€");
             return;
         }
@@ -158,6 +179,9 @@ public class DockUIController : MonoBehaviour
         GameManager.Instance.DecreaseMoney(_money);
 
         Debug.Log("[DockUIController.OnRepairClicked] not enough money -> partially repaired until money reached 0€");
+
+        //Update repair cost
+        RefreshRepairCostUI();
     }
 
     private void OnFuelClicked()
@@ -183,6 +207,9 @@ public class DockUIController : MonoBehaviour
             m_currentBoat.CurrentFuel = m_currentBoat.MaxFuel;
             GameManager.Instance.DecreaseMoney(_cost);
 
+            //update fuel cost
+            RefreshFuelCostUI();
+
             Debug.Log($"[DockUIController.OnFuelClicked] fully refueled for {_cost}€");
             return;
         }
@@ -196,6 +223,9 @@ public class DockUIController : MonoBehaviour
         GameManager.Instance.DecreaseMoney(_money);
 
         Debug.Log("[DockUIController.OnFuelClicked] not enough money -> partially refueled until money reached 0€");
+
+        //Update fuel cost
+        RefreshFuelCostUI();
     }
 
     private void OnCloseClicked()

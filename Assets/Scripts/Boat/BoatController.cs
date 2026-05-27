@@ -1103,7 +1103,7 @@ public class BoatController : MonoBehaviour
         float speedImpact = Mathf.Clamp01(m_rigidbody.linearVelocity.magnitude);
 
         // damage value based on collision angle and speed
-        float damageValue = 2.0f + 15.0f * angleImpact * speedImpact; // TODO balance damage value: base value + scaled value
+        float damageValue = 2.0f + 15.0f * angleImpact * speedImpact;
 
         if (CheckDamageReducedWithFenders() == true)
         {
@@ -1151,7 +1151,7 @@ public class BoatController : MonoBehaviour
     private void CalculateFenderDamage()
     {
         // take damage if boat is too fast and fenders are enabled
-        if(m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 8.0f) // TODO threshold
+        if(m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 10.0f)
         {
             float damage = 2.0f * Time.fixedDeltaTime;
             m_currentHealth -= damage;
@@ -1162,9 +1162,9 @@ public class BoatController : MonoBehaviour
     private void CalculateWaveDamage()
     {
         // take damage if boat is too fast --> waves are too high
-        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 18.0f) // TODO threshold
+        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 14.0f)
         {
-            float damage = 0.5f + 5.0f * Time.fixedDeltaTime; // TODO balance damage value: base value + scaled value
+            float damage = 4.0f * Time.fixedDeltaTime;
             m_currentHealth -= damage;
             QuestManager.Instance.RegisterDamage(damage);
         }
@@ -1172,7 +1172,7 @@ public class BoatController : MonoBehaviour
 
     private bool CheckDamageReducedWithFenders()
     {
-        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) < 8.0f) // TODO Threshold (auch im UI-Manager balancen)
+        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) < 8.0f)
         {
             return true;
         }

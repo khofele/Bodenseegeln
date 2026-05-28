@@ -874,7 +874,7 @@
 														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 														<Property Name="MaxSoundPerInstance" Type="int16">
 															<ValueList>
-																<Value>1</Value>
+																<Value>10</Value>
 															</ValueList>
 														</Property>
 														<Property Name="UseMaxSoundPerInstance" Type="bool">
@@ -971,7 +971,7 @@
 																<ActiveSource Name="boat_engineForward_loop" ID="{5529B7B2-58AE-487C-A7F8-9AB1E5365604}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="boat_engineBackward_loop" ID="{A5E78819-373C-48EC-80F4-89ED5E532C2D}" ShortID="740227793">
+														<Sound Name="boat_engineBackward_loop" ID="{9FD0CE60-FEB9-457D-93E9-7A04AA5712A5}" ShortID="781655280">
 															<PropertyList>
 																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 																<Property Name="Lowpass" Type="int16">
@@ -994,13 +994,11 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="boat_engineBackward_loop" ID="{79EA028D-84D2-4566-A2D3-6701859EDBCF}">
+																<AudioFileSource Name="boat_engineBackward_loop" ID="{1408B50F-31C4-4B07-AB3B-C7D6E2F67FC1}">
 																	<PropertyList>
-																		<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
-																		<Property Name="FadeInDuration" Type="Real64" Value="0.3528"/>
-																		<Property Name="FadeOutDuration" Type="Real64" Value="0.4536"/>
-																		<Property Name="LoopBegin" Type="Real64" Value="2.95668"/>
-																		<Property Name="LoopEnd" Type="Real64" Value="18.04244"/>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="1632.812"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="1.03515"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="17.99824"/>
 																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 																	</PropertyList>
 																	<Language>SFX</Language>
@@ -1010,29 +1008,11 @@
 																	</MediaIDList>
 																</AudioFileSource>
 															</ChildrenList>
-															<ObjectLists>
-																<ObjectList Name="Effects">
-																	<EffectSlot Name="" ID="{D062FD01-6EC2-40A9-9152-89634B59521F}" ShortID="509485546">
-																		<ReferenceList>
-																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																				<ObjectRef Name="BoatEngine_EQ" ID="{64B09E03-5340-4B9F-9C69-9C77E88A2608}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																			</Reference>
-																		</ReferenceList>
-																	</EffectSlot>
-																	<EffectSlot Name="" ID="{CEC7B618-7643-43BD-AA74-DFAA87056FEA}" ShortID="274594330">
-																		<ReferenceList>
-																			<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-																				<ObjectRef Name="BoatEngine_Compressor" ID="{39FAAC5C-772D-41CA-8721-3630B3865BD4}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																			</Reference>
-																		</ReferenceList>
-																	</EffectSlot>
-																</ObjectList>
-															</ObjectLists>
 															<ActiveSourceList>
-																<ActiveSource Name="boat_engineBackward_loop" ID="{79EA028D-84D2-4566-A2D3-6701859EDBCF}" Platform="Linked"/>
+																<ActiveSource Name="boat_engineBackward_loop" ID="{1408B50F-31C4-4B07-AB3B-C7D6E2F67FC1}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
-														<Sound Name="boat_engineIdle_loop" ID="{776394D0-C9F4-46F3-9244-BCE93C81862B}" ShortID="681780144">
+														<Sound Name="boat_engineIdle_loop" ID="{78AD9EA0-93D5-4BCA-B541-3668C2063EEF}" ShortID="56717502">
 															<PropertyList>
 																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 																<Property Name="Lowpass" Type="int16">
@@ -1055,13 +1035,11 @@
 																</Reference>
 															</ReferenceList>
 															<ChildrenList>
-																<AudioFileSource Name="boat_engineIdle_loop" ID="{B16796B6-E4DF-44E8-BF4F-C65797FF9065}">
+																<AudioFileSource Name="boat_engineIdle_loop" ID="{24CD1414-E0AB-498E-A4AD-D3AE03ED30FD}">
 																	<PropertyList>
-																		<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
-																		<Property Name="FadeInDuration" Type="Real64" Value="0.4872"/>
-																		<Property Name="FadeOutDuration" Type="Real64" Value="0.4704"/>
-																		<Property Name="LoopBegin" Type="Real64" Value="3.02387"/>
-																		<Property Name="LoopEnd" Type="Real64" Value="18.21043"/>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="1533.854"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="1.92004"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="17.02988"/>
 																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 																	</PropertyList>
 																	<Language>SFX</Language>
@@ -1071,26 +1049,8 @@
 																	</MediaIDList>
 																</AudioFileSource>
 															</ChildrenList>
-															<ObjectLists>
-																<ObjectList Name="Effects">
-																	<EffectSlot Name="" ID="{CF143288-BD79-449B-91D8-E46E4691A5BC}" ShortID="879243717">
-																		<ReferenceList>
-																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																				<ObjectRef Name="BoatEngine_EQ" ID="{64B09E03-5340-4B9F-9C69-9C77E88A2608}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																			</Reference>
-																		</ReferenceList>
-																	</EffectSlot>
-																	<EffectSlot Name="" ID="{5BC11BC2-0E3F-41C2-AEF7-E7AF44476B5A}" ShortID="46816923">
-																		<ReferenceList>
-																			<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-																				<ObjectRef Name="BoatEngine_Compressor" ID="{39FAAC5C-772D-41CA-8721-3630B3865BD4}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																			</Reference>
-																		</ReferenceList>
-																	</EffectSlot>
-																</ObjectList>
-															</ObjectLists>
 															<ActiveSourceList>
-																<ActiveSource Name="boat_engineIdle_loop" ID="{B16796B6-E4DF-44E8-BF4F-C65797FF9065}" Platform="Linked"/>
+																<ActiveSource Name="boat_engineIdle_loop" ID="{24CD1414-E0AB-498E-A4AD-D3AE03ED30FD}" Platform="Linked"/>
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>
@@ -1210,27 +1170,27 @@
 															</ObjectLists>
 															<BlendTrackAssocList>
 																<BlendTrackAssoc>
-																	<ItemRef Name="boat_engineBackward_loop" ID="{A5E78819-373C-48EC-80F4-89ED5E532C2D}"/>
+																	<ItemRef Name="boat_engineBackward_loop" ID="{9FD0CE60-FEB9-457D-93E9-7A04AA5712A5}"/>
 																	<CrossfadingInfo>
 																		<LeftEdgePos>-3</LeftEdgePos>
 																		<LeftFadingMode>Automatic</LeftFadingMode>
-																		<RightEdgePos>0</RightEdgePos>
+																		<RightEdgePos>-0.15</RightEdgePos>
 																		<RightFadingMode>Automatic</RightFadingMode>
 																	</CrossfadingInfo>
 																</BlendTrackAssoc>
 																<BlendTrackAssoc>
-																	<ItemRef Name="boat_engineIdle_loop" ID="{776394D0-C9F4-46F3-9244-BCE93C81862B}"/>
+																	<ItemRef Name="boat_engineIdle_loop" ID="{78AD9EA0-93D5-4BCA-B541-3668C2063EEF}"/>
 																	<CrossfadingInfo>
-																		<LeftEdgePos>-0.15</LeftEdgePos>
+																		<LeftEdgePos>-0.5</LeftEdgePos>
 																		<LeftFadingMode>Automatic</LeftFadingMode>
-																		<RightEdgePos>0.15</RightEdgePos>
+																		<RightEdgePos>0.5</RightEdgePos>
 																		<RightFadingMode>Automatic</RightFadingMode>
 																	</CrossfadingInfo>
 																</BlendTrackAssoc>
 																<BlendTrackAssoc>
 																	<ItemRef Name="boat_engineForward_loop" ID="{728BD5CA-EED1-450B-9718-0D244AD898BF}"/>
 																	<CrossfadingInfo>
-																		<LeftEdgePos>0</LeftEdgePos>
+																		<LeftEdgePos>0.15</LeftEdgePos>
 																		<LeftFadingMode>Automatic</LeftFadingMode>
 																		<RightEdgePos>3</RightEdgePos>
 																		<RightFadingMode>Automatic</RightFadingMode>

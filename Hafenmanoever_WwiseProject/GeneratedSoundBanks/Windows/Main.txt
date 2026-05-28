@@ -6,7 +6,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	295066189	mission_complete			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionState\mission_complete	
 	333473287	phy_start_waveMotion			\Default Work Unit\Physics\PhyWave\phy_start_waveMotion	
 	420487461	mission_fastMovement			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionVarious\mission_fastMovement	
-	421419538	phy_stop_sailMastWhistle			\Default Work Unit\Physics\PhySailMast\phy_stop_sailMastWhistle	
 	451382329	amb_stop_waterMovement			\Default Work Unit\Atmosphere\WaterMovement\amb_stop_waterMovement	
 	480691325	boat_engineStartKey			\Default Work Unit\Boat\BoatEngine\boat_engineStartKey	
 	494378860	phy_stop_waterDisplacement			\Default Work Unit\Physics\PhyWater\phy_stop_waterDisplacement	
@@ -22,7 +21,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	1027056524	menu_navigateStartGame			\Default Work Unit\Menu\Navigate\menu_navigateStartGame	
 	1027735037	mission_moneyGain			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionMoney\mission_moneyGain	
 	1068606741	env_stop_boat_RubDock			\Default Work Unit\Environment\EnvBoat\EnvBoatLoops\env_stop_boat_RubDock	
-	1227687800	phy_start_sailMastWhistle			\Default Work Unit\Physics\PhySailMast\phy_start_sailMastWhistle	
 	1257340305	phy_stop_bowWater			\Default Work Unit\Physics\PhyBow\phy_stop_bowWater	
 	1287245143	boat_throttleMoveIdle			\Default Work Unit\Boat\BoatThrottle\boat_throttleMoveIdle	
 	1373022075	phy_start_wakeWater			\Default Work Unit\Physics\PhyWake\phy_start_wakeWater	
@@ -56,6 +54,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2951909939	amb_stop_harborLochau			\Default Work Unit\Atmosphere\HarborStop\amb_stop_harborLochau	
 	2966838670	amb_start_harborLindau			\Default Work Unit\Atmosphere\HarborStart\amb_start_harborLindau	
 	2984994092	env_boatRefuel			\Default Work Unit\Environment\EnvBoat\env_boatRefuel	
+	3002731379	phy_start_sailWind			\Default Work Unit\Physics\PhySail\phy_start_sailWind	
 	3006133870	phy_stop_waveHull			\Default Work Unit\Physics\PhyWave\phy_stop_waveHull	
 	3061105653	mission_goalFail			\Default Work Unit\MissionsFeedback\Event_MissionsFeedback\MissionGoal\mission_goalFail	
 	3096912414	env_boatCollisionUnderWater			\Default Work Unit\Environment\EnvCollision\env_boatCollisionUnderWater	
@@ -82,11 +81,14 @@ Event	ID	Name			Wwise Object Path	Notes
 	4135813027	env_boatCollisionLight			\Default Work Unit\Environment\EnvCollision\env_boatCollisionLight	
 	4170174229	boat_riggingTension			\Default Work Unit\Boat\BoatRope\boat_riggingTension	
 	4191093004	env_boatRepair			\Default Work Unit\Environment\EnvBoat\env_boatRepair	
+	4258852485	phy_stop_sailWind			\Default Work Unit\Physics\PhySail\phy_stop_sailWind	
 	4277963706	boat_ropeCreak			\Default Work Unit\Boat\BoatRope\boat_ropeCreak	
 	4290233515	menu_ambientStart			\Default Work Unit\Menu\Ambience\menu_ambientStart	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	541499651	Phy_WindSailIntensity			\Default Work Unit\Physic_GameParameter\Phy_WindSailIntensity	
 	572552402	Boat_ThrottleSigned			\Default Work Unit\Boat_GameParameters\Boat_ThrottleSigned	
+	691629868	Phy_WindBoatIntensity			\Default Work Unit\Physic_GameParameter\Phy_WindBoatIntensity	
 	3815819945	Boat_SailTension			\Default Work Unit\Boat_GameParameters\Boat_SailTension	
 
 Effect plug-ins	ID	Name	Type				Notes
@@ -130,7 +132,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	183966653	boat_engineStop	.cache\8A\{8AB58030-8821-0A36-1F40-C668EB4C4690}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\boat_engineStop		286748
 	264595052	boat_sailRetract1	.cache\47\{47C1338E-6657-3813-616B-331D4168CCFB}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailRetract\boat_sailRetract\boat_sailRetract1		274828
 	295169873	boat_sailFlapWind_loop5	.cache\2F\{2FB73DAC-4CEE-5C4A-D28A-22774F4CF37D}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState\BC_boatSailFlap_loop\boat_sailFlapWind_loop\boat_sailFlapWind_loop5		882096
-	333325837	phy_windForceBoat_loop	.cache\8A\{8A2515E3-266E-72C3-9ED9-E548BC035209}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_windForceBoat\phy_windForceBoat_loop		6144144
+	333325837	phy_windForceBoat_loop	.cache\8A\{8A2515E3-266E-72C3-9ED9-E548BC035209}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_boatWind\phy_windForceBoat_loop		6144144
 	346112390	menu_forward	.cache\56\{5658EE18-4FB4-940C-5A86-0C1B8E46F2AB}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_forward\menu_forward		36408
 	358085136	boat_sailFlapWind_loop3	.cache\09\{098F9226-4858-121E-9B3F-C43086E48218}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState\BC_boatSailFlap_loop\boat_sailFlapWind_loop\boat_sailFlapWind_loop3		705696
 	358879437	phy_windGust_02	.cache\56\{5676F1D9-4CE7-20DB-1FDE-792BC5D0E5F7}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\RC_phy_windGust\phy_windGust_02		768096
@@ -141,7 +143,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	425142125	boat_woodVibrateHeavyForward_loop	.cache\E9\{E9831BC4-64AD-1C1A-0610-C74CEB5750CD}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWood\BC_boatWoodVibration\boat_woodVibrateHeavyForward_loop		3175344
 	432980852	boat_wheelTurnRope2	.cache\09\{09B62AFF-4F68-F46C-1C4F-9806FB1B4BBD}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnRope\boat_wheelTurnRope2		66244
 	448957523	boat_sailDeployImpact	.cache\66\{665FAFA6-FDE6-246B-EBED-0D6F1EEE519F}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailDeploy\boat_sailDeployImpact		151572
-	458455823	phy_windForceSail_loop	.cache\80\{8020AE4D-468A-5B9A-F195-798841AEF646}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_windForceSail\phy_windForceSail_loop		6144144
+	458455823	phy_windForceSail_loop	.cache\80\{8020AE4D-468A-5B9A-F195-798841AEF646}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_sailWind\phy_windForceSail_loop		6144144
 	471676319	boat_sailFlap_loop2	.cache\AC\{AC45EBDE-A051-F440-D907-65495C9C0EC0}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState\BC_boatSailFlap_loop\boat_sailFlap_loop\boat_sailFlap_loop2		1411296
 	481909320	boat_throttleMoveIdle1	.cache\3E\{3EFD8C24-EE0F-D796-D6A8-AC432F4F108D}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatThrottleMove\boat_throttleMoveIdle\boat_throttleMoveIdle1		51816
 	499194111	mission_moneyGain	.cache\4B\{4B050007-2A61-AB22-D8D9-1F202B34272D}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionMoney\mission_moneyGain		177368
@@ -149,7 +151,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	508055500	boat_wheelTurnRope1	.cache\08\{08FB9BF9-738D-2BD2-BD10-AA5AAA579D58}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnRope\boat_wheelTurnRope1		66244
 	527075343	env_collisionLightImpact2	.cache\6F\{6F201366-A95C-6B5C-A1DD-B594448AA5F5}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\BC_envcollisionLightImpact\env_collisionLightImpact2\env_collisionLightImpact2		103816
 	532928830	env_collisionLightWater	.cache\E4\{E48B2B48-572A-EBB6-F45F-1B58E77FBE4C}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\BC_envcollisionLightImpact\env_collisionLightWater		231496
-	534926782	phy_sailmastWhistle_loop	.cache\E7\{E771227E-A9B2-5368-D51F-A33BC79F1BED}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_windForceWhistle\phy_sailmastWhistle_loop		6144144
+	534926782	phy_sailmastWhistle_loop	.cache\E7\{E771227E-A9B2-5368-D51F-A33BC79F1BED}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_sailWind\phy_sailmastWhistle_loop		6144144
 	541681675	env_closeMap	.cache\7B\{7BAB2F42-CEB8-F97A-025D-EA89570E7A93}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvMap\env_closeMap		175776
 	587482612	phy_windGust_03	.cache\A1\{A11A3F7D-4801-1FB6-70C4-1157E026ACAE}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\RC_phy_windGust\phy_windGust_03		1536096
 	606033276	boat_engineBubbles_loop	.cache\C8\{C873855A-4CC1-BC25-8FCE-69CE5841941B}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\BoatEngineLoops\BC_boatEngineWater\boat_engineBubbles_loop		2207828

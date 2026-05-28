@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{266F39AA-200A-99E3-3873-78DA5DAC4BB0}",
+    "Hash": "{DC587A71-84BB-ADBD-0697-E125D796FAB2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -1836,12 +1836,15 @@
       "DurationMax": "0"
      },
      {
-      "Id": "1227687800",
-      "Name": "phy_start_sailMastWhistle",
-      "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhySailMast\\phy_start_sailMastWhistle",
-      "GUID": "{978825C1-DE41-4C16-9306-10244602C536}",
+      "Id": "3002731379",
+      "Name": "phy_start_sailWind",
+      "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhySail\\phy_start_sailWind",
+      "GUID": "{D6CFEC67-FBFB-4B88-BEDC-405289E38913}",
       "DurationType": "Infinite",
       "MediaRefs": [
+       {
+        "Id": "458455823"
+       },
        {
         "Id": "534926782"
        }
@@ -1922,10 +1925,10 @@
       "DurationMax": "0"
      },
      {
-      "Id": "421419538",
-      "Name": "phy_stop_sailMastWhistle",
-      "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhySailMast\\phy_stop_sailMastWhistle",
-      "GUID": "{053AAEA8-B0B6-470D-889E-31814C68DD7C}",
+      "Id": "4258852485",
+      "Name": "phy_stop_sailWind",
+      "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhySail\\phy_stop_sailWind",
+      "GUID": "{89757C0C-9D3B-4003-AB49-E78DFD9D84DD}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -2014,10 +2017,22 @@
     ],
     "GameParameters": [
      {
+      "Id": "541499651",
+      "Name": "Phy_WindSailIntensity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Physic_GameParameter\\Phy_WindSailIntensity",
+      "GUID": "{EAA7F539-CCDF-4512-A547-80477EDB41C3}"
+     },
+     {
       "Id": "572552402",
       "Name": "Boat_ThrottleSigned",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Boat_GameParameters\\Boat_ThrottleSigned",
       "GUID": "{8093AAD1-9114-422F-B5B9-F6F317EB813B}"
+     },
+     {
+      "Id": "691629868",
+      "Name": "Phy_WindBoatIntensity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Physic_GameParameter\\Phy_WindBoatIntensity",
+      "GUID": "{1B69EE14-78B9-462D-ACA3-F9C7FAA2B67F}"
      },
      {
       "Id": "3815819945",
@@ -2028,6 +2043,6 @@
     ]
    }
   ],
-  "FileHash": "{6AA49D2A-7FCC-17F9-5A60-DECB95D403F8}"
+  "FileHash": "{4F0E24D6-BAA4-F222-303A-6BF8E21375DE}"
  }
 }

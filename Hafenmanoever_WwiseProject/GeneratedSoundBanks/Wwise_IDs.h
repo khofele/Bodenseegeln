@@ -82,7 +82,7 @@ namespace AK
         static const AkUniqueID MISSION_START_VOICELINESNPC = 3522430105U;
         static const AkUniqueID MISSION_STOP_VOICELINESNPC = 2630645085U;
         static const AkUniqueID PHY_START_BOWWATER = 2610887575U;
-        static const AkUniqueID PHY_START_SAILMASTWHISTLE = 1227687800U;
+        static const AkUniqueID PHY_START_SAILWIND = 3002731379U;
         static const AkUniqueID PHY_START_WAKEWATER = 1373022075U;
         static const AkUniqueID PHY_START_WATERDISPLACEMENT = 2223292318U;
         static const AkUniqueID PHY_START_WAVEHULL = 3237319048U;
@@ -90,7 +90,7 @@ namespace AK
         static const AkUniqueID PHY_START_WINDFORCEBOAT = 2742153359U;
         static const AkUniqueID PHY_START_WINDFORCESAIL = 1834823086U;
         static const AkUniqueID PHY_STOP_BOWWATER = 1257340305U;
-        static const AkUniqueID PHY_STOP_SAILMASTWHISTLE = 421419538U;
+        static const AkUniqueID PHY_STOP_SAILWIND = 4258852485U;
         static const AkUniqueID PHY_STOP_WAKEWATER = 3538696357U;
         static const AkUniqueID PHY_STOP_WATERDISPLACEMENT = 494378860U;
         static const AkUniqueID PHY_STOP_WAVEHULL = 3006133870U;
@@ -104,6 +104,8 @@ namespace AK
     {
         static const AkUniqueID BOAT_SAILTENSION = 3815819945U;
         static const AkUniqueID BOAT_THROTTLESIGNED = 572552402U;
+        static const AkUniqueID PHY_WINDBOATINTENSITY = 691629868U;
+        static const AkUniqueID PHY_WINDSAILINTENSITY = 541499651U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS

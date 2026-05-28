@@ -632,10 +632,10 @@
 							<ChildrenList>
 								<Event Name="phy_start_windForceBoat" ID="{843162FA-97F9-408D-B7A5-FB28C15B5A72}">
 									<ChildrenList>
-										<Action Name="" ID="{09928828-610F-4172-99DA-197F86E5AACC}" ShortID="784248723">
+										<Action Name="" ID="{AFEC7CAA-7990-4282-9317-119392DC81A7}" ShortID="375945707">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="phy_windForceBoat_loop" ID="{B2CE9C13-6112-46C8-A184-29A76478AA81}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+													<ObjectRef Name="BC_phy_boatWind" ID="{1B2C0453-D200-4CC2-804E-EBBFBE01A3B3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -643,7 +643,7 @@
 								</Event>
 								<Event Name="phy_stop_windForceBoat" ID="{C03C5E1B-64FC-4811-A255-DDF7395C5679}">
 									<ChildrenList>
-										<Action Name="" ID="{14C6E407-0B47-4C3F-913C-31F6AA205B66}" ShortID="1030718788">
+										<Action Name="" ID="{09EC6588-6BA7-4053-9E8D-8D661F13CC6B}" ShortID="177627773">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="2"/>
 												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
@@ -651,7 +651,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="phy_windForceBoat_loop" ID="{B2CE9C13-6112-46C8-A184-29A76478AA81}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+													<ObjectRef Name="BC_phy_boatWind" ID="{1B2C0453-D200-4CC2-804E-EBBFBE01A3B3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -703,30 +703,28 @@
 								<Event Name="phy_stop_waterDisplacement" ID="{EA615C67-02DA-49E3-ACDF-EE3B4A7D87C6}"/>
 							</ChildrenList>
 						</Folder>
-						<Folder Name="PhySailMast" ID="{2CA60F44-7C39-40C9-9D98-41AA097636BE}" ShortID="111232107">
+						<Folder Name="PhySail" ID="{2CA60F44-7C39-40C9-9D98-41AA097636BE}" ShortID="111232107">
 							<ChildrenList>
-								<Event Name="phy_start_sailMastWhistle" ID="{978825C1-DE41-4C16-9306-10244602C536}">
+								<Event Name="phy_start_sailWind" ID="{D6CFEC67-FBFB-4B88-BEDC-405289E38913}">
 									<ChildrenList>
-										<Action Name="" ID="{85F07046-0C86-4229-BA04-2EE4DC6D7DEA}" ShortID="225537451">
+										<Action Name="" ID="{24A1E705-B90C-407A-B432-AA0C05A162BF}" ShortID="76099075">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="phy_sailmastWhistle_loop" ID="{99375A3F-A35B-455E-82A4-473238B97271}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+													<ObjectRef Name="BC_phy_sailWind" ID="{02AFFAA9-BDD4-445A-884A-319706522A34}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="phy_stop_sailMastWhistle" ID="{053AAEA8-B0B6-470D-889E-31814C68DD7C}">
+								<Event Name="phy_stop_sailWind" ID="{89757C0C-9D3B-4003-AB49-E78DFD9D84DD}">
 									<ChildrenList>
-										<Action Name="" ID="{2C146513-FA12-45F8-9C24-177AC79410F7}" ShortID="181896433">
+										<Action Name="" ID="{15BDE4D0-AC28-4330-A7B5-489DE2336730}" ShortID="971336546">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="2"/>
-												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
-												<Property Name="FadeTime" Type="Real64" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="phy_sailmastWhistle_loop" ID="{99375A3F-A35B-455E-82A4-473238B97271}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+													<ObjectRef Name="BC_phy_sailWind" ID="{02AFFAA9-BDD4-445A-884A-319706522A34}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

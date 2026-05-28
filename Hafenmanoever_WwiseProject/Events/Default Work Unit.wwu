@@ -630,10 +630,71 @@
 						</Folder>
 						<Folder Name="PhyWind" ID="{A6201007-D5C2-4BB5-87EF-0013E117BA7C}" ShortID="327206754">
 							<ChildrenList>
-								<Event Name="phy_start_windForceBoat" ID="{843162FA-97F9-408D-B7A5-FB28C15B5A72}"/>
-								<Event Name="phy_stop_windForceBoat" ID="{C03C5E1B-64FC-4811-A255-DDF7395C5679}"/>
-								<Event Name="phy_start_windForceSail" ID="{CF87A018-2474-4339-BC0D-6C479AA2C326}"/>
-								<Event Name="phy_stop_windForceSail" ID="{414ED4EB-C7A0-4D06-AAFF-D4BA6D2C4B6B}"/>
+								<Event Name="phy_start_windForceBoat" ID="{843162FA-97F9-408D-B7A5-FB28C15B5A72}">
+									<ChildrenList>
+										<Action Name="" ID="{09928828-610F-4172-99DA-197F86E5AACC}" ShortID="784248723">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="phy_windForceBoat_loop" ID="{B2CE9C13-6112-46C8-A184-29A76478AA81}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_windForceBoat" ID="{C03C5E1B-64FC-4811-A255-DDF7395C5679}">
+									<ChildrenList>
+										<Action Name="" ID="{14C6E407-0B47-4C3F-913C-31F6AA205B66}" ShortID="1030718788">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="phy_windForceBoat_loop" ID="{B2CE9C13-6112-46C8-A184-29A76478AA81}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_start_windForceSail" ID="{CF87A018-2474-4339-BC0D-6C479AA2C326}">
+									<ChildrenList>
+										<Action Name="" ID="{5CBA0E4E-BAD5-41D4-9040-F502D882B65D}" ShortID="529787969">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="phy_windForceSail_loop" ID="{E463D97F-2128-40E7-A7FC-7EFA11F69606}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_windForceSail" ID="{414ED4EB-C7A0-4D06-AAFF-D4BA6D2C4B6B}">
+									<ChildrenList>
+										<Action Name="" ID="{0CFAD134-25AC-44FB-B295-82625BAF36C5}" ShortID="581246092">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="phy_windForceSail_loop" ID="{E463D97F-2128-40E7-A7FC-7EFA11F69606}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_windGust" ID="{6EFCCB00-47E5-4A55-B8B5-E125C4EB3364}">
+									<ChildrenList>
+										<Action Name="" ID="{7FABEAC0-C846-42FA-96AA-88540D6152B7}" ShortID="171243986">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_phy_windGust" ID="{958A97D0-C181-4C24-A9A6-B14C44D73BEE}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="PhyWater" ID="{4B330CCC-7E7B-492B-A128-6B1B2905FEB8}" ShortID="888419951">
@@ -644,8 +705,33 @@
 						</Folder>
 						<Folder Name="PhySailMast" ID="{2CA60F44-7C39-40C9-9D98-41AA097636BE}" ShortID="111232107">
 							<ChildrenList>
-								<Event Name="phy_start_sailMastWhistle" ID="{978825C1-DE41-4C16-9306-10244602C536}"/>
-								<Event Name="phy_stop_sailMastWhistle" ID="{053AAEA8-B0B6-470D-889E-31814C68DD7C}"/>
+								<Event Name="phy_start_sailMastWhistle" ID="{978825C1-DE41-4C16-9306-10244602C536}">
+									<ChildrenList>
+										<Action Name="" ID="{85F07046-0C86-4229-BA04-2EE4DC6D7DEA}" ShortID="225537451">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="phy_sailmastWhistle_loop" ID="{99375A3F-A35B-455E-82A4-473238B97271}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_sailMastWhistle" ID="{053AAEA8-B0B6-470D-889E-31814C68DD7C}">
+									<ChildrenList>
+										<Action Name="" ID="{2C146513-FA12-45F8-9C24-177AC79410F7}" ShortID="181896433">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="phy_sailmastWhistle_loop" ID="{99375A3F-A35B-455E-82A4-473238B97271}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

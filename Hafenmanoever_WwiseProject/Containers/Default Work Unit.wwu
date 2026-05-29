@@ -871,6 +871,22 @@
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
 														<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
 														<Property Name="BlendBehavior" Type="int16" Value="1"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>15</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{07656F56-A545-4D90-933E-0F9538B07AC0}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="2"/>
+																			<Property Name="Min" Type="Real64" Value="-2"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
 														<Property Name="MaxSoundPerInstance" Type="int16">
 															<ValueList>
 																<Value>3</Value>
@@ -879,11 +895,6 @@
 														<Property Name="UseMaxSoundPerInstance" Type="bool">
 															<ValueList>
 																<Value>True</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>-6</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -1390,7 +1401,7 @@
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
-														<Value>50</Value>
+														<Value>65</Value>
 													</ValueList>
 												</Property>
 												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
@@ -6148,7 +6159,7 @@
 																					</Point>
 																					<Point>
 																						<XPos>50</XPos>
-																						<YPos>-0</YPos>
+																						<YPos>0</YPos>
 																						<Flags>0</Flags>
 																					</Point>
 																					<Point>

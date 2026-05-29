@@ -104,6 +104,7 @@ namespace AK
     {
         static const AkUniqueID BOAT_SAILTENSION = 3815819945U;
         static const AkUniqueID BOAT_THROTTLESIGNED = 572552402U;
+        static const AkUniqueID PHY_WATERMOVEMENT = 3361901837U;
         static const AkUniqueID PHY_WINDBOATINTENSITY = 691629868U;
         static const AkUniqueID PHY_WINDSAILINTENSITY = 541499651U;
     } // namespace GAME_PARAMETERS

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{DC587A71-84BB-ADBD-0697-E125D796FAB2}",
+    "Hash": "{A6F285C9-C492-A548-8E72-5CE13500799E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -38,6 +38,14 @@
       "Location": "Memory",
       "ShortName": "boat_wheelTurnBearing1.wav",
       "CachePath": "8B/{8B041980-1EBA-1B2E-09C0-12B55CA24197}.wem"
+     },
+     {
+      "Id": "73170341",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_waterDisplacementSlow_loop02.wav",
+      "CachePath": "2C/{2C05DA56-2277-96A8-5290-D37CD4650F68}.wem"
      },
      {
       "Id": "85550369",
@@ -542,6 +550,14 @@
       "Location": "Memory",
       "ShortName": "mission_abort.wav",
       "CachePath": "51/{51C52651-576F-48BD-E6C3-269DBD126DD3}.wem"
+     },
+     {
+      "Id": "1021335472",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_waterDisplacementSlow_loop.wav",
+      "CachePath": "36/{3655AF4F-E368-F55C-63E9-F60CB17DFEBB}.wem"
      },
      {
       "Id": "1066911892",
@@ -1865,10 +1881,15 @@
       "Name": "phy_start_waterDisplacement",
       "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhyWater\\phy_start_waterDisplacement",
       "GUID": "{31B997D4-F878-4E1C-A256-7BF592BD04F2}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "73170341"
+       },
+       {
+        "Id": "1021335472"
+       }
+      ]
      },
      {
       "Id": "3237319048",
@@ -2035,6 +2056,12 @@
       "GUID": "{1B69EE14-78B9-462D-ACA3-F9C7FAA2B67F}"
      },
      {
+      "Id": "3361901837",
+      "Name": "Phy_WaterMovement",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Physic_GameParameter\\Phy_WaterMovement",
+      "GUID": "{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}"
+     },
+     {
       "Id": "3815819945",
       "Name": "Boat_SailTension",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Boat_GameParameters\\Boat_SailTension",
@@ -2043,6 +2070,6 @@
     ]
    }
   ],
-  "FileHash": "{4F0E24D6-BAA4-F222-303A-6BF8E21375DE}"
+  "FileHash": "{495260D4-19BE-47C0-D4AD-5A963A37F5D5}"
  }
 }

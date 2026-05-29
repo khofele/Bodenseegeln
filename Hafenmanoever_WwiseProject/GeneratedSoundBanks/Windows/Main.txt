@@ -89,6 +89,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	541499651	Phy_WindSailIntensity			\Default Work Unit\Physic_GameParameter\Phy_WindSailIntensity	
 	572552402	Boat_ThrottleSigned			\Default Work Unit\Boat_GameParameters\Boat_ThrottleSigned	
 	691629868	Phy_WindBoatIntensity			\Default Work Unit\Physic_GameParameter\Phy_WindBoatIntensity	
+	3361901837	Phy_WaterMovement			\Default Work Unit\Physic_GameParameter\Phy_WaterMovement	
 	3815819945	Boat_SailTension			\Default Work Unit\Boat_GameParameters\Boat_SailTension	
 
 Effect plug-ins	ID	Name	Type				Notes
@@ -123,6 +124,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	21747592	env_collisionLightImpact1	.cache\7B\{7BE84817-8A64-BEFE-C9FA-C1FB125A1085}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\BC_envcollisionLightImpact\env_collisionLightImpact1\env_collisionLightImpact1		37096
 	35522817	boat_wheelTurnBearing3	.cache\8C\{8C8ADCA3-9DDD-FDB5-1BE7-10CEDD135D74}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnBearing\boat_wheelTurnBearing3		52928
 	54458518	boat_wheelTurnBearing1	.cache\8B\{8B041980-1EBA-1B2E-09C0-12B55CA24197}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnBearing\boat_wheelTurnBearing1		52872
+	73170341	phy_waterDisplacementSlow_loop02	.cache\2C\{2C05DA56-2277-96A8-5290-D37CD4650F68}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\BC_phy_waterDisplacement\RC_phy_waterDisplacementSlow_loop\phy_waterDisplacementSlow_loop02		2304144
 	85550369	boat_engineStart	.cache\43\{43AA2255-607A-6FDE-72E4-7891F3B7C6BA}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\boat_engineStart		193036
 	95413247	boat_sailFlapWind_loop6	.cache\EA\{EA4708D7-F8B2-0A73-40F2-02799C6CC941}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState\BC_boatSailFlap_loop\boat_sailFlapWind_loop\boat_sailFlapWind_loop6		882096
 	108181189	env_collisionLightImpact2	.cache\AA\{AA6186BD-9D48-3437-4DC1-4DACFD777241}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\BC_envcollisionLightImpact\env_collisionLightImpact1\env_collisionLightImpact2		66688
@@ -186,6 +188,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	984283490	boat_engineForward_loop	.cache\1C\{1C3CC3F6-6ACE-4540-C98F-20263B23EB1A}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\BoatEngineLoops\BC_boatEngine_ThrottleBlend\boat_engineForward_loop		3395844
 	1005202156	menu_openMain	.cache\C3\{C3693EEA-3C7A-BAF2-DCD4-EBDF552BBF6F}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_openMain\menu_openMain		64192
 	1014404164	mission_abort	.cache\51\{51C52651-576F-48BD-E6C3-269DBD126DD3}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_abort		266100
+	1021335472	phy_waterDisplacementSlow_loop01	.cache\36\{3655AF4F-E368-F55C-63E9-F60CB17DFEBB}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\BC_phy_waterDisplacement\RC_phy_waterDisplacementSlow_loop\phy_waterDisplacementSlow_loop01		2304144
 	1066911892	env_collisionHeavyWood	.cache\93\{9358448A-630D-9B7C-CCA6-98586AC9D8F8}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\BC_envcollisionHeavyImpact\env_collisionHeavyWood		80092
 	1071268642	boat_sailFlapWind_loop	.cache\66\{666A9733-9246-5545-0D7F-D275FD691BAA}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState\BC_boatSailFlap_loop\boat_sailFlapWind_loop\boat_sailFlapWind_loop		705696
 

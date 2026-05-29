@@ -39,6 +39,12 @@
 								<Property Name="RTPCRamping" Type="int16" Value="1"/>
 							</PropertyList>
 						</GameParameter>
+						<GameParameter Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="RTPCRamping" Type="int16" Value="1"/>
+							</PropertyList>
+						</GameParameter>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

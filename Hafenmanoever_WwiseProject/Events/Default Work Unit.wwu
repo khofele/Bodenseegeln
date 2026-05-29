@@ -699,8 +699,33 @@
 						</Folder>
 						<Folder Name="PhyWater" ID="{4B330CCC-7E7B-492B-A128-6B1B2905FEB8}" ShortID="888419951">
 							<ChildrenList>
-								<Event Name="phy_start_waterDisplacement" ID="{31B997D4-F878-4E1C-A256-7BF592BD04F2}"/>
-								<Event Name="phy_stop_waterDisplacement" ID="{EA615C67-02DA-49E3-ACDF-EE3B4A7D87C6}"/>
+								<Event Name="phy_start_waterDisplacement" ID="{31B997D4-F878-4E1C-A256-7BF592BD04F2}">
+									<ChildrenList>
+										<Action Name="" ID="{93FE3ACC-F215-4CC7-96E0-58667615CDB4}" ShortID="142893108">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_waterDisplacement" ID="{E8C26237-3584-4937-8832-60EC958C4F80}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_waterDisplacement" ID="{EA615C67-02DA-49E3-ACDF-EE3B4A7D87C6}">
+									<ChildrenList>
+										<Action Name="" ID="{46AB3D6D-3606-42C9-9782-E7A110070FDA}" ShortID="925445952">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_waterDisplacement" ID="{E8C26237-3584-4937-8832-60EC958C4F80}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="PhySail" ID="{2CA60F44-7C39-40C9-9D98-41AA097636BE}" ShortID="111232107">

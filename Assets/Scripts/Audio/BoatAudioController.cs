@@ -76,6 +76,16 @@ public class BoatAudioController : MonoBehaviour
         StopEngineAudio();
     }
 
+    public void PlayMotorAudio()
+    {
+        StartEngineAudio();
+    }
+
+    public void StopMotorAudio()
+    {
+        StopEngineAudio();
+    }
+
     public void PlayThrottleIdleAudio()
     {
         m_throttleMoveIdleEvent.Post(m_boatCockpitEmitter);

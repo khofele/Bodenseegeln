@@ -14,6 +14,10 @@ namespace Quest
         [SerializeField] private float m_maxBoatSpeed = 0.5f;
         [SerializeField] private float m_visibilityDistance = 20f;
 
+        [Header("Parking")]
+        [SerializeField] private bool m_requireCorrectParking = false;
+        [SerializeField] private float m_allowedAngleTolerance = 25f;
+
         [Header("References")]
         /*[SerializeField]*/ private Rigidbody m_boatRigidbody = null;
         [SerializeField] private Transform m_boatTransform = null;
@@ -102,8 +106,9 @@ namespace Quest
 
             float _speed = m_boatRigidbody.linearVelocity.magnitude;
             bool _isSlowEnough = _speed <= m_maxBoatSpeed;
+            bool _isCorrectlyParked = IsBoatCorrectlyParked();
 
-            m_isInteractable = !m_hasBeenUsed && m_isPlayerInRange && _isSlowEnough 
+            m_isInteractable = !m_hasBeenUsed && m_isPlayerInRange && _isSlowEnough && _isCorrectlyParked
                 && QuestManager.Instance.IsQuestRunning && QuestManager.Instance.ActiveQuest == m_quest;
 
             if (m_isInteractable)
@@ -112,6 +117,27 @@ namespace Quest
             }
 
             //TODO FUTURE: && IsBoatCorrectlyParked
+        }
+
+        private bool IsBoatCorrectlyParked()
+        {
+            if (!m_requireCorrectParking)
+            {
+                return true;
+            }
+
+            if (m_boatTransform == null)
+            {
+                return false;
+            }
+
+            float _angle = Vector3.SignedAngle(transform.forward, m_boatTransform.forward, Vector3.up);
+            _angle = Mathf.Abs(_angle);
+
+            bool _isForwardCorrect = _angle <= m_allowedAngleTolerance;
+            bool _isBackwardCorrect = Mathf.Abs(_angle - 180f) <= m_allowedAngleTolerance;
+
+            return _isForwardCorrect || _isBackwardCorrect;
         }
 
         private void UpdateUI()
@@ -219,16 +245,57 @@ namespace Quest
                 return;
             }
 
+            //trigger box
             Gizmos.color = m_isInteractable ? Color.darkGreen : Color.darkOrange;
 
             BoxCollider _col = GetComponent<BoxCollider>();
-            if (_col == null)
+            if (_col != null)
+            {
+                Gizmos.matrix = transform.localToWorldMatrix;
+                Gizmos.DrawWireCube(_col.center, _col.size);
+            }
+
+            //parking direction visualization
+            if (!m_requireCorrectParking)
             {
                 return;
             }
 
-            Gizmos.matrix = transform.localToWorldMatrix;
-            Gizmos.DrawWireCube(_col.center, _col.size);
+            Gizmos.matrix = Matrix4x4.identity;
+
+            Vector3 _origin = transform.position + Vector3.up * 0.25f;
+            float _lineLength = 2f;
+
+            //forward direction
+            Vector3 _forward = transform.forward * _lineLength;
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(_origin, _origin + _forward);
+
+            //forward arrow head
+            Vector3 _arrowRight = Quaternion.Euler(0f, 150f, 0f) * transform.forward * 0.4f;
+            Vector3 _arrowLeft = Quaternion.Euler(0f, -150f, 0f) * transform.forward * 0.4f;
+
+            Gizmos.DrawLine(_origin + _forward, _origin + _forward + _arrowRight);
+            Gizmos.DrawLine(_origin + _forward, _origin + _forward + _arrowLeft);
+
+            //backward direction (valid too)
+            Vector3 _backward = -transform.forward * _lineLength;
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(_origin, _origin + _backward);
+
+            //tolerance visualization
+            Gizmos.color = Color.yellow;
+
+            Vector3 _forwardLeft = Quaternion.Euler(0f, -m_allowedAngleTolerance, 0f) * transform.forward * _lineLength;
+            Vector3 _forwardRight = Quaternion.Euler(0f, m_allowedAngleTolerance, 0f) * transform.forward * _lineLength;
+            Vector3 _backwardLeft = Quaternion.Euler(0f, 180f - m_allowedAngleTolerance, 0f) * transform.forward * _lineLength;
+            Vector3 _backwardRight = Quaternion.Euler(0f, 180f + m_allowedAngleTolerance, 0f) * transform.forward * _lineLength;
+
+            Gizmos.DrawLine(_origin, _origin + _forwardLeft);
+            Gizmos.DrawLine(_origin, _origin + _forwardRight);
+
+            Gizmos.DrawLine(_origin, _origin + _backwardLeft);
+            Gizmos.DrawLine(_origin, _origin + _backwardRight);
         }
     }
 }

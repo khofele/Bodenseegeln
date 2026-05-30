@@ -85,6 +85,26 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: 19e2e8ce85766eb4a9b09cdb1fa3ca2c, type: 3}
+      propertyPath: m_FadeMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 19e2e8ce85766eb4a9b09cdb1fa3ca2c, type: 3}
+      propertyPath: m_LODs.Array.data[0].fadeTransitionWidth
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 19e2e8ce85766eb4a9b09cdb1fa3ca2c, type: 3}
+      propertyPath: m_LODs.Array.data[1].fadeTransitionWidth
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 19e2e8ce85766eb4a9b09cdb1fa3ca2c, type: 3}
+      propertyPath: m_LODs.Array.data[2].fadeTransitionWidth
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 19e2e8ce85766eb4a9b09cdb1fa3ca2c, type: 3}
+      propertyPath: m_LODs.Array.data[3].fadeTransitionWidth
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 19e2e8ce85766eb4a9b09cdb1fa3ca2c, type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
       value: 0.3319646
       objectReference: {fileID: 0}

@@ -659,7 +659,7 @@ public class BoatController : MonoBehaviour
             m_currentFuel = 0.0f;
             m_thrustStep = 0.0f;
             Debug.LogError("TANK LEER");
-            // TODO Game Over einbauen
+            CheckCombinedLoseConditions();
             return;
         }
 
@@ -791,6 +791,31 @@ public class BoatController : MonoBehaviour
         Vector3 currentEulerAngles = transform.localEulerAngles;
         currentEulerAngles.x = 0;
         transform.localEulerAngles = currentEulerAngles;
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // LOSE CONDITIONS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private void CheckCombinedLoseConditions()
+    {
+        if((m_currentFuel <= 0.0f || m_currentHealth <= 0.0f) && m_gameManager.Money <= 0)
+        {
+            Debug.Log("Game Over!");
+            m_gameManager.SetState(GameStates.GAMEOVER);
+        }
+    }
+
+    private bool CheckMoneyLoseCondition()
+    {
+        if(m_gameManager.Money <= 0)
+        {
+            Debug.Log("Game Over!");
+            m_gameManager.SetState(GameStates.GAMEOVER);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -941,13 +966,15 @@ public class BoatController : MonoBehaviour
     {
         if(m_resetBoatAction != null && m_resetBoatAction.action.triggered == true)
         {
-            m_gameManager.DecreaseMoney(100);
-            gameObject.transform.position = new Vector3(2800.0f, 9.8f, 2700.0f); // TODO Reset-Position festlegen
-
-            //if(m_gameManager.Money < 0) {
-            // TODO Game over einbauen
-            // TODO Game Over bei keine Gesundheit und kein Geld
-            //}
+            if(CheckMoneyLoseCondition() == true)
+            {
+                return;
+            }
+            else
+            {
+                m_gameManager.DecreaseMoney(100);
+                gameObject.transform.position = new Vector3(2800.0f, 9.8f, 2700.0f); // TODO Reset-Position festlegen
+            }
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1225,11 +1252,7 @@ public class BoatController : MonoBehaviour
         // Shader-Check
         CheckBoatDrivingForward();
 
-        if(CheckZeroHealth() == true) // TODO Win-Lose-Condition
-        {
-            // TODO Game Over einbauen
-            // TODO maybe Check Game Over Methode?
-        }
+        CheckCombinedLoseConditions();
     }
 
     public void FixedUpdate()

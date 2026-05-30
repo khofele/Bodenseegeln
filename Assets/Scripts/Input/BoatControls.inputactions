@@ -205,7 +205,7 @@
                 {
                     "name": "",
                     "id": "9dfdda2d-1170-455f-b10b-98d7adfae29a",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -249,7 +249,7 @@
                 {
                     "name": "",
                     "id": "ef778219-0403-4142-ae79-ab936d98c4fa",
-                    "path": "<Keyboard>/x",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -304,7 +304,7 @@
                 {
                     "name": "negative",
                     "id": "f989958c-6543-4961-bba1-6250e44da65e",
-                    "path": "<Keyboard>/comma",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -315,7 +315,7 @@
                 {
                     "name": "positive",
                     "id": "7e6988c1-5a10-4663-9a7a-c89da6819ab1",
-                    "path": "<Keyboard>/period",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -326,7 +326,7 @@
                 {
                     "name": "",
                     "id": "377753d7-cdeb-4a67-8787-d140551ddff6",
-                    "path": "<Keyboard>/n",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -337,7 +337,7 @@
                 {
                     "name": "",
                     "id": "61ae41ca-ca9f-4e7f-899d-aa1fb97e43c4",
-                    "path": "<Keyboard>/v",
+                    "path": "<Keyboard>/b",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -425,7 +425,7 @@
                 {
                     "name": "",
                     "id": "af311bc0-0a0d-4b70-aa8b-4b66cfe5f728",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -436,11 +436,59 @@
                 {
                     "name": "",
                     "id": "63738c41-2eb2-4217-a524-adb3510e8ff0",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/u",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "PreviousUIScreen",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Camera",
+            "id": "ca182acc-9bcf-4173-9c09-dd4d4db58c34",
+            "actions": [
+                {
+                    "name": "Reset_Camera",
+                    "type": "Button",
+                    "id": "e4f93455-5071-43a0-b7b4-b1c4c12d5f2a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "cffb4976-3e2d-48ed-8211-5c0f551599d8",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5736b547-86a0-4370-873d-a1d4a5fef153",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset_Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ef6e415-b15d-4fb0-a00c-dc6e2222738f",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

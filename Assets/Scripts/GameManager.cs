@@ -18,9 +18,11 @@ public class GameManager : Manager<GameManager>
 
     private Dictionary<QuestData, float> m_questResults = new();
     private float m_averageQuestResult = 0f;
+    private int m_resetCost = 100;
 
     public GameStates CurrentState => m_currentGameState;
     public int Money => m_money;
+    public int ResetCost => m_resetCost;
 
     public void SetState(GameStates _newState)
     {
@@ -88,16 +90,11 @@ public class GameManager : Manager<GameManager>
         Debug.Log($"[GameManager] new average quest result: {m_averageQuestResult}");
     }
 
-    public void Start()
-    {
-        
-    }
-
     public void Update()
     {
         // TODO if statement später ändern je nach game over oder game won
         // TODO trigger Game Won im Questsystem
-        if(m_currentGameState == GameStates.GAMEOVER || m_currentGameState == GameStates.GAMEWON)
+        if (m_currentGameState == GameStates.GAMEOVER || m_currentGameState == GameStates.GAMEWON)
         {
             // stop game
             Time.timeScale = 0.0f;

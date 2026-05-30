@@ -1,8 +1,6 @@
 using Quest;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using WwiseEvent = AK.Wwise.Event;
-using WwiseRTPC = AK.Wwise.RTPC;
 
 public class BoatController : MonoBehaviour
 {
@@ -10,7 +8,9 @@ public class BoatController : MonoBehaviour
     private Rigidbody m_rigidbody = null;
     private bool m_isBoatDrivingForward = true; // shader input
     private bool m_isInSailMode = true;
-    private bool m_isFenderEnabled = false;
+    private bool m_isFenderEnabled = true;
+    private GameStates m_prevGameState = GameStates.SAILMODE;
+    private bool m_isForcedTow = false;
 
     // FORCE CALCULATION FIELDS
     private float m_airDensity = 1.2f; // kg/m^3
@@ -654,12 +654,11 @@ public class BoatController : MonoBehaviour
 
     private void ReduceFuel()
     {
-        if(m_currentFuel < 0.0f)
+        if(m_currentFuel <= 0.0f)
         {
             m_currentFuel = 0.0f;
             m_thrustStep = 0.0f;
-            Debug.LogError("TANK LEER");
-            CheckCombinedLoseConditions();
+            HandleFuelEmpty();
             return;
         }
 
@@ -792,29 +791,141 @@ public class BoatController : MonoBehaviour
         currentEulerAngles.x = 0;
         transform.localEulerAngles = currentEulerAngles;
     }
+
+    private void StopBoat()
+    {
+        m_rigidbody.linearVelocity = Vector3.zero;
+        m_rigidbody.angularVelocity = Vector3.zero;
+
+        BlockXRotation();
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // LOSE CONDITIONS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private void CheckCombinedLoseConditions()
+    private bool CheckEnoughMoneyResetCost()
     {
-        if((m_currentFuel <= 0.0f || m_currentHealth <= 0.0f) && m_gameManager.Money <= 0)
+        if(m_gameManager.Money < m_gameManager.ResetCost)
         {
-            Debug.Log("Game Over!");
-            m_gameManager.SetState(GameStates.GAMEOVER);
+            Debug.Log("Not enough money for reset!");
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 
-    private bool CheckMoneyLoseCondition()
+    private bool CheckZeroHealth()
     {
-        if(m_gameManager.Money <= 0)
+        if (m_currentHealth <= 0.0f)
         {
-            Debug.Log("Game Over!");
-            m_gameManager.SetState(GameStates.GAMEOVER);
             return true;
         }
         else
         {
             return false;
+        }
+    }
+
+    private bool CheckZeroFuel()
+    {
+        if(m_currentFuel <= 0.0f)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void HandleFuelEmpty()
+    {
+        if(CheckZeroFuel() == true)
+        {
+            Debug.Log("Towing needed! Fuel empty!");
+            if(CheckEnoughMoneyResetCost() == false)
+            {
+                Debug.Log("Game Over");
+                m_gameManager.SetState(GameStates.GAMEOVER);
+                return;
+            }
+            else
+            {
+                Debug.Log("Towing possible! Please press R!");
+                m_isForcedTow = true;
+                m_prevGameState = m_gameManager.CurrentState;
+                m_gameManager.SetState(GameStates.PAUSED);
+                m_boatAudioController.StopMotorAudio();
+            }
+        }
+    }
+
+    private void HandleZeroHealth()
+    {
+        if (CheckZeroHealth() == true)
+        {
+            Debug.Log("Towing needed! Zero Health!");
+            if (CheckEnoughMoneyResetCost() == false)
+            {
+                Debug.Log("Game Over");
+                m_gameManager.SetState(GameStates.GAMEOVER);
+                return;
+            }
+            else
+            {
+                Debug.Log("Towing possible! Please press R!");
+                m_isForcedTow = true;
+                m_prevGameState = m_gameManager.CurrentState;
+                m_gameManager.SetState(GameStates.PAUSED);
+            }
+        }
+    }
+
+    private void HandleReset()
+    {
+        if(CheckEnoughMoneyResetCost() == true)
+        {
+            TowBoat();
+            SetGameStateAfterTowing();
+            m_isForcedTow = false;
+        }
+        else
+        {
+            if(CheckZeroHealth() == true || CheckZeroFuel() == true)
+            {
+                Debug.Log("Game Over");
+                m_gameManager.SetState(GameStates.GAMEOVER);
+                return;
+            } 
+            else
+            {
+                Debug.Log("Not enough money for reset Screen shows up!");
+            }
+        }
+    }
+
+    private void TowBoat()
+    {
+        Debug.Log("Boat Reset");
+        m_gameManager.DecreaseMoney(m_gameManager.ResetCost);
+        gameObject.transform.position = new Vector3(2800.0f, 9.8f, 2700.0f); // TODO Reset-Position festlegen
+        m_currentHealth = m_maxHealth;
+        m_currentFuel = m_maxFuel;
+        m_rigidbody.linearVelocity = Vector3.zero;
+        m_rigidbody.angularVelocity = Vector3.zero;
+    }
+
+    private void SetGameStateAfterTowing()
+    {
+        if(m_prevGameState == GameStates.SAILMODE)
+        {
+            m_gameManager.SetState(GameStates.SAILMODE);
+        }
+        else if(m_prevGameState == GameStates.MOTORMODE)
+        {
+            m_gameManager.SetState(GameStates.MOTORMODE);
+            m_boatAudioController.PlayMotorAudio();
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -966,15 +1077,17 @@ public class BoatController : MonoBehaviour
     {
         if(m_resetBoatAction != null && m_resetBoatAction.action.triggered == true)
         {
-            if(CheckMoneyLoseCondition() == true)
+            if(m_isForcedTow == false)
             {
-                return;
+                m_prevGameState = m_gameManager.CurrentState;
+
+                if (m_prevGameState == GameStates.MOTORMODE)
+                {
+                    m_boatAudioController.StopMotorAudio();
+                }
             }
-            else
-            {
-                m_gameManager.DecreaseMoney(100);
-                gameObject.transform.position = new Vector3(2800.0f, 9.8f, 2700.0f); // TODO Reset-Position festlegen
-            }
+
+            HandleReset();
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1040,7 +1153,7 @@ public class BoatController : MonoBehaviour
         // take damage if boat is too fast and fenders are enabled
         if(m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 8.0f) // TODO threshold
         {
-            float damage = 2.0f + 5.0f * Time.fixedDeltaTime; // TODO balance damage value: base value + scaled value
+            float damage = 2.0f * Time.fixedDeltaTime;
             m_currentHealth -= damage;
             QuestManager.Instance.RegisterDamage(damage);
         }
@@ -1060,18 +1173,6 @@ public class BoatController : MonoBehaviour
     private bool CheckDamageReducedWithFenders()
     {
         if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) < 8.0f) // TODO Threshold (auch im UI-Manager balancen)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    private bool CheckZeroHealth()
-    {
-        if(m_currentHealth <= 0.0f)
         {
             return true;
         }
@@ -1232,27 +1333,36 @@ public class BoatController : MonoBehaviour
 
         m_currentFuel = m_maxFuel;
         m_currentHealth = m_maxHealth;
+        m_fender.SetActive(true);
+        m_isFenderEnabled = true;
+        m_isInSailMode = true; // TODO beim Spielstart in Sailmode gehen
     }
 
     public void Update()
     {
-        // Inputs
-        ChangeBoatMode();
-        GetSteeringInput();
-        GetMotorInput();
-        GetSelectedSail();
-        GetSailTrimInput();
-        GetFenderInput();
-        GetResetInput();
+        if(m_gameManager.CurrentState == GameStates.SAILMODE || m_gameManager.CurrentState == GameStates.MOTORMODE)
+        {
+            // Inputs
+            ChangeBoatMode();
+            GetSteeringInput();
+            GetMotorInput();
+            GetSelectedSail();
+            GetSailTrimInput();
+            GetFenderInput();
 
-        // Damage
-        CalculateFenderDamage();
-        CalculateWaveDamage();
+            // Damage
+            CalculateFenderDamage();
+            CalculateWaveDamage();
+            HandleZeroHealth();
 
-        // Shader-Check
-        CheckBoatDrivingForward();
+            // Shader-Check
+            CheckBoatDrivingForward();
+        }
 
-        CheckCombinedLoseConditions();
+        if(m_gameManager.CurrentState == GameStates.SAILMODE || m_gameManager.CurrentState == GameStates.MOTORMODE || m_gameManager.CurrentState == GameStates.PAUSED)
+        {
+            GetResetInput();
+        }
     }
 
     public void FixedUpdate()
@@ -1266,16 +1376,19 @@ public class BoatController : MonoBehaviour
 
         if(m_gameManager.CurrentState == GameStates.DIALOGMODE)
         {
-            m_rigidbody.linearVelocity = Vector3.zero;
-            m_rigidbody.angularVelocity = Vector3.zero;
+            StopBoat();
             m_rigidbody.isKinematic = true;
-            BlockXRotation();
 
             Debug.Log("DIALOG-MODE");
         }
         else
         {
             m_rigidbody.isKinematic = false;
+        }
+
+        if(m_gameManager.CurrentState == GameStates.PAUSED)
+        {
+            StopBoat();
         }
 
         if(m_gameManager.CurrentState == GameStates.MOTORMODE)

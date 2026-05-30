@@ -25,6 +25,28 @@
 						</GameParameter>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Physic_GameParameter" ID="{1B3D6A4F-12E8-46EE-9AB8-63D9A4F6FC45}" ShortID="949512701">
+					<ChildrenList>
+						<GameParameter Name="Phy_WindSailIntensity" ID="{EAA7F539-CCDF-4512-A547-80477EDB41C3}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="RTPCRamping" Type="int16" Value="1"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="Phy_WindBoatIntensity" ID="{1B69EE14-78B9-462D-ACA3-F9C7FAA2B67F}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="RTPCRamping" Type="int16" Value="1"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="RTPCRamping" Type="int16" Value="1"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

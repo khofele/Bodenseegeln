@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{9E856132-EFB8-027A-0205-6CA2CBA25A0F}",
+    "Hash": "{70B4B9E2-2272-7E7F-B24A-09DCE9DA2DE6}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -44,10 +44,28 @@
     ],
     "GameParameters": [
      {
+      "Id": "541499651",
+      "Name": "Phy_WindSailIntensity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Physic_GameParameter\\Phy_WindSailIntensity",
+      "GUID": "{EAA7F539-CCDF-4512-A547-80477EDB41C3}"
+     },
+     {
       "Id": "572552402",
       "Name": "Boat_ThrottleSigned",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Boat_GameParameters\\Boat_ThrottleSigned",
       "GUID": "{8093AAD1-9114-422F-B5B9-F6F317EB813B}"
+     },
+     {
+      "Id": "691629868",
+      "Name": "Phy_WindBoatIntensity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Physic_GameParameter\\Phy_WindBoatIntensity",
+      "GUID": "{1B69EE14-78B9-462D-ACA3-F9C7FAA2B67F}"
+     },
+     {
+      "Id": "3361901837",
+      "Name": "Phy_WaterMovement",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Physic_GameParameter\\Phy_WaterMovement",
+      "GUID": "{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}"
      },
      {
       "Id": "3815819945",
@@ -58,6 +76,6 @@
     ]
    }
   ],
-  "FileHash": "{DD53AD89-F435-F326-3434-57B43D439BD5}"
+  "FileHash": "{27DAAB34-031B-E91D-1572-C5E818B69305}"
  }
 }

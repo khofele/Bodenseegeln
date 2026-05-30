@@ -44,6 +44,7 @@ namespace Quest
         private bool m_type2ReadyToComplete = false;
         private Transform m_currentQuestTarget = null;
         private QuestState m_state = QuestState.None;
+        private bool m_pendingGameWon = false;
         
         //private float m_questStartTime;
 
@@ -65,6 +66,8 @@ namespace Quest
 
         private void Update()
         {
+            CheckPendingGameWon();
+
             if (!m_isQuestRunning)
             {
                 return;
@@ -444,8 +447,8 @@ namespace Quest
             }
 
             float _timeValue = m_timeElapsed;
-            float _damageValue = m_totalDamage + 40f; //TEMP: added value for testing stars
-            float _fuelValue = m_totalFuelUsed + 3f; //TEMP: added value for testing stars
+            float _damageValue = m_totalDamage; // + 40f; //TEMP: added value for testing
+            float _fuelValue = m_totalFuelUsed; // + 3f; //TEMP: added value for testing
 
             float _timeCircles = CalculateCircles(_timeValue, m_activeQuest.m_timeRange);
             float _damageCircles = CalculateCircles(_damageValue, m_activeQuest.m_damageRange);
@@ -474,8 +477,16 @@ namespace Quest
 
             Debug.Log($"[QuestManager] Quest finished: {m_activeQuest.QuestName}");
 
+            QuestData _completedQuest = m_activeQuest;
             m_completedQuests.Add(m_activeQuest);
             GameManager.Instance.RegisterQuestResult(m_activeQuest, _averageCircles);
+
+            if (_completedQuest.IsFinalQuest)
+            {
+                m_pendingGameWon = true;
+                Debug.Log("[QuestManager] Final quest completed");
+            }
+
             m_activeQuest = null;
             m_isQuestRunning = false;
             m_currentQuestTarget = null;
@@ -488,6 +499,27 @@ namespace Quest
             float _normalized = Mathf.InverseLerp(_range.zeroCircleValue, _range.fiveCircleValue, _value);
 
             return Mathf.Clamp01(_normalized) * 5f;
+        }
+
+        private void CheckPendingGameWon()
+        {
+            if (!m_pendingGameWon)
+            {
+                return;
+            }
+
+            GameStates _state = GameManager.Instance.CurrentState;
+
+            if (_state != GameStates.MOTORMODE && _state != GameStates.SAILMODE)
+            {
+                return;
+            }
+
+            m_pendingGameWon = false;
+
+            Debug.Log("[QuestManager] Final quet finished -> GAME WON");
+
+            GameManager.Instance.SetState(GameStates.GAMEWON);
         }
 
         private void ShowStepNotification()

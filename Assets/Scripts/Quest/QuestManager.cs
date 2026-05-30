@@ -1,6 +1,7 @@
 using Dialogue;
 using System.Collections.Generic;
 using UnityEngine;
+using Dialogue;
 
 namespace Quest
 {
@@ -17,15 +18,16 @@ namespace Quest
     {
         public QuestData Quest;
 
-        public int TimeStars;
-        public int DamageStars;
-        public int FuelStars;
+        public float TimeCircles;
+        public float DamageCircles;
+        public float FuelCircles;
+
+        public float AverageCircles;
 
         public float TimeValue;
         public float DamageValue;
         public float FuelValue;
 
-        public int AverageStars;
         public int MoneyReward;
     }
 
@@ -33,10 +35,14 @@ namespace Quest
     {
         [Header("References")]
         [SerializeField] private QuestResultUI m_questResultUI = null;
+        [SerializeField] private NotificationTextUI m_notificationTextUI = null;
+
         private QuestData m_activeQuest = null;
         private QuestData m_pendingQuest = null;
         private bool m_isQuestRunning = false;
         private int m_currentQuestStep = 0;
+        private bool m_type2ReadyToComplete = false;
+        private Transform m_currentQuestTarget = null;
         private QuestState m_state = QuestState.None;
         
         //private float m_questStartTime;
@@ -45,8 +51,8 @@ namespace Quest
         private float m_timeElapsed;
         private float m_totalDamage;
         private float m_totalFuelUsed;
-        private float m_lastBoatHealth; //for delta tracking
-        private float m_lastFuel; //for delta tracking
+        //private float m_lastBoatHealth; //for delta tracking
+        //private float m_lastFuel; //for delta tracking
 
         private HashSet<QuestData> m_completedQuests = new();
 
@@ -73,6 +79,131 @@ namespace Quest
             m_timeElapsed += Time.deltaTime;
         }
 
+        internal float GetMissionTime()
+        {
+            return m_timeElapsed;
+        }
+
+        internal Transform GetCurrentQuestTarget()
+        {
+            return m_currentQuestTarget;
+            //if (!m_isQuestRunning || m_activeQuest == null)
+            //{
+            //    return null;
+            //}
+
+            //switch (m_activeQuest.QuestType)
+            //{
+            //    case QuestType.Type1_DialogueOtherNPC:
+            //    case QuestType.Type2_DialogueSameNPC:
+            //    case QuestType.Type3_DirectCompletion:
+            //        return GetQuestInteractionTarget();
+            //    case QuestType.Type4_MultiStep:
+            //        if (CanCompleteQuest(m_activeQuest))
+            //        {
+            //            return GetQuestGiverTarget();
+            //        }
+            //        return GetQuestInteractionTarget();
+            //    default:
+            //        return null;
+            //}
+        }
+
+        private void RefreshQuestTarget()
+        {
+            m_currentQuestTarget = null;
+
+            if (!m_isQuestRunning || m_activeQuest == null)
+            {
+                return;
+            }
+
+            switch (m_activeQuest.QuestType)
+            {
+                case QuestType.Type1_DialogueOtherNPC:
+                case QuestType.Type2_DialogueSameNPC:
+                case QuestType.Type3_DirectCompletion:
+                    m_currentQuestTarget = GetQuestInteractionTarget();
+                    break;
+                case QuestType.Type4_MultiStep:
+                    if (CanCompleteQuest(m_activeQuest))
+                    {
+                        m_currentQuestTarget = GetQuestGiverTarget();
+                    }
+                    else
+                    {
+                        m_currentQuestTarget = GetNextIncompleteQuestInteractionTarget();
+                    }
+                    break;
+            }
+        }
+
+        private Transform GetQuestInteractionTarget()
+        {
+            QuestInteraction[] _interactions = FindObjectsByType<QuestInteraction>(FindObjectsSortMode.None);
+
+            for (int i = 0; i < _interactions.Length; i++)
+            {
+                if (_interactions[i] == null)
+                {
+                    continue;
+                }
+
+                if (_interactions[i].Quest == m_activeQuest)
+                {
+                    return _interactions[i].transform;
+                }
+            }
+
+            return null;
+        }
+
+        private Transform GetNextIncompleteQuestInteractionTarget()
+        {
+            QuestInteraction[] _interactions = FindObjectsByType<QuestInteraction>(FindObjectsSortMode.None);
+
+            for (int i = 0; i < _interactions.Length; i++)
+            {
+                if (_interactions[i] == null)
+                {
+                    continue;
+                }
+
+                if (_interactions[i].Quest != m_activeQuest)
+                {
+                    continue;
+                }
+
+                if (_interactions[i].HasBeenUsed)
+                {
+                    continue;
+                }
+
+                return _interactions[i].transform;
+            }
+
+            return null;
+        }
+
+        private Transform GetQuestGiverTarget()
+        {
+            NPCInteraction[] _interactions = FindObjectsByType<NPCInteraction>(FindObjectsSortMode.None);
+
+            for (int i = 0; i < _interactions.Length; i++)
+            {
+                if (_interactions[i] == null)
+                {
+                    continue;
+                }
+
+                if (_interactions[i].NPC == m_activeQuest.QuestGiverNPC)
+                {
+                    return _interactions[i].transform;
+                }
+            }
+
+            return null;
+        }
 
         //call this as "QuestManager.Instance.RegisterDamage(damage);" where the damage is handled
         internal void RegisterDamage(float _damageAmount)
@@ -165,36 +296,22 @@ namespace Quest
             m_isQuestRunning = true;
             m_state = QuestState.Active;
             m_currentQuestStep = 0;
+            m_type2ReadyToComplete = false;
 
-            //m_questStartTime = Time.time;
+            RefreshQuestTarget();
 
             //reset tracking
             m_timeElapsed = 0f;
             m_totalDamage = 0f;
             m_totalFuelUsed = 0f;
-            //TEMP: replace once real system exist
-            m_lastBoatHealth = 100f;
-            m_lastFuel = 100f;
+            ////TEMP: replace once real system exist
+            //m_lastBoatHealth = 100f;
+            //m_lastFuel = 100f;
 
             Debug.Log($"[QuestManager] Quest started: {_quest.QuestName}");
         }
 
-        //internal void CompleteQuest()
-        //{
-        //    if (m_activeQuest == null || !m_isQuestRunning)
-        //    {
-        //        Debug.LogWarning("[QuestManager] No active quest to complete");
-        //        return;
-        //    }
-
-        //    Debug.Log($"[QuestManager] Quest completed: {m_activeQuest.QuestName}");
-
-        //    m_activeQuest = null;
-        //    m_isQuestRunning = false;
-        //    m_state = QuestState.Completed;
-        //}
-
-        internal void HandleQuestInteraction(QuestData _quest)
+        internal void HandleQuestInteraction(QuestData _quest, QuestInteraction _interaction)
         {
             if (m_activeQuest != _quest)
             {
@@ -216,7 +333,7 @@ namespace Quest
                     HandleType3_DirectCompletion();
                     break;
                 case QuestType.Type4_MultiStep:
-                    HandleType4_MultiStep();
+                    HandleType4_MultiStep(_interaction);
                     break;
                 default:
                     Debug.LogWarning("[QuestManager] Quest type not implemented yet");
@@ -247,6 +364,10 @@ namespace Quest
                 return;
             }
 
+            m_type2ReadyToComplete = true;
+            RefreshQuestTarget();
+            Debug.Log("[QuestManager] Type 2 set to QuestReadyToComplete");
+
             DialogueManager.Instance.StartDialogue(m_activeQuest.QuestGiverNPC);
         }
 
@@ -257,24 +378,47 @@ namespace Quest
             ShowResultUI(_result);
         }
 
-        private void HandleType4_MultiStep()
+        private void HandleType4_MultiStep(QuestInteraction _interaction)
         {
             Debug.Log("[QuestManager] TYPE 4: Step interaction");
 
-            m_currentQuestStep++;
+            if (_interaction == null)
+            {
+                Debug.LogWarning("[QuestManager] NULL interaction");
+                return;
+            }
 
-            Debug.Log($"[QuestManager] Quest step progressed: {m_currentQuestStep}");
+            _interaction.MarkAsCompleted();
+
+            m_currentQuestStep++;
+            RefreshQuestTarget();
+            ShowStepNotification();
+
+            Debug.Log($"[QuestManager] Quest step progressed: {m_currentQuestStep}/{m_activeQuest.QuestSteps}");
 
             if (m_currentQuestStep >= m_activeQuest.QuestSteps)
             {
+                RefreshQuestTarget();
                 Debug.Log("[QuestManager] TYPE 4: Final step reached -> go to quest giver NPC");
             }
         }
 
-        //only temporarly -> will be changed once type 4 gets handled correctly
-        internal bool CanCompleteType4()
+        internal bool CanCompleteQuest(QuestData _quest)
         {
-            return m_currentQuestStep >= m_activeQuest.QuestSteps;
+            if (m_activeQuest != _quest)
+            {
+                return false;
+            }
+
+            switch (_quest.QuestType)
+            {
+                case QuestType.Type4_MultiStep:
+                    return m_currentQuestStep >= m_activeQuest.QuestSteps;
+                case QuestType.Type2_DialogueSameNPC:
+                    return m_type2ReadyToComplete;
+                default:
+                    return false;
+            }
         }
 
         internal void CompleteQuestFromDialogue()
@@ -303,84 +447,73 @@ namespace Quest
             float _damageValue = m_totalDamage + 40f; //TEMP: added value for testing stars
             float _fuelValue = m_totalFuelUsed + 3f; //TEMP: added value for testing stars
 
-            int _timeStars = CalculateStars(_timeValue, m_activeQuest.m_timeThresholds, true);
-            int _damageStars = CalculateStars(_damageValue, m_activeQuest.m_damageThresholds, true);
-            int _fuelStars = CalculateStars(_fuelValue, m_activeQuest.m_fuelThresholds, true);
+            float _timeCircles = CalculateCircles(_timeValue, m_activeQuest.m_timeRange);
+            float _damageCircles = CalculateCircles(_damageValue, m_activeQuest.m_damageRange);
+            float _fuelCircles = CalculateCircles(_fuelValue, m_activeQuest.m_fuelRange);
 
-            int _averageStars = Mathf.RoundToInt((_timeStars + _damageStars + _fuelStars) / 3f);
-            int _money = _averageStars switch
-            {
-                3 => m_activeQuest.m_moneyRewards.threeStars,
-                2 => m_activeQuest.m_moneyRewards.twoStars,
-                1 => m_activeQuest.m_moneyRewards.oneStar,
-                _ => m_activeQuest.m_moneyRewards.zeroStars
-            };
+            float _averageCircles = (_timeCircles + _damageCircles + _fuelCircles) / 3f;
+            float _moneyNormalized = _averageCircles / 5f;
+            int _money = Mathf.RoundToInt(Mathf.Lerp(m_activeQuest.m_moneyRange.zeroCircleValue, m_activeQuest.m_moneyRange.fiveCircleValue, _moneyNormalized));
 
             QuestResult _result = new QuestResult
             {
                 Quest = m_activeQuest,
                 
-                TimeStars = _timeStars,
-                DamageStars = _damageStars,
-                FuelStars = _fuelStars,
+                TimeCircles = _timeCircles,
+                DamageCircles = _damageCircles,
+                FuelCircles = _fuelCircles,
+
+                AverageCircles = _averageCircles,
 
                 TimeValue = _timeValue,
                 DamageValue = _damageValue,
                 FuelValue = _fuelValue,
 
-                AverageStars = _averageStars,
                 MoneyReward = _money
             };
 
             Debug.Log($"[QuestManager] Quest finished: {m_activeQuest.QuestName}");
 
             m_completedQuests.Add(m_activeQuest);
+            GameManager.Instance.RegisterQuestResult(m_activeQuest, _averageCircles);
             m_activeQuest = null;
             m_isQuestRunning = false;
+            m_currentQuestTarget = null;
 
             return _result;
         }
 
-        private int CalculateStars(float _value, StarThresholds _thresholds, bool _isLowerBetter = true)
+        private float CalculateCircles(float _value, RewardRange _range)
         {
-            if (_isLowerBetter)
+            float _normalized = Mathf.InverseLerp(_range.zeroCircleValue, _range.fiveCircleValue, _value);
+
+            return Mathf.Clamp01(_normalized) * 5f;
+        }
+
+        private void ShowStepNotification()
+        {
+            if (m_notificationTextUI == null)
             {
-                if (_value <= _thresholds.threeStars)
-                {
-                    return 3;
-                }
-
-                if (_value <= _thresholds.twoStars)
-                {
-                    return 2;
-                }
-
-                if (_value <= _thresholds.oneStar)
-                {
-                    return 1;
-                }
-
-                return 0;
+                return;
             }
-            else
+
+            if (m_activeQuest == null)
             {
-                if (_value >= _thresholds.threeStars)
-                {
-                    return 3;
-                }
-
-                if (_value >= _thresholds.twoStars)
-                {
-                    return 2;
-                }
-
-                if (_value >= _thresholds.oneStar)
-                {
-                    return 1;
-                }
-
-                return 0;
+                return;
             }
+
+            int _stepIndex = m_currentQuestStep - 1;
+
+            if (_stepIndex < 0 || _stepIndex >= m_activeQuest.StepTexts.Count)
+            {
+                Debug.LogWarning("[QuestManager] missing step text");
+                return;
+            }
+
+            string _text = m_activeQuest.StepTexts[_stepIndex].m_text;
+            Debug.Log($"!!![QuestManager] text = {_text}");
+            Debug.Log($"!!![QuestManager] jetzt call notificationTextUI.Show");
+            m_notificationTextUI.Show(_text);
         }
 
         private void ShowResultUI(QuestResult _result)

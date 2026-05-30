@@ -1,4 +1,5 @@
 using Quest;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,7 +16,6 @@ public class BoatController : MonoBehaviour
     // FORCE CALCULATION FIELDS
     private float m_airDensity = 1.2f; // kg/m^3
     private float m_waterDensity = 1000.0f; // kg/m^3
-    private Vector3 m_apparentWind = Vector3.zero;
     private float m_boatSideSize = 17.0f; // m^2
     private float m_boatFrontSize = 4.0f; // m^2
     private float m_keelSize = 3.0f; // m^2
@@ -193,15 +193,15 @@ public class BoatController : MonoBehaviour
         return lerpedIndex;
     }
 
-    private Vector3 CalculateApprentWind()
+    private Vector3 CalculateApparentWind()
     {
-        m_apparentWind = m_windController.TrueWind - m_rigidbody.linearVelocity;
-        return m_apparentWind;
+        Vector3 apparentWind = m_windController.TrueWind - m_rigidbody.linearVelocity;
+        return apparentWind;
     }
 
     private Vector3 CalculateSailForce(GameObject sail, float sailSize)
     {
-        Vector3 apparentWind = CalculateApprentWind();
+        Vector3 apparentWind = CalculateApparentWind();
         float apparentWindSpeed = apparentWind.magnitude * apparentWind.magnitude;
 
         // No sail force if there is barely any wind
@@ -298,7 +298,7 @@ public class BoatController : MonoBehaviour
         // apply lift force
         m_rigidbody.AddForce(transform.forward * Vector3.Dot(totalSailForce, transform.forward), ForceMode.Force);
 
-        float angleToWind = Vector3.Angle(transform.forward, -CalculateApprentWind().normalized);
+        float angleToWind = Vector3.Angle(transform.forward, -CalculateApparentWind().normalized);
 
         // Heel Factor = Krängung
         float heelIntensity = 0.0f;
@@ -348,7 +348,7 @@ public class BoatController : MonoBehaviour
             Debug.Log("Current Main Sail Angle " + m_currentMainSailAngle + " Current Front Sail Angle " + m_currentFrontSailAngle);
 
 
-            Vector3 apparentWind = CalculateApprentWind();
+            Vector3 apparentWind = CalculateApparentWind();
 
             // do nothing if there's almost no apparent wind speed
             if (apparentWind.sqrMagnitude < 0.01f)
@@ -541,7 +541,7 @@ public class BoatController : MonoBehaviour
 
     private void CalculateWindOnHull()
     {
-        Vector3 apparentWind = CalculateApprentWind();
+        Vector3 apparentWind = CalculateApparentWind();
         apparentWind.y = 0.0f;
 
         if(apparentWind.sqrMagnitude < 0.01f)
@@ -798,6 +798,20 @@ public class BoatController : MonoBehaviour
         m_rigidbody.angularVelocity = Vector3.zero;
 
         BlockXRotation();
+    }
+
+    private float CalculateWindAngle()
+    {
+        float angle = 0.0f;
+
+        angle = Vector3.SignedAngle(gameObject.transform.forward, CalculateApparentWind(), Vector3.up);
+
+        if (angle < 0.0f)
+        {
+            angle += 360.0f;
+        }
+
+        return angle;
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1103,7 +1117,7 @@ public class BoatController : MonoBehaviour
         float speedImpact = Mathf.Clamp01(m_rigidbody.linearVelocity.magnitude);
 
         // damage value based on collision angle and speed
-        float damageValue = 2.0f + 15.0f * angleImpact * speedImpact; // TODO balance damage value: base value + scaled value
+        float damageValue = 2.0f + 15.0f * angleImpact * speedImpact;
 
         if (CheckDamageReducedWithFenders() == true)
         {
@@ -1151,7 +1165,7 @@ public class BoatController : MonoBehaviour
     private void CalculateFenderDamage()
     {
         // take damage if boat is too fast and fenders are enabled
-        if(m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 8.0f) // TODO threshold
+        if(m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 10.0f)
         {
             float damage = 2.0f * Time.fixedDeltaTime;
             m_currentHealth -= damage;
@@ -1162,9 +1176,9 @@ public class BoatController : MonoBehaviour
     private void CalculateWaveDamage()
     {
         // take damage if boat is too fast --> waves are too high
-        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 18.0f) // TODO threshold
+        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 14.0f)
         {
-            float damage = 0.5f + 5.0f * Time.fixedDeltaTime; // TODO balance damage value: base value + scaled value
+            float damage = 4.0f * Time.fixedDeltaTime;
             m_currentHealth -= damage;
             QuestManager.Instance.RegisterDamage(damage);
         }
@@ -1172,7 +1186,7 @@ public class BoatController : MonoBehaviour
 
     private bool CheckDamageReducedWithFenders()
     {
-        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) < 8.0f) // TODO Threshold (auch im UI-Manager balancen)
+        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) < 8.0f)
         {
             return true;
         }
@@ -1357,6 +1371,9 @@ public class BoatController : MonoBehaviour
 
             // Shader-Check
             CheckBoatDrivingForward();
+
+            // Windcontroller Values
+            m_windController.UpdateBoatForward(gameObject.transform.forward);
         }
 
         if(m_gameManager.CurrentState == GameStates.SAILMODE || m_gameManager.CurrentState == GameStates.MOTORMODE || m_gameManager.CurrentState == GameStates.PAUSED)

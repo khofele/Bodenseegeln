@@ -21,29 +21,68 @@ public class WindController : MonoBehaviour
     private float m_transitionTimer = 0.0f; // timer for wind transition
     private float m_transitionDuration = 2.0f; // duration of wind transition
     private bool m_isTransitioning = false;
+    private const int m_maxRerolls = 3;
+
+    // BOAT VALUES
+    private Vector3 m_boatForwardVector = Vector3.zero;
 
     public Vector3 TrueWind
     {
         get { return m_trueWind; }
     }
 
-    private void ChangeWindVector()
+    private void ChangeWindDirection()
+    {
+        int rerollCounter = 0;
+
+        while (rerollCounter < m_maxRerolls)
+        {
+            // Timemodifier --> the smaller the longer the wind comes from the same-ish direction --> higher value = wind rotates a lot more, hectic changes
+            float windAngleNoise = Mathf.PerlinNoise(Time.time * 0.05f + rerollCounter * 10.0f, 0.0f);
+
+            // map noise value (0-1) to -180 - 180
+            // interpolate between max angles
+            float randomWindAngle = Mathf.Lerp(-180.0f, 180.0f, windAngleNoise * 1.5f);
+
+            // potential next target wind direction
+            Vector3 potentialWindDirection = Quaternion.Euler(0, randomWindAngle, 0.0f) * Vector3.forward;
+            potentialWindDirection.Normalize();
+
+            // check if valid wind was found
+            if (IsValidWindFound(potentialWindDirection) == true)
+            {
+                StartWindChange(potentialWindDirection);
+                return;
+            }
+
+            rerollCounter++;
+        }
+
+        // fail save
+        StartWindChange(Vector3.forward);
+    }
+
+    private bool IsValidWindFound(Vector3 windDirection)
+    {
+        float angle = Vector3.SignedAngle(m_boatForwardVector, windDirection, Vector3.up);
+
+        // angle from -37.5° to 37.5° = dead zone --> deadzone of 75°
+        if (Mathf.Abs(angle) < 37.5f)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    private void StartWindChange(Vector3 potentialWindDirection)
     {
         // save current wind values
         m_startWindDirection = m_currentWindDirection;
         m_startWindStrength = m_trueWind.magnitude;
 
-        // Timemodifier --> the smaller the longer the wind comes from the same-ish direction --> higher value = wind rotates a lot more, hectic changes
-        float windAngleNoise = Mathf.PerlinNoise(Time.time * 0.05f, 0.0f);
-
-        // map noise value (0-1) to -180 - 180
-        // interpolate between max angles
-        float randomWindAngle = Mathf.Lerp(-180.0f, 180.0f, windAngleNoise * 1.5f);
-
         // set target wind direction
-        m_targetWindDirection = Quaternion.Euler(0.0f, randomWindAngle, 0.0f) * Vector3.forward;
-
-        m_targetWindDirection.Normalize();
+        m_targetWindDirection = potentialWindDirection;
 
         // 100.0f as offset --> different value than wind angle noise needed! otherwise perlin would return almost the same value as the wind angle
         float windStrengthNoise = Mathf.PerlinNoise(Time.time * 2.0f + 100.0f, 0.0f);
@@ -52,8 +91,8 @@ public class WindController : MonoBehaviour
         m_targetWindStrength = m_baseWindStrength + Mathf.Lerp(-1.0f, 15.0f, windStrengthNoise);
 
         // randomize duration before wind direction change takes place
-        m_stabilityDuration = Random.Range(10.0f, 25.0f);
-
+        m_stabilityDuration = Random.Range(20.0f, 45.0f);
+        
         // start wind transition
         m_transitionTimer = 0.0f;
         m_isTransitioning = true;
@@ -95,10 +134,15 @@ public class WindController : MonoBehaviour
         m_trueWind = m_currentWindDirection * currentStrength;
     }
 
+    public void UpdateBoatForward(Vector3 vectorForward)
+    {
+        m_boatForwardVector = vectorForward;
+    }
+
     public void Start()
     {
         m_trueWind = m_currentWindDirection * m_baseWindStrength;
-        ChangeWindVector();
+        ChangeWindDirection();
     }
 
     public void Update()
@@ -106,9 +150,9 @@ public class WindController : MonoBehaviour
         m_timerValue += Time.deltaTime;
 
         // check if wind change is due
-        if (m_timerValue >= m_stabilityDuration)
+        if (m_isTransitioning == false && m_timerValue >= m_stabilityDuration)
         {
-            ChangeWindVector();
+            ChangeWindDirection();
             m_timerValue = 0.0f;
         }
 

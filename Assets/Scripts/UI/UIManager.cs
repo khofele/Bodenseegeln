@@ -46,12 +46,12 @@ public class UIManager : Manager<UIManager>
 
     public bool CheckFuelLevel()
     {
-        return m_boatController.CurrentFuel < (m_boatController.MaxFuel * 0.2f); // TODO balance Threshold
+        return m_boatController.CurrentFuel < (m_boatController.MaxFuel * 0.2f);
     }
 
     public bool CheckBoathHealth()
     {
-        return m_boatController.CurrentHealth < (m_boatController.MaxHealth * 0.2f); // TODO balance Threshold
+        return m_boatController.CurrentHealth < (m_boatController.MaxHealth * 0.2f);
     }
 
     public float GetMainSailTrim()
@@ -76,7 +76,7 @@ public class UIManager : Manager<UIManager>
 
     public bool CheckFenderAlarm()
     {
-        if(m_boatController.IsFenderEnabled == true && (m_boatController.transform.GetComponent<Rigidbody>().linearVelocity.magnitude/ 0.514444f) >= 8.0f) // TODO speed threshold might need to be balanced
+        if(m_boatController.IsFenderEnabled == true && (m_boatController.transform.GetComponent<Rigidbody>().linearVelocity.magnitude/ 0.514444f) >= 10.0f)
         {
             return true;
         }

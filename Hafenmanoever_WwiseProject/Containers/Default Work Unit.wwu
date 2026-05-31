@@ -7406,6 +7406,768 @@
 												</BlendTrack>
 											</BlendTrackList>
 										</BlendContainer>
+										<BlendContainer Name="BC_phy_waterDisplacementSlow" ID="{26114ACC-CB7C-4A9F-8A47-C4660D76174F}" ShortID="333971505">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="BlendBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{5D0A41BF-797E-4D7C-A9BD-337B3C6E52DF}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="RC_phy_waterDisplacementSlow_loop" ID="{4CBE4E00-7FC7-4B02-9974-46B46589DD55}" ShortID="633606936">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>10</Value>
+															</ValueList>
+														</Property>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="OverrideEffect" Type="bool" Value="True"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-800</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{AE1AB326-670A-49FB-AFF2-9415CA380ED6}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="50"/>
+																			<Property Name="Min" Type="Real64" Value="-100"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
+														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="phy_waterDisplacementSlow_loop01" ID="{9FF589B2-C444-4E77-8FA4-3191A1235A9A}" ShortID="844687246">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+																<Property Name="LoopCount" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{5800E879-C18D-48A3-AE39-F04FE35DF0D1}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-1"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_waterDisplacementSlow_loop" ID="{34047F0F-77CB-45DE-9BDC-FD26FB14A98D}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="1031.25"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.21378"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.4409"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="2.01782"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="11.03786"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_waterDisplacementSlow_loop.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1021335472"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{12B6FC40-3CC1-45BD-90DC-F78201E169D2}" ShortID="963617471">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="PhyWaterDisplacementSlow_EQ" ID="{6AC1177E-2311-4F4C-B56E-155337C75DF0}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																	<EffectSlot Name="" ID="{39209A91-A63F-4F60-ABED-9544060BE544}" ShortID="84473526">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																				<ObjectRef Name="PhyWaterDisplacementSlow_Compressor" ID="{438A1F0C-ACC2-425C-A1CA-AADF7B84761C}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_waterDisplacementSlow_loop" ID="{34047F0F-77CB-45DE-9BDC-FD26FB14A98D}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="phy_waterDisplacementSlow_loop02" ID="{2EC775AA-8D44-45A2-AC0E-DD5800DD961C}" ShortID="290661250">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+																<Property Name="LoopCount" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{20F1BBD5-820F-4CC4-B215-0B9CCF946FC2}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-1"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_waterDisplacementSlow_loop02" ID="{54D63457-B6AB-4EAE-B547-4248AB7592B7}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="1375"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.44091"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.40082"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="0.93541"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="10.08909"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_waterDisplacementSlow_loop02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="73170341"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_waterDisplacementSlow_loop02" ID="{54D63457-B6AB-4EAE-B547-4248AB7592B7}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{A02468D6-482C-4CF9-B698-D2B590E0E553}" ShortID="594065935">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyWaterDisplacementSlow_EQ" ID="{6AC1177E-2311-4F4C-B56E-155337C75DF0}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+															<EffectSlot Name="" ID="{54C47273-5EC1-4E58-8129-972126A96AB5}" ShortID="774271979">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																		<ObjectRef Name="PhyWaterDisplacementSlow_Compressor" ID="{438A1F0C-ACC2-425C-A1CA-AADF7B84761C}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="RC_phy_waterDisplacementSlowBody_loop" ID="{C3FC5BA9-E821-4689-A082-A2D624F99A4E}" ShortID="1015529561">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>35</Value>
+															</ValueList>
+														</Property>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="OverrideEffect" Type="bool" Value="True"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-1100</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{C49CE4BF-2C56-4A7E-88D4-F4A1542BA2F5}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="50"/>
+																			<Property Name="Min" Type="Real64" Value="-100"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
+														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="phy_waterDisplacementSlow_loop01" ID="{6DBA36B1-4C37-43AE-BF18-4AB78436F2D3}" ShortID="545589401">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+																<Property Name="LoopCount" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{5263449D-9575-44F9-BC37-890A93519A68}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-1"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_waterDisplacementSlow_loop" ID="{ABF2B879-B7E4-4B66-B060-8E08967773B1}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="1031.25"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.21378"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.4409"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="2.01782"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="11.03786"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_waterDisplacementSlow_loop.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1021335472"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{FEDFD6E6-E20A-4EEA-B88C-EFC27A771B39}" ShortID="705551683">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="PhyWaterDisplacementSlow_EQ" ID="{6AC1177E-2311-4F4C-B56E-155337C75DF0}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																	<EffectSlot Name="" ID="{0B29DE3B-FDE3-48D4-A2CB-1AC4046224FC}" ShortID="326711351">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																				<ObjectRef Name="PhyWaterDisplacementSlow_Compressor" ID="{438A1F0C-ACC2-425C-A1CA-AADF7B84761C}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_waterDisplacementSlow_loop" ID="{ABF2B879-B7E4-4B66-B060-8E08967773B1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="phy_waterDisplacementSlow_loop02" ID="{7A0F1985-B45F-4DFB-B510-F393E5585250}" ShortID="905082544">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+																<Property Name="LoopCount" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{E275C9EA-1DD5-475E-978F-AC46DD64771D}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-1"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_waterDisplacementSlow_loop02" ID="{93314F94-A834-4F0B-B97A-64E3EF0F787A}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="1375"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.44091"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.40082"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="0.93541"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="10.08909"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_waterDisplacementSlow_loop02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="73170341"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_waterDisplacementSlow_loop02" ID="{93314F94-A834-4F0B-B97A-64E3EF0F787A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{704F00F0-00BF-4734-86F5-98C458C4B918}" ShortID="442547375">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyWaterDisplacementSlowLayer_EQ" ID="{0A0929DC-2B16-4696-876E-AAD7B8F51B55}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+															<EffectSlot Name="" ID="{4C8A1169-30AB-4BD1-9D7B-5D28D16F9A2A}" ShortID="990118931">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																		<ObjectRef Name="PhyWaterDisplacementSlow_Compressor" ID="{438A1F0C-ACC2-425C-A1CA-AADF7B84761C}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+												</RandomSequenceContainer>
+											</ChildrenList>
+										</BlendContainer>
+										<BlendContainer Name="BC_phy_waterDisplacementFast" ID="{1652AA73-1DFD-4065-86E1-7EB72779DF3D}" ShortID="274905418">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="BlendBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{BEB1725F-8A71-4157-84A6-384516E5B892}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="RC_phy_waterDisplacementFast_loop" ID="{A5C18D1B-83B0-45F6-B2B6-C61FEEF8279B}" ShortID="702475815">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>10</Value>
+															</ValueList>
+														</Property>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="OverrideEffect" Type="bool" Value="True"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-300</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{4542CA45-CAC8-4C6E-93C7-86DEF1F712AB}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="50"/>
+																			<Property Name="Min" Type="Real64" Value="-100"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
+														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="phy_waterDisplacementFast_loop01" ID="{D15E54A3-300D-40A6-B1FB-4CD5FEBFF4B0}" ShortID="385961823">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+																<Property Name="LoopCount" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{A9454567-548C-4BB8-8BBB-2848FE54F1D7}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="1"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_waterDisplacementFast_loop01" ID="{8865D5DF-C073-40CD-A16F-5B03694E0069}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="812.5"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.25283"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.48035"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="3.85531"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="11.51949"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="3.40754"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_waterDisplacementFast_loop01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="79893045"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_waterDisplacementFast_loop01" ID="{8865D5DF-C073-40CD-A16F-5B03694E0069}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="phy_waterDisplacementFast_loop02" ID="{41D55B91-E6E5-4D17-B2A1-93F861557E5A}" ShortID="763271069">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+																<Property Name="LoopCount" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{96A2E24A-89F0-4708-8066-315A84AB4040}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="2"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_waterDisplacementFast_loop02" ID="{416616C9-BDF7-455D-B910-FCC622D6C5B5}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="1000"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.31603"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.42977"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="4.04636"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="11.03899"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="3.53015"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_waterDisplacementFast_loop02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="132439354"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_waterDisplacementFast_loop02" ID="{416616C9-BDF7-455D-B910-FCC622D6C5B5}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{BCAB15CA-4B36-4B91-9B06-0CB0DBFCA4C3}" ShortID="1033733367">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyWaterDisplacementFast_EQ" ID="{AFA7AA22-05E4-4120-8902-A22A8BA3436A}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+															<EffectSlot Name="" ID="{1695880B-38A1-464D-B0A9-C1BA7B60FAC9}" ShortID="472544699">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																		<ObjectRef Name="PhyWaterDisplacementFast_Compressor" ID="{C8C9AEF7-C4EA-429E-8B7B-E8EFB1D55EB4}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="RC_phy_waterDisplacementSlowBody_loop" ID="{C76B4026-9639-42DA-8063-F6CEDEAE5BD9}" ShortID="412998641">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>35</Value>
+															</ValueList>
+														</Property>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="OverrideEffect" Type="bool" Value="True"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-1100</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{36FEEF76-671B-4AB6-8D12-041378BE0022}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="50"/>
+																			<Property Name="Min" Type="Real64" Value="-100"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
+														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="phy_waterDisplacementSlow_loop01" ID="{5635BF87-1D11-414D-89B8-30B53C909338}" ShortID="601178078">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+																<Property Name="LoopCount" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{C2801047-BA4C-48B9-9691-1C418ED6B4F3}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-1"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_waterDisplacementSlow_loop" ID="{362D95F7-AA85-49B0-A278-B72E86D2028B}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="1031.25"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.21378"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.4409"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="2.01782"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="11.03786"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_waterDisplacementSlow_loop.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1021335472"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{0FBB215D-F84A-4DF5-A006-1FEAA7452BDA}" ShortID="198354081">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="PhyWaterDisplacementSlow_EQ" ID="{6AC1177E-2311-4F4C-B56E-155337C75DF0}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																	<EffectSlot Name="" ID="{D52F0714-5189-4F7C-9061-07CD30523116}" ShortID="742017276">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																				<ObjectRef Name="PhyWaterDisplacementSlow_Compressor" ID="{438A1F0C-ACC2-425C-A1CA-AADF7B84761C}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_waterDisplacementSlow_loop" ID="{362D95F7-AA85-49B0-A278-B72E86D2028B}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="phy_waterDisplacementSlow_loop02" ID="{A0953295-4313-407B-94C4-A62499FE4E35}" ShortID="861120928">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+																<Property Name="LoopCount" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{9E5C7E97-75AF-4957-8E37-F6B2DE3EAC85}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Min" Type="Real64" Value="-1"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_waterDisplacementSlow_loop02" ID="{7A12D410-F49A-4E22-BB16-6CEC330E88EC}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="1375"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.44091"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.40082"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="0.93541"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="10.08909"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_waterDisplacementSlow_loop02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="73170341"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_waterDisplacementSlow_loop02" ID="{7A12D410-F49A-4E22-BB16-6CEC330E88EC}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{115D9B87-8B9F-4058-BF60-FA9E8B1418BB}" ShortID="198538032">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyWaterDisplacementSlowLayer_EQ" ID="{0A0929DC-2B16-4696-876E-AAD7B8F51B55}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+															<EffectSlot Name="" ID="{9EEEDEA8-9DDF-4518-8FCB-823053800589}" ShortID="214442999">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																		<ObjectRef Name="PhyWaterDisplacementSlow_Compressor" ID="{438A1F0C-ACC2-425C-A1CA-AADF7B84761C}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+												</RandomSequenceContainer>
+											</ChildrenList>
+										</BlendContainer>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

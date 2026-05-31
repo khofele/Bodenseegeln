@@ -712,6 +712,27 @@
 										<Property Name="QFactorBand3" Type="Real32" Value="0.9"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="PhySailmastWhistleLayer_EQ" ID="{66A12602-42AB-4CCB-94B2-5BF2D94AEBA8}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FilterTypeBand5" Type="int32" Value="0"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="1200"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="750"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="2800"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="4200"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="6500"/>
+										<Property Name="GainBand2" Type="Real32" Value="-8"/>
+										<Property Name="GainBand3" Type="Real32" Value="3"/>
+										<Property Name="GainBand4" Type="Real32" Value="4"/>
+										<Property Name="NumBands" Type="int32" Value="5"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="QFactorBand2" Type="Real32" Value="1.2"/>
+										<Property Name="QFactorBand3" Type="Real32" Value="2"/>
+										<Property Name="QFactorBand4" Type="Real32" Value="2.2"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
@@ -835,6 +856,13 @@
 								<Property Name="Ratio" Type="Real32" Value="1.7"/>
 								<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
 								<Property Name="Threshold" Type="Real32" Value="-16"/>
+							</PropertyList>
+						</Effect>
+						<Effect Name="PhySailmastWhistleLayer_Compressor" ID="{3BCD938B-0316-4F2F-A6C4-8E3BF61D8709}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+							<PropertyList>
+								<Property Name="Ratio" Type="Real32" Value="2"/>
+								<Property Name="ReleaseTime" Type="Real32" Value="1.5"/>
+								<Property Name="Threshold" Type="Real32" Value="-22"/>
 							</PropertyList>
 						</Effect>
 					</ChildrenList>

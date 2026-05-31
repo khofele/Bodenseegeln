@@ -6243,10 +6243,9 @@
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
-												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 												<Property Name="MaxSoundPerInstance" Type="int16">
 													<ValueList>
-														<Value>2</Value>
+														<Value>15</Value>
 													</ValueList>
 												</Property>
 												<Property Name="Pitch" Type="int32">
@@ -6255,8 +6254,6 @@
 															<Modifier Name="" ID="{3EAE9FC0-76B4-4871-829B-3DC296482A05}">
 																<PropertyList>
 																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Max" Type="Real64" Value="200"/>
-																	<Property Name="Min" Type="Real64" Value="-200"/>
 																</PropertyList>
 															</Modifier>
 														</ModifierInfo>
@@ -6265,11 +6262,6 @@
 												<Property Name="UseMaxSoundPerInstance" Type="bool">
 													<ValueList>
 														<Value>True</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>12</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -6297,6 +6289,11 @@
 																	</Modifier>
 																</ModifierInfo>
 															</ModifierList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>12</Value>
+															</ValueList>
 														</Property>
 													</PropertyList>
 													<ReferenceList>
@@ -6341,6 +6338,11 @@
 																	</Modifier>
 																</ModifierInfo>
 															</ModifierList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>4</Value>
+															</ValueList>
 														</Property>
 													</PropertyList>
 													<ReferenceList>
@@ -6408,7 +6410,7 @@
 														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-3</Value>
+																<Value>-4</Value>
 															</ValueList>
 															<ModifierList>
 																<ModifierInfo>
@@ -6645,6 +6647,182 @@
 														</Sound>
 													</ChildrenList>
 												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="RC_sailmastWhistleLayer_loop" ID="{646E001C-2396-48A4-B04A-8844ED9ECA32}" ShortID="97042046">
+													<PropertyList>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>25</Value>
+															</ValueList>
+														</Property>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="OverrideEffect" Type="bool" Value="True"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>900</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{72F80B12-6076-4E2D-B9F2-4A76619CAAF1}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="50"/>
+																			<Property Name="Min" Type="Real64" Value="-50"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.1"/>
+														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-14</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{5FF766C2-A51A-4C40-A486-EA8BEADFEDDA}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="2"/>
+																			<Property Name="Min" Type="Real64" Value="-2"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="phy_sailmastWhistleLayer_loop01" ID="{FFB80424-1092-4463-988F-F8EEB0D14BF0}" ShortID="943047867">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+																<Property Name="LoopCount" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{18928A09-8AD8-4104-97A2-E559031DA14B}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="1"/>
+																					<Property Name="Min" Type="Real64" Value="-1"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_sailmastWhistleLayer_loop01" ID="{E24A699E-A3E6-4955-9908-0E648B9B208D}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="83.333"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.15174"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.17703"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="1.93889"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="7.0137"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.89358"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="7.69652"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_sailmastWhistleLayer_loop01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="81237453"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_sailmastWhistleLayer_loop01" ID="{E24A699E-A3E6-4955-9908-0E648B9B208D}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="phy_sailmastWhistleLayer_loop02" ID="{05050890-219B-4613-87F3-20AE4D6DC418}" ShortID="238619473">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+																<Property Name="LoopCount" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{D9E2C5DA-AD3E-4414-81B4-E44E0CF381D8}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="1"/>
+																					<Property Name="Min" Type="Real64" Value="-1"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_sailmastWhistleLayer_loop02" ID="{15E3B4EC-E446-4422-A172-B446474749DB}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="187.5"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.22761"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.32034"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="1.01159"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="7.00527"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.65754"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="7.89041"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_sailmastWhistleLayer_loop02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="401459605"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_sailmastWhistleLayer_loop02" ID="{15E3B4EC-E446-4422-A172-B446474749DB}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{FB199183-9B0C-4D74-8029-6229A17858DA}" ShortID="465597156">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhySailmastWhistleLayer_EQ" ID="{66A12602-42AB-4CCB-94B2-5BF2D94AEBA8}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+															<EffectSlot Name="" ID="{FF28861B-E89C-4912-B9B5-37EE52A8AFDC}" ShortID="495029683">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																		<ObjectRef Name="PhySailmastWhistleLayer_Compressor" ID="{3BCD938B-0316-4F2F-A6C4-8E3BF61D8709}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+												</RandomSequenceContainer>
 											</ChildrenList>
 											<BlendTrackList>
 												<BlendTrack Name="BT_SailWindPressure" ID="{F377B4A5-BCB2-4E92-8830-10E32DDD2757}" ShortID="15811160">
@@ -6789,7 +6967,7 @@
 														</BlendTrackAssoc>
 													</BlendTrackAssocList>
 												</BlendTrack>
-												<BlendTrack Name="New Blend Track" ID="{8AF3664F-3F89-466B-95BB-B91BAC59DEDB}" ShortID="150321834">
+												<BlendTrack Name="BT_WindGust" ID="{8AF3664F-3F89-466B-95BB-B91BAC59DEDB}" ShortID="150321834">
 													<PropertyList>
 														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
 													</PropertyList>
@@ -6851,6 +7029,77 @@
 													<BlendTrackAssocList>
 														<BlendTrackAssoc>
 															<ItemRef Name="RC_phy_windGust" ID="{958A97D0-C181-4C24-A9A6-B14C44D73BEE}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>0</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>100</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+													</BlendTrackAssocList>
+												</BlendTrack>
+												<BlendTrack Name="BT_SailmastWhistleLayer" ID="{A7894BFF-3C3F-4883-B844-4055BB166BE1}" ShortID="467201012">
+													<PropertyList>
+														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="LayerCrossFadeControlInput">
+															<ObjectRef Name="Phy_WindSailIntensity" ID="{EAA7F539-CCDF-4512-A547-80477EDB41C3}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+														</Reference>
+													</ReferenceList>
+													<ObjectLists>
+														<ObjectList Name="RTPC">
+															<RTPC Name="" ID="{F1BD8A85-11BA-4835-8F57-F9208CD0833B}" ShortID="270058362">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Phy_WindSailIntensity" ID="{EAA7F539-CCDF-4512-A547-80477EDB41C3}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{0254B4C2-D4B0-4513-912A-83312489C06C}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-96</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>60</XPos>
+																						<YPos>-96</YPos>
+																						<Flags>0</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>75</XPos>
+																						<YPos>-32</YPos>
+																						<Flags>0</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>90</XPos>
+																						<YPos>-18</YPos>
+																						<Flags>0</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>-12</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</ObjectList>
+													</ObjectLists>
+													<BlendTrackAssocList>
+														<BlendTrackAssoc>
+															<ItemRef Name="RC_sailmastWhistleLayer_loop" ID="{646E001C-2396-48A4-B04A-8844ED9ECA32}"/>
 															<CrossfadingInfo>
 																<LeftEdgePos>0</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>

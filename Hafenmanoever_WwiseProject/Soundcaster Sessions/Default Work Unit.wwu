@@ -6,11 +6,11 @@
 				<SoundcasterSession Name="Boat Mix" ID="{C61DB9CD-2706-4394-9656-B1492D283F5B}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="BC_phy_waterDisplacement" ID="{E8C26237-3584-4937-8832-60EC958C4F80}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<ObjectRef Name="BC_boatEngine_ThrottleBlend" ID="{0F371717-3086-41AA-A040-D1937A7AFEDC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="BC_boatEngine_ThrottleBlend" ID="{0F371717-3086-41AA-A040-D1937A7AFEDC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<ObjectRef Name="BC_phy_waterDisplacement2" ID="{77326372-9316-40B5-B07D-91E0C7823585}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>

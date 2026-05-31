@@ -897,6 +897,11 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-5</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Attenuation">
@@ -6021,7 +6026,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>2</Value>
+														<Value>12</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -8171,6 +8176,25 @@
 													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="BC_phy_waterDisplacement2" ID="{77326372-9316-40B5-B07D-91E0C7823585}" ShortID="382121438">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+														<Property Name="MaxSoundPerInstance" Type="int16">
+															<ValueList>
+																<Value>4</Value>
+															</ValueList>
+														</Property>
+														<Property Name="UseMaxSoundPerInstance" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -8183,9 +8207,14 @@
 														<RandomSequenceContainer Name="RC_phy_waterDisplacementFast_loop" ID="{E51C4001-8D4A-4A12-A8A4-AFAE6702B246}" ShortID="1063060135">
 															<PropertyList>
 																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>30</Value>
+																	</ValueList>
+																</Property>
 																<Property Name="MakeUpGain" Type="Real64">
 																	<ValueList>
-																		<Value>10</Value>
+																		<Value>15</Value>
 																	</ValueList>
 																</Property>
 																<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
@@ -8341,7 +8370,7 @@
 																<Property Name="3DSpatialization" Type="int16" Value="1"/>
 																<Property Name="Lowpass" Type="int16">
 																	<ValueList>
-																		<Value>10</Value>
+																		<Value>30</Value>
 																	</ValueList>
 																</Property>
 																<Property Name="MakeUpGain" Type="Real64">
@@ -8517,7 +8546,7 @@
 																<Property Name="3DSpatialization" Type="int16" Value="1"/>
 																<Property Name="Lowpass" Type="int16">
 																	<ValueList>
-																		<Value>35</Value>
+																		<Value>50</Value>
 																	</ValueList>
 																</Property>
 																<Property Name="MakeUpGain" Type="Real64">
@@ -8733,7 +8762,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>40</XPos>
-																								<YPos>-0</YPos>
+																								<YPos>0</YPos>
 																								<Flags>0</Flags>
 																							</Point>
 																							<Point>

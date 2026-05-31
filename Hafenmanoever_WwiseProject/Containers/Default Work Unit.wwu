@@ -8212,7 +8212,7 @@
 																<Property Name="3DSpatialization" Type="int16" Value="1"/>
 																<Property Name="Lowpass" Type="int16">
 																	<ValueList>
-																		<Value>30</Value>
+																		<Value>15</Value>
 																	</ValueList>
 																</Property>
 																<Property Name="MakeUpGain" Type="Real64">
@@ -8373,7 +8373,7 @@
 																<Property Name="3DSpatialization" Type="int16" Value="1"/>
 																<Property Name="Lowpass" Type="int16">
 																	<ValueList>
-																		<Value>30</Value>
+																		<Value>15</Value>
 																	</ValueList>
 																</Property>
 																<Property Name="MakeUpGain" Type="Real64">
@@ -8549,7 +8549,7 @@
 																<Property Name="3DSpatialization" Type="int16" Value="1"/>
 																<Property Name="Lowpass" Type="int16">
 																	<ValueList>
-																		<Value>50</Value>
+																		<Value>30</Value>
 																	</ValueList>
 																</Property>
 																<Property Name="MakeUpGain" Type="Real64">
@@ -8980,7 +8980,7 @@
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="Lowpass" Type="int16">
 															<ValueList>
-																<Value>20</Value>
+																<Value>5</Value>
 															</ValueList>
 														</Property>
 														<Property Name="MakeUpGain" Type="Real64">
@@ -8991,7 +8991,7 @@
 														<Property Name="OverrideEffect" Type="bool" Value="True"/>
 														<Property Name="Pitch" Type="int32">
 															<ValueList>
-																<Value>-1000</Value>
+																<Value>-800</Value>
 															</ValueList>
 														</Property>
 														<Property Name="Volume" Type="Real64">
@@ -9046,7 +9046,7 @@
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 														<Property Name="Lowpass" Type="int16">
 															<ValueList>
-																<Value>45</Value>
+																<Value>25</Value>
 															</ValueList>
 														</Property>
 														<Property Name="MakeUpGain" Type="Real64">

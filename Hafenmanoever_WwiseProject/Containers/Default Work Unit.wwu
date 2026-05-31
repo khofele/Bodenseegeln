@@ -8956,6 +8956,84 @@
 												</BlendContainer>
 											</ChildrenList>
 										</Folder>
+										<BlendContainer Name="BC_phy_bowWater" ID="{17B6CBF5-2905-4D5B-B7D8-A9F9914ECB34}" ShortID="867767484">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="phy_bowWater_loop" ID="{A84A2E73-4F8A-444F-91C5-7DAF0697886F}" ShortID="81365028">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>20</Value>
+															</ValueList>
+														</Property>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+														<Property Name="OverrideEffect" Type="bool" Value="True"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-1200</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="phy_bowWater_loop" ID="{A1F8B5AE-3EA7-4007-8738-4C52EEB85AF7}">
+															<PropertyList>
+																<Property Name="CrossfadeDuration" Type="Real64" Value="800"/>
+																<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.17686"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.38323"/>
+																<Property Name="LoopBegin" Type="Real64" Value="2.03379"/>
+																<Property Name="LoopEnd" Type="Real64" Value="13.08698"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>phy_bowWater_loop.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="508773724"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{6B7519CF-49E4-41BA-A4AA-9FBEE42CE0C4}" ShortID="956480755">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyBowWater_EQ" ID="{60A479C2-0F12-4E45-BB52-C0C94441E5B2}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+													<ActiveSourceList>
+														<ActiveSource Name="phy_bowWater_loop" ID="{A1F8B5AE-3EA7-4007-8738-4C52EEB85AF7}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</BlendContainer>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

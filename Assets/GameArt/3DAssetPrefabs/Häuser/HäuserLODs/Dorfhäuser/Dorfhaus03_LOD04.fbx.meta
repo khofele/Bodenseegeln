@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a074b1ed9a237a74ca314a4201a51b0a
+guid: 69c79df9772b2a9449469dcd26f717b6
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,23 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Billboard
-    second: {fileID: 2100000, guid: 8922b3a3610b3924c89a737863e62108, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dach
-    second: {fileID: 2100000, guid: 6fd592cd2f020784fa44e245b669ef2a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Hauswand
-    second: {fileID: 2100000, guid: 899dd62ee3c36974f89fc441aa8cb557, type: 2}
+    second: {fileID: 2100000, guid: 07f402c3c614a33478ab15d52aac15a6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Secondarz
-    second: {fileID: 2100000, guid: 56ee6ff9deac293489114e7745d63445, type: 2}
+      name: Secondary
+    second: {fileID: 2100000, guid: bf77e14995ecde74db8b185b8c3f8dfe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -52,11 +42,7 @@ ModelImporter:
     clipAnimations: []
     isReadable: 0
   meshes:
-    lODScreenPercentages:
-    - 0.3483241
-    - 0.16625121
-    - 0.05976156
-    - 0.01
+    lODScreenPercentages: []
     globalScale: 0.5
     meshCompression: 0
     addColliders: 0

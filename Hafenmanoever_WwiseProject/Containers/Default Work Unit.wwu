@@ -897,11 +897,6 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>-5</Value>
-															</ValueList>
-														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Attenuation">
@@ -6013,11 +6008,40 @@
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="BlendBehavior" Type="int16" Value="1"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>7</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{F3B9911D-95E5-4268-9444-11713FB703FE}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="2"/>
+																	<Property Name="Min" Type="Real64" Value="-2"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
 												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 												<Property Name="MaxSoundPerInstance" Type="int16">
 													<ValueList>
 														<Value>2</Value>
 													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{17EFD8F7-7E3D-4767-8FF8-9AEA7D4A469A}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="200"/>
+																	<Property Name="Min" Type="Real64" Value="-200"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
 												</Property>
 												<Property Name="UseMaxSoundPerInstance" Type="bool">
 													<ValueList>
@@ -6203,11 +6227,40 @@
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="BlendBehavior" Type="int16" Value="1"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{16D99944-17C8-4A9F-ACA8-0282664F18EE}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="2"/>
+																	<Property Name="Min" Type="Real64" Value="-2"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
 												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 												<Property Name="MaxSoundPerInstance" Type="int16">
 													<ValueList>
 														<Value>2</Value>
 													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{3EAE9FC0-76B4-4871-829B-3DC296482A05}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="200"/>
+																	<Property Name="Min" Type="Real64" Value="-200"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
 												</Property>
 												<Property Name="UseMaxSoundPerInstance" Type="bool">
 													<ValueList>
@@ -6216,7 +6269,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>12</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -6319,8 +6372,27 @@
 												</Sound>
 												<RandomSequenceContainer Name="RC_phy_windGust" ID="{958A97D0-C181-4C24-A9A6-B14C44D73BEE}" ShortID="1016941537">
 													<PropertyList>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>8</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{F4CF5B00-96A5-4218-A336-ACE97EC09D3A}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="2"/>
+																			<Property Name="Min" Type="Real64" Value="-2"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
 														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>400</Value>
+															</ValueList>
 															<ModifierList>
 																<ModifierInfo>
 																	<Modifier Name="" ID="{EEC5ED02-3A84-437E-A07E-88585E2C0167}">
@@ -6336,7 +6408,7 @@
 														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>5</Value>
+																<Value>-3</Value>
 															</ValueList>
 															<ModifierList>
 																<ModifierInfo>
@@ -8191,7 +8263,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-5</Value>
+																<Value>-14</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -8996,7 +9068,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-5</Value>
+																<Value>-10</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>

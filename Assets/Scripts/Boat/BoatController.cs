@@ -1164,8 +1164,8 @@ public class BoatController : MonoBehaviour
 
         if (CheckDamageReducedWithFenders() == true)
         {
-            // reduce damage
-            damageValue *= 0.5f;
+            // reduce damage by 
+            damageValue *= CalculateDamageReductionWithFenders();
         }
 
         return damageValue;
@@ -1219,7 +1219,7 @@ public class BoatController : MonoBehaviour
     private void CalculateWaveDamage()
     {
         // take damage if boat is too fast --> waves are too high
-        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 14.0f)
+        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 18.0f)
         {
             float damage = 4.0f * Time.fixedDeltaTime;
             m_currentHealth -= damage;
@@ -1229,13 +1229,25 @@ public class BoatController : MonoBehaviour
 
     private bool CheckDamageReducedWithFenders()
     {
-        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) < 8.0f)
+        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) <= 8.0f)
         {
             return true;
         }
         else
         {
             return false;
+        }
+    }
+
+    private float CalculateDamageReductionWithFenders()
+    {
+        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) <= 3.0f)
+        {
+            return 0.0f;
+        }
+        else
+        {
+            return 0.25f;
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

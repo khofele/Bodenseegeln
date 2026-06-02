@@ -32,6 +32,8 @@ namespace Dialogue
         private string m_NPCName = "";
         [SerializeField]
         private Sprite m_NPCPortrait = null;
+        [SerializeField]
+        private Sprite m_NPCBackground = null;
 
         [Header("Dialogue")]
         [SerializeField] private List<NPCDialogueBranch> m_dialogueBranches = new();
@@ -41,6 +43,7 @@ namespace Dialogue
         internal NPC_ID NPCID => m_NPCID;
         internal string Name => m_NPCName;
         internal Sprite Portrait => m_NPCPortrait;
+        internal Sprite Background => m_NPCBackground;
         internal List<NPCDialogueBranch> DialogueBranches => m_dialogueBranches;
 
         public DialogueNode GetNodeByID(int _id)

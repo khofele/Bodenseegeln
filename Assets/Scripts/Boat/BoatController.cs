@@ -988,6 +988,11 @@ public class BoatController : MonoBehaviour
     // INPUT METHODS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void ChangeBoatMode()
     {
+        if(m_boatAnimatorController.IsSailTransitioning == true)
+        {
+            return;
+        }
+
         if (m_changeMotorSailModeAction.action.triggered == true)
         {
             if (m_gameManager.CurrentState == GameStates.SAILMODE && m_mainSail.IsOpen == true && m_frontSail.IsOpen == true)

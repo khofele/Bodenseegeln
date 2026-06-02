@@ -25,7 +25,9 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHAPREMULTIPLY_ON
+  - _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -51,18 +53,35 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Alpha_Clipping: 0.414
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
+    - _CastShadows: 0
+    - _Cull: 0
     - _Depth: 0.37
     - _Displacement: 0
+    - _DstBlend: 10
+    - _DstBlendAlpha: 10
     - _FoamStrength: 2
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RippleCount: 1.32
-    - _RippleFade: 95.6
+    - _ReceiveShadows: 1
+    - _RippleCount: 1.68
+    - _RippleFade: 75
     - _RippleSpeed: 0.15
     - _RippleStrenght: 1
-    - _Scale: 1.17
-    - _Speed: -5.19
+    - _Scale: 0.85
+    - _Speed: -6.39
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
+    - _Surface: 1
     - _WaveSpeed: 0.88
+    - _WorkflowMode: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
     - _RippleCenter: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _Scale: {r: 0.82, g: 1.03, b: 0, a: 0}

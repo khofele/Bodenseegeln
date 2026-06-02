@@ -1164,8 +1164,11 @@ public class BoatController : MonoBehaviour
 
         if (CheckDamageReducedWithFenders() == true)
         {
+            Debug.Log("Fender reduce Damagee");
+            Debug.Log("Damagee before reduction " + damageValue);
             // reduce damage by 
             damageValue *= CalculateDamageReductionWithFenders();
+            Debug.Log("Damagee after reduction " + damageValue);
         }
 
         return damageValue;
@@ -1243,10 +1246,12 @@ public class BoatController : MonoBehaviour
     {
         if((m_rigidbody.linearVelocity.magnitude / 0.514444f) <= 3.0f)
         {
+            Debug.Log("Damagee Reduction 100%");
             return 0.0f;
         }
         else
         {
+            Debug.Log("Damagee Reduction 75%");
             return 0.25f;
         }
     }

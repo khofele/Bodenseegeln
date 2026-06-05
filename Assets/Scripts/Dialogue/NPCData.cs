@@ -10,7 +10,10 @@ public enum NPC_ID //TODO: add correct value for ID
     NPC1 = 2,
     NPC2 = 3,
     NPC3 = 4,
-    NPC4 = 5
+    NPC4 = 5,
+    NPC5 = 6,
+    NPC6 = 7,
+    NPC7 = 8
 }
 
 public enum DialogueActionType

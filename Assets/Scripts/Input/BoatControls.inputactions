@@ -397,6 +397,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MapToggle",
+                    "type": "Button",
+                    "id": "68678898-ef5b-4904-9210-d535711555ea",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -441,6 +450,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "PreviousUIScreen",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eec9188a-41f1-4049-af45-f621b6be3b3f",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MapToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

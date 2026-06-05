@@ -7211,6 +7211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainIngameUI
   m_boatTransform: {fileID: 0}
+  m_mapUI: {fileID: 0}
   m_motorScreen: {fileID: 2965976863328235682}
   m_questScreen: {fileID: 3907354307770832591}
   m_sailingScreen: {fileID: 7940268102823556199}
@@ -7256,6 +7257,7 @@ MonoBehaviour:
   m_moneyText: {fileID: 8534083011850594598}
   m_nextScreenAction: {fileID: -7111306533246855636, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
   m_previousScreenAction: {fileID: 8627756809175079371, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_toggleMapAction: {fileID: -2850201420504151284, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
 --- !u!1 &8955150269327394254
 GameObject:
   m_ObjectHideFlags: 0

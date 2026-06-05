@@ -315,14 +315,14 @@ public class MainIngameUI : MonoBehaviour
         {
             float _tWind = UIManager.Instance.GetTrueWindSpeed();
 
-            m_trueWindText.text = $"{_tWind:0.0} m/s";
+            m_trueWindText.text = $"{_tWind:0.0} KN";
         }
 
         if (m_apparentWindText != null)
         {
             float _aWind = UIManager.Instance.GetApparentWindSpeed();
 
-            m_apparentWindText.text = $"{_aWind:0.0} m/s";
+            m_apparentWindText.text = $"{_aWind:0.0} KN";
         }
 
         UpdateWindArrows();

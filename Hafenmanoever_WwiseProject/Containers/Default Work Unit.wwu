@@ -6404,11 +6404,6 @@
 														<Value>True</Value>
 													</ValueList>
 												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>12</Value>
-													</ValueList>
-												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -6422,6 +6417,12 @@
 												<Sound Name="phy_windForceBoat_loop" ID="{B2CE9C13-6112-46C8-A184-29A76478AA81}" ShortID="145984952">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>10</Value>
+															</ValueList>
+														</Property>
+														<Property Name="OverrideEffect" Type="bool" Value="True"/>
 														<Property Name="Pitch" Type="int32">
 															<ModifierList>
 																<ModifierInfo>
@@ -6434,11 +6435,6 @@
 																	</Modifier>
 																</ModifierInfo>
 															</ModifierList>
-														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>5</Value>
-															</ValueList>
 														</Property>
 													</PropertyList>
 													<ReferenceList>
@@ -6464,6 +6460,17 @@
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{4719E6BD-F932-4DF2-A842-DD121626B087}" ShortID="671193826">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyWindForceBoat_EQ" ID="{2F63632A-8705-4FF3-A72E-98922F4CE1E0}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
 													<ActiveSourceList>
 														<ActiveSource Name="phy_windForceBoat_loop" ID="{899E201A-C12B-4399-9CDD-573157904BAE}" Platform="Linked"/>
 													</ActiveSourceList>
@@ -6607,11 +6614,7 @@
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
 														<ModifierInfo>
-															<Modifier Name="" ID="{3EAE9FC0-76B4-4871-829B-3DC296482A05}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																</PropertyList>
-															</Modifier>
+															<Modifier Name="" ID="{3EAE9FC0-76B4-4871-829B-3DC296482A05}"/>
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
@@ -6646,11 +6649,6 @@
 																</ModifierInfo>
 															</ModifierList>
 														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>12</Value>
-															</ValueList>
-														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -6682,6 +6680,7 @@
 												<Sound Name="phy_windForceSail_loop" ID="{E463D97F-2128-40E7-A7FC-7EFA11F69606}" ShortID="310769499">
 													<PropertyList>
 														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="OverrideEffect" Type="bool" Value="True"/>
 														<Property Name="Pitch" Type="int32">
 															<ModifierList>
 																<ModifierInfo>
@@ -6694,11 +6693,6 @@
 																	</Modifier>
 																</ModifierInfo>
 															</ModifierList>
-														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>4</Value>
-															</ValueList>
 														</Property>
 													</PropertyList>
 													<ReferenceList>
@@ -6724,6 +6718,17 @@
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{F9D88CE1-9353-4A3F-8DD4-0F68EB3C4514}" ShortID="350712246">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyWindForceSail_EQ" ID="{B9C92994-A315-490C-81BA-4FB0F2EFF446}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
 													<ActiveSourceList>
 														<ActiveSource Name="phy_windForceSail_loop" ID="{97F4AC6C-BEB4-471C-B633-2B78E3B5B6BC}" Platform="Linked"/>
 													</ActiveSourceList>
@@ -6747,6 +6752,7 @@
 															</ModifierList>
 														</Property>
 														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="OverrideEffect" Type="bool" Value="True"/>
 														<Property Name="Pitch" Type="int32">
 															<ValueList>
 																<Value>400</Value>
@@ -6766,7 +6772,7 @@
 														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-4</Value>
+																<Value>-7</Value>
 															</ValueList>
 															<ModifierList>
 																<ModifierInfo>
@@ -7002,6 +7008,17 @@
 															</ActiveSourceList>
 														</Sound>
 													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{5803446D-E60F-4DAC-8780-541AC2D217AF}" ShortID="1069067634">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyWindGust_EQ" ID="{1E268AFB-98C4-4A4D-B350-89A82A0A085C}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
 												</RandomSequenceContainer>
 												<RandomSequenceContainer Name="RC_sailmastWhistleLayer_loop" ID="{646E001C-2396-48A4-B04A-8844ED9ECA32}" ShortID="97042046">
 													<PropertyList>
@@ -7030,12 +7047,12 @@
 														</Property>
 														<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 														<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-														<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.1"/>
+														<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.01"/>
 														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-14</Value>
+																<Value>-26</Value>
 															</ValueList>
 															<ModifierList>
 																<ModifierInfo>

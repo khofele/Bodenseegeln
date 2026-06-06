@@ -6605,11 +6605,14 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="SC_env_boatRepair" ID="{B75094E1-1AC5-4482-BB54-B98E51AFE8F8}" ShortID="907392877">
 											<PropertyList>
-												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
-												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.1"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.05"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-13</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -6620,190 +6623,16 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="env_boatRepairHammerMetal" ID="{A6E1B12E-C468-42C0-A518-1F264E2B835B}" ShortID="633074902">
-													<PropertyList>
-														<Property Name="Lowpass" Type="int16">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-														<Property Name="OverrideEffect" Type="bool" Value="True"/>
-														<Property Name="Pitch" Type="int32">
-															<ValueList>
-																<Value>-300</Value>
-															</ValueList>
-															<ModifierList>
-																<ModifierInfo>
-																	<Modifier Name="" ID="{E0F3F93F-1556-4BEC-8646-3A61C713F32A}">
-																		<PropertyList>
-																			<Property Name="Enabled" Type="bool" Value="True"/>
-																			<Property Name="Max" Type="Real64" Value="50"/>
-																			<Property Name="Min" Type="Real64" Value="-50"/>
-																		</PropertyList>
-																	</Modifier>
-																</ModifierInfo>
-															</ModifierList>
-														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>-7</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="env_boatRepairHammerMetal" ID="{F6237AA1-C1FD-4D9C-9575-D3BC703F7589}">
-															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.01098"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.05009"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.0354"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.05278"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>env_boatRepairHammerMetal.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="998485321"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists>
-														<ObjectList Name="Effects">
-															<EffectSlot Name="" ID="{EB662A3C-E36D-41BD-918D-DEE89586C75B}" ShortID="468494262">
-																<ReferenceList>
-																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																		<ObjectRef Name="EnvBoatRepairHammerMetal_EQ" ID="{6F0459DC-7C9A-4073-96F8-7818BC8828F2}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																	</Reference>
-																</ReferenceList>
-															</EffectSlot>
-														</ObjectList>
-													</ObjectLists>
-													<ActiveSourceList>
-														<ActiveSource Name="env_boatRepairHammerMetal" ID="{F6237AA1-C1FD-4D9C-9575-D3BC703F7589}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<RandomSequenceContainer Name="RC_env_boatRepairHammerTable" ID="{001093D6-B77C-4B67-BB59-2692B07CFEC4}" ShortID="279815938">
-													<PropertyList>
-														<Property Name="Lowpass" Type="int16">
-															<ValueList>
-																<Value>15</Value>
-															</ValueList>
-														</Property>
-														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-														<Property Name="OverrideEffect" Type="bool" Value="True"/>
-														<Property Name="Pitch" Type="int32">
-															<ValueList>
-																<Value>-150</Value>
-															</ValueList>
-															<ModifierList>
-																<ModifierInfo>
-																	<Modifier Name="" ID="{083DAD53-CF0F-4E1D-8ABB-9B79F1B8CFFA}">
-																		<PropertyList>
-																			<Property Name="Enabled" Type="bool" Value="True"/>
-																			<Property Name="Max" Type="Real64" Value="15"/>
-																			<Property Name="Min" Type="Real64" Value="-15"/>
-																		</PropertyList>
-																	</Modifier>
-																</ModifierInfo>
-															</ModifierList>
-														</Property>
-														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>-11</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<Sound Name="env_repairHammerTable00" ID="{D21BA2BE-F993-4069-8B64-7372EF78D83A}" ShortID="1015226143">
-															<ReferenceList>
-																<Reference Name="Conversion">
-																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-																</Reference>
-																<Reference Name="OutputBus">
-																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-																</Reference>
-															</ReferenceList>
-															<ChildrenList>
-																<AudioFileSource Name="env_repairHammerTable00" ID="{2E730168-B246-430A-B9BC-EAEC57FC2F33}">
-																	<PropertyList>
-																		<Property Name="FadeInDuration" Type="Real64" Value="0.01624"/>
-																		<Property Name="FadeOutDuration" Type="Real64" Value="0.17391"/>
-																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																		<Property Name="TrimEnd" Type="Real64" Value="0.4008"/>
-																	</PropertyList>
-																	<Language>SFX</Language>
-																	<AudioFile>env_repairHammerTable00.wav</AudioFile>
-																	<MediaIDList>
-																		<MediaID ID="1042397596"/>
-																	</MediaIDList>
-																</AudioFileSource>
-															</ChildrenList>
-															<ActiveSourceList>
-																<ActiveSource Name="env_repairHammerTable00" ID="{2E730168-B246-430A-B9BC-EAEC57FC2F33}" Platform="Linked"/>
-															</ActiveSourceList>
-														</Sound>
-														<Sound Name="env_repairHammerTable01" ID="{FF3F7D60-4894-4DFB-98EF-43028F44F02C}" ShortID="785424338">
-															<ReferenceList>
-																<Reference Name="Conversion">
-																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-																</Reference>
-																<Reference Name="OutputBus">
-																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-																</Reference>
-															</ReferenceList>
-															<ChildrenList>
-																<AudioFileSource Name="env_repairHammerTable01" ID="{04498A92-9173-4968-A890-7D9FB518A8B5}">
-																	<PropertyList>
-																		<Property Name="FadeInDuration" Type="Real64" Value="0.01593"/>
-																		<Property Name="FadeOutDuration" Type="Real64" Value="0.17507"/>
-																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																		<Property Name="TrimEnd" Type="Real64" Value="0.40314"/>
-																	</PropertyList>
-																	<Language>SFX</Language>
-																	<AudioFile>env_repairHammerTable01.wav</AudioFile>
-																	<MediaIDList>
-																		<MediaID ID="758849403"/>
-																	</MediaIDList>
-																</AudioFileSource>
-															</ChildrenList>
-															<ActiveSourceList>
-																<ActiveSource Name="env_repairHammerTable01" ID="{04498A92-9173-4968-A890-7D9FB518A8B5}" Platform="Linked"/>
-															</ActiveSourceList>
-														</Sound>
-													</ChildrenList>
-													<ObjectLists>
-														<ObjectList Name="Effects">
-															<EffectSlot Name="" ID="{5828ECAC-0D51-4649-B05B-9750753D203C}" ShortID="183853873">
-																<ReferenceList>
-																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																		<ObjectRef Name="EnvBoatRepairHammerTable_EQ" ID="{9B398422-BC15-4CAC-8681-62E95B937912}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																	</Reference>
-																</ReferenceList>
-															</EffectSlot>
-														</ObjectList>
-													</ObjectLists>
-												</RandomSequenceContainer>
 												<Sound Name="env_repairRatchet" ID="{AC3BE687-7E25-4E94-95DE-0741E539B4EC}" ShortID="485615938">
 													<PropertyList>
 														<Property Name="Lowpass" Type="int16">
 															<ValueList>
 																<Value>10</Value>
+															</ValueList>
+														</Property>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
 															</ValueList>
 														</Property>
 														<Property Name="OverrideEffect" Type="bool" Value="True"/>
@@ -6825,7 +6654,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-5</Value>
+																<Value>3</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -6844,7 +6673,6 @@
 																<Property Name="FadeOutDuration" Type="Real64" Value="0.05507"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 																<Property Name="TrimBegin" Type="Real64" Value="0.06678"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.11602"/>
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>env_repairRatchet.wav</AudioFile>
@@ -6875,27 +6703,230 @@
 														<ActiveSource Name="env_repairRatchet" ID="{4D97E8E8-2ED1-4B49-94D7-4D3E17D9A395}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
+												<BlendContainer Name="BC_env_repairBoatHammer" ID="{05860A27-DE58-4485-92C3-4BB7F0ED5BE3}" ShortID="867380984">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<RandomSequenceContainer Name="RC_env_boatRepairHammerTable" ID="{001093D6-B77C-4B67-BB59-2692B07CFEC4}" ShortID="279815938">
+															<PropertyList>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>15</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>10</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+																<Property Name="OverrideEffect" Type="bool" Value="True"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-400</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{083DAD53-CF0F-4E1D-8ABB-9B79F1B8CFFA}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="15"/>
+																					<Property Name="Min" Type="Real64" Value="-15"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-15</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="env_repairHammerTable00" ID="{D21BA2BE-F993-4069-8B64-7372EF78D83A}" ShortID="1015226143">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_repairHammerTable00" ID="{2E730168-B246-430A-B9BC-EAEC57FC2F33}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.01624"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.17391"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																				<Property Name="TrimBegin" Type="Real64" Value="0.08378"/>
+																				<Property Name="TrimEnd" Type="Real64" Value="0.4008"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_repairHammerTable00.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="1042397596"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_repairHammerTable00" ID="{2E730168-B246-430A-B9BC-EAEC57FC2F33}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="env_repairHammerTable01" ID="{FF3F7D60-4894-4DFB-98EF-43028F44F02C}" ShortID="785424338">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="env_repairHammerTable01" ID="{04498A92-9173-4968-A890-7D9FB518A8B5}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.01593"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.17507"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																				<Property Name="TrimBegin" Type="Real64" Value="0.08157"/>
+																				<Property Name="TrimEnd" Type="Real64" Value="0.40314"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>env_repairHammerTable01.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="758849403"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="env_repairHammerTable01" ID="{04498A92-9173-4968-A890-7D9FB518A8B5}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{5828ECAC-0D51-4649-B05B-9750753D203C}" ShortID="183853873">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="EnvBoatRepairHammerTable_EQ" ID="{9B398422-BC15-4CAC-8681-62E95B937912}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+														</RandomSequenceContainer>
+														<Sound Name="env_boatRepairHammerMetal" ID="{A6E1B12E-C468-42C0-A518-1F264E2B835B}" ShortID="633074902">
+															<PropertyList>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>10</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideEffect" Type="bool" Value="True"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-300</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{E0F3F93F-1556-4BEC-8646-3A61C713F32A}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="50"/>
+																					<Property Name="Min" Type="Real64" Value="-50"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-7</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="env_boatRepairHammerMetal" ID="{F6237AA1-C1FD-4D9C-9575-D3BC703F7589}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.01098"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.05009"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.0354"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.36108"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>env_boatRepairHammerMetal.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="998485321"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{EB662A3C-E36D-41BD-918D-DEE89586C75B}" ShortID="468494262">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="EnvBoatRepairHammerMetal_EQ" ID="{6F0459DC-7C9A-4073-96F8-7818BC8828F2}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="env_boatRepairHammerMetal" ID="{F6237AA1-C1FD-4D9C-9575-D3BC703F7589}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</BlendContainer>
 											</ChildrenList>
 											<ObjectLists>
 												<ObjectList Name="Playlist">
-													<PluginInnerObject Name="" ID="{489207E4-D949-43C5-B2F2-A3273E9A98F8}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+													<PluginInnerObject Name="" ID="{093B968A-81D7-4D18-96D9-7696BED19DD2}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
 														<ReferenceList>
 															<Reference Name="PlaylistObject">
-																<ObjectRef Name="env_boatRepairHammerMetal" ID="{A6E1B12E-C468-42C0-A518-1F264E2B835B}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+																<ObjectRef Name="BC_env_repairBoatHammer" ID="{05860A27-DE58-4485-92C3-4BB7F0ED5BE3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 															</Reference>
 														</ReferenceList>
 													</PluginInnerObject>
-													<PluginInnerObject Name="" ID="{3CBEC175-5637-44B3-AD66-0C924A2736E0}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+													<PluginInnerObject Name="" ID="{E0FD2626-C96A-439A-9E8C-E90C703D2130}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+														<ReferenceList>
+															<Reference Name="PlaylistObject">
+																<ObjectRef Name="BC_env_repairBoatHammer" ID="{05860A27-DE58-4485-92C3-4BB7F0ED5BE3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+															</Reference>
+														</ReferenceList>
+													</PluginInnerObject>
+													<PluginInnerObject Name="" ID="{9C797AAC-48E8-413B-8E9E-F002A6506965}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
 														<ReferenceList>
 															<Reference Name="PlaylistObject">
 																<ObjectRef Name="env_repairRatchet" ID="{AC3BE687-7E25-4E94-95DE-0741E539B4EC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-															</Reference>
-														</ReferenceList>
-													</PluginInnerObject>
-													<PluginInnerObject Name="" ID="{2002BEFC-2FB2-4995-B438-566B3F4264C9}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
-														<ReferenceList>
-															<Reference Name="PlaylistObject">
-																<ObjectRef Name="RC_env_boatRepairHammerTable" ID="{001093D6-B77C-4B67-BB59-2692B07CFEC4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 															</Reference>
 														</ReferenceList>
 													</PluginInnerObject>

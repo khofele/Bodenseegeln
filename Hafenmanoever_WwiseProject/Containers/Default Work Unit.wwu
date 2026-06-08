@@ -4424,6 +4424,525 @@
 														</BlendTrack>
 													</BlendTrackList>
 												</BlendContainer>
+												<BlendContainer Name="BC_sailState_01" ID="{BE40B721-7FB1-43B8-A417-B3F730109F3A}" ShortID="972093568">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="BlendBehavior" Type="int16" Value="1"/>
+														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+														<Property Name="MaxSoundPerInstance" Type="int16">
+															<ValueList>
+																<Value>1</Value>
+															</ValueList>
+														</Property>
+														<Property Name="UseMaxSoundPerInstance" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="ATT_BoatSail" ID="{A81A7C27-C0AF-49A6-A501-658E1F0DA789}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<RandomSequenceContainer Name="RC_phy_sailFlutter" ID="{627B7D3F-6193-456A-8A30-77D9995D9852}" ShortID="620525940">
+															<PropertyList>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>15</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+																<Property Name="OverrideEffect" Type="bool" Value="True"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-50</Value>
+																	</ValueList>
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{FD065631-2F65-4DFF-9D46-C055381143EB}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="40"/>
+																					<Property Name="Min" Type="Real64" Value="-40"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="boat_sailFlutter_long00" ID="{908343A6-8E76-4DAC-8498-FA2230FFA351}" ShortID="24084778">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>10</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="boat_sailFlutter_long00" ID="{40CDAE68-D405-46FE-963B-0EC227E6ADF6}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.04823"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.03215"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>boat_sailFlutter_long00.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="470504066"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="boat_sailFlutter_long00" ID="{40CDAE68-D405-46FE-963B-0EC227E6ADF6}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="boat_sailFlutter_mid00" ID="{CD900D34-4035-40ED-B147-15818D780038}" ShortID="488700524">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>18</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="boat_sailFlutter_mid00" ID="{0778DAB0-2845-4DE5-8E27-ED426FE4FD58}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.02404"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.01803"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>boat_sailFlutter_mid00.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="837842022"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="boat_sailFlutter_mid00" ID="{0778DAB0-2845-4DE5-8E27-ED426FE4FD58}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="boat_sailFlutter_mid01" ID="{A493DEA5-8942-4866-A83A-DA91FDE5C622}" ShortID="340331562">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>18</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="boat_sailFlutter_mid01" ID="{0FDED295-D635-45DF-A865-E07BE0BEB936}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.03249"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.02521"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>boat_sailFlutter_mid01.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="766563104"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="boat_sailFlutter_mid01" ID="{0FDED295-D635-45DF-A865-E07BE0BEB936}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="boat_sailFlutter_mid02" ID="{16C14330-E5AE-4E51-8201-E90D68D5EA0C}" ShortID="1046464690">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>18</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="boat_sailFlutter_mid02" ID="{B329FB7A-2B99-4857-AF7F-3D2C67A82514}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.03367"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.01924"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>boat_sailFlutter_mid02.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="113138969"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="boat_sailFlutter_mid02" ID="{B329FB7A-2B99-4857-AF7F-3D2C67A82514}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="boat_sailFlutter_short00" ID="{58486A50-6B3E-48FC-8BD2-4CFFE399637A}" ShortID="529310930">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>25</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="boat_sailFlutter_short00" ID="{66ECB59F-7FB1-4373-A67F-C51D56ABF5B9}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.01146"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.01198"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>boat_sailFlutter_short00.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="172241338"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="boat_sailFlutter_short00" ID="{66ECB59F-7FB1-4373-A67F-C51D56ABF5B9}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="boat_sailFlutter_short01" ID="{81A8C030-D6BB-4F11-B6F8-E64E1FEA566E}" ShortID="72882113">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>25</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="boat_sailFlutter_short01" ID="{C5C680B3-1947-463D-950A-412891E324BC}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.00801"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.008"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>boat_sailFlutter_short01.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="380500659"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="boat_sailFlutter_short01" ID="{C5C680B3-1947-463D-950A-412891E324BC}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="boat_sailFlutter_short02" ID="{F834BA63-36FC-4CC2-BEEC-B3274814F8F0}" ShortID="715412716">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>25</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="boat_sailFlutter_short02" ID="{A579FE34-6922-466C-8CC6-EEF4D2989783}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="0.00841"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="0.0064"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>boat_sailFlutter_short02.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="960498017"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="boat_sailFlutter_short02" ID="{A579FE34-6922-466C-8CC6-EEF4D2989783}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="boat_sailFlutter_silence01s" ID="{6DA20022-BA19-41A0-AD80-177AA658F4A3}" ShortID="564749865">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>20</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="boat_sailFlutter_silence01s" ID="{C9A6C031-754D-41E8-B775-9C0DD0270E1D}">
+																			<Language>SFX</Language>
+																			<AudioFile>boat_sailFlutter_silence01s.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="79962608"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="boat_sailFlutter_silence01s" ID="{C9A6C031-754D-41E8-B775-9C0DD0270E1D}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="boat_sailFlutter_silence02s" ID="{4EDDF951-AEA7-4B6D-9F9B-5D28CFDCEF20}" ShortID="225473499">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>35</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="boat_sailFlutter_silence02s" ID="{E7B26D1F-C049-4124-8CA8-BF2CB4E0B3D5}">
+																			<Language>SFX</Language>
+																			<AudioFile>boat_sailFlutter_silence02s.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="380514904"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="boat_sailFlutter_silence02s" ID="{E7B26D1F-C049-4124-8CA8-BF2CB4E0B3D5}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="boat_sailFlutter_silence03s" ID="{53E28B55-43A3-4A60-B99A-E4B8A1D9744C}" ShortID="659166157">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>45</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="boat_sailFlutter_silence03s" ID="{7A0FEB91-EFCC-48DD-8D50-5AECEE92BE98}">
+																			<Language>SFX</Language>
+																			<AudioFile>boat_sailFlutter_silence03s.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="102468720"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="boat_sailFlutter_silence03s" ID="{7A0FEB91-EFCC-48DD-8D50-5AECEE92BE98}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="boat_sailFlutter_silence04s" ID="{1224A2FC-EC70-43E1-AC22-09030EDB7070}" ShortID="324666174">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>60</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="boat_sailFlutter_silence04s" ID="{B8B2F514-A3CF-4F27-A2B0-D1ECD2624059}">
+																			<Language>SFX</Language>
+																			<AudioFile>boat_sailFlutter_silence04s.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="402921378"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="boat_sailFlutter_silence04s" ID="{B8B2F514-A3CF-4F27-A2B0-D1ECD2624059}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{3E82B258-30D8-4706-838C-5CE275FCB90C}" ShortID="628727769">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="BoatSailFlapLoop_EQ" ID="{CC0A4202-7504-4CCC-8ADE-799665A52E51}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+														</RandomSequenceContainer>
+													</ChildrenList>
+													<BlendTrackList>
+														<BlendTrack Name="SailState" ID="{8E95FA31-FCA4-4BDA-BE03-4F90DEFDFA3C}" ShortID="771742159">
+															<PropertyList>
+																<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="LayerCrossFadeControlInput">
+																	<ObjectRef Name="Boat_SailTension" ID="{7F5CA7A6-156F-4E8E-9CE5-228FB55B8D24}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																</Reference>
+															</ReferenceList>
+															<ObjectLists>
+																<ObjectList Name="RTPC">
+																	<RTPC Name="" ID="{93FADF07-1332-4E11-997C-B9101809AE80}" ShortID="254914535">
+																		<PropertyList>
+																			<Property Name="PropertyName" Type="string" Value="Volume"/>
+																		</PropertyList>
+																		<ReferenceList>
+																			<Reference Name="ControlInput">
+																				<ObjectRef Name="Boat_SailTension" ID="{7F5CA7A6-156F-4E8E-9CE5-228FB55B8D24}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																			</Reference>
+																			<Reference Name="Curve">
+																				<Custom>
+																					<Curve Name="" ID="{BDD67331-EA6F-4719-BDF4-934AF1E7E675}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																								<SegmentShape>SCurve</SegmentShape>
+																							</Point>
+																							<Point>
+																								<XPos>25</XPos>
+																								<YPos>-3</YPos>
+																								<Flags>0</Flags>
+																								<SegmentShape>SCurve</SegmentShape>
+																							</Point>
+																							<Point>
+																								<XPos>50</XPos>
+																								<YPos>-10</YPos>
+																								<Flags>0</Flags>
+																								<SegmentShape>SCurve</SegmentShape>
+																							</Point>
+																							<Point>
+																								<XPos>70</XPos>
+																								<YPos>-24</YPos>
+																								<Flags>0</Flags>
+																								<SegmentShape>SCurve</SegmentShape>
+																							</Point>
+																							<Point>
+																								<XPos>85</XPos>
+																								<YPos>-45</YPos>
+																								<Flags>0</Flags>
+																								<SegmentShape>SCurve</SegmentShape>
+																							</Point>
+																							<Point>
+																								<XPos>100</XPos>
+																								<YPos>-96</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</Custom>
+																			</Reference>
+																		</ReferenceList>
+																	</RTPC>
+																</ObjectList>
+															</ObjectLists>
+															<BlendTrackAssocList>
+																<BlendTrackAssoc>
+																	<ItemRef Name="RC_phy_sailFlutter" ID="{627B7D3F-6193-456A-8A30-77D9995D9852}"/>
+																	<CrossfadingInfo>
+																		<LeftEdgePos>0</LeftEdgePos>
+																		<LeftFadingMode>Automatic</LeftFadingMode>
+																		<RightEdgePos>100</RightEdgePos>
+																		<RightFadingMode>Automatic</RightFadingMode>
+																	</CrossfadingInfo>
+																</BlendTrackAssoc>
+															</BlendTrackAssocList>
+														</BlendTrack>
+													</BlendTrackList>
+												</BlendContainer>
 											</ChildrenList>
 										</Folder>
 									</ChildrenList>

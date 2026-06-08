@@ -12022,6 +12022,131 @@
 												</BlendTrack>
 											</BlendTrackList>
 										</BlendContainer>
+										<Folder Name="PhyHullWaterMass" ID="{6E3CB6A0-9305-4095-B24A-01E0643F024F}" ShortID="813972555">
+											<ChildrenList>
+												<Sound Name="phy_hullWaterMassFast_loop" ID="{AD6F2940-1938-4219-9383-293B198061DC}" ShortID="524721218">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>25</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-300</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-10</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="phy_hullWaterMassFast_loop" ID="{50A69771-577C-44A9-9417-4F1AC93ECFB9}">
+															<PropertyList>
+																<Property Name="CrossfadeDuration" Type="Real64" Value="812.5"/>
+																<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.36631"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.41452"/>
+																<Property Name="LoopBegin" Type="Real64" Value="1.45542"/>
+																<Property Name="LoopEnd" Type="Real64" Value="11.18072"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>phy_hullWaterMassFast_loop.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="964134678"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{08D15BAB-B666-443F-8D80-C0927A7DDE54}" ShortID="864245402">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyHullWaterMass_EQ" ID="{2E88404F-E44A-4951-8BC0-5A89B8A8EAD5}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+													<ActiveSourceList>
+														<ActiveSource Name="phy_hullWaterMassFast_loop" ID="{50A69771-577C-44A9-9417-4F1AC93ECFB9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="phy_hullWaterMassSlow_loop" ID="{715FE565-A242-4407-8BEC-44A5EBC7067E}" ShortID="453934713">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>25</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-200</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-10</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="phy_hullWaterMassSlow_loop" ID="{88A86C51-30FF-45F2-AA3E-5F3CB2D7DBE1}">
+															<PropertyList>
+																<Property Name="CrossfadeDuration" Type="Real64" Value="750"/>
+																<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.22172"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.15424"/>
+																<Property Name="LoopBegin" Type="Real64" Value="1.00241"/>
+																<Property Name="LoopEnd" Type="Real64" Value="11.41205"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>phy_hullWaterMassSlow_loop.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="519589814"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{E4C3F3F1-6973-4F4C-8699-5D9DC2ACA3D0}" ShortID="432277424">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyHullWaterMass_EQ" ID="{2E88404F-E44A-4951-8BC0-5A89B8A8EAD5}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+													<ActiveSourceList>
+														<ActiveSource Name="phy_hullWaterMassSlow_loop" ID="{88A86C51-30FF-45F2-AA3E-5F3CB2D7DBE1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</Folder>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

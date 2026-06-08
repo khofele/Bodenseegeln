@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3343236362346103203}
   - component: {fileID: 7511881494760109778}
+  - component: {fileID: 1438509939680432294}
   m_Layer: 0
   m_Name: Treibholz01
   m_TagString: Untagged
@@ -57,6 +58,28 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2717246045201320833}
   m_Enabled: 1
+--- !u!64 &1438509939680432294
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2679183757528750873}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &3166892116299367061
 GameObject:
   m_ObjectHideFlags: 0

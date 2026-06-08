@@ -10,7 +10,7 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="BC_phy_waterDisplacement2" ID="{77326372-9316-40B5-B07D-91E0C7823585}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<ObjectRef Name="BC_phy_waterDisplacement3" ID="{6C6908CF-2A89-4E77-85BD-15E92AFAD25B}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
@@ -28,6 +28,18 @@
 						<Module>
 							<ObjectRef Name="RC_phy_windGust" ID="{958A97D0-C181-4C24-A9A6-B14C44D73BEE}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BC_boatSailDeploy" ID="{4BF484A1-5022-435D-8614-1C6542EA25DD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BC_boatSailRetract" ID="{C5604AC0-550D-4226-9A13-1A8A0BB93FA9}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BC_sailState_01" ID="{BE40B721-7FB1-43B8-A417-B3F730109F3A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="2"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>

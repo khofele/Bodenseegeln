@@ -411,8 +411,33 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="boat_start_creaking" ID="{2C0253C0-B87D-4847-BDA2-CF0F4C1180F0}"/>
-								<Event Name="boat_stop_creaking" ID="{4BD7BC65-4DA2-42F1-A7DC-A90AA5A73311}"/>
+								<Event Name="boat_start_creaking" ID="{2C0253C0-B87D-4847-BDA2-CF0F4C1180F0}">
+									<ChildrenList>
+										<Action Name="" ID="{EE55D3DB-387C-4E10-8322-D9C76C78D9DC}" ShortID="596646873">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BoatCreaking" ID="{9C5C3F37-D63F-437A-AC13-996F0782E055}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_stop_creaking" ID="{4BD7BC65-4DA2-42F1-A7DC-A90AA5A73311}">
+									<ChildrenList>
+										<Action Name="" ID="{C0AB1C06-1EBE-4B08-89AB-9EA341F460E3}" ShortID="826482600">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BoatCreaking" ID="{9C5C3F37-D63F-437A-AC13-996F0782E055}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="BoatSail" ID="{AFC60F6A-464A-497A-B92D-E8483504F133}" ShortID="217737011">
@@ -586,8 +611,28 @@
 										<Event Name="env_stop_boat_RubDock" ID="{056B7BBB-8674-4C88-9677-4B51045B7C0B}"/>
 									</ChildrenList>
 								</Folder>
-								<Event Name="env_boatRefuel" ID="{C19E6852-8537-4962-BDBD-576B98088A7D}"/>
-								<Event Name="env_boatRepair" ID="{6EC565DA-542B-4899-AE6E-FD624481A3FD}"/>
+								<Event Name="env_boatRefuel" ID="{C19E6852-8537-4962-BDBD-576B98088A7D}">
+									<ChildrenList>
+										<Action Name="" ID="{03D3DFEC-C3E1-407C-A097-9D2F51E582A9}" ShortID="576473861">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SC_env_refuel" ID="{EC4AA6A0-E873-49FC-A4B9-146A2E8DB09A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="env_boatRepair" ID="{6EC565DA-542B-4899-AE6E-FD624481A3FD}">
+									<ChildrenList>
+										<Action Name="" ID="{D3A9BDDC-83E4-44D9-8851-086D9D6331B8}" ShortID="38305134">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SC_env_boatRepair" ID="{B75094E1-1AC5-4482-BB54-B98E51AFE8F8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="EnvWater" ID="{F1852ED3-D646-4CDF-8071-248F3FECB1D9}" ShortID="215992007">

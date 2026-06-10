@@ -7530,6 +7530,9 @@
 												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_BoatWind" ID="{8B515474-136D-4B98-B7CE-05B22962D88B}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
 												</Reference>
@@ -7759,6 +7762,9 @@
 												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_SailWind" ID="{6535DA8E-821D-40C4-A86D-F4B7C0EB0C94}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
 												</Reference>
@@ -11610,6 +11616,7 @@
 												</Sound>
 												<Sound Name="phy_hullWaterMass_loop01" ID="{E4E736B8-C850-4B74-BC9D-C0F702E5CD9B}" ShortID="770755479">
 													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
 														<Property Name="Pitch" Type="int32">
 															<ValueList>
 																<Value>-1000</Value>
@@ -11633,6 +11640,9 @@
 														</Property>
 													</PropertyList>
 													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="ATT_PhyBoatWater" ID="{BF3EC898-E81F-469F-BD1B-D491C8CFEB1C}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+														</Reference>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
 														</Reference>
@@ -11668,6 +11678,7 @@
 										</Folder>
 										<BlendContainer Name="BC_phy_wakeWater" ID="{8C7FE357-2A30-4B51-B0B7-6E81A74E7E26}" ShortID="231654095">
 											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-11</Value>
@@ -11675,6 +11686,9 @@
 												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_PhyBoatWater" ID="{BF3EC898-E81F-469F-BD1B-D491C8CFEB1C}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
 												</Reference>
@@ -12769,7 +12783,13 @@
 											</ChildrenList>
 										</Folder>
 										<BlendContainer Name="BC_phy_wavHull" ID="{6791227C-5984-452A-9B6C-0CB269ACCF12}" ShortID="746923036">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_PhyBoatWater" ID="{BF3EC898-E81F-469F-BD1B-D491C8CFEB1C}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
 												</Reference>

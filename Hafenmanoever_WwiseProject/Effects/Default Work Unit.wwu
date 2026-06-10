@@ -1135,136 +1135,148 @@
 				</Folder>
 				<Folder Name="Compressor" ID="{EA33093F-DB38-48A8-8906-E1501FC43E55}" ShortID="404851747">
 					<ChildrenList>
-						<Effect Name="BoatEngine_Compressor" ID="{39FAAC5C-772D-41CA-8721-3630B3865BD4}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.25"/>
-								<Property Name="Ratio" Type="Real32" Value="2.5"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.2"/>
-								<Property Name="Threshold" Type="Real32" Value="-18"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="BoatWoodVibrationLight_Compressor" ID="{106810AF-EAD4-4E6F-AE27-3458368743CD}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.3"/>
-								<Property Name="Ratio" Type="Real32" Value="2.1"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
-								<Property Name="Threshold" Type="Real32" Value="-24"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="BoatWoodVibrationHeavy_Compressor" ID="{F085144D-282F-40F0-9520-574FD9A0A49E}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.4"/>
-								<Property Name="Ratio" Type="Real32" Value="3"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="0.25"/>
-								<Property Name="Threshold" Type="Real32" Value="-28"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="EnvBoatCollisionHeavyImpact_Compressor" ID="{4CE8D3E1-8437-4E4C-859B-DCA48CAFE0F9}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="1.5"/>
-								<Property Name="Ratio" Type="Real32" Value="3"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
-								<Property Name="Threshold" Type="Real32" Value="-14"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="EnvBoatCollisionWood_Compressor" ID="{91C5474B-B479-46C6-91EF-257E503F942C}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.3"/>
-								<Property Name="Ratio" Type="Real32" Value="21"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
-								<Property Name="Threshold" Type="Real32" Value="-16"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="EnvOpenMap_Compressor" ID="{CF391A9F-2023-48B8-BAF9-A42DF64B2D96}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.5"/>
-								<Property Name="OutputGain" Type="Real32" Value="0.5"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="0.8"/>
-								<Property Name="Threshold" Type="Real32" Value="-20"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="EnvMapClose_Compressor" ID="{631AD044-B0ED-4A66-BA45-1CEF172ADFFE}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.8"/>
-								<Property Name="OutputGain" Type="Real32" Value="0.2"/>
-								<Property Name="Ratio" Type="Real32" Value="1.8"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="0.9"/>
-								<Property Name="Threshold" Type="Real32" Value="-18"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="BoatSailDeploy_Compressor" ID="{13437C42-4D37-4512-A65F-3DC195D09931}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.2"/>
-								<Property Name="Ratio" Type="Real32" Value="2"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.2"/>
-								<Property Name="Threshold" Type="Real32" Value="-20"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="BoatSailRetract_Compressor" ID="{BBEF0C47-0FC7-484B-B1ED-0034B4FAFD59}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.3"/>
-								<Property Name="Ratio" Type="Real32" Value="2.5"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.5"/>
-								<Property Name="Threshold" Type="Real32" Value="-22"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="EnvBoatCollisionUnderWaterImpact_Compressor" ID="{DD9825FD-BF72-4D1E-A025-208BF616501D}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.25"/>
-								<Property Name="OutputGain" Type="Real32" Value="1"/>
-								<Property Name="Ratio" Type="Real32" Value="3"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
-								<Property Name="Threshold" Type="Real32" Value="-30"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="BoatSailFlapLoop_Compressor" ID="{A57E4233-B003-4935-953C-128034DAB12C}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.8"/>
-								<Property Name="Ratio" Type="Real32" Value="2"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
-								<Property Name="Threshold" Type="Real32" Value="-22"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="PhyWaterDisplacementSlow_Compressor" ID="{438A1F0C-ACC2-425C-A1CA-AADF7B84761C}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.3"/>
-								<Property Name="OutputGain" Type="Real32" Value="1"/>
-								<Property Name="Ratio" Type="Real32" Value="2"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="0.25"/>
-								<Property Name="Threshold" Type="Real32" Value="-20"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="PhyWaterDisplacementFast_Compressor" ID="{C8C9AEF7-C4EA-429E-8B7B-E8EFB1D55EB4}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.3"/>
-								<Property Name="Ratio" Type="Real32" Value="1.7"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
-								<Property Name="Threshold" Type="Real32" Value="-16"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="PhySailmastWhistleLayer_Compressor" ID="{3BCD938B-0316-4F2F-A6C4-8E3BF61D8709}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="Ratio" Type="Real32" Value="2"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.5"/>
-								<Property Name="Threshold" Type="Real32" Value="-22"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="EnvBoatRepairRatchet_Compressor" ID="{9EBB5149-4EE5-4AA8-9293-A1B9725A68AC}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.8"/>
-								<Property Name="Ratio" Type="Real32" Value="1.8"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.2"/>
-								<Property Name="Threshold" Type="Real32" Value="-16"/>
-							</PropertyList>
-						</Effect>
-						<Effect Name="PhyWaveHull_Compressor" ID="{A582BC11-1B64-416D-A40D-D7E245FB838A}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-							<PropertyList>
-								<Property Name="AttackTime" Type="Real32" Value="0.25"/>
-								<Property Name="Ratio" Type="Real32" Value="1.6"/>
-								<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
-								<Property Name="Threshold" Type="Real32" Value="-16"/>
-							</PropertyList>
-						</Effect>
+						<Folder Name="Boat" ID="{CDF103F0-405C-4F8C-98E5-D32371CC8EBC}" ShortID="917434580">
+							<ChildrenList>
+								<Effect Name="BoatSailDeploy_Compressor" ID="{13437C42-4D37-4512-A65F-3DC195D09931}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.2"/>
+										<Property Name="Ratio" Type="Real32" Value="2"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.2"/>
+										<Property Name="Threshold" Type="Real32" Value="-20"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="BoatEngine_Compressor" ID="{39FAAC5C-772D-41CA-8721-3630B3865BD4}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.25"/>
+										<Property Name="Ratio" Type="Real32" Value="2.5"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.2"/>
+										<Property Name="Threshold" Type="Real32" Value="-18"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="BoatSailFlapLoop_Compressor" ID="{A57E4233-B003-4935-953C-128034DAB12C}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.8"/>
+										<Property Name="Ratio" Type="Real32" Value="2"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
+										<Property Name="Threshold" Type="Real32" Value="-22"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="BoatWoodVibrationHeavy_Compressor" ID="{F085144D-282F-40F0-9520-574FD9A0A49E}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.4"/>
+										<Property Name="Ratio" Type="Real32" Value="3"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="0.25"/>
+										<Property Name="Threshold" Type="Real32" Value="-28"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="BoatSailRetract_Compressor" ID="{BBEF0C47-0FC7-484B-B1ED-0034B4FAFD59}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.3"/>
+										<Property Name="Ratio" Type="Real32" Value="2.5"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.5"/>
+										<Property Name="Threshold" Type="Real32" Value="-22"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="BoatWoodVibrationLight_Compressor" ID="{106810AF-EAD4-4E6F-AE27-3458368743CD}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.3"/>
+										<Property Name="Ratio" Type="Real32" Value="2.1"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
+										<Property Name="Threshold" Type="Real32" Value="-24"/>
+									</PropertyList>
+								</Effect>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Env" ID="{C8887567-F4A9-4823-A626-33ADC9FFBDEC}" ShortID="306203598">
+							<ChildrenList>
+								<Effect Name="EnvBoatCollisionHeavyImpact_Compressor" ID="{4CE8D3E1-8437-4E4C-859B-DCA48CAFE0F9}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="1.5"/>
+										<Property Name="Ratio" Type="Real32" Value="3"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
+										<Property Name="Threshold" Type="Real32" Value="-14"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="EnvMapClose_Compressor" ID="{631AD044-B0ED-4A66-BA45-1CEF172ADFFE}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.8"/>
+										<Property Name="OutputGain" Type="Real32" Value="0.2"/>
+										<Property Name="Ratio" Type="Real32" Value="1.8"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="0.9"/>
+										<Property Name="Threshold" Type="Real32" Value="-18"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="EnvBoatCollisionUnderWaterImpact_Compressor" ID="{DD9825FD-BF72-4D1E-A025-208BF616501D}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.25"/>
+										<Property Name="OutputGain" Type="Real32" Value="1"/>
+										<Property Name="Ratio" Type="Real32" Value="3"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
+										<Property Name="Threshold" Type="Real32" Value="-30"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="EnvBoatRepairRatchet_Compressor" ID="{9EBB5149-4EE5-4AA8-9293-A1B9725A68AC}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.8"/>
+										<Property Name="Ratio" Type="Real32" Value="1.8"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.2"/>
+										<Property Name="Threshold" Type="Real32" Value="-16"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="EnvBoatCollisionWood_Compressor" ID="{91C5474B-B479-46C6-91EF-257E503F942C}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.3"/>
+										<Property Name="Ratio" Type="Real32" Value="21"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
+										<Property Name="Threshold" Type="Real32" Value="-16"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="EnvOpenMap_Compressor" ID="{CF391A9F-2023-48B8-BAF9-A42DF64B2D96}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.5"/>
+										<Property Name="OutputGain" Type="Real32" Value="0.5"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="0.8"/>
+										<Property Name="Threshold" Type="Real32" Value="-20"/>
+									</PropertyList>
+								</Effect>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Physic" ID="{86684E7E-F087-427E-97E8-1D40EF5AA0E6}" ShortID="165275621">
+							<ChildrenList>
+								<Effect Name="PhyWaterDisplacementSlow_Compressor" ID="{438A1F0C-ACC2-425C-A1CA-AADF7B84761C}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.3"/>
+										<Property Name="OutputGain" Type="Real32" Value="1"/>
+										<Property Name="Ratio" Type="Real32" Value="2"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="0.25"/>
+										<Property Name="Threshold" Type="Real32" Value="-20"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="PhySailmastWhistleLayer_Compressor" ID="{3BCD938B-0316-4F2F-A6C4-8E3BF61D8709}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="Ratio" Type="Real32" Value="2"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.5"/>
+										<Property Name="Threshold" Type="Real32" Value="-22"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="PhyWaterDisplacementFast_Compressor" ID="{C8C9AEF7-C4EA-429E-8B7B-E8EFB1D55EB4}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.3"/>
+										<Property Name="Ratio" Type="Real32" Value="1.7"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
+										<Property Name="Threshold" Type="Real32" Value="-16"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="PhyWaveHull_Compressor" ID="{A582BC11-1B64-416D-A40D-D7E245FB838A}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.25"/>
+										<Property Name="Ratio" Type="Real32" Value="1.6"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
+										<Property Name="Threshold" Type="Real32" Value="-16"/>
+									</PropertyList>
+								</Effect>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="RoomVerb" ID="{633CDEC3-A160-4DF7-B965-051FDDD3218A}" ShortID="531765072">

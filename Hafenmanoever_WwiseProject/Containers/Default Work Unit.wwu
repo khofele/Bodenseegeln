@@ -12215,6 +12215,62 @@
 														<ActiveSource Name="phy_hullWaterMass_loop" ID="{477CC2E1-37B4-4BB3-A3ED-97E63CC72BA1}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
+												<Sound Name="phy_hullWaterMass_loop01" ID="{E4E736B8-C850-4B74-BC9D-C0F702E5CD9B}" ShortID="770755479">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-1000</Value>
+															</ValueList>
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{7B17FA09-063C-48F3-996F-DB00F861B6B9}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="40"/>
+																			<Property Name="Min" Type="Real64" Value="-40"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="phy_hullWaterMass_loop01" ID="{0637C200-561B-470C-8F5D-2F6AF3A1EE2F}">
+															<Language>SFX</Language>
+															<AudioFile>phy_hullWaterMass_loop01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="786903771"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{6D16ADD3-1159-40C8-9EB4-0B8CE4B90423}" ShortID="532043674">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyHullWaterMass_EQ" ID="{2E88404F-E44A-4951-8BC0-5A89B8A8EAD5}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+													<ActiveSourceList>
+														<ActiveSource Name="phy_hullWaterMass_loop01" ID="{0637C200-561B-470C-8F5D-2F6AF3A1EE2F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
 											</ChildrenList>
 										</Folder>
 									</ChildrenList>

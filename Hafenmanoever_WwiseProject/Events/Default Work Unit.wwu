@@ -646,22 +646,121 @@
 					<ChildrenList>
 						<Folder Name="PhyWave" ID="{308EE4B5-ACAB-4C20-A685-A57E8824006D}" ShortID="699005447">
 							<ChildrenList>
-								<Event Name="phy_start_waveHull" ID="{AB95686D-EB81-4ABD-8DED-902D09BFE045}"/>
-								<Event Name="phy_stop_waveHull" ID="{5E7BBF84-469E-43C7-B277-5880A23C386D}"/>
-								<Event Name="phy_start_waveMotion" ID="{E0CFA58D-3D67-4074-ACD6-249CD12BAACA}"/>
-								<Event Name="phy_stop_waveMotion" ID="{66B41CA3-E03E-412A-8D6B-0D024DA869CF}"/>
+								<Event Name="phy_start_waveHull" ID="{AB95686D-EB81-4ABD-8DED-902D09BFE045}">
+									<ChildrenList>
+										<Action Name="" ID="{92790064-4562-4377-9F28-21F391BF096E}" ShortID="843542976">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_waveHull" ID="{6791227C-5984-452A-9B6C-0CB269ACCF12}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_waveHull" ID="{5E7BBF84-469E-43C7-B277-5880A23C386D}">
+									<ChildrenList>
+										<Action Name="" ID="{1B05DA82-3E73-4237-A106-A0DBD2D2A451}" ShortID="150664125">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_waveHull" ID="{6791227C-5984-452A-9B6C-0CB269ACCF12}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_start_waveMotion" ID="{E0CFA58D-3D67-4074-ACD6-249CD12BAACA}">
+									<ChildrenList>
+										<Action Name="" ID="{171ED313-2D8D-432B-847B-3F77C8B08859}" ShortID="1028775940">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_waveMotion_loop" ID="{540A7B32-1E42-4F5E-BFDD-50FDB03F5FA8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_waveMotion" ID="{66B41CA3-E03E-412A-8D6B-0D024DA869CF}">
+									<ChildrenList>
+										<Action Name="" ID="{A00A13F0-5398-472D-A452-B905C5C8CD66}" ShortID="1026114955">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_waveMotion_loop" ID="{540A7B32-1E42-4F5E-BFDD-50FDB03F5FA8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="PhyBow" ID="{C1517D5B-553F-4F89-BC81-106A06D3E4BB}" ShortID="262647774">
 							<ChildrenList>
-								<Event Name="phy_start_bowWater" ID="{0A5E8B81-A365-48CA-A4D6-E6F434A3A401}"/>
-								<Event Name="phy_stop_bowWater" ID="{BB21DE50-FB40-4357-AD5C-D3C9B7A738DD}"/>
+								<Event Name="phy_start_bowWater" ID="{0A5E8B81-A365-48CA-A4D6-E6F434A3A401}">
+									<ChildrenList>
+										<Action Name="" ID="{E16D3CE0-B71D-48D1-9622-6ABFF75E8801}" ShortID="592413912">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_bowWater2" ID="{70AA516A-530E-4500-BD2E-A61CF60E2AED}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_bowWater" ID="{BB21DE50-FB40-4357-AD5C-D3C9B7A738DD}">
+									<ChildrenList>
+										<Action Name="" ID="{D7D648B1-D42A-42B6-894E-2C24B8E33ACF}" ShortID="1011446113">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_bowWater2" ID="{70AA516A-530E-4500-BD2E-A61CF60E2AED}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="PhyWake" ID="{FB60F1CE-3B35-4105-A3D3-FD1885FE5706}" ShortID="575828980">
 							<ChildrenList>
-								<Event Name="phy_start_wakeWater" ID="{3E4A3600-16B9-4790-ADF9-04628CA48085}"/>
-								<Event Name="phy_stop_wakeWater" ID="{FB1A576A-7F3C-49DA-A237-6C7BD304054D}"/>
+								<Event Name="phy_start_wakeWater" ID="{3E4A3600-16B9-4790-ADF9-04628CA48085}">
+									<ChildrenList>
+										<Action Name="" ID="{793558F5-08F7-4318-B1F8-24C2614A04BA}" ShortID="900132516">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_wakeWater" ID="{8C7FE357-2A30-4B51-B0B7-6E81A74E7E26}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_wakeWater" ID="{FB1A576A-7F3C-49DA-A237-6C7BD304054D}">
+									<ChildrenList>
+										<Action Name="" ID="{D24B9324-7498-4A25-939C-0613510C7AD2}" ShortID="535715653">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_wakeWater" ID="{8C7FE357-2A30-4B51-B0B7-6E81A74E7E26}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="PhyWind" ID="{A6201007-D5C2-4BB5-87EF-0013E117BA7C}" ShortID="327206754">
@@ -782,6 +881,8 @@
 										<Action Name="" ID="{15BDE4D0-AC28-4330-A7B5-489DE2336730}" ShortID="971336546">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">

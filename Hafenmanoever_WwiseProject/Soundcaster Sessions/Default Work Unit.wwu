@@ -19,10 +19,14 @@
 						</Module>
 						<Module>
 							<ObjectRef Name="BC_phy_wakeWater" ID="{8C7FE357-2A30-4B51-B0B7-6E81A74E7E26}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-							<Position X="1" Y="4"/>
+							<Position X="1" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="BC_phy_wavHull" ID="{6791227C-5984-452A-9B6C-0CB269ACCF12}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BC_phy_waveMotion_loop" ID="{540A7B32-1E42-4F5E-BFDD-50FDB03F5FA8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="1" Y="5"/>
 						</Module>
 						<Module>

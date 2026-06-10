@@ -1117,6 +1117,27 @@
 										<Property Name="RolloffRateBand1" Type="int32" Value="24"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="PhyWaveMotion_EQ" ID="{24C60BA9-9C64-4306-9D37-46986A9CD077}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="150"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="420"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="5100"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="6500"/>
+										<Property Name="GainBand2" Type="Real32" Value="5"/>
+										<Property Name="GainBand3" Type="Real32" Value="-3"/>
+										<Property Name="GainBand4" Type="Real32" Value="-24"/>
+										<Property Name="GainBand5" Type="Real32" Value="-5"/>
+										<Property Name="NumBands" Type="int32" Value="5"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="QFactorBand2" Type="Real32" Value="0.8"/>
+										<Property Name="QFactorBand3" Type="Real32" Value="1.2"/>
+										<Property Name="QFactorBand4" Type="Real32" Value="3"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

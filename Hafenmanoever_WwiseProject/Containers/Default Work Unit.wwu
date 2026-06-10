@@ -1253,6 +1253,11 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>2</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Attenuation">
@@ -11420,618 +11425,6 @@
 												</BlendContainer>
 											</ChildrenList>
 										</Folder>
-										<BlendContainer Name="BC_phy_bowWater" ID="{17B6CBF5-2905-4D5B-B7D8-A9F9914ECB34}" ShortID="867767484">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="ATT_PhyBoatWater" ID="{BF3EC898-E81F-469F-BD1B-D491C8CFEB1C}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="phy_bowWater_loop" ID="{A84A2E73-4F8A-444F-91C5-7DAF0697886F}" ShortID="81365028">
-													<PropertyList>
-														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-														<Property Name="Lowpass" Type="int16">
-															<ValueList>
-																<Value>5</Value>
-															</ValueList>
-														</Property>
-														<Property Name="MakeUpGain" Type="Real64">
-															<ValueList>
-																<Value>5</Value>
-															</ValueList>
-														</Property>
-														<Property Name="OverrideEffect" Type="bool" Value="True"/>
-														<Property Name="Pitch" Type="int32">
-															<ValueList>
-																<Value>-800</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>-15</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="phy_bowWater_loop" ID="{A1F8B5AE-3EA7-4007-8738-4C52EEB85AF7}">
-															<PropertyList>
-																<Property Name="CrossfadeDuration" Type="Real64" Value="800"/>
-																<Property Name="CrossfadeShape" Type="int16" Value="6"/>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.17686"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.38323"/>
-																<Property Name="LoopBegin" Type="Real64" Value="2.03379"/>
-																<Property Name="LoopEnd" Type="Real64" Value="13.08698"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>phy_bowWater_loop.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="508773724"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists>
-														<ObjectList Name="Effects">
-															<EffectSlot Name="" ID="{6B7519CF-49E4-41BA-A4AA-9FBEE42CE0C4}" ShortID="956480755">
-																<ReferenceList>
-																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																		<ObjectRef Name="PhyBowWater_EQ" ID="{60A479C2-0F12-4E45-BB52-C0C94441E5B2}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																	</Reference>
-																</ReferenceList>
-															</EffectSlot>
-														</ObjectList>
-													</ObjectLists>
-													<ActiveSourceList>
-														<ActiveSource Name="phy_bowWater_loop" ID="{A1F8B5AE-3EA7-4007-8738-4C52EEB85AF7}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="phy_bowWaterBody_loop" ID="{29E796DC-0D88-47A2-ADBC-FF1276B9868D}" ShortID="1067026213">
-													<PropertyList>
-														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-														<Property Name="Lowpass" Type="int16">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-														<Property Name="MakeUpGain" Type="Real64">
-															<ValueList>
-																<Value>5</Value>
-															</ValueList>
-														</Property>
-														<Property Name="OverrideEffect" Type="bool" Value="True"/>
-														<Property Name="Pitch" Type="int32">
-															<ValueList>
-																<Value>-1300</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>-3</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="phy_bowWater_loop" ID="{A5C0F83E-20C7-4894-84E2-DE4420A0BF11}">
-															<PropertyList>
-																<Property Name="CrossfadeDuration" Type="Real64" Value="800"/>
-																<Property Name="CrossfadeShape" Type="int16" Value="6"/>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.17686"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.38323"/>
-																<Property Name="LoopBegin" Type="Real64" Value="2.03379"/>
-																<Property Name="LoopEnd" Type="Real64" Value="13.08698"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>phy_bowWater_loop.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="508773724"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists>
-														<ObjectList Name="Effects">
-															<EffectSlot Name="" ID="{52FD69A7-6631-4694-9CEC-CA7B95290C68}" ShortID="281935896">
-																<ReferenceList>
-																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																		<ObjectRef Name="PhyBowWaterBody_EQ" ID="{404B4D80-EFA3-4954-BBBF-7ABDA3ED3BBF}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																	</Reference>
-																</ReferenceList>
-															</EffectSlot>
-														</ObjectList>
-													</ObjectLists>
-													<ActiveSourceList>
-														<ActiveSource Name="phy_bowWater_loop" ID="{A5C0F83E-20C7-4894-84E2-DE4420A0BF11}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-											<BlendTrackList>
-												<BlendTrack Name="BT_BowWater" ID="{9B0B85C2-D6E3-4EA9-B1D4-0AD6C4AF39C1}" ShortID="501831998">
-													<PropertyList>
-														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
-														</Reference>
-													</ReferenceList>
-													<ObjectLists>
-														<ObjectList Name="RTPC">
-															<RTPC Name="" ID="{5F68121B-4F9F-4E53-959F-1A2F596551CA}" ShortID="588024235">
-																<PropertyList>
-																	<Property Name="PropertyName" Type="string" Value="Volume"/>
-																</PropertyList>
-																<ReferenceList>
-																	<Reference Name="ControlInput">
-																		<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
-																	</Reference>
-																	<Reference Name="Curve">
-																		<Custom>
-																			<Curve Name="" ID="{957C85F6-6793-4F41-B4C9-D1B66F21E2EC}">
-																				<PropertyList>
-																					<Property Name="Flags" Type="int32" Value="3"/>
-																				</PropertyList>
-																				<PointList>
-																					<Point>
-																						<XPos>0</XPos>
-																						<YPos>-96</YPos>
-																						<Flags>5</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>10</XPos>
-																						<YPos>-30</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>25</XPos>
-																						<YPos>-16</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>45</XPos>
-																						<YPos>-8</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>65</XPos>
-																						<YPos>-3</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>85</XPos>
-																						<YPos>0</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>100</XPos>
-																						<YPos>1</YPos>
-																						<Flags>37</Flags>
-																					</Point>
-																				</PointList>
-																			</Curve>
-																		</Custom>
-																	</Reference>
-																</ReferenceList>
-															</RTPC>
-														</ObjectList>
-													</ObjectLists>
-													<BlendTrackAssocList>
-														<BlendTrackAssoc>
-															<ItemRef Name="phy_bowWater_loop" ID="{A84A2E73-4F8A-444F-91C5-7DAF0697886F}"/>
-															<CrossfadingInfo>
-																<LeftEdgePos>0</LeftEdgePos>
-																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>100</RightEdgePos>
-																<RightFadingMode>Automatic</RightFadingMode>
-															</CrossfadingInfo>
-														</BlendTrackAssoc>
-													</BlendTrackAssocList>
-												</BlendTrack>
-												<BlendTrack Name="BT_BowWaterBody" ID="{DD9B8B53-8C8E-4BF7-8647-8F2EC83F7000}" ShortID="119926275">
-													<PropertyList>
-														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
-														</Reference>
-													</ReferenceList>
-													<ObjectLists>
-														<ObjectList Name="RTPC">
-															<RTPC Name="" ID="{1F6733A8-6631-4E93-BDA3-8C1D2204ACDC}" ShortID="902083132">
-																<PropertyList>
-																	<Property Name="PropertyName" Type="string" Value="Volume"/>
-																</PropertyList>
-																<ReferenceList>
-																	<Reference Name="ControlInput">
-																		<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
-																	</Reference>
-																	<Reference Name="Curve">
-																		<Custom>
-																			<Curve Name="" ID="{B80A138C-DFFE-42CA-9F7F-B88283F76298}">
-																				<PropertyList>
-																					<Property Name="Flags" Type="int32" Value="3"/>
-																				</PropertyList>
-																				<PointList>
-																					<Point>
-																						<XPos>0</XPos>
-																						<YPos>-96</YPos>
-																						<Flags>5</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>15</XPos>
-																						<YPos>-36</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>30</XPos>
-																						<YPos>-20</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>50</XPos>
-																						<YPos>-13</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>75</XPos>
-																						<YPos>-9</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>100</XPos>
-																						<YPos>-8</YPos>
-																						<Flags>37</Flags>
-																					</Point>
-																				</PointList>
-																			</Curve>
-																		</Custom>
-																	</Reference>
-																</ReferenceList>
-															</RTPC>
-														</ObjectList>
-													</ObjectLists>
-													<BlendTrackAssocList>
-														<BlendTrackAssoc>
-															<ItemRef Name="phy_bowWaterBody_loop" ID="{29E796DC-0D88-47A2-ADBC-FF1276B9868D}"/>
-															<CrossfadingInfo>
-																<LeftEdgePos>0</LeftEdgePos>
-																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>100</RightEdgePos>
-																<RightFadingMode>Automatic</RightFadingMode>
-															</CrossfadingInfo>
-														</BlendTrackAssoc>
-													</BlendTrackAssocList>
-												</BlendTrack>
-											</BlendTrackList>
-										</BlendContainer>
-										<BlendContainer Name="BC_phy_bowWater2" ID="{70AA516A-530E-4500-BD2E-A61CF60E2AED}" ShortID="791152889">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-12</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="ATT_PhyBoatWater" ID="{BF3EC898-E81F-469F-BD1B-D491C8CFEB1C}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="phy_bowWater_loop" ID="{8D7AA88C-B836-4E92-9076-310F84445108}" ShortID="583114406">
-													<PropertyList>
-														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-														<Property Name="Lowpass" Type="int16">
-															<ValueList>
-																<Value>5</Value>
-															</ValueList>
-														</Property>
-														<Property Name="MakeUpGain" Type="Real64">
-															<ValueList>
-																<Value>5</Value>
-															</ValueList>
-														</Property>
-														<Property Name="OverrideEffect" Type="bool" Value="True"/>
-														<Property Name="Pitch" Type="int32">
-															<ValueList>
-																<Value>-800</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="phy_bowWater_loop" ID="{11B61DDE-A110-4D25-A5E0-A24C9F6635B3}">
-															<PropertyList>
-																<Property Name="CrossfadeDuration" Type="Real64" Value="792.856"/>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.38497"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.35288"/>
-																<Property Name="LoopBegin" Type="Real64" Value="1.98907"/>
-																<Property Name="LoopEnd" Type="Real64" Value="13.28188"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>phy_bowWater_loop.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="994528532"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists>
-														<ObjectList Name="Effects">
-															<EffectSlot Name="" ID="{FB1D4C49-E14B-4E8C-B9CB-EBE4DE29E438}" ShortID="15722757">
-																<ReferenceList>
-																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																		<ObjectRef Name="PhyBowWater_EQ" ID="{60A479C2-0F12-4E45-BB52-C0C94441E5B2}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																	</Reference>
-																</ReferenceList>
-															</EffectSlot>
-														</ObjectList>
-													</ObjectLists>
-													<ActiveSourceList>
-														<ActiveSource Name="phy_bowWater_loop" ID="{11B61DDE-A110-4D25-A5E0-A24C9F6635B3}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="phy_bowWaterBody_loop" ID="{8F71EE26-69AA-4F3F-BAB4-5B3B04F85897}" ShortID="1021307364">
-													<PropertyList>
-														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-														<Property Name="Lowpass" Type="int16">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-														<Property Name="MakeUpGain" Type="Real64">
-															<ValueList>
-																<Value>5</Value>
-															</ValueList>
-														</Property>
-														<Property Name="OverrideEffect" Type="bool" Value="True"/>
-														<Property Name="Pitch" Type="int32">
-															<ValueList>
-																<Value>-1300</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="phy_bowWaterBody_loop" ID="{472AAF6B-16F3-4FC6-B773-2F5AD53F182D}">
-															<PropertyList>
-																<Property Name="CrossfadeDuration" Type="Real64" Value="1174.641"/>
-																<Property Name="CrossfadeShape" Type="int16" Value="6"/>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.48121"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.4812"/>
-																<Property Name="LoopBegin" Type="Real64" Value="1.98907"/>
-																<Property Name="LoopEnd" Type="Real64" Value="13.13751"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>phy_bowWaterBody_loop.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="378380122"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists>
-														<ObjectList Name="Effects">
-															<EffectSlot Name="" ID="{C933DE49-A2BE-4174-B8CA-851A27DD5AFA}" ShortID="1028047038">
-																<ReferenceList>
-																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																		<ObjectRef Name="PhyBowWaterBody_EQ" ID="{404B4D80-EFA3-4954-BBBF-7ABDA3ED3BBF}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																	</Reference>
-																</ReferenceList>
-															</EffectSlot>
-														</ObjectList>
-													</ObjectLists>
-													<ActiveSourceList>
-														<ActiveSource Name="phy_bowWaterBody_loop" ID="{472AAF6B-16F3-4FC6-B773-2F5AD53F182D}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-											<BlendTrackList>
-												<BlendTrack Name="BT_BowWater" ID="{8E844E55-888E-428F-ACE4-A4874F605C81}" ShortID="78479845">
-													<PropertyList>
-														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
-														</Reference>
-													</ReferenceList>
-													<ObjectLists>
-														<ObjectList Name="RTPC">
-															<RTPC Name="" ID="{9124C454-901A-40C9-9006-C9B25B1C3156}" ShortID="794785160">
-																<PropertyList>
-																	<Property Name="PropertyName" Type="string" Value="Volume"/>
-																</PropertyList>
-																<ReferenceList>
-																	<Reference Name="ControlInput">
-																		<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
-																	</Reference>
-																	<Reference Name="Curve">
-																		<Custom>
-																			<Curve Name="" ID="{700EBA3C-0C6C-4536-8387-AD97361B58C3}">
-																				<PropertyList>
-																					<Property Name="Flags" Type="int32" Value="3"/>
-																				</PropertyList>
-																				<PointList>
-																					<Point>
-																						<XPos>0</XPos>
-																						<YPos>-96</YPos>
-																						<Flags>5</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>10</XPos>
-																						<YPos>-30</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>25</XPos>
-																						<YPos>-16</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>45</XPos>
-																						<YPos>-8</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>65</XPos>
-																						<YPos>-3</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>85</XPos>
-																						<YPos>0</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>100</XPos>
-																						<YPos>1</YPos>
-																						<Flags>37</Flags>
-																					</Point>
-																				</PointList>
-																			</Curve>
-																		</Custom>
-																	</Reference>
-																</ReferenceList>
-															</RTPC>
-														</ObjectList>
-													</ObjectLists>
-													<BlendTrackAssocList>
-														<BlendTrackAssoc>
-															<ItemRef Name="phy_bowWater_loop" ID="{8D7AA88C-B836-4E92-9076-310F84445108}"/>
-															<CrossfadingInfo>
-																<LeftEdgePos>0</LeftEdgePos>
-																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>100</RightEdgePos>
-																<RightFadingMode>Automatic</RightFadingMode>
-															</CrossfadingInfo>
-														</BlendTrackAssoc>
-													</BlendTrackAssocList>
-												</BlendTrack>
-												<BlendTrack Name="BT_BowWaterBody" ID="{EEF53FE9-C61F-4024-A0DA-7C48E45FC1B4}" ShortID="1622874">
-													<PropertyList>
-														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="LayerCrossFadeControlInput">
-															<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
-														</Reference>
-													</ReferenceList>
-													<ObjectLists>
-														<ObjectList Name="RTPC">
-															<RTPC Name="" ID="{44AE3181-DE86-46ED-BF4D-D8633CBFF11E}" ShortID="393159411">
-																<PropertyList>
-																	<Property Name="PropertyName" Type="string" Value="Volume"/>
-																</PropertyList>
-																<ReferenceList>
-																	<Reference Name="ControlInput">
-																		<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
-																	</Reference>
-																	<Reference Name="Curve">
-																		<Custom>
-																			<Curve Name="" ID="{28AF6F44-457E-47C6-915D-6330CDE6D9A9}">
-																				<PropertyList>
-																					<Property Name="Flags" Type="int32" Value="3"/>
-																				</PropertyList>
-																				<PointList>
-																					<Point>
-																						<XPos>0</XPos>
-																						<YPos>-96</YPos>
-																						<Flags>5</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>15</XPos>
-																						<YPos>-36</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>30</XPos>
-																						<YPos>-20</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>50</XPos>
-																						<YPos>-13</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>75</XPos>
-																						<YPos>-9</YPos>
-																						<Flags>0</Flags>
-																					</Point>
-																					<Point>
-																						<XPos>100</XPos>
-																						<YPos>-8</YPos>
-																						<Flags>37</Flags>
-																					</Point>
-																				</PointList>
-																			</Curve>
-																		</Custom>
-																	</Reference>
-																</ReferenceList>
-															</RTPC>
-														</ObjectList>
-													</ObjectLists>
-													<BlendTrackAssocList>
-														<BlendTrackAssoc>
-															<ItemRef Name="phy_bowWaterBody_loop" ID="{8F71EE26-69AA-4F3F-BAB4-5B3B04F85897}"/>
-															<CrossfadingInfo>
-																<LeftEdgePos>0</LeftEdgePos>
-																<LeftFadingMode>Automatic</LeftFadingMode>
-																<RightEdgePos>100</RightEdgePos>
-																<RightFadingMode>Automatic</RightFadingMode>
-															</CrossfadingInfo>
-														</BlendTrackAssoc>
-													</BlendTrackAssocList>
-												</BlendTrack>
-											</BlendTrackList>
-										</BlendContainer>
 										<Folder Name="PhyHullWaterMass" ID="{6E3CB6A0-9305-4095-B24A-01E0643F024F}" ShortID="813972555">
 											<ChildrenList>
 												<Sound Name="phy_hullWaterMassFast_loop" ID="{AD6F2940-1938-4219-9383-293B198061DC}" ShortID="524721218">
@@ -12277,7 +11670,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-2</Value>
+														<Value>-11</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -12752,6 +12145,849 @@
 																<LeftEdgePos>-3</LeftEdgePos>
 																<LeftFadingMode>Automatic</LeftFadingMode>
 																<RightEdgePos>3</RightEdgePos>
+																<RightFadingMode>Automatic</RightFadingMode>
+															</CrossfadingInfo>
+														</BlendTrackAssoc>
+													</BlendTrackAssocList>
+												</BlendTrack>
+											</BlendTrackList>
+										</BlendContainer>
+										<Folder Name="PhyBowWater" ID="{E72583F8-AD02-4118-9AC8-DC32B9824D1E}" ShortID="122950278">
+											<ChildrenList>
+												<BlendContainer Name="BC_phy_bowWater" ID="{17B6CBF5-2905-4D5B-B7D8-A9F9914ECB34}" ShortID="867767484">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="ATT_PhyBoatWater" ID="{BF3EC898-E81F-469F-BD1B-D491C8CFEB1C}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="phy_bowWater_loop" ID="{A84A2E73-4F8A-444F-91C5-7DAF0697886F}" ShortID="81365028">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>5</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>5</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideEffect" Type="bool" Value="True"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-800</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-14</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_bowWater_loop" ID="{A1F8B5AE-3EA7-4007-8738-4C52EEB85AF7}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="800"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.17686"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.38323"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="2.03379"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="13.08698"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_bowWater_loop.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="508773724"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{6B7519CF-49E4-41BA-A4AA-9FBEE42CE0C4}" ShortID="956480755">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="PhyBowWater_EQ" ID="{60A479C2-0F12-4E45-BB52-C0C94441E5B2}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_bowWater_loop" ID="{A1F8B5AE-3EA7-4007-8738-4C52EEB85AF7}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="phy_bowWaterBody_loop" ID="{29E796DC-0D88-47A2-ADBC-FF1276B9868D}" ShortID="1067026213">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>5</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideEffect" Type="bool" Value="True"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-1300</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-3</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_bowWater_loop" ID="{A5C0F83E-20C7-4894-84E2-DE4420A0BF11}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="800"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.17686"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.38323"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="2.03379"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="13.08698"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_bowWater_loop.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="508773724"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{52FD69A7-6631-4694-9CEC-CA7B95290C68}" ShortID="281935896">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="PhyBowWaterBody_EQ" ID="{404B4D80-EFA3-4954-BBBF-7ABDA3ED3BBF}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_bowWater_loop" ID="{A5C0F83E-20C7-4894-84E2-DE4420A0BF11}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<BlendTrackList>
+														<BlendTrack Name="BT_BowWater" ID="{9B0B85C2-D6E3-4EA9-B1D4-0AD6C4AF39C1}" ShortID="501831998">
+															<PropertyList>
+																<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="LayerCrossFadeControlInput">
+																	<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																</Reference>
+															</ReferenceList>
+															<ObjectLists>
+																<ObjectList Name="RTPC">
+																	<RTPC Name="" ID="{5F68121B-4F9F-4E53-959F-1A2F596551CA}" ShortID="588024235">
+																		<PropertyList>
+																			<Property Name="PropertyName" Type="string" Value="Volume"/>
+																		</PropertyList>
+																		<ReferenceList>
+																			<Reference Name="ControlInput">
+																				<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																			</Reference>
+																			<Reference Name="Curve">
+																				<Custom>
+																					<Curve Name="" ID="{957C85F6-6793-4F41-B4C9-D1B66F21E2EC}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>-96</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>10</XPos>
+																								<YPos>-30</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>25</XPos>
+																								<YPos>-16</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>45</XPos>
+																								<YPos>-8</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>65</XPos>
+																								<YPos>-3</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>85</XPos>
+																								<YPos>0</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>100</XPos>
+																								<YPos>1</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</Custom>
+																			</Reference>
+																		</ReferenceList>
+																	</RTPC>
+																</ObjectList>
+															</ObjectLists>
+															<BlendTrackAssocList>
+																<BlendTrackAssoc>
+																	<ItemRef Name="phy_bowWater_loop" ID="{A84A2E73-4F8A-444F-91C5-7DAF0697886F}"/>
+																	<CrossfadingInfo>
+																		<LeftEdgePos>0</LeftEdgePos>
+																		<LeftFadingMode>Automatic</LeftFadingMode>
+																		<RightEdgePos>100</RightEdgePos>
+																		<RightFadingMode>Automatic</RightFadingMode>
+																	</CrossfadingInfo>
+																</BlendTrackAssoc>
+															</BlendTrackAssocList>
+														</BlendTrack>
+														<BlendTrack Name="BT_BowWaterBody" ID="{DD9B8B53-8C8E-4BF7-8647-8F2EC83F7000}" ShortID="119926275">
+															<PropertyList>
+																<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="LayerCrossFadeControlInput">
+																	<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																</Reference>
+															</ReferenceList>
+															<ObjectLists>
+																<ObjectList Name="RTPC">
+																	<RTPC Name="" ID="{1F6733A8-6631-4E93-BDA3-8C1D2204ACDC}" ShortID="902083132">
+																		<PropertyList>
+																			<Property Name="PropertyName" Type="string" Value="Volume"/>
+																		</PropertyList>
+																		<ReferenceList>
+																			<Reference Name="ControlInput">
+																				<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																			</Reference>
+																			<Reference Name="Curve">
+																				<Custom>
+																					<Curve Name="" ID="{B80A138C-DFFE-42CA-9F7F-B88283F76298}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>-96</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>15</XPos>
+																								<YPos>-36</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>30</XPos>
+																								<YPos>-20</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>50</XPos>
+																								<YPos>-13</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>75</XPos>
+																								<YPos>-9</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>100</XPos>
+																								<YPos>-8</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</Custom>
+																			</Reference>
+																		</ReferenceList>
+																	</RTPC>
+																</ObjectList>
+															</ObjectLists>
+															<BlendTrackAssocList>
+																<BlendTrackAssoc>
+																	<ItemRef Name="phy_bowWaterBody_loop" ID="{29E796DC-0D88-47A2-ADBC-FF1276B9868D}"/>
+																	<CrossfadingInfo>
+																		<LeftEdgePos>0</LeftEdgePos>
+																		<LeftFadingMode>Automatic</LeftFadingMode>
+																		<RightEdgePos>100</RightEdgePos>
+																		<RightFadingMode>Automatic</RightFadingMode>
+																	</CrossfadingInfo>
+																</BlendTrackAssoc>
+															</BlendTrackAssocList>
+														</BlendTrack>
+													</BlendTrackList>
+												</BlendContainer>
+												<BlendContainer Name="BC_phy_bowWater2" ID="{70AA516A-530E-4500-BD2E-A61CF60E2AED}" ShortID="791152889">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-12</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="ATT_PhyBoatWater" ID="{BF3EC898-E81F-469F-BD1B-D491C8CFEB1C}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="phy_bowWater_loop" ID="{8D7AA88C-B836-4E92-9076-310F84445108}" ShortID="583114406">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>5</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>5</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideEffect" Type="bool" Value="True"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-800</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_bowWater_loop" ID="{11B61DDE-A110-4D25-A5E0-A24C9F6635B3}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="792.856"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.38497"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.35288"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="1.98907"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="13.28188"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_bowWater_loop.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="994528532"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{FB1D4C49-E14B-4E8C-B9CB-EBE4DE29E438}" ShortID="15722757">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="PhyBowWater_EQ" ID="{60A479C2-0F12-4E45-BB52-C0C94441E5B2}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_bowWater_loop" ID="{11B61DDE-A110-4D25-A5E0-A24C9F6635B3}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="phy_bowWaterBody_loop" ID="{8F71EE26-69AA-4F3F-BAB4-5B3B04F85897}" ShortID="1021307364">
+															<PropertyList>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>5</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="OverrideEffect" Type="bool" Value="True"/>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-1300</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_bowWaterBody_loop" ID="{472AAF6B-16F3-4FC6-B773-2F5AD53F182D}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="1174.641"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.48121"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.4812"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="1.98907"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="13.13751"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_bowWaterBody_loop.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="378380122"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{C933DE49-A2BE-4174-B8CA-851A27DD5AFA}" ShortID="1028047038">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="PhyBowWaterBody_EQ" ID="{404B4D80-EFA3-4954-BBBF-7ABDA3ED3BBF}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_bowWaterBody_loop" ID="{472AAF6B-16F3-4FC6-B773-2F5AD53F182D}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<BlendTrackList>
+														<BlendTrack Name="BT_BowWater" ID="{8E844E55-888E-428F-ACE4-A4874F605C81}" ShortID="78479845">
+															<PropertyList>
+																<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="LayerCrossFadeControlInput">
+																	<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																</Reference>
+															</ReferenceList>
+															<ObjectLists>
+																<ObjectList Name="RTPC">
+																	<RTPC Name="" ID="{9124C454-901A-40C9-9006-C9B25B1C3156}" ShortID="794785160">
+																		<PropertyList>
+																			<Property Name="PropertyName" Type="string" Value="Volume"/>
+																		</PropertyList>
+																		<ReferenceList>
+																			<Reference Name="ControlInput">
+																				<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																			</Reference>
+																			<Reference Name="Curve">
+																				<Custom>
+																					<Curve Name="" ID="{700EBA3C-0C6C-4536-8387-AD97361B58C3}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>-96</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>10</XPos>
+																								<YPos>-30</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>25</XPos>
+																								<YPos>-16</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>45</XPos>
+																								<YPos>-8</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>65</XPos>
+																								<YPos>-3</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>85</XPos>
+																								<YPos>0</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>100</XPos>
+																								<YPos>1</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</Custom>
+																			</Reference>
+																		</ReferenceList>
+																	</RTPC>
+																</ObjectList>
+															</ObjectLists>
+															<BlendTrackAssocList>
+																<BlendTrackAssoc>
+																	<ItemRef Name="phy_bowWater_loop" ID="{8D7AA88C-B836-4E92-9076-310F84445108}"/>
+																	<CrossfadingInfo>
+																		<LeftEdgePos>0</LeftEdgePos>
+																		<LeftFadingMode>Automatic</LeftFadingMode>
+																		<RightEdgePos>100</RightEdgePos>
+																		<RightFadingMode>Automatic</RightFadingMode>
+																	</CrossfadingInfo>
+																</BlendTrackAssoc>
+															</BlendTrackAssocList>
+														</BlendTrack>
+														<BlendTrack Name="BT_BowWaterBody" ID="{EEF53FE9-C61F-4024-A0DA-7C48E45FC1B4}" ShortID="1622874">
+															<PropertyList>
+																<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="LayerCrossFadeControlInput">
+																	<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																</Reference>
+															</ReferenceList>
+															<ObjectLists>
+																<ObjectList Name="RTPC">
+																	<RTPC Name="" ID="{44AE3181-DE86-46ED-BF4D-D8633CBFF11E}" ShortID="393159411">
+																		<PropertyList>
+																			<Property Name="PropertyName" Type="string" Value="Volume"/>
+																		</PropertyList>
+																		<ReferenceList>
+																			<Reference Name="ControlInput">
+																				<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																			</Reference>
+																			<Reference Name="Curve">
+																				<Custom>
+																					<Curve Name="" ID="{28AF6F44-457E-47C6-915D-6330CDE6D9A9}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>-96</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>15</XPos>
+																								<YPos>-36</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>30</XPos>
+																								<YPos>-20</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>50</XPos>
+																								<YPos>-13</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>75</XPos>
+																								<YPos>-9</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>100</XPos>
+																								<YPos>-8</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</Custom>
+																			</Reference>
+																		</ReferenceList>
+																	</RTPC>
+																</ObjectList>
+															</ObjectLists>
+															<BlendTrackAssocList>
+																<BlendTrackAssoc>
+																	<ItemRef Name="phy_bowWaterBody_loop" ID="{8F71EE26-69AA-4F3F-BAB4-5B3B04F85897}"/>
+																	<CrossfadingInfo>
+																		<LeftEdgePos>0</LeftEdgePos>
+																		<LeftFadingMode>Automatic</LeftFadingMode>
+																		<RightEdgePos>100</RightEdgePos>
+																		<RightFadingMode>Automatic</RightFadingMode>
+																	</CrossfadingInfo>
+																</BlendTrackAssoc>
+															</BlendTrackAssocList>
+														</BlendTrack>
+													</BlendTrackList>
+												</BlendContainer>
+											</ChildrenList>
+										</Folder>
+										<BlendContainer Name="BC_phy_wavHull" ID="{6791227C-5984-452A-9B6C-0CB269ACCF12}" ShortID="746923036">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="RC_phy_waveHull" ID="{07C1AA8B-FDCD-47BA-B7DF-10779646CA02}" ShortID="843486831">
+													<PropertyList>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>25</Value>
+															</ValueList>
+														</Property>
+														<Property Name="OverrideEffect" Type="bool" Value="True"/>
+														<Property Name="Pitch" Type="int32">
+															<ValueList>
+																<Value>-400</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-10</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="phy_waveHull_loop00" ID="{EA294C63-8AC7-41BE-ADBF-70C3A5EA78C2}" ShortID="1030397129">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_waveHull_loop00" ID="{C360839B-A89D-460B-8E65-1878EBE4A39A}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.16281"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.152"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_waveHull_loop00.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="428085290"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_waveHull_loop00" ID="{C360839B-A89D-460B-8E65-1878EBE4A39A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="phy_waveHull_loop01" ID="{87AC5A3F-1702-425F-93AF-3314151C5EA7}" ShortID="664501485">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_waveHull_loop01" ID="{10834EAC-B8C8-400E-BE1A-5D19F4140EF1}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.12187"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.10159"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_waveHull_loop01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="925880773"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_waveHull_loop01" ID="{10834EAC-B8C8-400E-BE1A-5D19F4140EF1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="phy_waveHull_loop02" ID="{1E7308A9-54B3-4932-ACB7-8B4FC910EEAE}" ShortID="19636928">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_waveHull_loop02" ID="{9556392B-47F2-45AF-9EF0-27FE3A488109}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.11001"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.0616"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_waveHull_loop02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="221736619"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_waveHull_loop02" ID="{9556392B-47F2-45AF-9EF0-27FE3A488109}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{7EAB5858-41AA-4135-B16B-EED40E5686D6}" ShortID="532971662">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="PhyWaveHull_EQ" ID="{F6D3E1CE-97EB-4F5C-AC61-6A42641C322A}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+															<EffectSlot Name="" ID="{7FFC9A2B-758B-45C4-BE4F-C3F46C9FC70F}" ShortID="229719173">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																		<ObjectRef Name="PhyWaveHull_Compressor" ID="{A582BC11-1B64-416D-A40D-D7E245FB838A}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+												</RandomSequenceContainer>
+											</ChildrenList>
+											<BlendTrackList>
+												<BlendTrack Name="BT_WaveHull" ID="{D03C37E0-44DF-455C-B6CB-44E17882BDEA}" ShortID="898204690">
+													<PropertyList>
+														<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="LayerCrossFadeControlInput">
+															<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+														</Reference>
+													</ReferenceList>
+													<ObjectLists>
+														<ObjectList Name="RTPC">
+															<RTPC Name="" ID="{AB4F31D9-7356-4D52-A542-9C16737585EA}" ShortID="539261203">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{299AA088-8349-47D1-81CA-97F86478B3F0}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>10</XPos>
+																						<YPos>-46</YPos>
+																						<Flags>0</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>25</XPos>
+																						<YPos>-32</YPos>
+																						<Flags>0</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>45</XPos>
+																						<YPos>-22</YPos>
+																						<Flags>0</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>65</XPos>
+																						<YPos>-16</YPos>
+																						<Flags>0</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>85</XPos>
+																						<YPos>-12</YPos>
+																						<Flags>0</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</ObjectList>
+													</ObjectLists>
+													<BlendTrackAssocList>
+														<BlendTrackAssoc>
+															<ItemRef Name="RC_phy_waveHull" ID="{07C1AA8B-FDCD-47BA-B7DF-10779646CA02}"/>
+															<CrossfadingInfo>
+																<LeftEdgePos>0</LeftEdgePos>
+																<LeftFadingMode>Automatic</LeftFadingMode>
+																<RightEdgePos>100</RightEdgePos>
 																<RightFadingMode>Automatic</RightFadingMode>
 															</CrossfadingInfo>
 														</BlendTrackAssoc>

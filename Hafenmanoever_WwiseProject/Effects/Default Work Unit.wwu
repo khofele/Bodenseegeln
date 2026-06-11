@@ -582,21 +582,22 @@
 										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
 										<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
 										<Property Name="FrequencyBand1" Type="Real32" Value="70"/>
-										<Property Name="FrequencyBand2" Type="Real32" Value="160"/>
-										<Property Name="FrequencyBand3" Type="Real32" Value="500"/>
-										<Property Name="FrequencyBand4" Type="Real32" Value="900"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="164.165"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="995.7047"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="4985.385"/>
 										<Property Name="FrequencyBand5" Type="Real32" Value="6500"/>
-										<Property Name="GainBand2" Type="Real32" Value="2"/>
-										<Property Name="GainBand3" Type="Real32" Value="-5"/>
-										<Property Name="GainBand4" Type="Real32" Value="-6"/>
+										<Property Name="GainBand2" Type="Real32" Value="15.35691"/>
+										<Property Name="GainBand3" Type="Real32" Value="10.41801"/>
+										<Property Name="GainBand4" Type="Real32" Value="-24"/>
 										<Property Name="GainBand5" Type="Real32" Value="-4"/>
 										<Property Name="NumBands" Type="int32" Value="5"/>
 										<Property Name="OnOffBand3" Type="bool" Value="True"/>
 										<Property Name="OnOffBand4" Type="bool" Value="True"/>
 										<Property Name="OnOffBand5" Type="bool" Value="True"/>
-										<Property Name="QFactorBand2" Type="Real32" Value="0.8"/>
-										<Property Name="QFactorBand3" Type="Real32" Value="1.2"/>
-										<Property Name="QFactorBand4" Type="Real32" Value="1.1"/>
+										<Property Name="QFactorBand2" Type="Real32" Value="2.6"/>
+										<Property Name="QFactorBand3" Type="Real32" Value="2"/>
+										<Property Name="QFactorBand4" Type="Real32" Value="6"/>
+										<Property Name="RolloffRateBand1" Type="int32" Value="48"/>
 									</PropertyList>
 								</Effect>
 								<Effect Name="EnvBoatRepairHammerMetal_EQ" ID="{6F0459DC-7C9A-4073-96F8-7818BC8828F2}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">

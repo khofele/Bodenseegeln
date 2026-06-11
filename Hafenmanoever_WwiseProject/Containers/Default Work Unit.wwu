@@ -6920,6 +6920,7 @@
 										<RandomSequenceContainer Name="SC_env_refuel" ID="{EC4AA6A0-E873-49FC-A4B9-146A2E8DB09A}" ShortID="80270468">
 											<PropertyList>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="3"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 											</PropertyList>
@@ -6942,7 +6943,7 @@
 														<Property Name="OverrideEffect" Type="bool" Value="True"/>
 														<Property Name="Pitch" Type="int32">
 															<ValueList>
-																<Value>-900</Value>
+																<Value>-300</Value>
 															</ValueList>
 															<ModifierList>
 																<ModifierInfo>
@@ -6955,6 +6956,11 @@
 																	</Modifier>
 																</ModifierInfo>
 															</ModifierList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-2</Value>
+															</ValueList>
 														</Property>
 													</PropertyList>
 													<ReferenceList>

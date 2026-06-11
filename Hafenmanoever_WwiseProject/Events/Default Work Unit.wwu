@@ -109,7 +109,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="mission_moneyZero" ID="{3D1975C6-FF2C-43B5-BC19-130D92085506}"/>
+								<Event Name="mission_moneyZero" ID="{3D1975C6-FF2C-43B5-BC19-130D92085506}">
+									<ChildrenList>
+										<Action Name="" ID="{F901EA98-0C96-470B-B8E3-2431C6A73A3F}" ShortID="429905427">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_moneyZero" ID="{BC28199F-05D7-4661-A063-2DCDA19D3165}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="MissionVarious" ID="{DE6557A4-87D8-4C6B-9776-56AA7BC0BAA0}" ShortID="354108046">

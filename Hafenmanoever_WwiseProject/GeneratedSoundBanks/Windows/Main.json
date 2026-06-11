@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{FE2A9476-2E85-74CF-7215-4936B171B813}",
+    "Hash": "{904A1B5E-4E1E-F9AD-8D66-2CCD4BEC1FCD}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -54,14 +54,6 @@
       "Location": "Memory",
       "ShortName": "boat_creaking_loop2.wav",
       "CachePath": "A9/{A9B72086-2304-DD7B-A509-8A71064EF129}.wem"
-     },
-     {
-      "Id": "62237542",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "env_repairRatchet.wav",
-      "CachePath": "55/{55698898-5C7A-9838-5BC3-C41F4BC90866}.wem"
      },
      {
       "Id": "73170341",
@@ -640,14 +632,6 @@
       "CachePath": "E2/{E27C83AC-38C8-504C-35D8-CB0A26626B8C}.wem"
      },
      {
-      "Id": "758849403",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "env_repairHammerTable01.wav",
-      "CachePath": "AD/{AD434853-E702-043F-3469-7C89B6E59EF2}.wem"
-     },
-     {
       "Id": "760617268",
       "Language": "SFX",
       "Streaming": "false",
@@ -760,6 +744,14 @@
       "CachePath": "0E/{0E4FC920-E444-E518-1C09-B51D463A9093}.wem"
      },
      {
+      "Id": "917875236",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "env_boatRepair.wav",
+      "CachePath": "4B/{4B9BC97A-84E0-4B11-3AE5-C67FD94061EB}.wem"
+     },
+     {
       "Id": "922437653",
       "Language": "SFX",
       "Streaming": "false",
@@ -840,14 +832,6 @@
       "CachePath": "61/{61E642B8-8F77-6D5C-F1BE-C8756EC69128}.wem"
      },
      {
-      "Id": "998485321",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "env_boatRepairHammerMetal.wav",
-      "CachePath": "8B/{8B4E980A-9778-B60F-32FE-05509211B0A4}.wem"
-     },
-     {
       "Id": "1005202156",
       "Language": "SFX",
       "Streaming": "false",
@@ -870,14 +854,6 @@
       "Location": "Memory",
       "ShortName": "phy_waterDisplacementSlow_loop.wav",
       "CachePath": "36/{3655AF4F-E368-F55C-63E9-F60CB17DFEBB}.wem"
-     },
-     {
-      "Id": "1042397596",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "env_repairHammerTable00.wav",
-      "CachePath": "A5/{A5CE5837-76BE-56C0-A1E7-C32A35416D9D}.wem"
      },
      {
       "Id": "1044825457",
@@ -975,14 +951,6 @@
        "Name": "EnvCollisionHeavyWater_EQ",
        "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvCollisionHeavyWater_EQ",
        "GUID": "{6035E3D1-22AB-4134-B4AB-8CB64CDDF331}",
-       "LibName": "Wwise Parametric EQ",
-       "LibId": "6881283"
-      },
-      {
-       "Id": "765811567",
-       "Name": "EnvBoatRepairRatchet_EQ",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvBoatRepairRatchet_EQ",
-       "GUID": "{DFD187DC-0316-4B69-B323-519063A9DD79}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
       },
@@ -1123,28 +1091,12 @@
        "LibId": "6881283"
       },
       {
-       "Id": "2062997726",
-       "Name": "EnvBoatRepairRatchet_Compressor",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Env\\EnvBoatRepairRatchet_Compressor",
-       "GUID": "{9EBB5149-4EE5-4AA8-9293-A1B9725A68AC}",
-       "LibName": "Wwise Compressor",
-       "LibId": "7077891"
-      },
-      {
        "Id": "2108454903",
        "Name": "BoatEngine_Compressor",
        "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Boat\\BoatEngine_Compressor",
        "GUID": "{39FAAC5C-772D-41CA-8721-3630B3865BD4}",
        "LibName": "Wwise Compressor",
        "LibId": "7077891"
-      },
-      {
-       "Id": "2120690871",
-       "Name": "EnvBoatRepairHammerMetal_EQ",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvBoatRepairHammerMetal_EQ",
-       "GUID": "{6F0459DC-7C9A-4073-96F8-7818BC8828F2}",
-       "LibName": "Wwise Parametric EQ",
-       "LibId": "6881283"
       },
       {
        "Id": "2308774273",
@@ -1161,14 +1113,6 @@
        "GUID": "{A582BC11-1B64-416D-A40D-D7E245FB838A}",
        "LibName": "Wwise Compressor",
        "LibId": "7077891"
-      },
-      {
-       "Id": "2460013524",
-       "Name": "EnvBoatRepairHammerTable_EQ",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvBoatRepairHammerTable_EQ",
-       "GUID": "{9B398422-BC15-4CAC-8681-62E95B937912}",
-       "LibName": "Wwise Parametric EQ",
-       "LibId": "6881283"
       },
       {
        "Id": "2460955720",
@@ -2091,8 +2035,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\EnvBoat\\env_boatRefuel",
       "GUID": "{C19E6852-8537-4962-BDBD-576B98088A7D}",
       "DurationType": "OneShot",
-      "DurationMin": "2.4620266",
-      "DurationMax": "2.8206892",
+      "DurationMin": "1.7660778",
+      "DurationMax": "2.0372539",
       "MediaRefs": [
        {
         "Id": "21220894"
@@ -2124,38 +2068,13 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\EnvBoat\\env_boatRepair",
       "GUID": "{6EC565DA-542B-4899-AE6E-FD624481A3FD}",
       "DurationType": "OneShot",
-      "DurationMin": "2.8466918",
-      "DurationMax": "2.9692774",
+      "DurationMin": "2.7454624",
+      "DurationMax": "2.908716",
       "MediaRefs": [
        {
-        "Id": "62237542"
-       },
-       {
-        "Id": "758849403"
-       },
-       {
-        "Id": "998485321"
-       },
-       {
-        "Id": "1042397596"
+        "Id": "917875236"
        }
-      ],
-      "PluginRefs": {
-       "ShareSets": [
-        {
-         "Id": "765811567"
-        },
-        {
-         "Id": "2062997726"
-        },
-        {
-         "Id": "2120690871"
-        },
-        {
-         "Id": "2460013524"
-        }
-       ]
-      }
+      ]
      },
      {
       "Id": "2562124403",
@@ -2999,6 +2918,6 @@
     ]
    }
   ],
-  "FileHash": "{39CF45E8-586E-2057-4420-676FC6F37B5E}"
+  "FileHash": "{897F1707-9192-43D1-1A37-A875070ED173}"
  }
 }

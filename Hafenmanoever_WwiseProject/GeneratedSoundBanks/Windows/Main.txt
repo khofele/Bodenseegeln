@@ -101,7 +101,6 @@ Effect plug-ins	ID	Name	Type				Notes
 	714720157	MissionGoalFail_EQ	Wwise Parametric EQ			
 	729156053	BoatThottleMove_EQ	Wwise Parametric EQ			
 	761635205	EnvCollisionHeavyWater_EQ	Wwise Parametric EQ			
-	765811567	EnvBoatRepairRatchet_EQ	Wwise Parametric EQ			
 	924566484	PhyBowWater_EQ	Wwise Parametric EQ			
 	972692614	PhyWindGust_EQ	Wwise Parametric EQ			
 	1075951946	MissionFail_EQ	Wwise Parametric EQ			
@@ -119,12 +118,9 @@ Effect plug-ins	ID	Name	Type				Notes
 	1741208498	BoatEngine_EQ	Wwise Parametric EQ			
 	1947999602	MissionAccept_EQ	Wwise Parametric EQ			
 	2056871213	PhyWaterDisplacementFast_EQ	Wwise Parametric EQ			
-	2062997726	EnvBoatRepairRatchet_Compressor	Wwise Compressor			
 	2108454903	BoatEngine_Compressor	Wwise Compressor			
-	2120690871	EnvBoatRepairHammerMetal_EQ	Wwise Parametric EQ			
 	2308774273	EnvBoatCollisionHeavyImpact_Compressor	Wwise Compressor			
 	2430649832	PhyWaveHull_Compressor	Wwise Compressor			
-	2460013524	EnvBoatRepairHammerTable_EQ	Wwise Parametric EQ			
 	2460955720	EnvBoatCollisionHeavyImpact_EQ	Wwise Parametric EQ			
 	2480037935	MissionGoalReached_EQ	Wwise Parametric EQ			
 	2515283109	BoatSailRetract_Compressor	Wwise Compressor			
@@ -158,7 +154,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	35522817	boat_wheelTurnBearing3	.cache\8C\{8C8ADCA3-9DDD-FDB5-1BE7-10CEDD135D74}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnBearing\boat_wheelTurnBearing3		52928
 	54458518	boat_wheelTurnBearing1	.cache\8B\{8B041980-1EBA-1B2E-09C0-12B55CA24197}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnBearing\boat_wheelTurnBearing1		52872
 	60158431	boat_creaking_loop2	.cache\A9\{A9B72086-2304-DD7B-A509-8A71064EF129}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatCreakingLoop\BoatCreaking\boat_creaking_loop2		330896
-	62237542	env_repairRatchet	.cache\55\{55698898-5C7A-9838-5BC3-C41F4BC90866}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatRepair\SC_env_boatRepair\env_repairRatchet		320540
 	73170341	phy_waterDisplacementSlow_loop02	.cache\2C\{2C05DA56-2277-96A8-5290-D37CD4650F68}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\PhyWaterDisplacement\BC_phy_waterDisplacement2\RC_phy_waterDisplacementSlowBody_loop\phy_waterDisplacementSlow_loop02		2304144
 	79893045	phy_waterDisplacementFast_loop01	.cache\4F\{4FC90352-F61E-54CB-75E3-FBE36B8A7DA4}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\PhyWaterDisplacement\BC_phy_waterDisplacement2\RC_phy_waterDisplacementFast_loop\phy_waterDisplacementFast_loop01		1649896
 	81237453	phy_sailmastWhistleLayer_loop01	.cache\F9\{F9D03691-F149-86B5-181E-B6C02A6CEAB1}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_sailWind\RC_sailmastWhistleLayer_loop\phy_sailmastWhistleLayer_loop01		1306308
@@ -231,7 +226,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	734439282	mission_fail	.cache\B1\{B1035399-8A4D-9458-B285-2DFDDBEBCAEC}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_fail		438956
 	742888240	boat_throttleMove1	.cache\6E\{6E508662-E69B-90B7-FAA7-024365742174}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatThrottleMove\boat_thottleMove\boat_throttleMove1		53508
 	744868092	env_collisionHeavyImpact5	.cache\E2\{E27C83AC-38C8-504C-35D8-CB0A26626B8C}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\BC_envcollisionHeavyImpact\env_collisionHeavyImpact2\env_collisionHeavyImpact5		35972
-	758849403	env_repairHammerTable01	.cache\AD\{AD434853-E702-043F-3469-7C89B6E59EF2}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatRepair\SC_env_boatRepair\BC_env_repairBoatHammer\RC_env_boatRepairHammerTable\env_repairHammerTable01		61840
 	760617268	boat_creaking_loop8	.cache\BE\{BE782AFE-AC48-41F0-D186-B19BADBBFFF3}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatCreakingLoop\BoatCreaking\boat_creaking_loop8		220644
 	782049489	mission_moneyPurse	.cache\D8\{D8109498-4D86-7153-BB30-C1784C10DE40}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionMoney\mission_moneyPurse		286536
 	795434133	boat_wheelTurnRope	.cache\37\{3772842F-1BD3-EA1B-9BA3-D9D686449BC0}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnRope\boat_wheelTurnRope		55220
@@ -246,6 +240,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	881217249	mission_goalReached	.cache\5E\{5EFE8DD5-3D34-262F-D9C7-54F843DAB6C2}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_goalReached		329240
 	887624249	menu_openPause	.cache\D4\{D455A0D2-7B64-9D0F-C967-90BE92D37B07}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_openPause\menu_openPause		75200
 	900952466	boat_sailFlapWind_loop2	.cache\0E\{0E4FC920-E444-E518-1C09-B51D463A9093}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState\BC_boatSailFlap_loop\boat_sailFlapWind_loop\boat_sailFlapWind_loop2		705696
+	917875236	env_boatRepair	.cache\4B\{4B9BC97A-84E0-4B11-3AE5-C67FD94061EB}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatRepair\env_boatRepair		483476
 	922437653	env_collisionLightImpact1	.cache\25\{25CC44E5-76DD-C230-243E-A1C5A1BC6183}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\BC_envcollisionLightImpact\env_collisionLightImpact2\env_collisionLightImpact1		100248
 	925880773	phy_waveHull_loop01	.cache\C2\{C25764C9-7209-A7AA-2304-77A4F695EF6F}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\BC_phy_waveHull\RC_phy_waveHull\phy_waveHull_loop01		1440096
 	928429837	env_collisionHeavyImpact	.cache\5B\{5B8AB804-3565-2ED1-1DE1-73DA12C4DCA6}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\BC_envcollisionHeavyImpact\env_collisionHeavyImpact1\env_collisionHeavyImpact		47508
@@ -256,11 +251,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	983138526	boat_sailRetractImpact	.cache\D0\{D0F1EEE4-F8E3-3100-0151-682D018246CA}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailRetract\boat_sailRetractImpact		144572
 	984283490	boat_engineForward_loop	.cache\1C\{1C3CC3F6-6ACE-4540-C98F-20263B23EB1A}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\BoatEngineLoops\BC_boatEngine_ThrottleBlend\boat_engineForward_loop		3395844
 	994528532	phy_bowWater_loop	.cache\61\{61E642B8-8F77-6D5C-F1BE-C8756EC69128}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\PhyBowWater\BC_phy_bowWater2\phy_bowWater_loop		2922928
-	998485321	env_boatRepairHammerMetal	.cache\8B\{8B4E980A-9778-B60F-32FE-05509211B0A4}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatRepair\SC_env_boatRepair\BC_env_repairBoatHammer\env_boatRepairHammerMetal		62628
 	1005202156	menu_openMain	.cache\C3\{C3693EEA-3C7A-BAF2-DCD4-EBDF552BBF6F}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_openMain\menu_openMain		64192
 	1014404164	mission_abort	.cache\73\{7363316A-55D8-699E-7A98-812C6702A8AC}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_abort		329240
 	1021335472	phy_waterDisplacementSlow_loop01	.cache\36\{3655AF4F-E368-F55C-63E9-F60CB17DFEBB}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\PhyWaterDisplacement\BC_phy_waterDisplacement2\RC_phy_waterDisplacementSlowBody_loop\phy_waterDisplacementSlow_loop01		2304144
-	1042397596	env_repairHammerTable00	.cache\A5\{A5CE5837-76BE-56C0-A1E7-C32A35416D9D}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatRepair\SC_env_boatRepair\BC_env_repairBoatHammer\RC_env_boatRepairHammerTable\env_repairHammerTable00		60964
 	1044825457	boat_creaking_loop1	.cache\6C\{6C004ABF-9187-34BC-44C7-83A61E65C2FA}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatCreakingLoop\BoatCreaking\boat_creaking_loop1		617544
 	1061155160	phy_wakeWaterJet_loop	.cache\66\{6625429C-4F5D-39D7-34E3-9A40ED33A104}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\BC_phy_wakeWater\phy_wakeWaterJet_loop		3952456
 	1066911892	env_collisionHeavyWood	.cache\93\{9358448A-630D-9B7C-CCA6-98586AC9D8F8}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\BC_envcollisionHeavyImpact\env_collisionHeavyWood		80092

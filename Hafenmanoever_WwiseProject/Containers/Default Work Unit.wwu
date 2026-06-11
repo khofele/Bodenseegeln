@@ -7172,7 +7172,8 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="SC_env_boatRepair" ID="{B75094E1-1AC5-4482-BB54-B98E51AFE8F8}" ShortID="907392877">
 											<PropertyList>
-												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.05"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 												<Property Name="Volume" Type="Real64">
@@ -7476,30 +7477,102 @@
 											</ChildrenList>
 											<ObjectLists>
 												<ObjectList Name="Playlist">
-													<PluginInnerObject Name="" ID="{093B968A-81D7-4D18-96D9-7696BED19DD2}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+													<PluginInnerObject Name="" ID="{7B5259E0-5D2B-4425-96AB-CD3171D1C8AF}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
 														<ReferenceList>
 															<Reference Name="PlaylistObject">
 																<ObjectRef Name="BC_env_repairBoatHammer" ID="{05860A27-DE58-4485-92C3-4BB7F0ED5BE3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 															</Reference>
 														</ReferenceList>
 													</PluginInnerObject>
-													<PluginInnerObject Name="" ID="{E0FD2626-C96A-439A-9E8C-E90C703D2130}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
-														<ReferenceList>
-															<Reference Name="PlaylistObject">
-																<ObjectRef Name="BC_env_repairBoatHammer" ID="{05860A27-DE58-4485-92C3-4BB7F0ED5BE3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-															</Reference>
-														</ReferenceList>
-													</PluginInnerObject>
-													<PluginInnerObject Name="" ID="{9C797AAC-48E8-413B-8E9E-F002A6506965}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+													<PluginInnerObject Name="" ID="{98A86DF9-9F4C-445A-8320-E4900859A6BE}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
 														<ReferenceList>
 															<Reference Name="PlaylistObject">
 																<ObjectRef Name="env_repairRatchet" ID="{AC3BE687-7E25-4E94-95DE-0741E539B4EC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 															</Reference>
 														</ReferenceList>
 													</PluginInnerObject>
+													<PluginInnerObject Name="" ID="{CFCAA335-E629-458F-B516-DE55D4E28278}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+														<ReferenceList>
+															<Reference Name="PlaylistObject">
+																<ObjectRef Name="BC_env_repairBoatHammer" ID="{05860A27-DE58-4485-92C3-4BB7F0ED5BE3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+															</Reference>
+														</ReferenceList>
+													</PluginInnerObject>
 												</ObjectList>
 											</ObjectLists>
 										</RandomSequenceContainer>
+										<Sound Name="env_boatRepair" ID="{42086141-0224-4CFC-83BA-5857BE6BA395}" ShortID="190495979">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>20</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{4976AAEF-78DC-496B-9AD9-CD2C17962B67}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Min" Type="Real64" Value="-1"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-200</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{828A0AB7-9D0C-414E-BA6F-EC919E52CF3A}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="50"/>
+																	<Property Name="Min" Type="Real64" Value="-50"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="env_boatRepair" ID="{831118E8-1D05-42C5-B225-BD86C41ECBE4}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.04806"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.6732"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0801"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.5977"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>env_boatRepair.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="917875236"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="env_boatRepair" ID="{831118E8-1D05-42C5-B225-BD86C41ECBE4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

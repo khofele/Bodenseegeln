@@ -9,6 +9,61 @@
 							<ObjectRef Name="System" ID="{2447D495-781B-4597-A5EA-FECECA6EEF46}" WorkUnitID="{8419EEBD-8379-493E-B175-EDC88C117E2A}"/>
 						</Reference>
 					</ReferenceList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<RTPC Name="" ID="{3F037D4A-FE28-4A5E-BDAA-872CA6CEC763}" ShortID="1005758071">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="Settings_MasterVolume" ID="{C2841C71-FBC2-490A-95E6-02D0B44CBD11}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{60E1F600-4F94-483D-92EA-E807D75E2804}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-96</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>10</XPos>
+														<YPos>-35</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>25</XPos>
+														<YPos>-20</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>50</XPos>
+														<YPos>-10</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>75</XPos>
+														<YPos>-4</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+						</ObjectList>
+					</ObjectLists>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

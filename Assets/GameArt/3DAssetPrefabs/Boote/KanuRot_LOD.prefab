@@ -48,9 +48,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7572745139356497192, guid: 2f0bcce7bb617c047a293673e5c0e406, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1238699785113974315, guid: 2f0bcce7bb617c047a293673e5c0e406, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2f0bcce7bb617c047a293673e5c0e406, type: 3}
       propertyPath: m_Name
       value: KanuRot_LOD
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f0bcce7bb617c047a293673e5c0e406, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951964576967808758, guid: 2f0bcce7bb617c047a293673e5c0e406, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: 2f0bcce7bb617c047a293673e5c0e406, type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
@@ -72,8 +88,46 @@ PrefabInstance:
       propertyPath: m_LODs.Array.data[4].screenRelativeHeight
       value: 0.027114917
       objectReference: {fileID: 0}
+    - target: {fileID: 5729386770021055634, guid: 2f0bcce7bb617c047a293673e5c0e406, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694678477487823219, guid: 2f0bcce7bb617c047a293673e5c0e406, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f0bcce7bb617c047a293673e5c0e406, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -114382531054568431}
   m_SourcePrefab: {fileID: 100100000, guid: 2f0bcce7bb617c047a293673e5c0e406, type: 3}
+--- !u!1 &5383275999276291467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f0bcce7bb617c047a293673e5c0e406, type: 3}
+  m_PrefabInstance: {fileID: 5076776336089082074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &-114382531054568431
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5383275999276291467}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}

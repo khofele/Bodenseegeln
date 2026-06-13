@@ -683,6 +683,48 @@
 										<Property Name="RolloffRateBand1" Type="int32" Value="48"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="EnvBoatRubDockBody_EQ" ID="{23A006BA-26B9-4599-95B5-4460AAAFE07B}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="70"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="180"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="600"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="1600"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="6500"/>
+										<Property Name="GainBand2" Type="Real32" Value="2"/>
+										<Property Name="GainBand3" Type="Real32" Value="-3"/>
+										<Property Name="GainBand4" Type="Real32" Value="2"/>
+										<Property Name="GainBand5" Type="Real32" Value="-5"/>
+										<Property Name="NumBands" Type="int32" Value="5"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="QFactorBand4" Type="Real32" Value="1.2"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="EnvBoatRubDockSqueak_EQ" ID="{8B70AFA9-A041-4E0C-BB0E-AC013ED67D14}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="8"/>
+										<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="250"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="750"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="2400"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="4200"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="7000"/>
+										<Property Name="GainBand2" Type="Real32" Value="-5"/>
+										<Property Name="GainBand3" Type="Real32" Value="3"/>
+										<Property Name="GainBand4" Type="Real32" Value="2"/>
+										<Property Name="GainBand5" Type="Real32" Value="-4"/>
+										<Property Name="NumBands" Type="int32" Value="5"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="QFactorBand2" Type="Real32" Value="1.1"/>
+										<Property Name="QFactorBand3" Type="Real32" Value="1.2"/>
+										<Property Name="QFactorBand4" Type="Real32" Value="1.3"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="MissionsFeedback" ID="{06CF0C80-C11D-4627-8897-F962B6B7DC13}" ShortID="23660352">
@@ -1283,6 +1325,20 @@
 										<Property Name="AttackTime" Type="Real32" Value="0.5"/>
 										<Property Name="OutputGain" Type="Real32" Value="0.5"/>
 										<Property Name="ReleaseTime" Type="Real32" Value="0.8"/>
+										<Property Name="Threshold" Type="Real32" Value="-20"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="EnvBoatRubDockBody_Compressor" ID="{98743DCA-EEAD-46E1-AC42-022E70BB4F13}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.25"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="2"/>
+										<Property Name="Threshold" Type="Real32" Value="-18"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="EnvBoatRubDockSqueak_Compressor" ID="{E62E978E-A20A-4C34-841B-E3385EF1E90B}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="Ratio" Type="Real32" Value="1.7"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1.5"/>
 										<Property Name="Threshold" Type="Real32" Value="-20"/>
 									</PropertyList>
 								</Effect>

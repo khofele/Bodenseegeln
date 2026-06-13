@@ -661,6 +661,28 @@
 										<Property Name="QFactorBand4" Type="Real32" Value="1.1"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="EnvBoatDockImpact_EQ" ID="{6E8492B5-7E71-4A14-B55F-E6CA092894FC}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="40"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="130"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="550"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="3000"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="7000"/>
+										<Property Name="GainBand2" Type="Real32" Value="5"/>
+										<Property Name="GainBand3" Type="Real32" Value="-4"/>
+										<Property Name="GainBand4" Type="Real32" Value="-5"/>
+										<Property Name="GainBand5" Type="Real32" Value="-5"/>
+										<Property Name="NumBands" Type="int32" Value="5"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="QFactorBand2" Type="Real32" Value="0.8"/>
+										<Property Name="QFactorBand3" Type="Real32" Value="1.1"/>
+										<Property Name="RolloffRateBand1" Type="int32" Value="48"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="MissionsFeedback" ID="{06CF0C80-C11D-4627-8897-F962B6B7DC13}" ShortID="23660352">

@@ -104,4 +104,19 @@ public class BoatAudioController : MonoBehaviour
         m_boatThrottleSignedRTPC.SetValue(m_boatHullEmitter, thrustStep);
         m_boatThrottleSignedRTPC.SetValue(m_boatSternWaterEmitter, thrustStep);
     }
+
+    public void StartSailFluttering()
+    {
+        m_sailLoopStartEvent.Post(m_boatSailEmitter);
+    }
+
+    public void StopSailFluttering()
+    {
+        m_sailLoopStopEvent.Post(m_boatSailEmitter);
+    }
+
+    public void SetSailAngle(float sailAngle)
+    {
+        m_sailTensionRTPC.SetValue(m_boatSailEmitter, sailAngle);
+    }
 }

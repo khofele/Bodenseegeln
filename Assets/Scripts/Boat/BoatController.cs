@@ -235,10 +235,12 @@ public class BoatController : MonoBehaviour
         if (angleWindBoat < 15.0f)
         {
             isFluttering = true;
+            m_boatAudioController.StartSailFluttering();
         }
         else
         {
             isFluttering = false;
+            m_boatAudioController.StopSailFluttering();
         }
 
         // 0.5 * airdensity * (magnitude apparent wind)^2 * sail size * coefficient (drag or lift)
@@ -456,6 +458,8 @@ public class BoatController : MonoBehaviour
             // apply sail rotation to y-axis
             m_mainSail.transform.localRotation = Quaternion.Euler(0.0f, m_actualMainSailRotation, 0.0f);
             m_frontSail.transform.localRotation = Quaternion.Euler(0.0f, m_actualFrontSailRotation, 0.0f);
+
+            m_boatAudioController.SetSailAngle(m_actualMainSailRotation);
         }
     }
 
@@ -1457,7 +1461,7 @@ public class BoatController : MonoBehaviour
     }
 
     public void FixedUpdate()
-    {           
+    {
         //// DEBUG //////////////////////////////////////////////////////////////////////////////
         float speedKnot = m_rigidbody.linearVelocity.magnitude / m_msPerKnot;
         Debug.Log(speedKnot + " knots");

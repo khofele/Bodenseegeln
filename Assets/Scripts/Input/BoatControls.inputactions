@@ -467,6 +467,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "LookLeft",
+                    "type": "Button",
+                    "id": "7a4f91d4-dc28-4a09-9af1-ae5025b3ec12",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LookRight",
+                    "type": "Button",
+                    "id": "8d4b735e-7421-4a6d-a27c-f8f8b5db319f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -489,6 +507,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d78bab38-badd-4aba-a43a-07b09f6b7d4e",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8a15037-a04b-42a6-8f33-e19df70aefb1",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -9,9 +9,9 @@ public class ShaderWindParameterTransfer : MonoBehaviour
     {
         // Übergabe Funktioniert! wurde getestet
         Shader.SetGlobalVector("_Wind", new Vector4(
-            m_WindController.TrueWind.x,
-            m_WindController.TrueWind.y,
-            m_WindController.TrueWind.z,
+            m_WindController.ShaderWind.x,
+            m_WindController.ShaderWind.y,
+            m_WindController.ShaderWind.z,
             0.0f
             ));
     }

@@ -5,6 +5,8 @@ public class WindController : MonoBehaviour
     // RESULT WIND VECTOR
     private Vector3 m_trueWind = Vector3.zero;
 
+    private Vector3 m_shaderWind = Vector3.zero;
+
     // WIND STRENGTH VALUES
     private float m_baseWindStrength = 2.0f;
     private float m_startWindStrength = 1.0f; // start and target wind strength for smooth wind strength transitions
@@ -29,6 +31,11 @@ public class WindController : MonoBehaviour
     public Vector3 TrueWind
     {
         get { return m_trueWind; }
+    }
+
+    public Vector3 ShaderWind
+    {
+        get { return m_shaderWind; }
     }
 
     private void ChangeWindDirection()
@@ -157,6 +164,10 @@ public class WindController : MonoBehaviour
         }
 
         ApplyWindTransition();
+
+        // accumulates wind offset for every frame
+        // prevents the shader from glitching during wind transitions --> wind vector dependent on current frame time, not total time (was used in shader before fix)
+        m_shaderWind += m_trueWind * Time.deltaTime;
 
         Debug.Log("Winddd " + m_trueWind); // TODO Debug raus
     }

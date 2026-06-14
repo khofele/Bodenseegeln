@@ -5,13 +5,16 @@ using UnityEngine.InputSystem;
 
 public class BoatController : MonoBehaviour
 {
+    // GENERAL FIELDS
     private float m_msPerKnot = 0.514444f; // 0.51444m/s = 1 Knot
     private Rigidbody m_rigidbody = null;
     private bool m_isBoatDrivingForward = true; // shader input
     private bool m_isInSailMode = true;
     private bool m_isFenderEnabled = true;
-    private GameStates m_prevGameState = GameStates.SAILMODE;
     private bool m_isForcedTow = false;
+    private bool m_isResettingSailRotations = false;
+    private GameStates m_prevGameState = GameStates.SAILMODE;
+    private BoatAnimatorController m_boatAnimatorController = null;
 
     // FORCE CALCULATION FIELDS
     private float m_airDensity = 1.2f; // kg/m^3
@@ -33,7 +36,7 @@ public class BoatController : MonoBehaviour
     private float m_currentFrontSailAngle = 0.0f;
     private float m_trimInput = 0.0f;
     private float m_trimSpeed = 30.0f;
-    private Sails m_currentSail = Sails.BOTHSAILS;
+    private SailStates m_currentSail = SailStates.BOTHSAILS;
     private float m_actualMainSailRotation = 0.0f; // actual rendered rotation in game
     private float m_actualFrontSailRotation = 0.0f;
     private float m_mainSailVelocity = 0.0f; // rotation speed of changing sail angle --> needed for smooth damp; shows how much the sail rotation/sail angle is currently changing
@@ -62,8 +65,8 @@ public class BoatController : MonoBehaviour
     [SerializeField] private WindController m_windController = null;
     [SerializeField] private BoatAudioController m_boatAudioController = null;
     [SerializeField] private Transform m_parentReference = null;
-    [SerializeField] private GameObject m_mainSail = null;
-    [SerializeField] private GameObject m_frontSail = null;
+    [SerializeField] private Sail m_mainSail = null;
+    [SerializeField] private Sail m_frontSail = null;
     [SerializeField] private GameObject m_rudder = null;
     [SerializeField] private GameObject m_fender = null;
 
@@ -199,7 +202,7 @@ public class BoatController : MonoBehaviour
         return apparentWind;
     }
 
-    private Vector3 CalculateSailForce(GameObject sail, float sailSize)
+    private Vector3 CalculateSailForce(Sail sail, float sailSize)
     {
         Vector3 apparentWind = CalculateApparentWind();
         float apparentWindSpeed = apparentWind.magnitude * apparentWind.magnitude;
@@ -330,17 +333,17 @@ public class BoatController : MonoBehaviour
 
     private void SailTrimming()
     {
-        if (m_gameManager.CurrentState == GameStates.SAILMODE)
+        if (m_gameManager.CurrentState == GameStates.SAILMODE && m_isResettingSailRotations == false)
         {
             float ropeInput = m_trimInput * m_trimSpeed * Time.fixedDeltaTime;
 
             // trim chosen sail
-            if (m_currentSail == Sails.MAINSAIL || m_currentSail == Sails.BOTHSAILS)
+            if (m_currentSail == SailStates.MAINSAIL || m_currentSail == SailStates.BOTHSAILS)
             {
                 m_currentMainSailAngle = Mathf.Clamp(m_currentMainSailAngle + ropeInput, 0.0f, m_maxSailAngle);
             }
 
-            if (m_currentSail == Sails.FRONTSAIL || m_currentSail == Sails.BOTHSAILS)
+            if (m_currentSail == SailStates.FRONTSAIL || m_currentSail == SailStates.BOTHSAILS)
             {
                 m_currentFrontSailAngle = Mathf.Clamp(m_currentFrontSailAngle + ropeInput, 0.0f, m_maxSailAngle);
             }
@@ -478,12 +481,50 @@ public class BoatController : MonoBehaviour
         }
     }
 
-    private void ResetSails()
-    {
+    private void TriggerSailRotationReset()
+    {        
         // resets sails for switching to motor mode
-        m_mainSail.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-        m_frontSail.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+        m_isResettingSailRotations = true;
+        m_currentMainSailAngle = m_mainSail.transform.localEulerAngles.y;
+        m_currentFrontSailAngle = m_frontSail.transform.localEulerAngles.y;
         Debug.Log("Segel werden eingeholt!");
+    }
+
+    private void ResetSailRotations()
+    {
+        if(m_isResettingSailRotations == false)
+        {
+            return;
+        }
+
+        m_currentMainSailAngle = Mathf.SmoothDampAngle(m_currentMainSailAngle, 0.0f, ref m_mainSailVelocity, 0.5f);
+        m_currentFrontSailAngle = Mathf.SmoothDampAngle(m_currentFrontSailAngle, 0.0f, ref m_frontSailVelocity, 0.5f);
+
+        if (Mathf.Abs(m_currentMainSailAngle) < 0.1f && Mathf.Abs(m_currentFrontSailAngle) < 0.1f)
+        {
+            m_currentMainSailAngle = 0.0f;
+            m_currentFrontSailAngle = 0.0f;
+            m_isResettingSailRotations = false;
+        }
+
+        m_mainSail.transform.localRotation = Quaternion.Euler(0.0f, m_currentMainSailAngle, 0.0f);
+
+        m_frontSail.transform.localRotation = Quaternion.Euler(0.0f, m_currentFrontSailAngle, 0.0f);
+    }
+
+    private void ResetSailsForSailmode()
+    {
+        m_currentMainSailAngle = 0.0f;
+        m_currentFrontSailAngle = 0.0f;
+
+        m_actualMainSailRotation = 0.0f;
+        m_actualFrontSailRotation = 0.0f;
+
+        m_mainSailVelocity = 0.0f;
+        m_frontSailVelocity = 0.0f;
+
+        m_smoothedWindAngle = 0.0f;
+        m_trimInput = 0.0f;
     }
 
     private void CalculateKeelForce()
@@ -949,26 +990,30 @@ public class BoatController : MonoBehaviour
     {
         if (m_changeMotorSailModeAction.action.triggered == true)
         {
-            if (m_gameManager.CurrentState == GameStates.SAILMODE)
+            if (m_gameManager.CurrentState == GameStates.SAILMODE && m_mainSail.IsOpen == true && m_frontSail.IsOpen == true)
             {
                 m_gameManager.SetState(GameStates.MOTORMODE);
                 m_isInSailMode = false;
-                ResetSails(); // TODO Jasi: Segel einholen Animation
+                TriggerSailRotationReset();
 
                 m_boatAudioController.PlayMotormodeAudio();
+                m_boatAnimatorController.ActivateMotormodeAnimations();
 
                 Debug.Log("Motormode enabled!");
             }
-            else if (m_gameManager.CurrentState == GameStates.MOTORMODE)
+            else if (m_gameManager.CurrentState == GameStates.MOTORMODE && m_mainSail.IsOpen == false && m_frontSail.IsOpen == false)
             {
                 m_gameManager.SetState(GameStates.SAILMODE);
                 m_isInSailMode = true;
                 m_thrustStep = 0.0f;
 
+                ResetSailsForSailmode();
+
                 m_boatAudioController.PlaySailmodeAudio();
+                m_boatAnimatorController.ActivateSailmodeAnimations();
 
                 Debug.Log("Sailmode enabled!");
-                Debug.Log("Segel werden aufgespannt!"); // TODO Jasi: Segel aufspannen Animation
+                Debug.Log("Segel werden aufgespannt!");
             }
         }
     }
@@ -1009,17 +1054,17 @@ public class BoatController : MonoBehaviour
         {
             if(m_chooseMainSailAction.action.triggered == true)
             {
-                m_currentSail = Sails.MAINSAIL;
+                m_currentSail = SailStates.MAINSAIL;
             }
 
             if(m_chooseFrontSailAction.action.triggered == true)
             {
-                m_currentSail = Sails.FRONTSAIL;
+                m_currentSail = SailStates.FRONTSAIL;
             }
 
             if(m_chooseBothSailsAction.action.triggered == true)
             {
-                m_currentSail = Sails.BOTHSAILS;
+                m_currentSail = SailStates.BOTHSAILS;
             }
         }
     }
@@ -1045,13 +1090,11 @@ public class BoatController : MonoBehaviour
             if (m_motorThrustForwardAction != null && m_motorThrustForwardAction.action.IsPressed() == true)
             {
                 m_thrustStep = Mathf.Min(m_thrustStep + 0.005f, m_maxThrustForwardSteps);
-                //m_throttleMoveEvent.Post(gameObject);  // Audio Event
             }
 
             if (m_motorThrustBackwardAction != null && m_motorThrustBackwardAction.action.IsPressed() == true)
             {
                 m_thrustStep = Mathf.Max(m_thrustStep - 0.005f, m_maxThrustBackwardSteps);
-                //m_throttleMoveEvent.Post(gameObject);  // Audio Event
             }
 
             if (m_motorThrustNeutralAction != null && m_motorThrustNeutralAction.action.triggered == true)
@@ -1121,8 +1164,11 @@ public class BoatController : MonoBehaviour
 
         if (CheckDamageReducedWithFenders() == true)
         {
-            // reduce damage
-            damageValue *= 0.5f;
+            Debug.Log("Fender reduce Damagee");
+            Debug.Log("Damagee before reduction " + damageValue);
+            // reduce damage by 
+            damageValue *= CalculateDamageReductionWithFenders();
+            Debug.Log("Damagee after reduction " + damageValue);
         }
 
         return damageValue;
@@ -1176,7 +1222,7 @@ public class BoatController : MonoBehaviour
     private void CalculateWaveDamage()
     {
         // take damage if boat is too fast --> waves are too high
-        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 14.0f)
+        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) >= 18.0f)
         {
             float damage = 4.0f * Time.fixedDeltaTime;
             m_currentHealth -= damage;
@@ -1186,13 +1232,27 @@ public class BoatController : MonoBehaviour
 
     private bool CheckDamageReducedWithFenders()
     {
-        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) < 8.0f)
+        if (m_isFenderEnabled == true && (m_rigidbody.linearVelocity.magnitude / 0.514444f) <= 8.0f)
         {
             return true;
         }
         else
         {
             return false;
+        }
+    }
+
+    private float CalculateDamageReductionWithFenders()
+    {
+        if((m_rigidbody.linearVelocity.magnitude / 0.514444f) <= 3.0f)
+        {
+            Debug.Log("Damagee Reduction 100%");
+            return 0.0f;
+        }
+        else
+        {
+            Debug.Log("Damagee Reduction 75%");
+            return 0.25f;
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1326,8 +1386,15 @@ public class BoatController : MonoBehaviour
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // UNITY METHODS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void Start()
+    public void Awake()
     {
+        m_boatAnimatorController = GetComponent<BoatAnimatorController>();
+
+        if(m_boatAnimatorController == null)
+        {
+            m_boatAnimatorController = gameObject.AddComponent<BoatAnimatorController>();
+        }
+
         m_rigidbody = GetComponent<Rigidbody>();
 
         // rigidbody setup
@@ -1374,9 +1441,11 @@ public class BoatController : MonoBehaviour
 
             // Windcontroller Values
             m_windController.UpdateBoatForward(gameObject.transform.forward);
+
+            ResetSailRotations();
         }
 
-        if(m_gameManager.CurrentState == GameStates.SAILMODE || m_gameManager.CurrentState == GameStates.MOTORMODE || m_gameManager.CurrentState == GameStates.PAUSED)
+        if (m_gameManager.CurrentState == GameStates.SAILMODE || m_gameManager.CurrentState == GameStates.MOTORMODE || m_gameManager.CurrentState == GameStates.PAUSED)
         {
             GetResetInput();
         }
@@ -1391,7 +1460,7 @@ public class BoatController : MonoBehaviour
         Debug.Log("Current Health " + m_currentHealth);
         //// DEBUG //////////////////////////////////////////////////////////////////////////////
 
-        if(m_gameManager.CurrentState == GameStates.DIALOGMODE)
+        if (m_gameManager.CurrentState == GameStates.DIALOGMODE)
         {
             StopBoat();
             m_rigidbody.isKinematic = true;
@@ -1408,7 +1477,7 @@ public class BoatController : MonoBehaviour
             StopBoat();
         }
 
-        if(m_gameManager.CurrentState == GameStates.MOTORMODE)
+        if (m_gameManager.CurrentState == GameStates.MOTORMODE)
         {
             ReduceFuel();
             CalculateMotorForce();

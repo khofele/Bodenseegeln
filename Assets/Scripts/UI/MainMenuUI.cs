@@ -9,10 +9,6 @@ public class MainMenuUI : MonoBehaviour
     [Header("UI Components")]
     [SerializeField] private Button m_btnStartGame = null;
     [SerializeField] private Button m_btnEndGame = null;
-    [SerializeField] private Slider m_sliderVolume = null;
-
-    [Header("WWise References")]
-    [SerializeField] private WwiseRTPC m_masterVolumeRTPC = null;
 
     private void StartGame()
     {
@@ -26,24 +22,23 @@ public class MainMenuUI : MonoBehaviour
         Application.Quit();
     }
 
-    private void SetVolume(float volume)
-    {
-        float clampedVolume = Mathf.Clamp(volume, 0.0f, 100.0f);
-
-        if(m_masterVolumeRTPC != null)
-        {
-            m_masterVolumeRTPC.SetGlobalValue(clampedVolume);
-        }
-
-        // TODO Lautstärkewert global speichern für alle Menüs
-    }
-
     private void Start()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         m_btnStartGame.onClick.AddListener(StartGame);
         m_btnEndGame.onClick.AddListener(EndGame);
-        m_sliderVolume.onValueChanged.AddListener((float volume) => SetVolume(volume));
+    }
+
+    private void OnEnable()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    private void OnDisable()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

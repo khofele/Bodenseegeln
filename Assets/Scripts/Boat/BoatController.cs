@@ -232,7 +232,7 @@ public class BoatController : MonoBehaviour
         bool isFluttering = false;
 
         // dead zone 
-        if (angleWindBoat < 15.0f)
+        if (angleWindBoat < 15.0f) // TODO Winkel von vorne und von hinten!!!!
         {
             isFluttering = true;
             m_boatAudioController.StartSailFluttering();
@@ -460,6 +460,7 @@ public class BoatController : MonoBehaviour
             m_frontSail.transform.localRotation = Quaternion.Euler(0.0f, m_actualFrontSailRotation, 0.0f);
 
             m_boatAudioController.SetSailAngle(m_actualMainSailRotation);
+            m_boatAudioController.PlayRopeCreeking();
         }
     }
 
@@ -1053,6 +1054,8 @@ public class BoatController : MonoBehaviour
 
             float rudderAngle = m_steeringInput * m_maxRudderAngle;
 
+            m_boatAudioController.PlayWheelTurn();
+
             Debug.Log("rudder angle " + rudderAngle);
         }
     }
@@ -1426,6 +1429,8 @@ public class BoatController : MonoBehaviour
         m_fender.SetActive(true);
         m_isFenderEnabled = true;
         m_isInSailMode = true; // TODO beim Spielstart in Sailmode gehen
+
+        m_boatAudioController.StartCreeking();
     }
 
     public void Update()

@@ -1477,10 +1477,10 @@ public class BoatController : MonoBehaviour
             m_rigidbody.isKinematic = false;
         }
 
-        if(m_gameManager.CurrentState == GameStates.PAUSED)
-        {
-            StopBoat();
-        }
+        //if(m_gameManager.CurrentState == GameStates.PAUSED)
+        //{
+        //    StopBoat();
+        //}
 
         if (m_gameManager.CurrentState == GameStates.MOTORMODE)
         {

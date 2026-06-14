@@ -352,6 +352,10 @@ public class BoatController : MonoBehaviour
 
             Debug.Log("Current Main Sail Angle " + m_currentMainSailAngle + " Current Front Sail Angle " + m_currentFrontSailAngle);
 
+            if(Mathf.Abs(ropeInput) > 0.0f)
+            {
+                m_boatAudioController.PlayRopeCreeking();
+            }
 
             Vector3 apparentWind = CalculateApparentWind();
 
@@ -458,9 +462,6 @@ public class BoatController : MonoBehaviour
             // apply sail rotation to y-axis
             m_mainSail.transform.localRotation = Quaternion.Euler(0.0f, m_actualMainSailRotation, 0.0f);
             m_frontSail.transform.localRotation = Quaternion.Euler(0.0f, m_actualFrontSailRotation, 0.0f);
-
-            m_boatAudioController.SetSailAngle(m_actualMainSailRotation);
-            //m_boatAudioController.PlayRopeCreeking();
         }
     }
 
@@ -1042,12 +1043,11 @@ public class BoatController : MonoBehaviour
                     // accumulate steering input
                     m_steeringInput += rawSteeringInput * Time.deltaTime;
                     Debug.Log("steering input " + m_steeringInput);
-                }
-                else {
+
                     m_boatAudioController.PlayWheelTurn();
                 }
-                    m_steeringInput = Mathf.Clamp(m_steeringInput, -1.0f, 1.0f);
                     
+                m_steeringInput = Mathf.Clamp(m_steeringInput, -1.0f, 1.0f);   
             }
 
             if (m_rudderNeutralAction != null && m_rudderNeutralAction.action.triggered == true)
@@ -1090,7 +1090,6 @@ public class BoatController : MonoBehaviour
             if(m_trimAction != null)
             {
                 m_trimInput = m_trimAction.action.ReadValue<float>();
-                m_boatAudioController.PlayRopeCreeking();
             }
         }
     }
@@ -1432,8 +1431,6 @@ public class BoatController : MonoBehaviour
         m_fender.SetActive(true);
         m_isFenderEnabled = true;
         m_isInSailMode = true; // TODO beim Spielstart in Sailmode gehen
-
-        //m_boatAudioController.StartCreeking();
     }
 
     public void Update()
@@ -1488,11 +1485,6 @@ public class BoatController : MonoBehaviour
         {
             m_rigidbody.isKinematic = false;
         }
-
-        //if(m_gameManager.CurrentState == GameStates.PAUSED)
-        //{
-        //    StopBoat();
-        //}
 
         if (m_gameManager.CurrentState == GameStates.MOTORMODE)
         {

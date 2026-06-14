@@ -935,7 +935,7 @@ public class BoatController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Towing possible! Please press R!");
+                Debug.Log("Towing possible! Please press R!"); // TODO Reset Request Screen
                 m_isForcedTow = true;
                 m_prevGameState = m_gameManager.CurrentState;
                 m_gameManager.SetState(GameStates.PAUSED);
@@ -961,7 +961,7 @@ public class BoatController : MonoBehaviour
             } 
             else
             {
-                Debug.Log("Not enough money for reset Screen shows up!");
+                Debug.Log("Not enough money for reset Screen shows up!"); // TODO Reset not possible Screen
             }
         }
     }

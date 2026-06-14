@@ -104,7 +104,6 @@ Effect plug-ins	ID	Name	Type				Notes
 	924566484	PhyBowWater_EQ	Wwise Parametric EQ			
 	972692614	PhyWindGust_EQ	Wwise Parametric EQ			
 	1075951946	MissionFail_EQ	Wwise Parametric EQ			
-	1255226786	BoatRopeCreak_EQ	Wwise Parametric EQ			
 	1300983745	PhyWaterDisplacementSlowLayer_EQ	Wwise Parametric EQ			
 	1366171813	PhyWakeWaterTexture_EQ	Wwise Parametric EQ			
 	1413546197	EnvMapOpen_EQ	Wwise Parametric EQ			
@@ -201,7 +200,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	421288215	boat_throttleMove2	.cache\23\{23A57845-52DA-6FD2-3AAD-B1D3F71B9488}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatThrottleMove\boat_thottleMove\boat_throttleMove2		57400
 	425142125	boat_woodVibrateHeavyForward_loop	.cache\E9\{E9831BC4-64AD-1C1A-0610-C74CEB5750CD}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWood\BC_boatWoodVibration\boat_woodVibrateHeavyForward_loop		3175344
 	428085290	phy_waveHull_loop00	.cache\1A\{1A83DA8C-740E-372B-0061-C9073C837F86}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\BC_phy_waveHull\RC_phy_waveHull\phy_waveHull_loop00		1538976
-	432980852	boat_wheelTurnRope2	.cache\09\{09B62AFF-4F68-F46C-1C4F-9806FB1B4BBD}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnRope\boat_wheelTurnRope2		66244
 	448957523	boat_sailDeployImpact	.cache\66\{665FAFA6-FDE6-246B-EBED-0D6F1EEE519F}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailDeploy\boat_sailDeployImpact		151572
 	458455823	phy_windForceSail_loop	.cache\80\{8020AE4D-468A-5B9A-F195-798841AEF646}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_sailWind\phy_windForceSail_loop		6144144
 	470504066	boat_sailFlutter_long00	.cache\D2\{D24E0BC2-019A-D2D4-C529-0C96CA38AAD1}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState_01\RC_phy_sailFlutter\boat_sailFlutter_long00		480096
@@ -209,7 +207,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	481909320	boat_throttleMoveIdle1	.cache\3E\{3EFD8C24-EE0F-D796-D6A8-AC432F4F108D}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatThrottleMove\boat_throttleMoveIdle\boat_throttleMoveIdle1		51816
 	499194111	mission_moneyGain	.cache\AF\{AFAA9F02-FAE3-D8C4-133E-7254BD77CA9D}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionMoney\mission_moneyGain		167832
 	503844325	boat_engineStartKey	.cache\EC\{ECDF0774-8B6B-8697-412D-65292B4060C0}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\boat_engineStartKey		111788
-	508055500	boat_wheelTurnRope1	.cache\08\{08FB9BF9-738D-2BD2-BD10-AA5AAA579D58}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnRope\boat_wheelTurnRope1		66244
 	513623100	mission_fastMovement	.cache\94\{9490A76B-FA1E-6BCE-8FB7-DAE3DA92201B}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_fastMovement		329240
 	517390698	phy_windGustSilence_03	.cache\D4\{D4589EA6-C12A-63A8-0B0E-914306CC91B9}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_sailWind\RC_phy_windGust\phy_windGustSilence_03		768096
 	527075343	env_collisionLightImpact2	.cache\6F\{6F201366-A95C-6B5C-A1DD-B594448AA5F5}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\BC_envcollisionLightImpact\env_collisionLightImpact2\env_collisionLightImpact2		103816
@@ -239,7 +236,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	760617268	boat_creaking_loop8	.cache\BE\{BE782AFE-AC48-41F0-D186-B19BADBBFFF3}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatCreakingLoop\BoatCreaking\boat_creaking_loop8		220644
 	766563104	boat_sailFlutter_mid01	.cache\E1\{E1236670-4C50-507B-2BF3-AE8D88BEAFB4}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState_01\RC_phy_sailFlutter\boat_sailFlutter_mid01		288096
 	782049489	mission_moneyPurse	.cache\D8\{D8109498-4D86-7153-BB30-C1784C10DE40}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionMoney\mission_moneyPurse		286536
-	795434133	boat_wheelTurnRope	.cache\37\{3772842F-1BD3-EA1B-9BA3-D9D686449BC0}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatWheelTurn\boat_wheelTurnRope\boat_wheelTurnRope		55220
 	835332323	menu_back	.cache\8B\{8BF282F8-541D-81F0-BD77-DA03AE738F27}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_back\menu_back		40340
 	837842022	boat_sailFlutter_mid00	.cache\37\{37B306B4-030C-ED85-1B00-00B4A1CBFF77}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState_01\RC_phy_sailFlutter\boat_sailFlutter_mid00		288096
 	839318311	mission_moneySpend	.cache\44\{44BFBC8A-0ADA-8B90-7041-1F5895349F29}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionMoney\mission_moneySpend		177696

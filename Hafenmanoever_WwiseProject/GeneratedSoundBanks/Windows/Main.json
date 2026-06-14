@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{6C0F0D2F-8522-060D-E743-2D3B9A48DEA0}",
+    "Hash": "{0C9FECFB-E3B7-D4C4-CB6D-B3AB36B65621}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -424,14 +424,6 @@
       "CachePath": "1A/{1A83DA8C-740E-372B-0061-C9073C837F86}.wem"
      },
      {
-      "Id": "432980852",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "boat_ropeCreak3.wav",
-      "CachePath": "09/{09B62AFF-4F68-F46C-1C4F-9806FB1B4BBD}.wem"
-     },
-     {
       "Id": "448957523",
       "Language": "SFX",
       "Streaming": "false",
@@ -486,14 +478,6 @@
       "Location": "Memory",
       "ShortName": "boat_engineStartKey.wav",
       "CachePath": "EC/{ECDF0774-8B6B-8697-412D-65292B4060C0}.wem"
-     },
-     {
-      "Id": "508055500",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "boat_ropeCreak2.wav",
-      "CachePath": "08/{08FB9BF9-738D-2BD2-BD10-AA5AAA579D58}.wem"
      },
      {
       "Id": "513623100",
@@ -726,14 +710,6 @@
       "Location": "Memory",
       "ShortName": "mission_moneyPurse.wav",
       "CachePath": "D8/{D8109498-4D86-7153-BB30-C1784C10DE40}.wem"
-     },
-     {
-      "Id": "795434133",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "boat_ropeCreak1.wav",
-      "CachePath": "37/{3772842F-1BD3-EA1B-9BA3-D9D686449BC0}.wem"
      },
      {
       "Id": "835332323",
@@ -1047,14 +1023,6 @@
        "Name": "MissionFail_EQ",
        "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\MissionsFeedback\\MissionFail_EQ",
        "GUID": "{4A34076C-6398-4F04-B591-3883C7F0CC6E}",
-       "LibName": "Wwise Parametric EQ",
-       "LibId": "6881283"
-      },
-      {
-       "Id": "1255226786",
-       "Name": "BoatRopeCreak_EQ",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Boat\\BoatRopeCreak_EQ",
-       "GUID": "{0DA262DE-0ECA-4215-89E6-1E7ABAC2A753}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
       },
@@ -1927,28 +1895,12 @@
         "Id": "54458518"
        },
        {
-        "Id": "432980852"
-       },
-       {
-        "Id": "508055500"
-       },
-       {
         "Id": "652644797"
        },
        {
         "Id": "676106981"
-       },
-       {
-        "Id": "795434133"
        }
-      ],
-      "PluginRefs": {
-       "ShareSets": [
-        {
-         "Id": "1255226786"
-        }
-       ]
-      }
+      ]
      },
      {
       "Id": "291365827",
@@ -3038,6 +2990,6 @@
     ]
    }
   ],
-  "FileHash": "{B53692C6-832C-3BC3-01ED-48ABAA5E1E83}"
+  "FileHash": "{F876AFC5-F889-A332-EC0E-77368D77908D}"
  }
 }

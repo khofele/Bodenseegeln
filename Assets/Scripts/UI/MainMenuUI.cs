@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using WwiseRTPC = AK.Wwise.RTPC;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -8,6 +10,9 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private Button m_btnStartGame = null;
     [SerializeField] private Button m_btnEndGame = null;
     [SerializeField] private Slider m_sliderVolume = null;
+
+    [Header("WWise References")]
+    [SerializeField] private WwiseRTPC m_masterVolumeRTPC = null;
 
     private void StartGame()
     {
@@ -23,7 +28,14 @@ public class MainMenuUI : MonoBehaviour
 
     private void SetVolume(float volume)
     {
-        // TODO implement
+        float clampedVolume = Mathf.Clamp(volume, 0.0f, 100.0f);
+
+        if(m_masterVolumeRTPC != null)
+        {
+            m_masterVolumeRTPC.SetGlobalValue(clampedVolume);
+        }
+
+        // TODO Lautstärkewert global speichern für alle Menüs
     }
 
     private void Start()

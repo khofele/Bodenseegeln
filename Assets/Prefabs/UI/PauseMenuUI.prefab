@@ -159,7 +159,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 9212063190741343688}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Zum Hauptmen\xFC"
+  m_text: Spiel beenden
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -978,8 +978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuUI
   m_btnResumeGame: {fileID: 6572724044509775851}
-  m_btnBackToMainMenu: {fileID: 2306211630498620580}
-  m_sliderVolume: {fileID: 8310374269287232558}
+  m_btnEndGame: {fileID: 2306211630498620580}
 --- !u!1 &6360032273416755148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6048119103032762256}
+  - component: {fileID: 581554021944722723}
   m_Layer: 5
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -1053,6 +1053,23 @@ RectTransform:
   m_AnchoredPosition: {x: 133.10004, y: 210.79999}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &581554021944722723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6884668009398004600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511ebcc46393eab418e7dee0c11d5f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MasterVolumeSlider
+  m_volumeSlider: {fileID: 8310374269287232558}
+  m_masterVolumeRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &7276508386618193960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1158,7 @@ GameObject:
   - component: {fileID: 6499486897149868210}
   - component: {fileID: 2306211630498620580}
   m_Layer: 5
-  m_Name: BtnBackToMainMenu
+  m_Name: BtnEndGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -933,7 +933,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuUI
   m_btnStartGame: {fileID: 299318111}
   m_btnEndGame: {fileID: 809352130}
-  m_sliderVolume: {fileID: 1040482196}
 --- !u!1 &1040482194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1017,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 840582342}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -1033,6 +1032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1203391390}
+  - component: {fileID: 1203391391}
   m_Layer: 5
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -1061,6 +1061,23 @@ RectTransform:
   m_AnchoredPosition: {x: -194.79999, y: 57.700012}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1203391391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203391389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511ebcc46393eab418e7dee0c11d5f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MasterVolumeSlider
+  m_volumeSlider: {fileID: 1040482196}
+  m_masterVolumeRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &1223947988
 GameObject:
   m_ObjectHideFlags: 0

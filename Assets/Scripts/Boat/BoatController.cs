@@ -460,7 +460,7 @@ public class BoatController : MonoBehaviour
             m_frontSail.transform.localRotation = Quaternion.Euler(0.0f, m_actualFrontSailRotation, 0.0f);
 
             m_boatAudioController.SetSailAngle(m_actualMainSailRotation);
-            m_boatAudioController.PlayRopeCreeking();
+            //m_boatAudioController.PlayRopeCreeking();
         }
     }
 
@@ -1043,8 +1043,11 @@ public class BoatController : MonoBehaviour
                     m_steeringInput += rawSteeringInput * Time.deltaTime;
                     Debug.Log("steering input " + m_steeringInput);
                 }
-
-                m_steeringInput = Mathf.Clamp(m_steeringInput, -1.0f, 1.0f);
+                else {
+                    m_boatAudioController.PlayWheelTurn();
+                }
+                    m_steeringInput = Mathf.Clamp(m_steeringInput, -1.0f, 1.0f);
+                    
             }
 
             if (m_rudderNeutralAction != null && m_rudderNeutralAction.action.triggered == true)
@@ -1054,7 +1057,6 @@ public class BoatController : MonoBehaviour
 
             float rudderAngle = m_steeringInput * m_maxRudderAngle;
 
-            m_boatAudioController.PlayWheelTurn();
 
             Debug.Log("rudder angle " + rudderAngle);
         }
@@ -1088,6 +1090,7 @@ public class BoatController : MonoBehaviour
             if(m_trimAction != null)
             {
                 m_trimInput = m_trimAction.action.ReadValue<float>();
+                m_boatAudioController.PlayRopeCreeking();
             }
         }
     }
@@ -1430,7 +1433,7 @@ public class BoatController : MonoBehaviour
         m_isFenderEnabled = true;
         m_isInSailMode = true; // TODO beim Spielstart in Sailmode gehen
 
-        m_boatAudioController.StartCreeking();
+        //m_boatAudioController.StartCreeking();
     }
 
     public void Update()

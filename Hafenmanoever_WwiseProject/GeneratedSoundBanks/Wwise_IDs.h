@@ -107,6 +107,7 @@ namespace AK
         static const AkUniqueID PHY_WATERMOVEMENT = 3361901837U;
         static const AkUniqueID PHY_WINDBOATINTENSITY = 691629868U;
         static const AkUniqueID PHY_WINDSAILINTENSITY = 541499651U;
+        static const AkUniqueID SETTINGS_MASTERVOLUME = 823301501U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS

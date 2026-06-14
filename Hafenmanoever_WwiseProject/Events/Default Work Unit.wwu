@@ -65,117 +65,163 @@
 				</Folder>
 				<Folder Name="MissionsFeedback" ID="{7986BD02-D9FE-4384-8765-35AF1F0AD33A}" ShortID="613122230">
 					<ChildrenList>
-						<Folder Name="Event_MissionsFeedback" ID="{9320E3BA-45A8-4797-8D4E-19C4A9DBB44C}" ShortID="563999408">
+						<Folder Name="MissionMoney" ID="{D862A98D-625B-47CE-8AA8-5D7FBCE84F05}" ShortID="726171433">
 							<ChildrenList>
-								<Folder Name="MissionState" ID="{BAD22D00-6A3C-43DE-9566-3A1DD6751058}" ShortID="848008640">
+								<Event Name="mission_moneyGain" ID="{A7A23103-4585-49EA-9B9F-2DDDE29D6AC0}">
 									<ChildrenList>
-										<Event Name="mission_fail" ID="{DD1F692B-55A5-4049-A12F-CD3734CA4E3D}">
-											<ChildrenList>
-												<Action Name="" ID="{54CCE642-63A5-4D9F-ABFA-98A83A0A1DFA}" ShortID="542550814">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="mission_fail" ID="{420496ED-5413-4FF9-B59A-976C3A66191A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="mission_accept" ID="{7B36055F-D733-4A0D-ADC7-70F97FD7475B}">
-											<ChildrenList>
-												<Action Name="" ID="{809013E7-CB26-41C5-A3BD-786E790F4FCF}" ShortID="909304753">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="mission_accept" ID="{3A4F5B54-7BCB-4A07-B5AC-EEC6AD7B1F56}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="mission_abort" ID="{3D75BE5C-C9DC-4099-A752-A7DAC242749F}">
-											<ChildrenList>
-												<Action Name="" ID="{58C3E325-15A1-410A-A09A-5930D3B61772}" ShortID="70169633">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="mission_abort" ID="{60B38B9E-FEDE-4E70-A1EF-15D140D96AB4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="mission_complete" ID="{E8EFA51D-5A9D-4570-A1A0-2B507E079D24}">
-											<ChildrenList>
-												<Action Name="" ID="{EC7D6895-305F-4161-A449-2565EB5E363B}" ShortID="642957325">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="mission_complete" ID="{A77329D0-7FF0-437A-A86B-989F0A8E0B67}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
+										<Action Name="" ID="{0AB0C8DE-D4F3-4404-A7D2-2513400A5B25}" ShortID="547593643">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_moneyGain" ID="{47F9E818-89F3-45A5-BD39-6ABB0B2A9764}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{536E1CC2-1C84-45BC-865F-9885798E77BB}" ShortID="267022157">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_moneyPurse" ID="{9F5A230D-4892-42A1-9972-1987C762B891}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
-								</Folder>
-								<Folder Name="MissionMoney" ID="{D862A98D-625B-47CE-8AA8-5D7FBCE84F05}" ShortID="726171433">
+								</Event>
+								<Event Name="mission_moneySpend" ID="{DDC02CF0-71A4-44A4-99EC-FF6928203F7D}">
 									<ChildrenList>
-										<Event Name="mission_moneyGain" ID="{A7A23103-4585-49EA-9B9F-2DDDE29D6AC0}">
-											<ChildrenList>
-												<Action Name="" ID="{0AB0C8DE-D4F3-4404-A7D2-2513400A5B25}" ShortID="547593643">
-													<PropertyList>
-														<Property Name="Delay" Type="Real64" Value="0.2"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="mission_moneyGain" ID="{47F9E818-89F3-45A5-BD39-6ABB0B2A9764}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-												<Action Name="" ID="{536E1CC2-1C84-45BC-865F-9885798E77BB}" ShortID="267022157">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="mission_moneyPurse" ID="{9F5A230D-4892-42A1-9972-1987C762B891}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="mission_moneySpend" ID="{DDC02CF0-71A4-44A4-99EC-FF6928203F7D}">
-											<ChildrenList>
-												<Action Name="" ID="{588F7AE3-2E13-402D-AC73-467F80011072}" ShortID="704953978">
-													<PropertyList>
-														<Property Name="Delay" Type="Real64" Value="0.3"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="mission_moneySpend" ID="{951B8DB0-8E39-4DD5-B4F9-BA9D16111582}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-												<Action Name="" ID="{9AE316CE-FC27-411E-A655-7CE95BF39AF7}" ShortID="453049410">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="mission_moneyPurse" ID="{9F5A230D-4892-42A1-9972-1987C762B891}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="mission_moneyZero" ID="{3D1975C6-FF2C-43B5-BC19-130D92085506}"/>
+										<Action Name="" ID="{588F7AE3-2E13-402D-AC73-467F80011072}" ShortID="704953978">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_moneySpend" ID="{951B8DB0-8E39-4DD5-B4F9-BA9D16111582}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{9AE316CE-FC27-411E-A655-7CE95BF39AF7}" ShortID="453049410">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_moneyPurse" ID="{9F5A230D-4892-42A1-9972-1987C762B891}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
-								</Folder>
-								<Folder Name="MissionVarious" ID="{DE6557A4-87D8-4C6B-9776-56AA7BC0BAA0}" ShortID="354108046">
+								</Event>
+								<Event Name="mission_moneyZero" ID="{3D1975C6-FF2C-43B5-BC19-130D92085506}">
 									<ChildrenList>
-										<Event Name="mission_boatDamage" ID="{93473457-F890-45C2-A8C5-6E19B46E5677}"/>
-										<Event Name="mission_fastMovement" ID="{0460CA55-7A18-439A-BD71-00FE62D05EBB}"/>
-										<Event Name="mission_start_voiceLinesNpc" ID="{DE8CF4E1-CCC2-43DC-A2F5-5C2A6102154E}"/>
-										<Event Name="mission_stop_voiceLinesNpc" ID="{AD1B3553-62FC-4E81-881A-94839900A9A0}"/>
+										<Action Name="" ID="{F901EA98-0C96-470B-B8E3-2431C6A73A3F}" ShortID="429905427">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_moneyZero" ID="{BC28199F-05D7-4661-A063-2DCDA19D3165}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
-								</Folder>
-								<Folder Name="MissionGoal" ID="{E5C41BA6-6765-4CB0-80B4-2631F4E23AD6}" ShortID="628520607">
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="MissionVarious" ID="{DE6557A4-87D8-4C6B-9776-56AA7BC0BAA0}" ShortID="354108046">
+							<ChildrenList>
+								<Event Name="mission_boatDamage" ID="{93473457-F890-45C2-A8C5-6E19B46E5677}">
 									<ChildrenList>
-										<Event Name="mission_goalReached" ID="{E6D3909D-ED2E-4719-BE6C-69AF986CD6D1}"/>
-										<Event Name="mission_goalFail" ID="{CA812B7C-7356-4CD4-A2BF-D821072A37D5}"/>
+										<Action Name="" ID="{794EC673-0A05-447A-A20F-1ABDE6B66BDF}" ShortID="352867319">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_boatDamage" ID="{09677CE6-81A1-4245-B3C3-167A2E58BBC5}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
-								</Folder>
+								</Event>
+								<Event Name="mission_fastMovement" ID="{0460CA55-7A18-439A-BD71-00FE62D05EBB}">
+									<ChildrenList>
+										<Action Name="" ID="{18998729-D29F-4BA5-ACD7-5919858F0371}" ShortID="820919566">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_fastMovement" ID="{95753613-E65A-4EE3-A99F-D1D02A9AA8B2}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="mission_start_voiceLinesNpc" ID="{DE8CF4E1-CCC2-43DC-A2F5-5C2A6102154E}"/>
+								<Event Name="mission_stop_voiceLinesNpc" ID="{AD1B3553-62FC-4E81-881A-94839900A9A0}"/>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="MissionGoal" ID="{E5C41BA6-6765-4CB0-80B4-2631F4E23AD6}" ShortID="628520607">
+							<ChildrenList>
+								<Event Name="mission_goalReached" ID="{E6D3909D-ED2E-4719-BE6C-69AF986CD6D1}">
+									<ChildrenList>
+										<Action Name="" ID="{3C3C7739-6A2B-4284-A1CF-8D9A81C6438F}" ShortID="145993845">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_goalReached" ID="{0B399DB4-E072-45AE-BDC1-EEBDFD7EAA1E}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="mission_goalFail" ID="{CA812B7C-7356-4CD4-A2BF-D821072A37D5}">
+									<ChildrenList>
+										<Action Name="" ID="{556A63F5-55AC-4ADF-8965-C5273854511A}" ShortID="3550640">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_goalFail" ID="{F56B9250-FD99-49D0-AB5E-2AAF5EAA9CBD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="MissionState" ID="{BAD22D00-6A3C-43DE-9566-3A1DD6751058}" ShortID="848008640">
+							<ChildrenList>
+								<Event Name="mission_fail" ID="{DD1F692B-55A5-4049-A12F-CD3734CA4E3D}">
+									<ChildrenList>
+										<Action Name="" ID="{54CCE642-63A5-4D9F-ABFA-98A83A0A1DFA}" ShortID="542550814">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_fail" ID="{DE76E5BC-26A4-4237-9716-0ECE4E7FC0AC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="mission_accept" ID="{7B36055F-D733-4A0D-ADC7-70F97FD7475B}">
+									<ChildrenList>
+										<Action Name="" ID="{809013E7-CB26-41C5-A3BD-786E790F4FCF}" ShortID="909304753">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_accept" ID="{FB02209B-5142-426D-9856-AA81BCD6F01E}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="mission_abort" ID="{3D75BE5C-C9DC-4099-A752-A7DAC242749F}">
+									<ChildrenList>
+										<Action Name="" ID="{58C3E325-15A1-410A-A09A-5930D3B61772}" ShortID="70169633">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_abort" ID="{D7DFD27D-CCC2-40AA-9BD7-575BA050D695}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="mission_complete" ID="{E8EFA51D-5A9D-4570-A1A0-2B507E079D24}">
+									<ChildrenList>
+										<Action Name="" ID="{EC7D6895-305F-4161-A449-2565EB5E363B}" ShortID="642957325">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mission_complete" ID="{98BFE005-E28D-4ACA-B91E-ED43F7531F20}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
@@ -375,8 +421,33 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="boat_start_creaking" ID="{2C0253C0-B87D-4847-BDA2-CF0F4C1180F0}"/>
-								<Event Name="boat_stop_creaking" ID="{4BD7BC65-4DA2-42F1-A7DC-A90AA5A73311}"/>
+								<Event Name="boat_start_creaking" ID="{2C0253C0-B87D-4847-BDA2-CF0F4C1180F0}">
+									<ChildrenList>
+										<Action Name="" ID="{EE55D3DB-387C-4E10-8322-D9C76C78D9DC}" ShortID="596646873">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BoatCreaking" ID="{9C5C3F37-D63F-437A-AC13-996F0782E055}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_stop_creaking" ID="{4BD7BC65-4DA2-42F1-A7DC-A90AA5A73311}">
+									<ChildrenList>
+										<Action Name="" ID="{C0AB1C06-1EBE-4B08-89AB-9EA341F460E3}" ShortID="826482600">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BoatCreaking" ID="{9C5C3F37-D63F-437A-AC13-996F0782E055}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="BoatSail" ID="{AFC60F6A-464A-497A-B92D-E8483504F133}" ShortID="217737011">
@@ -543,15 +614,69 @@
 						</Folder>
 						<Folder Name="EnvBoat" ID="{D2363946-B1C1-4B74-8F9F-9D235B2A67F9}" ShortID="137881148">
 							<ChildrenList>
-								<Event Name="env_boatDockImpact" ID="{F434DD3B-46FE-47C0-AE3E-77F89EEFEEC0}"/>
+								<Event Name="env_boatDockImpact" ID="{F434DD3B-46FE-47C0-AE3E-77F89EEFEEC0}">
+									<ChildrenList>
+										<Action Name="" ID="{F9F373E7-9F57-4D50-9797-547FE473D309}" ShortID="738970831">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="env_boatDockImpact" ID="{05D9FA2A-8780-4509-8095-C3EB2EE3782E}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Folder Name="EnvBoatLoops" ID="{8174036D-E5F3-4C8E-99B0-E02EEFA3765E}" ShortID="1006029561">
 									<ChildrenList>
-										<Event Name="env_start_boat_RubDock" ID="{D1FBAABA-28DA-4090-A5DE-0051B9A6BE4F}"/>
-										<Event Name="env_stop_boat_RubDock" ID="{056B7BBB-8674-4C88-9677-4B51045B7C0B}"/>
+										<Event Name="env_start_boat_RubDock" ID="{D1FBAABA-28DA-4090-A5DE-0051B9A6BE4F}">
+											<ChildrenList>
+												<Action Name="" ID="{5D587E96-3B0C-4732-9D1B-0213127B911E}" ShortID="444430749">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="BC_env_boatRubDock_loop" ID="{CE839D89-8717-4AAB-A080-CA1A83CEADEC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="env_stop_boat_RubDock" ID="{056B7BBB-8674-4C88-9677-4B51045B7C0B}">
+											<ChildrenList>
+												<Action Name="" ID="{01BBAAA3-DF56-49FB-9A9A-2EC7586019D9}" ShortID="342553478">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="2"/>
+														<Property Name="FadeTime" Type="Real64" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="BC_env_boatRubDock_loop" ID="{CE839D89-8717-4AAB-A080-CA1A83CEADEC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
-								<Event Name="env_boatRefuel" ID="{C19E6852-8537-4962-BDBD-576B98088A7D}"/>
-								<Event Name="env_boatRepair" ID="{6EC565DA-542B-4899-AE6E-FD624481A3FD}"/>
+								<Event Name="env_boatRefuel" ID="{C19E6852-8537-4962-BDBD-576B98088A7D}">
+									<ChildrenList>
+										<Action Name="" ID="{03D3DFEC-C3E1-407C-A097-9D2F51E582A9}" ShortID="576473861">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SC_env_refuel" ID="{EC4AA6A0-E873-49FC-A4B9-146A2E8DB09A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="env_boatRepair" ID="{6EC565DA-542B-4899-AE6E-FD624481A3FD}">
+									<ChildrenList>
+										<Action Name="" ID="{D3A9BDDC-83E4-44D9-8851-086D9D6331B8}" ShortID="38305134">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="env_boatRepair" ID="{42086141-0224-4CFC-83BA-5857BE6BA395}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="EnvWater" ID="{F1852ED3-D646-4CDF-8071-248F3FECB1D9}" ShortID="215992007">
@@ -610,22 +735,121 @@
 					<ChildrenList>
 						<Folder Name="PhyWave" ID="{308EE4B5-ACAB-4C20-A685-A57E8824006D}" ShortID="699005447">
 							<ChildrenList>
-								<Event Name="phy_start_waveHull" ID="{AB95686D-EB81-4ABD-8DED-902D09BFE045}"/>
-								<Event Name="phy_stop_waveHull" ID="{5E7BBF84-469E-43C7-B277-5880A23C386D}"/>
-								<Event Name="phy_start_waveMotion" ID="{E0CFA58D-3D67-4074-ACD6-249CD12BAACA}"/>
-								<Event Name="phy_stop_waveMotion" ID="{66B41CA3-E03E-412A-8D6B-0D024DA869CF}"/>
+								<Event Name="phy_start_waveHull" ID="{AB95686D-EB81-4ABD-8DED-902D09BFE045}">
+									<ChildrenList>
+										<Action Name="" ID="{92790064-4562-4377-9F28-21F391BF096E}" ShortID="843542976">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_waveHull" ID="{6791227C-5984-452A-9B6C-0CB269ACCF12}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_waveHull" ID="{5E7BBF84-469E-43C7-B277-5880A23C386D}">
+									<ChildrenList>
+										<Action Name="" ID="{1B05DA82-3E73-4237-A106-A0DBD2D2A451}" ShortID="150664125">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_waveHull" ID="{6791227C-5984-452A-9B6C-0CB269ACCF12}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_start_waveMotion" ID="{E0CFA58D-3D67-4074-ACD6-249CD12BAACA}">
+									<ChildrenList>
+										<Action Name="" ID="{171ED313-2D8D-432B-847B-3F77C8B08859}" ShortID="1028775940">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_waveMotion_loop" ID="{540A7B32-1E42-4F5E-BFDD-50FDB03F5FA8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_waveMotion" ID="{66B41CA3-E03E-412A-8D6B-0D024DA869CF}">
+									<ChildrenList>
+										<Action Name="" ID="{A00A13F0-5398-472D-A452-B905C5C8CD66}" ShortID="1026114955">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_waveMotion_loop" ID="{540A7B32-1E42-4F5E-BFDD-50FDB03F5FA8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="PhyBow" ID="{C1517D5B-553F-4F89-BC81-106A06D3E4BB}" ShortID="262647774">
 							<ChildrenList>
-								<Event Name="phy_start_bowWater" ID="{0A5E8B81-A365-48CA-A4D6-E6F434A3A401}"/>
-								<Event Name="phy_stop_bowWater" ID="{BB21DE50-FB40-4357-AD5C-D3C9B7A738DD}"/>
+								<Event Name="phy_start_bowWater" ID="{0A5E8B81-A365-48CA-A4D6-E6F434A3A401}">
+									<ChildrenList>
+										<Action Name="" ID="{E16D3CE0-B71D-48D1-9622-6ABFF75E8801}" ShortID="592413912">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_bowWater2" ID="{70AA516A-530E-4500-BD2E-A61CF60E2AED}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_bowWater" ID="{BB21DE50-FB40-4357-AD5C-D3C9B7A738DD}">
+									<ChildrenList>
+										<Action Name="" ID="{D7D648B1-D42A-42B6-894E-2C24B8E33ACF}" ShortID="1011446113">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_bowWater2" ID="{70AA516A-530E-4500-BD2E-A61CF60E2AED}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="PhyWake" ID="{FB60F1CE-3B35-4105-A3D3-FD1885FE5706}" ShortID="575828980">
 							<ChildrenList>
-								<Event Name="phy_start_wakeWater" ID="{3E4A3600-16B9-4790-ADF9-04628CA48085}"/>
-								<Event Name="phy_stop_wakeWater" ID="{FB1A576A-7F3C-49DA-A237-6C7BD304054D}"/>
+								<Event Name="phy_start_wakeWater" ID="{3E4A3600-16B9-4790-ADF9-04628CA48085}">
+									<ChildrenList>
+										<Action Name="" ID="{793558F5-08F7-4318-B1F8-24C2614A04BA}" ShortID="900132516">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_wakeWater" ID="{8C7FE357-2A30-4B51-B0B7-6E81A74E7E26}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_wakeWater" ID="{FB1A576A-7F3C-49DA-A237-6C7BD304054D}">
+									<ChildrenList>
+										<Action Name="" ID="{D24B9324-7498-4A25-939C-0613510C7AD2}" ShortID="535715653">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_wakeWater" ID="{8C7FE357-2A30-4B51-B0B7-6E81A74E7E26}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="PhyWind" ID="{A6201007-D5C2-4BB5-87EF-0013E117BA7C}" ShortID="327206754">
@@ -704,7 +928,7 @@
 										<Action Name="" ID="{93FE3ACC-F215-4CC7-96E0-58667615CDB4}" ShortID="142893108">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="BC_phy_waterDisplacement" ID="{E8C26237-3584-4937-8832-60EC958C4F80}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+													<ObjectRef Name="BC_phy_waterDisplacement2" ID="{77326372-9316-40B5-B07D-91E0C7823585}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -720,7 +944,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="BC_phy_waterDisplacement" ID="{E8C26237-3584-4937-8832-60EC958C4F80}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+													<ObjectRef Name="BC_phy_waterDisplacement2" ID="{77326372-9316-40B5-B07D-91E0C7823585}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -746,6 +970,8 @@
 										<Action Name="" ID="{15BDE4D0-AC28-4330-A7B5-489DE2336730}" ShortID="971336546">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">

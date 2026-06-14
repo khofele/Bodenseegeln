@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.SceneManagement;
 using WwiseEvent = AK.Wwise.Event;
 
 public class GameManager : Manager<GameManager>
@@ -47,7 +48,13 @@ public class GameManager : Manager<GameManager>
 
     private void HandleStateChange(GameStates _prevGameState, GameStates _newGameState)
     {
-        if (_newGameState == GameStates.PAUSED || _newGameState == GameStates.GAMEOVER || _newGameState == GameStates.GAMEWON)
+        if (_newGameState == GameStates.GAMEOVER || _newGameState == GameStates.GAMEWON)
+        {
+            SceneManager.LoadScene("GameWonOver");
+            return;
+        }
+
+        if (_newGameState == GameStates.PAUSED)
         {
             Time.timeScale = 0.0f;
             return;
@@ -138,15 +145,18 @@ public class GameManager : Manager<GameManager>
 
     private void GetPausedInput()
     {
-        if(m_openPauseMenuAction.action.triggered == true)
+        if(m_currentGameState != GameStates.GAMEWON && m_currentGameState != GameStates.GAMEOVER)
         {
-            if(m_currentGameState == GameStates.PAUSED)
+            if (m_openPauseMenuAction.action.triggered == true)
             {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
+                if (m_currentGameState == GameStates.PAUSED)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
             }
         }
     }
@@ -184,15 +194,5 @@ public class GameManager : Manager<GameManager>
     public void Update()
     {
         GetPausedInput();
-        Debug.Log("TimeScale " + Time.timeScale);
-        // TODO if statement später ändern je nach game over oder game won --> eigener Screen
-        //if (m_currentGameState == GameStates.GAMEOVER || m_currentGameState == GameStates.GAMEWON)
-        //{
-        //    // stop game
-        //    Time.timeScale = 0.0f;
-
-        //    // TODO show game over screen
-        //    // TODO show game won screen
-        //}
     }
 }

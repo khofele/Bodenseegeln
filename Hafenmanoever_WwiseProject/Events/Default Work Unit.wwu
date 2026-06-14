@@ -479,20 +479,10 @@
 								</Event>
 								<Event Name="boat_start_sailFlap" ID="{A8CBAD99-4BF5-4A81-919A-166039F3ED99}">
 									<ChildrenList>
-										<Action Name="" ID="{6EA69FD2-8B4D-4A68-9A07-24A43DF767D9}" ShortID="655776576">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="38"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Boat_SailTension" ID="{7F5CA7A6-156F-4E8E-9CE5-228FB55B8D24}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 										<Action Name="" ID="{72DB53F9-A63C-4ABC-9D0E-AECAF887A0BA}" ShortID="751591065">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="BC_sailState" ID="{AB133543-D9FA-4E21-A5F0-21E2BC7B4E4F}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+													<ObjectRef Name="BC_sailState_01" ID="{BE40B721-7FB1-43B8-A417-B3F730109F3A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -508,17 +498,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="BC_sailState" ID="{AB133543-D9FA-4E21-A5F0-21E2BC7B4E4F}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{109611C4-6CAB-4D3F-A12C-FB957533A0F2}" ShortID="543526104">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="38"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Boat_SailTension" ID="{7F5CA7A6-156F-4E8E-9CE5-228FB55B8D24}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+													<ObjectRef Name="BC_sailState_01" ID="{BE40B721-7FB1-43B8-A417-B3F730109F3A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

@@ -232,13 +232,15 @@ public class BoatController : MonoBehaviour
         bool isFluttering = false;
 
         // dead zone 
-        if (angleWindBoat < 15.0f)
+        if (angleWindBoat < 15.0f) // TODO Winkel von vorne und von hinten!!!!
         {
             isFluttering = true;
+            m_boatAudioController.StartSailFluttering();
         }
         else
         {
             isFluttering = false;
+            m_boatAudioController.StopSailFluttering();
         }
 
         // 0.5 * airdensity * (magnitude apparent wind)^2 * sail size * coefficient (drag or lift)
@@ -350,6 +352,10 @@ public class BoatController : MonoBehaviour
 
             Debug.Log("Current Main Sail Angle " + m_currentMainSailAngle + " Current Front Sail Angle " + m_currentFrontSailAngle);
 
+            if(Mathf.Abs(ropeInput) > 0.0f)
+            {
+                m_boatAudioController.PlayRopeCreeking();
+            }
 
             Vector3 apparentWind = CalculateApparentWind();
 
@@ -929,7 +935,7 @@ public class BoatController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Towing possible! Please press R!");
+                Debug.Log("Towing possible! Please press R!"); // TODO Reset Request Screen
                 m_isForcedTow = true;
                 m_prevGameState = m_gameManager.CurrentState;
                 m_gameManager.SetState(GameStates.PAUSED);
@@ -955,7 +961,7 @@ public class BoatController : MonoBehaviour
             } 
             else
             {
-                Debug.Log("Not enough money for reset Screen shows up!");
+                Debug.Log("Not enough money for reset Screen shows up!"); // TODO Reset not possible Screen
             }
         }
     }
@@ -988,6 +994,11 @@ public class BoatController : MonoBehaviour
     // INPUT METHODS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void ChangeBoatMode()
     {
+        if(m_boatAnimatorController.IsSailTransitioning == true)
+        {
+            return;
+        }
+
         if (m_changeMotorSailModeAction.action.triggered == true)
         {
             if (m_gameManager.CurrentState == GameStates.SAILMODE && m_mainSail.IsOpen == true && m_frontSail.IsOpen == true)
@@ -1032,9 +1043,11 @@ public class BoatController : MonoBehaviour
                     // accumulate steering input
                     m_steeringInput += rawSteeringInput * Time.deltaTime;
                     Debug.Log("steering input " + m_steeringInput);
-                }
 
-                m_steeringInput = Mathf.Clamp(m_steeringInput, -1.0f, 1.0f);
+                    m_boatAudioController.PlayWheelTurn();
+                }
+                    
+                m_steeringInput = Mathf.Clamp(m_steeringInput, -1.0f, 1.0f);   
             }
 
             if (m_rudderNeutralAction != null && m_rudderNeutralAction.action.triggered == true)
@@ -1043,6 +1056,7 @@ public class BoatController : MonoBehaviour
             }
 
             float rudderAngle = m_steeringInput * m_maxRudderAngle;
+
 
             Debug.Log("rudder angle " + rudderAngle);
         }
@@ -1452,7 +1466,7 @@ public class BoatController : MonoBehaviour
     }
 
     public void FixedUpdate()
-    {           
+    {
         //// DEBUG //////////////////////////////////////////////////////////////////////////////
         float speedKnot = m_rigidbody.linearVelocity.magnitude / m_msPerKnot;
         Debug.Log(speedKnot + " knots");
@@ -1470,11 +1484,6 @@ public class BoatController : MonoBehaviour
         else
         {
             m_rigidbody.isKinematic = false;
-        }
-
-        if(m_gameManager.CurrentState == GameStates.PAUSED)
-        {
-            StopBoat();
         }
 
         if (m_gameManager.CurrentState == GameStates.MOTORMODE)

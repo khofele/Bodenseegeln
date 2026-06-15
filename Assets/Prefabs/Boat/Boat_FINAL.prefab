@@ -8942,6 +8942,22 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 74c0ae56c1542a54fa57c3353a8ee747, type: 2}
+  m_wheelTurnEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8ccba3b39babd9f47802a29ca12972be, type: 2}
+  m_creekingStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1474ad4fdda7f834d85bed0a9d91e2fb, type: 2}
+  m_creekingStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: bfa54869cded4ab49b0991a55deb6df9, type: 2}
+  m_ropeCreekEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d026e30d9b6c4fa46a860d7dbc9dd27b, type: 2}
   m_boatThrottleSignedRTPC:
     idInternal: 0
     valueGuidInternal: 
@@ -9760,7 +9776,7 @@ Transform:
   m_GameObject: {fileID: 7828778667259867557}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9967,7 +9983,7 @@ Transform:
   m_GameObject: {fileID: 8793023563490670243}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.85, z: 0}
+  m_LocalPosition: {x: 0, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

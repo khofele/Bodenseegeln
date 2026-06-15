@@ -399,9 +399,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MapToggle",
+                    "name": "PauseGame",
                     "type": "Button",
-                    "id": "68678898-ef5b-4904-9210-d535711555ea",
+                    "id": "3c730a31-7876-4264-99ea-7f48490becd2",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -455,12 +455,12 @@
                 },
                 {
                     "name": "",
-                    "id": "eec9188a-41f1-4049-af45-f621b6be3b3f",
-                    "path": "<Keyboard>/m",
+                    "id": "90f14714-59d2-41fa-9fd5-177df0dbfbe1",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MapToggle",
+                    "action": "PauseGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

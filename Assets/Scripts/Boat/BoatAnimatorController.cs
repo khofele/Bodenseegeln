@@ -10,6 +10,9 @@ public class BoatAnimatorController : MonoBehaviour
     private float m_frontSailValue = 0.0f;
     private float m_mainSailValue = 0.0f;
     private float m_lerpSpeed = 2.0f;
+    private bool m_isSailTransitioning = false;
+    private bool m_isSailOpenTarget = false;
+    private int m_finishedTransitions = 0;
 
     // ANIMATION EVENTS
     public event Action OnMainSailTransitionFinished;
@@ -21,6 +24,11 @@ public class BoatAnimatorController : MonoBehaviour
     [Header("Sails")]
     [SerializeField] private Sail m_frontSail = null;
     [SerializeField] private Sail m_mainSail = null;
+
+    public bool IsSailTransitioning
+    {
+        get { return m_isSailTransitioning; }
+    }
 
     private void ActivateSailAnimations()
     {
@@ -80,21 +88,41 @@ public class BoatAnimatorController : MonoBehaviour
 
     private void HandleMainSailTransitionFinished()
     {
-        m_mainSail.IsOpen = !m_mainSail.IsOpen;
+        // set is open according to target --> depending on sailmode/motormode
+        m_mainSail.IsOpen = m_isSailOpenTarget;
 
+        // trigger animator bool if both sail are ready
         if(m_mainSail.IsOpen == m_frontSail.IsOpen)
         {
             m_animator.SetBool("IsSailOpen", m_mainSail.IsOpen);
         }
+
+        m_finishedTransitions++;
+        CheckTransitionsFinished();
     }
 
     private void HandleFrontSailTransitionFinished()
     {
-        m_frontSail.IsOpen = !m_frontSail.IsOpen;
+        m_frontSail.IsOpen = m_isSailOpenTarget;
 
         if (m_mainSail.IsOpen == m_frontSail.IsOpen)
         {
             m_animator.SetBool("IsSailOpen", m_frontSail.IsOpen);
+        }
+
+        m_finishedTransitions++;
+        CheckTransitionsFinished();
+    }
+
+    private void CheckTransitionsFinished()
+    {
+        // check finished transition so nothing goes wrong
+        if (m_finishedTransitions >= 2)
+        {
+            m_finishedTransitions = 0;
+
+            // blocks keyboard input for mode change
+            m_isSailTransitioning = false;
         }
     }
 
@@ -136,12 +164,18 @@ public class BoatAnimatorController : MonoBehaviour
 
     public void ActivateMotormodeAnimations()
     {
+        m_isSailTransitioning = true;
+        m_isSailOpenTarget = false;
+
         DeactivateSailAnimations();
         ApplyAnimationValues(0.0f, 0.0f);
     }
 
     public void ActivateSailmodeAnimations()
     {
+        m_isSailTransitioning = true;
+        m_isSailOpenTarget = true;
+
         ActivateSailAnimations();
         ApplyAnimationValues(0.0f, 0.0f);
     }

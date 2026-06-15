@@ -26,6 +26,10 @@ public class BoatAudioController : MonoBehaviour
     [SerializeField] private WwiseEvent m_sailRetractEvent = null;
     [SerializeField] private WwiseEvent m_sailLoopStartEvent = null;
     [SerializeField] private WwiseEvent m_sailLoopStopEvent = null;
+    [SerializeField] private WwiseEvent m_wheelTurnEvent = null;
+    [SerializeField] private WwiseEvent m_creekingStartEvent = null;
+    [SerializeField] private WwiseEvent m_creekingStopEvent = null;
+    [SerializeField] private WwiseEvent m_ropeCreekEvent = null;
 
     [Header("Audio Game Parameters")]
     [SerializeField] private WwiseRTPC m_boatThrottleSignedRTPC = null;
@@ -103,5 +107,40 @@ public class BoatAudioController : MonoBehaviour
         m_boatThrottleSignedRTPC.SetValue(m_boatEngineEmitter, thrustStep);
         m_boatThrottleSignedRTPC.SetValue(m_boatHullEmitter, thrustStep);
         m_boatThrottleSignedRTPC.SetValue(m_boatSternWaterEmitter, thrustStep);
+    }
+
+    public void StartSailFluttering()
+    {
+        m_sailLoopStartEvent.Post(m_boatSailEmitter);
+    }
+
+    public void StopSailFluttering()
+    {
+        m_sailLoopStopEvent.Post(m_boatSailEmitter);
+    }
+
+    public void SetSailAngle(float sailAngle)
+    {
+        m_sailTensionRTPC.SetValue(m_boatSailEmitter, sailAngle);
+    }
+
+    public void PlayWheelTurn()
+    {
+        m_wheelTurnEvent.Post(m_boatCockpitEmitter);
+    }
+
+    public void StartCreeking()
+    {
+        m_creekingStartEvent.Post(m_boatHullEmitter);
+    }
+
+    public void StopCreeking()
+    {
+        m_creekingStopEvent.Post(m_boatHullEmitter);
+    }
+
+    public void PlayRopeCreeking()
+    {
+        m_ropeCreekEvent.Post(m_boatHullEmitter);
     }
 }

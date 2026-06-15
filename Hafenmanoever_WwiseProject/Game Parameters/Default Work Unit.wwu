@@ -47,6 +47,15 @@
 						</GameParameter>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="MasterVolume" ID="{4BD11EEC-BA42-4CAD-B44A-193BC2AF1ADA}" ShortID="55788836">
+					<ChildrenList>
+						<GameParameter Name="Settings_MasterVolume" ID="{C2841C71-FBC2-490A-95E6-02D0B44CBD11}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="100"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

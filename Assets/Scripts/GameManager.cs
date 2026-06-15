@@ -1,24 +1,35 @@
 using Quest;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.SceneManagement;
 using WwiseEvent = AK.Wwise.Event;
 
 public class GameManager : Manager<GameManager>
 {
-    private GameStates m_currentGameState = GameStates.SAILMODE; // TODO Block inputs on start -> handle this in InputManager
-    // TODO maybe method for setting current game state outside of game manager
-    
-    [SerializeField] private UIManager m_uiManager = null;
-
-    [SerializeField] private int m_money = 0;
-
-    [Header("Wwise Money Sounds")]
-    [SerializeField] private WwiseEvent m_moneyGainSound;
-    [SerializeField] private WwiseEvent m_moneySpendSound;
+    private GameStates m_currentGameState = GameStates.SAILMODE;
+    private GameStates m_prevGameState;
 
     private Dictionary<QuestData, float> m_questResults = new();
     private float m_averageQuestResult = 0f;
     private int m_resetCost = 100;
+
+    public static event Action<GameStates, GameStates> OnGameStateChanged;
+
+    [Header("UI")]
+    [SerializeField] private UIManager m_uiManager = null;
+    [SerializeField] private PauseMenuUI m_pauseMenu = null;
+
+    [SerializeField] private int m_money = 0;
+
+    [Header("Input Action References")]
+    [SerializeField] private InputActionReference m_openPauseMenuAction = null;
+
+    [Header("Wwise Money Sounds")]
+    [SerializeField] private WwiseEvent m_moneyGainSound;
+    [SerializeField] private WwiseEvent m_moneySpendSound;
 
     public GameStates CurrentState => m_currentGameState;
     public int Money => m_money;
@@ -26,9 +37,30 @@ public class GameManager : Manager<GameManager>
 
     public void SetState(GameStates _newState)
     {
+        GameStates prevGameState = m_currentGameState;
+
         m_currentGameState = _newState;
 
         Debug.Log($"Game State changed to: {_newState}");
+
+        OnGameStateChanged?.Invoke(prevGameState, _newState);
+    }
+
+    private void HandleStateChange(GameStates _prevGameState, GameStates _newGameState)
+    {
+        if (_newGameState == GameStates.GAMEOVER || _newGameState == GameStates.GAMEWON)
+        {
+            SceneManager.LoadScene("GameWonOver");
+            return;
+        }
+
+        if (_newGameState == GameStates.PAUSED)
+        {
+            Time.timeScale = 0.0f;
+            return;
+        }
+
+        Time.timeScale = 1.0f;
     }
 
     public void AddMoney(int _amount)
@@ -90,20 +122,77 @@ public class GameManager : Manager<GameManager>
         Debug.Log($"[GameManager] new average quest result: {m_averageQuestResult}");
     }
 
+    private void PauseGame()
+    {
+        m_prevGameState = m_currentGameState;
+        SetState(GameStates.PAUSED);
+        m_pauseMenu.gameObject.SetActive(true);
+    }
+
+    private void ResumeGame()
+    {
+        if(m_prevGameState == GameStates.SAILMODE || m_prevGameState == GameStates.MOTORMODE)
+        {
+            SetState(m_prevGameState);
+        }
+        else
+        {
+            SetState(GameStates.SAILMODE);
+        }
+
+        m_pauseMenu.gameObject.SetActive(false);
+    }
+
+    private void GetPausedInput()
+    {
+        if(m_currentGameState != GameStates.GAMEWON && m_currentGameState != GameStates.GAMEOVER)
+        {
+            if (m_openPauseMenuAction.action.triggered == true)
+            {
+                if (m_currentGameState == GameStates.PAUSED)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
+            }
+        }
+    }
+
+    public void OnEnable()
+    {
+        if(m_openPauseMenuAction != null)
+        {
+            m_openPauseMenuAction.action.Enable();
+        }
+
+        if(m_pauseMenu != null)
+        {
+            PauseMenuUI.OnResumeButtonClicked += ResumeGame;
+        }
+
+        OnGameStateChanged += HandleStateChange;
+    }
+
+    public void OnDisable()
+    {
+        if (m_openPauseMenuAction != null)
+        {
+            m_openPauseMenuAction.action.Disable();
+        }
+
+        if (m_pauseMenu != null)
+        {
+            PauseMenuUI.OnResumeButtonClicked -= ResumeGame;
+        }
+
+        OnGameStateChanged -= HandleStateChange;
+    }
+
     public void Update()
     {
-        // TODO if statement später ändern je nach game over oder game won
-        // TODO trigger Game Won im Questsystem
-        if (m_currentGameState == GameStates.GAMEOVER || m_currentGameState == GameStates.GAMEWON)
-        {
-            // stop game
-            Time.timeScale = 0.0f;
-
-            // TODO show game over screen
-            // TODO show game won screen
-        }
-        //else if(m_currentGameState == GameStates.GAMEWON)
-        //{
-        //}
+        GetPausedInput();
     }
 }

@@ -98,7 +98,7 @@ public class UIManager : Manager<UIManager>
 
     public float GetApparentWindSpeed()
     {
-        return (m_windController.TrueWind - m_boatController.transform.GetComponent<Rigidbody>().linearVelocity).magnitude;
+        return ((m_windController.TrueWind - m_boatController.transform.GetComponent<Rigidbody>().linearVelocity).magnitude / 0.514444f);
     }
 
     public float GetApparentWindAngle()
@@ -119,7 +119,7 @@ public class UIManager : Manager<UIManager>
 
     public float GetTrueWindSpeed()
     {
-        return m_windController.TrueWind.magnitude;
+        return (m_windController.TrueWind.magnitude / 0.514444f);
     }
 
     public float GetTrueWindAngle()

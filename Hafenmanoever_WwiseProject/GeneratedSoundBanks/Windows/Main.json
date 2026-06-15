@@ -10,11 +10,35 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{A6F285C9-C492-A548-8E72-5CE13500799E}",
+    "Hash": "{0C9FECFB-E3B7-D4C4-CB6D-B3AB36B65621}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
     "Media": [
+     {
+      "Id": "5240439",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "env_boatRubDockSqueak_loop00.wav",
+      "CachePath": "A0/{A060EA67-D218-F906-A686-F8722FFA8966}.wem"
+     },
+     {
+      "Id": "18260256",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "env_boatDockImpact00.wav",
+      "CachePath": "21/{21D1A4E9-67D9-ABF5-EB44-44A7ED2B2ACC}.wem"
+     },
+     {
+      "Id": "21220894",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "env_refuelMetalKlick01.wav",
+      "CachePath": "B5/{B51B0361-D0A8-4B60-B56D-D9539AAE407E}.wem"
+     },
      {
       "Id": "21747592",
       "Language": "SFX",
@@ -40,12 +64,44 @@
       "CachePath": "8B/{8B041980-1EBA-1B2E-09C0-12B55CA24197}.wem"
      },
      {
+      "Id": "60158431",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_creaking_loop2.wav",
+      "CachePath": "A9/{A9B72086-2304-DD7B-A509-8A71064EF129}.wem"
+     },
+     {
       "Id": "73170341",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "phy_waterDisplacementSlow_loop02.wav",
       "CachePath": "2C/{2C05DA56-2277-96A8-5290-D37CD4650F68}.wem"
+     },
+     {
+      "Id": "79893045",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_waterDisplacementFast_loop01.wav",
+      "CachePath": "4F/{4FC90352-F61E-54CB-75E3-FBE36B8A7DA4}.wem"
+     },
+     {
+      "Id": "79962608",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlutter_silence01s.wav",
+      "CachePath": "3A/{3A3C3962-305E-4329-1D2C-97F78F4D5F33}.wem"
+     },
+     {
+      "Id": "81237453",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_sailmastWhistleLayer_loop01.wav",
+      "CachePath": "F9/{F9D03691-F149-86B5-181E-B6C02A6CEAB1}.wem"
      },
      {
       "Id": "85550369",
@@ -56,12 +112,28 @@
       "CachePath": "43/{43AA2255-607A-6FDE-72E4-7891F3B7C6BA}.wem"
      },
      {
-      "Id": "95413247",
+      "Id": "86212326",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "boat_sailFlapWind_loop6.wav",
-      "CachePath": "EA/{EA4708D7-F8B2-0A73-40F2-02799C6CC941}.wem"
+      "ShortName": "mission_goalFail.wav",
+      "CachePath": "4C/{4C088683-0A74-9B20-3523-1DE77A2289DD}.wem"
+     },
+     {
+      "Id": "89917974",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_creaking_loop7.wav",
+      "CachePath": "58/{58BDE951-C7ED-43B9-0DF2-C77E362C4DA0}.wem"
+     },
+     {
+      "Id": "102468720",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlutter_silence03s.wav",
+      "CachePath": "77/{77CA5ACB-E469-788B-76A7-96C9E4134DB3}.wem"
      },
      {
       "Id": "108181189",
@@ -72,12 +144,36 @@
       "CachePath": "AA/{AA6186BD-9D48-3437-4DC1-4DACFD777241}.wem"
      },
      {
-      "Id": "133819701",
+      "Id": "112878381",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "boat_sailFlapWind_loop1.wav",
-      "CachePath": "E9/{E99A2FAD-0754-C9BC-E862-A4713843AB10}.wem"
+      "ShortName": "boat_creaking_loop5.wav",
+      "CachePath": "46/{469FACFB-9564-B08B-E69C-4A493C1FBE71}.wem"
+     },
+     {
+      "Id": "113138969",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlutter_mid02.wav",
+      "CachePath": "03/{03263B08-95C3-086A-01A7-61A4E54E35C2}.wem"
+     },
+     {
+      "Id": "116392604",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_creaking_loop9.wav",
+      "CachePath": "F2/{F2798111-3B41-52D2-4452-318E185AC121}.wem"
+     },
+     {
+      "Id": "132439354",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_waterDisplacementFast_loop02.wav",
+      "CachePath": "05/{05ADA1ED-6E76-C799-6566-1B95C908A084}.wem"
      },
      {
       "Id": "137598962",
@@ -88,12 +184,44 @@
       "CachePath": "27/{27C0E7D4-038F-9BFF-78AD-8FA404EBD112}.wem"
      },
      {
+      "Id": "149563202",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_windGustSilence_02.wav",
+      "CachePath": "C6/{C6E82C78-FF37-8EF2-D824-E39C5E0DB4D7}.wem"
+     },
+     {
+      "Id": "160547032",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "env_refuel01.wav",
+      "CachePath": "57/{573BB756-4844-2A80-28C5-B7548FB69A3D}.wem"
+     },
+     {
+      "Id": "161588037",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "env_boatDockImpact02.wav",
+      "CachePath": "8E/{8E60A58A-6D38-B3D0-9BCB-BB13243BC1F6}.wem"
+     },
+     {
       "Id": "168246796",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "env_openMap.wav",
       "CachePath": "59/{59F2FAAC-B075-EF04-3C24-274F7A989DEB}.wem"
+     },
+     {
+      "Id": "172241338",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlutter_short00.wav",
+      "CachePath": "3F/{3F951D18-7C5C-9337-46E1-E929E1825B89}.wem"
      },
      {
       "Id": "183966653",
@@ -104,6 +232,30 @@
       "CachePath": "8A/{8AB58030-8821-0A36-1F40-C668EB4C4690}.wem"
      },
      {
+      "Id": "221736619",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_waveHull_loop02.wav",
+      "CachePath": "66/{66A33DF4-80AC-D53E-348E-8EE9EDBE6FF7}.wem"
+     },
+     {
+      "Id": "235427142",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "mission_boatDamage.wav",
+      "CachePath": "C2/{C265A0A8-6921-4A50-1FE5-3D8319CEDBBF}.wem"
+     },
+     {
+      "Id": "255764537",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_windGustSilence_04.wav",
+      "CachePath": "88/{88F97060-3BCA-53EC-A346-9549DC44402E}.wem"
+     },
+     {
       "Id": "264595052",
       "Language": "SFX",
       "Streaming": "false",
@@ -112,12 +264,28 @@
       "CachePath": "47/{47C1338E-6657-3813-616B-331D4168CCFB}.wem"
      },
      {
-      "Id": "295169873",
+      "Id": "284997067",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "boat_sailFlapWind_loop5.wav",
-      "CachePath": "2F/{2FB73DAC-4CEE-5C4A-D28A-22774F4CF37D}.wem"
+      "ShortName": "phy_wakeWaterTexture_loop01.wav",
+      "CachePath": "76/{76170760-342C-F067-74E3-AF425CF08C8B}.wem"
+     },
+     {
+      "Id": "305566701",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_creaking_loop6.wav",
+      "CachePath": "64/{64715496-633F-E281-76FC-8B467A8B4AFB}.wem"
+     },
+     {
+      "Id": "327356346",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_windGustSilence_01.wav",
+      "CachePath": "8F/{8F509300-1262-2FA0-3A45-368D6D57D205}.wem"
      },
      {
       "Id": "333325837",
@@ -136,20 +304,12 @@
       "CachePath": "56/{5658EE18-4FB4-940C-5A86-0C1B8E46F2AB}.wem"
      },
      {
-      "Id": "358085136",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "boat_sailFlapWind_loop3.wav",
-      "CachePath": "09/{098F9226-4858-121E-9B3F-C43086E48218}.wem"
-     },
-     {
       "Id": "358879437",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "phy_windGust_02.wav",
-      "CachePath": "56/{5676F1D9-4CE7-20DB-1FDE-792BC5D0E5F7}.wem"
+      "CachePath": "96/{96CFC2DF-5D60-2FC3-9305-D280DE32EA47}.wem"
      },
      {
       "Id": "362176238",
@@ -157,7 +317,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "mission_complete.wav",
-      "CachePath": "83/{835E30A6-4B4D-3A41-C230-AA4D5974FC54}.wem"
+      "CachePath": "2C/{2C853098-0977-4420-76DD-C385CFFABD7F}.wem"
      },
      {
       "Id": "369021067",
@@ -168,12 +328,76 @@
       "CachePath": "00/{003BA776-9087-E7FC-E40E-069FA9A9C80B}.wem"
      },
      {
+      "Id": "378380122",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_bowWaterBody_loop.wav",
+      "CachePath": "8E/{8EF2113A-024E-85B1-129C-69B376934FB9}.wem"
+     },
+     {
+      "Id": "380500659",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlutter_short01.wav",
+      "CachePath": "3B/{3BBEF4B3-DEE3-D6AA-0AAC-E79B2E351CBF}.wem"
+     },
+     {
+      "Id": "380514904",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlutter_silence02s.wav",
+      "CachePath": "67/{6733A214-8CB7-CC3C-4DFA-87D356FA67EB}.wem"
+     },
+     {
       "Id": "381048997",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "boat_sailDeploy1.wav",
       "CachePath": "1C/{1C461535-323E-9895-CB04-72516E5C9303}.wem"
+     },
+     {
+      "Id": "395269575",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_waveMotion_loop00.wav",
+      "CachePath": "39/{393EE122-B645-F7B8-7614-0496D7A6AE7D}.wem"
+     },
+     {
+      "Id": "395626155",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_waveMotion_loop01.wav",
+      "CachePath": "57/{57D184DA-6F5E-23D4-4187-AF9F1DF5DDB5}.wem"
+     },
+     {
+      "Id": "396063067",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "mission_moneyZero.wav",
+      "CachePath": "63/{63ABAD88-613E-082D-EC38-8DCB16CD41B3}.wem"
+     },
+     {
+      "Id": "401459605",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_sailmastWhistleLayer_loop02.wav",
+      "CachePath": "88/{88E0B49B-F83D-A8BE-33DB-94A197B224B5}.wem"
+     },
+     {
+      "Id": "402921378",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlutter_silence04s.wav",
+      "CachePath": "2A/{2A5F18BD-4639-59A7-7F47-E54B0E678ED5}.wem"
      },
      {
       "Id": "421288215",
@@ -192,12 +416,12 @@
       "CachePath": "E9/{E9831BC4-64AD-1C1A-0610-C74CEB5750CD}.wem"
      },
      {
-      "Id": "432980852",
+      "Id": "428085290",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "boat_ropeCreak3.wav",
-      "CachePath": "09/{09B62AFF-4F68-F46C-1C4F-9806FB1B4BBD}.wem"
+      "ShortName": "phy_waveHull_loop00.wav",
+      "CachePath": "1A/{1A83DA8C-740E-372B-0061-C9073C837F86}.wem"
      },
      {
       "Id": "448957523",
@@ -216,12 +440,20 @@
       "CachePath": "80/{8020AE4D-468A-5B9A-F195-798841AEF646}.wem"
      },
      {
-      "Id": "471676319",
+      "Id": "470504066",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "boat_sailFlap_loop2.wav",
-      "CachePath": "AC/{AC45EBDE-A051-F440-D907-65495C9C0EC0}.wem"
+      "ShortName": "boat_sailFlutter_long00.wav",
+      "CachePath": "D2/{D24E0BC2-019A-D2D4-C529-0C96CA38AAD1}.wem"
+     },
+     {
+      "Id": "472238138",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_creaking_loop3.wav",
+      "CachePath": "CA/{CA1742FA-618B-4CA9-DFA0-8E03838C7311}.wem"
      },
      {
       "Id": "481909320",
@@ -237,7 +469,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "mission_moneyGain.wav",
-      "CachePath": "4B/{4B050007-2A61-AB22-D8D9-1F202B34272D}.wem"
+      "CachePath": "AF/{AFAA9F02-FAE3-D8C4-133E-7254BD77CA9D}.wem"
      },
      {
       "Id": "503844325",
@@ -248,12 +480,20 @@
       "CachePath": "EC/{ECDF0774-8B6B-8697-412D-65292B4060C0}.wem"
      },
      {
-      "Id": "508055500",
+      "Id": "513623100",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "boat_ropeCreak2.wav",
-      "CachePath": "08/{08FB9BF9-738D-2BD2-BD10-AA5AAA579D58}.wem"
+      "ShortName": "mission_fastMovement.wav",
+      "CachePath": "94/{9490A76B-FA1E-6BCE-8FB7-DAE3DA92201B}.wem"
+     },
+     {
+      "Id": "517390698",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_windGustSilence_03.wav",
+      "CachePath": "D4/{D4589EA6-C12A-63A8-0B0E-914306CC91B9}.wem"
      },
      {
       "Id": "527075343",
@@ -262,6 +502,14 @@
       "Location": "Memory",
       "ShortName": "env_collisionLightImpact2.wav",
       "CachePath": "6F/{6F201366-A95C-6B5C-A1DD-B594448AA5F5}.wem"
+     },
+     {
+      "Id": "530543392",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_wakeWaterTexture_loop03.wav",
+      "CachePath": "AB/{AB7F1674-9C4F-A8E1-B0EB-2C46736F818B}.wem"
      },
      {
       "Id": "532928830",
@@ -288,12 +536,28 @@
       "CachePath": "7B/{7BAB2F42-CEB8-F97A-025D-EA89570E7A93}.wem"
      },
      {
+      "Id": "550295640",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "env_refuelMetalKlick00.wav",
+      "CachePath": "35/{35E521D6-18CC-7A2B-B1B9-6BD8DDF810E1}.wem"
+     },
+     {
+      "Id": "552054248",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "env_boatRubDockSqueak_loop01.wav",
+      "CachePath": "85/{856271E4-E0BB-AD11-5163-6810F34BDAAC}.wem"
+     },
+     {
       "Id": "587482612",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "phy_windGust_03.wav",
-      "CachePath": "A1/{A11A3F7D-4801-1FB6-70C4-1157E026ACAE}.wem"
+      "CachePath": "8B/{8B2C3EFF-2925-1F47-4F4A-9B825F35A87A}.wem"
      },
      {
       "Id": "606033276",
@@ -309,15 +573,23 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "phy_windGust_01.wav",
-      "CachePath": "C0/{C07E4751-5D59-382A-3B35-E9562368B897}.wem"
+      "CachePath": "FD/{FDEB72A6-BCB0-76AF-F56F-CF3100E6B899}.wem"
      },
      {
-      "Id": "624642319",
+      "Id": "618440954",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "boat_sailFlap_loop1.wav",
-      "CachePath": "E0/{E064C297-675C-D785-52E7-C2F050C39AD8}.wem"
+      "ShortName": "boat_creaking_loop10.wav",
+      "CachePath": "9C/{9C4C6F38-D12B-664A-1F8B-B527B702BD3E}.wem"
+     },
+     {
+      "Id": "623531450",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_wakeWaterTexture_loop00.wav",
+      "CachePath": "03/{0382C2C3-4617-09DC-E0AD-D92633D44482}.wem"
      },
      {
       "Id": "627688009",
@@ -336,12 +608,28 @@
       "CachePath": "E2/{E267A7A1-AE2A-2DD3-CE30-D53048EC178B}.wem"
      },
      {
+      "Id": "645282215",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_wakeWaterTexture_loop02.wav",
+      "CachePath": "06/{068DA974-EA7B-8037-4884-5044797F1ABB}.wem"
+     },
+     {
       "Id": "652644797",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "boat_wheelTurnBearing2.wav",
       "CachePath": "C0/{C0C5F2C4-4573-1462-97C4-8E4785F04A3B}.wem"
+     },
+     {
+      "Id": "665372918",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "env_boatRubDockBody_loop.wav",
+      "CachePath": "34/{34E035EA-029F-1436-AFEF-5AB9FA2FE520}.wem"
      },
      {
       "Id": "675332698",
@@ -368,12 +656,20 @@
       "CachePath": "01/{0174EB5E-BF39-4926-F76F-B1E875E82D8B}.wem"
      },
      {
+      "Id": "690247601",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "env_boatRubDockSqueak_loop02.wav",
+      "CachePath": "73/{73C12F8E-483A-B6E0-F0AD-2B2EFBD1C293}.wem"
+     },
+     {
       "Id": "734439282",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "mission_fail.wav",
-      "CachePath": "C5/{C58F8B59-E953-D522-D39A-55EEC67B3913}.wem"
+      "CachePath": "B1/{B1035399-8A4D-9458-B285-2DFDDBEBCAEC}.wem"
      },
      {
       "Id": "742888240",
@@ -392,20 +688,28 @@
       "CachePath": "E2/{E27C83AC-38C8-504C-35D8-CB0A26626B8C}.wem"
      },
      {
+      "Id": "760617268",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_creaking_loop8.wav",
+      "CachePath": "BE/{BE782AFE-AC48-41F0-D186-B19BADBBFFF3}.wem"
+     },
+     {
+      "Id": "766563104",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlutter_mid01.wav",
+      "CachePath": "E1/{E1236670-4C50-507B-2BF3-AE8D88BEAFB4}.wem"
+     },
+     {
       "Id": "782049489",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "mission_moneyPurse.wav",
       "CachePath": "D8/{D8109498-4D86-7153-BB30-C1784C10DE40}.wem"
-     },
-     {
-      "Id": "795434133",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "boat_ropeCreak1.wav",
-      "CachePath": "37/{3772842F-1BD3-EA1B-9BA3-D9D686449BC0}.wem"
      },
      {
       "Id": "835332323",
@@ -416,12 +720,20 @@
       "CachePath": "8B/{8BF282F8-541D-81F0-BD77-DA03AE738F27}.wem"
      },
      {
+      "Id": "837842022",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlutter_mid00.wav",
+      "CachePath": "37/{37B306B4-030C-ED85-1B00-00B4A1CBFF77}.wem"
+     },
+     {
       "Id": "839318311",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "mission_moneySpend.wav",
-      "CachePath": "CA/{CAF7591D-9073-1F0C-0B73-2B7D9180B236}.wem"
+      "CachePath": "44/{44BFBC8A-0ADA-8B90-7041-1F5895349F29}.wem"
      },
      {
       "Id": "851669271",
@@ -445,7 +757,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "mission_accept.wav",
-      "CachePath": "27/{2771B4C2-1DA4-73EE-46D9-32A781293887}.wem"
+      "CachePath": "0C/{0C9AA8F6-B580-E5FA-0EC1-577933ADE7EC}.wem"
      },
      {
       "Id": "857592912",
@@ -456,20 +768,20 @@
       "CachePath": "7D/{7D8253B4-DF33-97BE-CD1D-E6868BB18F3E}.wem"
      },
      {
-      "Id": "862772895",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "boat_sailFlap_loop3.wav",
-      "CachePath": "EB/{EB6BC91D-1DA8-0A7C-C48E-07158B16D27F}.wem"
-     },
-     {
       "Id": "875602288",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "env_collisionHeavyImpact4.wav",
       "CachePath": "80/{8028B093-E891-CA30-7B3E-1E1F6E4DAF31}.wem"
+     },
+     {
+      "Id": "881217249",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "mission_goalReached.wav",
+      "CachePath": "5E/{5EFE8DD5-3D34-262F-D9C7-54F843DAB6C2}.wem"
      },
      {
       "Id": "887624249",
@@ -480,12 +792,20 @@
       "CachePath": "D4/{D455A0D2-7B64-9D0F-C967-90BE92D37B07}.wem"
      },
      {
-      "Id": "900952466",
+      "Id": "892610112",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "boat_sailFlapWind_loop2.wav",
-      "CachePath": "0E/{0E4FC920-E444-E518-1C09-B51D463A9093}.wem"
+      "ShortName": "env_boatDockImpact01.wav",
+      "CachePath": "9F/{9FC01D72-5756-B7E2-8018-66F2B646AB4B}.wem"
+     },
+     {
+      "Id": "917875236",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "env_boatRepair.wav",
+      "CachePath": "4B/{4B9BC97A-84E0-4B11-3AE5-C67FD94061EB}.wem"
      },
      {
       "Id": "922437653",
@@ -496,6 +816,14 @@
       "CachePath": "25/{25CC44E5-76DD-C230-243E-A1C5A1BC6183}.wem"
      },
      {
+      "Id": "925880773",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_waveHull_loop01.wav",
+      "CachePath": "C2/{C25764C9-7209-A7AA-2304-77A4F695EF6F}.wem"
+     },
+     {
       "Id": "928429837",
       "Language": "SFX",
       "Streaming": "false",
@@ -504,20 +832,28 @@
       "CachePath": "5B/{5B8AB804-3565-2ED1-1DE1-73DA12C4DCA6}.wem"
      },
      {
-      "Id": "944740748",
+      "Id": "938990566",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "boat_sailFlap_loop.wav",
-      "CachePath": "7A/{7A12AD8D-CFED-FBA7-72EA-D977AEF45C70}.wem"
+      "ShortName": "env_refuel00.wav",
+      "CachePath": "83/{83520AF0-6682-1DEF-122A-8D47BA3D6B84}.wem"
      },
      {
-      "Id": "948111776",
+      "Id": "951198972",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "boat_sailFlapWind_loop4.wav",
-      "CachePath": "DF/{DFBB4426-E4FD-6DAC-B54C-704C10691FF9}.wem"
+      "ShortName": "boat_creaking_loop4.wav",
+      "CachePath": "3D/{3D98B127-85EB-437D-F612-64590D122593}.wem"
+     },
+     {
+      "Id": "960498017",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_sailFlutter_short02.wav",
+      "CachePath": "82/{82E3E2C6-99EC-1D21-5D05-C074B62355A3}.wem"
      },
      {
       "Id": "983138526",
@@ -536,6 +872,14 @@
       "CachePath": "1C/{1C3CC3F6-6ACE-4540-C98F-20263B23EB1A}.wem"
      },
      {
+      "Id": "994528532",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_bowWater_loop.wav",
+      "CachePath": "61/{61E642B8-8F77-6D5C-F1BE-C8756EC69128}.wem"
+     },
+     {
       "Id": "1005202156",
       "Language": "SFX",
       "Streaming": "false",
@@ -549,7 +893,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "mission_abort.wav",
-      "CachePath": "51/{51C52651-576F-48BD-E6C3-269DBD126DD3}.wem"
+      "CachePath": "73/{7363316A-55D8-699E-7A98-812C6702A8AC}.wem"
      },
      {
       "Id": "1021335472",
@@ -560,24 +904,56 @@
       "CachePath": "36/{3655AF4F-E368-F55C-63E9-F60CB17DFEBB}.wem"
      },
      {
+      "Id": "1044825457",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_creaking_loop1.wav",
+      "CachePath": "6C/{6C004ABF-9187-34BC-44C7-83A61E65C2FA}.wem"
+     },
+     {
+      "Id": "1061155160",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "phy_wakeWaterJet_loop.wav",
+      "CachePath": "66/{6625429C-4F5D-39D7-34E3-9A40ED33A104}.wem"
+     },
+     {
       "Id": "1066911892",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "env_collisionHeavyWood.wav",
       "CachePath": "93/{9358448A-630D-9B7C-CCA6-98586AC9D8F8}.wem"
-     },
-     {
-      "Id": "1071268642",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "boat_sailFlapWind_loop.wav",
-      "CachePath": "66/{666A9733-9246-5545-0D7F-D275FD691BAA}.wem"
      }
     ],
     "Plugins": {
      "ShareSets": [
+      {
+       "Id": "297435790",
+       "Name": "EnvBoatRubDockBody_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Env\\EnvBoatRubDockBody_Compressor",
+       "GUID": "{98743DCA-EEAD-46E1-AC42-022E70BB4F13}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      },
+      {
+       "Id": "341247085",
+       "Name": "PhySailmastWhistleLayer_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Physic\\PhySailmastWhistleLayer_Compressor",
+       "GUID": "{3BCD938B-0316-4F2F-A6C4-8E3BF61D8709}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      },
+      {
+       "Id": "356809036",
+       "Name": "PhySailmastWhistleLayer_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhySailmastWhistleLayer_EQ",
+       "GUID": "{66A12602-42AB-4CCB-94B2-5BF2D94AEBA8}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
       {
        "Id": "466641577",
        "Name": "MissionMoneyPurse_EQ",
@@ -587,10 +963,26 @@
        "LibId": "6881283"
       },
       {
+       "Id": "505580613",
+       "Name": "MissionFastMovement_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\MissionsFeedback\\MissionFastMovement_EQ",
+       "GUID": "{BD02898A-345F-47AA-8AB5-A801FF6FF006}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
        "Id": "643163731",
        "Name": "EnvBoatCollisionLightImpact_EQ",
        "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvBoatCollisionLightImpact_EQ",
        "GUID": "{489FD03E-9AA4-4BA7-A8CB-CD2FF5431D69}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "714720157",
+       "Name": "MissionGoalFail_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\MissionsFeedback\\MissionGoalFail_EQ",
+       "GUID": "{26B899E3-F1DA-4432-A1C7-D5CD100C7725}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
       },
@@ -611,18 +1003,42 @@
        "LibId": "6881283"
       },
       {
-       "Id": "1255226786",
-       "Name": "BoatRopeCreak_EQ",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Boat\\BoatRopeCreak_EQ",
-       "GUID": "{0DA262DE-0ECA-4215-89E6-1E7ABAC2A753}",
+       "Id": "924566484",
+       "Name": "PhyBowWater_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyBowWater_EQ",
+       "GUID": "{60A479C2-0F12-4E45-BB52-C0C94441E5B2}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
       },
       {
-       "Id": "1389289044",
-       "Name": "BoatSailFlapWind_EQ",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Boat\\BoatSailFlapWind_EQ",
-       "GUID": "{F61FF588-1A2F-4AAB-95B9-782A5B7F542E}",
+       "Id": "972692614",
+       "Name": "PhyWindGust_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyWindGust_EQ",
+       "GUID": "{1E268AFB-98C4-4A4D-B350-89A82A0A085C}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "1075951946",
+       "Name": "MissionFail_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\MissionsFeedback\\MissionFail_EQ",
+       "GUID": "{4A34076C-6398-4F04-B591-3883C7F0CC6E}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "1300983745",
+       "Name": "PhyWaterDisplacementSlowLayer_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyWaterDisplacementSlowLayer_EQ",
+       "GUID": "{0A0929DC-2B16-4696-876E-AAD7B8F51B55}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "1366171813",
+       "Name": "PhyWakeWaterTexture_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyWakeWaterTexture_EQ",
+       "GUID": "{EB2E82A8-B701-4697-BA40-1B01FE435BA9}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
       },
@@ -631,6 +1047,30 @@
        "Name": "EnvMapOpen_EQ",
        "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvMapOpen_EQ",
        "GUID": "{85D4E121-2412-4CD3-8D3A-7C03FEC275D1}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "1418479586",
+       "Name": "MissionAbort_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\MissionsFeedback\\MissionAbort_EQ",
+       "GUID": "{93B595B9-D63B-4F83-B871-56E6A331A6E9}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "1439988768",
+       "Name": "EnvBoatDockImpact_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvBoatDockImpact_EQ",
+       "GUID": "{6E8492B5-7E71-4A14-B55F-E6CA092894FC}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "1496861083",
+       "Name": "EnvRefuelMetalClick_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvRefuelMetalClick_EQ",
+       "GUID": "{42FA1442-689D-4B13-9ACB-DE6CC081DFC8}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
       },
@@ -659,14 +1099,6 @@
        "LibId": "6881283"
       },
       {
-       "Id": "1646172985",
-       "Name": "BoatSailFlapLoop_Compressor",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\BoatSailFlapLoop_Compressor",
-       "GUID": "{A57E4233-B003-4935-953C-128034DAB12C}",
-       "LibName": "Wwise Compressor",
-       "LibId": "7077891"
-      },
-      {
        "Id": "1741208498",
        "Name": "BoatEngine_EQ",
        "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Boat\\BoatEngine_EQ",
@@ -675,9 +1107,41 @@
        "LibId": "6881283"
       },
       {
+       "Id": "1946030473",
+       "Name": "EnvBoatRubDockSqueak_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvBoatRubDockSqueak_EQ",
+       "GUID": "{8B70AFA9-A041-4E0C-BB0E-AC013ED67D14}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "1947999602",
+       "Name": "MissionAccept_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\MissionsFeedback\\MissionAccept_EQ",
+       "GUID": "{784B49CD-621C-4BF0-B12B-684359B72E1A}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "2008789532",
+       "Name": "EnvBoatRubDockSqueak_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Env\\EnvBoatRubDockSqueak_Compressor",
+       "GUID": "{E62E978E-A20A-4C34-841B-E3385EF1E90B}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      },
+      {
+       "Id": "2056871213",
+       "Name": "PhyWaterDisplacementFast_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyWaterDisplacementFast_EQ",
+       "GUID": "{AFA7AA22-05E4-4120-8902-A22A8BA3436A}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
        "Id": "2108454903",
        "Name": "BoatEngine_Compressor",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\BoatEngine_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Boat\\BoatEngine_Compressor",
        "GUID": "{39FAAC5C-772D-41CA-8721-3630B3865BD4}",
        "LibName": "Wwise Compressor",
        "LibId": "7077891"
@@ -685,8 +1149,16 @@
       {
        "Id": "2308774273",
        "Name": "EnvBoatCollisionHeavyImpact_Compressor",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\EnvBoatCollisionHeavyImpact_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Env\\EnvBoatCollisionHeavyImpact_Compressor",
        "GUID": "{4CE8D3E1-8437-4E4C-859B-DCA48CAFE0F9}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      },
+      {
+       "Id": "2430649832",
+       "Name": "PhyWaveHull_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Physic\\PhyWaveHull_Compressor",
+       "GUID": "{A582BC11-1B64-416D-A40D-D7E245FB838A}",
        "LibName": "Wwise Compressor",
        "LibId": "7077891"
       },
@@ -699,25 +1171,49 @@
        "LibId": "6881283"
       },
       {
+       "Id": "2480037935",
+       "Name": "MissionGoalReached_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\MissionsFeedback\\MissionGoalReached_EQ",
+       "GUID": "{F2428054-4EB4-4310-9B30-5F98D30C0188}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
        "Id": "2515283109",
        "Name": "BoatSailRetract_Compressor",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\BoatSailRetract_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Boat\\BoatSailRetract_Compressor",
        "GUID": "{BBEF0C47-0FC7-484B-B1ED-0034B4FAFD59}",
        "LibName": "Wwise Compressor",
        "LibId": "7077891"
       },
       {
+       "Id": "2722888028",
+       "Name": "PhyWindForceBoat_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyWindForceBoat_EQ",
+       "GUID": "{2F63632A-8705-4FF3-A72E-98922F4CE1E0}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
        "Id": "2878233723",
        "Name": "BoatSailDeploy_Compressor",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\BoatSailDeploy_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Boat\\BoatSailDeploy_Compressor",
        "GUID": "{13437C42-4D37-4512-A65F-3DC195D09931}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
+      },
+      {
+       "Id": "2878670360",
+       "Name": "PhyWaterDisplacementFast_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Physic\\PhyWaterDisplacementFast_Compressor",
+       "GUID": "{C8C9AEF7-C4EA-429E-8B7B-E8EFB1D55EB4}",
        "LibName": "Wwise Compressor",
        "LibId": "7077891"
       },
       {
        "Id": "2950059500",
        "Name": "EnvMapClose_Compressor",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\EnvMapClose_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Env\\EnvMapClose_Compressor",
        "GUID": "{631AD044-B0ED-4A66-BA45-1CEF172ADFFE}",
        "LibName": "Wwise Compressor",
        "LibId": "7077891"
@@ -725,16 +1221,48 @@
       {
        "Id": "3103710769",
        "Name": "EnvBoatCollisionWood_Compressor",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\EnvBoatCollisionWood_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Env\\EnvBoatCollisionWood_Compressor",
        "GUID": "{91C5474B-B479-46C6-91EF-257E503F942C}",
        "LibName": "Wwise Compressor",
        "LibId": "7077891"
+      },
+      {
+       "Id": "3125314694",
+       "Name": "PhyWaterDisplacementSlow_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyWaterDisplacementSlow_EQ",
+       "GUID": "{6AC1177E-2311-4F4C-B56E-155337C75DF0}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "3140040546",
+       "Name": "EnvRefuel_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvRefuel_EQ",
+       "GUID": "{A79D71BE-C32B-465F-92C0-5A43745ABD68}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
       },
       {
        "Id": "3261685081",
        "Name": "EnvMapClose_EQ",
        "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvMapClose_EQ",
        "GUID": "{6953A9DA-B51B-4297-91C7-782E99DBA7E7}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "3322201621",
+       "Name": "MissionComplete_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\MissionsFeedback\\MissionComplete_EQ",
+       "GUID": "{A3171330-3A52-4376-A6ED-844A007202B2}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "3381724447",
+       "Name": "EnvBoatRubDockBody_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvBoatRubDockBody_EQ",
+       "GUID": "{23A006BA-26B9-4599-95B5-4460AAAFE07B}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
       },
@@ -747,6 +1275,22 @@
        "LibId": "6881283"
       },
       {
+       "Id": "3467061892",
+       "Name": "PhyBowWaterBody_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyBowWaterBody_EQ",
+       "GUID": "{404B4D80-EFA3-4954-BBBF-7ABDA3ED3BBF}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "3541909083",
+       "Name": "PhyWindForceSail_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyWindForceSail_EQ",
+       "GUID": "{B9C92994-A315-490C-81BA-4FB0F2EFF446}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
        "Id": "3558546510",
        "Name": "BoatSailDeploy_EQ",
        "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Boat\\BoatSailDeploy_EQ",
@@ -755,20 +1299,44 @@
        "LibId": "6881283"
       },
       {
-       "Id": "3585041712",
-       "Name": "BoatSailFlapLoop_RoomVerb",
-       "ObjectPath": "\\Effects\\Default Work Unit\\RoomVerb\\BoatSailFlapLoop_RoomVerb",
-       "GUID": "{CB5DC2C9-CE3D-4C2E-BE52-71CA707B7F42}",
-       "LibName": "Wwise RoomVerb",
-       "LibId": "7733251"
+       "Id": "3661947427",
+       "Name": "PhyWaterDisplacementSlow_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Physic\\PhyWaterDisplacementSlow_Compressor",
+       "GUID": "{438A1F0C-ACC2-425C-A1CA-AADF7B84761C}",
+       "LibName": "Wwise Compressor",
+       "LibId": "7077891"
       },
       {
        "Id": "3680949560",
        "Name": "EnvOpenMap_Compressor",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\EnvOpenMap_Compressor",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Env\\EnvOpenMap_Compressor",
        "GUID": "{CF391A9F-2023-48B8-BAF9-A42DF64B2D96}",
        "LibName": "Wwise Compressor",
        "LibId": "7077891"
+      },
+      {
+       "Id": "3706677381",
+       "Name": "PhyWakeWaterJet_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyWakeWaterJet_EQ",
+       "GUID": "{B36A7C01-3454-423A-A2BA-7C4B5FE0C586}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "3806443404",
+       "Name": "PhyWaveMotion_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyWaveMotion_EQ",
+       "GUID": "{24C60BA9-9C64-4306-9D37-46986A9CD077}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "3821108673",
+       "Name": "MissionBoatDamage_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\MissionsFeedback\\MissionBoatDamage_EQ",
+       "GUID": "{DD87D898-372F-42B5-8885-B696B95B17E1}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
       },
       {
        "Id": "3969320204",
@@ -779,10 +1347,26 @@
        "LibId": "6881283"
       },
       {
+       "Id": "4032755709",
+       "Name": "PhyWaveHull_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Physic\\PhyWaveHull_EQ",
+       "GUID": "{F6D3E1CE-97EB-4F5C-AC61-6A42641C322A}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
        "Id": "4057161051",
        "Name": "EnvBoatCollisionHeavyWood_EQ",
        "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvBoatCollisionHeavyWood_EQ",
        "GUID": "{C6ABA38D-989D-4646-869E-7C988542996A}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "4091042754",
+       "Name": "BoatCreakingLoop_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Boat\\BoatCreakingLoop_EQ",
+       "GUID": "{B63CD69D-1B0A-4660-BFF8-E76BEFE86BC2}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
       }
@@ -1141,10 +1725,46 @@
       "Name": "boat_start_creaking",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatWood\\boat_start_creaking",
       "GUID": "{2C0253C0-B87D-4847-BDA2-CF0F4C1180F0}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "60158431"
+       },
+       {
+        "Id": "89917974"
+       },
+       {
+        "Id": "112878381"
+       },
+       {
+        "Id": "116392604"
+       },
+       {
+        "Id": "305566701"
+       },
+       {
+        "Id": "472238138"
+       },
+       {
+        "Id": "618440954"
+       },
+       {
+        "Id": "760617268"
+       },
+       {
+        "Id": "951198972"
+       },
+       {
+        "Id": "1044825457"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "4091042754"
+        }
+       ]
+      }
      },
      {
       "Id": "3762695479",
@@ -1155,52 +1775,43 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "95413247"
+        "Id": "79962608"
        },
        {
-        "Id": "133819701"
+        "Id": "102468720"
        },
        {
-        "Id": "295169873"
+        "Id": "113138969"
        },
        {
-        "Id": "358085136"
+        "Id": "172241338"
        },
        {
-        "Id": "471676319"
+        "Id": "380500659"
        },
        {
-        "Id": "624642319"
+        "Id": "380514904"
        },
        {
-        "Id": "862772895"
+        "Id": "402921378"
        },
        {
-        "Id": "900952466"
+        "Id": "470504066"
        },
        {
-        "Id": "944740748"
+        "Id": "766563104"
        },
        {
-        "Id": "948111776"
+        "Id": "837842022"
        },
        {
-        "Id": "1071268642"
+        "Id": "960498017"
        }
       ],
       "PluginRefs": {
        "ShareSets": [
         {
-         "Id": "1389289044"
-        },
-        {
          "Id": "1559769808"
-        },
-        {
-         "Id": "1646172985"
-        },
-        {
-         "Id": "3585041712"
         }
        ]
       }
@@ -1284,28 +1895,12 @@
         "Id": "54458518"
        },
        {
-        "Id": "432980852"
-       },
-       {
-        "Id": "508055500"
-       },
-       {
         "Id": "652644797"
        },
        {
         "Id": "676106981"
-       },
-       {
-        "Id": "795434133"
        }
-      ],
-      "PluginRefs": {
-       "ShareSets": [
-        {
-         "Id": "1255226786"
-        }
-       ]
-      }
+      ]
      },
      {
       "Id": "291365827",
@@ -1452,30 +2047,74 @@
       "Name": "env_boatDockImpact",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\EnvBoat\\env_boatDockImpact",
       "GUID": "{F434DD3B-46FE-47C0-AE3E-77F89EEFEEC0}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "1.5560865",
+      "DurationMax": "1.683693",
+      "MediaRefs": [
+       {
+        "Id": "18260256"
+       },
+       {
+        "Id": "161588037"
+       },
+       {
+        "Id": "892610112"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1439988768"
+        }
+       ]
+      }
      },
      {
       "Id": "2984994092",
       "Name": "env_boatRefuel",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\EnvBoat\\env_boatRefuel",
       "GUID": "{C19E6852-8537-4962-BDBD-576B98088A7D}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "1.7660778",
+      "DurationMax": "2.0372539",
+      "MediaRefs": [
+       {
+        "Id": "21220894"
+       },
+       {
+        "Id": "160547032"
+       },
+       {
+        "Id": "550295640"
+       },
+       {
+        "Id": "938990566"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1496861083"
+        },
+        {
+         "Id": "3140040546"
+        }
+       ]
+      }
      },
      {
       "Id": "4191093004",
       "Name": "env_boatRepair",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\EnvBoat\\env_boatRepair",
       "GUID": "{6EC565DA-542B-4899-AE6E-FD624481A3FD}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "2.7454624",
+      "DurationMax": "2.908716",
+      "MediaRefs": [
+       {
+        "Id": "917875236"
+       }
+      ]
      },
      {
       "Id": "2562124403",
@@ -1530,10 +2169,37 @@
       "Name": "env_start_boat_RubDock",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\EnvBoat\\EnvBoatLoops\\env_start_boat_RubDock",
       "GUID": "{D1FBAABA-28DA-4090-A5DE-0051B9A6BE4F}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "5240439"
+       },
+       {
+        "Id": "552054248"
+       },
+       {
+        "Id": "665372918"
+       },
+       {
+        "Id": "690247601"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "297435790"
+        },
+        {
+         "Id": "1946030473"
+        },
+        {
+         "Id": "2008789532"
+        },
+        {
+         "Id": "3381724447"
+        }
+       ]
+      }
      },
      {
       "Id": "2930601010",
@@ -1664,107 +2330,179 @@
      {
       "Id": "1386440470",
       "Name": "mission_abort",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionState\\mission_abort",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionState\\mission_abort",
       "GUID": "{3D75BE5C-C9DC-4099-A752-A7DAC242749F}",
       "DurationType": "OneShot",
-      "DurationMin": "1.50795",
-      "DurationMax": "1.50795",
+      "DurationMin": "1.5184639",
+      "DurationMax": "1.5361075",
       "MediaRefs": [
        {
         "Id": "1014404164"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1418479586"
+        }
+       ]
+      }
      },
      {
       "Id": "533609960",
       "Name": "mission_accept",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionState\\mission_accept",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionState\\mission_accept",
       "GUID": "{7B36055F-D733-4A0D-ADC7-70F97FD7475B}",
       "DurationType": "OneShot",
-      "DurationMin": "1.98142",
-      "DurationMax": "1.98142",
+      "DurationMin": "1.416777",
+      "DurationMax": "1.445711",
       "MediaRefs": [
        {
         "Id": "857358029"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1947999602"
+        }
+       ]
+      }
      },
      {
       "Id": "2067240745",
       "Name": "mission_boatDamage",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionVarious\\mission_boatDamage",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionVarious\\mission_boatDamage",
       "GUID": "{93473457-F890-45C2-A8C5-6E19B46E5677}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "1.8141844",
+      "DurationMax": "1.9220614",
+      "MediaRefs": [
+       {
+        "Id": "235427142"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3821108673"
+        }
+       ]
+      }
      },
      {
       "Id": "295066189",
       "Name": "mission_complete",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionState\\mission_complete",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionState\\mission_complete",
       "GUID": "{E8EFA51D-5A9D-4570-A1A0-2B507E079D24}",
       "DurationType": "OneShot",
-      "DurationMin": "3",
-      "DurationMax": "3",
+      "DurationMin": "2.2546573",
+      "DurationMax": "2.2808547",
       "MediaRefs": [
        {
         "Id": "362176238"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3322201621"
+        }
+       ]
+      }
      },
      {
       "Id": "3578072492",
       "Name": "mission_fail",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionState\\mission_fail",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionState\\mission_fail",
       "GUID": "{DD1F692B-55A5-4049-A12F-CD3734CA4E3D}",
       "DurationType": "OneShot",
-      "DurationMin": "3",
-      "DurationMax": "3",
+      "DurationMin": "2.0839508",
+      "DurationMax": "2.108165",
       "MediaRefs": [
        {
         "Id": "734439282"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1075951946"
+        }
+       ]
+      }
      },
      {
       "Id": "420487461",
       "Name": "mission_fastMovement",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionVarious\\mission_fastMovement",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionVarious\\mission_fastMovement",
       "GUID": "{0460CA55-7A18-439A-BD71-00FE62D05EBB}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "1.3218997",
+      "DurationMax": "1.4005039",
+      "MediaRefs": [
+       {
+        "Id": "513623100"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "505580613"
+        }
+       ]
+      }
      },
      {
       "Id": "3061105653",
       "Name": "mission_goalFail",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionGoal\\mission_goalFail",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionGoal\\mission_goalFail",
       "GUID": "{CA812B7C-7356-4CD4-A2BF-D821072A37D5}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.98920006",
+      "DurationMax": "1.048021",
+      "MediaRefs": [
+       {
+        "Id": "86212326"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "714720157"
+        }
+       ]
+      }
      },
      {
       "Id": "2376076561",
       "Name": "mission_goalReached",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionGoal\\mission_goalReached",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionGoal\\mission_goalReached",
       "GUID": "{E6D3909D-ED2E-4719-BE6C-69AF986CD6D1}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "1.1776786",
+      "DurationMax": "1.247707",
+      "MediaRefs": [
+       {
+        "Id": "881217249"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "2480037935"
+        }
+       ]
+      }
      },
      {
       "Id": "1027735037",
       "Name": "mission_moneyGain",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionMoney\\mission_moneyGain",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionMoney\\mission_moneyGain",
       "GUID": "{A7A23103-4585-49EA-9B9F-2DDDE29D6AC0}",
       "DurationType": "OneShot",
       "DurationMin": "1.1482",
-      "DurationMax": "1.1819873",
+      "DurationMax": "1.1482",
       "MediaRefs": [
        {
         "Id": "499194111"
@@ -1787,11 +2525,11 @@
      {
       "Id": "1943462500",
       "Name": "mission_moneySpend",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionMoney\\mission_moneySpend",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionMoney\\mission_moneySpend",
       "GUID": "{DDC02CF0-71A4-44A4-99EC-FF6928203F7D}",
       "DurationType": "OneShot",
-      "DurationMin": "1.4725568",
-      "DurationMax": "1.5567153",
+      "DurationMin": "1.4565096",
+      "DurationMax": "1.5395162",
       "MediaRefs": [
        {
         "Id": "782049489"
@@ -1814,17 +2552,28 @@
      {
       "Id": "3701861410",
       "Name": "mission_moneyZero",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionMoney\\mission_moneyZero",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionMoney\\mission_moneyZero",
       "GUID": "{3D1975C6-FF2C-43B5-BC19-130D92085506}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "1.3124098",
+      "DurationMax": "1.3586917",
+      "MediaRefs": [
+       {
+        "Id": "396063067"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "466641577"
+        }
+       ]
+      }
      },
      {
       "Id": "3522430105",
       "Name": "mission_start_voiceLinesNpc",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionVarious\\mission_start_voiceLinesNpc",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionVarious\\mission_start_voiceLinesNpc",
       "GUID": "{DE8CF4E1-CCC2-43DC-A2F5-5C2A6102154E}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
@@ -1834,7 +2583,7 @@
      {
       "Id": "2630645085",
       "Name": "mission_stop_voiceLinesNpc",
-      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\Event_MissionsFeedback\\MissionVarious\\mission_stop_voiceLinesNpc",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionVarious\\mission_stop_voiceLinesNpc",
       "GUID": "{AD1B3553-62FC-4E81-881A-94839900A9A0}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
@@ -1846,94 +2595,253 @@
       "Name": "phy_start_bowWater",
       "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhyBow\\phy_start_bowWater",
       "GUID": "{0A5E8B81-A365-48CA-A4D6-E6F434A3A401}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "MaxAttenuation": "70",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "378380122"
+       },
+       {
+        "Id": "994528532"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "924566484"
+        },
+        {
+         "Id": "3467061892"
+        }
+       ]
+      }
      },
      {
       "Id": "3002731379",
       "Name": "phy_start_sailWind",
       "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhySail\\phy_start_sailWind",
       "GUID": "{D6CFEC67-FBFB-4B88-BEDC-405289E38913}",
+      "MaxAttenuation": "80",
       "DurationType": "Infinite",
       "MediaRefs": [
+       {
+        "Id": "81237453"
+       },
+       {
+        "Id": "149563202"
+       },
+       {
+        "Id": "255764537"
+       },
+       {
+        "Id": "327356346"
+       },
+       {
+        "Id": "358879437"
+       },
+       {
+        "Id": "401459605"
+       },
        {
         "Id": "458455823"
        },
        {
+        "Id": "517390698"
+       },
+       {
         "Id": "534926782"
+       },
+       {
+        "Id": "587482612"
+       },
+       {
+        "Id": "609340564"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "341247085"
+        },
+        {
+         "Id": "356809036"
+        },
+        {
+         "Id": "972692614"
+        },
+        {
+         "Id": "3541909083"
+        }
+       ]
+      }
      },
      {
       "Id": "1373022075",
       "Name": "phy_start_wakeWater",
       "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhyWake\\phy_start_wakeWater",
       "GUID": "{3E4A3600-16B9-4790-ADF9-04628CA48085}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "MaxAttenuation": "70",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "284997067"
+       },
+       {
+        "Id": "530543392"
+       },
+       {
+        "Id": "623531450"
+       },
+       {
+        "Id": "645282215"
+       },
+       {
+        "Id": "1061155160"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1366171813"
+        },
+        {
+         "Id": "3706677381"
+        }
+       ]
+      }
      },
      {
       "Id": "2223292318",
       "Name": "phy_start_waterDisplacement",
       "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhyWater\\phy_start_waterDisplacement",
       "GUID": "{31B997D4-F878-4E1C-A256-7BF592BD04F2}",
+      "MaxAttenuation": "70",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
         "Id": "73170341"
        },
        {
+        "Id": "79893045"
+       },
+       {
+        "Id": "132439354"
+       },
+       {
         "Id": "1021335472"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1300983745"
+        },
+        {
+         "Id": "2056871213"
+        },
+        {
+         "Id": "2878670360"
+        },
+        {
+         "Id": "3125314694"
+        },
+        {
+         "Id": "3661947427"
+        }
+       ]
+      }
      },
      {
       "Id": "3237319048",
       "Name": "phy_start_waveHull",
       "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhyWave\\phy_start_waveHull",
       "GUID": "{AB95686D-EB81-4ABD-8DED-902D09BFE045}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "MaxAttenuation": "70",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "221736619"
+       },
+       {
+        "Id": "428085290"
+       },
+       {
+        "Id": "925880773"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "2430649832"
+        },
+        {
+         "Id": "4032755709"
+        }
+       ]
+      }
      },
      {
       "Id": "333473287",
       "Name": "phy_start_waveMotion",
       "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhyWave\\phy_start_waveMotion",
       "GUID": "{E0CFA58D-3D67-4074-ACD6-249CD12BAACA}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "MaxAttenuation": "70",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "395269575"
+       },
+       {
+        "Id": "395626155"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3806443404"
+        }
+       ]
+      }
      },
      {
       "Id": "2742153359",
       "Name": "phy_start_windForceBoat",
       "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhyWind\\phy_start_windForceBoat",
       "GUID": "{843162FA-97F9-408D-B7A5-FB28C15B5A72}",
+      "MaxAttenuation": "80",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
         "Id": "333325837"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "2722888028"
+        }
+       ]
+      }
      },
      {
       "Id": "1834823086",
       "Name": "phy_start_windForceSail",
       "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhyWind\\phy_start_windForceSail",
       "GUID": "{CF87A018-2474-4339-BC0D-6C479AA2C326}",
+      "MaxAttenuation": "80",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
         "Id": "458455823"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3541909083"
+        }
+       ]
+      }
      },
      {
       "Id": "1257340305",
@@ -2020,12 +2928,23 @@
       "Name": "phy_windGust",
       "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhyWind\\phy_windGust",
       "GUID": "{6EFCCB00-47E5-4A55-B8B5-E125C4EB3364}",
-      "DurationType": "OneShot",
-      "DurationMin": "2.9966142",
-      "DurationMax": "8",
+      "MaxAttenuation": "80",
+      "DurationType": "Infinite",
       "MediaRefs": [
        {
+        "Id": "149563202"
+       },
+       {
+        "Id": "255764537"
+       },
+       {
+        "Id": "327356346"
+       },
+       {
         "Id": "358879437"
+       },
+       {
+        "Id": "517390698"
        },
        {
         "Id": "587482612"
@@ -2033,7 +2952,14 @@
        {
         "Id": "609340564"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "972692614"
+        }
+       ]
+      }
      }
     ],
     "GameParameters": [
@@ -2060,16 +2986,10 @@
       "Name": "Phy_WaterMovement",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Physic_GameParameter\\Phy_WaterMovement",
       "GUID": "{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}"
-     },
-     {
-      "Id": "3815819945",
-      "Name": "Boat_SailTension",
-      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Boat_GameParameters\\Boat_SailTension",
-      "GUID": "{7F5CA7A6-156F-4E8E-9CE5-228FB55B8D24}"
      }
     ]
    }
   ],
-  "FileHash": "{495260D4-19BE-47C0-D4AD-5A963A37F5D5}"
+  "FileHash": "{F876AFC5-F889-A332-EC0E-77368D77908D}"
  }
 }

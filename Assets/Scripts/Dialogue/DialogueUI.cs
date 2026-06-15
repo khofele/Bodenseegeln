@@ -14,6 +14,7 @@ namespace Dialogue
         [SerializeField] private TextMeshProUGUI m_nameText;
         [SerializeField] private TextMeshProUGUI m_dialogueText;
         [SerializeField] private Image m_portrait;
+        [SerializeField] private Image m_background;
 
         [Header("Responses")]
         [SerializeField] private Transform m_buttonContainer;
@@ -43,6 +44,7 @@ namespace Dialogue
         {
             m_nameText.text = _npc.Name;
             m_portrait.sprite = _npc.Portrait;
+            m_background.sprite = _npc.Background;
 
             if (m_typingRoutine != null)
             {

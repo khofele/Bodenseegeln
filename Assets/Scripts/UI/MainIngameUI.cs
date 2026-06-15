@@ -1,10 +1,10 @@
-using Quest;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 using Quest;
+using MapUI;
 
 public class MainIngameUI : MonoBehaviour
 {
@@ -17,6 +17,7 @@ public class MainIngameUI : MonoBehaviour
 
     [Header("Scene References")]
     [SerializeField] private Transform m_boatTransform = null;
+    [SerializeField] private MapUIController m_mapUI = null;
 
     [Header("Screens")]
     [SerializeField] private GameObject m_motorScreen = null;
@@ -78,6 +79,7 @@ public class MainIngameUI : MonoBehaviour
     [Header("Input")]
     [SerializeField] private InputActionReference m_nextScreenAction = null;
     [SerializeField] private InputActionReference m_previousScreenAction = null;
+    [SerializeField] private InputActionReference m_toggleMapAction = null;
 
     private UIScreen m_currentScreen = UIScreen.Motor;
     private float m_lastHealth;
@@ -100,12 +102,18 @@ public class MainIngameUI : MonoBehaviour
             m_previousScreenAction.action.Enable();
         }
 
+        if (m_toggleMapAction != null)
+        {
+            m_toggleMapAction.action.Enable();
+        }
+
         UpdateScreenState();
     }
 
     private void Update()
     {
         HandleScreenSwitching();
+        HandleMapToggle();
 
         UpdateMotorScreen();
         UpdateQuestScreen();
@@ -187,6 +195,19 @@ public class MainIngameUI : MonoBehaviour
         if (m_sailingScreen != null)
         {
             m_sailingScreen.SetActive(m_currentScreen == UIScreen.Sailing);
+        }
+    }
+
+    private void HandleMapToggle()
+    {
+        if (m_toggleMapAction == null)
+        {
+            return;
+        }
+
+        if (m_toggleMapAction.action.WasPressedThisDynamicUpdate())
+        {
+            m_mapUI.ToggleMap();
         }
     }
 
@@ -294,14 +315,14 @@ public class MainIngameUI : MonoBehaviour
         {
             float _tWind = UIManager.Instance.GetTrueWindSpeed();
 
-            m_trueWindText.text = $"{_tWind:0.0} m/s";
+            m_trueWindText.text = $"{_tWind:0.0} KN";
         }
 
         if (m_apparentWindText != null)
         {
             float _aWind = UIManager.Instance.GetApparentWindSpeed();
 
-            m_apparentWindText.text = $"{_aWind:0.0} m/s";
+            m_apparentWindText.text = $"{_aWind:0.0} KN";
         }
 
         UpdateWindArrows();

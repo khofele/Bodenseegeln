@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMB_SEAGULLS = 4023450666U;
         static const AkUniqueID AMB_START_COAST = 2069355313U;
         static const AkUniqueID AMB_START_GARAGE = 2203898210U;
         static const AkUniqueID AMB_START_HARBORBREGENZ = 1802511244U;

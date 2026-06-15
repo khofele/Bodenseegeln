@@ -5667,6 +5667,128 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="RC_ambDetailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" ShortID="497105327">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="amb_detailsPeople_loop00" ID="{888F8333-5DFC-4FC1-9AB8-12799E6A23DD}" ShortID="155557179">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_detailsPeople_loop00" ID="{85EA319B-F263-479A-B76D-4ADFE47E2252}">
+															<Language>SFX</Language>
+															<AudioFile>amb_detailsPeople_loop00.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="434044738"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_detailsPeople_loop00" ID="{85EA319B-F263-479A-B76D-4ADFE47E2252}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_detailsPeople_loop01" ID="{0E4E0981-4BC8-4D5A-A5F6-8BD8323DD6FA}" ShortID="861976777">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_detailsPeople_loop01" ID="{FA9024D5-162A-48A6-8A60-64575A4A745E}">
+															<Language>SFX</Language>
+															<AudioFile>amb_detailsPeople_loop01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="778497798"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_detailsPeople_loop01" ID="{FA9024D5-162A-48A6-8A60-64575A4A745E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_detailsPeople_loop02" ID="{AADD1CDB-D1B6-4D85-8BD3-8017E66CA86A}" ShortID="976847289">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_detailsPeople_loop02" ID="{0E2A4C3C-3292-48DB-B454-12B5C686B128}">
+															<Language>SFX</Language>
+															<AudioFile>amb_detailsPeople_loop02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="125618947"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_detailsPeople_loop02" ID="{0E2A4C3C-3292-48DB-B454-12B5C686B128}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_detailsPeople_loop03" ID="{86198521-1045-4E29-8841-B7C2CFF48B4F}" ShortID="1030213801">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_detailsPeople_loop03" ID="{D4572219-28EC-4AC0-B7FA-F0365CA8355C}">
+															<Language>SFX</Language>
+															<AudioFile>amb_detailsPeople_loop03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="384425633"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_detailsPeople_loop03" ID="{D4572219-28EC-4AC0-B7FA-F0365CA8355C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_detailsPeople_loop04" ID="{B7C11E38-C099-4CF5-AE90-71E8753DEE13}" ShortID="694829433">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_detailsPeople_loop04" ID="{B845F7DE-F3E9-494F-B077-30ED47D96333}">
+															<Language>SFX</Language>
+															<AudioFile>amb_detailsPeople_loop04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="170606269"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_detailsPeople_loop04" ID="{B845F7DE-F3E9-494F-B077-30ED47D96333}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="AmbCoast" ID="{F4D342DC-E0B1-4E07-B00F-353BEDE6D03F}" ShortID="450328035">

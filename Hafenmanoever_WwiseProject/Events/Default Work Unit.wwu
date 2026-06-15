@@ -664,18 +664,268 @@
 					<ChildrenList>
 						<Folder Name="HarborStart" ID="{BDEF49B6-0ECA-4C15-8137-91D6D5B91920}" ShortID="33759498">
 							<ChildrenList>
-								<Event Name="amb_start_harborLindau" ID="{D10E0296-7A40-47FE-AB02-C2B4A9CFADC0}"/>
-								<Event Name="amb_start_harborLochau" ID="{7CD204C2-5427-4C40-B6E7-8773A60FCFB0}"/>
-								<Event Name="amb_start_harborBregenz" ID="{C6A1CDAE-05FD-4E88-AFE3-038506B49486}"/>
-								<Event Name="amb_start_harborHard" ID="{3302318C-C2D8-419C-9FF9-F94DDBEA0673}"/>
+								<Event Name="amb_start_harborLindau" ID="{D10E0296-7A40-47FE-AB02-C2B4A9CFADC0}">
+									<ChildrenList>
+										<Action Name="" ID="{336586F4-97CF-45D0-961D-5F595D51E437}" ShortID="1063328379">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="amb_harborLindau_loop" ID="{6513B033-D865-4C8A-B9A1-403492B0F3F3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{25CCD571-2DFD-4503-8E21-81495E2D6F16}" ShortID="493969569">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{DDA8FD04-296F-49AA-A8F1-EB16638A5762}" ShortID="1069251397">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="amb_start_harborLochau" ID="{7CD204C2-5427-4C40-B6E7-8773A60FCFB0}">
+									<ChildrenList>
+										<Action Name="" ID="{D78FFAE4-29B2-4EE3-9A55-722336429F6F}" ShortID="999176190">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="amb_harborBase_loop" ID="{5E98A2FD-1BBA-46B3-AEB8-BB35210198DF}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{D5F564EC-DFAB-4D75-BA90-BB0B6C6E77CC}" ShortID="214503773">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="amb_start_harborBregenz" ID="{C6A1CDAE-05FD-4E88-AFE3-038506B49486}">
+									<ChildrenList>
+										<Action Name="" ID="{39B5126B-F9EE-4171-98D0-9F983C744985}" ShortID="762687127">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="amb_harborBregenz_loop" ID="{9EA97F37-5FEF-4D2A-B734-0906C4457EED}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{15524565-7C46-4258-BC69-52C4631BE5D1}" ShortID="407956229">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{F5DC3318-ED14-4F7D-BA31-D4A1A3D25368}" ShortID="748942029">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="amb_start_harborHard" ID="{3302318C-C2D8-419C-9FF9-F94DDBEA0673}">
+									<ChildrenList>
+										<Action Name="" ID="{D1C0A686-6A51-4D34-BE1C-1A10C402CB3C}" ShortID="230825083">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="amb_harborBase_loop" ID="{5E98A2FD-1BBA-46B3-AEB8-BB35210198DF}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{7F4F7F75-6F8E-42B7-BF85-4AC5FFA01746}" ShortID="9751529">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="HarborStop" ID="{15B2EA28-77A8-4B07-9F77-A0C44CEAB0E6}" ShortID="650584553">
 							<ChildrenList>
-								<Event Name="amb_stop_harborLindau" ID="{BEA57EA0-DF31-4FAC-AF80-CB28B53D2700}"/>
-								<Event Name="amb_stop_harborLochau" ID="{024384BB-C79C-4225-BBBF-6CA36AB2877A}"/>
-								<Event Name="amb_stop_harborBregenz" ID="{2FADA676-700C-4B96-B492-D23BD00100BA}"/>
-								<Event Name="amb_stop_harborHard" ID="{930C35F6-7BD3-4B24-B7F9-66FA53D5B364}"/>
+								<Event Name="amb_stop_harborLindau" ID="{BEA57EA0-DF31-4FAC-AF80-CB28B53D2700}">
+									<ChildrenList>
+										<Action Name="" ID="{30CB5FD8-FE64-431A-BD63-745C42D9E5F9}" ShortID="543325018">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="amb_harborLindau_loop" ID="{6513B033-D865-4C8A-B9A1-403492B0F3F3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{091011B7-9886-4E45-BD76-FD965FFA162D}" ShortID="703206213">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{267E96B4-1EA5-4C72-87C2-5BAFC3A82F95}" ShortID="199175963">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="amb_stop_harborLochau" ID="{024384BB-C79C-4225-BBBF-6CA36AB2877A}">
+									<ChildrenList>
+										<Action Name="" ID="{7781DCEB-B507-4BCC-B822-D7481359284A}" ShortID="133424383">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="amb_harborBase_loop" ID="{5E98A2FD-1BBA-46B3-AEB8-BB35210198DF}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{33576FC5-885D-427E-B625-348A0616BDBC}" ShortID="423140695">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="amb_stop_harborBregenz" ID="{2FADA676-700C-4B96-B492-D23BD00100BA}">
+									<ChildrenList>
+										<Action Name="" ID="{140D2D21-ED78-4679-851A-CC4F7CFE0840}" ShortID="910969710">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="amb_harborBregenz_loop" ID="{9EA97F37-5FEF-4D2A-B734-0906C4457EED}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{638873A6-37BC-4226-ADE5-8A58CA79503C}" ShortID="218493614">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{5FFA60CA-F520-48A3-BB2A-65D457FEA6CF}" ShortID="631023708">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="amb_stop_harborHard" ID="{930C35F6-7BD3-4B24-B7F9-66FA53D5B364}">
+									<ChildrenList>
+										<Action Name="" ID="{6C1A9256-2310-4003-832F-5E5C5A16F7C1}" ShortID="404524376">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="amb_harborBase_loop" ID="{5E98A2FD-1BBA-46B3-AEB8-BB35210198DF}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{3ECD53E3-C6B9-461F-994D-69887968BC8B}" ShortID="719663648">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Coast" ID="{622ACCD2-35A6-4E5E-BAC7-17648DB18B63}" ShortID="768282068">

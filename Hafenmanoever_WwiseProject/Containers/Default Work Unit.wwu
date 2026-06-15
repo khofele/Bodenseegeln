@@ -5519,6 +5519,50 @@
 												<ActiveSource Name="amb_harborBase_loop" ID="{BF5FC232-A5F3-40BD-9703-DD262E635EC3}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<Sound Name="amb_harborLindau_loop" ID="{6513B033-D865-4C8A-B9A1-403492B0F3F3}" ShortID="55085176">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="amb_harborLindau_loop" ID="{A3F1E61B-DFE5-402B-9981-DF6E1F426897}">
+													<Language>SFX</Language>
+													<AudioFile>amb_harborLindau_loop.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="195552169"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="amb_harborLindau_loop" ID="{A3F1E61B-DFE5-402B-9981-DF6E1F426897}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="amb_harborBregenz_loop" ID="{9EA97F37-5FEF-4D2A-B734-0906C4457EED}" ShortID="486710268">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="amb_harborBregenz_loop" ID="{8A273E4C-68C7-4D2B-8105-07B7538D6FE2}">
+													<Language>SFX</Language>
+													<AudioFile>amb_harborBregenz_loop.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="552069073"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="amb_harborBregenz_loop" ID="{8A273E4C-68C7-4D2B-8105-07B7538D6FE2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="AmbDetails" ID="{C85EF289-0A0A-471B-B066-FCBCEB86CEA0}" ShortID="886563060">

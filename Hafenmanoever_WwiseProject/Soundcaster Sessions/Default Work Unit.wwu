@@ -67,6 +67,42 @@
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>
+				<SoundcasterSession Name="Ambient Mix" ID="{4A0CE490-39EB-45D1-BF64-EB4939E3CEC8}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="amb_harborBase_loop" ID="{5E98A2FD-1BBA-46B3-AEB8-BB35210198DF}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="amb_harborBregenz_loop" ID="{9EA97F37-5FEF-4D2A-B734-0906C4457EED}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="amb_harborLindau_loop" ID="{6513B033-D865-4C8A-B9A1-403492B0F3F3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_coast_loop" ID="{B9380C2B-9015-4819-B16C-735F9AB85683}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_detailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_detailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_detailsCoast_loop" ID="{1BB621EF-60EB-4F32-94B3-4CBA06CA45F5}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="amb_seagullSingle" ID="{C6D0AEB5-B5A5-4F30-83F7-3DEE0C2C4533}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>

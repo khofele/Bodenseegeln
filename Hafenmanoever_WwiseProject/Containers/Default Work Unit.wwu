@@ -5495,6 +5495,32 @@
 										</ObjectList>
 									</ObjectLists>
 								</PropertyContainer>
+								<Folder Name="AmbHarbor" ID="{8D39FA91-0211-4079-B743-7749EFD8FB22}" ShortID="940053899">
+									<ChildrenList>
+										<Sound Name="amb_harborBase_loop" ID="{5E98A2FD-1BBA-46B3-AEB8-BB35210198DF}" ShortID="842901814">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="amb_harborBase_loop" ID="{BF5FC232-A5F3-40BD-9703-DD262E635EC3}">
+													<Language>SFX</Language>
+													<AudioFile>amb_harborBase_loop.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="796697661"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="amb_harborBase_loop" ID="{BF5FC232-A5F3-40BD-9703-DD262E635EC3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Environment" ID="{241010D0-377A-42FB-AAA0-5146EC36C994}" ShortID="365702159">

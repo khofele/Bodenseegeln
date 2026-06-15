@@ -5498,6 +5498,9 @@
 								<Folder Name="AmbHarbor" ID="{8D39FA91-0211-4079-B743-7749EFD8FB22}" ShortID="940053899">
 									<ChildrenList>
 										<Sound Name="amb_harborBase_loop" ID="{5E98A2FD-1BBA-46B3-AEB8-BB35210198DF}" ShortID="842901814">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -5508,6 +5511,14 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="amb_harborBase_loop" ID="{BF5FC232-A5F3-40BD-9703-DD262E635EC3}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.35157"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.19177"/>
+														<Property Name="LoopBegin" Type="Real64" Value="1.94968"/>
+														<Property Name="LoopEnd" Type="Real64" Value="39.79257"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>amb_harborBase_loop.wav</AudioFile>
 													<MediaIDList>
@@ -5520,6 +5531,9 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="amb_harborLindau_loop" ID="{6513B033-D865-4C8A-B9A1-403492B0F3F3}" ShortID="55085176">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -5530,6 +5544,14 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="amb_harborLindau_loop" ID="{A3F1E61B-DFE5-402B-9981-DF6E1F426897}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.21504"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.10752"/>
+														<Property Name="LoopBegin" Type="Real64" Value="0.99457"/>
+														<Property Name="LoopEnd" Type="Real64" Value="33.22418"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>amb_harborLindau_loop.wav</AudioFile>
 													<MediaIDList>
@@ -5542,6 +5564,9 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="amb_harborBregenz_loop" ID="{9EA97F37-5FEF-4D2A-B734-0906C4457EED}" ShortID="486710268">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -5552,6 +5577,14 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="amb_harborBregenz_loop" ID="{8A273E4C-68C7-4D2B-8105-07B7538D6FE2}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.19658"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.14041"/>
+														<Property Name="LoopBegin" Type="Real64" Value="0.89866"/>
+														<Property Name="LoopEnd" Type="Real64" Value="34.51434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>amb_harborBregenz_loop.wav</AudioFile>
 													<MediaIDList>
@@ -5567,7 +5600,13 @@
 								</Folder>
 								<Folder Name="AmbDetails" ID="{C85EF289-0A0A-471B-B066-FCBCEB86CEA0}" ShortID="886563060">
 									<ChildrenList>
-										<RandomSequenceContainer Name="RC_amb_DetailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" ShortID="686255152">
+										<RandomSequenceContainer Name="RC_amb_detailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" ShortID="686255152">
+											<PropertyList>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -5667,7 +5706,13 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="RC_amb_DetailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" ShortID="497105327">
+										<RandomSequenceContainer Name="RC_amb_detailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" ShortID="497105327">
+											<PropertyList>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -5790,6 +5835,12 @@
 											</ChildrenList>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="RC_amb_detailsCoast_loop" ID="{1BB621EF-60EB-4F32-94B3-4CBA06CA45F5}" ShortID="720468379">
+											<PropertyList>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -5915,7 +5966,12 @@
 								</Folder>
 								<Folder Name="AmbCoast" ID="{F4D342DC-E0B1-4E07-B00F-353BEDE6D03F}" ShortID="450328035">
 									<ChildrenList>
-										<Sound Name="amb_coast_loop00" ID="{EA7FB8A5-2AC3-42C0-BF1C-31C631D82C4A}" ShortID="715711137">
+										<RandomSequenceContainer Name="RC_amb_coast_loop" ID="{B9380C2B-9015-4819-B16C-735F9AB85683}" ShortID="447872338">
+											<PropertyList>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -5925,128 +5981,140 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="amb_coast_loop00" ID="{89DAA55E-2B2E-4496-91C8-52473AF976EF}">
-													<Language>SFX</Language>
-													<AudioFile>amb_coast_loop00.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="29761150"/>
-													</MediaIDList>
-												</AudioFileSource>
+												<Sound Name="amb_coast_loop01" ID="{63B09E19-14BA-4F71-9A77-5BAA2684E30E}" ShortID="317456378">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_coast_loop01" ID="{4F357764-DA46-44D9-9D4E-3322360DEE03}">
+															<Language>SFX</Language>
+															<AudioFile>amb_coast_loop01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="115374998"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_coast_loop01" ID="{4F357764-DA46-44D9-9D4E-3322360DEE03}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_coast_loop00" ID="{EA7FB8A5-2AC3-42C0-BF1C-31C631D82C4A}" ShortID="715711137">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_coast_loop00" ID="{89DAA55E-2B2E-4496-91C8-52473AF976EF}">
+															<Language>SFX</Language>
+															<AudioFile>amb_coast_loop00.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="29761150"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_coast_loop00" ID="{89DAA55E-2B2E-4496-91C8-52473AF976EF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_coast_loop02" ID="{28E7224A-E5EC-4431-A81B-C3C6028AAAF2}" ShortID="603021541">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_coast_loop02" ID="{3C3614C6-6DB7-47A3-9F92-21DBDB6362B8}">
+															<Language>SFX</Language>
+															<AudioFile>amb_coast_loop02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="425356374"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_coast_loop02" ID="{3C3614C6-6DB7-47A3-9F92-21DBDB6362B8}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_coast_loop04" ID="{5980E40C-F09D-40AC-969B-197F130FA3A9}" ShortID="611388625">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_coast_loop04" ID="{EA14D7E6-2AFB-4AF6-B1BC-DD6988D84472}">
+															<Language>SFX</Language>
+															<AudioFile>amb_coast_loop04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="228919645"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_coast_loop04" ID="{EA14D7E6-2AFB-4AF6-B1BC-DD6988D84472}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_coast_loop05" ID="{C437F4FA-ADB6-488A-BB2F-9C3500C1EE9C}" ShortID="377880729">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_coast_loop05" ID="{7304C1EC-1D5D-4257-B4C3-27F2956264EA}">
+															<Language>SFX</Language>
+															<AudioFile>amb_coast_loop05.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="143557943"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_coast_loop05" ID="{7304C1EC-1D5D-4257-B4C3-27F2956264EA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_coast_loop03" ID="{DA115D0F-0034-470B-BCDB-3AE53036CA29}" ShortID="634429746">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_coast_loop03" ID="{30E8A768-1FA1-4768-A962-80DCC265F233}">
+															<Language>SFX</Language>
+															<AudioFile>amb_coast_loop03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="912214685"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_coast_loop03" ID="{30E8A768-1FA1-4768-A962-80DCC265F233}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
 											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_coast_loop00" ID="{89DAA55E-2B2E-4496-91C8-52473AF976EF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="amb_coast_loop01" ID="{63B09E19-14BA-4F71-9A77-5BAA2684E30E}" ShortID="317456378">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="amb_coast_loop01" ID="{4F357764-DA46-44D9-9D4E-3322360DEE03}">
-													<Language>SFX</Language>
-													<AudioFile>amb_coast_loop01.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="115374998"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_coast_loop01" ID="{4F357764-DA46-44D9-9D4E-3322360DEE03}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="amb_coast_loop02" ID="{28E7224A-E5EC-4431-A81B-C3C6028AAAF2}" ShortID="603021541">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="amb_coast_loop02" ID="{3C3614C6-6DB7-47A3-9F92-21DBDB6362B8}">
-													<Language>SFX</Language>
-													<AudioFile>amb_coast_loop02.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="425356374"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_coast_loop02" ID="{3C3614C6-6DB7-47A3-9F92-21DBDB6362B8}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="amb_coast_loop03" ID="{DA115D0F-0034-470B-BCDB-3AE53036CA29}" ShortID="634429746">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="amb_coast_loop03" ID="{30E8A768-1FA1-4768-A962-80DCC265F233}">
-													<Language>SFX</Language>
-													<AudioFile>amb_coast_loop03.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="912214685"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_coast_loop03" ID="{30E8A768-1FA1-4768-A962-80DCC265F233}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="amb_coast_loop04" ID="{5980E40C-F09D-40AC-969B-197F130FA3A9}" ShortID="611388625">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="amb_coast_loop04" ID="{EA14D7E6-2AFB-4AF6-B1BC-DD6988D84472}">
-													<Language>SFX</Language>
-													<AudioFile>amb_coast_loop04.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="228919645"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_coast_loop04" ID="{EA14D7E6-2AFB-4AF6-B1BC-DD6988D84472}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="amb_coast_loop05" ID="{C437F4FA-ADB6-488A-BB2F-9C3500C1EE9C}" ShortID="377880729">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="amb_coast_loop05" ID="{7304C1EC-1D5D-4257-B4C3-27F2956264EA}">
-													<Language>SFX</Language>
-													<AudioFile>amb_coast_loop05.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="143557943"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_coast_loop05" ID="{7304C1EC-1D5D-4257-B4C3-27F2956264EA}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

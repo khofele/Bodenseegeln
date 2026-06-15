@@ -1583,7 +1583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887ac319f83b9884c9d3ecb3afd0a7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapUI.MapUIController
-  m_toggleMapAction: {fileID: -2850201420504151284, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_toggleMapAction: {fileID: -102453306071776302, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
   m_root: {fileID: 8836138039106561350}
   m_mapImage: {fileID: 4471129181699085121}
   m_boatIcon: {fileID: 4001073630797880579}
@@ -1599,6 +1599,7 @@ MonoBehaviour:
   m_docksRoot: {fileID: 0}
   m_npcsRoot: {fileID: 0}
   m_questsRoot: {fileID: 0}
+  m_dockQuestMergeDistance: 50
   m_worldMin: {x: 0, y: 0}
   m_worldMax: {x: 5000, y: 5000}
 --- !u!1 &8889480841220329715

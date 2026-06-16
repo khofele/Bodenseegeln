@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{9474790D-A5C5-F6CE-12B8-22021CA67B36}",
+    "Hash": "{6279B1CB-335D-D826-9A0A-2DF7B47649B0}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -1681,6 +1681,16 @@
       ]
      },
      {
+      "Id": "2542494824",
+      "Name": "amb_start_coastPeople",
+      "ObjectPath": "\\Events\\Default Work Unit\\Atmosphere\\Coast\\amb_start_coastPeople",
+      "GUID": "{6DCB8E19-BD86-4E14-91C2-3A60F2E27867}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "388675184",
       "Name": "amb_start_detailsWaterCoast",
       "ObjectPath": "\\Events\\Default Work Unit\\Atmosphere\\WaterMovement\\amb_start_detailsWaterCoast",
@@ -1837,6 +1847,16 @@
       "Name": "amb_stop_coast",
       "ObjectPath": "\\Events\\Default Work Unit\\Atmosphere\\Coast\\amb_stop_coast",
       "GUID": "{8ABEE41B-DB81-4CFD-AEFE-385A1B8208BB}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3820230048",
+      "Name": "amb_stop_coastPeople",
+      "ObjectPath": "\\Events\\Default Work Unit\\Atmosphere\\Coast\\amb_stop_coastPeople",
+      "GUID": "{0B440382-CD64-40BC-A113-368D721BE1D4}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -3412,6 +3432,6 @@
     ]
    }
   ],
-  "FileHash": "{F74CEAA9-9A6E-C2FB-21FA-DDAF004E433C}"
+  "FileHash": "{DE035182-4C7F-EB38-EA07-B7AB28373040}"
  }
 }

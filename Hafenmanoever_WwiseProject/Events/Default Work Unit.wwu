@@ -895,6 +895,38 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="amb_start_coastPeople" ID="{6DCB8E19-BD86-4E14-91C2-3A60F2E27867}">
+									<ChildrenList>
+										<Action Name="" ID="{DDEDCE5E-FB9A-4DBA-8745-E67895BD6453}" ShortID="809616888">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="amb_stop_coastPeople" ID="{0B440382-CD64-40BC-A113-368D721BE1D4}">
+									<ChildrenList>
+										<Action Name="" ID="{166348C4-5CAA-435E-8565-8FDBF89A76E6}" ShortID="364682523">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_detailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="WaterMovement" ID="{6AEB1FE6-FFEB-4055-9E32-04646D3198CB}" ShortID="459518605">

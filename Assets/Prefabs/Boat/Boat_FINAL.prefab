@@ -10049,6 +10049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatController
   m_maxFuel: 250
+  m_currentHealth: 0
   m_gameManager: {fileID: 0}
   m_windController: {fileID: 0}
   m_boatAudioController: {fileID: 6123893320845217522}
@@ -10057,6 +10058,8 @@ MonoBehaviour:
   m_frontSail: {fileID: 6564311641249695615}
   m_rudder: {fileID: 1449018452115430782}
   m_fender: {fileID: 2980276291263033300}
+  m_resetNotPossibleScreen: {fileID: 4545449276491187762, guid: 573d41c412360d748b1a9eaff32875df, type: 3}
+  m_resetNeededScreen: {fileID: 4448788223770576624, guid: 6e3f93a148f2f164ab93f08438aa681b, type: 3}
   m_steeringAction: {fileID: -4492056806641304171, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
   m_rudderNeutralAction: {fileID: -243673092784474081, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
   m_fenderEnableAction: {fileID: -5479584863699254878, guid: b2c0d3130444d854ab78402d2647be42, type: 3}

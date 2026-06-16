@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{8156FD7F-946F-7EC8-7FEA-73EB86B16F52}",
+    "Hash": "{9474790D-A5C5-F6CE-12B8-22021CA67B36}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -3003,6 +3003,16 @@
       "DurationMax": "0"
      },
      {
+      "Id": "138821493",
+      "Name": "mission_voiceLineNpc",
+      "ObjectPath": "\\Events\\Default Work Unit\\MissionsFeedback\\MissionVarious\\mission_voiceLineNpc",
+      "GUID": "{57E6479B-6DC0-4972-9682-5A2B9470E053}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "2610887575",
       "Name": "phy_start_bowWater",
       "ObjectPath": "\\Events\\Default Work Unit\\Physics\\PhyBow\\phy_start_bowWater",
@@ -3402,6 +3412,6 @@
     ]
    }
   ],
-  "FileHash": "{111C479D-E9F8-BF7E-4317-C4847418139A}"
+  "FileHash": "{F74CEAA9-9A6E-C2FB-21FA-DDAF004E433C}"
  }
 }

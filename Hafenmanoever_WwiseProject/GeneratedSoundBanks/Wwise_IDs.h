@@ -84,6 +84,7 @@ namespace AK
         static const AkUniqueID MISSION_MONEYZERO = 3701861410U;
         static const AkUniqueID MISSION_START_VOICELINESNPC = 3522430105U;
         static const AkUniqueID MISSION_STOP_VOICELINESNPC = 2630645085U;
+        static const AkUniqueID MISSION_VOICELINENPC = 138821493U;
         static const AkUniqueID PHY_START_BOWWATER = 2610887575U;
         static const AkUniqueID PHY_START_SAILWIND = 3002731379U;
         static const AkUniqueID PHY_START_WAKEWATER = 1373022075U;

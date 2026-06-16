@@ -70,6 +70,10 @@ public class BoatController : MonoBehaviour
     [SerializeField] private GameObject m_rudder = null;
     [SerializeField] private GameObject m_fender = null;
 
+    [Header("UI Screens")]
+    [SerializeField] private NotificationTextUI m_resetNotPossibleScreen = null;
+    [SerializeField] private ResetRequestUI m_resetNeededScreen = null;
+
     // INPUT ACTION REFERENCES
     [Header("Input Actions")]
     [SerializeField] private InputActionReference m_steeringAction = null;
@@ -232,7 +236,7 @@ public class BoatController : MonoBehaviour
         bool isFluttering = false;
 
         // dead zone 
-        if (angleWindBoat < 15.0f) // TODO Winkel von vorne und von hinten!!!!
+        if (angleWindBoat < 15.0f) // TODO Winkel von vorne und von hinten????
         {
             isFluttering = true;
             m_boatAudioController.StartSailFluttering();
@@ -935,7 +939,7 @@ public class BoatController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Towing possible! Please press R!"); // TODO Reset Request Screen
+                m_resetNeededScreen.ShowScreen();
                 m_isForcedTow = true;
                 m_prevGameState = m_gameManager.CurrentState;
                 m_gameManager.SetState(GameStates.PAUSED);
@@ -961,7 +965,7 @@ public class BoatController : MonoBehaviour
             } 
             else
             {
-                Debug.Log("Not enough money for reset Screen shows up!"); // TODO Reset not possible Screen
+                m_resetNotPossibleScreen.Show("Du hast nicht genug Geld, um abgeschleppt zu werden!");
             }
         }
     }

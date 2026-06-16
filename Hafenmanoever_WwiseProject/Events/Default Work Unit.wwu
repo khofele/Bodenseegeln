@@ -931,8 +931,37 @@
 						</Folder>
 						<Folder Name="WaterMovement" ID="{6AEB1FE6-FFEB-4055-9E32-04646D3198CB}" ShortID="459518605">
 							<ChildrenList>
-								<Event Name="amb_start_waterMovement" ID="{2CB945DF-02CF-4FAB-A103-601851248117}"/>
-								<Event Name="amb_stop_waterMovement" ID="{96CBF1BE-AE44-47B7-B623-0B07961EAC62}"/>
+								<Event Name="amb_start_waterMovement" ID="{2CB945DF-02CF-4FAB-A103-601851248117}">
+									<ChildrenList>
+										<Action Name="" ID="{A3F05134-08D2-47ED-813E-214F35186916}" ShortID="172689035">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="amb_stop_waterMovement" ID="{96CBF1BE-AE44-47B7-B623-0B07961EAC62}">
+									<ChildrenList>
+										<Action Name="" ID="{BA3445A5-FA67-45B5-B9C8-546D35DB5DAF}" ShortID="942436632">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="amb_start_detailsWaterCoast" ID="{B07C8834-AB49-46C0-A651-DE6DC85B944D}">
 									<ChildrenList>
 										<Action Name="" ID="{9DEA92B5-8E14-4023-A29A-311DA8AEBBEE}" ShortID="1048021181">

@@ -300,6 +300,25 @@
 										<Property Name="QFactorBand3" Type="Real32" Value="5.4"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="AmbWaterLoop_EQ" ID="{35525E79-32A9-4D4D-AD53-95E7FE3D5B01}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="45"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="120"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="850"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="6500"/>
+										<Property Name="GainBand2" Type="Real32" Value="2.5"/>
+										<Property Name="GainBand3" Type="Real32" Value="1.5"/>
+										<Property Name="GainBand4" Type="Real32" Value="-3"/>
+										<Property Name="GainBand5" Type="Real32" Value="-4"/>
+										<Property Name="NumBands" Type="int32" Value="5"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="RolloffRateBand1" Type="int32" Value="48"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Environment" ID="{E59FA670-EDAD-4871-BC90-5C70BC13A13A}" ShortID="918719040">

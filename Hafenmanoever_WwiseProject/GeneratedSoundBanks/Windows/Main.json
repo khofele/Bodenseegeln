@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{A4031F30-377C-90A7-F9CE-6FDF71D7CE06}",
+    "Hash": "{8156FD7F-946F-7EC8-7FEA-73EB86B16F52}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -1646,9 +1646,6 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "9322132"
-       },
-       {
         "Id": "23064292"
        },
        {
@@ -1667,12 +1664,6 @@
         "Id": "143557943"
        },
        {
-        "Id": "147595912"
-       },
-       {
-        "Id": "175256150"
-       },
-       {
         "Id": "228919645"
        },
        {
@@ -1682,13 +1673,31 @@
         "Id": "425356374"
        },
        {
-        "Id": "897107714"
-       },
-       {
         "Id": "912214685"
        },
        {
         "Id": "935662284"
+       }
+      ]
+     },
+     {
+      "Id": "388675184",
+      "Name": "amb_start_detailsWaterCoast",
+      "ObjectPath": "\\Events\\Default Work Unit\\Atmosphere\\WaterMovement\\amb_start_detailsWaterCoast",
+      "GUID": "{B07C8834-AB49-46C0-A651-DE6DC85B944D}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "9322132"
+       },
+       {
+        "Id": "147595912"
+       },
+       {
+        "Id": "175256150"
+       },
+       {
+        "Id": "897107714"
        }
       ]
      },
@@ -1710,19 +1719,10 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "9322132"
-       },
-       {
         "Id": "125618947"
        },
        {
-        "Id": "147595912"
-       },
-       {
         "Id": "170606269"
-       },
-       {
-        "Id": "175256150"
        },
        {
         "Id": "384425633"
@@ -1735,9 +1735,6 @@
        },
        {
         "Id": "778497798"
-       },
-       {
-        "Id": "897107714"
        }
       ]
      },
@@ -1749,19 +1746,7 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "9322132"
-       },
-       {
-        "Id": "147595912"
-       },
-       {
-        "Id": "175256150"
-       },
-       {
         "Id": "796697661"
-       },
-       {
-        "Id": "897107714"
        }
       ]
      },
@@ -1773,19 +1758,10 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "9322132"
-       },
-       {
         "Id": "125618947"
        },
        {
-        "Id": "147595912"
-       },
-       {
         "Id": "170606269"
-       },
-       {
-        "Id": "175256150"
        },
        {
         "Id": "195552169"
@@ -1798,9 +1774,6 @@
        },
        {
         "Id": "778497798"
-       },
-       {
-        "Id": "897107714"
        }
       ]
      },
@@ -1812,19 +1785,7 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "9322132"
-       },
-       {
-        "Id": "147595912"
-       },
-       {
-        "Id": "175256150"
-       },
-       {
         "Id": "796697661"
-       },
-       {
-        "Id": "897107714"
        }
       ]
      },
@@ -1876,6 +1837,16 @@
       "Name": "amb_stop_coast",
       "ObjectPath": "\\Events\\Default Work Unit\\Atmosphere\\Coast\\amb_stop_coast",
       "GUID": "{8ABEE41B-DB81-4CFD-AEFE-385A1B8208BB}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3678506024",
+      "Name": "amb_stop_detailsWaterCoast",
+      "ObjectPath": "\\Events\\Default Work Unit\\Atmosphere\\WaterMovement\\amb_stop_detailsWaterCoast",
+      "GUID": "{665CB61B-EC4C-440B-A55A-48EF564EAD75}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -3431,6 +3402,6 @@
     ]
    }
   ],
-  "FileHash": "{F7E51FEC-D64C-B3F5-39F3-36D18D59FDAF}"
+  "FileHash": "{111C479D-E9F8-BF7E-4317-C4847418139A}"
  }
 }

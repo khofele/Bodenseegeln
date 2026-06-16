@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID AMB_SEAGULLS = 4023450666U;
         static const AkUniqueID AMB_START_COAST = 2069355313U;
+        static const AkUniqueID AMB_START_DETAILSWATERCOAST = 388675184U;
         static const AkUniqueID AMB_START_GARAGE = 2203898210U;
         static const AkUniqueID AMB_START_HARBORBREGENZ = 1802511244U;
         static const AkUniqueID AMB_START_HARBORHARD = 1772974160U;
@@ -23,6 +24,7 @@ namespace AK
         static const AkUniqueID AMB_START_SEAGULLS = 3868672069U;
         static const AkUniqueID AMB_START_WATERMOVEMENT = 1406048945U;
         static const AkUniqueID AMB_STOP_COAST = 3608418441U;
+        static const AkUniqueID AMB_STOP_DETAILSWATERCOAST = 3678506024U;
         static const AkUniqueID AMB_STOP_GARAGE = 691410714U;
         static const AkUniqueID AMB_STOP_HARBORBREGENZ = 237785684U;
         static const AkUniqueID AMB_STOP_HARBORHARD = 3691877560U;

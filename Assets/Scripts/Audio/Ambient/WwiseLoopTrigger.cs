@@ -13,6 +13,9 @@ public class WwiseLoopTrigger : MonoBehaviour
     [SerializeField] private WwiseEvent[] m_startEvents = null;
     [SerializeField] private WwiseEvent[] m_stopEvents = null;
 
+    [Header("Debug")]
+    [SerializeField] private bool m_debugLogs = false;
+
     private bool m_isPlaying = false;
 
     private void Reset()
@@ -30,7 +33,12 @@ public class WwiseLoopTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag(m_playerTag))
+        //if (!other.CompareTag(m_playerTag))
+        //{
+        //    return;
+        //}
+
+        if (!IsPlayer(other))
         {
             return;
         }
@@ -46,7 +54,7 @@ public class WwiseLoopTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag(m_playerTag))
+        if (!IsPlayer(other))
         {
             return;
         }
@@ -58,6 +66,26 @@ public class WwiseLoopTrigger : MonoBehaviour
 
         PlayStopEvents();
         m_isPlaying = false;
+    }
+
+    private bool IsPlayer(Collider other)
+    {
+        if (other.CompareTag(m_playerTag))
+        {
+            return true;
+        }
+
+        if (other.attachedRigidbody != null && other.attachedRigidbody.CompareTag(m_playerTag))
+        {
+            return true;
+        }
+
+        if (other.transform.root.CompareTag(m_playerTag))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void PlayStartEvents()

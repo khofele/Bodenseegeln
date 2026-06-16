@@ -29,7 +29,12 @@ public class WwiseOneShotTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag(m_playerTag))
+        //if (!other.CompareTag(m_playerTag))
+        //{
+        //    return;
+        //}
+
+        if (!IsPlayer(other))
         {
             return;
         }
@@ -41,6 +46,26 @@ public class WwiseOneShotTrigger : MonoBehaviour
 
         PlayEvents();
         m_hasPlayed = true;
+    }
+
+    private bool IsPlayer(Collider other)
+    {
+        if (other.CompareTag(m_playerTag))
+        {
+            return true;
+        }
+
+        if (other.attachedRigidbody != null && other.attachedRigidbody.CompareTag(m_playerTag))
+        {
+            return true;
+        }
+
+        if (other.transform.root.CompareTag(m_playerTag))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void PlayEvents()

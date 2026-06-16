@@ -8,6 +8,7 @@ public class MissionsFeedbackAudioController : MonoBehaviour
     [SerializeField] private WwiseEvent m_missionCompleteEvent = null;
     [SerializeField] private WwiseEvent m_missionFailEvent = null;
     [SerializeField] private WwiseEvent m_missionAbortEvent = null;
+    [SerializeField] private WwiseEvent m_missionVoiceLineNpcEvent = null;
 
     [Header("Money Events")]
     [SerializeField] private WwiseEvent m_moneyZeroEvent = null;
@@ -50,6 +51,11 @@ public class MissionsFeedbackAudioController : MonoBehaviour
     public void PlayMissionAbort()
     {
         PlayEvent(m_missionAbortEvent);
+    }
+
+    public void PlayMissionVoiceLineNpc()
+    {
+        PlayEvent(m_missionVoiceLineNpcEvent);
     }
 
     public void PlayMoneyZero()

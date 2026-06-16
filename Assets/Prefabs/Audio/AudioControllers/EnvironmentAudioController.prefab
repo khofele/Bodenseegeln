@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1581245771360141099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7181387827641419168}
+  - component: {fileID: 8476016185395592159}
+  m_Layer: 0
+  m_Name: EnvironmentAudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7181387827641419168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581245771360141099}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2850.3408, y: 0.00001, z: 2756.1255}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8476016185395592159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581245771360141099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34914b42a3be721419ebeb5a7af6f697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnvironmentAudioController
+  m_boatHullEmitter: {fileID: 0}
+  m_boatUnderwaterEmitter: {fileID: 0}
+  m_dockEmitter: {fileID: 0}
+  m_interactionEmitter: {fileID: 0}
+  m_uiEmitter: {fileID: 0}
+  m_boatCollisionLightEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4fda876914e086b489b6bc22b6851a98, type: 2}
+  m_boatCollisionHeavyEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9d385514457cdd54c8f5db610b49fcef, type: 2}
+  m_boatCollisionUnderWaterEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 68d826c148cc06045b8d972abc7853ba, type: 2}
+  m_boatDockImpactEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6a5b8fdb2737da941945f089fe6749c9, type: 2}
+  m_startBoatRubDockEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ca1ff8e637907e54dbd2bc6bec6ef172, type: 2}
+  m_stopBoatRubDockEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e55bf9e791425ff40936cb3cbc129825, type: 2}
+  m_boatRefuelEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 00348857992a1e64ca17c7c328fa0fa6, type: 2}
+  m_boatRepairEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 45bd2e12f0627b74d90e50922650377d, type: 2}
+  m_startWaterDockEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b9c44239e01d7bc4ab369059fb3acbce, type: 2}
+  m_stopWaterDockEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0e961e5860de58747b251f9898435463, type: 2}
+  m_openMapEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e19c90cdc6039f94d93b2099694b8cac, type: 2}
+  m_closeMapEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a86df2a05118d9642ac8912502dbcf14, type: 2}

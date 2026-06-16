@@ -148,7 +148,17 @@
 								</Event>
 								<Event Name="mission_start_voiceLinesNpc" ID="{DE8CF4E1-CCC2-43DC-A2F5-5C2A6102154E}"/>
 								<Event Name="mission_stop_voiceLinesNpc" ID="{AD1B3553-62FC-4E81-881A-94839900A9A0}"/>
-								<Event Name="mission_voiceLineNpc" ID="{57E6479B-6DC0-4972-9682-5A2B9470E053}"/>
+								<Event Name="mission_voiceLineNpc" ID="{57E6479B-6DC0-4972-9682-5A2B9470E053}">
+									<ChildrenList>
+										<Action Name="" ID="{1132EEE1-B1FC-4622-811D-D2DB2F81E2DF}" ShortID="481956922">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_mission_voiceLinesNpc" ID="{2F48C6BA-8F66-41D5-89E0-A726661B6087}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="MissionGoal" ID="{E5C41BA6-6765-4CB0-80B4-2631F4E23AD6}" ShortID="628520607">

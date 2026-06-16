@@ -1110,6 +1110,256 @@
 										</Sound>
 									</ChildrenList>
 								</Folder>
+								<Folder Name="MissionVoiceLinesNpc" ID="{49E40842-6A9C-4B25-9751-BF7AB4708572}" ShortID="697579987">
+									<ChildrenList>
+										<RandomSequenceContainer Name="RC_mission_voiceLinesNpc" ID="{2F48C6BA-8F66-41D5-89E0-A726661B6087}" ShortID="130324390">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>15</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{9A19EF61-D833-4F6F-AAA9-FC86F7DC7E7D}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="60"/>
+																	<Property Name="Min" Type="Real64" Value="-60"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{8B023791-5032-41DC-829E-2708C6E26B83}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="1"/>
+																	<Property Name="Min" Type="Real64" Value="-3"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="mission_voiceLinesNpc00" ID="{78F9D434-4507-4FA3-9028-C48D74C4F0CC}" ShortID="585955642">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc00" ID="{997C6CDF-8C9C-41B7-9705-95534D838583}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc00.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="21637812"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc00" ID="{997C6CDF-8C9C-41B7-9705-95534D838583}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc01" ID="{936942D7-9D27-4D49-A77D-035736CE349C}" ShortID="1049335385">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc01" ID="{F6C1C06B-1AE6-4366-93DA-8313E8B08FFD}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1013696341"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc01" ID="{F6C1C06B-1AE6-4366-93DA-8313E8B08FFD}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc02" ID="{D2F80799-C5A3-4AF3-8D60-0185F7C8720C}" ShortID="361133174">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc02" ID="{0063C489-0D8B-4A79-A39D-8C2947712082}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1012251454"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc02" ID="{0063C489-0D8B-4A79-A39D-8C2947712082}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc03" ID="{A081DF2F-5153-49E5-949C-270E777A959E}" ShortID="864373439">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc03" ID="{1E3A33B2-6ECE-43A2-8FC2-25ADE8C5266B}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="23404892"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc03" ID="{1E3A33B2-6ECE-43A2-8FC2-25ADE8C5266B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc04" ID="{19ED6DCA-FCCD-4F18-9355-9852EC60BE68}" ShortID="232124396">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc04" ID="{3066B881-7857-4339-997F-94C19DB86EFA}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1071065471"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc04" ID="{3066B881-7857-4339-997F-94C19DB86EFA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc05" ID="{0A11512E-6A18-4CBF-920F-6F6CBCE589F6}" ShortID="345140661">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc05" ID="{9D6B8A49-A0EC-44E6-A8DA-A32B9D6D5EC9}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc05.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="582238753"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc05" ID="{9D6B8A49-A0EC-44E6-A8DA-A32B9D6D5EC9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc06" ID="{0B635D41-8EE2-422B-BA58-87AE1EFEBD5D}" ShortID="514346091">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc06" ID="{0A659CA0-2EAA-4B2E-8EFB-47588B6DBEF0}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc06.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="745179163"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc06" ID="{0A659CA0-2EAA-4B2E-8EFB-47588B6DBEF0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc07" ID="{882680A3-EECC-4A20-864D-C4B1B7F0548C}" ShortID="671633314">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc07" ID="{BEA473C2-1775-444D-986A-5D0FBEE2C0C1}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc07.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="236281827"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc07" ID="{BEA473C2-1775-444D-986A-5D0FBEE2C0C1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{468BDD78-FBE3-48B2-8ADE-CE44C5418816}" ShortID="951728610">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="MissionVoiceLinesNpc_EQ" ID="{B219EABC-558F-4DE2-8D72-4DC5187F17CF}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Boat" ID="{78D8DD80-B5B0-43EA-BDC3-87541909321D}" ShortID="328819922">

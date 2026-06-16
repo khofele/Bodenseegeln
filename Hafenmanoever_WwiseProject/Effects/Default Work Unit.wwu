@@ -924,6 +924,27 @@
 										<Property Name="OnOffBand3" Type="bool" Value="True"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="MissionVoiceLinesNpc_EQ" ID="{B219EABC-558F-4DE2-8D72-4DC5187F17CF}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="120"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="250"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="700"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="2800"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="10621.26"/>
+										<Property Name="GainBand2" Type="Real32" Value="1.5"/>
+										<Property Name="GainBand3" Type="Real32" Value="-2.5"/>
+										<Property Name="GainBand4" Type="Real32" Value="3"/>
+										<Property Name="GainBand5" Type="Real32" Value="-2"/>
+										<Property Name="NumBands" Type="int32" Value="5"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="QFactorBand2" Type="Real32" Value="0.9"/>
+										<Property Name="QFactorBand5" Type="Real32" Value="12.1"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Physic" ID="{A5AFCB23-93EE-421E-914A-8A149DDA32C7}" ShortID="246597439">

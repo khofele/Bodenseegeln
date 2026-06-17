@@ -1,4 +1,5 @@
 using Quest;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -81,6 +82,12 @@ namespace Dialogue
             {
                 m_isPlayerInRange = true;
                 Debug.Log("[QuestInteraction.OnTriggerEnter] Boat entered trigger");
+
+                bool _playSound = (DialogueStateManager.Instance.GetBestDialogueBranch(m_npc)) != null && GameManager.Instance.CurrentState != GameStates.DIALOGMODE;
+                if (_playSound)
+                {
+                    QuestManager.Instance.MissionFeedbackAudio.PlayGoalReached(); // Play Audio
+                }
             }
         }
 
@@ -90,6 +97,12 @@ namespace Dialogue
             {
                 m_isPlayerInRange = false;
                 Debug.Log("[QuestInteraction.OnTriggerExit] Boat left trigger");
+
+                //bool _playSound = (DialogueStateManager.Instance.GetBestDialogueBranch(m_npc)) != null && GameManager.Instance.CurrentState != GameStates.DIALOGMODE;
+                //if (_playSound)
+                //{
+                //    QuestManager.Instance.MissionFeedbackAudio.PlayGoalFail();  // Play Audio
+                //}
             }
         }
 

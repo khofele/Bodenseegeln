@@ -36,6 +36,7 @@ namespace Quest
         [Header("References")]
         [SerializeField] private QuestResultUI m_questResultUI = null;
         [SerializeField] private NotificationTextUI m_notificationTextUI = null;
+        [SerializeField] private MissionsFeedbackAudioController m_missionsFeedbackAudioController = null;  // Audio class reference
 
         private QuestData m_activeQuest = null;
         private QuestData m_pendingQuest = null;
@@ -62,6 +63,7 @@ namespace Quest
         public bool IsQuestRunning => m_isQuestRunning;
         public QuestState State => m_state;
         public int CurrentQuestStep => m_currentQuestStep;
+        public MissionsFeedbackAudioController MissionFeedbackAudio => m_missionsFeedbackAudioController;
 
 
         private void Update()
@@ -300,6 +302,7 @@ namespace Quest
             m_state = QuestState.Active;
             m_currentQuestStep = 0;
             m_type2ReadyToComplete = false;
+            m_missionsFeedbackAudioController.PlayMissionAccept();  // Mission Accept Play Audio
 
             RefreshQuestTarget();
 
@@ -476,6 +479,7 @@ namespace Quest
             };
 
             Debug.Log($"[QuestManager] Quest finished: {m_activeQuest.QuestName}");
+            m_missionsFeedbackAudioController.PlayMissionComplete();  // Play Audio Mission Complete
 
             QuestData _completedQuest = m_activeQuest;
             m_completedQuests.Add(m_activeQuest);

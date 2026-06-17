@@ -5,6 +5,8 @@ using Dialogue;
 
 public class DockUIController : MonoBehaviour
 {
+    [SerializeField] private MissionsFeedbackAudioController m_missionsFeedbackAudioController = null;  // Audio class reference
+
     [Header("Costs")]
     [SerializeField] private int m_fullFuelCost = 100;
     [SerializeField] private int m_fullRepairCost = 100;
@@ -177,6 +179,7 @@ public class DockUIController : MonoBehaviour
 
         m_currentBoat.CurrentHealth = _newHealth;
         GameManager.Instance.DecreaseMoney(_money);
+        m_missionsFeedbackAudioController.PlayMoneyZero();  // Play Audio Money Zero
 
         Debug.Log("[DockUIController.OnRepairClicked] not enough money -> partially repaired until money reached 0€");
 
@@ -221,6 +224,7 @@ public class DockUIController : MonoBehaviour
 
         m_currentBoat.CurrentFuel = _newFuel;
         GameManager.Instance.DecreaseMoney(_money);
+        m_missionsFeedbackAudioController.PlayMoneyZero();  // Play Audio Money Zero
 
         Debug.Log("[DockUIController.OnFuelClicked] not enough money -> partially refueled until money reached 0€");
 

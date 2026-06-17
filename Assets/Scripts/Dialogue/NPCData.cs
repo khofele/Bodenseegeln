@@ -20,7 +20,8 @@ public enum DialogueActionType
 {
     None = 0,
     StartQuest = 1,
-    CompleteQuest = 2
+    CompleteQuest = 2,
+    AbortQuest = 3
 }
 
 namespace Dialogue

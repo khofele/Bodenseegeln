@@ -98,6 +98,9 @@ namespace Dialogue
                 case DialogueActionType.CompleteQuest:
                     QuestManager.Instance.CompleteQuestFromDialogue();
                     return true; //pause dialogue progression
+                case DialogueActionType.AbortQuest:
+                    QuestManager.Instance.MissionFeedbackAudio.PlayMissionAbort();
+                    return false;
             }
 
             return false;

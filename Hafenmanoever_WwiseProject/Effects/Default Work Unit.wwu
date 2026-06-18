@@ -398,6 +398,63 @@
 										<Property Name="QFactorBand3" Type="Real32" Value="1.1"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="AmbCoastDetails_EQ" ID="{79C8F020-7216-45A1-9BE8-FD9CAE4D2F02}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="80"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="220"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="600"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="2500"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="7500"/>
+										<Property Name="GainBand2" Type="Real32" Value="1"/>
+										<Property Name="GainBand3" Type="Real32" Value="-2"/>
+										<Property Name="GainBand4" Type="Real32" Value="1"/>
+										<Property Name="GainBand5" Type="Real32" Value="-2"/>
+										<Property Name="NumBands" Type="int32" Value="5"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+										<Property Name="QFactorBand3" Type="Real32" Value="1.4"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="AmbDetailsPeople_EQ" ID="{64192276-39A8-44E6-B94D-AFFB8E628761}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand1" Type="Real32" Value="140"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="300"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="900"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="2400"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="5500"/>
+										<Property Name="GainBand2" Type="Real32" Value="1.5"/>
+										<Property Name="GainBand3" Type="Real32" Value="-2.5"/>
+										<Property Name="GainBand4" Type="Real32" Value="-5"/>
+										<Property Name="GainBand5" Type="Real32" Value="-6"/>
+										<Property Name="NumBands" Type="int32" Value="5"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+									</PropertyList>
+								</Effect>
+								<Effect Name="AmbDetailsWater_EQ" ID="{59ADD617-7997-4E61-AC8E-CAC2DE9E8209}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<PropertyList>
+										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+										<Property Name="FilterTypeBand5" Type="int32" Value="5"/>
+										<Property Name="FrequencyBand2" Type="Real32" Value="160"/>
+										<Property Name="FrequencyBand3" Type="Real32" Value="450"/>
+										<Property Name="FrequencyBand4" Type="Real32" Value="900"/>
+										<Property Name="FrequencyBand5" Type="Real32" Value="6500"/>
+										<Property Name="GainBand2" Type="Real32" Value="1.5"/>
+										<Property Name="GainBand3" Type="Real32" Value="-2.5"/>
+										<Property Name="GainBand4" Type="Real32" Value="-4"/>
+										<Property Name="GainBand5" Type="Real32" Value="-2.5"/>
+										<Property Name="NumBands" Type="int32" Value="5"/>
+										<Property Name="OnOffBand3" Type="bool" Value="True"/>
+										<Property Name="OnOffBand4" Type="bool" Value="True"/>
+										<Property Name="OnOffBand5" Type="bool" Value="True"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Environment" ID="{E59FA670-EDAD-4871-BC90-5C70BC13A13A}" ShortID="918719040">
@@ -1495,6 +1552,17 @@
 										<Property Name="Ratio" Type="Real32" Value="1.6"/>
 										<Property Name="ReleaseTime" Type="Real32" Value="1.8"/>
 										<Property Name="Threshold" Type="Real32" Value="-16"/>
+									</PropertyList>
+								</Effect>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Atmosphere" ID="{D7CF2430-D0E4-4B61-8D18-218FC0CF81E1}" ShortID="479668097">
+							<ChildrenList>
+								<Effect Name="AmbDetailsPeople" ID="{9F2C48CA-C0CF-4C76-B9AA-D4C6E2D9559B}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<PropertyList>
+										<Property Name="AttackTime" Type="Real32" Value="0.25"/>
+										<Property Name="ReleaseTime" Type="Real32" Value="1"/>
+										<Property Name="Threshold" Type="Real32" Value="-22"/>
 									</PropertyList>
 								</Effect>
 							</ChildrenList>

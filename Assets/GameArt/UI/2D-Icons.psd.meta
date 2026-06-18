@@ -108,8 +108,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 2120
-      y: 4
+      x: 4
+      y: 2131
       width: 1048
       height: 983
     spriteID: 59c751ed149629248804efc3b5ea7a02
@@ -120,7 +120,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 2120, y: 4}
+    uvTransform: {x: 4, y: 2131}
     spritePosition: {x: 8, y: 1171}
   - name: Segelmodus
     originalName: 
@@ -130,8 +130,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 2122
+      x: 2127
+      y: 4
       width: 1055
       height: 1044
     spriteID: a9fcb07c8ff3c244584554c2e2b8867b
@@ -142,7 +142,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 2122}
+    uvTransform: {x: 2127, y: 4}
     spritePosition: {x: 2040, y: 1079}
   - name: Navrad
     originalName: 
@@ -152,8 +152,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 3174
+      x: 3190
+      y: 4
       width: 1049
       height: 1049
     spriteID: 8330ed7a8a5f3b745ad9e7d1cafd4338
@@ -164,7 +164,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 3174}
+    uvTransform: {x: 3190, y: 4}
     spritePosition: {x: 2213, y: 0}
   - name: "M\xFCnze"
     originalName: 
@@ -174,8 +174,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4231
+      x: 4247
+      y: 4
       width: 1047
       height: 1047
     spriteID: deaa904bf0dc3254fbf46b48b296fcda
@@ -186,7 +186,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4231}
+    uvTransform: {x: 4247, y: 4}
     spritePosition: {x: 1123, y: 0}
   - name: Motormodus
     originalName: 
@@ -196,8 +196,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 5286
+      x: 5302
+      y: 4
       width: 1047
       height: 1047
     spriteID: 930bc88e8299c2d47b5fb3215ca50bfa
@@ -208,7 +208,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 5286}
+    uvTransform: {x: 5302, y: 4}
     spritePosition: {x: 8, y: 0}
   - name: Geld
     originalName: 
@@ -218,8 +218,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 7392
+      x: 2117
+      y: 2131
       width: 1049
       height: 621
     spriteID: 084e95fb1b2c0184399725724022f286
@@ -230,7 +230,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 7392}
+    uvTransform: {x: 2117, y: 2131}
     spritePosition: {x: 0, y: 2209}
   - name: FWind
     originalName: 
@@ -240,8 +240,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 1069
-      y: 2101
+      x: 6267
+      y: 1064
       width: 1023
       height: 1021
     spriteID: 2482611a8a2f7af448060e758dc022d6
@@ -252,7 +252,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1069, y: 2101}
+    uvTransform: {x: 6267, y: 1064}
     spritePosition: {x: 2916, y: 536}
   - name: Werkzeug
     originalName: 
@@ -262,8 +262,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 1069
-      y: 1055
+      x: 5217
+      y: 1064
       width: 1042
       height: 1038
     spriteID: 91b07562ecc3d6340977d472efff9e65
@@ -274,7 +274,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1069, y: 1055}
+    uvTransform: {x: 5217, y: 1064}
     spritePosition: {x: 1055, y: 1171}
   - name: WarnleuchteAN
     originalName: 
@@ -284,8 +284,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 1069
-      y: 3130
+      x: 7298
+      y: 1064
       width: 844
       height: 1045
     spriteID: 6f345b72f8c9314448536d1446120d8e
@@ -296,8 +296,96 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1069, y: 3130}
+    uvTransform: {x: 7298, y: 1064}
     spritePosition: {x: 2213, y: 2914}
+  - name: Anker_TR
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4178
+      y: 1064
+      width: 1031
+      height: 1055
+    spriteID: ed6e98a3bcc1ec6438ed9116b09a270c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4178, y: 1064}
+    spritePosition: {x: 92, y: 2898}
+  - name: Anker_QUEST
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1064
+      width: 1033
+      height: 1059
+    spriteID: 8f9e901761b8a304384545d02eebc5e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1064}
+    spritePosition: {x: 90, y: 2900}
+  - name: 'Anker_LEER '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1045
+      y: 1064
+      width: 1033
+      height: 1059
+    spriteID: d36f361824b915343804e25bbccc88d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1045, y: 1064}
+    spritePosition: {x: 90, y: 2900}
+  - name: Anker_ALL
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2086
+      y: 1064
+      width: 1033
+      height: 1059
+    spriteID: e18fda6eddcf8b948973f90100741084
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2086, y: 1064}
+    spritePosition: {x: 90, y: 2898}
   - name: Hauptsegel
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -306,8 +394,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 1069
-      y: 5236
+      x: 7408
+      y: 4
       width: 633
       height: 1042
     spriteID: 669b389cf5371374499511d428a74c8a
@@ -318,7 +406,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1069, y: 5236}
+    uvTransform: {x: 7408, y: 4}
     spritePosition: {x: 3306, y: 19}
   - name: Vorsegel
     originalName: 
@@ -328,8 +416,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 1069
-      y: 6286
+      x: 856
+      y: 3122
       width: 629
       height: 1034
     spriteID: d3f459ee7f8c56247b92242c9b06f766
@@ -340,7 +428,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1069, y: 6286}
+    uvTransform: {x: 856, y: 3122}
     spritePosition: {x: 3310, y: 19}
   - name: Steuerrad
     originalName: 
@@ -372,8 +460,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 2120
-      y: 1869
+      x: 3174
+      y: 2131
       width: 1052
       height: 579
     spriteID: 76defef3a66826148957a07b31691716
@@ -384,7 +472,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 2120, y: 1869}
+    uvTransform: {x: 3174, y: 2131}
     spritePosition: {x: 1161, y: 2251}
   - name: KnopfleuchteWarn
     originalName: 
@@ -394,8 +482,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 1064
+      x: 1069
+      y: 4
       width: 1050
       height: 1050
     spriteID: f8307b182c0f74f4bbc77d5c80340bf3
@@ -406,7 +494,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 1064}
+    uvTransform: {x: 1069, y: 4}
     spritePosition: {x: 1123, y: 2907}
   - name: Fender
     originalName: 
@@ -416,8 +504,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 2120
-      y: 995
+      x: 1060
+      y: 2131
       width: 1049
       height: 866
     spriteID: dba1669d5c3fc7f469cca1e9d69ba6b1
@@ -428,7 +516,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 2120, y: 995}
+    uvTransform: {x: 1060, y: 2131}
     spritePosition: {x: 2839, y: 1802}
   - name: KnopfleuchteAUS
     originalName: 
@@ -438,8 +526,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 6341
+      x: 6357
+      y: 4
       width: 1043
       height: 1043
     spriteID: 2145dfa84b7412c43aeccb433f41a68a
@@ -450,7 +538,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 6341}
+    uvTransform: {x: 6357, y: 4}
     spritePosition: {x: 1123, y: 2914}
   - name: KnopfleuchteAN
     originalName: 
@@ -460,8 +548,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 1069
-      y: 4
+      x: 3127
+      y: 1064
       width: 1043
       height: 1043
     spriteID: 629ed9c1b3e986a4d9fae84cb8d70547
@@ -472,7 +560,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1069, y: 4}
+    uvTransform: {x: 3127, y: 1064}
     spritePosition: {x: 80, y: 2914}
   - name: WarnleuchteAUS
     originalName: 
@@ -482,8 +570,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 1069
-      y: 4183
+      x: 4
+      y: 3122
       width: 844
       height: 1045
     spriteID: 8177300bfe731004bb6ce55daa3f9e84
@@ -494,7 +582,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1069, y: 4183}
+    uvTransform: {x: 4, y: 3122}
     spritePosition: {x: 3095, y: 2914}
   - name: TWind
     originalName: 
@@ -504,8 +592,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 3177
-      y: 995
+      x: 4234
+      y: 2131
       width: 668
       height: 667
     spriteID: b6b91235c387ff44d93bf29d5c5d2f87
@@ -516,7 +604,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 3177, y: 995}
+    uvTransform: {x: 4234, y: 2131}
     spritePosition: {x: 3094, y: 890}
   spriteImportData: []
   rigSpriteImportData: []
@@ -555,7 +643,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 59c751ed149629248804efc3b5ea7a02
     layerID: 35
-    mosaicPosition: {x: 2120, y: 4}
+    mosaicPosition: {x: 4, y: 2131}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -565,7 +653,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: a9fcb07c8ff3c244584554c2e2b8867b
     layerID: 34
-    mosaicPosition: {x: 4, y: 2122}
+    mosaicPosition: {x: 2127, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -575,7 +663,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 8330ed7a8a5f3b745ad9e7d1cafd4338
     layerID: 33
-    mosaicPosition: {x: 4, y: 3174}
+    mosaicPosition: {x: 3190, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -585,7 +673,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: deaa904bf0dc3254fbf46b48b296fcda
     layerID: 32
-    mosaicPosition: {x: 4, y: 4231}
+    mosaicPosition: {x: 4247, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -595,7 +683,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 930bc88e8299c2d47b5fb3215ca50bfa
     layerID: 31
-    mosaicPosition: {x: 4, y: 5286}
+    mosaicPosition: {x: 5302, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -605,7 +693,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 084e95fb1b2c0184399725724022f286
     layerID: 30
-    mosaicPosition: {x: 4, y: 7392}
+    mosaicPosition: {x: 2117, y: 2131}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -615,7 +703,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 2482611a8a2f7af448060e758dc022d6
     layerID: 29
-    mosaicPosition: {x: 1069, y: 2101}
+    mosaicPosition: {x: 6267, y: 1064}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -625,7 +713,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 91b07562ecc3d6340977d472efff9e65
     layerID: 28
-    mosaicPosition: {x: 1069, y: 1055}
+    mosaicPosition: {x: 5217, y: 1064}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -635,7 +723,47 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 6f345b72f8c9314448536d1446120d8e
     layerID: 48
-    mosaicPosition: {x: 1069, y: 3130}
+    mosaicPosition: {x: 7298, y: 1064}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Anker_TR
+    spriteName: Anker_TR
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ed6e98a3bcc1ec6438ed9116b09a270c
+    layerID: 104
+    mosaicPosition: {x: 4178, y: 1064}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Anker_QUEST
+    spriteName: Anker_QUEST
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 8f9e901761b8a304384545d02eebc5e9
+    layerID: 103
+    mosaicPosition: {x: 4, y: 1064}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 'Anker_LEER '
+    spriteName: 'Anker_LEER '
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d36f361824b915343804e25bbccc88d1
+    layerID: 102
+    mosaicPosition: {x: 1045, y: 1064}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Anker_ALL
+    spriteName: Anker_ALL
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e18fda6eddcf8b948973f90100741084
+    layerID: 101
+    mosaicPosition: {x: 2086, y: 1064}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -645,7 +773,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 669b389cf5371374499511d428a74c8a
     layerID: 81
-    mosaicPosition: {x: 1069, y: 5236}
+    mosaicPosition: {x: 7408, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -655,7 +783,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: d3f459ee7f8c56247b92242c9b06f766
     layerID: 80
-    mosaicPosition: {x: 1069, y: 6286}
+    mosaicPosition: {x: 856, y: 3122}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -675,7 +803,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 76defef3a66826148957a07b31691716
     layerID: 78
-    mosaicPosition: {x: 2120, y: 1869}
+    mosaicPosition: {x: 3174, y: 2131}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -685,7 +813,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: f8307b182c0f74f4bbc77d5c80340bf3
     layerID: 77
-    mosaicPosition: {x: 4, y: 1064}
+    mosaicPosition: {x: 1069, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -695,7 +823,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: dba1669d5c3fc7f469cca1e9d69ba6b1
     layerID: 62
-    mosaicPosition: {x: 2120, y: 995}
+    mosaicPosition: {x: 1060, y: 2131}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -705,7 +833,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 2145dfa84b7412c43aeccb433f41a68a
     layerID: 47
-    mosaicPosition: {x: 4, y: 6341}
+    mosaicPosition: {x: 6357, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -715,7 +843,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 629ed9c1b3e986a4d9fae84cb8d70547
     layerID: 46
-    mosaicPosition: {x: 1069, y: 4}
+    mosaicPosition: {x: 3127, y: 1064}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -725,7 +853,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 8177300bfe731004bb6ce55daa3f9e84
     layerID: 45
-    mosaicPosition: {x: 1069, y: 4183}
+    mosaicPosition: {x: 4, y: 3122}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -735,7 +863,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: b6b91235c387ff44d93bf29d5c5d2f87
     layerID: 27
-    mosaicPosition: {x: 3177, y: 995}
+    mosaicPosition: {x: 4234, y: 2131}
     flatten: 0
     isImported: 1
     isVisible: 1

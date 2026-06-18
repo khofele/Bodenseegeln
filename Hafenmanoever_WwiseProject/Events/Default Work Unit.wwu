@@ -1247,6 +1247,9 @@
 								<Event Name="phy_start_waterDisplacement" ID="{31B997D4-F878-4E1C-A256-7BF592BD04F2}">
 									<ChildrenList>
 										<Action Name="" ID="{93FE3ACC-F215-4CC7-96E0-58667615CDB4}" ShortID="142893108">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="BC_phy_waterDisplacement2" ID="{77326372-9316-40B5-B07D-91E0C7823585}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
@@ -1266,6 +1269,37 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="BC_phy_waterDisplacement2" ID="{77326372-9316-40B5-B07D-91E0C7823585}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_start_hullWaterMass" ID="{A2591F53-F25D-4CE4-AECB-CD5DC5413C31}">
+									<ChildrenList>
+										<Action Name="" ID="{E4A6A6A0-5115-4C92-B681-A25482F6AD4D}" ShortID="848214992">
+											<PropertyList>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_hullWaterMass_loop" ID="{7A891AA2-DC67-43BB-86A5-D5772C9724AD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_hullWaterMass" ID="{B99F45A0-91FC-45ED-8CF7-40A21EE3C93D}">
+									<ChildrenList>
+										<Action Name="" ID="{07657E7F-70C4-45B9-9CC1-7F400AC2DFA1}" ShortID="884426276">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_hullWaterMass_loop" ID="{7A891AA2-DC67-43BB-86A5-D5772C9724AD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

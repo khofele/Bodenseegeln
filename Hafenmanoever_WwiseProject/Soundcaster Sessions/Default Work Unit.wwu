@@ -30,20 +30,8 @@
 							<Position X="1" Y="5"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="phy_hullWaterMass_loop" ID="{0BD83BFA-0F5D-43F2-BDD5-B127BA5FE111}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<ObjectRef Name="BC_phy_hullWaterMass_loop" ID="{7A891AA2-DC67-43BB-86A5-D5772C9724AD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="2" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="phy_hullWaterMass_loop01" ID="{E4E736B8-C850-4B74-BC9D-C0F702E5CD9B}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-							<Position X="2" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="phy_hullWaterMassFast_loop" ID="{AD6F2940-1938-4219-9383-293B198061DC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-							<Position X="2" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="phy_hullWaterMassSlow_loop" ID="{715FE565-A242-4407-8BEC-44A5EBC7067E}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-							<Position X="2" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="BC_phy_boatWind" ID="{1B2C0453-D200-4CC2-804E-EBBFBE01A3B3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
@@ -52,6 +40,10 @@
 						<Module>
 							<ObjectRef Name="BC_phy_sailWind" ID="{02AFFAA9-BDD4-445A-884A-319706522A34}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="4"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="BC_boatSailDeploy" ID="{4BF484A1-5022-435D-8614-1C6542EA25DD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>

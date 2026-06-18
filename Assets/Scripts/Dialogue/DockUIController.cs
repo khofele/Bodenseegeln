@@ -5,6 +5,7 @@ using Dialogue;
 
 public class DockUIController : MonoBehaviour
 {
+    [Header("Sound")]
     [SerializeField] private MissionsFeedbackAudioController m_missionsFeedbackAudioController = null;  // Audio class reference
     [SerializeField] private EnvironmentAudioController m_environmentAudioController = null;  // Audio class reference
 
@@ -24,6 +25,8 @@ public class DockUIController : MonoBehaviour
     [SerializeField] private Button m_fuelButton = null;
     [SerializeField] private Button m_closeButton = null;
 
+    [SerializeField] private Image m_background = null;
+
     private DockInteraction m_currentDock = null;
     private BoatController m_currentBoat = null;
 
@@ -31,6 +34,8 @@ public class DockUIController : MonoBehaviour
     {
         m_currentDock = _dock;
         m_currentBoat = _dock.CurrentBoat.GetComponent<BoatController>();
+
+        m_background.sprite = _dock.DockBackgroundImage;
 
         m_repairCostText.gameObject.SetActive(false);
         m_fuelCostText.gameObject.SetActive(false);

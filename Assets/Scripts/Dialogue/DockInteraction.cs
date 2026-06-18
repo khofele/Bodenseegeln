@@ -26,6 +26,7 @@ public class DockInteraction : MonoBehaviour
     [SerializeField] private GameObject m_interactionIcon = null;
     [SerializeField] private GameObject m_dockUIPanel = null;
     [SerializeField] private DockUIController m_dockUIController = null;
+    [SerializeField] private Sprite m_DockBackground = null;
 
     [Header("Input")]
     [SerializeField] private InputActionReference m_interactAction = null;
@@ -35,6 +36,7 @@ public class DockInteraction : MonoBehaviour
     private bool m_lastInteractableState = false;
 
     internal Transform CurrentBoat => m_boatTransform;
+    internal Sprite DockBackgroundImage => m_DockBackground;
 
     private void OnEnable()
     {

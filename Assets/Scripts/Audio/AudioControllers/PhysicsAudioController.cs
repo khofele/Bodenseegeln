@@ -26,6 +26,9 @@ public class PhysicsAudioController : MonoBehaviour
     [SerializeField] private WwiseEvent m_waterDisplacementStartEvent = null;
     [SerializeField] private WwiseEvent m_waterDisplacementStopEvent = null;
 
+    [SerializeField] private WwiseEvent m_hullWaterMassStartEvent = null;
+    [SerializeField] private WwiseEvent m_hullWaterMassStopEvent = null;
+
     [Header("Wind Events")]
     [SerializeField] private WwiseEvent m_windForceBoatStartEvent = null;
     [SerializeField] private WwiseEvent m_windForceBoatStopEvent = null;
@@ -119,6 +122,8 @@ public class PhysicsAudioController : MonoBehaviour
 
         PlayEvent(m_waveMotionStartEvent, m_waveMotionEmitter);
 
+        PlayEvent(m_hullWaterMassStartEvent, m_hullWaterEmitter);
+
         m_isPhysicsAudioPlaying = true;
     }
 
@@ -138,6 +143,8 @@ public class PhysicsAudioController : MonoBehaviour
         PlayEvent(m_windForceSailStopEvent, m_sailWindEmitter);
 
         PlayEvent(m_waveMotionStopEvent, m_waveMotionEmitter);
+
+        PlayEvent(m_hullWaterMassStopEvent, m_hullWaterEmitter);
 
         m_isPhysicsAudioPlaying = false;
     }

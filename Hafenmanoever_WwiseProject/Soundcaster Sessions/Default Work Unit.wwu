@@ -101,6 +101,10 @@
 							<ObjectRef Name="amb_seagullSingle" ID="{C6D0AEB5-B5A5-4F30-83F7-3DEE0C2C4533}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="4" Y="0"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="3"/>
+						</Module>
 					</ModuleList>
 				</SoundcasterSession>
 			</ChildrenList>

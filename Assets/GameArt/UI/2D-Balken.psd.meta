@@ -88,7 +88,7 @@ ScriptedImporter:
       y: 0
       width: 0
       height: 0
-    spriteID: 6bc5b4cc5567ef642ab21f4b7ad0bfc9
+    spriteID: feaa3c1146bcd2546beb4bb83ce1fc91
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -100,7 +100,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   multiSpriteImportData: []
   layeredSpriteImportData:
-  - name: Muenzen
+  - name: "M\xFCnzenOutline"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -111,8 +111,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 1080
-      height: 217
-    spriteID: 5e14476d7a710bd42b85ef0a8cc22c44
+      height: 218
+    spriteID: bf7f9458fdc3c4648a1516b66d99b298
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -121,8 +121,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 0, y: 20}
-  - name: MuenzenHintergrund
+    spritePosition: {x: 0, y: 19}
+  - name: "M\xFCnzen"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -131,10 +131,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 229
+      y: 230
       width: 1080
-      height: 217
-    spriteID: 807a0c20ac8bb8340948cf13b1e9bb20
+      height: 218
+    spriteID: 5b68f9ac9520bbd409769a4bdfc5d574
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,8 +142,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 229}
-    spritePosition: {x: 0, y: 20}
+    uvTransform: {x: 4, y: 230}
+    spritePosition: {x: 0, y: 19}
   - name: Kompass
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -153,10 +153,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 454
-      width: 1080
-      height: 106
-    spriteID: c96cacda968fa564394bab76cdbde8f3
+      y: 456
+      width: 1074
+      height: 107
+    spriteID: 2069ab13aec9a514b8254fc5eba7f11f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -164,8 +164,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 454}
-    spritePosition: {x: 0, y: 89}
+    uvTransform: {x: 4, y: 456}
+    spritePosition: {x: 3, y: 81}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
@@ -197,23 +197,23 @@ ScriptedImporter:
   resliceFromLayer: 0
   pSDLayerImportSetting: []
   psdLayers:
-  - name: Muenzen
-    spriteName: Muenzen
+  - name: "M\xFCnzenOutline"
+    spriteName: "M\xFCnzenOutline"
     isGroup: 0
     parentIndex: -1
-    spriteID: 5e14476d7a710bd42b85ef0a8cc22c44
-    layerID: 8
+    spriteID: bf7f9458fdc3c4648a1516b66d99b298
+    layerID: 12
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: MuenzenHintergrund
-    spriteName: MuenzenHintergrund
+  - name: "M\xFCnzen"
+    spriteName: "M\xFCnzen"
     isGroup: 0
     parentIndex: -1
-    spriteID: 807a0c20ac8bb8340948cf13b1e9bb20
-    layerID: 6
-    mosaicPosition: {x: 4, y: 229}
+    spriteID: 5b68f9ac9520bbd409769a4bdfc5d574
+    layerID: 11
+    mosaicPosition: {x: 4, y: 230}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -221,9 +221,9 @@ ScriptedImporter:
     spriteName: Kompass
     isGroup: 0
     parentIndex: -1
-    spriteID: c96cacda968fa564394bab76cdbde8f3
-    layerID: 5
-    mosaicPosition: {x: 4, y: 454}
+    spriteID: 2069ab13aec9a514b8254fc5eba7f11f
+    layerID: 14
+    mosaicPosition: {x: 4, y: 456}
     flatten: 0
     isImported: 1
     isVisible: 1

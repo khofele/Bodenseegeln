@@ -108,7 +108,7 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 2098
+      x: 2120
       y: 4
       width: 1048
       height: 983
@@ -120,7 +120,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 2098, y: 4}
+    uvTransform: {x: 2120, y: 4}
     spritePosition: {x: 8, y: 1171}
   - name: Segelmodus
     originalName: 
@@ -131,7 +131,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 2122
       width: 1055
       height: 1044
     spriteID: a9fcb07c8ff3c244584554c2e2b8867b
@@ -142,7 +142,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 2122}
     spritePosition: {x: 2040, y: 1079}
   - name: Navrad
     originalName: 
@@ -153,7 +153,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1056
+      y: 3174
       width: 1049
       height: 1049
     spriteID: 8330ed7a8a5f3b745ad9e7d1cafd4338
@@ -164,7 +164,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 1056}
+    uvTransform: {x: 4, y: 3174}
     spritePosition: {x: 2213, y: 0}
   - name: "M\xFCnze"
     originalName: 
@@ -175,7 +175,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 2113
+      y: 4231
       width: 1047
       height: 1047
     spriteID: deaa904bf0dc3254fbf46b48b296fcda
@@ -186,7 +186,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 2113}
+    uvTransform: {x: 4, y: 4231}
     spritePosition: {x: 1123, y: 0}
   - name: Motormodus
     originalName: 
@@ -197,7 +197,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 3168
+      y: 5286
       width: 1047
       height: 1047
     spriteID: 930bc88e8299c2d47b5fb3215ca50bfa
@@ -208,7 +208,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 3168}
+    uvTransform: {x: 4, y: 5286}
     spritePosition: {x: 8, y: 0}
   - name: Geld
     originalName: 
@@ -219,7 +219,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 7371
+      y: 7392
       width: 1049
       height: 621
     spriteID: 084e95fb1b2c0184399725724022f286
@@ -230,7 +230,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 7371}
+    uvTransform: {x: 4, y: 7392}
     spritePosition: {x: 0, y: 2209}
   - name: FWind
     originalName: 
@@ -240,8 +240,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 1067
-      y: 4
+      x: 1069
+      y: 2101
       width: 1023
       height: 1021
     spriteID: 2482611a8a2f7af448060e758dc022d6
@@ -252,7 +252,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1067, y: 4}
+    uvTransform: {x: 1069, y: 2101}
     spritePosition: {x: 2916, y: 536}
   - name: Werkzeug
     originalName: 
@@ -262,8 +262,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 6325
+      x: 1069
+      y: 1055
       width: 1042
       height: 1038
     spriteID: 91b07562ecc3d6340977d472efff9e65
@@ -274,7 +274,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 6325}
+    uvTransform: {x: 1069, y: 1055}
     spritePosition: {x: 1055, y: 1171}
   - name: WarnleuchteAN
     originalName: 
@@ -284,8 +284,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 2098
-      y: 1869
+      x: 1069
+      y: 3130
       width: 844
       height: 1045
     spriteID: 6f345b72f8c9314448536d1446120d8e
@@ -296,8 +296,118 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 2098, y: 1869}
+    uvTransform: {x: 1069, y: 3130}
     spritePosition: {x: 2213, y: 2914}
+  - name: Hauptsegel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1069
+      y: 5236
+      width: 633
+      height: 1042
+    spriteID: 669b389cf5371374499511d428a74c8a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1069, y: 5236}
+    spritePosition: {x: 3306, y: 19}
+  - name: Vorsegel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1069
+      y: 6286
+      width: 629
+      height: 1034
+    spriteID: d3f459ee7f8c56247b92242c9b06f766
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1069, y: 6286}
+    spritePosition: {x: 3310, y: 19}
+  - name: Steuerrad
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1057
+      height: 1052
+    spriteID: 0370a4cd95585d746995af1c67c64f1a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 2037, y: 1936}
+  - name: MapIcon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2120
+      y: 1869
+      width: 1052
+      height: 579
+    spriteID: 76defef3a66826148957a07b31691716
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2120, y: 1869}
+    spritePosition: {x: 1161, y: 2251}
+  - name: KnopfleuchteWarn
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1064
+      width: 1050
+      height: 1050
+    spriteID: f8307b182c0f74f4bbc77d5c80340bf3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1064}
+    spritePosition: {x: 1123, y: 2907}
   - name: Fender
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -306,7 +416,7 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 2098
+      x: 2120
       y: 995
       width: 1049
       height: 866
@@ -318,7 +428,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 2098, y: 995}
+    uvTransform: {x: 2120, y: 995}
     spritePosition: {x: 2839, y: 1802}
   - name: KnopfleuchteAUS
     originalName: 
@@ -329,7 +439,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4223
+      y: 6341
       width: 1043
       height: 1043
     spriteID: 2145dfa84b7412c43aeccb433f41a68a
@@ -340,7 +450,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4223}
+    uvTransform: {x: 4, y: 6341}
     spritePosition: {x: 1123, y: 2914}
   - name: KnopfleuchteAN
     originalName: 
@@ -350,8 +460,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 5274
+      x: 1069
+      y: 4
       width: 1043
       height: 1043
     spriteID: 629ed9c1b3e986a4d9fae84cb8d70547
@@ -362,7 +472,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 5274}
+    uvTransform: {x: 1069, y: 4}
     spritePosition: {x: 80, y: 2914}
   - name: WarnleuchteAUS
     originalName: 
@@ -372,8 +482,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 2098
-      y: 2922
+      x: 1069
+      y: 4183
       width: 844
       height: 1045
     spriteID: 8177300bfe731004bb6ce55daa3f9e84
@@ -384,7 +494,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 2098, y: 2922}
+    uvTransform: {x: 1069, y: 4183}
     spritePosition: {x: 3095, y: 2914}
   - name: TWind
     originalName: 
@@ -394,8 +504,8 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 3154
-      y: 4
+      x: 3177
+      y: 995
       width: 668
       height: 667
     spriteID: b6b91235c387ff44d93bf29d5c5d2f87
@@ -406,7 +516,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 3154, y: 4}
+    uvTransform: {x: 3177, y: 995}
     spritePosition: {x: 3094, y: 890}
   spriteImportData: []
   rigSpriteImportData: []
@@ -445,7 +555,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 59c751ed149629248804efc3b5ea7a02
     layerID: 35
-    mosaicPosition: {x: 2098, y: 4}
+    mosaicPosition: {x: 2120, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -455,7 +565,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: a9fcb07c8ff3c244584554c2e2b8867b
     layerID: 34
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 4, y: 2122}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -465,7 +575,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 8330ed7a8a5f3b745ad9e7d1cafd4338
     layerID: 33
-    mosaicPosition: {x: 4, y: 1056}
+    mosaicPosition: {x: 4, y: 3174}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -475,7 +585,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: deaa904bf0dc3254fbf46b48b296fcda
     layerID: 32
-    mosaicPosition: {x: 4, y: 2113}
+    mosaicPosition: {x: 4, y: 4231}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -485,7 +595,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 930bc88e8299c2d47b5fb3215ca50bfa
     layerID: 31
-    mosaicPosition: {x: 4, y: 3168}
+    mosaicPosition: {x: 4, y: 5286}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -495,7 +605,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 084e95fb1b2c0184399725724022f286
     layerID: 30
-    mosaicPosition: {x: 4, y: 7371}
+    mosaicPosition: {x: 4, y: 7392}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -505,7 +615,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 2482611a8a2f7af448060e758dc022d6
     layerID: 29
-    mosaicPosition: {x: 1067, y: 4}
+    mosaicPosition: {x: 1069, y: 2101}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -515,7 +625,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 91b07562ecc3d6340977d472efff9e65
     layerID: 28
-    mosaicPosition: {x: 4, y: 6325}
+    mosaicPosition: {x: 1069, y: 1055}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -525,7 +635,57 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 6f345b72f8c9314448536d1446120d8e
     layerID: 48
-    mosaicPosition: {x: 2098, y: 1869}
+    mosaicPosition: {x: 1069, y: 3130}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Hauptsegel
+    spriteName: Hauptsegel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 669b389cf5371374499511d428a74c8a
+    layerID: 81
+    mosaicPosition: {x: 1069, y: 5236}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Vorsegel
+    spriteName: Vorsegel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d3f459ee7f8c56247b92242c9b06f766
+    layerID: 80
+    mosaicPosition: {x: 1069, y: 6286}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Steuerrad
+    spriteName: Steuerrad
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0370a4cd95585d746995af1c67c64f1a
+    layerID: 79
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: MapIcon
+    spriteName: MapIcon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 76defef3a66826148957a07b31691716
+    layerID: 78
+    mosaicPosition: {x: 2120, y: 1869}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: KnopfleuchteWarn
+    spriteName: KnopfleuchteWarn
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f8307b182c0f74f4bbc77d5c80340bf3
+    layerID: 77
+    mosaicPosition: {x: 4, y: 1064}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -535,7 +695,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: dba1669d5c3fc7f469cca1e9d69ba6b1
     layerID: 62
-    mosaicPosition: {x: 2098, y: 995}
+    mosaicPosition: {x: 2120, y: 995}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -545,7 +705,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 2145dfa84b7412c43aeccb433f41a68a
     layerID: 47
-    mosaicPosition: {x: 4, y: 4223}
+    mosaicPosition: {x: 4, y: 6341}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -555,7 +715,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 629ed9c1b3e986a4d9fae84cb8d70547
     layerID: 46
-    mosaicPosition: {x: 4, y: 5274}
+    mosaicPosition: {x: 1069, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -565,7 +725,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 8177300bfe731004bb6ce55daa3f9e84
     layerID: 45
-    mosaicPosition: {x: 2098, y: 2922}
+    mosaicPosition: {x: 1069, y: 4183}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -575,7 +735,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: b6b91235c387ff44d93bf29d5c5d2f87
     layerID: 27
-    mosaicPosition: {x: 3154, y: 4}
+    mosaicPosition: {x: 3177, y: 995}
     flatten: 0
     isImported: 1
     isVisible: 1

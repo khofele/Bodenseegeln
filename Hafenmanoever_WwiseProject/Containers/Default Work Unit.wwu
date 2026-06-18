@@ -5857,9 +5857,14 @@
 										<Sound Name="amb_harborBase_loop" ID="{5E98A2FD-1BBA-46B3-AEB8-BB35210198DF}" ShortID="842901814">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>10</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>-8</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -5888,6 +5893,17 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{698ED484-B769-4797-BDC3-9837F9069B53}" ShortID="657105103">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="AmbHarborBase_EQ" ID="{56B3B5B8-6620-4BB4-8808-4066950FB042}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="amb_harborBase_loop" ID="{BF5FC232-A5F3-40BD-9703-DD262E635EC3}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -5895,9 +5911,14 @@
 										<Sound Name="amb_harborLindau_loop" ID="{6513B033-D865-4C8A-B9A1-403492B0F3F3}" ShortID="55085176">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>10</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>-6</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -5926,6 +5947,20 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{6D846C28-FAB5-4A08-8AB3-02FD49FDC36A}" ShortID="283721050">
+														<PropertyList>
+															<Property Name="Bypass" Type="bool" Value="True"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="AmbHarborLindau_EQ" ID="{2A564810-C64E-4DDE-97A2-65FFA53604AF}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="amb_harborLindau_loop" ID="{A3F1E61B-DFE5-402B-9981-DF6E1F426897}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -5933,9 +5968,14 @@
 										<Sound Name="amb_harborBregenz_loop" ID="{9EA97F37-5FEF-4D2A-B734-0906C4457EED}" ShortID="486710268">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="Volume" Type="Real64">
+												<Property Name="Lowpass" Type="int16">
 													<ValueList>
 														<Value>5</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -5964,6 +6004,17 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{A8F18DFD-0A03-4C29-A18F-9F889F235A95}" ShortID="848948743">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="AmbHarborBregenz_EQ" ID="{3596D200-6971-494C-9DD8-F84D4241AE74}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="amb_harborBregenz_loop" ID="{8A273E4C-68C7-4D2B-8105-07B7538D6FE2}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -6222,6 +6273,11 @@
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -6350,12 +6406,17 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="RC_amb_coast_loop" ID="{B9380C2B-9015-4819-B16C-735F9AB85683}" ShortID="447872338">
 											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>10</Value>
+													</ValueList>
+												</Property>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>-5</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -6501,6 +6562,17 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{AC3F9E8F-0EFE-4A5B-902B-CC3E3F0C7780}" ShortID="361862880">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="AmbCoastLoop_EQ" ID="{F0019100-B07C-494C-B707-3879F100E6B5}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
@@ -6523,7 +6595,7 @@
 										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-8</Value>
+												<Value>-20</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -8656,7 +8728,7 @@
 											<PropertyList>
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
-														<Value>20</Value>
+														<Value>30</Value>
 													</ValueList>
 												</Property>
 												<Property Name="MakeUpGain" Type="Real64">

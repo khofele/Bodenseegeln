@@ -34,6 +34,7 @@ namespace AK
         static const AkUniqueID AMB_STOP_HARBORLOCHAU = 2951909939U;
         static const AkUniqueID AMB_STOP_SEAGULLS = 2209190525U;
         static const AkUniqueID AMB_STOP_WATERMOVEMENT = 451382329U;
+        static const AkUniqueID AUDIO_STOPALL = 2066868933U;
         static const AkUniqueID BOAT_ENGINESTART = 1385959304U;
         static const AkUniqueID BOAT_ENGINESTARTKEY = 480691325U;
         static const AkUniqueID BOAT_ENGINESTOP = 1816964564U;
@@ -88,6 +89,7 @@ namespace AK
         static const AkUniqueID MISSION_STOP_VOICELINESNPC = 2630645085U;
         static const AkUniqueID MISSION_VOICELINENPC = 138821493U;
         static const AkUniqueID PHY_START_BOWWATER = 2610887575U;
+        static const AkUniqueID PHY_START_HULLWATERMASS = 2003549576U;
         static const AkUniqueID PHY_START_SAILWIND = 3002731379U;
         static const AkUniqueID PHY_START_WAKEWATER = 1373022075U;
         static const AkUniqueID PHY_START_WATERDISPLACEMENT = 2223292318U;
@@ -96,6 +98,7 @@ namespace AK
         static const AkUniqueID PHY_START_WINDFORCEBOAT = 2742153359U;
         static const AkUniqueID PHY_START_WINDFORCESAIL = 1834823086U;
         static const AkUniqueID PHY_STOP_BOWWATER = 1257340305U;
+        static const AkUniqueID PHY_STOP_HULLWATERMASS = 920546170U;
         static const AkUniqueID PHY_STOP_SAILWIND = 4258852485U;
         static const AkUniqueID PHY_STOP_WAKEWATER = 3538696357U;
         static const AkUniqueID PHY_STOP_WATERDISPLACEMENT = 494378860U;

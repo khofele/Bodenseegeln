@@ -19,6 +19,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	691410714	amb_stop_garage			\Default Work Unit\Atmosphere\Garage\amb_stop_garage	
 	765304779	boat_engineWaterStart			\Default Work Unit\Boat\BoatEngine\boat_engineWaterStart	
 	825025977	phy_stop_waveMotion			\Default Work Unit\Physics\PhyWave\phy_stop_waveMotion	
+	920546170	phy_stop_hullWaterMass			\Default Work Unit\Physics\PhyWater\phy_stop_hullWaterMass	
 	982625243	menu_navigateFromGameToPause			\Default Work Unit\Menu\Navigate\menu_navigateFromGameToPause	
 	1027056524	menu_navigateStartGame			\Default Work Unit\Menu\Navigate\menu_navigateStartGame	
 	1027735037	mission_moneyGain			\Default Work Unit\MissionsFeedback\MissionMoney\mission_moneyGain	
@@ -37,6 +38,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	1816964564	boat_engineStop			\Default Work Unit\Boat\BoatEngine\boat_engineStop	
 	1834823086	phy_start_windForceSail			\Default Work Unit\Physics\PhyWind\phy_start_windForceSail	
 	1943462500	mission_moneySpend			\Default Work Unit\MissionsFeedback\MissionMoney\mission_moneySpend	
+	2003549576	phy_start_hullWaterMass			\Default Work Unit\Physics\PhyWater\phy_start_hullWaterMass	
+	2066868933	audio_stopAll			\Default Work Unit\audio_stopAll	
 	2067240745	mission_boatDamage			\Default Work Unit\MissionsFeedback\MissionVarious\mission_boatDamage	
 	2069355313	amb_start_coast			\Default Work Unit\Atmosphere\Coast\amb_start_coast	
 	2177072159	boat_stop_sailFlap			\Default Work Unit\Boat\BoatSail\boat_stop_sailFlap	
@@ -103,6 +106,7 @@ Effect plug-ins	ID	Name	Type				Notes
 	356809036	PhySailmastWhistleLayer_EQ	Wwise Parametric EQ			
 	466641577	MissionMoneyPurse_EQ	Wwise Parametric EQ			
 	505580613	MissionFastMovement_EQ	Wwise Parametric EQ			
+	549850202	AmbCoastLoop_EQ	Wwise Parametric EQ			
 	643163731	EnvBoatCollisionLightImpact_EQ	Wwise Parametric EQ			
 	714720157	MissionGoalFail_EQ	Wwise Parametric EQ			
 	729156053	BoatThottleMove_EQ	Wwise Parametric EQ			
@@ -112,6 +116,8 @@ Effect plug-ins	ID	Name	Type				Notes
 	938130917	AmbSeagulls_PitchShifter	Wwise Pitch Shifter			
 	972692614	PhyWindGust_EQ	Wwise Parametric EQ			
 	1075951946	MissionFail_EQ	Wwise Parametric EQ			
+	1095648787	AmbDetailsPeople_EQ	Wwise Parametric EQ			
+	1222257961	AmbDetailsWater_EQ	Wwise Parametric EQ			
 	1300983745	PhyWaterDisplacementSlowLayer_EQ	Wwise Parametric EQ			
 	1366171813	PhyWakeWaterTexture_EQ	Wwise Parametric EQ			
 	1413546197	EnvMapOpen_EQ	Wwise Parametric EQ			
@@ -121,13 +127,17 @@ Effect plug-ins	ID	Name	Type				Notes
 	1559769808	BoatSailFlapLoop_EQ	Wwise Parametric EQ			
 	1562427635	MissionMoneyGain_EQ	Wwise Parametric EQ			
 	1628925396	BoatSailRetract_EQ	Wwise Parametric EQ			
+	1636663073	AmbHarborLindau_EQ	Wwise Parametric EQ			
 	1741208498	BoatEngine_EQ	Wwise Parametric EQ			
+	1868019210	AmbDetailsPeople	Wwise Compressor			
 	1946030473	EnvBoatRubDockSqueak_EQ	Wwise Parametric EQ			
 	1947999602	MissionAccept_EQ	Wwise Parametric EQ			
 	2008789532	EnvBoatRubDockSqueak_Compressor	Wwise Compressor			
 	2056871213	PhyWaterDisplacementFast_EQ	Wwise Parametric EQ			
 	2108454903	BoatEngine_Compressor	Wwise Compressor			
+	2211027728	AmbCoastDetails_EQ	Wwise Parametric EQ			
 	2308774273	EnvBoatCollisionHeavyImpact_Compressor	Wwise Compressor			
+	2410692955	AmbHarborBregenz_EQ	Wwise Parametric EQ			
 	2430649832	PhyWaveHull_Compressor	Wwise Compressor			
 	2460955720	EnvBoatCollisionHeavyImpact_EQ	Wwise Parametric EQ			
 	2480037935	MissionGoalReached_EQ	Wwise Parametric EQ			
@@ -144,6 +154,7 @@ Effect plug-ins	ID	Name	Type				Notes
 	3322201621	MissionComplete_EQ	Wwise Parametric EQ			
 	3381724447	EnvBoatRubDockBody_EQ	Wwise Parametric EQ			
 	3395609570	MissionMoneySpend_EQ	Wwise Parametric EQ			
+	3446097163	AmbHarborBase_EQ	Wwise Parametric EQ			
 	3467061892	PhyBowWaterBody_EQ	Wwise Parametric EQ			
 	3541909083	PhyWindForceSail_EQ	Wwise Parametric EQ			
 	3558546510	BoatSailDeploy_EQ	Wwise Parametric EQ			
@@ -161,7 +172,7 @@ Effect plug-ins	ID	Name	Type				Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	5240439	env_boatRubDockSqueak_loop00	.cache\A0\{A060EA67-D218-F906-A686-F8722FFA8966}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvDock\BC_env_boatRubDock_loop\RC_env_boatRubDockSqueak_loop\env_boatRubDockSqueak_loop00		2424096
 	9322132	amb_detailsWater_loop03	.cache\84\{8450F875-91CF-6D4A-08B9-C49CF618F04F}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbDetails\RC_amb_detailsWater_loop\amb_detailsWater_loop03		4608096
-	18260256	env_boatDockImpact00	.cache\21\{21D1A4E9-67D9-ABF5-EB44-44A7ED2B2ACC}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvDock\env_boatDockImpact\env_boatDockImpact00		288096
+	18260256	env_boatDockImpact00	.cache\DC\{DC7DA8C9-B565-5CF5-7C60-2F104F4D0727}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvDock\env_boatDockImpact\env_boatDockImpact00		173068
 	21220894	env_refuelMetalKlick01	.cache\B5\{B51B0361-D0A8-4B60-B56D-D9539AAE407E}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvRefuel\SC_env_refuel\RC_env_refuelMetalClick\env_refuelMetalKlick01		43540
 	21637812	mission_voiceLinesNpc00	.cache\DC\{DC823043-30B8-989F-E63D-F3F6F5BD9531}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionVoiceLinesNpc\RC_mission_voiceLinesNpc\mission_voiceLinesNpc00		30096
 	21747592	env_collisionLightImpact1	.cache\7B\{7BE84817-8A64-BEFE-C9FA-C1FB125A1085}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\BC_envcollisionLightImpact\env_collisionLightImpact1\env_collisionLightImpact1		37096
@@ -195,7 +206,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	147595912	amb_detailsWater_loop01	.cache\CA\{CA7D54F7-EAC6-E5E7-6DB0-F37CC729F8F2}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbDetails\RC_amb_detailsWater_loop\amb_detailsWater_loop01		2016096
 	149563202	phy_windGustSilence_02	.cache\C6\{C6E82C78-FF37-8EF2-D824-E39C5E0DB4D7}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_sailWind\RC_phy_windGust\phy_windGustSilence_02		576096
 	160547032	env_refuel01	.cache\57\{573BB756-4844-2A80-28C5-B7548FB69A3D}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvRefuel\SC_env_refuel\RC_env_refuel\env_refuel01		287492
-	161588037	env_boatDockImpact02	.cache\8E\{8E60A58A-6D38-B3D0-9BCB-BB13243BC1F6}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvDock\env_boatDockImpact\env_boatDockImpact02		282096
+	161588037	env_boatDockImpact02	.cache\CE\{CE472F1E-BC89-D0EB-2D54-2B1CEC4D5DB4}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvDock\env_boatDockImpact\env_boatDockImpact02		154364
 	168246796	env_openMap	.cache\59\{59F2FAAC-B075-EF04-3C24-274F7A989DEB}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvMap\env_openMap		179996
 	170606269	amb_detailsPeople_loop04	.cache\32\{322328CD-279C-A137-A9AA-6C3E851F6EEF}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbDetails\RC_amb_detailsPeople_loop\amb_detailsPeople_loop04		1536096
 	172241338	boat_sailFlutter_short00	.cache\3F\{3F951D18-7C5C-9337-46E1-E929E1825B89}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState_01\RC_phy_sailFlutter\boat_sailFlutter_short00		114096
@@ -244,6 +255,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	513623100	mission_fastMovement	.cache\94\{9490A76B-FA1E-6BCE-8FB7-DAE3DA92201B}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_fastMovement		329240
 	516368251	amb_seagullSingle3	.cache\13\{13F5DDB3-4D67-4F15-DB31-6ED2B121EC48}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbSeagulls\amb_seagullSingle\amb_seagullSingle3		242644
 	517390698	phy_windGustSilence_03	.cache\D4\{D4589EA6-C12A-63A8-0B0E-914306CC91B9}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_sailWind\RC_phy_windGust\phy_windGustSilence_03		768096
+	519589814	phy_hullWaterMassSlow_loop	.cache\20\{2064E92E-7F65-9E73-DF10-88470B671517}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\PhyHullWaterMass\BC_phy_hullWaterMass_loop\phy_hullWaterMassSlow_loop		2304144
 	527075343	env_collisionLightImpact2	.cache\6F\{6F201366-A95C-6B5C-A1DD-B594448AA5F5}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\BC_envcollisionLightImpact\env_collisionLightImpact2\env_collisionLightImpact2		103816
 	530543392	phy_wakeWaterTexture_loop03	.cache\AB\{AB7F1674-9C4F-A8E1-B0EB-2C46736F818B}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\BC_phy_wakeWater\RC_phywakeWaterTexture_loop\phy_wakeWaterTexture_loop03		493472
 	532928830	env_collisionLightWater	.cache\E4\{E48B2B48-572A-EBB6-F45F-1B58E77FBE4C}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\BC_envcollisionLightImpact\env_collisionLightWater		231496
@@ -287,7 +299,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	875602288	env_collisionHeavyImpact4	.cache\80\{8028B093-E891-CA30-7B3E-1E1F6E4DAF31}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionHeavy\BC_envcollisionHeavyImpact\env_collisionHeavyImpact2\env_collisionHeavyImpact4		40628
 	881217249	mission_goalReached	.cache\5E\{5EFE8DD5-3D34-262F-D9C7-54F843DAB6C2}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionStates\mission_goalReached		329240
 	887624249	menu_openPause	.cache\D4\{D455A0D2-7B64-9D0F-C967-90BE92D37B07}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_openPause\menu_openPause		75200
-	892610112	env_boatDockImpact01	.cache\9F\{9FC01D72-5756-B7E2-8018-66F2B646AB4B}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvDock\env_boatDockImpact\env_boatDockImpact01		282096
+	892610112	env_boatDockImpact01	.cache\B4\{B43B0906-E1DE-F479-413B-406233B3C44E}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvDock\env_boatDockImpact\env_boatDockImpact01		162344
 	897107714	amb_detailsWater_loop00	.cache\CA\{CA7D54F7-EAC6-E5E7-6DB0-F37CC729F8F2}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbDetails\RC_amb_detailsWater_loop\amb_detailsWater_loop00		2016096
 	912214685	amb_coast_loop03	.cache\BB\{BBDFA3E1-3FAE-E65C-C01B-206CFABA552D}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbCoast\RC_amb_coast_loop\amb_coast_loop03		2304096
 	917875236	env_boatRepair	.cache\4B\{4B9BC97A-84E0-4B11-3AE5-C67FD94061EB}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatRepair\env_boatRepair		483476
@@ -298,9 +310,11 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	938990566	env_refuel00	.cache\83\{83520AF0-6682-1DEF-122A-8D47BA3D6B84}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvRefuel\SC_env_refuel\RC_env_refuel\env_refuel00		288324
 	951198972	boat_creaking_loop4	.cache\3D\{3D98B127-85EB-437D-F612-64590D122593}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatCreakingLoop\BoatCreaking\boat_creaking_loop4		573444
 	960498017	boat_sailFlutter_short02	.cache\82\{82E3E2C6-99EC-1D21-5D05-C074B62355A3}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState_01\RC_phy_sailFlutter\boat_sailFlutter_short02		96096
+	964134678	phy_hullWaterMassFast_loop	.cache\1B\{1B5DBA12-3222-5145-01F7-60C6D24759B3}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\PhyHullWaterMass\BC_phy_hullWaterMass_loop\phy_hullWaterMassFast_loop		2304144
 	983138526	boat_sailRetractImpact	.cache\D0\{D0F1EEE4-F8E3-3100-0151-682D018246CA}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailRetract\boat_sailRetractImpact		144572
 	984283490	boat_engineForward_loop	.cache\1C\{1C3CC3F6-6ACE-4540-C98F-20263B23EB1A}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\BoatEngineLoops\BC_boatEngine_ThrottleBlend\boat_engineForward_loop		3395844
 	994528532	phy_bowWater_loop	.cache\61\{61E642B8-8F77-6D5C-F1BE-C8756EC69128}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\PhyBowWater\BC_phy_bowWater2\phy_bowWater_loop		2922928
+	998544714	phy_hullWaterMass_loop	.cache\9D\{9D5EC416-1B18-1932-BA35-45859254584C}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\PhyHullWaterMass\BC_phy_hullWaterMass_loop\phy_hullWaterMass_loop		2766144
 	1005202156	menu_openMain	.cache\C3\{C3693EEA-3C7A-BAF2-DCD4-EBDF552BBF6F}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_openMain\menu_openMain		64192
 	1012251454	mission_voiceLinesNpc02	.cache\8D\{8D580271-F936-5319-715E-E966073EA862}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionVoiceLinesNpc\RC_mission_voiceLinesNpc\mission_voiceLinesNpc02		30096
 	1013696341	mission_voiceLinesNpc01	.cache\AF\{AF73C1F1-BD40-1191-CF72-6E9F735DE02C}.wem		\Containers\Default Work Unit\Sounds\MissionsFeedback\MissionVoiceLinesNpc\RC_mission_voiceLinesNpc\mission_voiceLinesNpc01		24096

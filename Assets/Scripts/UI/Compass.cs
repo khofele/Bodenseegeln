@@ -22,7 +22,7 @@ public class Compass : MonoBehaviour
     [Header("Boat Direction")]
     [SerializeField] private Image m_boatDirectionIcon;
 
-    private float m_maxDiatance = 2000f; //doesnt need this, but better to have it for scaling icons -> so just set it to cover entire map
+    private float m_maxDiatance = 2000f; //doesnt need this for deactivating an icon, but better to have it for scaling icons -> so just set it to cover entire map
 
     private List<CompassTargetBase> m_targets = new List<CompassTargetBase>();
 
@@ -57,6 +57,8 @@ public class Compass : MonoBehaviour
         m_compassImage.uvRect = new Rect(m_cameraTransform.localEulerAngles.y / 360f, 0f, 1f, 1f);
     }
 
+
+    //create and place icons for quests and dialogues on compass and scale them according to distance to player
     private void UpdateTargets()
     {
         for (int i = 0; i < m_targets.Count; i++)
@@ -91,7 +93,7 @@ public class Compass : MonoBehaviour
 
             _target.Image.rectTransform.anchoredPosition = GetPos(_target);
 
-            //scale based distance
+            //scale based distance -> smaler icon by higher distance and bigger by smaler distance
             Vector2 _boatPos = new Vector2(m_cameraTransform.position.x, m_cameraTransform.position.z);
             float _distance = Vector2.Distance(_boatPos, _target.GetPosition());
             float _scale = 0f;
@@ -105,6 +107,7 @@ public class Compass : MonoBehaviour
         }
     }
 
+    //change the icon to the correct sprite according to quest/NPC state
     private void UpdateTargetIcon(CompassTargetBase _target)
     {
         QuestInteraction _quest = _target as QuestInteraction;
@@ -140,6 +143,7 @@ public class Compass : MonoBehaviour
         _target.Image.sprite = _target.GetIcon();
     }
 
+    //place and update the position of the icon that indicates where the boat is heading to
     private void UpdateBoatDirectionIcon()
     {
         if (m_boatDirectionIcon == null)
@@ -180,6 +184,7 @@ public class Compass : MonoBehaviour
         return new Vector2(m_compassUnit * _angle, 0f);
     }
 
+    //targets register themselfs when they are created
     public void Register(CompassTargetBase _target)
     {
         if (_target == null)

@@ -2,10 +2,11 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
-using Quest;
 
 public class NotificationTextUI : MonoBehaviour
 {
+    //short notifiction text that is visible for a short amount of time
+
     [Header("Root")]
     [SerializeField] private GameObject m_root;
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class CompassTargetBase : MonoBehaviour
+public abstract class CompassTargetBase : MonoBehaviour //parent class for all scripts that are components on objects that should be visulized on the compass
 {
     [Header("Compass")]
     [SerializeField] private Sprite m_iconOverride;

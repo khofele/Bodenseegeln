@@ -12,6 +12,7 @@ namespace MapUI
 {
     public class MapUIController : MonoBehaviour
     {
+        [Header("Audio References")]
         [SerializeField] private EnvironmentAudioController m_environmentAudioController = null;  // Audio class reference
 
         [Header("Input")]
@@ -71,7 +72,7 @@ namespace MapUI
 
             GameManager.Instance.SetState(GameStates.PAUSED);
             m_root.SetActive(true);
-            m_environmentAudioController.PlayOpenMap(); // Play Audio Open map
+            m_environmentAudioController.PlayOpenMap(); //Audio play open map sound
 
             RefreshMap();
         }
@@ -82,7 +83,7 @@ namespace MapUI
 
             m_root.SetActive(false);
             GameManager.Instance?.SetState(m_previousState);
-            m_environmentAudioController.PlayCloseMap(); // Play Audio Open Map
+            m_environmentAudioController.PlayCloseMap(); //Audio play close map sound
         }
 
         private void RefreshMap()
@@ -108,6 +109,7 @@ namespace MapUI
             }
         }
 
+        //place and rotate boat icon correctly on map according to worldposition of the boat
         private void UpdateBoatIcon()
         {
             if (m_boatTransform == null)
@@ -153,14 +155,12 @@ namespace MapUI
 
                 _rect.anchoredPosition = WorldToMapPosition(_dock.transform.position);
 
-                //Debug.Log($"[MAP] {_dock.name}, world={_dock.transform.position}, map={WorldToMapPosition(_dock.transform.position)}");
-
                 MapDockIconUI _dockUI = _icon.GetComponent<MapDockIconUI>();
 
                 m_dockIcons.Add(_dock, _dockUI);
                 _dockUI.SetFuelVisible(true); //currently is always true, because in current game docks always have refuel mechanic -> could be changed in future
                 _dockUI.SetRepairVisible(true); //currently is always true, because in current game docks always have repair mechanic -> could be changed in future
-                _dockUI.SetQuestVisible(false); //set later when quest is close to dock
+                _dockUI.SetQuestVisible(false); //set when quest is close to dock
             }
         }
 

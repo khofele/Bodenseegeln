@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//little script for Icons above docks and quests and NPCs to make it face the camera
 public class Billboard : MonoBehaviour
 {
     private Transform m_cam;

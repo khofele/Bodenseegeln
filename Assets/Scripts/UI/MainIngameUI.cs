@@ -86,9 +86,6 @@ public class MainIngameUI : MonoBehaviour
     private bool m_isWaitingForDamageBar;
     private float m_damageTimer;
 
-    //DEBUG: ONLY for testing damage
-    private float m_takeDamageDelay = 10f;
-    private float m_getHealthDelay = 20f;
 
     private void OnEnable()
     {
@@ -121,24 +118,11 @@ public class MainIngameUI : MonoBehaviour
         UpdateCharInfo();
         UpdateStatusIndicators();
         UpdateSailingPositions();
-
-        /////////////////////////////////
-        //DEBUG: ONLY for testing Damage!
-        //m_takeDamageDelay -= Time.deltaTime;
-        //m_getHealthDelay -= Time.deltaTime;
-        //if (m_takeDamageDelay <= 0f)
-        //{
-        //    m_boatTransform.GetComponent<BoatController>().CurrentHealth -= 20f;
-        //    m_takeDamageDelay = 20f;
-        //}
-        //if (m_getHealthDelay <= 0f)
-        //{
-        //    m_boatTransform.GetComponent<BoatController>().CurrentHealth = m_boatTransform.GetComponent<BoatController>().MaxHealth;
-        //    m_getHealthDelay = 50f;
-        //}
-        /////////////////////////////////
     }
-
+    /// <summary>
+    /// Key Inputs to toggle screens and map
+    /// </summary>
+    //with input actions switching through the 3 screens back and forth
     private void HandleScreenSwitching()
     {
         if (m_nextScreenAction != null && m_nextScreenAction.action.WasPressedThisFrame())
@@ -198,6 +182,7 @@ public class MainIngameUI : MonoBehaviour
         }
     }
 
+    //handle toggle to open map, when map is not open
     private void HandleMapToggle()
     {
         if (m_toggleMapAction == null)
@@ -211,6 +196,9 @@ public class MainIngameUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Screens on bottom right of the screen (motor and quest and sailing screen)
+    /// </summary>
     private void UpdateMotorScreen()
     {
         UpdateThrustLever();
@@ -328,6 +316,9 @@ public class MainIngameUI : MonoBehaviour
         UpdateWindArrows();
     }
 
+    /// <summary>
+    /// Char Info on bottom left corner of the screen (average quest result and money)
+    /// </summary>
     private void UpdateCharInfo()
     {
         if (m_averageQuestFill != null)
@@ -345,6 +336,9 @@ public class MainIngameUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Status Indicators on the bottom right of the screen (fuel and health/damage)
+    /// </summary>
     private void UpdateStatusIndicators()
     {
         float _fuel = UIManager.Instance.GetFuelLevel();
@@ -413,6 +407,9 @@ public class MainIngameUI : MonoBehaviour
         m_lastHealth = _health;
     }
 
+    /// <summary>
+    /// Sailing Positions on the bottom left of the screen (main sail and front sail bars and butterfly and fender and motor/sail mode and steering wheel)
+    /// </summary>
     private void UpdateSailingPositions()
     {
         float _main = UIManager.Instance.GetMainSailTrim();
@@ -478,6 +475,9 @@ public class MainIngameUI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// helper methods
+    /// </summary>
     private void UpdateThrustLever()
     {
         float _thrust = UIManager.Instance.GetThrustLeverStep();

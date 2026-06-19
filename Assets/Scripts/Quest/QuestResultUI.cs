@@ -25,16 +25,17 @@ namespace Quest
         [Header("Button")]
         [SerializeField] private Button m_closeButton;
 
-        private QuestResult m_currentReult;
+        private QuestResult m_currentResult;
 
         private void Awake()
         {
             m_closeButton.onClick.AddListener(OnClose);
         }
 
+        //show time, damage, fuel and money as text and fill the 5-coin-fillbars accordingly
         internal void Show(QuestResult _result)
         {
-            m_currentReult = _result;
+            m_currentResult = _result;
 
             m_timeText.text = FormatTime(_result.TimeValue);
             m_damageText.text = _result.DamageValue.ToString("F2");
@@ -75,9 +76,9 @@ namespace Quest
 
         private void OnClose()
         {
-            GameManager.Instance.AddMoney(m_currentReult.MoneyReward);
+            GameManager.Instance.AddMoney(m_currentResult.MoneyReward);
 
-            if (m_currentReult.Quest.QuestType == QuestType.Type3_DirectCompletion)
+            if (m_currentResult.Quest.QuestType == QuestType.Type3_DirectCompletion)
             {
                 GameManager.Instance.SetState(GameStates.MOTORMODE);
             }
@@ -85,8 +86,6 @@ namespace Quest
             DialogueManager.Instance.ContinueDialogueAfterQuestReward();
 
             m_root.SetActive(false);
-
-            Debug.Log("[QuestResultUI] Closed result screen");
         }
     }
 }

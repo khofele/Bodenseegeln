@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Quest
 {
-    public class QuestInteraction : CompassTargetBase
+    public class QuestInteraction : CompassTargetBase //inherits from CompassTargetBase to be used as icons on the compass
     {
         [SerializeField] private bool m_showGizmos = true;
 
@@ -19,7 +19,6 @@ namespace Quest
         [SerializeField] private float m_allowedAngleTolerance = 25f;
 
         [Header("References")]
-        /*[SerializeField]*/ private Rigidbody m_boatRigidbody = null;
         [SerializeField] private Transform m_boatTransform = null;
 
         [Header("UI")]
@@ -32,17 +31,20 @@ namespace Quest
         internal QuestData Quest => m_quest;
         internal bool HasBeenUsed => m_hasBeenUsed;
 
+        private Rigidbody m_boatRigidbody = null;
         private bool m_isPlayerInRange = false;
         private bool m_isInteractable = false;
         private bool m_lastInteractableState = false;
         private bool m_hasBeenUsed = false;
 
+        //worldposition for positioning on compass
         public override Vector2 GetPosition()
         {
             Vector3 p = transform.position;
             return new Vector2(p.x, p.z);
         }
 
+        //if an icon should be shown on the compass
         public override bool ShouldShowIcon()
         {
             return ShouldShowCompassIcon();
@@ -71,12 +73,12 @@ namespace Quest
             if (other.attachedRigidbody == m_boatRigidbody)
             {
                 m_isPlayerInRange = true;
-                Debug.Log("[QuestInteraction.OnTriggerEnter] Boat entered trigger");
 
+                //for playing sound when entering the triggerbox
                 bool _playSound = !m_hasBeenUsed && QuestManager.Instance.IsQuestRunning && QuestManager.Instance.ActiveQuest == m_quest && GameManager.Instance.CurrentState != GameStates.DIALOGMODE;
                 if (_playSound)
                 {
-                    QuestManager.Instance.MissionFeedbackAudio.PlayGoalReached(); // Play Audio
+                    QuestManager.Instance.MissionFeedbackAudio.PlayGoalReached(); //Audio play enter triggerbox sound
                 }
             }
         }
@@ -86,13 +88,6 @@ namespace Quest
             if (other.attachedRigidbody == m_boatRigidbody)
             {
                 m_isPlayerInRange = false;
-                Debug.Log("[QuestInteraction.OnTriggerExit] Boat left trigger");
-
-                //bool _playSound = !m_hasBeenUsed && QuestManager.Instance.IsQuestRunning && QuestManager.Instance.ActiveQuest == m_quest;
-                //if (_playSound)
-                //{
-                //    QuestManager.Instance.MissionFeedbackAudio.PlayGoalFail();  // Play Audio
-                //}
             }
         }
 
@@ -104,11 +99,11 @@ namespace Quest
 
             if (m_isInteractable && m_interactAction.action.WasPressedThisFrame())
             {
-                Debug.Log("[QuestInteraction.Update] Try to complete Quest");
                 TryCompleteQuest();
             }
         }
 
+        //check if boat is close enough and slow enough and correctly parked (if it requires correct parking) and if the according quest is currenty active
         private void CheckConditions()
         {
             if (m_boatRigidbody == null)
@@ -122,15 +117,9 @@ namespace Quest
 
             m_isInteractable = !m_hasBeenUsed && m_isPlayerInRange && _isSlowEnough && _isCorrectlyParked
                 && QuestManager.Instance.IsQuestRunning && QuestManager.Instance.ActiveQuest == m_quest;
-
-            if (m_isInteractable)
-            {
-                //Debug.LogWarning("[QuestInteraction.CheckDockConditions] is interactable");
-            }
-
-            //TODO FUTURE: && IsBoatCorrectlyParked
         }
 
+        //park in direction of the parking slot or 180° rotated
         private bool IsBoatCorrectlyParked()
         {
             if (!m_requireCorrectParking)
@@ -188,7 +177,8 @@ namespace Quest
             }
         }
 
-        private void UpdateActiveQuestIcon() //= the icon that is above the active quest destination to mark the quest target
+        //Update the icon that is above the active quest destination to mark the quest target
+        private void UpdateActiveQuestIcon() 
         {
             if (m_activeQuestIcon == null)
             {
@@ -230,6 +220,7 @@ namespace Quest
             QuestManager.Instance.HandleQuestInteraction(m_quest, this);
         }
 
+        //relevant for quest type 4 with multiple steps
         internal void MarkAsCompleted()
         {
             m_hasBeenUsed = true;
@@ -243,8 +234,6 @@ namespace Quest
             {
                 m_activeQuestIcon.SetActive(false);
             }
-
-            Debug.Log("[QuestInteraction] interaction completed and disabled");
         }
 
         //---------------

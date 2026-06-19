@@ -1,7 +1,7 @@
-using Dialogue;
-using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
+
+using Dialogue;
 
 namespace Quest
 {
@@ -14,6 +14,7 @@ namespace Quest
     [System.Serializable]
     public struct RewardRange
     {
+        //reward automatically calculated with this values as min and max
         public float fiveCircleValue;
         public float zeroCircleValue;
     }

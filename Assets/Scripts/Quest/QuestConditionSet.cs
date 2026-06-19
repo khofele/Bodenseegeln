@@ -25,6 +25,7 @@ namespace Quest
         public List<QuestCondition> m_conditions = new();
     }
 
+    //Used for organizing dialogues in branches with states and conditions
     [System.Serializable]
     public class QuestConditionSet
     {
@@ -46,7 +47,6 @@ namespace Quest
 
                 if (_groupValid)
                 {
-                    Debug.Log($"[QuestConditionSet] Group {i} valid");
                     return true;
                 }
             }

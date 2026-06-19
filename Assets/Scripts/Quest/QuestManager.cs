@@ -1,23 +1,25 @@
-using Dialogue;
 using System.Collections.Generic;
 using UnityEngine;
+
 using Dialogue;
+
 
 namespace Quest
 {
     public enum QuestState
     {
         None = 0,
-        Offered = 1,
+        Offered = 1, //currently not used, but prepared for future updated
         Active = 2,
         Completed = 3,
-        Failed = 4
+        Failed = 4 //currently not used, but prepared for future updates
     }
 
     public struct QuestResult
     {
         public QuestData Quest;
 
+        //values for how many of the 5 coins must be filled
         public float TimeCircles;
         public float DamageCircles;
         public float FuelCircles;
@@ -36,7 +38,7 @@ namespace Quest
         [Header("References")]
         [SerializeField] private QuestResultUI m_questResultUI = null;
         [SerializeField] private NotificationTextUI m_notificationTextUI = null;
-        [SerializeField] private MissionsFeedbackAudioController m_missionsFeedbackAudioController = null;  // Audio class reference
+        [SerializeField] private MissionsFeedbackAudioController m_missionsFeedbackAudioController = null; // Audio class reference
 
         private QuestData m_activeQuest = null;
         private QuestData m_pendingQuest = null;
@@ -46,24 +48,19 @@ namespace Quest
         private Transform m_currentQuestTarget = null;
         private QuestState m_state = QuestState.None;
         private bool m_pendingGameWon = false;
-        
-        //private float m_questStartTime;
+        private HashSet<QuestData> m_completedQuests = new();
 
         //---Tracking---
         private float m_timeElapsed;
         private float m_totalDamage;
         private float m_totalFuelUsed;
-        //private float m_lastBoatHealth; //for delta tracking
-        //private float m_lastFuel; //for delta tracking
-
-        private HashSet<QuestData> m_completedQuests = new();
 
         public bool HasActiveQuest => m_activeQuest != null;
         public QuestData ActiveQuest => m_activeQuest;
         public bool IsQuestRunning => m_isQuestRunning;
         public QuestState State => m_state;
         public int CurrentQuestStep => m_currentQuestStep;
-        public MissionsFeedbackAudioController MissionFeedbackAudio => m_missionsFeedbackAudioController;
+        public MissionsFeedbackAudioController MissionFeedbackAudio => m_missionsFeedbackAudioController; //for Audio
 
 
         private void Update()
@@ -80,7 +77,7 @@ namespace Quest
 
         private void TrackTime()
         {
-            //maybe change later if bad for performance
+            //cound be changed if bad for performance
             m_timeElapsed += Time.deltaTime;
         }
 
@@ -92,26 +89,6 @@ namespace Quest
         internal Transform GetCurrentQuestTarget()
         {
             return m_currentQuestTarget;
-            //if (!m_isQuestRunning || m_activeQuest == null)
-            //{
-            //    return null;
-            //}
-
-            //switch (m_activeQuest.QuestType)
-            //{
-            //    case QuestType.Type1_DialogueOtherNPC:
-            //    case QuestType.Type2_DialogueSameNPC:
-            //    case QuestType.Type3_DirectCompletion:
-            //        return GetQuestInteractionTarget();
-            //    case QuestType.Type4_MultiStep:
-            //        if (CanCompleteQuest(m_activeQuest))
-            //        {
-            //            return GetQuestGiverTarget();
-            //        }
-            //        return GetQuestInteractionTarget();
-            //    default:
-            //        return null;
-            //}
         }
 
         private void RefreshQuestTarget()
@@ -123,6 +100,7 @@ namespace Quest
                 return;
             }
 
+            //at quest types 1,2 and 3 the Target is always the according QuestInteraction object in the scene and at quest type 4 it is first the QuestInteraction objects and then the QuestGiver
             switch (m_activeQuest.QuestType)
             {
                 case QuestType.Type1_DialogueOtherNPC:
@@ -210,7 +188,6 @@ namespace Quest
             return null;
         }
 
-        //call this as "QuestManager.Instance.RegisterDamage(damage);" where the damage is handled
         internal void RegisterDamage(float _damageAmount)
         {
             if (!m_isQuestRunning)
@@ -223,7 +200,6 @@ namespace Quest
             Debug.Log($"[QuestManager] Damage registered: {_damageAmount} | Total: {m_totalDamage}");
         }
 
-        //call this as "QuestManager.Instance.RegisterFuelUsed(amount);" where the fuel usage is handled
         internal void RegisterFuelUsed(float _fuelAmount)
         {
             if (!m_isQuestRunning)
@@ -241,14 +217,7 @@ namespace Quest
             return m_completedQuests.Contains(_quest);
         }
 
-        internal IEnumerable<QuestData> GetCompletedQuests() //was List<QuestData> but IEnumerable with foreach is better for performance
-        {
-            return m_completedQuests;
-            //list is worse for performance
-            //return new List<QuestData>(m_completedQuests);
-        }
-
-        internal bool CanStartQuest(QuestData _quest) //later also use for DialogueSystem
+        internal bool CanStartQuest(QuestData _quest)
         {
             return m_activeQuest == null && m_pendingQuest == null;
         }
@@ -302,7 +271,7 @@ namespace Quest
             m_state = QuestState.Active;
             m_currentQuestStep = 0;
             m_type2ReadyToComplete = false;
-            m_missionsFeedbackAudioController.PlayMissionAccept();  // Mission Accept Play Audio
+            m_missionsFeedbackAudioController.PlayMissionAccept(); //Audio play mission accept sound
 
             RefreshQuestTarget();
 
@@ -310,9 +279,6 @@ namespace Quest
             m_timeElapsed = 0f;
             m_totalDamage = 0f;
             m_totalFuelUsed = 0f;
-            ////TEMP: replace once real system exist
-            //m_lastBoatHealth = 100f;
-            //m_lastFuel = 100f;
 
             Debug.Log($"[QuestManager] Quest started: {_quest.QuestName}");
         }
@@ -324,8 +290,6 @@ namespace Quest
                 Debug.Log("[QuestManager] Interaction ignored (not active quest)");
                 return;
             }
-
-            Debug.Log($"[QuestManager] Handling interaction for quest: {_quest.QuestName}");
 
             switch (_quest.QuestType)
             {
@@ -342,15 +306,14 @@ namespace Quest
                     HandleType4_MultiStep(_interaction);
                     break;
                 default:
-                    Debug.LogWarning("[QuestManager] Quest type not implemented yet");
+                    Debug.LogWarning("[QuestManager] Quest type not implemented");
                     break;
             }
         }
 
+        //quest type 1: start dialogue with target NPC
         private void HandleType1_DialogueOtherNPC()
         {
-            Debug.Log("[QuestManager] TYPE 1: Start dialogue with target NPC");
-
             if (m_activeQuest.TargetNPC == null)
             {
                 Debug.LogError("[QuestManager] Target NPC is NULL");
@@ -360,10 +323,9 @@ namespace Quest
             DialogueManager.Instance.StartDialogue(m_activeQuest.TargetNPC);
         }
 
+        //quest type 2: start dialogue with quest giver NPC, set the state to QuestReadyToComplete
         private void HandleType2_DialogueSameNPC()
         {
-            Debug.Log("[QuestManager] TYPE 2: Start dialogue with quest giver NPC");
-
             if (m_activeQuest.QuestGiverNPC == null)
             {
                 Debug.LogError("[QuestManager] Quest giver NPC is NULL");
@@ -372,22 +334,20 @@ namespace Quest
 
             m_type2ReadyToComplete = true;
             RefreshQuestTarget();
-            Debug.Log("[QuestManager] Type 2 set to QuestReadyToComplete");
 
             DialogueManager.Instance.StartDialogue(m_activeQuest.QuestGiverNPC);
         }
 
+        //quest type 3: directly complete the quest
         private void HandleType3_DirectCompletion()
         {
-            Debug.Log("[QuestManager] TYPE 3: Direct completion");
             QuestResult _result = FinishQuestAndGetResult();
             ShowResultUI(_result);
         }
 
+        //quest type 4: first step detection with the QuestInteraction objects, when all steps complete lead back to quest giver NPC
         private void HandleType4_MultiStep(QuestInteraction _interaction)
         {
-            Debug.Log("[QuestManager] TYPE 4: Step interaction");
-
             if (_interaction == null)
             {
                 Debug.LogWarning("[QuestManager] NULL interaction");
@@ -400,12 +360,9 @@ namespace Quest
             RefreshQuestTarget();
             ShowStepNotification();
 
-            Debug.Log($"[QuestManager] Quest step progressed: {m_currentQuestStep}/{m_activeQuest.QuestSteps}");
-
             if (m_currentQuestStep >= m_activeQuest.QuestSteps)
             {
                 RefreshQuestTarget();
-                Debug.Log("[QuestManager] TYPE 4: Final step reached -> go to quest giver NPC");
             }
         }
 
@@ -435,12 +392,11 @@ namespace Quest
                 return;
             }
 
-            Debug.Log("[QuestManager] Completing quest from dialogue");
-
             QuestResult _result = FinishQuestAndGetResult();
             ShowResultUI(_result);
         }
 
+        //calculate all values for the quest result
         internal QuestResult FinishQuestAndGetResult()
         {
             if (m_activeQuest == null || !m_isQuestRunning)
@@ -450,8 +406,8 @@ namespace Quest
             }
 
             float _timeValue = m_timeElapsed;
-            float _damageValue = m_totalDamage; // + 40f; //TEMP: added value for testing
-            float _fuelValue = m_totalFuelUsed; // + 3f; //TEMP: added value for testing
+            float _damageValue = m_totalDamage;
+            float _fuelValue = m_totalFuelUsed;
 
             float _timeCircles = CalculateCircles(_timeValue, m_activeQuest.m_timeRange);
             float _damageCircles = CalculateCircles(_damageValue, m_activeQuest.m_damageRange);
@@ -479,7 +435,7 @@ namespace Quest
             };
 
             Debug.Log($"[QuestManager] Quest finished: {m_activeQuest.QuestName}");
-            m_missionsFeedbackAudioController.PlayMissionComplete();  // Play Audio Mission Complete
+            m_missionsFeedbackAudioController.PlayMissionComplete(); //Audio play mission complete sound
 
             QuestData _completedQuest = m_activeQuest;
             m_completedQuests.Add(m_activeQuest);
@@ -505,6 +461,7 @@ namespace Quest
             return Mathf.Clamp01(_normalized) * 5f;
         }
 
+        //if the completed quest is set to be a final quest, then set the GameState to GAMEWON to end the game with winning
         private void CheckPendingGameWon()
         {
             if (!m_pendingGameWon)
@@ -552,6 +509,7 @@ namespace Quest
             m_notificationTextUI.Show(_text);
         }
 
+        //send the result values to the QuestResultUI and open it
         private void ShowResultUI(QuestResult _result)
         {
             if (m_questResultUI == null)

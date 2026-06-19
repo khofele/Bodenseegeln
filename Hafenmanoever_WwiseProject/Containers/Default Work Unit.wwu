@@ -43,9 +43,20 @@
 											<ChildrenList>
 												<Sound Name="menu_forward" ID="{EFD97E77-3D6C-4F56-AE34-E906211D4DF8}" ShortID="977645713">
 													<PropertyList>
+														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+														<Property Name="MaxSoundPerInstance" Type="int16">
+															<ValueList>
+																<Value>1</Value>
+															</ValueList>
+														</Property>
+														<Property Name="UseMaxSoundPerInstance" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-11</Value>
+																<Value>-20</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -60,11 +71,11 @@
 													<ChildrenList>
 														<AudioFileSource Name="menu_forward" ID="{FCAB0B7F-B19A-4D60-927E-84DB3F03A957}">
 															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.01049"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.19762"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.00522"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.09064"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 																<Property Name="TrimBegin" Type="Real64" Value="0.19484"/>
-																<Property Name="TrimEnd" Type="Real64" Value="0.40068"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.33353"/>
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>menu_forward.wav</AudioFile>
@@ -116,6 +127,11 @@
 														<Property Name="MakeUpGain" Type="Real64">
 															<ValueList>
 																<Value>5</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-7</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -185,7 +201,7 @@
 													<PropertyList>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-1</Value>
+																<Value>-7</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -260,7 +276,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-2</Value>
+																<Value>-8</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -308,7 +324,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-20</Value>
+														<Value>-27</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>

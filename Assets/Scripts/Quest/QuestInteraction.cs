@@ -72,6 +72,12 @@ namespace Quest
             {
                 m_isPlayerInRange = true;
                 Debug.Log("[QuestInteraction.OnTriggerEnter] Boat entered trigger");
+
+                bool _playSound = !m_hasBeenUsed && QuestManager.Instance.IsQuestRunning && QuestManager.Instance.ActiveQuest == m_quest && GameManager.Instance.CurrentState != GameStates.DIALOGMODE;
+                if (_playSound)
+                {
+                    QuestManager.Instance.MissionFeedbackAudio.PlayGoalReached(); // Play Audio
+                }
             }
         }
 
@@ -81,6 +87,12 @@ namespace Quest
             {
                 m_isPlayerInRange = false;
                 Debug.Log("[QuestInteraction.OnTriggerExit] Boat left trigger");
+
+                //bool _playSound = !m_hasBeenUsed && QuestManager.Instance.IsQuestRunning && QuestManager.Instance.ActiveQuest == m_quest;
+                //if (_playSound)
+                //{
+                //    QuestManager.Instance.MissionFeedbackAudio.PlayGoalFail();  // Play Audio
+                //}
             }
         }
 

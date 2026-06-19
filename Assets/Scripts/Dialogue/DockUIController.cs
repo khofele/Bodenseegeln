@@ -5,6 +5,9 @@ using Dialogue;
 
 public class DockUIController : MonoBehaviour
 {
+    [SerializeField] private MissionsFeedbackAudioController m_missionsFeedbackAudioController = null;  // Audio class reference
+    [SerializeField] private EnvironmentAudioController m_environmentAudioController = null;  // Audio class reference
+
     [Header("Costs")]
     [SerializeField] private int m_fullFuelCost = 100;
     [SerializeField] private int m_fullRepairCost = 100;
@@ -162,6 +165,7 @@ public class DockUIController : MonoBehaviour
         {
             m_currentBoat.CurrentHealth = m_currentBoat.MaxHealth;
             GameManager.Instance.DecreaseMoney(_cost);
+            m_environmentAudioController.PlayBoatRepair(); // Play Audio Repair
 
             //update repair cost
             RefreshRepairCostUI();
@@ -176,7 +180,14 @@ public class DockUIController : MonoBehaviour
         float _newHealth = Mathf.Min(m_currentBoat.CurrentHealth + _healthToAdd, m_currentBoat.MaxHealth);
 
         m_currentBoat.CurrentHealth = _newHealth;
+
+        if (_money > 0)
+        {
+            m_environmentAudioController.PlayBoatRepair(); // Play Audio Repair
+        }
+
         GameManager.Instance.DecreaseMoney(_money);
+        m_missionsFeedbackAudioController.PlayMoneyZero();  // Play Audio Money Zero
 
         Debug.Log("[DockUIController.OnRepairClicked] not enough money -> partially repaired until money reached 0€");
 
@@ -206,6 +217,7 @@ public class DockUIController : MonoBehaviour
         {
             m_currentBoat.CurrentFuel = m_currentBoat.MaxFuel;
             GameManager.Instance.DecreaseMoney(_cost);
+            m_environmentAudioController.PlayBoatRefuel(); // Play Audio Refuel
 
             //update fuel cost
             RefreshFuelCostUI();
@@ -220,7 +232,15 @@ public class DockUIController : MonoBehaviour
         float _newFuel = Mathf.Min(m_currentBoat.CurrentFuel + _fuelToAdd, m_currentBoat.MaxFuel);
 
         m_currentBoat.CurrentFuel = _newFuel;
+
+        if (_money > 0)
+        {
+            m_environmentAudioController.PlayBoatRefuel(); // Play Audio Refuel
+            Debug.Log($"[DockUIController.OnFuelClicked] Sound obwohl kein Moneyyyyy{_money}");
+        }
+
         GameManager.Instance.DecreaseMoney(_money);
+        m_missionsFeedbackAudioController.PlayMoneyZero();  // Play Audio Money Zero
 
         Debug.Log("[DockUIController.OnFuelClicked] not enough money -> partially refueled until money reached 0€");
 

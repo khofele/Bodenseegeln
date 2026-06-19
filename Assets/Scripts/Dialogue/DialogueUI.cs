@@ -9,6 +9,8 @@ namespace Dialogue
 {
     public class DialogueUI : MonoBehaviour
     {
+        [SerializeField] private MissionsFeedbackAudioController m_missionsFeedbackAudioController = null;  // Audio class reference
+
         [Header("UI References")]
         [SerializeField] private GameObject m_root;
         [SerializeField] private TextMeshProUGUI m_nameText;
@@ -69,6 +71,9 @@ namespace Dialogue
                 }
 
                 m_dialogueText.text += c;
+
+                m_missionsFeedbackAudioController.PlayMissionVoiceLineNpc(); // Play Audio Typing with voice lines
+
                 yield return new WaitForSeconds(m_typingSpeed);
             }
         }

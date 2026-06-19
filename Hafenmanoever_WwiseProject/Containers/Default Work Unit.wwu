@@ -42,6 +42,13 @@
 											</ReferenceList>
 											<ChildrenList>
 												<Sound Name="menu_forward" ID="{EFD97E77-3D6C-4F56-AE34-E906211D4DF8}" ShortID="977645713">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-11</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -175,6 +182,13 @@
 											</ReferenceList>
 											<ChildrenList>
 												<Sound Name="menu_back" ID="{1CC75D76-4BCF-46EA-970E-C3706B54FA4F}" ShortID="502226443">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-1</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -244,6 +258,11 @@
 																<Value>10</Value>
 															</ValueList>
 														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-2</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -289,7 +308,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>-20</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -341,6 +360,12 @@
 									<ChildrenList>
 										<Sound Name="mission_abort" ID="{D7DFD27D-CCC2-40AA-9BD7-575BA050D695}" ShortID="88356530">
 											<PropertyList>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>200</Value>
@@ -356,6 +381,16 @@
 															</Modifier>
 														</ModifierInfo>
 													</ModifierList>
+												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-2</Value>
+													</ValueList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -397,6 +432,12 @@
 										</Sound>
 										<Sound Name="mission_accept" ID="{FB02209B-5142-426D-9856-AA81BCD6F01E}" ShortID="632804722">
 											<PropertyList>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>300</Value>
@@ -412,6 +453,16 @@
 															</Modifier>
 														</ModifierInfo>
 													</ModifierList>
+												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-2</Value>
+													</ValueList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -453,6 +504,12 @@
 										</Sound>
 										<Sound Name="mission_boatDamage" ID="{09677CE6-81A1-4245-B3C3-167A2E58BBC5}" ShortID="286330426">
 											<PropertyList>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>350</Value>
@@ -469,9 +526,14 @@
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-4</Value>
+														<Value>-9</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -514,6 +576,12 @@
 										</Sound>
 										<Sound Name="mission_complete" ID="{98BFE005-E28D-4ACA-B91E-ED43F7531F20}" ShortID="332542573">
 											<PropertyList>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>400</Value>
@@ -529,6 +597,16 @@
 															</Modifier>
 														</ModifierInfo>
 													</ModifierList>
+												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-2</Value>
+													</ValueList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -570,6 +648,12 @@
 										</Sound>
 										<Sound Name="mission_fail" ID="{DE76E5BC-26A4-4237-9716-0ECE4E7FC0AC}" ShortID="452733860">
 											<PropertyList>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>150</Value>
@@ -586,9 +670,14 @@
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-3</Value>
+														<Value>-9</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -631,6 +720,12 @@
 										</Sound>
 										<Sound Name="mission_fastMovement" ID="{95753613-E65A-4EE3-A99F-D1D02A9AA8B2}" ShortID="650657883">
 											<PropertyList>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>400</Value>
@@ -647,9 +742,14 @@
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-3</Value>
+														<Value>-7</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -692,6 +792,12 @@
 										</Sound>
 										<Sound Name="mission_goalFail" ID="{F56B9250-FD99-49D0-AB5E-2AAF5EAA9CBD}" ShortID="833417504">
 											<PropertyList>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>200</Value>
@@ -708,9 +814,14 @@
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-3</Value>
+														<Value>-8</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -753,6 +864,12 @@
 										</Sound>
 										<Sound Name="mission_goalReached" ID="{0B399DB4-E072-45AE-BDC1-EEBDFD7EAA1E}" ShortID="726997659">
 											<PropertyList>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>600</Value>
@@ -769,9 +886,14 @@
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>-10</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -852,7 +974,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-8</Value>
+														<Value>-14</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -993,7 +1115,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>8</Value>
+														<Value>5</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1065,7 +1187,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>7</Value>
+														<Value>4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1108,6 +1230,256 @@
 												<ActiveSource Name="mission_moneyZero" ID="{32BB9F7B-DAD8-42A7-824E-42C826A3D9D9}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="MissionVoiceLinesNpc" ID="{49E40842-6A9C-4B25-9751-BF7AB4708572}" ShortID="697579987">
+									<ChildrenList>
+										<RandomSequenceContainer Name="RC_mission_voiceLinesNpc" ID="{2F48C6BA-8F66-41D5-89E0-A726661B6087}" ShortID="130324390">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>10</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{9A19EF61-D833-4F6F-AAA9-FC86F7DC7E7D}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="60"/>
+																	<Property Name="Min" Type="Real64" Value="-60"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-14</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{8B023791-5032-41DC-829E-2708C6E26B83}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="1"/>
+																	<Property Name="Min" Type="Real64" Value="-3"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="mission_voiceLinesNpc00" ID="{78F9D434-4507-4FA3-9028-C48D74C4F0CC}" ShortID="585955642">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc00" ID="{997C6CDF-8C9C-41B7-9705-95534D838583}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc00.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="21637812"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc00" ID="{997C6CDF-8C9C-41B7-9705-95534D838583}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc01" ID="{936942D7-9D27-4D49-A77D-035736CE349C}" ShortID="1049335385">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc01" ID="{F6C1C06B-1AE6-4366-93DA-8313E8B08FFD}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1013696341"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc01" ID="{F6C1C06B-1AE6-4366-93DA-8313E8B08FFD}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc02" ID="{D2F80799-C5A3-4AF3-8D60-0185F7C8720C}" ShortID="361133174">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc02" ID="{0063C489-0D8B-4A79-A39D-8C2947712082}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1012251454"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc02" ID="{0063C489-0D8B-4A79-A39D-8C2947712082}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc03" ID="{A081DF2F-5153-49E5-949C-270E777A959E}" ShortID="864373439">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc03" ID="{1E3A33B2-6ECE-43A2-8FC2-25ADE8C5266B}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="23404892"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc03" ID="{1E3A33B2-6ECE-43A2-8FC2-25ADE8C5266B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc04" ID="{19ED6DCA-FCCD-4F18-9355-9852EC60BE68}" ShortID="232124396">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc04" ID="{3066B881-7857-4339-997F-94C19DB86EFA}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1071065471"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc04" ID="{3066B881-7857-4339-997F-94C19DB86EFA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc05" ID="{0A11512E-6A18-4CBF-920F-6F6CBCE589F6}" ShortID="345140661">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc05" ID="{9D6B8A49-A0EC-44E6-A8DA-A32B9D6D5EC9}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc05.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="582238753"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc05" ID="{9D6B8A49-A0EC-44E6-A8DA-A32B9D6D5EC9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc06" ID="{0B635D41-8EE2-422B-BA58-87AE1EFEBD5D}" ShortID="514346091">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc06" ID="{0A659CA0-2EAA-4B2E-8EFB-47588B6DBEF0}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc06.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="745179163"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc06" ID="{0A659CA0-2EAA-4B2E-8EFB-47588B6DBEF0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="mission_voiceLinesNpc07" ID="{882680A3-EECC-4A20-864D-C4B1B7F0548C}" ShortID="671633314">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="mission_voiceLinesNpc07" ID="{BEA473C2-1775-444D-986A-5D0FBEE2C0C1}">
+															<Language>SFX</Language>
+															<AudioFile>mission_voiceLinesNpc07.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="236281827"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="mission_voiceLinesNpc07" ID="{BEA473C2-1775-444D-986A-5D0FBEE2C0C1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{468BDD78-FBE3-48B2-8ADE-CE44C5418816}" ShortID="951728610">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="MissionVoiceLinesNpc_EQ" ID="{B219EABC-558F-4DE2-8D72-4DC5187F17CF}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>
@@ -1338,7 +1710,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>2</Value>
+																<Value>-5</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -3516,7 +3888,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>2</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -3752,7 +4124,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -4592,7 +4964,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>3</Value>
+																<Value>-2</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -5298,7 +5670,14 @@
 									</ReferenceList>
 									<ChildrenList>
 										<RandomSequenceContainer Name="amb_seagulls" ID="{95C36547-831C-4351-A67B-876D3F02B540}" ShortID="660625472">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_AmbSeagull" ID="{0234E74A-9284-4E14-AB5C-9FBC1944E45D}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
 												</Reference>
@@ -5376,7 +5755,19 @@
 											</ChildrenList>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="amb_seagullSingle" ID="{C6D0AEB5-B5A5-4F30-83F7-3DEE0C2C4533}" ShortID="909662004">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_AmbSeagull" ID="{0234E74A-9284-4E14-AB5C-9FBC1944E45D}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
 												</Reference>
@@ -5500,9 +5891,14 @@
 										<Sound Name="amb_harborBase_loop" ID="{5E98A2FD-1BBA-46B3-AEB8-BB35210198DF}" ShortID="842901814">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>10</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>3</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -5531,6 +5927,17 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{698ED484-B769-4797-BDC3-9837F9069B53}" ShortID="657105103">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="AmbHarborBase_EQ" ID="{56B3B5B8-6620-4BB4-8808-4066950FB042}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="amb_harborBase_loop" ID="{BF5FC232-A5F3-40BD-9703-DD262E635EC3}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -5538,9 +5945,14 @@
 										<Sound Name="amb_harborLindau_loop" ID="{6513B033-D865-4C8A-B9A1-403492B0F3F3}" ShortID="55085176">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>10</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -5569,6 +5981,20 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{6D846C28-FAB5-4A08-8AB3-02FD49FDC36A}" ShortID="283721050">
+														<PropertyList>
+															<Property Name="Bypass" Type="bool" Value="True"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="AmbHarborLindau_EQ" ID="{2A564810-C64E-4DDE-97A2-65FFA53604AF}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="amb_harborLindau_loop" ID="{A3F1E61B-DFE5-402B-9981-DF6E1F426897}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -5576,6 +6002,11 @@
 										<Sound Name="amb_harborBregenz_loop" ID="{9EA97F37-5FEF-4D2A-B734-0906C4457EED}" ShortID="486710268">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>5</Value>
@@ -5607,6 +6038,17 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{A8F18DFD-0A03-4C29-A18F-9F889F235A95}" ShortID="848948743">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="AmbHarborBregenz_EQ" ID="{3596D200-6971-494C-9DD8-F84D4241AE74}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="amb_harborBregenz_loop" ID="{8A273E4C-68C7-4D2B-8105-07B7538D6FE2}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -5617,10 +6059,25 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="RC_amb_detailsWater_loop" ID="{B4E7AC6E-82C2-4CDD-B14E-DBC174DC6D4C}" ShortID="686255152">
 											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>30</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-30</Value>
+													</ValueList>
+												</Property>
 												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -5720,23 +6177,37 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{3994E21C-60B6-4CDA-8D2F-4A16782A0684}" ShortID="131050260">
+														<PropertyList>
+															<Property Name="Bypass" Type="bool" Value="True"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="AmbDetailsWater_EQ" ID="{59ADD617-7997-4E61-AC8E-CAC2DE9E8209}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="RC_amb_detailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" ShortID="497105327">
 											<PropertyList>
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
-														<Value>10</Value>
+														<Value>35</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-30</Value>
 													</ValueList>
 												</Property>
 												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>2</Value>
-													</ValueList>
-												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -5858,13 +6329,41 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{37BBB780-2CDA-4BC7-9359-0E4733FC6912}" ShortID="381912602">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="AmbDetailsPeople_EQ" ID="{64192276-39A8-44E6-B94D-AFFB8E628761}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+													<EffectSlot Name="" ID="{28E034DE-EC95-4510-B309-F7C8DE859AC4}" ShortID="376823773">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																<ObjectRef Name="AmbDetailsPeople" ID="{9F2C48CA-C0CF-4C76-B9AA-D4C6E2D9559B}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="RC_amb_detailsCoast_loop" ID="{1BB621EF-60EB-4F32-94B3-4CBA06CA45F5}" ShortID="720468379">
 											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>10</Value>
+													</ValueList>
+												</Property>
 												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-8</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -5986,6 +6485,17 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{B41254C1-7A14-4A45-8AAA-5B37D7A0970A}" ShortID="936561002">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="AmbCoastDetails_EQ" ID="{79C8F020-7216-45A1-9BE8-FD9CAE4D2F02}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
@@ -5993,12 +6503,17 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="RC_amb_coast_loop" ID="{B9380C2B-9015-4819-B16C-735F9AB85683}" ShortID="447872338">
 											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>10</Value>
+													</ValueList>
+												</Property>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>3</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -6144,9 +6659,122 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<EffectSlot Name="" ID="{AC3F9E8F-0EFE-4A5B-902B-CC3E3F0C7780}" ShortID="361862880">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="AmbCoastLoop_EQ" ID="{F0019100-B07C-494C-B707-3879F100E6B5}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
+								<RandomSequenceContainer Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" ShortID="130576061">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>30</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-150</Value>
+											</ValueList>
+										</Property>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-13</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="amb_water_loop00" ID="{AD48AE5E-4063-4674-A9C8-47CFA02ABAED}" ShortID="1053448817">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="amb_water_loop00" ID="{A905461E-B423-4C52-9FCB-202AAFDF6F33}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>amb_water_loop00.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="26190552"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="amb_water_loop00" ID="{A905461E-B423-4C52-9FCB-202AAFDF6F33}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="amb_water_loop01" ID="{CBCF689D-EC0F-44EF-81FB-3BFFDC9AEA45}" ShortID="994507687">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-2</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="amb_water_loop01" ID="{F2FA3E9D-3932-4365-8339-D55DF3FFDB9A}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>amb_water_loop01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="497084699"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="amb_water_loop01" ID="{F2FA3E9D-3932-4365-8339-D55DF3FFDB9A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<EffectSlot Name="" ID="{E7F18285-258A-4DB9-8172-4D4066FB5E04}" ShortID="521407455">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+														<ObjectRef Name="AmbWaterLoop_EQ" ID="{35525E79-32A9-4D4D-AD53-95E7FE3D5B01}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</ObjectList>
+									</ObjectLists>
+								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Environment" ID="{241010D0-377A-42FB-AAA0-5146EC36C994}" ShortID="365702159">
@@ -6158,6 +6786,11 @@
 												<BlendContainer Name="BC_envcollisionLightImpact" ID="{D03735BA-B263-4849-AE79-9B4E2B355A50}" ShortID="773692694">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>2</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Attenuation">
@@ -6565,7 +7198,7 @@
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-4</Value>
+																<Value>-1</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -7060,7 +7693,7 @@
 													<PropertyList>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>5</Value>
+																<Value>7</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -7470,6 +8103,11 @@
 														<Value>-150</Value>
 													</ValueList>
 												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -7546,6 +8184,9 @@
 													</ModifierList>
 												</Property>
 												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{35BBD79B-844C-451A-A664-7E0E82BD1602}">
@@ -7611,10 +8252,20 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="SC_env_refuel" ID="{EC4AA6A0-E873-49FC-A4B9-146A2E8DB09A}" ShortID="80270468">
 											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>15</Value>
+													</ValueList>
+												</Property>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="3"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -8197,7 +8848,7 @@
 											<PropertyList>
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
-														<Value>20</Value>
+														<Value>30</Value>
 													</ValueList>
 												</Property>
 												<Property Name="MakeUpGain" Type="Real64">
@@ -8233,7 +8884,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-3</Value>
+														<Value>-7</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -8295,9 +8946,6 @@
 												</Property>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-150</Value>
-													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{C5ECABEE-B3B6-4D43-847E-35452684B8E5}">
@@ -8309,6 +8957,11 @@
 															</Modifier>
 														</ModifierInfo>
 													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-7</Value>
+													</ValueList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -8331,6 +8984,11 @@
 													</ReferenceList>
 													<ChildrenList>
 														<AudioFileSource Name="env_boatDockImpact00" ID="{DC3196D7-A8B7-4970-BC6F-2EF9DA8397B1}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.31274"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.90089"/>
+															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>env_boatDockImpact00.wav</AudioFile>
 															<MediaIDList>
@@ -8360,6 +9018,11 @@
 													</ReferenceList>
 													<ChildrenList>
 														<AudioFileSource Name="env_boatDockImpact01" ID="{E00D9CC6-A226-413C-BA12-541F6053263C}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.46816"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.84505"/>
+															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>env_boatDockImpact01.wav</AudioFile>
 															<MediaIDList>
@@ -8389,6 +9052,11 @@
 													</ReferenceList>
 													<ChildrenList>
 														<AudioFileSource Name="env_boatDockImpact02" ID="{786DED8C-D048-4CAF-84D3-D0252FF74415}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.21868"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.80347"/>
+															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>env_boatDockImpact02.wav</AudioFile>
 															<MediaIDList>
@@ -8414,6 +9082,13 @@
 											</ObjectLists>
 										</RandomSequenceContainer>
 										<BlendContainer Name="BC_env_boatRubDock_loop" ID="{CE839D89-8717-4AAB-A080-CA1A83CEADEC}" ShortID="944720576">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-7</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
@@ -8702,7 +9377,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>-2</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -8934,7 +9609,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>-1</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -11202,7 +11877,7 @@
 														</Property>
 														<Property Name="Pitch" Type="int32">
 															<ValueList>
-																<Value>-100</Value>
+																<Value>-400</Value>
 															</ValueList>
 														</Property>
 														<Property Name="UseMaxSoundPerInstance" Type="bool">
@@ -11212,7 +11887,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-9</Value>
+																<Value>-6</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -11231,11 +11906,6 @@
 														<RandomSequenceContainer Name="RC_phy_waterDisplacementFast_loop" ID="{E51C4001-8D4A-4A12-A8A4-AFAE6702B246}" ShortID="1063060135">
 															<PropertyList>
 																<Property Name="3DSpatialization" Type="int16" Value="1"/>
-																<Property Name="Lowpass" Type="int16">
-																	<ValueList>
-																		<Value>15</Value>
-																	</ValueList>
-																</Property>
 																<Property Name="MakeUpGain" Type="Real64">
 																	<ValueList>
 																		<Value>15</Value>
@@ -11245,7 +11915,7 @@
 																<Property Name="OverrideEffect" Type="bool" Value="True"/>
 																<Property Name="Pitch" Type="int32">
 																	<ValueList>
-																		<Value>-500</Value>
+																		<Value>-150</Value>
 																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
@@ -11265,7 +11935,7 @@
 																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 																<Property Name="Volume" Type="Real64">
 																	<ValueList>
-																		<Value>-5</Value>
+																		<Value>-20</Value>
 																	</ValueList>
 																</Property>
 															</PropertyList>
@@ -11378,6 +12048,9 @@
 															<ObjectLists>
 																<ObjectList Name="Effects">
 																	<EffectSlot Name="" ID="{3BA19167-D9C7-4603-90F2-15863390AF83}" ShortID="1022288529">
+																		<PropertyList>
+																			<Property Name="Bypass" Type="bool" Value="True"/>
+																		</PropertyList>
 																		<ReferenceList>
 																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
 																				<ObjectRef Name="PhyWaterDisplacementFast_EQ" ID="{AFA7AA22-05E4-4120-8902-A22A8BA3436A}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
@@ -11429,6 +12102,11 @@
 																<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 																<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
 																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-7</Value>
+																	</ValueList>
+																</Property>
 															</PropertyList>
 															<ReferenceList>
 																<Reference Name="Conversion">
@@ -11587,7 +12265,7 @@
 																<Property Name="OverrideEffect" Type="bool" Value="True"/>
 																<Property Name="Pitch" Type="int32">
 																	<ValueList>
-																		<Value>-1100</Value>
+																		<Value>-900</Value>
 																	</ValueList>
 																	<ModifierList>
 																		<ModifierInfo>
@@ -12610,187 +13288,6 @@
 										</Folder>
 										<Folder Name="PhyHullWaterMass" ID="{6E3CB6A0-9305-4095-B24A-01E0643F024F}" ShortID="813972555">
 											<ChildrenList>
-												<Sound Name="phy_hullWaterMassFast_loop" ID="{AD6F2940-1938-4219-9383-293B198061DC}" ShortID="524721218">
-													<PropertyList>
-														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-														<Property Name="Lowpass" Type="int16">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Pitch" Type="int32">
-															<ValueList>
-																<Value>-300</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>-15</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="phy_hullWaterMassFast_loop" ID="{50A69771-577C-44A9-9417-4F1AC93ECFB9}">
-															<PropertyList>
-																<Property Name="CrossfadeDuration" Type="Real64" Value="812.5"/>
-																<Property Name="CrossfadeShape" Type="int16" Value="6"/>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.36631"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.41452"/>
-																<Property Name="LoopBegin" Type="Real64" Value="1.45542"/>
-																<Property Name="LoopEnd" Type="Real64" Value="11.18072"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>phy_hullWaterMassFast_loop.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="964134678"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists>
-														<ObjectList Name="Effects">
-															<EffectSlot Name="" ID="{08D15BAB-B666-443F-8D80-C0927A7DDE54}" ShortID="864245402">
-																<ReferenceList>
-																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																		<ObjectRef Name="PhyHullWaterMass_EQ" ID="{2E88404F-E44A-4951-8BC0-5A89B8A8EAD5}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																	</Reference>
-																</ReferenceList>
-															</EffectSlot>
-														</ObjectList>
-													</ObjectLists>
-													<ActiveSourceList>
-														<ActiveSource Name="phy_hullWaterMassFast_loop" ID="{50A69771-577C-44A9-9417-4F1AC93ECFB9}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="phy_hullWaterMassSlow_loop" ID="{715FE565-A242-4407-8BEC-44A5EBC7067E}" ShortID="453934713">
-													<PropertyList>
-														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-														<Property Name="Lowpass" Type="int16">
-															<ValueList>
-																<Value>25</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Pitch" Type="int32">
-															<ValueList>
-																<Value>-300</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>-15</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="phy_hullWaterMassSlow_loop" ID="{88A86C51-30FF-45F2-AA3E-5F3CB2D7DBE1}">
-															<PropertyList>
-																<Property Name="CrossfadeDuration" Type="Real64" Value="750"/>
-																<Property Name="CrossfadeShape" Type="int16" Value="6"/>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.22172"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.15424"/>
-																<Property Name="LoopBegin" Type="Real64" Value="1.00241"/>
-																<Property Name="LoopEnd" Type="Real64" Value="11.41205"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>phy_hullWaterMassSlow_loop.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="519589814"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists>
-														<ObjectList Name="Effects">
-															<EffectSlot Name="" ID="{E4C3F3F1-6973-4F4C-8699-5D9DC2ACA3D0}" ShortID="432277424">
-																<ReferenceList>
-																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																		<ObjectRef Name="PhyHullWaterMass_EQ" ID="{2E88404F-E44A-4951-8BC0-5A89B8A8EAD5}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																	</Reference>
-																</ReferenceList>
-															</EffectSlot>
-														</ObjectList>
-													</ObjectLists>
-													<ActiveSourceList>
-														<ActiveSource Name="phy_hullWaterMassSlow_loop" ID="{88A86C51-30FF-45F2-AA3E-5F3CB2D7DBE1}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="phy_hullWaterMass_loop" ID="{0BD83BFA-0F5D-43F2-BDD5-B127BA5FE111}" ShortID="69796427">
-													<PropertyList>
-														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-														<Property Name="Lowpass" Type="int16">
-															<ValueList>
-																<Value>30</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Pitch" Type="int32">
-															<ValueList>
-																<Value>-400</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Volume" Type="Real64">
-															<ValueList>
-																<Value>-15</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="phy_hullWaterMass_loop" ID="{477CC2E1-37B4-4BB3-A3ED-97E63CC72BA1}">
-															<PropertyList>
-																<Property Name="CrossfadeDuration" Type="Real64" Value="637.777"/>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.15331"/>
-																<Property Name="FadeInShape" Type="int16" Value="6"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.15334"/>
-																<Property Name="LoopBegin" Type="Real64" Value="1.00642"/>
-																<Property Name="LoopEnd" Type="Real64" Value="12.98768"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>phy_hullWaterMass_loop.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="998544714"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ObjectLists>
-														<ObjectList Name="Effects">
-															<EffectSlot Name="" ID="{DDC8BF60-6228-433A-858F-354736E8D67F}" ShortID="89845056">
-																<ReferenceList>
-																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																		<ObjectRef Name="PhyHullWaterMass_EQ" ID="{2E88404F-E44A-4951-8BC0-5A89B8A8EAD5}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-																	</Reference>
-																</ReferenceList>
-															</EffectSlot>
-														</ObjectList>
-													</ObjectLists>
-													<ActiveSourceList>
-														<ActiveSource Name="phy_hullWaterMass_loop" ID="{477CC2E1-37B4-4BB3-A3ED-97E63CC72BA1}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
 												<Sound Name="phy_hullWaterMass_loop01" ID="{E4E736B8-C850-4B74-BC9D-C0F702E5CD9B}" ShortID="770755479">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
@@ -12851,14 +13348,451 @@
 														<ActiveSource Name="phy_hullWaterMass_loop01" ID="{0637C200-561B-470C-8F5D-2F6AF3A1EE2F}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
+												<BlendContainer Name="BC_phy_hullWaterMass_loop" ID="{7A891AA2-DC67-43BB-86A5-D5772C9724AD}" ShortID="763903497">
+													<PropertyList>
+														<Property Name="BlendBehavior" Type="int16" Value="1"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-17</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="phy_hullWaterMass_loop" ID="{0BD83BFA-0F5D-43F2-BDD5-B127BA5FE111}" ShortID="69796427">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>30</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-1000</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="ATT_PhyBoatWater" ID="{BF3EC898-E81F-469F-BD1B-D491C8CFEB1C}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_hullWaterMass_loop" ID="{477CC2E1-37B4-4BB3-A3ED-97E63CC72BA1}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="637.777"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.15331"/>
+																		<Property Name="FadeInShape" Type="int16" Value="6"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.15334"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="1.00642"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="12.98768"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_hullWaterMass_loop.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="998544714"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{DDC8BF60-6228-433A-858F-354736E8D67F}" ShortID="89845056">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="PhyHullWaterMass_EQ" ID="{2E88404F-E44A-4951-8BC0-5A89B8A8EAD5}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_hullWaterMass_loop" ID="{477CC2E1-37B4-4BB3-A3ED-97E63CC72BA1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="phy_hullWaterMassFast_loop" ID="{AD6F2940-1938-4219-9383-293B198061DC}" ShortID="524721218">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-1200</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="ATT_PhyBoatWater" ID="{BF3EC898-E81F-469F-BD1B-D491C8CFEB1C}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_hullWaterMassFast_loop" ID="{50A69771-577C-44A9-9417-4F1AC93ECFB9}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="812.5"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.36631"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.41452"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="1.45542"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="11.18072"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_hullWaterMassFast_loop.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="964134678"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{08D15BAB-B666-443F-8D80-C0927A7DDE54}" ShortID="864245402">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="PhyHullWaterMass_EQ" ID="{2E88404F-E44A-4951-8BC0-5A89B8A8EAD5}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_hullWaterMassFast_loop" ID="{50A69771-577C-44A9-9417-4F1AC93ECFB9}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="phy_hullWaterMassSlow_loop" ID="{715FE565-A242-4407-8BEC-44A5EBC7067E}" ShortID="453934713">
+															<PropertyList>
+																<Property Name="3DSpatialization" Type="int16" Value="1"/>
+																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+																<Property Name="Lowpass" Type="int16">
+																	<ValueList>
+																		<Value>25</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ValueList>
+																		<Value>-900</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Attenuation">
+																	<ObjectRef Name="ATT_PhyBoatWater" ID="{BF3EC898-E81F-469F-BD1B-D491C8CFEB1C}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+																</Reference>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="phy_hullWaterMassSlow_loop" ID="{88A86C51-30FF-45F2-AA3E-5F3CB2D7DBE1}">
+																	<PropertyList>
+																		<Property Name="CrossfadeDuration" Type="Real64" Value="750"/>
+																		<Property Name="CrossfadeShape" Type="int16" Value="6"/>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.22172"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.15424"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="1.00241"/>
+																		<Property Name="LoopEnd" Type="Real64" Value="11.41205"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>phy_hullWaterMassSlow_loop.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="519589814"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ObjectLists>
+																<ObjectList Name="Effects">
+																	<EffectSlot Name="" ID="{E4C3F3F1-6973-4F4C-8699-5D9DC2ACA3D0}" ShortID="432277424">
+																		<ReferenceList>
+																			<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																				<ObjectRef Name="PhyHullWaterMass_EQ" ID="{2E88404F-E44A-4951-8BC0-5A89B8A8EAD5}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																			</Reference>
+																		</ReferenceList>
+																	</EffectSlot>
+																</ObjectList>
+															</ObjectLists>
+															<ActiveSourceList>
+																<ActiveSource Name="phy_hullWaterMassSlow_loop" ID="{88A86C51-30FF-45F2-AA3E-5F3CB2D7DBE1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<BlendTrackList>
+														<BlendTrack Name="BT_HullWaterMass" ID="{800E6023-BE1B-40E1-86F8-CACF16F71728}" ShortID="780297157">
+															<PropertyList>
+																<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="LayerCrossFadeControlInput">
+																	<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																</Reference>
+															</ReferenceList>
+															<ObjectLists>
+																<ObjectList Name="RTPC">
+																	<RTPC Name="" ID="{FFD3D454-CFDE-4E58-99EE-89E016B548F3}" ShortID="4029250">
+																		<PropertyList>
+																			<Property Name="PropertyName" Type="string" Value="Volume"/>
+																		</PropertyList>
+																		<ReferenceList>
+																			<Reference Name="ControlInput">
+																				<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																			</Reference>
+																			<Reference Name="Curve">
+																				<Custom>
+																					<Curve Name="" ID="{4E018D1A-EBB0-4985-B5AF-EC89C2B35EFD}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>-96</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>8</XPos>
+																								<YPos>-36</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>20</XPos>
+																								<YPos>-22</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>40</XPos>
+																								<YPos>-16</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>70</XPos>
+																								<YPos>-14</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>100</XPos>
+																								<YPos>-16</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</Custom>
+																			</Reference>
+																		</ReferenceList>
+																	</RTPC>
+																</ObjectList>
+															</ObjectLists>
+															<BlendTrackAssocList>
+																<BlendTrackAssoc>
+																	<ItemRef Name="phy_hullWaterMass_loop" ID="{0BD83BFA-0F5D-43F2-BDD5-B127BA5FE111}"/>
+																	<CrossfadingInfo>
+																		<LeftEdgePos>0</LeftEdgePos>
+																		<LeftFadingMode>Automatic</LeftFadingMode>
+																		<RightEdgePos>100</RightEdgePos>
+																		<RightFadingMode>Automatic</RightFadingMode>
+																	</CrossfadingInfo>
+																</BlendTrackAssoc>
+															</BlendTrackAssocList>
+														</BlendTrack>
+														<BlendTrack Name="BT_HullWaterMassSlow" ID="{C557F8BE-E018-453E-A2EB-44C800ED1442}" ShortID="854148214">
+															<PropertyList>
+																<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="LayerCrossFadeControlInput">
+																	<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																</Reference>
+															</ReferenceList>
+															<ObjectLists>
+																<ObjectList Name="RTPC">
+																	<RTPC Name="" ID="{643349AE-C9B7-440B-A40E-0672DED8058B}" ShortID="84162472">
+																		<PropertyList>
+																			<Property Name="PropertyName" Type="string" Value="Volume"/>
+																		</PropertyList>
+																		<ReferenceList>
+																			<Reference Name="ControlInput">
+																				<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																			</Reference>
+																			<Reference Name="Curve">
+																				<Custom>
+																					<Curve Name="" ID="{246F7C0F-87B3-4BFE-9DE4-6E666BBCC2EB}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>-96</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>8</XPos>
+																								<YPos>-30</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>25</XPos>
+																								<YPos>-14</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>45</XPos>
+																								<YPos>-8</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>65</XPos>
+																								<YPos>-12</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>85</XPos>
+																								<YPos>-18</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>100</XPos>
+																								<YPos>-24</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</Custom>
+																			</Reference>
+																		</ReferenceList>
+																	</RTPC>
+																</ObjectList>
+															</ObjectLists>
+															<BlendTrackAssocList>
+																<BlendTrackAssoc>
+																	<ItemRef Name="phy_hullWaterMassSlow_loop" ID="{715FE565-A242-4407-8BEC-44A5EBC7067E}"/>
+																	<CrossfadingInfo>
+																		<LeftEdgePos>0</LeftEdgePos>
+																		<LeftFadingMode>Automatic</LeftFadingMode>
+																		<RightEdgePos>100</RightEdgePos>
+																		<RightFadingMode>Automatic</RightFadingMode>
+																	</CrossfadingInfo>
+																</BlendTrackAssoc>
+															</BlendTrackAssocList>
+														</BlendTrack>
+														<BlendTrack Name="New Blend Track" ID="{063FED40-A720-46F3-B909-E50E9B5DA2AC}" ShortID="635354731">
+															<PropertyList>
+																<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="LayerCrossFadeControlInput">
+																	<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																</Reference>
+															</ReferenceList>
+															<ObjectLists>
+																<ObjectList Name="RTPC">
+																	<RTPC Name="" ID="{7BEBDCC9-237D-436F-A998-228EC42D1EC7}" ShortID="162030909">
+																		<PropertyList>
+																			<Property Name="PropertyName" Type="string" Value="Volume"/>
+																		</PropertyList>
+																		<ReferenceList>
+																			<Reference Name="ControlInput">
+																				<ObjectRef Name="Phy_WaterMovement" ID="{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}" WorkUnitID="{AB0CB565-5834-4A09-AECA-3BF056D96BDB}"/>
+																			</Reference>
+																			<Reference Name="Curve">
+																				<Custom>
+																					<Curve Name="" ID="{1FA5F79C-DDBE-4CEE-BF02-FB58A69DB92F}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>0</XPos>
+																								<YPos>-96</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>30</XPos>
+																								<YPos>-96</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>45</XPos>
+																								<YPos>-28</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>65</XPos>
+																								<YPos>-14</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>85</XPos>
+																								<YPos>-7</YPos>
+																								<Flags>0</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>100</XPos>
+																								<YPos>-5</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</Custom>
+																			</Reference>
+																		</ReferenceList>
+																	</RTPC>
+																</ObjectList>
+															</ObjectLists>
+															<BlendTrackAssocList>
+																<BlendTrackAssoc>
+																	<ItemRef Name="phy_hullWaterMassFast_loop" ID="{AD6F2940-1938-4219-9383-293B198061DC}"/>
+																	<CrossfadingInfo>
+																		<LeftEdgePos>0</LeftEdgePos>
+																		<LeftFadingMode>Automatic</LeftFadingMode>
+																		<RightEdgePos>100</RightEdgePos>
+																		<RightFadingMode>Automatic</RightFadingMode>
+																	</CrossfadingInfo>
+																</BlendTrackAssoc>
+															</BlendTrackAssocList>
+														</BlendTrack>
+													</BlendTrackList>
+												</BlendContainer>
 											</ChildrenList>
 										</Folder>
 										<BlendContainer Name="BC_phy_wakeWater" ID="{8C7FE357-2A30-4B51-B0B7-6E81A74E7E26}" ShortID="231654095">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-200</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-11</Value>
+														<Value>-8</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -12903,6 +13837,11 @@
 																	</Modifier>
 																</ModifierInfo>
 															</ModifierList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-7</Value>
+															</ValueList>
 														</Property>
 													</PropertyList>
 													<ReferenceList>
@@ -12972,7 +13911,7 @@
 														<Property Name="OverrideEffect" Type="bool" Value="True"/>
 														<Property Name="Pitch" Type="int32">
 															<ValueList>
-																<Value>-300</Value>
+																<Value>-600</Value>
 															</ValueList>
 															<ModifierList>
 																<ModifierInfo>
@@ -13382,7 +14321,7 @@
 																</Property>
 																<Property Name="Volume" Type="Real64">
 																	<ValueList>
-																		<Value>-14</Value>
+																		<Value>-22</Value>
 																	</ValueList>
 																</Property>
 															</PropertyList>
@@ -13962,6 +14901,11 @@
 										<BlendContainer Name="BC_phy_waveHull" ID="{6791227C-5984-452A-9B6C-0CB269ACCF12}" ShortID="746923036">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-2</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -13979,7 +14923,7 @@
 													<PropertyList>
 														<Property Name="Lowpass" Type="int16">
 															<ValueList>
-																<Value>25</Value>
+																<Value>35</Value>
 															</ValueList>
 														</Property>
 														<Property Name="OverrideEffect" Type="bool" Value="True"/>
@@ -13993,7 +14937,7 @@
 														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-10</Value>
+																<Value>-5</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -14197,7 +15141,7 @@
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>-10</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -14223,7 +15167,7 @@
 														<Property Name="OverrideEffect" Type="bool" Value="True"/>
 														<Property Name="Pitch" Type="int32">
 															<ValueList>
-																<Value>-400</Value>
+																<Value>-1000</Value>
 															</ValueList>
 															<ModifierList>
 																<ModifierInfo>

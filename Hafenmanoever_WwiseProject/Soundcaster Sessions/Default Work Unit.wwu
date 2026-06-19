@@ -30,20 +30,8 @@
 							<Position X="1" Y="5"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="phy_hullWaterMass_loop" ID="{0BD83BFA-0F5D-43F2-BDD5-B127BA5FE111}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<ObjectRef Name="BC_phy_hullWaterMass_loop" ID="{7A891AA2-DC67-43BB-86A5-D5772C9724AD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="2" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="phy_hullWaterMass_loop01" ID="{E4E736B8-C850-4B74-BC9D-C0F702E5CD9B}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-							<Position X="2" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="phy_hullWaterMassFast_loop" ID="{AD6F2940-1938-4219-9383-293B198061DC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-							<Position X="2" Y="2"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="phy_hullWaterMassSlow_loop" ID="{715FE565-A242-4407-8BEC-44A5EBC7067E}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-							<Position X="2" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="BC_phy_boatWind" ID="{1B2C0453-D200-4CC2-804E-EBBFBE01A3B3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
@@ -52,6 +40,10 @@
 						<Module>
 							<ObjectRef Name="BC_phy_sailWind" ID="{02AFFAA9-BDD4-445A-884A-319706522A34}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="4"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="BC_boatSailDeploy" ID="{4BF484A1-5022-435D-8614-1C6542EA25DD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
@@ -100,6 +92,142 @@
 						<Module>
 							<ObjectRef Name="amb_seagullSingle" ID="{C6D0AEB5-B5A5-4F30-83F7-3DEE0C2C4533}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="3"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="MissionFeedback Mix" ID="{EBD60563-4ABD-46E9-B8D6-4D0EF88AA4CC}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="mission_moneyGain" ID="{47F9E818-89F3-45A5-BD39-6ABB0B2A9764}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_moneyPurse" ID="{9F5A230D-4892-42A1-9972-1987C762B891}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_moneySpend" ID="{951B8DB0-8E39-4DD5-B4F9-BA9D16111582}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_moneyZero" ID="{BC28199F-05D7-4661-A063-2DCDA19D3165}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_abort" ID="{D7DFD27D-CCC2-40AA-9BD7-575BA050D695}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_accept" ID="{FB02209B-5142-426D-9856-AA81BCD6F01E}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_boatDamage" ID="{09677CE6-81A1-4245-B3C3-167A2E58BBC5}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_complete" ID="{98BFE005-E28D-4ACA-B91E-ED43F7531F20}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_fail" ID="{DE76E5BC-26A4-4237-9716-0ECE4E7FC0AC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_fastMovement" ID="{95753613-E65A-4EE3-A99F-D1D02A9AA8B2}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="5"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_goalFail" ID="{F56B9250-FD99-49D0-AB5E-2AAF5EAA9CBD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="6"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_goalReached" ID="{0B399DB4-E072-45AE-BDC1-EEBDFD7EAA1E}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="7"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_mission_voiceLinesNpc" ID="{2F48C6BA-8F66-41D5-89E0-A726661B6087}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Environment Mix" ID="{9CEBB8C8-7241-4B30-B529-E4A6B32D37D2}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="BC_envcollisionHeavyImpact" ID="{5E5396D0-8E5B-4A13-8223-A185F73CC7FE}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BC_envcollisionLightImpact" ID="{D03735BA-B263-4849-AE79-9B4E2B355A50}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BC_envCollisionUnderWater" ID="{6C66ED07-8A83-4726-A43A-F614410689D3}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="env_boatDockImpact" ID="{05D9FA2A-8780-4509-8095-C3EB2EE3782E}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BC_env_boatRubDock_loop" ID="{CE839D89-8717-4AAB-A080-CA1A83CEADEC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="env_closeMap" ID="{0FF61C50-9109-4173-96D4-4EA6BAB6A20C}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="env_openMap" ID="{9957198F-BF30-49DA-98CE-0E460E32BA92}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="env_boatRepair" ID="{42086141-0224-4CFC-83BA-5857BE6BA395}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SC_env_refuel" ID="{EC4AA6A0-E873-49FC-A4B9-146A2E8DB09A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="6" Y="0"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Menu Mix" ID="{F1AE52A5-1ADD-4526-BC63-6A17D8268A7D}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="menu_back" ID="{1CC75D76-4BCF-46EA-970E-C3706B54FA4F}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menu_forward" ID="{EFD97E77-3D6C-4F56-AE34-E906211D4DF8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menu_openMain" ID="{49EE8B96-A0D6-4283-B8D8-663B00691A92}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menu_openPause" ID="{FE644F0E-729E-4685-A6C2-23E57A728B03}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="menu_gameStart" ID="{53E5E5D4-20C5-461F-BF70-D50EEDADDFD8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="6" Y="0"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>

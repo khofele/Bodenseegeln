@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &424539096853163256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4949484868429395101}
+  - component: {fileID: 901944586885751254}
+  m_Layer: 0
+  m_Name: PhysicsAudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4949484868429395101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424539096853163256}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2858.8547, y: 0, z: 2801.2524}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &901944586885751254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424539096853163256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9618c421b8f92c43ac406c67a101a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhysicsAudioController
+  m_hullWaterEmitter: {fileID: 0}
+  m_bowWaterEmitter: {fileID: 0}
+  m_wakeWaterEmitter: {fileID: 0}
+  m_boatWindEmitter: {fileID: 0}
+  m_sailWindEmitter: {fileID: 0}
+  m_waveMotionEmitter: {fileID: 0}
+  m_waveHullStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 69428cdaa6121db4a80ab3098e806b62, type: 2}
+  m_waveHullStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1bc361ee0382b8e4682e99021799981c, type: 2}
+  m_bowWaterStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ad938b515831b464d96bc020808c3fd8, type: 2}
+  m_bowWaterStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f91451c9574e0cf48a243c556b0a7758, type: 2}
+  m_wakeWaterStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b0016d393f4a7ec4bb0ca7758c7f5c86, type: 2}
+  m_wakeWaterStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9d4254d1ddbc159449a13aadb250b4ef, type: 2}
+  m_waterDisplacementStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f9840204cbe61af4780ed4269479d609, type: 2}
+  m_waterDisplacementStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2d9e8ed348ae25c479b63f08243f5bdb, type: 2}
+  m_windForceBoatStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8985cef9ed8840447908f185e1d96345, type: 2}
+  m_windForceBoatStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 208cd0ee7e044dd4b857ab6bab0545fc, type: 2}
+  m_windForceSailStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5a075e519d2f0cf49adde74c91c6aeaa, type: 2}
+  m_windForceSailStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0aa8020b3693d6040a44729d14087c91, type: 2}
+  m_waveMotionStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 97f73ed9fec0f564088fbd50154239ad, type: 2}
+  m_waveMotionStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b88f66ffc89598a4ea8291f7a0427bd1, type: 2}
+  m_phyWaterMovementRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ba5edb626577aef4f81b072a148cc9f6, type: 2}
+  m_windBoatIntensityRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: dc8b257c05d674843915b4f0530bbb33, type: 2}
+  m_windSailIntensityRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 54326bbabddb4b54e90a936e110b25a5, type: 2}

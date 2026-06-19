@@ -12,6 +12,8 @@ namespace MapUI
 {
     public class MapUIController : MonoBehaviour
     {
+        [SerializeField] private EnvironmentAudioController m_environmentAudioController = null;  // Audio class reference
+
         [Header("Input")]
         [SerializeField] private InputActionReference m_toggleMapAction = null;
 
@@ -69,6 +71,7 @@ namespace MapUI
 
             GameManager.Instance.SetState(GameStates.PAUSED);
             m_root.SetActive(true);
+            m_environmentAudioController.PlayOpenMap(); // Play Audio Open map
 
             RefreshMap();
         }
@@ -79,6 +82,7 @@ namespace MapUI
 
             m_root.SetActive(false);
             GameManager.Instance?.SetState(m_previousState);
+            m_environmentAudioController.PlayCloseMap(); // Play Audio Open Map
         }
 
         private void RefreshMap()

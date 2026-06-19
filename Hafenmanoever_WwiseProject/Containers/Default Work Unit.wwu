@@ -6821,7 +6821,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>2</Value>
+																<Value>5</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -7242,7 +7242,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-1</Value>
+																<Value>2</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -7748,7 +7748,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>7</Value>
+																<Value>9</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -8171,7 +8171,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>-9</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -8262,7 +8262,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>-9</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
@@ -8341,7 +8341,7 @@
 													</ValueList>
 												</Property>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="3"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.001"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 												<Property Name="UseMaxSoundPerInstance" Type="bool">
@@ -8351,7 +8351,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>2</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -8390,7 +8390,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-2</Value>
+																<Value>1</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -8519,10 +8519,10 @@
 																<AudioFileSource Name="env_refuelMetalKlick00" ID="{6D1D30F2-F796-41E3-AD49-C9D000EB309F}">
 																	<PropertyList>
 																		<Property Name="FadeInDuration" Type="Real64" Value="0.01185"/>
-																		<Property Name="FadeOutDuration" Type="Real64" Value="0.05143"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.02546"/>
 																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 																		<Property Name="TrimBegin" Type="Real64" Value="0.05846"/>
-																		<Property Name="TrimEnd" Type="Real64" Value="0.19802"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.14134"/>
 																	</PropertyList>
 																	<Language>SFX</Language>
 																	<AudioFile>env_refuelMetalKlick00.wav</AudioFile>
@@ -8548,10 +8548,10 @@
 																<AudioFileSource Name="env_refuelMetalKlick01" ID="{AAE7BB25-ECC3-49F2-BAD1-45A30EB0B117}">
 																	<PropertyList>
 																		<Property Name="FadeInDuration" Type="Real64" Value="0.02565"/>
-																		<Property Name="FadeOutDuration" Type="Real64" Value="0.07981"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.02631"/>
 																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 																		<Property Name="TrimBegin" Type="Real64" Value="0.09689"/>
-																		<Property Name="TrimEnd" Type="Real64" Value="0.32316"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.21197"/>
 																	</PropertyList>
 																	<Language>SFX</Language>
 																	<AudioFile>env_refuelMetalKlick01.wav</AudioFile>
@@ -8580,14 +8580,14 @@
 											</ChildrenList>
 											<ObjectLists>
 												<ObjectList Name="Playlist">
-													<PluginInnerObject Name="" ID="{6D65A5D8-D989-41DD-A019-5E4656495962}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+													<PluginInnerObject Name="" ID="{4E85B1C9-555F-4BB8-A3FA-3C09DBBF04E5}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
 														<ReferenceList>
 															<Reference Name="PlaylistObject">
 																<ObjectRef Name="RC_env_refuelMetalClick" ID="{9E835131-458A-4AD0-8230-1D23677F9AD4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 															</Reference>
 														</ReferenceList>
 													</PluginInnerObject>
-													<PluginInnerObject Name="" ID="{FBE2AB67-AFFE-4BC8-AA9D-F216CF831D50}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+													<PluginInnerObject Name="" ID="{A108580D-3097-417A-AFDF-B77ED3437CAD}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
 														<ReferenceList>
 															<Reference Name="PlaylistObject">
 																<ObjectRef Name="RC_env_refuel" ID="{86A71E7E-B6D8-4868-A257-5656CD33F1D6}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
@@ -8983,7 +8983,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-7</Value>
+														<Value>-13</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -9070,7 +9070,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-7</Value>
+														<Value>-10</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>

@@ -118,7 +118,6 @@ public class PhysicsAudioController : MonoBehaviour
         PlayEvent(m_waterDisplacementStartEvent, m_hullWaterEmitter);
 
         PlayEvent(m_windForceBoatStartEvent, m_boatWindEmitter);
-        PlayEvent(m_windForceSailStartEvent, m_sailWindEmitter);
 
         PlayEvent(m_waveMotionStartEvent, m_waveMotionEmitter);
 
@@ -140,7 +139,6 @@ public class PhysicsAudioController : MonoBehaviour
         PlayEvent(m_waterDisplacementStopEvent, m_hullWaterEmitter);
 
         PlayEvent(m_windForceBoatStopEvent, m_boatWindEmitter);
-        PlayEvent(m_windForceSailStopEvent, m_sailWindEmitter);
 
         PlayEvent(m_waveMotionStopEvent, m_waveMotionEmitter);
 
@@ -155,6 +153,17 @@ public class PhysicsAudioController : MonoBehaviour
         SetBoatWindIntensity(0.0f);
         SetSailWindIntensity(0.0f);
         //SetSailTension(100.0f);
+    }
+
+    public void StartSailPhysicsAudio()
+    {
+        PlayEvent(m_windForceSailStartEvent, m_sailWindEmitter);
+
+    }
+
+    public void StopSailPhysicsAudio()
+    {
+        PlayEvent(m_windForceSailStopEvent, m_sailWindEmitter);
     }
 
     public void SetWaterMovement(float waterMovement)

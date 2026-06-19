@@ -99,6 +99,66 @@
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>
+				<SoundcasterSession Name="MissionFeedback Mix" ID="{EBD60563-4ABD-46E9-B8D6-4D0EF88AA4CC}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="mission_moneyGain" ID="{47F9E818-89F3-45A5-BD39-6ABB0B2A9764}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_moneyPurse" ID="{9F5A230D-4892-42A1-9972-1987C762B891}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_moneySpend" ID="{951B8DB0-8E39-4DD5-B4F9-BA9D16111582}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_moneyZero" ID="{BC28199F-05D7-4661-A063-2DCDA19D3165}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_abort" ID="{D7DFD27D-CCC2-40AA-9BD7-575BA050D695}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_accept" ID="{FB02209B-5142-426D-9856-AA81BCD6F01E}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_boatDamage" ID="{09677CE6-81A1-4245-B3C3-167A2E58BBC5}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_complete" ID="{98BFE005-E28D-4ACA-B91E-ED43F7531F20}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_fail" ID="{DE76E5BC-26A4-4237-9716-0ECE4E7FC0AC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_fastMovement" ID="{95753613-E65A-4EE3-A99F-D1D02A9AA8B2}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="5"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_goalFail" ID="{F56B9250-FD99-49D0-AB5E-2AAF5EAA9CBD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="6"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="mission_goalReached" ID="{0B399DB4-E072-45AE-BDC1-EEBDFD7EAA1E}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="1" Y="7"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_mission_voiceLinesNpc" ID="{2F48C6BA-8F66-41D5-89E0-A726661B6087}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>

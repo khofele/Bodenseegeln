@@ -5405,6 +5405,7 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="boat_mastCreak" ID="{558334D1-E8DD-4157-8DC2-8590042619AC}" ShortID="127058686">
 											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
 														<Value>30</Value>
@@ -5445,6 +5446,9 @@
 												</Property>
 											</PropertyList>
 											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="ATT_BoatSail" ID="{A81A7C27-C0AF-49A6-A501-658E1F0DA789}" WorkUnitID="{4456D432-DD54-418A-9E6E-D38294D45E6B}"/>
+												</Reference>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
 												</Reference>

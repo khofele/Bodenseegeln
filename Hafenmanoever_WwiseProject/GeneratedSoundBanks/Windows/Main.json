@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{A54E959C-C9D5-3530-8DCC-199933069628}",
+    "Hash": "{AAEEB5EF-7173-F294-FA30-00619FC3DA80}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -2573,6 +2573,7 @@
       "Name": "boat_start_mastCreak",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatMast\\boat_start_mastCreak",
       "GUID": "{44F76B9E-811F-48AF-A27A-90774BB0D937}",
+      "MaxAttenuation": "50",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -3932,6 +3933,6 @@
     ]
    }
   ],
-  "FileHash": "{246B556B-5DCB-AF76-C332-A051B2CB497E}"
+  "FileHash": "{E20989F1-508D-A6A3-BB17-9D7CC105BC61}"
  }
 }

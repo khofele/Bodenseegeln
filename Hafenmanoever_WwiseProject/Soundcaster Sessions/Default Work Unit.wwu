@@ -270,8 +270,20 @@
 							<Position X="5" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="BC_boatSailDeploy" ID="{4BF484A1-5022-435D-8614-1C6542EA25DD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="5" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BC_boatSailRetract" ID="{C5604AC0-550D-4226-9A13-1A8A0BB93FA9}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="5" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="BoatRopeCreak" ID="{EC0928CE-71E5-4579-BB35-D62CE5270CA0}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 							<Position X="6" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="BC_sailState_01" ID="{BE40B721-7FB1-43B8-A417-B3F730109F3A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+							<Position X="6" Y="2"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>

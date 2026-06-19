@@ -3233,6 +3233,7 @@
 														<Value>40</Value>
 													</ValueList>
 												</Property>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 												<Property Name="MaxSoundPerInstance" Type="int16">
 													<ValueList>
 														<Value>1</Value>
@@ -3251,7 +3252,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-15</Value>
+														<Value>-17</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -3542,11 +3543,6 @@
 												<Property Name="UseMaxSoundPerInstance" Type="bool">
 													<ValueList>
 														<Value>True</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -4978,7 +4974,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-2</Value>
+																<Value>-4</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>

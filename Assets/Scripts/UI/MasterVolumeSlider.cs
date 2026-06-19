@@ -6,7 +6,8 @@ public class MasterVolumeSlider : MonoBehaviour
 {
     [SerializeField] private Slider m_volumeSlider = null;
 
-    [Header("WWise References")]
+    [Header("Audio References")]
+    [SerializeField] private MenuAudioController m_menuAudioController = null;
     [SerializeField] private WwiseRTPC m_masterVolumeRTPC = null;
 
     private void Start()
@@ -32,6 +33,8 @@ public class MasterVolumeSlider : MonoBehaviour
 
         // change visible slider
         m_volumeSlider.value = clampedVolume;
+
+        m_menuAudioController.PlayVolumeSliderChanged();
 
         Debug.Log("Master Volume Save " + PlayerPrefs.GetFloat("MasterVolume"));
 

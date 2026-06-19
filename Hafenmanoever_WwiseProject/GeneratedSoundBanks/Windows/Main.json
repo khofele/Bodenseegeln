@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{1CBB1A52-CE6E-B121-DE2D-28B1C4BD9BA5}",
+    "Hash": "{E73180B1-E7F5-CA4A-292D-3E0FE542F560}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -992,6 +992,14 @@
       "CachePath": "44/{44BFBC8A-0ADA-8B90-7041-1F5895349F29}.wem"
      },
      {
+      "Id": "844626901",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "menu_gameStart.wav",
+      "CachePath": "9D/{9DD56795-31CF-E409-D71E-37E1C84B6376}.wem"
+     },
+     {
       "Id": "851669271",
       "Language": "SFX",
       "Streaming": "false",
@@ -1639,6 +1647,14 @@
        "Name": "EnvRefuel_EQ",
        "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvRefuel_EQ",
        "GUID": "{A79D71BE-C32B-465F-92C0-5A43745ABD68}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "3209444191",
+       "Name": "Static_Sibilance_Remover_Male",
+       "ObjectPath": "\\Effects\\Factory Effects\\Parametric EQ\\Misc\\Static_Sibilance_Remover_Male",
+       "GUID": "{3FF84C1E-F84E-432E-86BC-96B3C9219F10}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
       },
@@ -2958,10 +2974,22 @@
       "Name": "menu_ambientStart",
       "ObjectPath": "\\Events\\Default Work Unit\\Menu\\Ambience\\menu_ambientStart",
       "GUID": "{C662138A-2799-4291-82C1-F4D7B5289D7E}",
-      "MaxAttenuation": "0",
-      "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "26190552"
+       },
+       {
+        "Id": "497084699"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3097332211"
+        }
+       ]
+      }
      },
      {
       "Id": "3178454985",
@@ -3044,10 +3072,21 @@
       "Name": "menu_navigateStartGame",
       "ObjectPath": "\\Events\\Default Work Unit\\Menu\\Navigate\\menu_navigateStartGame",
       "GUID": "{C9B737B4-BD9A-4C2F-890A-0434F0E97BCC}",
-      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0"
+      "DurationMin": "0.46339434",
+      "DurationMax": "0.46339434",
+      "MediaRefs": [
+       {
+        "Id": "844626901"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3209444191"
+        }
+       ]
+      }
      },
      {
       "Id": "1386440470",
@@ -3782,6 +3821,6 @@
     ]
    }
   ],
-  "FileHash": "{789D46C0-7B43-9133-E70D-317A06C7CAC7}"
+  "FileHash": "{10AF2439-40CA-05FF-6156-17EB99D17F21}"
  }
 }

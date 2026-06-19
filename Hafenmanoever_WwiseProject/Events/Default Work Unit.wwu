@@ -52,13 +52,46 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="menu_navigateModifiedSetting" ID="{9C915503-AE15-4A4A-ADF2-14CDF893440A}"/>
-								<Event Name="menu_navigateStartGame" ID="{C9B737B4-BD9A-4C2F-890A-0434F0E97BCC}"/>
+								<Event Name="menu_navigateStartGame" ID="{C9B737B4-BD9A-4C2F-890A-0434F0E97BCC}">
+									<ChildrenList>
+										<Action Name="" ID="{D7A4DAD8-41F4-43FA-B339-DFD8562BC021}" ShortID="133832458">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="menu_gameStart" ID="{53E5E5D4-20C5-461F-BF70-D50EEDADDFD8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Ambience" ID="{A1EE0AD0-30FD-405C-8C3F-6B4D53143266}" ShortID="695002014">
 							<ChildrenList>
-								<Event Name="menu_ambientStart" ID="{C662138A-2799-4291-82C1-F4D7B5289D7E}"/>
-								<Event Name="menu_ambientStop" ID="{6073BA72-DF1C-46B2-9F48-7ED65B5F158B}"/>
+								<Event Name="menu_ambientStart" ID="{C662138A-2799-4291-82C1-F4D7B5289D7E}">
+									<ChildrenList>
+										<Action Name="" ID="{1E348172-9D62-4ACD-9B22-4B58C0005AED}" ShortID="806020005">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="menu_ambientStop" ID="{6073BA72-DF1C-46B2-9F48-7ED65B5F158B}">
+									<ChildrenList>
+										<Action Name="" ID="{7591C0ED-AD47-4420-AF7A-04A65AC0C779}" ShortID="654208117">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

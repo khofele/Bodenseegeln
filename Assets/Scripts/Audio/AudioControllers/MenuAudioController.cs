@@ -38,7 +38,7 @@ public class MenuAudioController : MonoBehaviour
         PlayEvent(m_navigateForwardEvent);
     }
 
-    public void PlayNavigateBackward()
+    public void PlayResumeGame()
     {
         PlayEvent(m_navigateBackwardEvent);
     }

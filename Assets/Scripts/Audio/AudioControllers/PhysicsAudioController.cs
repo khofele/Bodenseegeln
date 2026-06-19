@@ -46,7 +46,36 @@ public class PhysicsAudioController : MonoBehaviour
     [SerializeField] private WwiseRTPC m_windSailIntensityRTPC = null;
     //[SerializeField] private WwiseRTPC m_sailTensionRTPC = null;
 
+    [Header("RTPC Mappings")]
+    [SerializeField]
+    private RTPCMapping m_waterMovementMapping = new RTPCMapping
+    {
+        unityMin = 0.0f,
+        unityMax = 15.0f,
+        wwiseMin = 0.0f,
+        wwiseMax = 100.0f
+    };
+
+    [SerializeField]
+    private RTPCMapping m_boatWindIntensityMapping = new RTPCMapping
+    {
+        unityMin = 0.0f,
+        unityMax = 100.0f,
+        wwiseMin = 0.0f,
+        wwiseMax = 100.0f
+    };
+
+    [SerializeField]
+    private RTPCMapping m_sailWindIntensityMapping = new RTPCMapping
+    {
+        unityMin = 0.0f,
+        unityMax = 100.0f,
+        wwiseMin = 0.0f,
+        wwiseMax = 100.0f
+    };
+
     private bool m_isPhysicsAudioPlaying = false;
+    private bool m_isSailPhysicsAudioPlaying = false;
 
     // PRIVATE METHODS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void Awake()
@@ -80,6 +109,18 @@ public class PhysicsAudioController : MonoBehaviour
         {
             m_waveMotionEmitter = gameObject;
         }
+    }
+
+    private void OnDisable()
+    {
+        StopPhysicsAudio();
+        StopSailPhysicsAudio();
+    }
+
+    private void OnDestroy()
+    {
+        StopPhysicsAudio();
+        StopSailPhysicsAudio();
     }
 
     private void PlayEvent(WwiseEvent wwiseEvent, GameObject emitter)
@@ -157,37 +198,65 @@ public class PhysicsAudioController : MonoBehaviour
 
     public void StartSailPhysicsAudio()
     {
+        if (m_isSailPhysicsAudioPlaying)
+        {
+            return;
+        }
+
         PlayEvent(m_windForceSailStartEvent, m_sailWindEmitter);
 
+        m_isSailPhysicsAudioPlaying = true;
     }
 
     public void StopSailPhysicsAudio()
     {
+        if (!m_isSailPhysicsAudioPlaying)
+        {
+            return;
+        }
+
         PlayEvent(m_windForceSailStopEvent, m_sailWindEmitter);
+
+        m_isSailPhysicsAudioPlaying = false;
     }
 
     public void SetWaterMovement(float waterMovement)
     {
-        float clampedValue = Mathf.Clamp(waterMovement, 0.0f, 100.0f);
+        //float clampedValue = Mathf.Clamp(waterMovement, 0.0f, 100.0f);
 
-        SetRTPC(m_phyWaterMovementRTPC, m_hullWaterEmitter, clampedValue);
-        SetRTPC(m_phyWaterMovementRTPC, m_bowWaterEmitter, clampedValue);
-        SetRTPC(m_phyWaterMovementRTPC, m_wakeWaterEmitter, clampedValue);
-        SetRTPC(m_phyWaterMovementRTPC, m_waveMotionEmitter, clampedValue);
+        //SetRTPC(m_phyWaterMovementRTPC, m_hullWaterEmitter, clampedValue);
+        //SetRTPC(m_phyWaterMovementRTPC, m_bowWaterEmitter, clampedValue);
+        //SetRTPC(m_phyWaterMovementRTPC, m_wakeWaterEmitter, clampedValue);
+        //SetRTPC(m_phyWaterMovementRTPC, m_waveMotionEmitter, clampedValue);
+
+        float mappedValue = m_waterMovementMapping.Map(waterMovement);
+
+        SetRTPC(m_phyWaterMovementRTPC, m_hullWaterEmitter, mappedValue);
+        SetRTPC(m_phyWaterMovementRTPC, m_bowWaterEmitter, mappedValue);
+        SetRTPC(m_phyWaterMovementRTPC, m_wakeWaterEmitter, mappedValue);
+        SetRTPC(m_phyWaterMovementRTPC, m_waveMotionEmitter, mappedValue);
     }
 
     public void SetBoatWindIntensity(float windIntensity)
     {
-        float clampedValue = Mathf.Clamp(windIntensity, 0.0f, 100.0f);
+        //float clampedValue = Mathf.Clamp(windIntensity, 0.0f, 100.0f);
 
-        SetRTPC(m_windBoatIntensityRTPC, m_boatWindEmitter, clampedValue);
+        //SetRTPC(m_windBoatIntensityRTPC, m_boatWindEmitter, clampedValue);
+
+        float mappedValue = m_boatWindIntensityMapping.Map(windIntensity);
+
+        SetRTPC(m_windBoatIntensityRTPC, m_boatWindEmitter, mappedValue);
     }
 
     public void SetSailWindIntensity(float windIntensity)
     {
-        float clampedValue = Mathf.Clamp(windIntensity, 0.0f, 100.0f);
+        //float clampedValue = Mathf.Clamp(windIntensity, 0.0f, 100.0f);
 
-        SetRTPC(m_windSailIntensityRTPC, m_sailWindEmitter, clampedValue);
+        //SetRTPC(m_windSailIntensityRTPC, m_sailWindEmitter, clampedValue);
+
+        float mappedValue = m_sailWindIntensityMapping.Map(windIntensity);
+
+        SetRTPC(m_windSailIntensityRTPC, m_sailWindEmitter, mappedValue);
     }
 
     //public void SetSailTension(float sailTension)

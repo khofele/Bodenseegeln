@@ -12,8 +12,6 @@ public class ShaderVariablenÜbergabe : MonoBehaviour
                 m_BoatRefrence.GetComponent<Rigidbody>().linearVelocity.y,
                 m_BoatRefrence.GetComponent<Rigidbody>().linearVelocity.z,
                 0.0f));
-            Debug.Log("Velocity: " + m_BoatRefrence.GetComponent<Rigidbody>().linearVelocity);
-            Debug.Log("Velocity: " + m_BoatRefrence.GetComponent<Rigidbody>().linearVelocity.magnitude);
         }
     }
 }

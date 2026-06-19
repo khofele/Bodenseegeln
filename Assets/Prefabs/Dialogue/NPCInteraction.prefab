@@ -140,7 +140,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7921149561442680991}
@@ -194,8 +194,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.8396226, g: 0.6532988, b: 0.08317016, a: 1}
+  m_Sprite: {fileID: -7882476822649832270, guid: 23807b219f5338f4e92c8f11f8937f7e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -264,10 +264,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a2bf9ff042e6345bac0163633f8c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue.NPCInteraction
+  m_iconOverride: {fileID: 0}
   m_showGizmos: 1
   m_npc: {fileID: 0}
   m_maxBoatSpeed: 0.5
   m_visibilityDistance: 150
+  m_requireCorrectParking: 0
+  m_allowedAngleTolerance: 25
   m_boatTransform: {fileID: 0}
   m_interactionIcon: {fileID: 0}
   m_talkIcon: {fileID: 8844130193311737604}
@@ -322,7 +325,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7921149561442680991}
@@ -376,8 +379,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.4138483, g: 0.7509815, b: 0.9433962, a: 1}
+  m_Sprite: {fileID: 670608920685673900, guid: 23807b219f5338f4e92c8f11f8937f7e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

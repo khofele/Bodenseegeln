@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Du hast nicht genug Geld, um abgeschleppt zu werden!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -148,14 +148,14 @@ GameObject:
   - component: {fileID: 1825220341658861564}
   - component: {fileID: 2832624644963835228}
   - component: {fileID: 3968998354313568406}
-  - component: {fileID: 4545449276491187762}
+  - component: {fileID: 3859975834191699385}
   m_Layer: 5
-  m_Name: NotEnoughMoneyForResetScreen
+  m_Name: ResetNotPossibleScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1825220341658861564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4545449276491187762
+--- !u!114 &3859975834191699385
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

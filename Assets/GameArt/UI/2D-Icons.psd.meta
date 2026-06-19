@@ -298,6 +298,72 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 7298, y: 1064}
     spritePosition: {x: 2213, y: 2914}
+  - name: Ankerpart Reperatur
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2117
+      y: 2760
+      width: 256
+      height: 347
+    spriteID: 0258ce8ecc1205848b4a8968c2456568
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2117, y: 2760}
+    spritePosition: {x: 92, y: 3033}
+  - name: Anker Part Treibstoff
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2381
+      y: 2760
+      width: 256
+      height: 347
+    spriteID: 3a2f3d3190d43ef478cdb60a268edf06
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2381, y: 2760}
+    spritePosition: {x: 867, y: 3032}
+  - name: Anker Part Quest
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2645
+      y: 2760
+      width: 265
+      height: 289
+    spriteID: 76eeeaeb423cd6146bc476ce7a84b415
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2645, y: 2760}
+    spritePosition: {x: 476, y: 3670}
   - name: Anker_TR
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -724,6 +790,36 @@ ScriptedImporter:
     spriteID: 6f345b72f8c9314448536d1446120d8e
     layerID: 48
     mosaicPosition: {x: 7298, y: 1064}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ankerpart Reperatur
+    spriteName: Ankerpart Reperatur
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0258ce8ecc1205848b4a8968c2456568
+    layerID: 130
+    mosaicPosition: {x: 2117, y: 2760}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Anker Part Treibstoff
+    spriteName: Anker Part Treibstoff
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3a2f3d3190d43ef478cdb60a268edf06
+    layerID: 129
+    mosaicPosition: {x: 2381, y: 2760}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Anker Part Quest
+    spriteName: Anker Part Quest
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 76eeeaeb423cd6146bc476ce7a84b415
+    layerID: 128
+    mosaicPosition: {x: 2645, y: 2760}
     flatten: 0
     isImported: 1
     isVisible: 1

@@ -11,14 +11,20 @@ public class PauseMenuUI : MonoBehaviour
     [SerializeField] private Button m_btnResumeGame = null;
     [SerializeField] private Button m_btnEndGame = null;
 
+    [Header("Audio Controller")]
+    [SerializeField] private MenuAudioController m_menuAudioController = null;
+
     private void EndGame()
     {
+        m_menuAudioController.PlayEndGame();
         Application.Quit();
     }
 
     private void Start()
     {
         m_btnResumeGame.onClick.AddListener(() => OnResumeButtonClicked?.Invoke());
+        m_btnResumeGame.onClick.AddListener(m_menuAudioController.PlayResumeGame);
+
         m_btnEndGame.onClick.AddListener(EndGame);
     }
 

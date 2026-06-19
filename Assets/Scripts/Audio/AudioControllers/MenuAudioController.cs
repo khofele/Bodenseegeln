@@ -33,17 +33,17 @@ public class MenuAudioController : MonoBehaviour
     }
 
     // PUBLIC METHODS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void PlayNavigateForward()
+    public void PlayVolumeSliderChanged()
     {
         PlayEvent(m_navigateForwardEvent);
     }
 
-    public void PlayNavigateBackward()
+    public void PlayResumeGame()
     {
         PlayEvent(m_navigateBackwardEvent);
     }
 
-    public void PlayOpenMainMenu()
+    public void PlayEndGame()
     {
         PlayEvent(m_openMainMenuEvent);
     }

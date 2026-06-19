@@ -52,13 +52,46 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="menu_navigateModifiedSetting" ID="{9C915503-AE15-4A4A-ADF2-14CDF893440A}"/>
-								<Event Name="menu_navigateStartGame" ID="{C9B737B4-BD9A-4C2F-890A-0434F0E97BCC}"/>
+								<Event Name="menu_navigateStartGame" ID="{C9B737B4-BD9A-4C2F-890A-0434F0E97BCC}">
+									<ChildrenList>
+										<Action Name="" ID="{D7A4DAD8-41F4-43FA-B339-DFD8562BC021}" ShortID="133832458">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="menu_gameStart" ID="{53E5E5D4-20C5-461F-BF70-D50EEDADDFD8}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Ambience" ID="{A1EE0AD0-30FD-405C-8C3F-6B4D53143266}" ShortID="695002014">
 							<ChildrenList>
-								<Event Name="menu_ambientStart" ID="{C662138A-2799-4291-82C1-F4D7B5289D7E}"/>
-								<Event Name="menu_ambientStop" ID="{6073BA72-DF1C-46B2-9F48-7ED65B5F158B}"/>
+								<Event Name="menu_ambientStart" ID="{C662138A-2799-4291-82C1-F4D7B5289D7E}">
+									<ChildrenList>
+										<Action Name="" ID="{1E348172-9D62-4ACD-9B22-4B58C0005AED}" ShortID="806020005">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="menu_ambientStop" ID="{6073BA72-DF1C-46B2-9F48-7ED65B5F158B}">
+									<ChildrenList>
+										<Action Name="" ID="{7591C0ED-AD47-4420-AF7A-04A65AC0C779}" ShortID="654208117">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_water_loop" ID="{054142F7-FF54-4AA0-BD0A-73A0B26CB415}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
@@ -539,6 +572,39 @@
 								<Event Name="boat_riggingMove" ID="{49B3BB0B-530F-4CDE-A8CF-B8ECA0A7348F}"/>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="BoatMast" ID="{CC292D20-FC4E-47AC-993A-EBC65BC05334}" ShortID="435670639">
+							<ChildrenList>
+								<Event Name="boat_start_mastCreak" ID="{44F76B9E-811F-48AF-A27A-90774BB0D937}">
+									<ChildrenList>
+										<Action Name="" ID="{C16F8B26-7C85-46AE-9D0C-DAA370AAD66C}" ShortID="845643352">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_mastCreak" ID="{558334D1-E8DD-4157-8DC2-8590042619AC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_stop_mastCreak" ID="{9B1F0482-B463-40FF-8B0D-4D11F2CF9D60}">
+									<ChildrenList>
+										<Action Name="" ID="{C3988FFD-AB15-4E93-880F-6F7F7CCFD3EA}" ShortID="901059989">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_mastCreak" ID="{558334D1-E8DD-4157-8DC2-8590042619AC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Environment" ID="{F7A400A8-0F91-4630-953E-8D8200BDD709}" ShortID="5191634">
@@ -909,7 +975,6 @@
 									<ChildrenList>
 										<Action Name="" ID="{DDEDCE5E-FB9A-4DBA-8745-E67895BD6453}" ShortID="809616888">
 											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="2"/>
 												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
 												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 											</PropertyList>
@@ -1248,6 +1313,9 @@
 								<Event Name="phy_start_waterDisplacement" ID="{31B997D4-F878-4E1C-A256-7BF592BD04F2}">
 									<ChildrenList>
 										<Action Name="" ID="{93FE3ACC-F215-4CC7-96E0-58667615CDB4}" ShortID="142893108">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="BC_phy_waterDisplacement2" ID="{77326372-9316-40B5-B07D-91E0C7823585}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
@@ -1267,6 +1335,37 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="BC_phy_waterDisplacement2" ID="{77326372-9316-40B5-B07D-91E0C7823585}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_start_hullWaterMass" ID="{A2591F53-F25D-4CE4-AECB-CD5DC5413C31}">
+									<ChildrenList>
+										<Action Name="" ID="{E4A6A6A0-5115-4C92-B681-A25482F6AD4D}" ShortID="848214992">
+											<PropertyList>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_hullWaterMass_loop" ID="{7A891AA2-DC67-43BB-86A5-D5772C9724AD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="phy_stop_hullWaterMass" ID="{B99F45A0-91FC-45ED-8CF7-40A21EE3C93D}">
+									<ChildrenList>
+										<Action Name="" ID="{07657E7F-70C4-45B9-9CC1-7F400AC2DFA1}" ShortID="884426276">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BC_phy_hullWaterMass_loop" ID="{7A891AA2-DC67-43BB-86A5-D5772C9724AD}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1307,6 +1406,16 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<Event Name="audio_stopAll" ID="{78B7E2D7-97F4-4D39-95B2-15B8B0448A3A}">
+					<ChildrenList>
+						<Action Name="" ID="{E34DA3F2-BD86-4B41-A9A7-964D5F2FDEE7}" ShortID="764968647">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

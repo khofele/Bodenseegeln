@@ -6,7 +6,8 @@ public class MasterVolumeSlider : MonoBehaviour
 {
     [SerializeField] private Slider m_volumeSlider = null;
 
-    [Header("WWise References")]
+    [Header("Audio References")]
+    [SerializeField] private MenuAudioController m_menuAudioController = null;
     [SerializeField] private WwiseRTPC m_masterVolumeRTPC = null;
 
     private void Start()
@@ -22,18 +23,22 @@ public class MasterVolumeSlider : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        // TODO zwischen 0 und 100 oder 0 und 1?
         float clampedVolume = Mathf.Clamp(volume, 0.0f, 100.0f);
 
         if (m_masterVolumeRTPC != null)
         {
+            // send volume value to wwise rtpc
             m_masterVolumeRTPC.SetGlobalValue(clampedVolume);
         }
 
+        // change visible slider
         m_volumeSlider.value = clampedVolume;
+
+        m_menuAudioController.PlayVolumeSliderChanged();
 
         Debug.Log("Master Volume Save " + PlayerPrefs.GetFloat("MasterVolume"));
 
+        // save volume value in player prefs
         PlayerPrefs.SetFloat("MasterVolume", clampedVolume);
         PlayerPrefs.Save();
     }

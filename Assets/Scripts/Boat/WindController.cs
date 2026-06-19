@@ -23,10 +23,10 @@ public class WindController : MonoBehaviour
     private float m_transitionTimer = 0.0f; // timer for wind transition
     private float m_transitionDuration = 2.0f; // duration of wind transition
     private bool m_isTransitioning = false;
-    private const int m_maxRerolls = 3;
+    private const int m_maxRerolls = 15;
 
     // BOAT VALUES
-    private Vector3 m_boatForwardVector = Vector3.zero;
+    private Vector3 m_boatForwardVector = Vector3.forward;
 
     public Vector3 TrueWind
     {
@@ -45,17 +45,28 @@ public class WindController : MonoBehaviour
         while (rerollCounter < m_maxRerolls)
         {
             // Timemodifier --> the smaller the longer the wind comes from the same-ish direction --> higher value = wind rotates a lot more, hectic changes
-            float windAngleNoise = Mathf.PerlinNoise(Time.time * 0.05f + rerollCounter * 10.0f, 0.0f);
+            //float windAngleNoise = Mathf.PerlinNoise(Time.time * 0.05f + rerollCounter * 10.0f, 0.0f);
 
             // map noise value (0-1) to -180 - 180
             // interpolate between max angles
-            float randomWindAngle = Mathf.Lerp(-180.0f, 180.0f, windAngleNoise * 1.5f);
+            //float randomWindAngle = Mathf.Lerp(-180.0f, 180.0f, windAngleNoise * 1.5f);
+
+            float randomWindAngle = Random.Range(-80.0f, 80.0f);
 
             // potential next target wind direction
-            Vector3 potentialWindDirection = Quaternion.Euler(0, randomWindAngle, 0.0f) * Vector3.forward;
+            //Vector3 potentialWindDirection = Quaternion.Euler(0, randomWindAngle, 0.0f) * m_currentWindDirection;
+            Vector3 potentialWindDirection = Quaternion.AngleAxis(randomWindAngle, Vector3.up) * m_boatForwardVector;
             potentialWindDirection.Normalize();
 
-            // check if valid wind was found
+            float windAngleToCurrentWind = Vector3.Angle(m_currentWindDirection, potentialWindDirection);
+
+            //if(windAngleToCurrentWind > 140.0f)
+            //{
+            //    rerollCounter++;
+            //    continue;
+            //}
+
+            //check if valid wind was found
             if (IsValidWindFound(potentialWindDirection) == true)
             {
                 StartWindChange(potentialWindDirection);
@@ -66,15 +77,17 @@ public class WindController : MonoBehaviour
         }
 
         // fail save
-        StartWindChange(Vector3.forward);
+        StartWindChange(m_currentWindDirection);
     }
 
     private bool IsValidWindFound(Vector3 windDirection)
     {
-        float angle = Vector3.SignedAngle(m_boatForwardVector, windDirection, Vector3.up);
+        float windAngleToCurrentWind = Vector3.Angle(m_currentWindDirection, windDirection);
 
-        // angle from -37.5° to 37.5° = dead zone --> deadzone of 75°
-        if (Mathf.Abs(angle) < 37.5f)
+        //float angle = Vector3.SignedAngle(m_boatForwardVector.normalized, windDirection.normalized, Vector3.up);
+
+        // angle from -50° to 50° = dead zone --> deadzone of 100°
+        if (windAngleToCurrentWind > 100.0f)
         {
             return false;
         }
@@ -84,6 +97,7 @@ public class WindController : MonoBehaviour
 
     private void StartWindChange(Vector3 potentialWindDirection)
     {
+        Debug.Log("Winddd START");
         // save current wind values
         m_startWindDirection = m_currentWindDirection;
         m_startWindStrength = m_trueWind.magnitude;
@@ -99,7 +113,8 @@ public class WindController : MonoBehaviour
 
         // randomize duration before wind direction change takes place
         m_stabilityDuration = Random.Range(20.0f, 45.0f);
-        
+        //m_stabilityDuration = 2;
+
         // start wind transition
         m_transitionTimer = 0.0f;
         m_isTransitioning = true;
@@ -135,7 +150,7 @@ public class WindController : MonoBehaviour
         // interpolate between start and target wind strength with smooth steps
         float currentStrength = Mathf.Lerp(m_startWindStrength, m_targetWindStrength, smoothTransitionStep);
 
-        Debug.Log("Strength winddd " + currentStrength); // TODO Debug raus
+        //Debug.Log("Strength winddd " + currentStrength); // TODO Debug raus
 
         // calculate result wind vector with interpolated wind dir and wind strength
         m_trueWind = m_currentWindDirection * currentStrength;
@@ -169,6 +184,9 @@ public class WindController : MonoBehaviour
         // prevents the shader from glitching during wind transitions --> wind vector dependent on current frame time, not total time (was used in shader before fix)
         m_shaderWind += m_trueWind * Time.deltaTime;
 
-        Debug.Log("Winddd " + m_trueWind); // TODO Debug raus
+        //Debug.Log("Winddd " + m_trueWind); // TODO Debug raus
+
+        Debug.Log("Winddd Anlge " + Vector3.Angle(m_boatForwardVector, m_currentWindDirection)); 
+        Debug.Log("Winddd Signed Angle " + Vector3.SignedAngle(m_boatForwardVector, m_currentWindDirection, Vector3.up));
     }
 }

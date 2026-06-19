@@ -63,12 +63,23 @@ public class BoatController : MonoBehaviour
     [Header("General Fields")]
     [SerializeField] private GameManager m_gameManager = null;
     [SerializeField] private WindController m_windController = null;
-    [SerializeField] private BoatAudioController m_boatAudioController = null;
+
+    [Header("Boat Fields")]
+    [SerializeField] private GameObject m_keel = null;
     [SerializeField] private Transform m_parentReference = null;
     [SerializeField] private Sail m_mainSail = null;
     [SerializeField] private Sail m_frontSail = null;
     [SerializeField] private GameObject m_rudder = null;
     [SerializeField] private GameObject m_fender = null;
+
+    [Header("Audio Controllers")]
+    [SerializeField] private BoatAudioController m_boatAudioController = null;
+    [SerializeField] private EnvironmentAudioController m_environmentAudioController = null;
+    [SerializeField] private PhysicsAudioController m_physicsAudioController = null;
+
+    [Header("UI Screens")]
+    [SerializeField] private NotificationTextUI m_resetNotPossibleScreen = null;
+    [SerializeField] private ResetRequestUI m_resetNeededScreen = null;
 
     // INPUT ACTION REFERENCES
     [Header("Input Actions")]
@@ -232,7 +243,7 @@ public class BoatController : MonoBehaviour
         bool isFluttering = false;
 
         // dead zone 
-        if (angleWindBoat < 15.0f) // TODO Winkel von vorne und von hinten!!!!
+        if (angleWindBoat < 15.0f) // TODO Winkel von vorne und von hinten????
         {
             isFluttering = true;
             m_boatAudioController.StartSailFluttering();
@@ -935,7 +946,7 @@ public class BoatController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Towing possible! Please press R!"); // TODO Reset Request Screen
+                m_resetNeededScreen.ShowScreen();
                 m_isForcedTow = true;
                 m_prevGameState = m_gameManager.CurrentState;
                 m_gameManager.SetState(GameStates.PAUSED);
@@ -961,7 +972,7 @@ public class BoatController : MonoBehaviour
             } 
             else
             {
-                Debug.Log("Not enough money for reset Screen shows up!"); // TODO Reset not possible Screen
+                m_resetNotPossibleScreen.Show("Du hast nicht genug Geld, um abgeschleppt zu werden!");
             }
         }
     }
@@ -1008,6 +1019,9 @@ public class BoatController : MonoBehaviour
                 TriggerSailRotationReset();
 
                 m_boatAudioController.PlayMotormodeAudio();
+                m_boatAudioController.StopMastCreak();
+                m_physicsAudioController.StartSailPhysicsAudio();
+
                 m_boatAnimatorController.ActivateMotormodeAnimations();
 
                 Debug.Log("Motormode enabled!");
@@ -1021,6 +1035,9 @@ public class BoatController : MonoBehaviour
                 ResetSailsForSailmode();
 
                 m_boatAudioController.PlaySailmodeAudio();
+                m_boatAudioController.StartMastCreak();
+                m_physicsAudioController.StopSailPhysicsAudio();
+
                 m_boatAnimatorController.ActivateSailmodeAnimations();
 
                 Debug.Log("Sailmode enabled!");
@@ -1164,10 +1181,8 @@ public class BoatController : MonoBehaviour
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // COLLISION/DAMAGE METHODS //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private float CalculateDamageValue(Collision collision)
+    private float CalculateDamageValue(ContactPoint firstContactPoint)
     {
-        ContactPoint firstContactPoint = collision.contacts[0];
-
         // calculate angle between collision point and velocity vector and clamp it between 0 and 1
         float angleImpact = Mathf.Clamp01(Vector3.Dot(-m_rigidbody.linearVelocity.normalized, firstContactPoint.normal));
 
@@ -1188,6 +1203,28 @@ public class BoatController : MonoBehaviour
         return damageValue;
     }
 
+    private void PlayCollisionAudio(ContactPoint contactPoint, float damageValue)
+    {
+        if (contactPoint.thisCollider.gameObject.Equals(m_keel) && damageValue > 0.5f) // TODO Damagewert-Threshold balancen
+        {
+            m_environmentAudioController.PlayBoatCollisionUnderWater();
+        }
+
+        if (contactPoint.thisCollider.gameObject.Equals(m_fender) && damageValue > 0.5f)  // TODO Damagewert-Threshold balancen
+        {
+            m_environmentAudioController.PlayBoatDockImpact();
+        }
+
+        if (damageValue > 1.0f) // TODO Damagewert-Threshold balancen
+        {
+            m_environmentAudioController.PlayBoatCollisionHeavy();
+        }
+        else
+        {
+            m_environmentAudioController.PlayBoatCollisionLight();
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (m_rigidbody.linearVelocity.magnitude < 0.01f)
@@ -1200,7 +1237,11 @@ public class BoatController : MonoBehaviour
             return;
         }
 
-        float damage = CalculateDamageValue(collision);
+        ContactPoint firstContactPoint = collision.contacts[0];
+        float damage = CalculateDamageValue(firstContactPoint);
+
+        PlayCollisionAudio(firstContactPoint, damage);
+
         QuestManager.Instance.RegisterDamage(damage);
         m_currentHealth -= damage;
     }
@@ -1217,7 +1258,11 @@ public class BoatController : MonoBehaviour
             return;
         }
 
-        float damage = CalculateDamageValue(collision) * Time.fixedDeltaTime;
+        ContactPoint firstContactPoint = collision.contacts[0];
+        float damage = CalculateDamageValue(firstContactPoint) * Time.fixedDeltaTime;
+
+        PlayCollisionAudio(firstContactPoint, damage);
+
         QuestManager.Instance.RegisterDamage(damage);
         m_currentHealth -= damage;
     }
@@ -1396,6 +1441,9 @@ public class BoatController : MonoBehaviour
         {
             m_trimAction.action.Disable();
         }
+
+        m_physicsAudioController.StopPhysicsAudio();
+        m_physicsAudioController.StopSailPhysicsAudio();
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1431,6 +1479,10 @@ public class BoatController : MonoBehaviour
         m_fender.SetActive(true);
         m_isFenderEnabled = true;
         m_isInSailMode = true; // TODO beim Spielstart in Sailmode gehen
+
+        m_physicsAudioController.StartPhysicsAudio();
+        m_physicsAudioController.StartSailPhysicsAudio();
+        m_boatAudioController.StartCreeking();
     }
 
     public void Update()
@@ -1456,7 +1508,16 @@ public class BoatController : MonoBehaviour
             // Windcontroller Values
             m_windController.UpdateBoatForward(gameObject.transform.forward);
 
+            // Audio
+            m_physicsAudioController.SetWaterMovement(m_rigidbody.linearVelocity.magnitude);
+            m_physicsAudioController.SetBoatWindIntensity(CalculateApparentWind().magnitude);
+
             ResetSailRotations();
+        }
+
+        if(m_gameManager.CurrentState == GameStates.SAILMODE)
+        {
+            m_physicsAudioController.SetSailWindIntensity(CalculateApparentWind().magnitude);
         }
 
         if (m_gameManager.CurrentState == GameStates.SAILMODE || m_gameManager.CurrentState == GameStates.MOTORMODE || m_gameManager.CurrentState == GameStates.PAUSED)

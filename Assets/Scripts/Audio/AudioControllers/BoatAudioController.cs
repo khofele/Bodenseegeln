@@ -30,6 +30,8 @@ public class BoatAudioController : MonoBehaviour
     [SerializeField] private WwiseEvent m_creekingStartEvent = null;
     [SerializeField] private WwiseEvent m_creekingStopEvent = null;
     [SerializeField] private WwiseEvent m_ropeCreekEvent = null;
+    [SerializeField] private WwiseEvent m_mastCreekStartEvent = null;
+    [SerializeField] private WwiseEvent m_mastCreekStopEvent = null;
 
     [Header("Audio Game Parameters")]
     [SerializeField] private WwiseRTPC m_boatThrottleSignedRTPC = null;
@@ -142,5 +144,15 @@ public class BoatAudioController : MonoBehaviour
     public void PlayRopeCreeking()
     {
         m_ropeCreekEvent.Post(m_boatHullEmitter);
+    }
+
+    public void StartMastCreak()
+    {
+        m_mastCreekStartEvent.Post(m_boatSailEmitter);
+    }
+
+    public void StopMastCreak()
+    {
+        m_mastCreekStopEvent.Post(m_boatSailEmitter);
     }
 }

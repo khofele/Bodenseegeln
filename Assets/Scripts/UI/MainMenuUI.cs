@@ -10,8 +10,12 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private Button m_btnStartGame = null;
     [SerializeField] private Button m_btnEndGame = null;
 
+    [Header("Audio Controller")]
+    [SerializeField] private MenuAudioController m_menuAudioController = null;
+
     private void StartGame()
     {
+        m_menuAudioController.PlayStartGame();
         SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -19,6 +23,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void EndGame()
     {
+        m_menuAudioController.PlayEndGame();
         Application.Quit();
     }
 
@@ -34,11 +39,15 @@ public class MainMenuUI : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
+
+        m_menuAudioController.StartMenuAmbient();
     }
 
     private void OnDisable()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        m_menuAudioController.StopMenuAmbient();
     }
 }

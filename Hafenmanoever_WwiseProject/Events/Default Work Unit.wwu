@@ -1340,6 +1340,16 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<Event Name="audio_stopAll" ID="{78B7E2D7-97F4-4D39-95B2-15B8B0448A3A}">
+					<ChildrenList>
+						<Action Name="" ID="{E34DA3F2-BD86-4B41-A9A7-964D5F2FDEE7}" ShortID="764968647">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

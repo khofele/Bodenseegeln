@@ -81,6 +81,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3701861410	mission_moneyZero			\Default Work Unit\MissionsFeedback\MissionMoney\mission_moneyZero	
 	3711998144	env_boatDockImpact			\Default Work Unit\Environment\EnvBoat\env_boatDockImpact	
 	3762695479	boat_start_sailFlap			\Default Work Unit\Boat\BoatSail\boat_start_sailFlap	
+	3784681318	boat_start_mastCreak			\Default Work Unit\Boat\BoatMast\boat_start_mastCreak	
 	3809229720	menu_navigateFromPauseToMain			\Default Work Unit\Menu\Navigate\menu_navigateFromPauseToMain	
 	3820230048	amb_stop_coastPeople			\Default Work Unit\Atmosphere\Coast\amb_stop_coastPeople	
 	3868672069	amb_start_seagulls			\Default Work Unit\Atmosphere\Seagulls\amb_start_seagulls	
@@ -90,6 +91,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	4135813027	env_boatCollisionLight			\Default Work Unit\Environment\EnvCollision\env_boatCollisionLight	
 	4170174229	boat_riggingTension			\Default Work Unit\Boat\BoatRope\boat_riggingTension	
 	4191093004	env_boatRepair			\Default Work Unit\Environment\EnvBoat\env_boatRepair	
+	4237615470	boat_stop_mastCreak			\Default Work Unit\Boat\BoatMast\boat_stop_mastCreak	
 	4258852485	phy_stop_sailWind			\Default Work Unit\Physics\PhySail\phy_stop_sailWind	
 	4277963706	boat_ropeCreak			\Default Work Unit\Boat\BoatRope\boat_ropeCreak	
 	4290233515	menu_ambientStart			\Default Work Unit\Menu\Ambience\menu_ambientStart	
@@ -123,6 +125,7 @@ Effect plug-ins	ID	Name	Type				Notes
 	1413546197	EnvMapOpen_EQ	Wwise Parametric EQ			
 	1418479586	MissionAbort_EQ	Wwise Parametric EQ			
 	1439988768	EnvBoatDockImpact_EQ	Wwise Parametric EQ			
+	1461869929	BoatMastCreak_EQ	Wwise Parametric EQ			
 	1496861083	EnvRefuelMetalClick_EQ	Wwise Parametric EQ			
 	1559769808	BoatSailFlapLoop_EQ	Wwise Parametric EQ			
 	1562427635	MissionMoneyGain_EQ	Wwise Parametric EQ			
@@ -194,6 +197,8 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	89917974	boat_creaking_loop7	.cache\58\{58BDE951-C7ED-43B9-0DF2-C77E362C4DA0}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatCreakingLoop\BoatCreaking\boat_creaking_loop7		264744
 	102468720	boat_sailFlutter_silence03s	.cache\77\{77CA5ACB-E469-788B-76A7-96C9E4134DB3}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState_01\RC_phy_sailFlutter\boat_sailFlutter_silence03s		576096
 	108181189	env_collisionLightImpact2	.cache\AA\{AA6186BD-9D48-3437-4DC1-4DACFD777241}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvBoatCollision\EnvBoatCollisionLight\BC_envcollisionLightImpact\env_collisionLightImpact1\env_collisionLightImpact2		66688
+	110923947	boat_mastCreakWood2	.cache\4E\{4EC0BE00-4775-4C59-724F-431D608F12BE}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatMast\boat_mastCreak\boat_mastCreakWood2		705696
+	112540957	boat_mastCreakWood5	.cache\F9\{F924E3E1-43F1-C9EA-5045-E6346406349C}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatMast\boat_mastCreak\boat_mastCreakWood5		1499496
 	112878381	boat_creaking_loop5	.cache\46\{469FACFB-9564-B08B-E69C-4A493C1FBE71}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatCreakingLoop\BoatCreaking\boat_creaking_loop5		529344
 	113138969	boat_sailFlutter_mid02	.cache\03\{03263B08-95C3-086A-01A7-61A4E54E35C2}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState_01\RC_phy_sailFlutter\boat_sailFlutter_mid02		288096
 	115374998	amb_coast_loop01	.cache\08\{08C8F8B9-4498-D523-C13B-6E8175E2AAB5}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbCoast\RC_amb_coast_loop\amb_coast_loop01		3840096
@@ -206,6 +211,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	143557943	amb_coast_loop05	.cache\CC\{CCF8BF02-1360-3C69-067E-7F90CEEE9FC1}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbCoast\RC_amb_coast_loop\amb_coast_loop05		2304096
 	147595912	amb_detailsWater_loop01	.cache\CA\{CA7D54F7-EAC6-E5E7-6DB0-F37CC729F8F2}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbDetails\RC_amb_detailsWater_loop\amb_detailsWater_loop01		2016096
 	149563202	phy_windGustSilence_02	.cache\C6\{C6E82C78-FF37-8EF2-D824-E39C5E0DB4D7}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_sailWind\RC_phy_windGust\phy_windGustSilence_02		576096
+	157623087	boat_mastCreakWood1	.cache\D2\{D28295BC-B904-983E-3FF3-20617C72CFE2}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatMast\boat_mastCreak\boat_mastCreakWood1		705696
 	160547032	env_refuel01	.cache\57\{573BB756-4844-2A80-28C5-B7548FB69A3D}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvRefuel\SC_env_refuel\RC_env_refuel\env_refuel01		287492
 	161588037	env_boatDockImpact02	.cache\CE\{CE472F1E-BC89-D0EB-2D54-2B1CEC4D5DB4}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvDock\env_boatDockImpact\env_boatDockImpact02		154364
 	168246796	env_openMap	.cache\59\{59F2FAAC-B075-EF04-3C24-274F7A989DEB}.wem		\Containers\Default Work Unit\Sounds\Environment\EnvMap\env_openMap		179996
@@ -222,6 +228,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	264595052	boat_sailRetract1	.cache\47\{47C1338E-6657-3813-616B-331D4168CCFB}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailRetract\boat_sailRetract\boat_sailRetract1		274828
 	284997067	phy_wakeWaterTexture_loop01	.cache\76\{76170760-342C-F067-74E3-AF425CF08C8B}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\BC_phy_wakeWater\RC_phywakeWaterTexture_loop\phy_wakeWaterTexture_loop01		1152144
 	305566701	boat_creaking_loop6	.cache\64\{64715496-633F-E281-76FC-8B467A8B4AFB}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatCreakingLoop\BoatCreaking\boat_creaking_loop6		264744
+	308039115	boat_mastCreakWood6	.cache\94\{9413369B-3B76-22B5-DD67-22078CDD8074}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatMast\boat_mastCreak\boat_mastCreakWood6		1411296
 	327356346	phy_windGustSilence_01	.cache\8F\{8F509300-1262-2FA0-3A45-368D6D57D205}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_sailWind\RC_phy_windGust\phy_windGustSilence_01		384096
 	333325837	phy_windForceBoat_loop	.cache\8A\{8A2515E3-266E-72C3-9ED9-E548BC035209}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_boatWind\phy_windForceBoat_loop		6144144
 	343798262	amb_detailsCoast_loop04	.cache\1B\{1B473EAA-20AC-840A-993A-5942F1BF44A2}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbDetails\RC_amb_detailsCoast_loop\amb_detailsCoast_loop04		1434096
@@ -245,6 +252,8 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	425356374	amb_coast_loop02	.cache\22\{22D761D2-6399-1594-85F4-18C7475B5F5A}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbCoast\RC_amb_coast_loop\amb_coast_loop02		1914096
 	428085290	phy_waveHull_loop00	.cache\1A\{1A83DA8C-740E-372B-0061-C9073C837F86}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\BC_phy_waveHull\RC_phy_waveHull\phy_waveHull_loop00		1538976
 	434044738	amb_detailsPeople_loop00	.cache\7A\{7AE5D277-A3F2-222B-DC60-FB0D058FA024}.wem		\Containers\Default Work Unit\Sounds\Atmosphere\AmbDetails\RC_amb_detailsPeople_loop\amb_detailsPeople_loop00		1920096
+	443326073	boat_mastCreakWood3	.cache\21\{21137B0A-6B7D-AD39-73D4-6D03A82DD92F}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatMast\boat_mastCreak\boat_mastCreakWood3		705696
+	445529503	boat_mastCreakWood	.cache\F9\{F9909943-CEB1-098F-1CF5-3F2875AF44A0}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatMast\boat_mastCreak\boat_mastCreakWood		705696
 	448957523	boat_sailDeployImpact	.cache\66\{665FAFA6-FDE6-246B-EBED-0D6F1EEE519F}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailDeploy\boat_sailDeployImpact		151572
 	458455823	phy_windForceSail_loop	.cache\80\{8020AE4D-468A-5B9A-F195-798841AEF646}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWind\BC_phy_sailWind\phy_windForceSail_loop		6144144
 	470504066	boat_sailFlutter_long00	.cache\D2\{D24E0BC2-019A-D2D4-C529-0C96CA38AAD1}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BoatSailLoops\BC_sailState_01\RC_phy_sailFlutter\boat_sailFlutter_long00		480096
@@ -315,6 +324,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	964134678	phy_hullWaterMassFast_loop	.cache\1B\{1B5DBA12-3222-5145-01F7-60C6D24759B3}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\PhyHullWaterMass\BC_phy_hullWaterMass_loop\phy_hullWaterMassFast_loop		2304144
 	983138526	boat_sailRetractImpact	.cache\D0\{D0F1EEE4-F8E3-3100-0151-682D018246CA}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatSail\BC_boatSailRetract\boat_sailRetractImpact		144572
 	984283490	boat_engineForward_loop	.cache\1C\{1C3CC3F6-6ACE-4540-C98F-20263B23EB1A}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatEngine\BoatEngineLoops\BC_boatEngine_ThrottleBlend\boat_engineForward_loop		3395844
+	990009711	boat_mastCreakWood4	.cache\AE\{AE1074A4-938D-9875-C502-0BD5419997FD}.wem		\Containers\Default Work Unit\Sounds\Boat\BoatMast\boat_mastCreak\boat_mastCreakWood4		617496
 	994528532	phy_bowWater_loop	.cache\61\{61E642B8-8F77-6D5C-F1BE-C8756EC69128}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\PhyBowWater\BC_phy_bowWater2\phy_bowWater_loop		2922928
 	998544714	phy_hullWaterMass_loop	.cache\9D\{9D5EC416-1B18-1932-BA35-45859254584C}.wem		\Containers\Default Work Unit\Sounds\Physic\PhyWater\PhyHullWaterMass\BC_phy_hullWaterMass_loop\phy_hullWaterMass_loop		2766144
 	1005202156	menu_openMain	.cache\C3\{C3693EEA-3C7A-BAF2-DCD4-EBDF552BBF6F}.wem		\Containers\Default Work Unit\Sounds\Menu\MenuNavigation\menu_openMain\menu_openMain		64192

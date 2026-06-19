@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{E73180B1-E7F5-CA4A-292D-3E0FE542F560}",
+    "Hash": "{A54E959C-C9D5-3530-8DCC-199933069628}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -200,6 +200,22 @@
       "CachePath": "AA/{AA6186BD-9D48-3437-4DC1-4DACFD777241}.wem"
      },
      {
+      "Id": "110923947",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_mastCreakWood2.wav",
+      "CachePath": "4E/{4EC0BE00-4775-4C59-724F-431D608F12BE}.wem"
+     },
+     {
+      "Id": "112540957",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_mastCreakWood5.wav",
+      "CachePath": "F9/{F924E3E1-43F1-C9EA-5045-E6346406349C}.wem"
+     },
+     {
       "Id": "112878381",
       "Language": "SFX",
       "Streaming": "false",
@@ -294,6 +310,14 @@
       "Location": "Memory",
       "ShortName": "phy_windGustSilence_02.wav",
       "CachePath": "C6/{C6E82C78-FF37-8EF2-D824-E39C5E0DB4D7}.wem"
+     },
+     {
+      "Id": "157623087",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_mastCreakWood1.wav",
+      "CachePath": "D2/{D28295BC-B904-983E-3FF3-20617C72CFE2}.wem"
      },
      {
       "Id": "160547032",
@@ -422,6 +446,14 @@
       "Location": "Memory",
       "ShortName": "boat_creaking_loop6.wav",
       "CachePath": "64/{64715496-633F-E281-76FC-8B467A8B4AFB}.wem"
+     },
+     {
+      "Id": "308039115",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_mastCreakWood6.wav",
+      "CachePath": "94/{9413369B-3B76-22B5-DD67-22078CDD8074}.wem"
      },
      {
       "Id": "327356346",
@@ -606,6 +638,22 @@
       "Location": "Memory",
       "ShortName": "amb_detailsPeople_loop00.wav",
       "CachePath": "7A/{7AE5D277-A3F2-222B-DC60-FB0D058FA024}.wem"
+     },
+     {
+      "Id": "443326073",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_mastCreakWood3.wav",
+      "CachePath": "21/{21137B0A-6B7D-AD39-73D4-6D03A82DD92F}.wem"
+     },
+     {
+      "Id": "445529503",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_mastCreakWood.wav",
+      "CachePath": "F9/{F9909943-CEB1-098F-1CF5-3F2875AF44A0}.wem"
      },
      {
       "Id": "448957523",
@@ -1168,6 +1216,14 @@
       "CachePath": "1C/{1C3CC3F6-6ACE-4540-C98F-20263B23EB1A}.wem"
      },
      {
+      "Id": "990009711",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boat_mastCreakWood4.wav",
+      "CachePath": "AE/{AE1074A4-938D-9875-C502-0BD5419997FD}.wem"
+     },
+     {
       "Id": "994528532",
       "Language": "SFX",
       "Streaming": "false",
@@ -1431,6 +1487,14 @@
        "Name": "EnvBoatDockImpact_EQ",
        "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Environment\\EnvBoatDockImpact_EQ",
        "GUID": "{6E8492B5-7E71-4A14-B55F-E6CA092894FC}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "1461869929",
+       "Name": "BoatMastCreak_EQ",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Boat\\BoatMastCreak_EQ",
+       "GUID": "{34A97080-8313-4F31-AE6C-D939496CC481}",
        "LibName": "Wwise Parametric EQ",
        "LibId": "6881283"
       },
@@ -2505,6 +2569,43 @@
       }
      },
      {
+      "Id": "3784681318",
+      "Name": "boat_start_mastCreak",
+      "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatMast\\boat_start_mastCreak",
+      "GUID": "{44F76B9E-811F-48AF-A27A-90774BB0D937}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "110923947"
+       },
+       {
+        "Id": "112540957"
+       },
+       {
+        "Id": "157623087"
+       },
+       {
+        "Id": "308039115"
+       },
+       {
+        "Id": "443326073"
+       },
+       {
+        "Id": "445529503"
+       },
+       {
+        "Id": "990009711"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1461869929"
+        }
+       ]
+      }
+     },
+     {
       "Id": "3762695479",
       "Name": "boat_start_sailFlap",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatSail\\boat_start_sailFlap",
@@ -2559,6 +2660,16 @@
       "Name": "boat_stop_creaking",
       "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatWood\\boat_stop_creaking",
       "GUID": "{4BD7BC65-4DA2-42F1-A7DC-A90AA5A73311}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "4237615470",
+      "Name": "boat_stop_mastCreak",
+      "ObjectPath": "\\Events\\Default Work Unit\\Boat\\BoatMast\\boat_stop_mastCreak",
+      "GUID": "{9B1F0482-B463-40FF-8B0D-4D11F2CF9D60}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -3821,6 +3932,6 @@
     ]
    }
   ],
-  "FileHash": "{10AF2439-40CA-05FF-6156-17EB99D17F21}"
+  "FileHash": "{246B556B-5DCB-AF76-C332-A051B2CB497E}"
  }
 }

@@ -572,6 +572,39 @@
 								<Event Name="boat_riggingMove" ID="{49B3BB0B-530F-4CDE-A8CF-B8ECA0A7348F}"/>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="BoatMast" ID="{CC292D20-FC4E-47AC-993A-EBC65BC05334}" ShortID="435670639">
+							<ChildrenList>
+								<Event Name="boat_start_mastCreak" ID="{44F76B9E-811F-48AF-A27A-90774BB0D937}">
+									<ChildrenList>
+										<Action Name="" ID="{C16F8B26-7C85-46AE-9D0C-DAA370AAD66C}" ShortID="845643352">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_mastCreak" ID="{558334D1-E8DD-4157-8DC2-8590042619AC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="boat_stop_mastCreak" ID="{9B1F0482-B463-40FF-8B0D-4D11F2CF9D60}">
+									<ChildrenList>
+										<Action Name="" ID="{C3988FFD-AB15-4E93-880F-6F7F7CCFD3EA}" ShortID="901059989">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="boat_mastCreak" ID="{558334D1-E8DD-4157-8DC2-8590042619AC}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Environment" ID="{F7A400A8-0F91-4630-953E-8D8200BDD709}" ShortID="5191634">

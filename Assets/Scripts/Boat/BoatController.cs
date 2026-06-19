@@ -1019,6 +1019,7 @@ public class BoatController : MonoBehaviour
                 TriggerSailRotationReset();
 
                 m_boatAudioController.PlayMotormodeAudio();
+                m_boatAudioController.StopMastCreak();
                 m_physicsAudioController.StartSailPhysicsAudio();
 
                 m_boatAnimatorController.ActivateMotormodeAnimations();
@@ -1034,6 +1035,7 @@ public class BoatController : MonoBehaviour
                 ResetSailsForSailmode();
 
                 m_boatAudioController.PlaySailmodeAudio();
+                m_boatAudioController.StartMastCreak();
                 m_physicsAudioController.StopSailPhysicsAudio();
 
                 m_boatAnimatorController.ActivateSailmodeAnimations();

@@ -1480,6 +1480,7 @@ public class BoatController : MonoBehaviour
 
         m_physicsAudioController.StartPhysicsAudio();
         m_physicsAudioController.StartSailPhysicsAudio();
+        m_boatAudioController.StartCreeking();
     }
 
     public void Update()

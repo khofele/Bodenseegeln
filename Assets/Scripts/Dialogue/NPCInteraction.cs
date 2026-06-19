@@ -1,7 +1,7 @@
-using Quest;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+using Quest;
 
 namespace Dialogue
 {
@@ -12,7 +12,7 @@ namespace Dialogue
         Quest = 2
     }
 
-    public class NPCInteraction : CompassTargetBase
+    public class NPCInteraction : CompassTargetBase //inherits from CompassTargetBase to be used as icons on the compass
     {
         [SerializeField] private bool m_showGizmos = true;
 
@@ -28,7 +28,6 @@ namespace Dialogue
         [SerializeField] private float m_allowedAngleTolerance = 25f;
 
         [Header("References")]
-        /*[SerializeField]*/ private Rigidbody m_boatRigidbody = null;
         [SerializeField] private Transform m_boatTransform = null;
 
         [Header("UI")]
@@ -41,18 +40,22 @@ namespace Dialogue
 
         internal NPCData NPC => m_npc;
 
+
+        private Rigidbody m_boatRigidbody = null;
         private bool m_isPlayerInRange = false;
         private bool m_isInteractable = false;
         private bool m_lastInteractableState = false;
         private NPCIconState m_lastIconState = NPCIconState.None;
 
 
+        //worldposition for positioning on compass
         public override Vector2 GetPosition()
         {
             Vector3 p = transform.position;
             return new Vector2(p.x, p.z);
         }
 
+        //if an icon should be shown on the compass
         public override bool ShouldShowIcon()
         {
             return GetCompassIconState() != NPCIconState.None;
@@ -81,12 +84,12 @@ namespace Dialogue
             if (other.attachedRigidbody == m_boatRigidbody)
             {
                 m_isPlayerInRange = true;
-                Debug.Log("[QuestInteraction.OnTriggerEnter] Boat entered trigger");
 
+                //for playing sound when entering the triggerbox
                 bool _playSound = (DialogueStateManager.Instance.GetBestDialogueBranch(m_npc)) != null && GameManager.Instance.CurrentState != GameStates.DIALOGMODE;
                 if (_playSound)
                 {
-                    QuestManager.Instance.MissionFeedbackAudio.PlayGoalReached(); // Play Audio
+                    QuestManager.Instance.MissionFeedbackAudio.PlayGoalReached(); //Audio play enter triggerbox sound
                 }
             }
         }
@@ -96,13 +99,6 @@ namespace Dialogue
             if (other.attachedRigidbody == m_boatRigidbody)
             {
                 m_isPlayerInRange = false;
-                Debug.Log("[QuestInteraction.OnTriggerExit] Boat left trigger");
-
-                //bool _playSound = (DialogueStateManager.Instance.GetBestDialogueBranch(m_npc)) != null && GameManager.Instance.CurrentState != GameStates.DIALOGMODE;
-                //if (_playSound)
-                //{
-                //    QuestManager.Instance.MissionFeedbackAudio.PlayGoalFail();  // Play Audio
-                //}
             }
         }
 
@@ -115,17 +111,16 @@ namespace Dialogue
 
             if (m_isInteractable && m_interactAction.action.WasPressedThisFrame())
             {
-                Debug.Log("[QuestInteraction.Update] Try to complete Quest");
                 StartDialogue();
             }
         }
 
+        //check if boat is close enough and slow enough and correctly parked (if it requires correct parking) and if the NPC has a valid branch = if the NPC is curretly ready to talk
         private void CheckConditions()
         {
             if (m_boatRigidbody == null)
             {
                 m_boatRigidbody = m_boatTransform.GetComponent<Rigidbody>();
-                //return;
             }
 
             float _speed = m_boatRigidbody.linearVelocity.magnitude;
@@ -136,15 +131,9 @@ namespace Dialogue
             bool _hasDialogue = _currentBranch != null;
 
             m_isInteractable = m_isPlayerInRange && _isSlowEnough && _isCorrectlyParked && _hasDialogue;
-
-            if (m_isInteractable)
-            {
-                //Debug.LogWarning("[QuestInteraction.CheckDockConditions] is interactable");
-            }
-
-            //TODO FUTURE: && IsBoatCorrectlyParked
         }
 
+        //park in direction of the parking slot or 180° rotated
         private bool IsBoatCorrectlyParked()
         {
             if (!m_requireCorrectParking)
@@ -202,6 +191,7 @@ namespace Dialogue
             }
         }
 
+        //what icon should be visualized on compass and map, quest or talk or none
         internal NPCIconState GetCompassIconState()
         {
             NPCDialogueBranch _bestBranch = DialogueStateManager.Instance.GetBestDialogueBranch(m_npc);
@@ -244,7 +234,7 @@ namespace Dialogue
 
         private NPCIconState GetIconState()
         {
-            //1) must be in range
+            //must be in range
             float _dist = Vector3.Distance(m_boatTransform.position, transform.position);
             if (_dist > m_visibilityDistance)
             {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Quest;
 
-public enum NPC_ID //TODO: add correct value for ID
+public enum NPC_ID
 {
     None = 0,
-    Testian = 1,//just placeholder names
+    Testian = 1,//placeholder ID only for testing
     NPC1 = 2,
     NPC2 = 3,
     NPC3 = 4,
@@ -21,7 +21,7 @@ public enum DialogueActionType
     None = 0,
     StartQuest = 1,
     CompleteQuest = 2,
-    AbortQuest = 3
+    AbortQuest = 3 //only relevant for Audio
 }
 
 namespace Dialogue
@@ -30,19 +30,14 @@ namespace Dialogue
     public class NPCData : ScriptableObject
     {
         [Header("Identity")]
-        [SerializeField, Tooltip("for now just placeholder -> later correct NPC ID")]
-        private NPC_ID m_NPCID = NPC_ID.None;
-        [SerializeField]
-        private string m_NPCName = "";
-        [SerializeField]
-        private Sprite m_NPCPortrait = null;
-        [SerializeField]
-        private Sprite m_NPCBackground = null;
+        [SerializeField, Tooltip("just chronological numbers, must be unique")] private NPC_ID m_NPCID = NPC_ID.None;
+        [SerializeField] private string m_NPCName = "";
+        [SerializeField] private Sprite m_NPCPortrait = null;
+        [SerializeField] private Sprite m_NPCBackground = null;
 
         [Header("Dialogue")]
         [SerializeField] private List<NPCDialogueBranch> m_dialogueBranches = new();
-        [SerializeField]
-        private List<DialogueNode> m_nodes = new List<DialogueNode>();
+        [SerializeField] private List<DialogueNode> m_nodes = new List<DialogueNode>();
 
         internal NPC_ID NPCID => m_NPCID;
         internal string Name => m_NPCName;
@@ -59,16 +54,13 @@ namespace Dialogue
     [Serializable]
     public class DialogueNode
     {
-        [SerializeField]
-        private int m_NodeID;
-        /*[SerializeField]*/ private QuestConditionSet m_unlockConditions = new();
+        [SerializeField] private int m_NodeID;
         [SerializeField, TextArea(1, 6)]
         private string m_text;
         [SerializeField]
         private List<DialogueResponse> m_responses;
 
         internal int NodeID => m_NodeID;
-        internal QuestConditionSet UnlockConditions => m_unlockConditions;
         internal string Text => m_text;
 
         internal List<DialogueResponse> GetResponses()
@@ -84,16 +76,6 @@ namespace Dialogue
             }
 
             return m_responses.GetRange(0, Mathf.Min(4, m_responses.Count));
-        }
-
-        internal bool IsUnlocked()
-        {
-            if (m_unlockConditions == null)
-            {
-                return true;
-            }
-
-            return m_unlockConditions.Evaluate();
         }
     }
 

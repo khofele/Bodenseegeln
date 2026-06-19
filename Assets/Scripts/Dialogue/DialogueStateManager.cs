@@ -1,7 +1,5 @@
 using Quest;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 
 namespace Dialogue
 {
@@ -30,6 +28,7 @@ namespace Dialogue
 
     public class DialogueStateManager : Manager<DialogueStateManager>
     {
+        //dictionary for saving current progression of each dialogue, to get correct entry at next interaction
         private Dictionary<NPCDialogueProgressKey, int> m_repeatNodes = new();
 
         internal int GetStoredRepeatNode(NPCData _npc, NPCDialogueBranch _branch)
@@ -56,6 +55,7 @@ namespace Dialogue
             m_repeatNodes[_key] = _branch.RepeatNodeID;
         }
 
+        //returns the first currently valid dialogue branch, cheked by 1) if state is valid, 2) if condition is valid, 3) use the one with highest priority
         internal NPCDialogueBranch GetBestDialogueBranch(NPCData _npc)
         {
             if (_npc == null)

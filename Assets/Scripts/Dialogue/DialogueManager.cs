@@ -6,13 +6,13 @@ namespace Dialogue
 {
     public class DialogueManager : Manager<DialogueManager>
     {
+        [Header("References")]
+        [SerializeField] private DialogueUI m_UI;
+
         private NPCData m_currentNPC;
         private DialogueNode m_currentNode;
         private NPCDialogueBranch m_currentBranch;
         private DialogueResponse m_pendingResponse;
-
-        [SerializeField]
-        private DialogueUI m_UI;
 
         internal void StartDialogue(NPCData _npc)
         {
@@ -45,13 +45,6 @@ namespace Dialogue
                 return;
             }
 
-            if (!_node.IsUnlocked())
-            {
-                Debug.Log($"[DialogueManager] Node {_nodeID} locked");
-                EndDialogue();
-                return;
-            }
-
             m_currentNode = _node;
             m_UI.DisplayNode(m_currentNPC, m_currentNode);
         }
@@ -70,7 +63,6 @@ namespace Dialogue
             //only save valid nodes -> -1 is only for closing the dialoge, but should not be saved for future dialogues
             if (_response.NextNode >= 0)
             {
-                //DialogueStateManager.Instance.SetNode(m_currentNPC.NPCID, _response.NextNode);
                 SetNode(_response.NextNode);
             }
             else
@@ -87,7 +79,6 @@ namespace Dialogue
                 case DialogueActionType.StartQuest:
                     if (_response.Quest != null)
                     {
-                        //Debug.Log($"[DialogueManager] Start Quest: {_response.Quest.QuestName}");
                         QuestManager.Instance.SetPendingQuest(_response.Quest);
                     }
                     else
@@ -99,7 +90,7 @@ namespace Dialogue
                     QuestManager.Instance.CompleteQuestFromDialogue();
                     return true; //pause dialogue progression
                 case DialogueActionType.AbortQuest:
-                    QuestManager.Instance.MissionFeedbackAudio.PlayMissionAbort();
+                    QuestManager.Instance.MissionFeedbackAudio.PlayMissionAbort(); //Audio play Quest abort
                     return false;
             }
 

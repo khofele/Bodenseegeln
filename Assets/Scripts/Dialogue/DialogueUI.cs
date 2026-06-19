@@ -9,6 +9,7 @@ namespace Dialogue
 {
     public class DialogueUI : MonoBehaviour
     {
+        [Header("Audio References")]
         [SerializeField] private MissionsFeedbackAudioController m_missionsFeedbackAudioController = null;  // Audio class reference
 
         [Header("UI References")]
@@ -57,6 +58,7 @@ namespace Dialogue
             CreateResponseButtons(_node);
         }
 
+        //displays text of node letter by letter, can be sciped by ScipTyping method
         private IEnumerator TypeText(string _text)
         {
             m_skipTyping = false;
@@ -72,7 +74,7 @@ namespace Dialogue
 
                 m_dialogueText.text += c;
 
-                m_missionsFeedbackAudioController.PlayMissionVoiceLineNpc(); // Play Audio Typing with voice lines
+                m_missionsFeedbackAudioController.PlayMissionVoiceLineNpc(); //Audio play typing sound with voice lines
 
                 yield return new WaitForSeconds(m_typingSpeed);
             }
@@ -93,6 +95,7 @@ namespace Dialogue
 
             List<DialogueResponse> _responses = _node.GetResponses();
 
+            //instantiate button prefab, add the text from the NPCData for this reponse, add onClick action
             foreach (DialogueResponse response in _responses)
             {
                 Button _button = Instantiate(m_buttonPrefab, m_buttonContainer);
@@ -108,7 +111,7 @@ namespace Dialogue
 
         private void Update()
         {
-            //if changes at input system needed, then change here
+            //when scipAction is triggered then typing stops and text is immeditely fully shown
             if (m_scipAction.action.triggered)
             {
                 SkipTyping();

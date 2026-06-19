@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Manager<T> : MonoBehaviour where T : MonoBehaviour
+public class Manager<T> : MonoBehaviour where T : MonoBehaviour //parent class for Manager for singleton handling
 {
     public static T Instance { get; private set; }
 

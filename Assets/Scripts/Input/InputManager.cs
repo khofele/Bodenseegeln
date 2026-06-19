@@ -5,7 +5,7 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField] private InputActionReference m_boatMoveAction;
 
-    private bool m_lastDialogModeState = true; //for now while gane starts in SAILMODE this must be true -> must may be false when later start game in UI
+    private bool m_lastDialogModeState = true; //while game starts in SAILMODE this must be true -> must may be false if start game in UI
 
     private void Update()
     {
@@ -29,13 +29,12 @@ public class InputManager : MonoBehaviour
             }
         }
 
-        //TODO: handle camera movement and other game states
         UpdateCursorState(GameManager.Instance.CurrentState == GameStates.DIALOGMODE);
     }
 
     private void UpdateCursorState(bool _isDialogMode)
     {
-        //cursor only visible in DIALOGUEMODE -> Press ESC to exit the game and use the mouse with cursor ouside the game window
+        //cursor only visible in DIALOGUEMODE -> Press ESC two times to use the mouse with cursor ouside the game window
         if (_isDialogMode == m_lastDialogModeState)
         {
             return;

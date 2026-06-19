@@ -1,23 +1,15 @@
-using Quest;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
 using WwiseEvent = AK.Wwise.Event;
 
+using Quest;
+using System;
+
+
 public class GameManager : Manager<GameManager>
 {
-    private GameStates m_currentGameState = GameStates.SAILMODE;
-    private GameStates m_prevGameState;
-
-    private Dictionary<QuestData, float> m_questResults = new();
-    private float m_averageQuestResult = 0f;
-    private int m_resetCost = 100;
-
-    public static event Action<GameStates, GameStates> OnGameStateChanged;
-
     [Header("UI")]
     [SerializeField] private UIManager m_uiManager = null;
     [SerializeField] private PauseMenuUI m_pauseMenu = null;
@@ -31,9 +23,19 @@ public class GameManager : Manager<GameManager>
     [SerializeField] private WwiseEvent m_moneyGainSound;
     [SerializeField] private WwiseEvent m_moneySpendSound;
 
+    private GameStates m_currentGameState = GameStates.SAILMODE;
+    private GameStates m_prevGameState;
+
+    private Dictionary<QuestData, float> m_questResults = new();
+    private float m_averageQuestResult = 0f;
+    private int m_resetCost = 100;
+
+    public static event Action<GameStates, GameStates> OnGameStateChanged;
+
     public GameStates CurrentState => m_currentGameState;
     public int Money => m_money;
     public int ResetCost => m_resetCost;
+
 
     public void SetState(GameStates _newState)
     {
@@ -68,17 +70,13 @@ public class GameManager : Manager<GameManager>
         m_money += _amount;
         Debug.Log($"[GameManager] Money added: {_amount} | Total: {m_money}");
         
-        // Play the Wwise money gain even
-        m_moneyGainSound.Post(gameObject);
+        m_moneyGainSound.Post(gameObject); //Audio play gain money sound
     }
 
     public void DecreaseMoney(int _amount)
     {
         m_money -= _amount;
         Debug.Log($"[GameManager] Money decreased: {_amount} | Total: {m_money}");
-
-        // Play the Wwise money gain even
-        //TODO Money decrease Sound m_moneyGainSound.Post(gameObject);
     }
 
     public float GetAverageQuestResult()
@@ -98,8 +96,6 @@ public class GameManager : Manager<GameManager>
         m_questResults[_quest] = _averageCircles;
 
         RecalculateAverageQuestResult();
-
-        Debug.Log($"[GameManager] saved result for {_quest.QuestName}: {_averageCircles}");
     }
 
     private void RecalculateAverageQuestResult()
@@ -118,8 +114,6 @@ public class GameManager : Manager<GameManager>
         }
 
         m_averageQuestResult = _sum / m_questResults.Count;
-
-        Debug.Log($"[GameManager] new average quest result: {m_averageQuestResult}");
     }
 
     private void PauseGame()

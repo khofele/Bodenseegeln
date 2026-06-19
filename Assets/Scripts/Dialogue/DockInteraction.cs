@@ -7,10 +7,6 @@ public class DockInteraction : MonoBehaviour
 {
     [SerializeField] private bool m_showGizmos = true;
 
-    //[Header("Dock Setup")]
-    //[SerializeField]
-    //private NPCData m_npc;
-
     [Header("Detection")]
     [SerializeField] private float m_maxBoatSpeed = 0.5f;
 
@@ -19,7 +15,6 @@ public class DockInteraction : MonoBehaviour
     [SerializeField] private float m_allowedAngleTolerance = 25f;
 
     [Header("References")]
-    /*[SerializeField]*/ private Rigidbody m_boatRigidbody = null;
     [SerializeField] private Transform m_boatTransform = null;
 
     [Header("UI")]
@@ -31,6 +26,7 @@ public class DockInteraction : MonoBehaviour
     [Header("Input")]
     [SerializeField] private InputActionReference m_interactAction = null;
 
+    private Rigidbody m_boatRigidbody = null;
     private bool m_isPlayerInRange = false;
     private bool m_isDocked = false;
     private bool m_lastInteractableState = false;
@@ -56,7 +52,6 @@ public class DockInteraction : MonoBehaviour
         if (other.attachedRigidbody == m_boatRigidbody)
         {
             m_isPlayerInRange = true;
-            Debug.Log("[DockInteraction.OnTriggerEnter] Boat entered dock trigger");
         }
     }
 
@@ -65,7 +60,6 @@ public class DockInteraction : MonoBehaviour
         if (other.attachedRigidbody == m_boatRigidbody)
         {
             m_isPlayerInRange = false;
-            Debug.Log("[DockInteraction.OnTriggerExit] Boat left dock trigger");
         }
     }
 
@@ -74,20 +68,13 @@ public class DockInteraction : MonoBehaviour
         CheckDockConditions();
         UpdateUI();
 
-        ////Debug:
-        if (m_interactAction.action.WasPressedThisFrame())
-        {
-            Debug.Log("[DockInteraction.Update] F PRESSED");
-        }
-        ////
-
         if (m_isDocked && m_interactAction.action.WasPressedThisFrame())
         {
-            Debug.Log("[DockInteraction.Update] OPEN DOCK UI");
             OpenDockUI();
         }
     }
 
+    //check if boat is close enough and slow enough and correctly parked (if it requires correct parking)
     private void CheckDockConditions()
     {
         if (m_boatRigidbody == null)
@@ -100,15 +87,9 @@ public class DockInteraction : MonoBehaviour
         bool _isCorrectlyParked = IsBoatCorrectlyParked();
 
         m_isDocked = m_isPlayerInRange && _isSlowEnough && _isCorrectlyParked;
-
-        if (m_isDocked)
-        {
-            //Debug.LogWarning("[DockInteraction.CheckDockConditions] IsDocked is true");
-        }
-
-        //TODO FUTURE: && IsBoatCorrectlyParkedAtDock
     }
 
+    //park in direction of the parking slot or 180° rotated
     private bool IsBoatCorrectlyParked()
     {
         if (!m_requireCorrectParking)
@@ -172,12 +153,6 @@ public class DockInteraction : MonoBehaviour
         m_dockUIPanel.SetActive(true);
         m_dockUIController.Init(this);
     }
-
-    //public void StartDialogue()
-    //{
-    //    m_dockUIPanel.SetActive(false);
-    //    DialogueManager.Instance.StartDialogue(m_npc);
-    //}
 
     public void CloseDockUI()
     {

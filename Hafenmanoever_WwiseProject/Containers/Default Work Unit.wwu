@@ -1696,7 +1696,6 @@
 												<BlendContainer Name="BC_boatEngine_ThrottleBlend" ID="{0F371717-3086-41AA-A040-D1937A7AFEDC}" ShortID="473608158">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
 														<Property Name="BlendBehavior" Type="int16" Value="1"/>
 														<Property Name="Lowpass" Type="int16">
 															<ValueList>
@@ -1714,9 +1713,10 @@
 																</ModifierInfo>
 															</ModifierList>
 														</Property>
+														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 														<Property Name="MaxSoundPerInstance" Type="int16">
 															<ValueList>
-																<Value>3</Value>
+																<Value>5</Value>
 															</ValueList>
 														</Property>
 														<Property Name="UseMaxSoundPerInstance" Type="bool">
@@ -1925,7 +1925,7 @@
 																						<PointList>
 																							<Point>
 																								<XPos>-3</XPos>
-																								<YPos>3</YPos>
+																								<YPos>1</YPos>
 																								<Flags>5</Flags>
 																								<SegmentShape>Log1</SegmentShape>
 																							</Point>
@@ -1937,7 +1937,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>0</XPos>
-																								<YPos>0.5</YPos>
+																								<YPos>4</YPos>
 																								<Flags>0</Flags>
 																								<SegmentShape>Log1</SegmentShape>
 																							</Point>
@@ -1949,7 +1949,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>3</XPos>
-																								<YPos>3</YPos>
+																								<YPos>1</YPos>
 																								<Flags>37</Flags>
 																							</Point>
 																						</PointList>
@@ -1975,7 +1975,7 @@
 																						<PointList>
 																							<Point>
 																								<XPos>-3</XPos>
-																								<YPos>1</YPos>
+																								<YPos>2</YPos>
 																								<Flags>5</Flags>
 																								<SegmentShape>Log1</SegmentShape>
 																							</Point>
@@ -1987,7 +1987,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>0</XPos>
-																								<YPos>1</YPos>
+																								<YPos>2</YPos>
 																								<Flags>0</Flags>
 																								<SegmentShape>SCurve</SegmentShape>
 																							</Point>
@@ -1999,7 +1999,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>3</XPos>
-																								<YPos>1</YPos>
+																								<YPos>2</YPos>
 																								<Flags>37</Flags>
 																							</Point>
 																						</PointList>
@@ -2016,7 +2016,7 @@
 																	<CrossfadingInfo>
 																		<LeftEdgePos>-3</LeftEdgePos>
 																		<LeftFadingMode>Automatic</LeftFadingMode>
-																		<RightEdgePos>-0.15</RightEdgePos>
+																		<RightEdgePos>-0.2</RightEdgePos>
 																		<RightFadingMode>Automatic</RightFadingMode>
 																	</CrossfadingInfo>
 																</BlendTrackAssoc>
@@ -2032,7 +2032,7 @@
 																<BlendTrackAssoc>
 																	<ItemRef Name="boat_engineForward_loop" ID="{728BD5CA-EED1-450B-9718-0D244AD898BF}"/>
 																	<CrossfadingInfo>
-																		<LeftEdgePos>0.15</LeftEdgePos>
+																		<LeftEdgePos>0.2</LeftEdgePos>
 																		<LeftFadingMode>Automatic</LeftFadingMode>
 																		<RightEdgePos>3</RightEdgePos>
 																		<RightFadingMode>Automatic</RightFadingMode>
@@ -2045,7 +2045,6 @@
 												<BlendContainer Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" ShortID="3708076">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
 														<Property Name="BlendBehavior" Type="int16" Value="1"/>
 														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 														<Property Name="MaxSoundPerInstance" Type="int16">
@@ -2305,7 +2304,7 @@
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
-														<Value>50</Value>
+														<Value>60</Value>
 													</ValueList>
 												</Property>
 												<Property Name="MakeUpGain" Type="Real64">
@@ -2670,7 +2669,7 @@
 											<PropertyList>
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
-														<Value>30</Value>
+														<Value>40</Value>
 													</ValueList>
 												</Property>
 												<Property Name="MaxSoundPerInstance" Type="int16">
@@ -3517,7 +3516,6 @@
 										<BlendContainer Name="BC_boatWoodVibration" ID="{236E2706-B931-446D-8F13-65AB34D1A874}" ShortID="277950005">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
 												<Property Name="BlendBehavior" Type="int16" Value="1"/>
 												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 												<Property Name="MaxSoundPerInstance" Type="int16">

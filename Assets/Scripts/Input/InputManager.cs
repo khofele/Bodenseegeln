@@ -3,8 +3,6 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] private InputActionReference m_boatMoveAction;
-
     private bool m_lastDialogModeState = true; //while game starts in SAILMODE this must be true -> must may be false if start game in UI
 
     private void Update()
@@ -12,21 +10,6 @@ public class InputManager : MonoBehaviour
         if (GameManager.Instance == null)
         {
             return;
-        }
-
-        if (GameManager.Instance.CurrentState == GameStates.DIALOGMODE)
-        {
-            if (m_boatMoveAction.action.enabled)
-            {
-                m_boatMoveAction.action.Disable();
-            }
-        }
-        else
-        {
-            if (!m_boatMoveAction.action.enabled)
-            {
-                m_boatMoveAction.action.Enable();
-            }
         }
 
         UpdateCursorState(GameManager.Instance.CurrentState == GameStates.DIALOGMODE);

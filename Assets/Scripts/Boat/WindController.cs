@@ -7,7 +7,7 @@ public class WindController : MonoBehaviour
 
     private Vector3 m_shaderWind = Vector3.zero;
 
-    private bool m_isFirstWindCalculation = true;
+    private bool m_isFirstWindCalculation = true; // first wind needs to be handled differently --> boat might not have updated forward vector yet
 
     // WIND STRENGTH VALUES
     private float m_baseWindStrength = 2.0f;
@@ -95,6 +95,8 @@ public class WindController : MonoBehaviour
             return false;
         }
 
+        // avoids check if it's the first wind calculation to avoid getting stuck in invalid wind --> boat forward vector might not be updated yet, calculation could happen with wrong vector 
+        // --> deadzone is the only important check for first wind, everything else can be ignored --> if first wind cant be calculated fail save will be used --> until then boat should have updated forward vector
         if(m_isFirstWindCalculation == false)
         {
             float windAngleToCurrentWind = Vector3.Angle(m_currentWindDirection, windDirection);

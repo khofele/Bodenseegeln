@@ -93,7 +93,7 @@ public class UIManager : Manager<UIManager>
 
     public float GetSteeringWheelAngle()
     {
-        return m_boatController.CurrentRudderAngle * 3.0f; // TODO might need to balance modifier
+        return m_boatController.CurrentRudderAngle * 3.0f;
     }
 
     public float GetApparentWindSpeed()

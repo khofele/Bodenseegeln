@@ -131,8 +131,8 @@ public class BoatAnimatorController : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_rigidbody = GetComponent<Rigidbody>();
 
-        m_animator.SetBool("IsSailActive", true);
-        m_animator.SetBool("IsSailOpen", true);
+        m_animator.SetBool("IsSailActive", false);
+        m_animator.SetBool("IsSailOpen", false);
 
         OnMainSailTransitionFinished += HandleMainSailTransitionFinished;
         OnFrontSailTransitionFinished += HandleFrontSailTransitionFinished;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Sail : MonoBehaviour
 {
-    private bool m_isOpen = true;
+    private bool m_isOpen = false;
     private bool m_isResettingRotation = false;
 
     public bool IsOpen

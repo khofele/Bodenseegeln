@@ -6,7 +6,7 @@ public class EndScreenUI : MonoBehaviour
 {
     private GameManager m_gameManager = null;
 
-    [SerializeField] private ParticleSystem m_endscreenConfetti = null;
+    [SerializeField] private GameObject m_endscreenConfettiParent = null; // TODO Konfetti auslösen fixen
     [SerializeField] private BoatGameOverController m_boatGameOverController = null;
 
     [Header("UI Components")]
@@ -17,10 +17,12 @@ public class EndScreenUI : MonoBehaviour
     {
         m_gameManager = FindFirstObjectByType<GameManager>();
 
-        if(m_gameManager.CurrentState == GameStates.GAMEWON)
+        if (m_gameManager.CurrentState == GameStates.GAMEWON)
         {
-            m_endscreenConfetti.gameObject.SetActive(true);
-            m_endscreenConfetti.Play();
+            foreach(ParticleSystem p in m_endscreenConfettiParent.GetComponentsInChildren<ParticleSystem>())
+            {
+                p.Play();
+            }
             m_txtTitle.text = "Du hast gewonnen!";
         }
         else

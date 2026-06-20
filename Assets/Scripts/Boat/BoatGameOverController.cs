@@ -27,6 +27,7 @@ public class BoatGameOverController : MonoBehaviour
         m_targetPosition = transform.position + Vector3.down * m_moveDownAmount;
     }
 
+    // drowning boat
     private void RotateBoat()
     {
         if (m_timer >= m_rotationDuration)

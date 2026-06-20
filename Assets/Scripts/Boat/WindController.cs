@@ -7,6 +7,8 @@ public class WindController : MonoBehaviour
 
     private Vector3 m_shaderWind = Vector3.zero;
 
+    private bool m_isFirstWindCalculation = true; // first wind needs to be handled differently --> boat might not have updated forward vector yet
+
     // WIND STRENGTH VALUES
     private float m_baseWindStrength = 2.0f;
     private float m_startWindStrength = 1.0f; // start and target wind strength for smooth wind strength transitions
@@ -16,6 +18,7 @@ public class WindController : MonoBehaviour
     private Vector3 m_currentWindDirection = Vector3.forward;
     private Vector3 m_startWindDirection = Vector3.forward; // start and target wind direction for smooth wind direction transitions
     private Vector3 m_targetWindDirection = Vector3.forward;
+    private float m_maxWindAngleChange = 100.0f;
 
     // TIMER AND TRANSITION VALUES
     private float m_timerValue = 0.0f;
@@ -44,27 +47,25 @@ public class WindController : MonoBehaviour
 
         while (rerollCounter < m_maxRerolls)
         {
-            // Timemodifier --> the smaller the longer the wind comes from the same-ish direction --> higher value = wind rotates a lot more, hectic changes
-            //float windAngleNoise = Mathf.PerlinNoise(Time.time * 0.05f + rerollCounter * 10.0f, 0.0f);
+            float randomDecider = Random.value;
+            float randomWindAngle = 0.0f;
 
-            // map noise value (0-1) to -180 - 180
-            // interpolate between max angles
-            //float randomWindAngle = Mathf.Lerp(-180.0f, 180.0f, windAngleNoise * 1.5f);
-
-            float randomWindAngle = Random.Range(-80.0f, 80.0f);
+            // decide for left or right side
+            // random wind angle around boat, deadzone between 130° and 230°
+            if (randomDecider > 0.5f)
+            {
+                randomWindAngle = Random.Range(0.0f, 125.0f);
+            }
+            else
+            {
+                randomWindAngle = Random.Range(235.0f, 360.0f);
+            }
 
             // potential next target wind direction
-            //Vector3 potentialWindDirection = Quaternion.Euler(0, randomWindAngle, 0.0f) * m_currentWindDirection;
             Vector3 potentialWindDirection = Quaternion.AngleAxis(randomWindAngle, Vector3.up) * m_boatForwardVector;
             potentialWindDirection.Normalize();
 
             float windAngleToCurrentWind = Vector3.Angle(m_currentWindDirection, potentialWindDirection);
-
-            //if(windAngleToCurrentWind > 140.0f)
-            //{
-            //    rerollCounter++;
-            //    continue;
-            //}
 
             //check if valid wind was found
             if (IsValidWindFound(potentialWindDirection) == true)
@@ -77,19 +78,34 @@ public class WindController : MonoBehaviour
         }
 
         // fail save
-        StartWindChange(m_currentWindDirection);
+        float maxWindAngleChangeInRadians = m_maxWindAngleChange * Mathf.Deg2Rad;
+        // move wind direction in boat direction in maxwindanglechange steps
+        Vector3 forcedWindDirection = Vector3.RotateTowards(m_currentWindDirection, m_boatForwardVector, maxWindAngleChangeInRadians, 0.0f);
+
+        StartWindChange(forcedWindDirection);
     }
 
     private bool IsValidWindFound(Vector3 windDirection)
     {
-        float windAngleToCurrentWind = Vector3.Angle(m_currentWindDirection, windDirection);
-
-        //float angle = Vector3.SignedAngle(m_boatForwardVector.normalized, windDirection.normalized, Vector3.up);
-
-        // angle from -50° to 50° = dead zone --> deadzone of 100°
-        if (windAngleToCurrentWind > 100.0f)
+        float windAngleToBoat = Vector3.Angle(m_boatForwardVector, windDirection);
+        
+        // angle from 130° to 230° = dead zone --> deadzone of 100°
+        if (windAngleToBoat > 130.0f && windAngleToBoat < 230.0f)
         {
             return false;
+        }
+
+        // avoids check if it's the first wind calculation to avoid getting stuck in invalid wind --> boat forward vector might not be updated yet, calculation could happen with wrong vector 
+        // --> deadzone is the only important check for first wind, everything else can be ignored --> if first wind cant be calculated fail save will be used --> until then boat should have updated forward vector
+        if(m_isFirstWindCalculation == false)
+        {
+            float windAngleToCurrentWind = Vector3.Angle(m_currentWindDirection, windDirection);
+
+            // check if difference between current and potential wind is below max wind change angle
+            if (windAngleToCurrentWind > m_maxWindAngleChange)
+            {
+                return false;
+            }
         }
 
         return true;
@@ -97,7 +113,8 @@ public class WindController : MonoBehaviour
 
     private void StartWindChange(Vector3 potentialWindDirection)
     {
-        Debug.Log("Winddd START");
+        m_isFirstWindCalculation = false;
+
         // save current wind values
         m_startWindDirection = m_currentWindDirection;
         m_startWindStrength = m_trueWind.magnitude;
@@ -108,12 +125,11 @@ public class WindController : MonoBehaviour
         // 100.0f as offset --> different value than wind angle noise needed! otherwise perlin would return almost the same value as the wind angle
         float windStrengthNoise = Mathf.PerlinNoise(Time.time * 2.0f + 100.0f, 0.0f);
 
-        // base wind strength + random wind strength --> interpolate between -1 and 15
-        m_targetWindStrength = m_baseWindStrength + Mathf.Lerp(-1.0f, 15.0f, windStrengthNoise);
+        // base wind strength + random wind strength --> interpolate between -1 and 8
+        m_targetWindStrength = m_baseWindStrength + Mathf.Lerp(-1.0f, 8.0f, windStrengthNoise);
 
         // randomize duration before wind direction change takes place
         m_stabilityDuration = Random.Range(20.0f, 45.0f);
-        //m_stabilityDuration = 2;
 
         // start wind transition
         m_transitionTimer = 0.0f;
@@ -183,10 +199,5 @@ public class WindController : MonoBehaviour
         // accumulates wind offset for every frame
         // prevents the shader from glitching during wind transitions --> wind vector dependent on current frame time, not total time (was used in shader before fix)
         m_shaderWind += m_trueWind * Time.deltaTime;
-
-        //Debug.Log("Winddd " + m_trueWind); // TODO Debug raus
-
-        Debug.Log("Winddd Anlge " + Vector3.Angle(m_boatForwardVector, m_currentWindDirection)); 
-        Debug.Log("Winddd Signed Angle " + Vector3.SignedAngle(m_boatForwardVector, m_currentWindDirection, Vector3.up));
     }
 }

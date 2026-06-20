@@ -1,5 +1,4 @@
 using Quest;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -49,13 +48,13 @@ public class BoatController : MonoBehaviour
     private float m_thrustStep = 0.0f;
     private float m_maxThrustForwardSteps = 3.0f;
     private float m_maxThrustBackwardSteps = -3.0f;
-    private float m_forwardForcePerStep = 700.0f;
-    private float m_backwardForcePerStep = 300.0f;
+    private float m_forwardForcePerStep = 800.0f;
+    private float m_backwardForcePerStep = 700.0f;
     private float m_steeringInput = 0.0f;
     private float m_smoothedSteeringInput = 0.0f;
     private float m_motorBrakeModifier = 1.5f;
     private float m_currentFuel = 0.0f; 
-    [SerializeField] private float m_maxFuel = 250.0f; // TODO SerializedField raus
+    private float m_maxFuel = 250.0f;
     private float m_currentHealth = 0.0f;
     private float m_maxHealth = 100.0f;
 
@@ -228,30 +227,14 @@ public class BoatController : MonoBehaviour
         // -apparentWind.normalized = where wind comes from
 
         float angleWindSail = Vector3.Angle(sail.transform.forward, -apparentWind.normalized);
-        Debug.Log("Angle Wind Sail" + Mathf.RoundToInt(angleWindSail));
 
-        // Dead zone depends on angle of wind and boat
-        float angleWindBoat = Vector3.Angle(transform.forward, -apparentWind.normalized);
-        Debug.Log("Angle Wind Boat" + Mathf.RoundToInt(angleWindBoat));
-
-        // Angle between wind origin and sail too low --> sail can't catch wind properly, sail flutters --> no lift, drag stays
-        if (angleWindSail < 5.0f || angleWindSail > 175.0f)
-        {
-            return Vector3.zero;
-        }
-
+        // Dead zone depends on angle of wind and sail
         bool isFluttering = false;
 
-        // dead zone 
-        if (angleWindBoat < 15.0f) // TODO Winkel von vorne und von hinten????
+        // Angle between wind origin and sail too low --> sail can't catch wind properly, sail flutters --> no lift, drag stays
+        if (angleWindSail < 8.0f || angleWindSail > 172.0f)
         {
             isFluttering = true;
-            m_boatAudioController.StartSailFluttering();
-        }
-        else
-        {
-            isFluttering = false;
-            m_boatAudioController.StopSailFluttering();
         }
 
         // 0.5 * airdensity * (magnitude apparent wind)^2 * sail size * coefficient (drag or lift)
@@ -268,11 +251,13 @@ public class BoatController : MonoBehaviour
 
         if (isFluttering == true)
         {
-            Debug.Log("Fluttering");
+            //Debug.Log("Fluttering");
+            m_boatAudioController.StartSailFluttering();
             return Vector3.zero;
         }
         else
         {
+            m_boatAudioController.StopSailFluttering();
             liftCoefficient = GetCoefficient(m_liftTable, angleWindSail);
             dragCoefficient = GetCoefficient(m_dragTable, angleWindSail);
         }
@@ -361,7 +346,7 @@ public class BoatController : MonoBehaviour
                 m_currentFrontSailAngle = Mathf.Clamp(m_currentFrontSailAngle + ropeInput, 0.0f, m_maxSailAngle);
             }
 
-            Debug.Log("Current Main Sail Angle " + m_currentMainSailAngle + " Current Front Sail Angle " + m_currentFrontSailAngle);
+            //Debug.Log("Current Main Sail Angle " + m_currentMainSailAngle + " Current Front Sail Angle " + m_currentFrontSailAngle);
 
             if(Mathf.Abs(ropeInput) > 0.0f)
             {
@@ -504,7 +489,7 @@ public class BoatController : MonoBehaviour
         m_isResettingSailRotations = true;
         m_currentMainSailAngle = m_mainSail.transform.localEulerAngles.y;
         m_currentFrontSailAngle = m_frontSail.transform.localEulerAngles.y;
-        Debug.Log("Segel werden eingeholt!");
+        Debug.Log("Sails pulled in!");
     }
 
     private void ResetSailRotations()
@@ -639,7 +624,7 @@ public class BoatController : MonoBehaviour
         m_rigidbody.AddForceAtPosition(totalHullForce, transform.position + (transform.up * 1.0f), ForceMode.Force);
     }
 
-    private void CalculateWaterResistance() // force agains boat forward direction
+    private void CalculateWaterResistance() // force against boat forward direction
     {
         float boatSpeed = m_rigidbody.linearVelocity.magnitude;
 
@@ -649,22 +634,42 @@ public class BoatController : MonoBehaviour
             return;
         }
 
-        // linear drag = drag proportional to boat speed --> smooth movements, smooth braking
-        // quadratic drag = drag proportional to quadartic boat speed --> dominant at high speed
-        float linearDrag = 150.0f;
-        float quadraticDrag = 70.0f;
-
         // simplified physics formula --> no real water and realistic boat physics
         // result: boat brakes smooth with lower speed, brakes drasticly with higher speed especially in motor mode --> just for the feeling, no proper physics formula
-        Vector3 dragForce = Vector3.zero;
-        if (m_gameManager.CurrentState == GameStates.SAILMODE)
-        {
-            dragForce = -m_rigidbody.linearVelocity.normalized * (boatSpeed * linearDrag + boatSpeed * boatSpeed * quadraticDrag);
+        // at low speeds: boat slows down gently,
+        // the faster it goes, the more drastically the drag kicks in to prevent it from reaching an unrealistic top speed
 
-        }
-        else if(m_gameManager.CurrentState == GameStates.MOTORMODE)
+        float boatSpeedInKnots = boatSpeed / 0.514444f;
+        float dragValue = 0.0f;
+        Vector3 boatDrivingDirection = -m_rigidbody.linearVelocity.normalized;
+
+        // the higher the speed, the higher the water resistance
+
+        // low speed
+        // impact 1 at 1kn
+        // impact 0 at 6kn --> no more linear impact on drag value at speeds above 6kn
+        float lowSpeedResistanceImpact = Mathf.Clamp01(1.0f - boatSpeedInKnots / 6.0f);
+        dragValue += lowSpeedResistanceImpact * boatSpeed * 80.0f; // linear impact
+
+        // mid speed
+        // impact 0 at 6kn
+        // impact 1 at 14kn
+        float midSpeedResistanceImpact = Mathf.InverseLerp(6.0f, 14.0f, boatSpeedInKnots); // inverselerp clamps automatically between 0 and 1
+        dragValue += midSpeedResistanceImpact * midSpeedResistanceImpact * boatSpeed * boatSpeed * 18.0f; // quadratic impact, small values remain small, large values rise strongly --> "liquid" transition between low and high speed
+
+        // high speed
+        // impact 0 at 14kn
+        // impact 1 at 20kn
+        float highSpeedResistanceImpact = Mathf.InverseLerp(14.0f, 20.0f, boatSpeedInKnots);
+        dragValue += Mathf.Pow(highSpeedResistanceImpact, 3.0f) * boatSpeed * boatSpeed * 45.0f; // cubic impact, large values rise strongly --> same behavior like quadratic but with more impact
+
+        // force applies against boat driving direction
+        Vector3 dragForce = boatDrivingDirection * dragValue;
+
+        if (m_gameManager.CurrentState == GameStates.MOTORMODE)
         {
-            dragForce = -m_rigidbody.linearVelocity.normalized * (boatSpeed * linearDrag + boatSpeed * boatSpeed * quadraticDrag + 500);
+            // modifier needed for balancing speed in motormode --> max limit in motormode is around 7.9 kn
+            dragForce += boatDrivingDirection * 500.0f;
         }
 
         m_rigidbody.AddForce(dragForce, ForceMode.Force);
@@ -698,7 +703,6 @@ public class BoatController : MonoBehaviour
                 motorForce = transform.forward * m_thrustStep * m_backwardForcePerStep;
             }
         }
-        Debug.Log("thrust step " + m_thrustStep); // TODO Debug Logs raus
 
         // braking over time without thrust
         motorForce.y = 0.0f;
@@ -707,6 +711,21 @@ public class BoatController : MonoBehaviour
             motorForce += -m_rigidbody.linearVelocity.normalized * 1500.0f; // 1500.0 = brake force modifier
         }
 
+        float boatSpeedInKnots = speed / m_msPerKnot;
+
+        // speed limit impact 0 at 5kn
+        // speed limit impact 1 at 8.2kn
+        float speedLimitImpact = Mathf.InverseLerp(5.0f, 8.2f, boatSpeedInKnots); // inverse lerp automatically clamps value between 0 and 1
+        float smoothedSpeedLimitImpact = Mathf.SmoothStep(0.0f, 1.0f, speedLimitImpact); // smoothing impact curve
+
+        // smoothes speed limit --> no hard limit, quadratic impact --> low at low values, high at large values
+        // the faster the boat, the higher the resistance/pressure on boat --> boat has a hard time to speed up
+        float pressureForce = smoothedSpeedLimitImpact * smoothedSpeedLimitImpact;
+
+        // force against movement direction, quadratic impact
+        Vector3 speedLimiterForce = -m_rigidbody.linearVelocity.normalized * pressureForce * speed * speed * 120.0f; // 120 modifier, needed to limit boat speed around 7-8 kn in motormode
+
+        motorForce += speedLimiterForce;
         m_rigidbody.AddForce(motorForce, ForceMode.Force);
     }
 
@@ -725,14 +744,10 @@ public class BoatController : MonoBehaviour
         float fuelConsumptionPerThrust = 0.25f;
         float totalFuelConsumption = baseFuelConsumption + Mathf.Abs(m_thrustStep) * fuelConsumptionPerThrust;
 
-        Debug.Log("Fuel Consumption " + totalFuelConsumption);
-
         float fuelAmount = totalFuelConsumption * Time.fixedDeltaTime;
 
         m_currentFuel -= fuelAmount;
         QuestManager.Instance.RegisterFuelUsed(fuelAmount);
-
-        Debug.Log("Fuel " + m_currentFuel);
     }
 
     // method for water-trail-shader to check whether the boat is moving backwards or not
@@ -750,8 +765,6 @@ public class BoatController : MonoBehaviour
             {
                 m_isBoatDrivingForward = false;
             }
-
-            Debug.Log("Driving forward " + m_isBoatDrivingForward);
         }
     }
 
@@ -1041,7 +1054,6 @@ public class BoatController : MonoBehaviour
                 m_boatAnimatorController.ActivateSailmodeAnimations();
 
                 Debug.Log("Sailmode enabled!");
-                Debug.Log("Segel werden aufgespannt!");
             }
         }
     }
@@ -1059,7 +1071,6 @@ public class BoatController : MonoBehaviour
                 {
                     // accumulate steering input
                     m_steeringInput += rawSteeringInput * Time.deltaTime;
-                    Debug.Log("steering input " + m_steeringInput);
 
                     m_boatAudioController.PlayWheelTurn();
                 }
@@ -1073,9 +1084,6 @@ public class BoatController : MonoBehaviour
             }
 
             float rudderAngle = m_steeringInput * m_maxRudderAngle;
-
-
-            Debug.Log("rudder angle " + rudderAngle);
         }
     }
 
@@ -1193,11 +1201,8 @@ public class BoatController : MonoBehaviour
 
         if (CheckDamageReducedWithFenders() == true)
         {
-            Debug.Log("Fender reduce Damagee");
-            Debug.Log("Damagee before reduction " + damageValue);
             // reduce damage by 
             damageValue *= CalculateDamageReductionWithFenders();
-            Debug.Log("Damagee after reduction " + damageValue);
         }
 
         return damageValue;
@@ -1205,17 +1210,17 @@ public class BoatController : MonoBehaviour
 
     private void PlayCollisionAudio(ContactPoint contactPoint, float damageValue)
     {
-        if (contactPoint.thisCollider.gameObject.Equals(m_keel) && damageValue > 0.5f) // TODO Damagewert-Threshold balancen
+        if (contactPoint.thisCollider.gameObject.Equals(m_keel) && damageValue > 0.5f)
         {
             m_environmentAudioController.PlayBoatCollisionUnderWater();
         }
 
-        if (contactPoint.thisCollider.gameObject.Equals(m_fender) && damageValue > 0.5f)  // TODO Damagewert-Threshold balancen
+        if (contactPoint.thisCollider.gameObject.Equals(m_fender) && damageValue > 0.5f)
         {
             m_environmentAudioController.PlayBoatDockImpact();
         }
 
-        if (damageValue > 1.0f) // TODO Damagewert-Threshold balancen
+        if (damageValue > 3.0f)
         {
             m_environmentAudioController.PlayBoatCollisionHeavy();
         }
@@ -1227,44 +1232,52 @@ public class BoatController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (m_rigidbody.linearVelocity.magnitude < 0.01f)
+        // prevents damage in other states
+        if(m_gameManager.CurrentState == GameStates.SAILMODE || m_gameManager.CurrentState == GameStates.MOTORMODE)
         {
-            return;
-        }
+            if (m_rigidbody.linearVelocity.magnitude < 0.01f)
+            {
+                return;
+            }
 
-        if (collision.contactCount <= 0)
-        {
-            return;
-        }
+            if (collision.contactCount <= 0)
+            {
+                return;
+            }
 
-        ContactPoint firstContactPoint = collision.contacts[0];
-        float damage = CalculateDamageValue(firstContactPoint);
+            ContactPoint firstContactPoint = collision.contacts[0];
+            float damage = CalculateDamageValue(firstContactPoint);
 
-        PlayCollisionAudio(firstContactPoint, damage);
+            PlayCollisionAudio(firstContactPoint, damage);
 
-        QuestManager.Instance.RegisterDamage(damage);
-        m_currentHealth -= damage;
+            QuestManager.Instance.RegisterDamage(damage);
+            m_currentHealth -= damage;
+        } 
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        if(m_rigidbody.linearVelocity.magnitude < 0.01f)
+        // prevents damage in other states
+        if (m_gameManager.CurrentState == GameStates.SAILMODE || m_gameManager.CurrentState == GameStates.MOTORMODE)
         {
-            return;
+            if (m_rigidbody.linearVelocity.magnitude < 0.01f)
+            {
+                return;
+            }
+
+            if (collision.contactCount <= 0)
+            {
+                return;
+            }
+
+            ContactPoint firstContactPoint = collision.contacts[0];
+            float damage = CalculateDamageValue(firstContactPoint) * Time.fixedDeltaTime;
+
+            PlayCollisionAudio(firstContactPoint, damage);
+
+            QuestManager.Instance.RegisterDamage(damage);
+            m_currentHealth -= damage;
         }
-
-        if(collision.contactCount <= 0)
-        {
-            return;
-        }
-
-        ContactPoint firstContactPoint = collision.contacts[0];
-        float damage = CalculateDamageValue(firstContactPoint) * Time.fixedDeltaTime;
-
-        PlayCollisionAudio(firstContactPoint, damage);
-
-        QuestManager.Instance.RegisterDamage(damage);
-        m_currentHealth -= damage;
     }
 
     private void CalculateFenderDamage()
@@ -1305,12 +1318,12 @@ public class BoatController : MonoBehaviour
     {
         if((m_rigidbody.linearVelocity.magnitude / 0.514444f) <= 3.0f)
         {
-            Debug.Log("Damagee Reduction 100%");
+            // 100% damage reduction
             return 0.0f;
         }
         else
         {
-            Debug.Log("Damagee Reduction 75%");
+            // 75% damage reduction
             return 0.25f;
         }
     }
@@ -1450,6 +1463,8 @@ public class BoatController : MonoBehaviour
     // UNITY METHODS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void Awake()
     {
+        m_windController.UpdateBoatForward(gameObject.transform.forward);
+
         m_boatAnimatorController = GetComponent<BoatAnimatorController>();
 
         if(m_boatAnimatorController == null)
@@ -1478,7 +1493,7 @@ public class BoatController : MonoBehaviour
         m_currentHealth = m_maxHealth;
         m_fender.SetActive(true);
         m_isFenderEnabled = true;
-        m_isInSailMode = true; // TODO beim Spielstart in Sailmode gehen
+        m_isInSailMode = true;
 
         m_physicsAudioController.StartPhysicsAudio();
         m_physicsAudioController.StartSailPhysicsAudio();
@@ -1529,18 +1544,15 @@ public class BoatController : MonoBehaviour
     public void FixedUpdate()
     {
         //// DEBUG //////////////////////////////////////////////////////////////////////////////
-        float speedKnot = m_rigidbody.linearVelocity.magnitude / m_msPerKnot;
-        Debug.Log(speedKnot + " knots");
-
-        Debug.Log("Current Health " + m_currentHealth);
+        //float speedKnot = m_rigidbody.linearVelocity.magnitude / m_msPerKnot;
+        //Debug.Log(speedKnot + " knots");
+        //Debug.Log("Current Health " + m_currentHealth);
         //// DEBUG //////////////////////////////////////////////////////////////////////////////
 
         if (m_gameManager.CurrentState == GameStates.DIALOGMODE)
         {
             StopBoat();
             m_rigidbody.isKinematic = true;
-
-            Debug.Log("DIALOG-MODE");
         }
         else
         {

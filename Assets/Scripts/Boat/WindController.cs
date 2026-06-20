@@ -166,8 +166,6 @@ public class WindController : MonoBehaviour
         // interpolate between start and target wind strength with smooth steps
         float currentStrength = Mathf.Lerp(m_startWindStrength, m_targetWindStrength, smoothTransitionStep);
 
-        //Debug.Log("Strength winddd " + currentStrength); // TODO Debug raus
-
         // calculate result wind vector with interpolated wind dir and wind strength
         m_trueWind = m_currentWindDirection * currentStrength;
     }

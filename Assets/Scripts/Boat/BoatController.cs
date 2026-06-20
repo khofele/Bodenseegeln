@@ -8,7 +8,7 @@ public class BoatController : MonoBehaviour
     private float m_msPerKnot = 0.514444f; // 0.51444m/s = 1 Knot
     private Rigidbody m_rigidbody = null;
     private bool m_isBoatDrivingForward = true; // shader input
-    private bool m_isInSailMode = true;
+    private bool m_isInSailMode = false;
     private bool m_isFenderEnabled = true;
     private bool m_isForcedTow = false;
     private bool m_isResettingSailRotations = false;
@@ -994,7 +994,8 @@ public class BoatController : MonoBehaviour
     {
         Debug.Log("Boat Reset");
         m_gameManager.DecreaseMoney(m_gameManager.ResetCost);
-        gameObject.transform.position = new Vector3(2800.0f, 9.8f, 2700.0f); // TODO Reset-Position festlegen
+        gameObject.transform.position = new Vector3(1812.0f, 9.8f, 3607.0f); // TODO Reset-Position + Rotation festlegen + Fix
+        gameObject.transform.localRotation = new Quaternion(0.0f, 30.0f, 0.0f, 0.0f);
         m_currentHealth = m_maxHealth;
         m_currentFuel = m_maxFuel;
         m_rigidbody.linearVelocity = Vector3.zero;
@@ -1033,7 +1034,7 @@ public class BoatController : MonoBehaviour
 
                 m_boatAudioController.PlayMotormodeAudio();
                 m_boatAudioController.StopMastCreak();
-                m_physicsAudioController.StartSailPhysicsAudio();
+                m_physicsAudioController.StopSailPhysicsAudio();
 
                 m_boatAnimatorController.ActivateMotormodeAnimations();
 
@@ -1049,7 +1050,7 @@ public class BoatController : MonoBehaviour
 
                 m_boatAudioController.PlaySailmodeAudio();
                 m_boatAudioController.StartMastCreak();
-                m_physicsAudioController.StopSailPhysicsAudio();
+                m_physicsAudioController.StartSailPhysicsAudio();
 
                 m_boatAnimatorController.ActivateSailmodeAnimations();
 
@@ -1493,10 +1494,10 @@ public class BoatController : MonoBehaviour
         m_currentHealth = m_maxHealth;
         m_fender.SetActive(true);
         m_isFenderEnabled = true;
-        m_isInSailMode = true;
+        m_isInSailMode = false;
 
         m_physicsAudioController.StartPhysicsAudio();
-        m_physicsAudioController.StartSailPhysicsAudio();
+        m_boatAudioController.PlayMotormodeAudio();
         m_boatAudioController.StartCreeking();
     }
 

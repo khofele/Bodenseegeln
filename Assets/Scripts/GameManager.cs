@@ -9,7 +9,7 @@ using WwiseEvent = AK.Wwise.Event;
 
 public class GameManager : Manager<GameManager>
 {
-    private GameStates m_currentGameState = GameStates.SAILMODE;
+    private GameStates m_currentGameState = GameStates.MOTORMODE;
     private GameStates m_prevGameState;
 
     private Dictionary<QuestData, float> m_questResults = new();

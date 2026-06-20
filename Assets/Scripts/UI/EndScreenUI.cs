@@ -6,7 +6,7 @@ public class EndScreenUI : MonoBehaviour
 {
     private GameManager m_gameManager = null;
 
-    [SerializeField] private GameObject m_endscreenConfettiParent = null; // TODO Konfetti auslösen fixen
+    [SerializeField] private GameObject m_endscreenConfettiParent = null;
     [SerializeField] private BoatGameOverController m_boatGameOverController = null;
 
     [Header("UI Components")]

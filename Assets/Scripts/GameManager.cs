@@ -139,7 +139,7 @@ public class GameManager : Manager<GameManager>
 
     private void GetPausedInput()
     {
-        if(m_currentGameState != GameStates.GAMEWON && m_currentGameState != GameStates.GAMEOVER)
+        if(m_currentGameState != GameStates.GAMEWON && m_currentGameState != GameStates.GAMEOVER && m_currentGameState != GameStates.DIALOGMODE)
         {
             if (m_openPauseMenuAction.action.triggered == true)
             {

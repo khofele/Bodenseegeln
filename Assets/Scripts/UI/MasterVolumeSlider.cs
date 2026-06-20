@@ -18,7 +18,6 @@ public class MasterVolumeSlider : MonoBehaviour
     private void OnEnable()
     {
         SetVolume(PlayerPrefs.GetFloat("MasterVolume"));
-        Debug.Log("Master Volume " + PlayerPrefs.GetFloat("MasterVolume"));
     }
 
     public void SetVolume(float volume)

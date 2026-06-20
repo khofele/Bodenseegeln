@@ -1,0 +1,319 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1070252419290710410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7944491871734639522}
+  m_Layer: 0
+  m_Name: Boat_BUGGED BOAT
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7944491871734639522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070252419290710410}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2840.6582, y: 9.8, z: 2757.5652}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1186441042820383660}
+  - {fileID: 722814748883181213}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3670121282749907591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 722814748883181213}
+  - component: {fileID: 8984024234898207641}
+  m_Layer: 0
+  m_Name: BoatAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &722814748883181213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3670121282749907591}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -8.584961, y: -9.8, z: 40.379395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7944491871734639522}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8984024234898207641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3670121282749907591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b28b899070733499066a03d1e7df2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatAudioController
+  m_boatEngineEmitter: {fileID: 0}
+  m_boatSternWaterEmitter: {fileID: 0}
+  m_boatCockpitEmitter: {fileID: 0}
+  m_boatHullEmitter: {fileID: 0}
+  m_boatSailEmitter: {fileID: 0}
+  m_engineStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 314c38fa3b73ac94abc99d9aba85f0ca, type: 2}
+  m_engineStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9ae06f8013fa29c448d4d70e98b1bf7c, type: 2}
+  m_engineStartKeyEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8fd6b9548a1b0f0449cea27fa86e516a, type: 2}
+  m_throttleMoveEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 129a5fc76500d9a43b3cd947913fda7a, type: 2}
+  m_throttleMoveIdleEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f532c95182abc284aa94e5c0585c4e44, type: 2}
+  m_engineWaterStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: abdeece14d75e4648882d9c8ea58bcca, type: 2}
+  m_engineWaterStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 42ae2cee7c898c44095a8bdfb72be8a8, type: 2}
+  m_woodVibrationStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 06ff5ef21fff0374f95cb65136f2ef09, type: 2}
+  m_woodVibrationStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cde8ed2ef89364b488e55933f733155d, type: 2}
+  m_sailDeployEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2cbd0faeb512a89499b0544f91d220f6, type: 2}
+  m_sailRetractEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f4024747c3ca25c4f8c1ab147e9e8917, type: 2}
+  m_sailLoopStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 373e57ce034cd784b9e301e1978058bd, type: 2}
+  m_sailLoopStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 74c0ae56c1542a54fa57c3353a8ee747, type: 2}
+  m_wheelTurnEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8ccba3b39babd9f47802a29ca12972be, type: 2}
+  m_creekingStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1474ad4fdda7f834d85bed0a9d91e2fb, type: 2}
+  m_creekingStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: bfa54869cded4ab49b0991a55deb6df9, type: 2}
+  m_ropeCreekEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d026e30d9b6c4fa46a860d7dbc9dd27b, type: 2}
+  m_mastCreekStartEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b3a13a1344b584143a89e771073d3a5e, type: 2}
+  m_mastCreekStopEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: acc1e853b25e52b45b0bb945d301fe31, type: 2}
+  m_boatThrottleSignedRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8c61b04840d6aaa43a9b4b3293ce9b22, type: 2}
+  m_sailTensionRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e65d6ee830851cf4eb3ecd6f6e600bbf, type: 2}
+--- !u!1001 &5741059167796263197
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7944491871734639522}
+    m_Modifications:
+    - target: {fileID: 6404056151451703004, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      propertyPath: m_Name
+      value: Dehler42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6404056151451703004, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3957941468694059340}
+    - targetCorrespondingSourceObject: {fileID: 6404056151451703004, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2068575277358713512}
+    - targetCorrespondingSourceObject: {fileID: 6404056151451703004, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5168091331184653910}
+  m_SourcePrefab: {fileID: 100100000, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+--- !u!4 &1186441042820383660 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+  m_PrefabInstance: {fileID: 5741059167796263197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1689854568911990721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6404056151451703004, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
+  m_PrefabInstance: {fileID: 5741059167796263197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3957941468694059340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689854568911990721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e1be783c36fa14aa4dcb32ae200222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatController
+  m_maxFuel: 250
+  m_gameManager: {fileID: 0}
+  m_windController: {fileID: 0}
+  m_keel: {fileID: 0}
+  m_parentReference: {fileID: 7944491871734639522}
+  m_mainSail: {fileID: 0}
+  m_frontSail: {fileID: 0}
+  m_rudder: {fileID: 0}
+  m_fender: {fileID: 0}
+  m_boatAudioController: {fileID: 8984024234898207641}
+  m_environmentAudioController: {fileID: 0}
+  m_physicsAudioController: {fileID: 0}
+  m_resetNotPossibleScreen: {fileID: 4545449276491187762, guid: 573d41c412360d748b1a9eaff32875df, type: 3}
+  m_resetNeededScreen: {fileID: 4448788223770576624, guid: 6e3f93a148f2f164ab93f08438aa681b, type: 3}
+  m_steeringAction: {fileID: -4492056806641304171, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_rudderNeutralAction: {fileID: -243673092784474081, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_fenderEnableAction: {fileID: -5479584863699254878, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_changeMotorSailModeAction: {fileID: 3990888579278539425, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_resetBoatAction: {fileID: -3336255038968756646, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_chooseMainSailAction: {fileID: -7398217632598320769, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_chooseFrontSailAction: {fileID: -7587574277625312749, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_chooseBothSailsAction: {fileID: 7420043053868759503, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_trimAction: {fileID: 6421952285768328229, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_motorThrustForwardAction: {fileID: -5688369707677199515, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_motorThrustBackwardAction: {fileID: -3652377614090621810, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+  m_motorThrustNeutralAction: {fileID: -1500842955329310884, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
+--- !u!114 &2068575277358713512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689854568911990721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af031d1a03f21cf438eb05924d51adfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatAnimatorController
+  m_windController: {fileID: 0}
+  m_frontSail: {fileID: 0}
+  m_mainSail: {fileID: 0}
+--- !u!95 &5168091331184653910
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689854568911990721}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf4ab10bfd2550747ae24e419a66c317, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

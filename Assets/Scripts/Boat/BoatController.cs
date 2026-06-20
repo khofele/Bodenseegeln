@@ -1128,12 +1128,12 @@ public class BoatController : MonoBehaviour
             // read input and increase or decrease thrust or set thrust to neutral position
             if (m_motorThrustForwardAction != null && m_motorThrustForwardAction.action.IsPressed() == true)
             {
-                m_thrustStep = Mathf.Min(m_thrustStep + 0.005f, m_maxThrustForwardSteps);
+                m_thrustStep = Mathf.Min(m_thrustStep + 0.01f, m_maxThrustForwardSteps);
             }
 
             if (m_motorThrustBackwardAction != null && m_motorThrustBackwardAction.action.IsPressed() == true)
             {
-                m_thrustStep = Mathf.Max(m_thrustStep - 0.005f, m_maxThrustBackwardSteps);
+                m_thrustStep = Mathf.Max(m_thrustStep - 0.01f, m_maxThrustBackwardSteps);
             }
 
             if (m_motorThrustNeutralAction != null && m_motorThrustNeutralAction.action.triggered == true)

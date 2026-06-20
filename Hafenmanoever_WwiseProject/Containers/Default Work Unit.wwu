@@ -43,9 +43,20 @@
 											<ChildrenList>
 												<Sound Name="menu_forward" ID="{EFD97E77-3D6C-4F56-AE34-E906211D4DF8}" ShortID="977645713">
 													<PropertyList>
+														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+														<Property Name="MaxSoundPerInstance" Type="int16">
+															<ValueList>
+																<Value>1</Value>
+															</ValueList>
+														</Property>
+														<Property Name="UseMaxSoundPerInstance" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-11</Value>
+																<Value>-20</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -60,11 +71,11 @@
 													<ChildrenList>
 														<AudioFileSource Name="menu_forward" ID="{FCAB0B7F-B19A-4D60-927E-84DB3F03A957}">
 															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.01049"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.19762"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.00522"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.09064"/>
 																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 																<Property Name="TrimBegin" Type="Real64" Value="0.19484"/>
-																<Property Name="TrimEnd" Type="Real64" Value="0.40068"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.33353"/>
 															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>menu_forward.wav</AudioFile>
@@ -116,6 +127,11 @@
 														<Property Name="MakeUpGain" Type="Real64">
 															<ValueList>
 																<Value>5</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-7</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -185,7 +201,7 @@
 													<PropertyList>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-1</Value>
+																<Value>-7</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -260,7 +276,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-2</Value>
+																<Value>-8</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -308,7 +324,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-20</Value>
+														<Value>-27</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -389,7 +405,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-2</Value>
+														<Value>-6</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -461,7 +477,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-2</Value>
+														<Value>-6</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -533,7 +549,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-9</Value>
+														<Value>-14</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -605,7 +621,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-2</Value>
+														<Value>-6</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -677,7 +693,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-9</Value>
+														<Value>-14</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -749,7 +765,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-7</Value>
+														<Value>-12</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -821,7 +837,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-8</Value>
+														<Value>-13</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -893,7 +909,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-10</Value>
+														<Value>-15</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -974,7 +990,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-14</Value>
+														<Value>-19</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1041,7 +1057,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-10</Value>
+														<Value>-13</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1115,7 +1131,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>-2</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1187,7 +1203,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>4</Value>
+														<Value>2</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1267,7 +1283,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-14</Value>
+														<Value>-24</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
@@ -1680,7 +1696,6 @@
 												<BlendContainer Name="BC_boatEngine_ThrottleBlend" ID="{0F371717-3086-41AA-A040-D1937A7AFEDC}" ShortID="473608158">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
 														<Property Name="BlendBehavior" Type="int16" Value="1"/>
 														<Property Name="Lowpass" Type="int16">
 															<ValueList>
@@ -1698,9 +1713,10 @@
 																</ModifierInfo>
 															</ModifierList>
 														</Property>
+														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 														<Property Name="MaxSoundPerInstance" Type="int16">
 															<ValueList>
-																<Value>3</Value>
+																<Value>5</Value>
 															</ValueList>
 														</Property>
 														<Property Name="UseMaxSoundPerInstance" Type="bool">
@@ -1909,7 +1925,7 @@
 																						<PointList>
 																							<Point>
 																								<XPos>-3</XPos>
-																								<YPos>3</YPos>
+																								<YPos>1</YPos>
 																								<Flags>5</Flags>
 																								<SegmentShape>Log1</SegmentShape>
 																							</Point>
@@ -1921,7 +1937,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>0</XPos>
-																								<YPos>0.5</YPos>
+																								<YPos>4</YPos>
 																								<Flags>0</Flags>
 																								<SegmentShape>Log1</SegmentShape>
 																							</Point>
@@ -1933,7 +1949,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>3</XPos>
-																								<YPos>3</YPos>
+																								<YPos>1</YPos>
 																								<Flags>37</Flags>
 																							</Point>
 																						</PointList>
@@ -1959,7 +1975,7 @@
 																						<PointList>
 																							<Point>
 																								<XPos>-3</XPos>
-																								<YPos>1</YPos>
+																								<YPos>2</YPos>
 																								<Flags>5</Flags>
 																								<SegmentShape>Log1</SegmentShape>
 																							</Point>
@@ -1971,7 +1987,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>0</XPos>
-																								<YPos>1</YPos>
+																								<YPos>2</YPos>
 																								<Flags>0</Flags>
 																								<SegmentShape>SCurve</SegmentShape>
 																							</Point>
@@ -1983,7 +1999,7 @@
 																							</Point>
 																							<Point>
 																								<XPos>3</XPos>
-																								<YPos>1</YPos>
+																								<YPos>2</YPos>
 																								<Flags>37</Flags>
 																							</Point>
 																						</PointList>
@@ -2000,7 +2016,7 @@
 																	<CrossfadingInfo>
 																		<LeftEdgePos>-3</LeftEdgePos>
 																		<LeftFadingMode>Automatic</LeftFadingMode>
-																		<RightEdgePos>-0.15</RightEdgePos>
+																		<RightEdgePos>-0.2</RightEdgePos>
 																		<RightFadingMode>Automatic</RightFadingMode>
 																	</CrossfadingInfo>
 																</BlendTrackAssoc>
@@ -2016,7 +2032,7 @@
 																<BlendTrackAssoc>
 																	<ItemRef Name="boat_engineForward_loop" ID="{728BD5CA-EED1-450B-9718-0D244AD898BF}"/>
 																	<CrossfadingInfo>
-																		<LeftEdgePos>0.15</LeftEdgePos>
+																		<LeftEdgePos>0.2</LeftEdgePos>
 																		<LeftFadingMode>Automatic</LeftFadingMode>
 																		<RightEdgePos>3</RightEdgePos>
 																		<RightFadingMode>Automatic</RightFadingMode>
@@ -2029,7 +2045,6 @@
 												<BlendContainer Name="BC_boatEngineWater" ID="{BDBADCCE-6083-4ACD-B853-8B8591A20EF4}" ShortID="3708076">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
-														<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
 														<Property Name="BlendBehavior" Type="int16" Value="1"/>
 														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 														<Property Name="MaxSoundPerInstance" Type="int16">
@@ -2060,7 +2075,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-5</Value>
+																<Value>-10</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -2289,7 +2304,7 @@
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
-														<Value>50</Value>
+														<Value>60</Value>
 													</ValueList>
 												</Property>
 												<Property Name="MakeUpGain" Type="Real64">
@@ -2387,7 +2402,7 @@
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-6</Value>
+														<Value>-7</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -2527,7 +2542,7 @@
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>-6</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -2654,7 +2669,7 @@
 											<PropertyList>
 												<Property Name="Lowpass" Type="int16">
 													<ValueList>
-														<Value>30</Value>
+														<Value>40</Value>
 													</ValueList>
 												</Property>
 												<Property Name="MaxSoundPerInstance" Type="int16">
@@ -3218,6 +3233,7 @@
 														<Value>40</Value>
 													</ValueList>
 												</Property>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 												<Property Name="MaxSoundPerInstance" Type="int16">
 													<ValueList>
 														<Value>1</Value>
@@ -3236,7 +3252,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-15</Value>
+														<Value>-17</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -3501,7 +3517,6 @@
 										<BlendContainer Name="BC_boatWoodVibration" ID="{236E2706-B931-446D-8F13-65AB34D1A874}" ShortID="277950005">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="BelowThresholdBehavior" Type="int16" Value="1"/>
 												<Property Name="BlendBehavior" Type="int16" Value="1"/>
 												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 												<Property Name="MaxSoundPerInstance" Type="int16">
@@ -3528,11 +3543,6 @@
 												<Property Name="UseMaxSoundPerInstance" Type="bool">
 													<ValueList>
 														<Value>True</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -4964,7 +4974,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-2</Value>
+																<Value>-4</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -5432,6 +5442,9 @@
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
 															<Modifier Name="" ID="{8DD2955C-7A97-4130-84E7-F33461CD0297}">
@@ -6698,7 +6711,7 @@
 										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-13</Value>
+												<Value>-12</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -6792,9 +6805,20 @@
 												<BlendContainer Name="BC_envcollisionLightImpact" ID="{D03735BA-B263-4849-AE79-9B4E2B355A50}" ShortID="773692694">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+														<Property Name="MaxSoundPerInstance" Type="int16">
+															<ValueList>
+																<Value>1</Value>
+															</ValueList>
+														</Property>
+														<Property Name="UseMaxSoundPerInstance" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>2</Value>
+																<Value>7</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -7202,9 +7226,20 @@
 												<BlendContainer Name="BC_envcollisionHeavyImpact" ID="{5E5396D0-8E5B-4A13-8223-A185F73CC7FE}" ShortID="390227526">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+														<Property Name="MaxSoundPerInstance" Type="int16">
+															<ValueList>
+																<Value>1</Value>
+															</ValueList>
+														</Property>
+														<Property Name="UseMaxSoundPerInstance" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-1</Value>
+																<Value>4</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -7697,9 +7732,20 @@
 											<ChildrenList>
 												<BlendContainer Name="BC_envCollisionUnderWater" ID="{6C66ED07-8A83-4726-A43A-F614410689D3}" ShortID="587067810">
 													<PropertyList>
+														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+														<Property Name="MaxSoundPerInstance" Type="int16">
+															<ValueList>
+																<Value>1</Value>
+															</ValueList>
+														</Property>
+														<Property Name="UseMaxSoundPerInstance" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>7</Value>
+																<Value>9</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -8104,14 +8150,25 @@
 														<Value>3</Value>
 													</ValueList>
 												</Property>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>-150</Value>
 													</ValueList>
 												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>-9</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -8173,6 +8230,12 @@
 														<Value>3</Value>
 													</ValueList>
 												</Property>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>100</Value>
@@ -8189,9 +8252,14 @@
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>-9</Value>
 													</ValueList>
 													<ModifierList>
 														<ModifierInfo>
@@ -8263,13 +8331,24 @@
 														<Value>15</Value>
 													</ValueList>
 												</Property>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="3"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.001"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>2</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -8308,7 +8387,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-2</Value>
+																<Value>1</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -8437,10 +8516,10 @@
 																<AudioFileSource Name="env_refuelMetalKlick00" ID="{6D1D30F2-F796-41E3-AD49-C9D000EB309F}">
 																	<PropertyList>
 																		<Property Name="FadeInDuration" Type="Real64" Value="0.01185"/>
-																		<Property Name="FadeOutDuration" Type="Real64" Value="0.05143"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.02546"/>
 																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 																		<Property Name="TrimBegin" Type="Real64" Value="0.05846"/>
-																		<Property Name="TrimEnd" Type="Real64" Value="0.19802"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.14134"/>
 																	</PropertyList>
 																	<Language>SFX</Language>
 																	<AudioFile>env_refuelMetalKlick00.wav</AudioFile>
@@ -8466,10 +8545,10 @@
 																<AudioFileSource Name="env_refuelMetalKlick01" ID="{AAE7BB25-ECC3-49F2-BAD1-45A30EB0B117}">
 																	<PropertyList>
 																		<Property Name="FadeInDuration" Type="Real64" Value="0.02565"/>
-																		<Property Name="FadeOutDuration" Type="Real64" Value="0.07981"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.02631"/>
 																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 																		<Property Name="TrimBegin" Type="Real64" Value="0.09689"/>
-																		<Property Name="TrimEnd" Type="Real64" Value="0.32316"/>
+																		<Property Name="TrimEnd" Type="Real64" Value="0.21197"/>
 																	</PropertyList>
 																	<Language>SFX</Language>
 																	<AudioFile>env_refuelMetalKlick01.wav</AudioFile>
@@ -8498,14 +8577,14 @@
 											</ChildrenList>
 											<ObjectLists>
 												<ObjectList Name="Playlist">
-													<PluginInnerObject Name="" ID="{6D65A5D8-D989-41DD-A019-5E4656495962}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+													<PluginInnerObject Name="" ID="{4E85B1C9-555F-4BB8-A3FA-3C09DBBF04E5}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
 														<ReferenceList>
 															<Reference Name="PlaylistObject">
 																<ObjectRef Name="RC_env_refuelMetalClick" ID="{9E835131-458A-4AD0-8230-1D23677F9AD4}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 															</Reference>
 														</ReferenceList>
 													</PluginInnerObject>
-													<PluginInnerObject Name="" ID="{FBE2AB67-AFFE-4BC8-AA9D-F216CF831D50}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+													<PluginInnerObject Name="" ID="{A108580D-3097-417A-AFDF-B77ED3437CAD}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
 														<ReferenceList>
 															<Reference Name="PlaylistObject">
 																<ObjectRef Name="RC_env_refuel" ID="{86A71E7E-B6D8-4868-A257-5656CD33F1D6}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
@@ -8872,6 +8951,12 @@
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>-200</Value>
@@ -8888,9 +8973,14 @@
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-7</Value>
+														<Value>-13</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -8950,6 +9040,12 @@
 														<Value>5</Value>
 													</ValueList>
 												</Property>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
@@ -8964,9 +9060,14 @@
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-7</Value>
+														<Value>-8</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -9495,7 +9596,7 @@
 																				<PointList>
 																					<Point>
 																						<XPos>0</XPos>
-																						<YPos>-96</YPos>
+																						<YPos>-48</YPos>
 																						<Flags>5</Flags>
 																					</Point>
 																					<Point>
@@ -10055,7 +10156,7 @@
 														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-26</Value>
+																<Value>-13</Value>
 															</ValueList>
 															<ModifierList>
 																<ModifierInfo>
@@ -10442,17 +10543,17 @@
 																				<PointList>
 																					<Point>
 																						<XPos>0</XPos>
-																						<YPos>-96</YPos>
+																						<YPos>-48</YPos>
 																						<Flags>5</Flags>
 																					</Point>
 																					<Point>
 																						<XPos>60</XPos>
-																						<YPos>-96</YPos>
+																						<YPos>-48</YPos>
 																						<Flags>0</Flags>
 																					</Point>
 																					<Point>
 																						<XPos>75</XPos>
-																						<YPos>-32</YPos>
+																						<YPos>-24</YPos>
 																						<Flags>0</Flags>
 																					</Point>
 																					<Point>
@@ -11875,15 +11976,15 @@
 												<BlendContainer Name="BC_phy_waterDisplacement2" ID="{77326372-9316-40B5-B07D-91E0C7823585}" ShortID="382121438">
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="1"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>10</Value>
+															</ValueList>
+														</Property>
 														<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 														<Property Name="MaxSoundPerInstance" Type="int16">
 															<ValueList>
 																<Value>4</Value>
-															</ValueList>
-														</Property>
-														<Property Name="Pitch" Type="int32">
-															<ValueList>
-																<Value>-400</Value>
 															</ValueList>
 														</Property>
 														<Property Name="UseMaxSoundPerInstance" Type="bool">
@@ -11893,7 +11994,7 @@
 														</Property>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-6</Value>
+																<Value>-5</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -13359,7 +13460,7 @@
 														<Property Name="BlendBehavior" Type="int16" Value="1"/>
 														<Property Name="Volume" Type="Real64">
 															<ValueList>
-																<Value>-17</Value>
+																<Value>-18</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -13791,6 +13892,11 @@
 										<BlendContainer Name="BC_phy_wakeWater" ID="{8C7FE357-2A30-4B51-B0B7-6E81A74E7E26}" ShortID="231654095">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>25</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>-200</Value>
@@ -13798,7 +13904,7 @@
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-8</Value>
+														<Value>-2</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -14311,7 +14417,7 @@
 																<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 																<Property Name="Lowpass" Type="int16">
 																	<ValueList>
-																		<Value>5</Value>
+																		<Value>20</Value>
 																	</ValueList>
 																</Property>
 																<Property Name="MakeUpGain" Type="Real64">
@@ -14327,7 +14433,7 @@
 																</Property>
 																<Property Name="Volume" Type="Real64">
 																	<ValueList>
-																		<Value>-22</Value>
+																		<Value>-20</Value>
 																	</ValueList>
 																</Property>
 															</PropertyList>
@@ -14909,7 +15015,7 @@
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-2</Value>
+														<Value>-7</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -15145,11 +15251,6 @@
 										<BlendContainer Name="BC_phy_waveMotion_loop" ID="{540A7B32-1E42-4F5E-BFDD-50FDB03F5FA8}" ShortID="102630417">
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-10</Value>
-													</ValueList>
-												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">

@@ -51,7 +51,6 @@ namespace Quest
                 }
             }
 
-            Debug.Log("[QuestConditionSet] no valid group found");
             return false;
         }
 

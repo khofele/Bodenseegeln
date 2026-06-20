@@ -54,7 +54,7 @@ public class BoatController : MonoBehaviour
     private float m_smoothedSteeringInput = 0.0f;
     private float m_motorBrakeModifier = 1.5f;
     private float m_currentFuel = 0.0f; 
-    [SerializeField] private float m_maxFuel = 250.0f; // TODO SerializedField raus
+    private float m_maxFuel = 250.0f;
     private float m_currentHealth = 0.0f;
     private float m_maxHealth = 100.0f;
 
@@ -1210,17 +1210,17 @@ public class BoatController : MonoBehaviour
 
     private void PlayCollisionAudio(ContactPoint contactPoint, float damageValue)
     {
-        if (contactPoint.thisCollider.gameObject.Equals(m_keel) && damageValue > 0.5f) // TODO Damagewert-Threshold balancen
+        if (contactPoint.thisCollider.gameObject.Equals(m_keel) && damageValue > 0.5f)
         {
             m_environmentAudioController.PlayBoatCollisionUnderWater();
         }
 
-        if (contactPoint.thisCollider.gameObject.Equals(m_fender) && damageValue > 0.5f)  // TODO Damagewert-Threshold balancen
+        if (contactPoint.thisCollider.gameObject.Equals(m_fender) && damageValue > 0.5f)
         {
             m_environmentAudioController.PlayBoatDockImpact();
         }
 
-        if (damageValue > 1.0f) // TODO Damagewert-Threshold balancen
+        if (damageValue > 3.0f)
         {
             m_environmentAudioController.PlayBoatCollisionHeavy();
         }
@@ -1493,7 +1493,7 @@ public class BoatController : MonoBehaviour
         m_currentHealth = m_maxHealth;
         m_fender.SetActive(true);
         m_isFenderEnabled = true;
-        m_isInSailMode = true; // TODO beim Spielstart in Sailmode gehen
+        m_isInSailMode = true;
 
         m_physicsAudioController.StartPhysicsAudio();
         m_physicsAudioController.StartSailPhysicsAudio();

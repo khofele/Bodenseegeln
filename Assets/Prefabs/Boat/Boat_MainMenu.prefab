@@ -4973,7 +4973,7 @@ Transform:
   m_GameObject: {fileID: 2454102776900587109}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.1000981, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5624,7 +5624,7 @@ Transform:
   m_GameObject: {fileID: 7756576423170842805}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.1000981, y: 0.20000017, z: 0}
+  m_LocalPosition: {x: 0, y: 0.20000017, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5859,7 +5859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e1be783c36fa14aa4dcb32ae200222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatController
-  m_maxFuel: 250
   m_gameManager: {fileID: 0}
   m_windController: {fileID: 0}
   m_keel: {fileID: 6741187884616403511}

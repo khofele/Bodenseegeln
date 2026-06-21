@@ -30,6 +30,7 @@ public class GameManager : Manager<GameManager>
     private int m_resetCost = 100;
 
     public static event Action<GameStates, GameStates> OnGameStateChanged;
+    public static event Action<GameStates> OnStateChangedToMotormode;
 
     public GameStates CurrentState => m_currentGameState;
     public int Money => m_money;
@@ -58,6 +59,11 @@ public class GameManager : Manager<GameManager>
         {
             Time.timeScale = 0.0f;
             return;
+        }
+
+        if(_newGameState == GameStates.MOTORMODE || _newGameState == GameStates.SAILMODE)
+        {
+            OnStateChangedToMotormode?.Invoke(_newGameState);
         }
 
         Time.timeScale = 1.0f;

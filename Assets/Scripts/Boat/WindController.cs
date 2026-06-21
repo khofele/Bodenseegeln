@@ -129,7 +129,7 @@ public class WindController : MonoBehaviour
         m_targetWindStrength = m_baseWindStrength + Mathf.Lerp(-1.0f, 8.0f, windStrengthNoise);
 
         // randomize duration before wind direction change takes place
-        m_stabilityDuration = Random.Range(20.0f, 45.0f);
+        m_stabilityDuration = Random.Range(40.0f, 80.0f);
 
         // start wind transition
         m_transitionTimer = 0.0f;

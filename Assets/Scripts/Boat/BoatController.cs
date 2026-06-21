@@ -12,7 +12,7 @@ public class BoatController : MonoBehaviour
     private bool m_isFenderEnabled = true;
     private bool m_isForcedTow = false;
     private bool m_isResettingSailRotations = false;
-    private GameStates m_prevGameState = GameStates.SAILMODE;
+    private GameStates m_prevGameState = GameStates.MOTORMODE;
     private BoatAnimatorController m_boatAnimatorController = null;
 
     // FORCE CALCULATION FIELDS
@@ -77,7 +77,7 @@ public class BoatController : MonoBehaviour
     [SerializeField] private PhysicsAudioController m_physicsAudioController = null;
 
     [Header("UI Screens")]
-    [SerializeField] private NotificationTextUI m_resetNotPossibleScreen = null;
+    [SerializeField] private NotificationTextUI m_resetScreen = null;
     [SerializeField] private ResetRequestUI m_resetNeededScreen = null;
 
     // INPUT ACTION REFERENCES
@@ -985,7 +985,7 @@ public class BoatController : MonoBehaviour
             } 
             else
             {
-                m_resetNotPossibleScreen.Show("Du hast nicht genug Geld, um abgeschleppt zu werden!");
+                m_resetScreen.Show($"Du hast nicht genug Geld, um abgeschleppt zu werden! Du brauchst mindestens {m_gameManager.ResetCost}€!");
             }
         }
     }
@@ -993,13 +993,21 @@ public class BoatController : MonoBehaviour
     private void TowBoat()
     {
         Debug.Log("Boat Reset");
+        if (m_prevGameState == GameStates.MOTORMODE)
+        {
+            m_boatAudioController.StopMotorAudio();
+        }
+
         m_gameManager.DecreaseMoney(m_gameManager.ResetCost);
         gameObject.transform.position = new Vector3(1812.0f, 9.8f, 3607.0f); // TODO Reset-Position + Rotation festlegen + Fix
-        gameObject.transform.localRotation = new Quaternion(0.0f, 30.0f, 0.0f, 0.0f);
+        gameObject.transform.localEulerAngles = new Vector3(0.0f, -15.0f, 0.0f);
         m_currentHealth = m_maxHealth;
         m_currentFuel = m_maxFuel;
         m_rigidbody.linearVelocity = Vector3.zero;
         m_rigidbody.angularVelocity = Vector3.zero;
+        Physics.SyncTransforms();
+
+        m_resetScreen.Show("Abschleppen war erfolgreich!");
     }
 
     private void SetGameStateAfterTowing()
@@ -1012,6 +1020,24 @@ public class BoatController : MonoBehaviour
         {
             m_gameManager.SetState(GameStates.MOTORMODE);
             m_boatAudioController.PlayMotorAudio();
+        }
+    }
+
+    private void HandleExternalModeChange(GameStates newState)
+    {
+        if(newState == GameStates.MOTORMODE)
+        {
+            m_boatAnimatorController.ActivateMotormodeAnimations();
+            m_boatAudioController.PlayMotormodeAudio();
+            m_boatAudioController.StopMastCreak();
+            m_physicsAudioController.StopSailPhysicsAudio();
+        }
+        else if(newState == GameStates.SAILMODE)
+        {
+            m_boatAnimatorController.ActivateSailmodeAnimations();
+            m_boatAudioController.PlaySailmodeAudio();
+            m_boatAudioController.StartMastCreak();
+            m_physicsAudioController.StartSailPhysicsAudio();
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1177,11 +1203,6 @@ public class BoatController : MonoBehaviour
             if(m_isForcedTow == false)
             {
                 m_prevGameState = m_gameManager.CurrentState;
-
-                if (m_prevGameState == GameStates.MOTORMODE)
-                {
-                    m_boatAudioController.StopMotorAudio();
-                }
             }
 
             HandleReset();
@@ -1392,6 +1413,8 @@ public class BoatController : MonoBehaviour
         {
             m_trimAction.action.Enable();
         }
+
+        GameManager.OnStateChangedToMotormode += HandleExternalModeChange;
     }
 
     public void OnDisable()
@@ -1458,6 +1481,8 @@ public class BoatController : MonoBehaviour
 
         m_physicsAudioController.StopPhysicsAudio();
         m_physicsAudioController.StopSailPhysicsAudio();
+
+        GameManager.OnStateChangedToMotormode -= HandleExternalModeChange;
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

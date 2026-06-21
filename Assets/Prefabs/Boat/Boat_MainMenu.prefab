@@ -5799,15 +5799,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8509987185583571312}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6404056151451703004, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7116399337912435343}
-    - targetCorrespondingSourceObject: {fileID: 6404056151451703004, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5637931153505560658}
-    - targetCorrespondingSourceObject: {fileID: 6404056151451703004, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3332994963722067711}
     - targetCorrespondingSourceObject: {fileID: 2772632256623650079, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1434886632620166109}
@@ -5815,11 +5806,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1820609196855269786}
   m_SourcePrefab: {fileID: 100100000, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
---- !u!1 &100922091479266850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4863865823636946681, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
-  m_PrefabInstance: {fileID: 4762943813781457115}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &109721834856204620 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4871961606573244823, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
@@ -5837,98 +5823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c9ecad89e37f0439db223c4aab5a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sail
---- !u!1 &1187571989093616831 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5936441705308324964, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
-  m_PrefabInstance: {fileID: 4762943813781457115}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1929413153468816903 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6404056151451703004, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
-  m_PrefabInstance: {fileID: 4762943813781457115}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7116399337912435343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929413153468816903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22e1be783c36fa14aa4dcb32ae200222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BoatController
-  m_gameManager: {fileID: 0}
-  m_windController: {fileID: 0}
-  m_keel: {fileID: 6741187884616403511}
-  m_parentReference: {fileID: 0}
-  m_mainSail: {fileID: 1434886632620166109}
-  m_frontSail: {fileID: 1820609196855269786}
-  m_rudder: {fileID: 100922091479266850}
-  m_fender: {fileID: 1187571989093616831}
-  m_boatAudioController: {fileID: 0}
-  m_environmentAudioController: {fileID: 0}
-  m_physicsAudioController: {fileID: 0}
-  m_resetNotPossibleScreen: {fileID: 0}
-  m_resetNeededScreen: {fileID: 4448788223770576624, guid: 6e3f93a148f2f164ab93f08438aa681b, type: 3}
-  m_steeringAction: {fileID: -4492056806641304171, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
-  m_rudderNeutralAction: {fileID: -243673092784474081, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
-  m_fenderEnableAction: {fileID: -5479584863699254878, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
-  m_changeMotorSailModeAction: {fileID: 3990888579278539425, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
-  m_resetBoatAction: {fileID: -3336255038968756646, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
-  m_chooseMainSailAction: {fileID: -7398217632598320769, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
-  m_chooseFrontSailAction: {fileID: -7587574277625312749, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
-  m_chooseBothSailsAction: {fileID: 7420043053868759503, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
-  m_trimAction: {fileID: 6421952285768328229, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
-  m_motorThrustForwardAction: {fileID: -5688369707677199515, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
-  m_motorThrustBackwardAction: {fileID: -3652377614090621810, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
-  m_motorThrustNeutralAction: {fileID: -1500842955329310884, guid: b2c0d3130444d854ab78402d2647be42, type: 3}
---- !u!114 &5637931153505560658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929413153468816903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af031d1a03f21cf438eb05924d51adfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BoatAnimatorController
-  m_windController: {fileID: 0}
-  m_frontSail: {fileID: 1820609196855269786}
-  m_mainSail: {fileID: 1434886632620166109}
---- !u!95 &3332994963722067711
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929413153468816903}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf4ab10bfd2550747ae24e419a66c317, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &2144314972445389418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6907188339334331057, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
-  m_PrefabInstance: {fileID: 4762943813781457115}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6741187884616403511 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2275692768077333228, guid: 35ba180816dd2f74b862122c027d1443, type: 3}
   m_PrefabInstance: {fileID: 4762943813781457115}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7233694082432839108 stripped

@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Hafen: Werkstatt'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
+  m_sharedMaterial: {fileID: -8440209703488691673, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -204,8 +204,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quest
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
+  m_sharedMaterial: {fileID: -8440209703488691673, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -863,8 +863,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Hafen: Quest'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
+  m_sharedMaterial: {fileID: -8440209703488691673, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
+  m_Color: {r: 0.047058824, g: 0.23529412, b: 0.30980393, a: 0.98039216}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1186,8 +1186,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "10\u20AC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
+  m_sharedMaterial: {fileID: -8440209703488691673, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1462,8 +1462,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dialog
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
+  m_sharedMaterial: {fileID: -8440209703488691673, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1749,8 +1749,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Hafen: Tankstelle'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
+  m_sharedMaterial: {fileID: -8440209703488691673, guid: a4ca13ae747d4b64ea68ecd377052961, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2302,6 +2302,14 @@ PrefabInstance:
     - target: {fileID: 1895995376383321349, guid: 90036155cc5ad3f45a8636620d1772f8, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899215949335374134, guid: 90036155cc5ad3f45a8636620d1772f8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 22.772898
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899215949335374134, guid: 90036155cc5ad3f45a8636620d1772f8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 39.359898
       objectReference: {fileID: 0}
     - target: {fileID: 4800231125763155406, guid: 90036155cc5ad3f45a8636620d1772f8, type: 3}
       propertyPath: m_Pivot.x

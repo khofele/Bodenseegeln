@@ -72,11 +72,6 @@ namespace Dialogue
             {
                 m_boatRigidbody = m_boatTransform.GetComponent<Rigidbody>();
             }
-
-            if (Compass.Instance != null)
-            {
-                Compass.Instance.Register(this);
-            }
         }
 
         private void OnTriggerEnter(Collider other)

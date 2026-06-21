@@ -46,6 +46,14 @@ public abstract class CompassTargetBase : MonoBehaviour //parent class for all s
         }
     }
 
+    private void Start()
+    {
+        if (Compass.Instance != null)
+        {
+            Compass.Instance.Register(this);
+        }
+    }
+
     public void BindImage(Image _img)
     {
         m_image = _img;

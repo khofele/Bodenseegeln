@@ -30,7 +30,7 @@ public class GameManager : Manager<GameManager>
     private int m_resetCost = 100;
 
     public static event Action<GameStates, GameStates> OnGameStateChanged;
-    public static event Action<GameStates> OnStateChangedToMotormode;
+    public static event Action<GameStates, GameStates> OnModeChangedExternal;
 
     public GameStates CurrentState => m_currentGameState;
     public int Money => m_money;
@@ -51,7 +51,7 @@ public class GameManager : Manager<GameManager>
     {
         if (_newGameState == GameStates.GAMEOVER || _newGameState == GameStates.GAMEWON)
         {
-            SceneManager.LoadScene("GameWonOver");
+            SceneManager.LoadScene("Endscreen");
             return;
         }
 
@@ -61,9 +61,9 @@ public class GameManager : Manager<GameManager>
             return;
         }
 
-        if(_newGameState == GameStates.MOTORMODE || _newGameState == GameStates.SAILMODE)
+        if(_prevGameState == GameStates.DIALOGMODE)
         {
-            OnStateChangedToMotormode?.Invoke(_newGameState);
+            OnModeChangedExternal?.Invoke(_prevGameState, _newGameState);
         }
 
         Time.timeScale = 1.0f;

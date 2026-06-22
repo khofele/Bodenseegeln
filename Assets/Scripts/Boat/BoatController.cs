@@ -884,6 +884,62 @@ public class BoatController : MonoBehaviour
 
         return angle;
     }
+
+    private void HandleExternalModeChange(GameStates prevState, GameStates newState)
+    {
+        if (newState == GameStates.MOTORMODE)
+        {
+            Debug.Log("External Boat Mode Change to Motormode");
+            if(m_isInSailMode == true)
+            {
+                m_boatAnimatorController.ActivateMotormodeAnimations();
+                ActivateMotorModeAudio();
+                ActivateMotorMode();
+            }
+
+        }
+        else if (newState == GameStates.SAILMODE)
+        {
+            Debug.Log("External Boat Mode Change to Sailmode");
+
+            if(m_isInSailMode == false)
+            {
+                m_boatAnimatorController.ActivateSailmodeAnimations();
+                ActivateSailMode();
+                ActivateSailModeAudio();
+            }
+        }
+    }
+
+    private void ActivateSailMode()
+    {
+        m_gameManager.SetState(GameStates.SAILMODE);
+        m_isInSailMode = true;
+        m_thrustStep = 0.0f;
+
+        ResetSailsForSailmode();
+    }
+
+    private void ActivateSailModeAudio()
+    {
+        m_boatAudioController.PlaySailmodeAudio();
+        m_boatAudioController.StartMastCreak();
+        m_physicsAudioController.StartSailPhysicsAudio();
+    }
+
+    private void ActivateMotorMode()
+    {
+        m_gameManager.SetState(GameStates.MOTORMODE);
+        m_isInSailMode = false;
+        TriggerSailRotationReset();
+    }
+
+    private void ActivateMotorModeAudio()
+    {
+        m_boatAudioController.PlayMotormodeAudio();
+        m_boatAudioController.StopMastCreak();
+        m_physicsAudioController.StopSailPhysicsAudio();
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // LOSE CONDITIONS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1022,24 +1078,6 @@ public class BoatController : MonoBehaviour
             m_boatAudioController.PlayMotorAudio();
         }
     }
-
-    private void HandleExternalModeChange(GameStates newState)
-    {
-        if(newState == GameStates.MOTORMODE)
-        {
-            m_boatAnimatorController.ActivateMotormodeAnimations();
-            m_boatAudioController.PlayMotormodeAudio();
-            m_boatAudioController.StopMastCreak();
-            m_physicsAudioController.StopSailPhysicsAudio();
-        }
-        else if(newState == GameStates.SAILMODE)
-        {
-            m_boatAnimatorController.ActivateSailmodeAnimations();
-            m_boatAudioController.PlaySailmodeAudio();
-            m_boatAudioController.StartMastCreak();
-            m_physicsAudioController.StartSailPhysicsAudio();
-        }
-    }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // INPUT METHODS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1047,6 +1085,7 @@ public class BoatController : MonoBehaviour
     {
         if(m_boatAnimatorController.IsSailTransitioning == true)
         {
+            Debug.LogWarning("Is Transitioning Abbruch");
             return;
         }
 
@@ -1054,33 +1093,17 @@ public class BoatController : MonoBehaviour
         {
             if (m_gameManager.CurrentState == GameStates.SAILMODE && m_mainSail.IsOpen == true && m_frontSail.IsOpen == true)
             {
-                m_gameManager.SetState(GameStates.MOTORMODE);
-                m_isInSailMode = false;
-                TriggerSailRotationReset();
-
-                m_boatAudioController.PlayMotormodeAudio();
-                m_boatAudioController.StopMastCreak();
-                m_physicsAudioController.StopSailPhysicsAudio();
-
+                Debug.Log("Boat internal Mode Change Motormode");
+                ActivateMotorMode();
+                ActivateMotorModeAudio();
                 m_boatAnimatorController.ActivateMotormodeAnimations();
-
-                Debug.Log("Motormode enabled!");
             }
             else if (m_gameManager.CurrentState == GameStates.MOTORMODE && m_mainSail.IsOpen == false && m_frontSail.IsOpen == false)
             {
-                m_gameManager.SetState(GameStates.SAILMODE);
-                m_isInSailMode = true;
-                m_thrustStep = 0.0f;
-
-                ResetSailsForSailmode();
-
-                m_boatAudioController.PlaySailmodeAudio();
-                m_boatAudioController.StartMastCreak();
-                m_physicsAudioController.StartSailPhysicsAudio();
-
+                Debug.Log("Boat internal Mode Change to Sailmode");
+                ActivateSailMode();
+                ActivateSailModeAudio();
                 m_boatAnimatorController.ActivateSailmodeAnimations();
-
-                Debug.Log("Sailmode enabled!");
             }
         }
     }
@@ -1414,7 +1437,7 @@ public class BoatController : MonoBehaviour
             m_trimAction.action.Enable();
         }
 
-        GameManager.OnStateChangedToMotormode += HandleExternalModeChange;
+        GameManager.OnModeChangedExternal += HandleExternalModeChange;
     }
 
     public void OnDisable()
@@ -1482,7 +1505,7 @@ public class BoatController : MonoBehaviour
         m_physicsAudioController.StopPhysicsAudio();
         m_physicsAudioController.StopSailPhysicsAudio();
 
-        GameManager.OnStateChangedToMotormode -= HandleExternalModeChange;
+        GameManager.OnModeChangedExternal -= HandleExternalModeChange;
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

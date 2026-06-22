@@ -67,14 +67,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Depth: 15.28
+    - _Depth: 1000
     - _Displacement: 0.24
     - _Edge_Foam_Depth: 0.25
     - _Edge_Foam_Strength: 1.09
     - _Foam_Scale: 0.48
     - _Foam_Speed: 0.04
     - _Metallic: 0
-    - _Normal_Strength: 1
+    - _Normal_Strength: 1.5
     - _OutlineRadius: 0
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -85,16 +85,16 @@ Material:
     - _Refraction_Speed: 0.005
     - _Refraction_Strength: 0
     - _Smoothness: 1
-    - _Strength: 0
+    - _Strength: 0.04
     - _Tiling: 0.02
     - _Transparency: 1.1
     - _Wavesize: 54.99
     - _Wavespeed: 1.1
     m_Colors:
     - _BoatOutlinePosition: {r: 0, g: 0, b: 0, a: 0}
-    - _Deep_Water_Color: {r: 0.10439658, g: 0.27993244, b: 0.3207547, a: 1}
+    - _Deep_Water_Color: {r: 0.039215688, g: 0.20784314, b: 0.24705882, a: 1}
     - _Foam_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Surface_Water_Color: {r: 0.26508543, g: 0.3490566, b: 0.2674846, a: 1}
+    - _Surface_Water_Color: {r: 0.22352941, g: 0.37254903, b: 0.23529412, a: 1}
     - _WaterOrigin: {r: 0, g: 0, b: 0, a: 0}
     - _Wind: {r: 0, g: 0, b: 10, a: 0}
   m_BuildTextureStacks: []

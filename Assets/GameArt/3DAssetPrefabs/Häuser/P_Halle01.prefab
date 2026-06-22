@@ -48,9 +48,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0e14ee871b3525148a15be8de4589d2a, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0e14ee871b3525148a15be8de4589d2a, type: 3}
       propertyPath: m_Name
       value: Hallegross_LOD04
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e14ee871b3525148a15be8de4589d2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -131,9 +139,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4983564584611514559, guid: 075288f7b4e8f9145a9bab18c410c778, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -4371241028049365764, guid: 075288f7b4e8f9145a9bab18c410c778, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -1964561265806246293, guid: 075288f7b4e8f9145a9bab18c410c778, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 075288f7b4e8f9145a9bab18c410c778, type: 3}
       propertyPath: m_Name
@@ -161,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5803072114169564030, guid: 075288f7b4e8f9145a9bab18c410c778, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

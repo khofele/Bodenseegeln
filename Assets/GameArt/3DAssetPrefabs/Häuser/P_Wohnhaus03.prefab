@@ -66,7 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5540191724390468739, guid: f5cecf15f48d0cc4da260253f582efb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5477588340686905682, guid: f5cecf15f48d0cc4da260253f582efb6, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4421606058811461890, guid: f5cecf15f48d0cc4da260253f582efb6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -74,11 +78,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2654102298659639027, guid: f5cecf15f48d0cc4da260253f582efb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -1971043141361184295, guid: f5cecf15f48d0cc4da260253f582efb6, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 467824215756942109, guid: f5cecf15f48d0cc4da260253f582efb6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f5cecf15f48d0cc4da260253f582efb6, type: 3}
       propertyPath: m_Name
@@ -127,6 +135,10 @@ PrefabInstance:
     - target: {fileID: 5111788995234329368, guid: f5cecf15f48d0cc4da260253f582efb6, type: 3}
       propertyPath: m_CastShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093708269351424898, guid: f5cecf15f48d0cc4da260253f582efb6, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7093708269351424898, guid: f5cecf15f48d0cc4da260253f582efb6, type: 3}
       propertyPath: m_CastShadows
@@ -198,9 +210,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c6e0da3ccd3bfa84496c855d945b8416, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c6e0da3ccd3bfa84496c855d945b8416, type: 3}
       propertyPath: m_Name
       value: Wohnhaus01_LOD04
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6e0da3ccd3bfa84496c855d945b8416, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

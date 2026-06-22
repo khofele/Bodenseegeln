@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8935079362512025746, guid: 7d661ca806d46e04a93218e9c2ab273c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7d661ca806d46e04a93218e9c2ab273c, type: 3}
       propertyPath: m_LocalScale.x
@@ -68,6 +68,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6326325985566798147, guid: 7d661ca806d46e04a93218e9c2ab273c, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5502921264520126972, guid: 7d661ca806d46e04a93218e9c2ab273c, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7d661ca806d46e04a93218e9c2ab273c, type: 3}
       propertyPath: m_Name
       value: P_IndustrieHalle_Mittel
@@ -78,11 +86,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1335497135107128519, guid: 7d661ca806d46e04a93218e9c2ab273c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1418853312745941209, guid: 7d661ca806d46e04a93218e9c2ab273c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: 7d661ca806d46e04a93218e9c2ab273c, type: 3}
       propertyPath: m_FadeMode
@@ -112,9 +120,17 @@ PrefabInstance:
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
       value: 0.19565935
       objectReference: {fileID: 0}
+    - target: {fileID: 5715347547300318441, guid: 7d661ca806d46e04a93218e9c2ab273c, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7534947828719313297, guid: 7d661ca806d46e04a93218e9c2ab273c, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7981418294870259568, guid: 7d661ca806d46e04a93218e9c2ab273c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

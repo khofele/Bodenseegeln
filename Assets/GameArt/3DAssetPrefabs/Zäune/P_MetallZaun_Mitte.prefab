@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -239886546378217450, guid: 3d55261c380b0d942bf01fe7a2e2a0af, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3d55261c380b0d942bf01fe7a2e2a0af, type: 3}
       propertyPath: m_Name
       value: P_MetallZaun_Mitte
@@ -79,6 +83,10 @@ PrefabInstance:
     - target: {fileID: 7510023842718989776, guid: 3d55261c380b0d942bf01fe7a2e2a0af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8679103841936481432, guid: 3d55261c380b0d942bf01fe7a2e2a0af, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

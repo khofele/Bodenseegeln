@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 123
       objectReference: {fileID: 0}
+    - target: {fileID: -3336464230611841536, guid: 19e2e8ce85766eb4a9b09cdb1fa3ca2c, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 19e2e8ce85766eb4a9b09cdb1fa3ca2c, type: 3}
       propertyPath: m_Name
       value: P_DorfHaus5
@@ -116,9 +120,17 @@ PrefabInstance:
       propertyPath: m_LODs.Array.data[3].renderers.Array.data[0].renderer
       value: 
       objectReference: {fileID: 2976110280261824337}
+    - target: {fileID: 5493811301663477758, guid: 19e2e8ce85766eb4a9b09cdb1fa3ca2c, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7952668215441579060, guid: 19e2e8ce85766eb4a9b09cdb1fa3ca2c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470657999990309955, guid: 19e2e8ce85766eb4a9b09cdb1fa3ca2c, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -198,9 +210,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b77c689b950c1b64286668261a4ce2fe, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b77c689b950c1b64286668261a4ce2fe, type: 3}
       propertyPath: m_Name
       value: Dorfhaus01_LOD04
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b77c689b950c1b64286668261a4ce2fe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

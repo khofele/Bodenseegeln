@@ -48,9 +48,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2d3fa1060946bcd4092619b31bc73fee, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2d3fa1060946bcd4092619b31bc73fee, type: 3}
       propertyPath: m_Name
       value: Wohnhaus03_LOD04
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d3fa1060946bcd4092619b31bc73fee, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -136,12 +144,20 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -5866768916599255344, guid: 128821a2f536703428daf7ddee218884, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5866768916599255344, guid: 128821a2f536703428daf7ddee218884, type: 3}
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5063051720094259276, guid: 128821a2f536703428daf7ddee218884, type: 3}
       propertyPath: m_CastShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1418972505232147823, guid: 128821a2f536703428daf7ddee218884, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 128821a2f536703428daf7ddee218884, type: 3}
       propertyPath: m_Name
@@ -153,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 981659678560200153, guid: 128821a2f536703428daf7ddee218884, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4742473837712756890, guid: 128821a2f536703428daf7ddee218884, type: 3}
       propertyPath: m_FadeMode
@@ -193,11 +209,15 @@ PrefabInstance:
       objectReference: {fileID: 3855004852933768193}
     - target: {fileID: 6463288350444521805, guid: 128821a2f536703428daf7ddee218884, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7159963500302243587, guid: 128821a2f536703428daf7ddee218884, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322544467890602440, guid: 128821a2f536703428daf7ddee218884, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

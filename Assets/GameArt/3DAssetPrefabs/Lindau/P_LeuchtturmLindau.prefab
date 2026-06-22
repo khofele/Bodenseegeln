@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4537231828873023769, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -4229923005354758708, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -57,9 +61,17 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: -2709166067101995011, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2709166067101995011, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 81b3e2bba06bc0547b5cd8bbba8b6e8c, type: 2}
+    - target: {fileID: -329521194018705101, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
       propertyPath: m_Name
       value: P_LeuchtturmLindau
@@ -67,6 +79,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816264568665631072, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4300330996617733743, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -107,6 +123,10 @@ PrefabInstance:
     - target: {fileID: 4742473837712756890, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
       propertyPath: m_LODs.Array.data[3].screenRelativeHeight
       value: 0.15395483
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605831360264165866, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8937872321788728572, guid: 46d55f82e5382504cae4654bcc720a19, type: 3}
       propertyPath: m_StaticEditorFlags

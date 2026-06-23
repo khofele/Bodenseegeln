@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6777072356556481532, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4537126085660953218, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
       propertyPath: m_ReceiveGI
       value: 2
@@ -80,9 +84,17 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4537126085660953218, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2391362570187453987, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
       propertyPath: m_ReceiveGI
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2391362570187453987, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -991903954203567651, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -139,6 +151,10 @@ PrefabInstance:
     - target: {fileID: 5549748674435203925, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
       propertyPath: m_ReceiveGI
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549748674435203925, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7836186457997015776, guid: c7b95bceeb3eaba49ac8071193d7cc25, type: 3}
       propertyPath: m_StaticEditorFlags

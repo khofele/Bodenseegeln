@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7143617088875225630, guid: e40059e6100dcc742970820699ed050a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1799535853747390555, guid: e40059e6100dcc742970820699ed050a, type: 3}
       propertyPath: m_ReceiveGI
       value: 2
@@ -80,13 +84,25 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1799535853747390555, guid: e40059e6100dcc742970820699ed050a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1296276209413450291, guid: e40059e6100dcc742970820699ed050a, type: 3}
       propertyPath: m_ReceiveGI
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -1296276209413450291, guid: e40059e6100dcc742970820699ed050a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -100478200066223448, guid: e40059e6100dcc742970820699ed050a, type: 3}
       propertyPath: m_ReceiveGI
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -100478200066223448, guid: e40059e6100dcc742970820699ed050a, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -61832238393038395, guid: e40059e6100dcc742970820699ed050a, type: 3}
       propertyPath: m_StaticEditorFlags

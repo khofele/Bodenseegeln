@@ -784,17 +784,6 @@
 								</Event>
 								<Event Name="amb_start_harborBregenz" ID="{C6A1CDAE-05FD-4E88-AFE3-038506B49486}">
 									<ChildrenList>
-										<Action Name="" ID="{39B5126B-F9EE-4171-98D0-9F983C744985}" ShortID="762687127">
-											<PropertyList>
-												<Property Name="FadeInCurve" Type="int16" Value="6"/>
-												<Property Name="FadeTime" Type="Real64" Value="2"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="amb_harborBregenz_loop" ID="{9EA97F37-5FEF-4D2A-B734-0906C4457EED}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 										<Action Name="" ID="{F5DC3318-ED14-4F7D-BA31-D4A1A3D25368}" ShortID="748942029">
 											<PropertyList>
 												<Property Name="FadeInCurve" Type="int16" Value="6"/>
@@ -803,6 +792,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="RC_amb_detailsPeople_loop" ID="{F13866FB-D58F-4886-B7C9-E36712EEA04A}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{080BD68C-9630-48BF-82FC-F46D8BF5B492}" ShortID="650467858">
+											<PropertyList>
+												<Property Name="FadeInCurve" Type="int16" Value="6"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RC_amb_harborBregenz_loop" ID="{B3B37364-78F4-4520-97EA-20A1F3632FDA}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -881,7 +881,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="amb_harborBregenz_loop" ID="{9EA97F37-5FEF-4D2A-B734-0906C4457EED}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
+													<ObjectRef Name="RC_amb_harborBregenz_loop" ID="{B3B37364-78F4-4520-97EA-20A1F3632FDA}" WorkUnitID="{7C823176-33F9-404C-8D2A-7B4315823067}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

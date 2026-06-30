@@ -5932,11 +5932,11 @@
 											<ChildrenList>
 												<AudioFileSource Name="amb_harborBase_loop" ID="{BF5FC232-A5F3-40BD-9703-DD262E635EC3}">
 													<PropertyList>
-														<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="500"/>
 														<Property Name="FadeInDuration" Type="Real64" Value="0.35157"/>
 														<Property Name="FadeOutDuration" Type="Real64" Value="0.19177"/>
 														<Property Name="LoopBegin" Type="Real64" Value="1.94968"/>
-														<Property Name="LoopEnd" Type="Real64" Value="39.79257"/>
+														<Property Name="LoopEnd" Type="Real64" Value="39.08276"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 													</PropertyList>
 													<Language>SFX</Language>
@@ -5986,12 +5986,13 @@
 											<ChildrenList>
 												<AudioFileSource Name="amb_harborLindau_loop" ID="{A3F1E61B-DFE5-402B-9981-DF6E1F426897}">
 													<PropertyList>
-														<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="300"/>
 														<Property Name="FadeInDuration" Type="Real64" Value="0.21504"/>
 														<Property Name="FadeOutDuration" Type="Real64" Value="0.10752"/>
-														<Property Name="LoopBegin" Type="Real64" Value="0.99457"/>
+														<Property Name="LoopBegin" Type="Real64" Value="5.03152"/>
 														<Property Name="LoopEnd" Type="Real64" Value="33.22418"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.41324"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>amb_harborLindau_loop.wav</AudioFile>
@@ -6018,19 +6019,12 @@
 												<ActiveSource Name="amb_harborLindau_loop" ID="{A3F1E61B-DFE5-402B-9981-DF6E1F426897}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="amb_harborBregenz_loop" ID="{9EA97F37-5FEF-4D2A-B734-0906C4457EED}" ShortID="486710268">
+										<RandomSequenceContainer Name="RC_amb_harborBregenz_loop" ID="{B3B37364-78F4-4520-97EA-20A1F3632FDA}" ShortID="164394011">
 											<PropertyList>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="Lowpass" Type="int16">
-													<ValueList>
-														<Value>5</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>5</Value>
-													</ValueList>
-												</Property>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="3"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -6041,37 +6035,112 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="amb_harborBregenz_loop" ID="{8A273E4C-68C7-4D2B-8105-07B7538D6FE2}">
+												<Sound Name="amb_harborBregenz_loop00" ID="{9EA97F37-5FEF-4D2A-B734-0906C4457EED}" ShortID="486710268">
 													<PropertyList>
-														<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.19658"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.14041"/>
-														<Property Name="LoopBegin" Type="Real64" Value="0.89866"/>
-														<Property Name="LoopEnd" Type="Real64" Value="34.51434"/>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>amb_harborBregenz_loop.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="552069073"/>
-													</MediaIDList>
-												</AudioFileSource>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_harborBregenz_loop" ID="{8A273E4C-68C7-4D2B-8105-07B7538D6FE2}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.19658"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.14041"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="16.63893"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>amb_harborBregenz_loop.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="857714889"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{A8F18DFD-0A03-4C29-A18F-9F889F235A95}" ShortID="848948743">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="AmbHarborBregenz_EQ" ID="{3596D200-6971-494C-9DD8-F84D4241AE74}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_harborBregenz_loop" ID="{8A273E4C-68C7-4D2B-8105-07B7538D6FE2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="amb_harborBregenz_loop01" ID="{A83F849E-FA08-470F-B585-F60FCCFD3901}" ShortID="52218927">
+													<PropertyList>
+														<Property Name="IsLoopingInfinite" Type="bool" Value="False"/>
+														<Property Name="Lowpass" Type="int16">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="amb_harborBregenz_loop" ID="{E22666DA-AB4B-48A3-8F05-1409C73DCAFE}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.19658"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.14041"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="18.99979"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>amb_harborBregenz_loop.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="552069073"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Effects">
+															<EffectSlot Name="" ID="{65831B7E-27A7-4598-BDE6-DBADF2A3F8E0}" ShortID="124256294">
+																<ReferenceList>
+																	<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<ObjectRef Name="AmbHarborBregenz_EQ" ID="{3596D200-6971-494C-9DD8-F84D4241AE74}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</ObjectList>
+													</ObjectLists>
+													<ActiveSourceList>
+														<ActiveSource Name="amb_harborBregenz_loop" ID="{E22666DA-AB4B-48A3-8F05-1409C73DCAFE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
 											</ChildrenList>
-											<ObjectLists>
-												<ObjectList Name="Effects">
-													<EffectSlot Name="" ID="{A8F18DFD-0A03-4C29-A18F-9F889F235A95}" ShortID="848948743">
-														<ReferenceList>
-															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-																<ObjectRef Name="AmbHarborBregenz_EQ" ID="{3596D200-6971-494C-9DD8-F84D4241AE74}" WorkUnitID="{1C25D65D-502E-477A-8F03-7F42E9E38D03}"/>
-															</Reference>
-														</ReferenceList>
-													</EffectSlot>
-												</ObjectList>
-											</ObjectLists>
-											<ActiveSourceList>
-												<ActiveSource Name="amb_harborBregenz_loop" ID="{8A273E4C-68C7-4D2B-8105-07B7538D6FE2}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="AmbDetails" ID="{C85EF289-0A0A-471B-B066-FCBCEB86CEA0}" ShortID="886563060">
@@ -6090,11 +6159,11 @@
 												</Property>
 												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-12</Value>
+														<Value>-17</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -6118,6 +6187,11 @@
 													</ReferenceList>
 													<ChildrenList>
 														<AudioFileSource Name="amb_detailsWater_loop00" ID="{89338A65-559C-4A2B-A6FC-47A9F57A9A61}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.02617"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.02617"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>amb_detailsWater_loop00.wav</AudioFile>
 															<MediaIDList>
@@ -6140,6 +6214,11 @@
 													</ReferenceList>
 													<ChildrenList>
 														<AudioFileSource Name="amb_detailsWater_loop02" ID="{C474746D-DC7D-4028-B936-9BC83BA5914A}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.03271"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.04579"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>amb_detailsWater_loop02.wav</AudioFile>
 															<MediaIDList>
@@ -6162,6 +6241,11 @@
 													</ReferenceList>
 													<ChildrenList>
 														<AudioFileSource Name="amb_detailsWater_loop01" ID="{D203224D-BFB5-4ED0-A1FC-5FC369AFC203}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.04579"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.02617"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>amb_detailsWater_loop01.wav</AudioFile>
 															<MediaIDList>
@@ -6171,28 +6255,6 @@
 													</ChildrenList>
 													<ActiveSourceList>
 														<ActiveSource Name="amb_detailsWater_loop01" ID="{D203224D-BFB5-4ED0-A1FC-5FC369AFC203}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="amb_detailsWater_loop03" ID="{DC06499A-33ED-46EC-A1AD-F8E26F6CE930}" ShortID="690264978">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="amb_detailsWater_loop03" ID="{32A92E29-46E6-4758-A2CB-437287451D58}">
-															<Language>SFX</Language>
-															<AudioFile>amb_detailsWater_loop03.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="9322132"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="amb_detailsWater_loop03" ID="{32A92E29-46E6-4758-A2CB-437287451D58}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -6225,7 +6287,6 @@
 												</Property>
 												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 											</PropertyList>
 											<ReferenceList>
@@ -6376,7 +6437,7 @@
 												</Property>
 												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="2"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
@@ -6527,8 +6588,9 @@
 														<Value>10</Value>
 													</ValueList>
 												</Property>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="3"/>
 												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
@@ -15461,6 +15523,32 @@
 										</BlendContainer>
 									</ChildrenList>
 								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Old" ID="{1725D42D-E482-4A93-BD96-3A861D45921B}" ShortID="304307902">
+							<ChildrenList>
+								<Sound Name="amb_detailsWater_loop03" ID="{DC06499A-33ED-46EC-A1AD-F8E26F6CE930}" ShortID="690264978">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{7FADD567-C3AF-4BB1-8D3B-426293EEE472}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A2C9CA3E-159E-4680-86F2-897AF12EE6EE}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="amb_detailsWater_loop03" ID="{32A92E29-46E6-4758-A2CB-437287451D58}">
+											<Language>SFX</Language>
+											<AudioFile>amb_detailsWater_loop03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="9322132"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="amb_detailsWater_loop03" ID="{32A92E29-46E6-4758-A2CB-437287451D58}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

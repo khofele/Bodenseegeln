@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FC436533-ED41-4640-B8FB-F2E4E7D089DA}",
     "Language": "SFX",
-    "Hash": "{C2E37A1B-A301-81DC-63E2-D9866DD63B3C}",
+    "Hash": "{3AF03DB3-1A49-403E-2611-BE70A2F19377}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -22,14 +22,6 @@
       "Location": "Memory",
       "ShortName": "env_boatRubDockSqueak_loop00.wav",
       "CachePath": "A0/{A060EA67-D218-F906-A686-F8722FFA8966}.wem"
-     },
-     {
-      "Id": "9322132",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "amb_detailsWater_loop03.wav",
-      "CachePath": "84/{8450F875-91CF-6D4A-08B9-C49CF618F04F}.wem"
      },
      {
       "Id": "18260256",
@@ -301,7 +293,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "amb_detailsWater_loop01.wav",
-      "CachePath": "CA/{CA7D54F7-EAC6-E5E7-6DB0-F37CC729F8F2}.wem"
+      "CachePath": "24/{241D6CBB-99D3-8808-FD42-E96743537FF2}.wem"
      },
      {
       "Id": "149563202",
@@ -365,7 +357,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "amb_detailsWater_loop02.wav",
-      "CachePath": "CA/{CA7D54F7-EAC6-E5E7-6DB0-F37CC729F8F2}.wem"
+      "CachePath": "CE/{CE1F9008-29BE-F965-378C-DB96B26DDCD8}.wem"
      },
      {
       "Id": "183966653",
@@ -381,7 +373,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "amb_harborLindau_loop.wav",
-      "CachePath": "14/{14518C82-6692-642C-8F58-21200D1DBDD1}.wem"
+      "CachePath": "A7/{A7610C87-74AA-DF2D-EDBE-9B529C5FBE31}.wem"
      },
      {
       "Id": "221736619",
@@ -813,7 +805,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "amb_harborBregenz_loop.wav",
-      "CachePath": "94/{9432B48A-E240-7051-7C60-7E0C1F861283}.wem"
+      "CachePath": "7A/{7AF4A0F2-DF65-723C-D08A-63E7634ADB2D}.wem"
      },
      {
       "Id": "582238753",
@@ -1013,7 +1005,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "amb_harborBase_loop.wav",
-      "CachePath": "F9/{F93B6179-A234-5271-6206-ABBC5CCC1019}.wem"
+      "CachePath": "B1/{B13F63A4-D260-8A6F-C843-8EB456761C28}.wem"
      },
      {
       "Id": "835332323",
@@ -1080,6 +1072,14 @@
       "CachePath": "7D/{7D8253B4-DF33-97BE-CD1D-E6868BB18F3E}.wem"
      },
      {
+      "Id": "857714889",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "amb_harborBregenz_loop.wav",
+      "CachePath": "E9/{E98E7D6E-3759-5A7E-6FE7-310A89272049}.wem"
+     },
+     {
       "Id": "875602288",
       "Language": "SFX",
       "Streaming": "false",
@@ -1117,7 +1117,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "amb_detailsWater_loop00.wav",
-      "CachePath": "CA/{CA7D54F7-EAC6-E5E7-6DB0-F37CC729F8F2}.wem"
+      "CachePath": "B4/{B495BC78-59E2-B4CE-D97C-EA9832F5D00F}.wem"
      },
      {
       "Id": "912214685",
@@ -1611,14 +1611,6 @@
        "LibId": "7077891"
       },
       {
-       "Id": "2410692955",
-       "Name": "AmbHarborBregenz_EQ",
-       "ObjectPath": "\\Effects\\Default Work Unit\\Parametric EQ\\Ambient\\AmbHarborBregenz_EQ",
-       "GUID": "{3596D200-6971-494C-9DD8-F84D4241AE74}",
-       "LibName": "Wwise Parametric EQ",
-       "LibId": "6881283"
-      },
-      {
        "Id": "2430649832",
        "Name": "PhyWaveHull_Compressor",
        "ObjectPath": "\\Effects\\Default Work Unit\\Compressor\\Physic\\PhyWaveHull_Compressor",
@@ -1997,9 +1989,6 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "9322132"
-       },
-       {
         "Id": "147595912"
        },
        {
@@ -2051,6 +2040,9 @@
        },
        {
         "Id": "778497798"
+       },
+       {
+        "Id": "857714889"
        }
       ],
       "PluginRefs": {
@@ -2060,9 +2052,6 @@
         },
         {
          "Id": "1868019210"
-        },
-        {
-         "Id": "2410692955"
         }
        ]
       }
@@ -3933,6 +3922,6 @@
     ]
    }
   ],
-  "FileHash": "{75810F64-6E5F-D3EB-620E-F42E1D865395}"
+  "FileHash": "{190D9F5C-AD8A-770C-A3A6-60DC1F3C53FF}"
  }
 }

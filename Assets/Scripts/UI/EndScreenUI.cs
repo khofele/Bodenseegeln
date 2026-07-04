@@ -19,6 +19,8 @@ public class EndScreenUI : MonoBehaviour
 
         if (m_gameManager.CurrentState == GameStates.GAMEWON)
         {
+            m_endscreenConfettiParent.SetActive(true);
+
             foreach(ParticleSystem p in m_endscreenConfettiParent.GetComponentsInChildren<ParticleSystem>())
             {
                 p.Play();

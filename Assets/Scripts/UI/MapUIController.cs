@@ -12,6 +12,9 @@ namespace MapUI
 {
     public class MapUIController : MonoBehaviour
     {
+        [Header("GameManager")]
+        [SerializeField] private GameManager m_gameManager = null;
+
         [Header("Audio References")]
         [SerializeField] private EnvironmentAudioController m_environmentAudioController = null;  // Audio class reference
 
@@ -52,7 +55,6 @@ namespace MapUI
         private GameStates m_previousState;
         private Dictionary<DockInteraction, MapDockIconUI> m_dockIcons = new Dictionary<DockInteraction, MapDockIconUI>();
 
-
         internal void ToggleMap()
         {
             if (m_isOpen)
@@ -67,6 +69,11 @@ namespace MapUI
 
         private void OpenMap()
         {
+            if(m_gameManager.CurrentState == GameStates.PAUSED)
+            {
+                return;
+            }
+
             m_isOpen = true;
             m_previousState = GameManager.Instance.CurrentState;
 

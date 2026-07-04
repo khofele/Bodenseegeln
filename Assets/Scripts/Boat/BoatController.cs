@@ -14,6 +14,8 @@ public class BoatController : MonoBehaviour
     private bool m_isResettingSailRotations = false;
     private GameStates m_prevGameState = GameStates.MOTORMODE;
     private BoatAnimatorController m_boatAnimatorController = null;
+    private float m_currentHealth = 0.0f;
+    private float m_maxHealth = 100.0f;
 
     // FORCE CALCULATION FIELDS
     private float m_airDensity = 1.2f; // kg/m^3
@@ -55,8 +57,6 @@ public class BoatController : MonoBehaviour
     private float m_motorBrakeModifier = 1.5f;
     private float m_currentFuel = 0.0f; 
     private float m_maxFuel = 250.0f;
-    private float m_currentHealth = 0.0f;
-    private float m_maxHealth = 100.0f;
 
     // REFERENCES
     [Header("General Fields")]
@@ -461,7 +461,7 @@ public class BoatController : MonoBehaviour
         }
     }
 
-    float GetWindSideSign(float windSide, float sailAngle)
+    private float GetWindSideSign(float windSide, float sailAngle)
     {
         float deadZone = 0.12f; // deadzone around 0
 
@@ -1083,9 +1083,9 @@ public class BoatController : MonoBehaviour
     // INPUT METHODS /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void ChangeBoatMode()
     {
-        if(m_boatAnimatorController.IsSailTransitioning == true)
+        if (m_boatAnimatorController.IsSailTransitioning == true)
         {
-            Debug.LogWarning("Is Transitioning Abbruch");
+            //Debug.LogWarning("Is Transitioning Abbruch");
             return;
         }
 

@@ -1,0 +1,87 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "Type": "User",
+    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Language": "SFX",
+    "Hash": "{ADF2C221-A4A9-64D6-7AE4-D3AEBF66978F}",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk",
+    "Plugins": {
+     "AudioDevices": [
+      {
+       "Id": "2317455096",
+       "Name": "No_Output",
+       "ObjectPath": "\\Devices\\Default Work Unit\\No_Output",
+       "GUID": "{AF8F5B64-2912-4065-B7A8-0C6A5EC2ED8E}",
+       "LibName": "No Output",
+       "LibId": "11862023"
+      },
+      {
+       "Id": "3859886410",
+       "Name": "System",
+       "ObjectPath": "\\Devices\\Default Work Unit\\System",
+       "GUID": "{2447D495-781B-4597-A5EA-FECECA6EEF46}",
+       "LibName": "System",
+       "LibId": "11403271"
+      }
+     ]
+    },
+    "Busses": [
+     {
+      "Id": "2246998526",
+      "Name": "Main Audio Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "541499651",
+      "Name": "Phy_WindSailIntensity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Physic_GameParameter\\Phy_WindSailIntensity",
+      "GUID": "{EAA7F539-CCDF-4512-A547-80477EDB41C3}"
+     },
+     {
+      "Id": "572552402",
+      "Name": "Boat_ThrottleSigned",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Boat_GameParameters\\Boat_ThrottleSigned",
+      "GUID": "{8093AAD1-9114-422F-B5B9-F6F317EB813B}"
+     },
+     {
+      "Id": "691629868",
+      "Name": "Phy_WindBoatIntensity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Physic_GameParameter\\Phy_WindBoatIntensity",
+      "GUID": "{1B69EE14-78B9-462D-ACA3-F9C7FAA2B67F}"
+     },
+     {
+      "Id": "823301501",
+      "Name": "Settings_MasterVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MasterVolume\\Settings_MasterVolume",
+      "GUID": "{C2841C71-FBC2-490A-95E6-02D0B44CBD11}"
+     },
+     {
+      "Id": "3361901837",
+      "Name": "Phy_WaterMovement",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Physic_GameParameter\\Phy_WaterMovement",
+      "GUID": "{C1FC9AF6-F9C7-42EB-94A4-B45E647B81BE}"
+     },
+     {
+      "Id": "3815819945",
+      "Name": "Boat_SailTension",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Boat_GameParameters\\Boat_SailTension",
+      "GUID": "{7F5CA7A6-156F-4E8E-9CE5-228FB55B8D24}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C1DD221F-074F-326B-3107-C2B706CA8836}"
+ }
+}

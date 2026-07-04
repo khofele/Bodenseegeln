@@ -13,7 +13,7 @@ public class GameManager : Manager<GameManager>
     [SerializeField] private UIManager m_uiManager = null;
     [SerializeField] private PauseMenuUI m_pauseMenu = null;
 
-    [SerializeField] private int m_money = 0;
+    [SerializeField] private int m_money = 150;
 
     [Header("Input Action References")]
     [SerializeField] private InputActionReference m_openPauseMenuAction = null;
@@ -122,23 +122,29 @@ public class GameManager : Manager<GameManager>
 
     private void PauseGame()
     {
-        m_prevGameState = m_currentGameState;
-        SetState(GameStates.PAUSED);
-        m_pauseMenu.gameObject.SetActive(true);
+        if(m_pauseMenu.isActiveAndEnabled == false)
+        {
+            m_prevGameState = m_currentGameState;
+            SetState(GameStates.PAUSED);
+            m_pauseMenu.gameObject.SetActive(true);
+        }
     }
 
     private void ResumeGame()
     {
-        if(m_prevGameState == GameStates.SAILMODE || m_prevGameState == GameStates.MOTORMODE)
+        if(m_pauseMenu.isActiveAndEnabled == true)
         {
-            SetState(m_prevGameState);
-        }
-        else
-        {
-            SetState(GameStates.SAILMODE);
-        }
+            if (m_prevGameState == GameStates.SAILMODE || m_prevGameState == GameStates.MOTORMODE)
+            {
+                SetState(m_prevGameState);
+            }
+            else
+            {
+                SetState(GameStates.SAILMODE);
+            }
 
-        m_pauseMenu.gameObject.SetActive(false);
+            m_pauseMenu.gameObject.SetActive(false);
+        }
     }
 
     private void GetPausedInput()

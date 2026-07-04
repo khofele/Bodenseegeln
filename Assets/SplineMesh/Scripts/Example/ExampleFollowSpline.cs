@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SplineMesh {
     /// <summary>
@@ -11,7 +8,6 @@ namespace SplineMesh {
     /// 
     /// We only move an object along the spline. Imagine a camera route, a ship patrol...
     /// </summary>
-    [ExecuteInEditMode]
     [RequireComponent(typeof(Spline))]
     public class ExampleFollowSpline : MonoBehaviour {
         private GameObject generated;
@@ -28,19 +24,15 @@ namespace SplineMesh {
             generated = generatedTranform != null ? generatedTranform.gameObject : Instantiate(Follower, gameObject.transform);
             generated.name = generatedName;
 
-            spline = GetComponent<Spline>(); 
-#if UNITY_EDITOR
-            EditorApplication.update += EditorUpdate;
-#endif
+            spline = GetComponent<Spline>();
         }
 
-        void OnDisable() {
-#if UNITY_EDITOR
-            EditorApplication.update -= EditorUpdate;
-#endif
-        }
+        private void Update() {
+            if (generated == null || spline == null || DurationInSecond <= 0.0f)
+            {
+                return;
+            }
 
-        void EditorUpdate() {
             rate += Time.deltaTime / DurationInSecond;
             if (rate > spline.nodes.Count - 1) {
                 rate -= spline.nodes.Count - 1;
@@ -51,6 +43,7 @@ namespace SplineMesh {
         private void PlaceFollower() {
             if (generated != null) {
                 CurveSample sample = spline.GetSample(rate);
+                Debug.Log("Sample " + sample);
                 generated.transform.localPosition = sample.location;
                 generated.transform.localRotation = sample.Rotation;
             }

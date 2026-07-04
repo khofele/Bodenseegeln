@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿
 using UnityEngine;
 
 namespace SplineMesh {
@@ -10,7 +8,6 @@ namespace SplineMesh {
     /// 
     /// This component is only for demo purpose and is not intended to be used as-is.
     /// </summary>
-    [ExecuteInEditMode]
     [RequireComponent(typeof(Spline))]
     public class ExampleContortAlong : MonoBehaviour {
         private Spline spline;
@@ -30,22 +27,18 @@ namespace SplineMesh {
         private void OnEnable() {
             rate = 0;
             Init();
-#if UNITY_EDITOR
-            EditorApplication.update += EditorUpdate;
-#endif
-        }
-
-        void OnDisable() {
-#if UNITY_EDITOR
-            EditorApplication.update -= EditorUpdate;
-#endif
         }
 
         private void OnValidate() {
             Init();
         }
 
-        void EditorUpdate() {
+        private void Update() {
+            if (meshBender == null || spline == null || DurationInSecond <= 0.0f)
+            {
+                return;
+            }
+
             rate += Time.deltaTime / DurationInSecond;
             if (rate > 1) {
                 rate --;

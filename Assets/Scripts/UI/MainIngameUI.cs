@@ -81,10 +81,16 @@ public class MainIngameUI : MonoBehaviour
     [SerializeField] private InputActionReference m_previousScreenAction = null;
     [SerializeField] private InputActionReference m_toggleMapAction = null;
 
+    [Header("Notifications")]
+    [SerializeField] private NotificationTextUI m_notificationText = null;
+    [SerializeField][TextArea] private string m_fenderDamageMessage = "Zu schnelles fahren mit eingeschalteten Fendern verursacht Schaden. Schalte sie aus oder fahre langsamer";
+
     private UIScreen m_currentScreen = UIScreen.Motor;
     private float m_lastHealth;
     private bool m_isWaitingForDamageBar;
     private float m_damageTimer;
+    private bool m_hasShownFenderDamageMessage = false;
+    private bool m_lastFenderAlarmState = false;
 
 
     private void OnEnable()
@@ -118,6 +124,7 @@ public class MainIngameUI : MonoBehaviour
         UpdateCharInfo();
         UpdateStatusIndicators();
         UpdateSailingPositions();
+        UpdateFenderDamageMessage();
     }
     /// <summary>
     /// Key Inputs to toggle screens and map
@@ -473,6 +480,26 @@ public class MainIngameUI : MonoBehaviour
             float _angle = UIManager.Instance.GetSteeringWheelAngle();
             m_rudderImage.localEulerAngles = new Vector3(0, 0, -_angle);
         }
+    }
+
+    private void UpdateFenderDamageMessage()
+    {
+        if (m_hasShownFenderDamageMessage)
+        {
+            return;
+        }
+
+        bool _alarm = UIManager.Instance.CheckFenderAlarm();
+        bool _startedTakingDamage = _alarm && !m_lastFenderAlarmState;
+
+        if (_startedTakingDamage && !m_hasShownFenderDamageMessage)
+        {
+            m_notificationText?.Show(m_fenderDamageMessage);
+
+            m_hasShownFenderDamageMessage = true;
+        }
+
+        m_lastFenderAlarmState = _alarm;
     }
 
     /// <summary>

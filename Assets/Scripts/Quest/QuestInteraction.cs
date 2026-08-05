@@ -18,6 +18,10 @@ namespace Quest
         [SerializeField] private bool m_requireCorrectParking = false;
         [SerializeField] private float m_allowedAngleTolerance = 25f;
 
+        [Header("Parking Zone")]
+        [SerializeField] private ParkingZoneVisualizer m_parkingZone = null;
+        [SerializeField] private float m_zoneVisibilityDistance = 40f;
+
         [Header("References")]
         [SerializeField] private Transform m_boatTransform = null;
 
@@ -91,6 +95,7 @@ namespace Quest
             CheckConditions();
             UpdateUI();
             UpdateActiveQuestIcon();
+            UpdateParkingZone();
 
             if (m_isInteractable && m_interactAction.action.WasPressedThisFrame())
             {
@@ -134,6 +139,26 @@ namespace Quest
             bool _isBackwardCorrect = Mathf.Abs(_angle - 180f) <= m_allowedAngleTolerance;
 
             return _isForwardCorrect || _isBackwardCorrect;
+        }
+
+        private void UpdateParkingZone()
+        {
+            if (m_parkingZone == null)
+            {
+                return;
+            }
+
+            float _dist = Vector3.Distance(m_boatTransform.position, transform.position);
+            bool _visible = _dist <= m_zoneVisibilityDistance && ShouldShowCompassIcon();
+
+            m_parkingZone.SetVisible(_visible);
+
+            if (!_visible)
+            {
+                return;
+            }
+
+            m_parkingZone.SetCorrectParking(m_isInteractable);
         }
 
         private void UpdateUI()

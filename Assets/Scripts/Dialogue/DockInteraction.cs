@@ -14,6 +14,10 @@ public class DockInteraction : MonoBehaviour
     [SerializeField] private bool m_requireCorrectParking = false;
     [SerializeField] private float m_allowedAngleTolerance = 25f;
 
+    [Header("Parking Zone")]
+    [SerializeField] private ParkingZoneVisualizer m_parkingZone = null;
+    [SerializeField] private float m_zoneVisibilityDistance = 40f;
+
     [Header("References")]
     [SerializeField] private Transform m_boatTransform = null;
 
@@ -67,6 +71,7 @@ public class DockInteraction : MonoBehaviour
     {
         CheckDockConditions();
         UpdateUI();
+        UpdateParkingZone();
 
         if (m_isDocked && m_interactAction.action.WasPressedThisFrame())
         {
@@ -109,6 +114,26 @@ public class DockInteraction : MonoBehaviour
         bool _isBackwardCorrect = Mathf.Abs(_angle - 180f) <= m_allowedAngleTolerance;
 
         return _isForwardCorrect || _isBackwardCorrect;
+    }
+
+    private void UpdateParkingZone()
+    {
+        if (m_parkingZone == null)
+        {
+            return;
+        }
+
+        float _dist = Vector3.Distance(m_boatTransform.position, transform.position);
+        bool _visible = _dist <= m_zoneVisibilityDistance;
+
+        m_parkingZone.SetVisible(_visible);
+
+        if (!_visible)
+        {
+            return;
+        }
+
+        m_parkingZone.SetCorrectParking(m_isDocked);
     }
 
     private void UpdateUI()

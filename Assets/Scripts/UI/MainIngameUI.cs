@@ -59,6 +59,7 @@ public class MainIngameUI : MonoBehaviour
     [SerializeField] private GameObject m_healthLowIcon = null;
     [SerializeField] private float m_healthDamageDelay = 0.5f;
     [SerializeField] private float m_healthDamageSpeed = 2.5f;
+    [SerializeField] private Image m_damageOverlay = null;
 
     [Header("SailingPositions")]
     [SerializeField] private Image m_mainSailBar = null;
@@ -409,6 +410,18 @@ public class MainIngameUI : MonoBehaviour
         if (_health > m_lastHealth && m_healthDamageBar != null)
         {
             m_healthDamageBar.fillAmount = _normalizedHealth;
+        }
+
+        if (m_damageOverlay != null && m_healthDamageBar != null)
+        {
+            float _difference = m_healthDamageBar.fillAmount - m_healthBar.fillAmount;
+
+            float _alpha = Mathf.InverseLerp(0.10f, 0.20f, _difference) * 0.8f; //only *o.8f because 100% visibility is too intense -> change here if still too much
+
+            Color _color = m_damageOverlay.color;
+            _color.a = _alpha;
+
+            m_damageOverlay.color = _color;
         }
 
         m_lastHealth = _health;

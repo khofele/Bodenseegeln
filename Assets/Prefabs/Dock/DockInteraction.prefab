@@ -200,6 +200,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5903529266868261946}
     m_Modifications:
+    - target: {fileID: 4966265904670290208, guid: f3300b7a7fa057d4280997632e79786f, type: 3}
+      propertyPath: m_defaultColor.b
+      value: 0.7411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966265904670290208, guid: f3300b7a7fa057d4280997632e79786f, type: 3}
+      propertyPath: m_defaultColor.g
+      value: 0.44705886
+      objectReference: {fileID: 0}
     - target: {fileID: 8045921021436058061, guid: f3300b7a7fa057d4280997632e79786f, type: 3}
       propertyPath: m_Name
       value: ParkingZoneVisualizer

@@ -994,6 +994,7 @@ public class BoatController : MonoBehaviour
             else
             {
                 Debug.Log("Towing possible! Please press R!");
+                m_resetNeededScreen.ShowScreen();
                 m_isForcedTow = true;
                 m_prevGameState = m_gameManager.CurrentState;
                 m_gameManager.SetState(GameStates.PAUSED);
@@ -1055,7 +1056,7 @@ public class BoatController : MonoBehaviour
         }
 
         m_gameManager.DecreaseMoney(m_gameManager.ResetCost);
-        gameObject.transform.position = new Vector3(1812.0f, 9.8f, 3607.0f); // TODO Reset-Position + Rotation festlegen + Fix
+        gameObject.transform.position = new Vector3(1812.0f, 8.9f, 3607.0f);
         gameObject.transform.localEulerAngles = new Vector3(0.0f, -15.0f, 0.0f);
         m_currentHealth = m_maxHealth;
         m_currentFuel = m_maxFuel;
@@ -1534,6 +1535,7 @@ public class BoatController : MonoBehaviour
             m_rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             m_rigidbody.mass = 9000.0f;
             m_rigidbody.centerOfMass = new Vector3(0.0f, -4.0f, 0.0f);
+            m_rigidbody.useGravity = false;
         }
 
         CalculateLiftAndDragTables(); // for lift and drag coefficients for sail force
